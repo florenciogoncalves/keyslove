@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BRW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyslov - Cadastro</title>
+    <link rel="stylesheet" href="../style/cadastro.css" >
+</head>
+<body>
+    <header id="header-content">
+        <img src="../images/Keyslov.svg" class="header-logo">
+        <nav class="nav-btn">
+            <button id="enter-account">Entrar</button>
+        </nav>
+
+        
+    </header>
+    <div class="cadastro-layout">
+        <form action="#"  id="form-cadastro5">
+            <h1>Adicione duas Fotos</h1>
+            <p>Adicione suas fotos com o limite de 15 fotos por perfil</p>
+
+            <div class="social-cad-imgs">
+                <img src="../images/facebook-social.svg">
+                <img src="../images/instagram-social.svg">
+            </div>
+
+            <div class="add-photos-cad">
+
+                <div class="span" id="img-1">
+                    <span for="get-photo1" dropzone="copy f:/image/png f:/image/jpeg" ondrop="copyFile()">Arraste sua foto</span>
+                    <input type="file" class="drop-here" name="get-photo1" id="get-photo1">
+                </div>
+
+                <div class="span">
+                    <span for="get-photo2">Arraste sua foto</span>
+                    <input type="file" class="drop-here" name="get-photo2" id="get-photo2">
+                </div>
+                
+            </div>
+
+            <button class="continue btn-register">Adicionar Fotos</button>
+        </form>
+    </div>
+
+</body>
+</html>

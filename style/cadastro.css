@@ -1,0 +1,368 @@
+@import url(./login.css);
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    background-image: url(../images/heath-bg-left.svg), url(../images/hearth-bg-right.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: left bottom, right center ;    
+}
+
+#header-content{
+    min-height: 150px;
+}
+
+/*LAYOUT DA CAIXA DE CADASTRO*/
+.cadastro-layout{
+    position: relative;
+    width: 710px;
+    height: 715px;
+    margin: auto;
+    background: #FFF;
+    box-shadow: 0px 0px 116px rgba(0, 0, 0, 0.26);
+    border-radius: 8px;
+    padding: 60px 30px;
+    box-sizing: border-box;
+}
+.cadastro-layout h1{
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cadastro-layout p{
+    height: max-content;
+}
+
+.cadastro-layout form, 
+#form-cadastro1{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 480px;
+    max-width: 480px;
+    margin: auto;
+}
+
+.cadastro-layout form label:not(.the-genre){
+    margin: 14px 0 6px;
+    font-size: 18px;
+}
+.cadastro-layout form input:not([type="checkbox"], .pass-camp){
+    box-sizing: border-box;
+    margin: auto;
+    min-width: 100%;
+    height: 56px;
+    padding: 0 15px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.901502px solid #000000;
+    border-radius: 7.21202px;
+
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 56px;
+}
+.cadastro-layout form input:not([type="radio"], .pass-camp):focus{
+    outline: solid .01px var(--color-black);
+}
+
+/*Botões dentro da caixa de cadastro*/
+.btn-register{
+    min-width: 100%;
+
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+/*ESTILIZANDO O ARQUIVO 'cadastro-1.html'*/
+#form-cadastro1 .checkbox{
+    display: flex;
+    margin: 22px 0;
+}
+#form-cadastro1 .checkbox label{
+    margin: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/*Estilização do checkbox personalizado*/
+#form-cadastro1 input[type="checkbox"]#accept-terms,
+#form-cadastro1 input[type="checkbox"]#accept-terms:checked{
+    position: relative;
+    appearance: none;
+    cursor: pointer;
+    width: 27px;
+    margin-right: 10px;
+    height: 25px;
+
+    border: 1px solid #000000;
+    border-radius: 7px;
+}
+
+#form-cadastro1 input[type="checkbox"]#accept-terms:checked{
+    background: url(../images/confirm.svg) no-repeat center;
+}
+/*FIM cadastro-1.html*/
+
+
+/*  Estilizando o form do arquivo cadastro-2.html*/
+.the-date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#form-cadastro2 select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#born-day,
+#born-month,
+#born-year{
+    background: url(../images/arrow-down.svg) no-repeat center right 15px;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0.901502px solid #000000;
+
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+#born-day, 
+#born-month{
+    width: 136px;
+}
+
+#born-year{
+    width: 175px;
+}
+
+.disselect{
+    color: #00f000;
+}
+
+/*Para a div de gênero*/
+#form-cadastro2 .the-genre{
+    display: flex;
+    width: 480px;
+    margin-bottom: 10px;
+    max-height: 56px;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+#form-cadastro2 .the-genre>div{
+    margin: 0;
+}
+
+.the-genre div{
+    display: flex;
+    position: relative;
+    width: 135px;
+    height: 56px;
+    text-align: center;
+    margin: 0;
+
+}
+
+#form-cadastro2 input[type="radio"],
+#form-cadastro2 input[type="radio"]:checked{
+    display: flex;
+    position: relative;
+    appearance: none;
+    box-sizing: border-box;
+    width: 135px;
+    height: 56px;
+    z-index: 1;
+    cursor: pointer;
+    margin: 0;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.901502px solid #000000;
+    border-radius: 7.21202px;
+}
+
+#form-cadastro2 input[type="radio"]:checked{
+    transition: all 100ms ease-in-out;
+    border: 0.901502px solid var(--vermelho-principal);
+}
+
+#form-cadastro2 .the-genre span{
+    position: absolute;
+    width: 135px;
+    height: 56px;
+    line-height: 56px;
+    z-index: 0;
+    user-select: none;
+}
+
+/*Baixar um pouco o botão 'Cadastrar'*/
+#form-cadastro2 .btn-register{
+    margin-top: 30px;   
+}
+
+/*Baixar um pouco o botão 'Cadastrar do arquivo 'cadastro-3.html'*/
+#form-cadastro3 .btn-register{
+    margin-top: 65px;   
+}
+
+/*Formatando o arquivo 'cadastro-4.html'*/
+#form-cadastro4 h1{
+    margin-bottom: 30px;
+}
+
+#form-cadastro4>div{
+    display: flex;
+    height: max-content;
+    margin: 12px 0;
+}
+
+#form-cadastro4 input[type="checkbox"],
+#form-cadastro4 input[type="checkbox"]:checked{
+    outline: none;
+    appearance: none;
+    box-sizing: border-box;
+    width: 39.34px;
+    height: 38.07px;
+    margin: auto 40px;
+
+    background: rgba(217, 217, 217, 0.2);
+    border: 1.26901px solid var(--vermelho-principal);
+    border-radius: 12.6901px;
+}
+
+#form-cadastro4 input[type="checkbox"]:checked{
+    background-image: url(../images/Close_round.png);
+    background-position: center;
+}
+
+#form-cadastro4 label{
+    margin: 0;
+    line-height: 38.07px;
+}
+
+#form-cadastro4 button{
+    top: 30px;
+    width: 480px;
+}
+
+/*Trabalhando no arquivo 'cadastro-5.html' */
+#form-cadastro5 p{
+    font-size: 14px;
+    margin: auto;
+}
+
+#form-cadastro5 .social-cad-imgs{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 0;
+}
+
+#form-cadastro5 .add-photos-cad{
+    margin-left: -40px;
+    display: flex;
+    flex-direction: row;
+    width: 560px;
+    justify-content: space-between;
+}
+
+#form-cadastro5 input[type="file"]{
+    display: none;
+}
+
+#form-cadastro5 .span{
+    box-sizing: border-box;
+    width: 270px;
+    height: 156px;
+    background: rgba(51, 51, 51, 0.17);
+    border: 2px dashed #333333;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 0;
+    margin-bottom: 45px;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    line-height: 156px;
+}
+
+/*Estilizando o arquivo 'cadastro-6.html'*/
+#form-cadastro6 h1{
+    width: max-content;
+
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 5px;
+}
+
+#form-cadastro6 p{
+    text-align: justify;
+}
+
+#form-cadastro6 #insert-password{
+    display: flex;
+    position: relative;
+    width: 500px;
+    left: -10px;
+    margin: 60px auto;
+    justify-content: space-between;
+}
+
+.pass-camp{
+    width: 113.84px;
+    height: 113.84px;
+    box-sizing: border-box;
+
+    border: none;
+    background: url(../images/pass-camp.svg) no-repeat bottom;
+
+    text-align: center;
+    color: rgba(252, 0, 59, 0.52);
+    font-size: 70px;
+    font-weight: bolder;
+    outline: none;
+}
+.pass-camp:focus{
+    outline: hidden;
+}
+
+
+/*Para o primeiro btn-register com a mensagem enviar*/
+#form-cadastro6 .btn-register:nth-child(3){
+    display: block;
+    position: relative;
+    margin: 30px 0
+}
+
+/*Para o segundo btn-register com a mensagem reenviar*/
+#form-cadastro6 .btn-register:nth-last-child(1){
+    background: none;
+    color: #FD003B;
+    border: 1px solid #FD003B;
+}
+
+/*Para a div com os botões*/
+div:nth-last-child(1){
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px;
+}
+
+
