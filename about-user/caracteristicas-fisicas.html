@@ -1,176 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Complete o perfil - Keyslov</title>
-    <link rel="stylesheet" href="../style/padrao.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="../style/padrao.css" />
+  </head>
+  <body>
     <div id="div-left">
-        <div id="user-information">
+      <div id="user-information">
+        <figure>
+          <div src="../temp-1.png" alt="Foto de perfil" id="img-perfil"></div>
 
-            <figure>
+          <figcaption>
+            <div class="status"></div>
+            <h2>Lorem Ipsun Silva</h2>
+            <a href="#">Escolher status</a>
+          </figcaption>
+        </figure>
 
-                <div src="../temp-1.png" alt="Foto de perfil" id="img-perfil">
-                </div>
-
-                <figcaption>
-
-                    <div class="status"></div>
-                    <h2>Lorem Ipsun Silva</h2>
-                    <a href="#">Escolher status</a>
-                    
-                </figcaption>
-
-            </figure>
-
-            <img src="../images/option.svg">
-
-        </div>
-
+        <img src="../images/option.svg" />
+      </div>
+      <nav>
         <ul id="menu-left">
-            <li style="background-image: url(../images/Icon.svg);"><a href="#">Perfil</a></li>
-            <li style="background-image: url(../images/Vector-1.svg);"><a href="#">Chamada de video</a></li>
-            <li style="background-image: url(../images/Icon-4.svg);"><a href="#">Carroussel</a></li>
-            <li style="background-image: url(../images/Vector-2.svg);"><a href="#">Curtidas</a></li>
-            <li style="background-image: url(../images/Icon-2.svg);"><a href="#">Planos</a></li>
-            <li style="background-image: url(../images/Icon-1.svg);"><a href="#">Favoritos</a></li>
-            <li style="background-image: url(../images/Icon-3.svg);"><a href="#">Configurações</a></li>
-            <li style="background-image: url(../images/Vector.svg);"><a href="#">Mensagens</a></li>
-            <li style="background-image: url(../images/Icon-5.svg);"><a href="#">Serviços</a></li>
-            <li style="background-image: url(../images/Icon-6.svg);"><a href="#">Online agora</a></li>
-            <li style="background-image: url(../images/Vector\ 15.svg);"><a href="#">Teste de amor</a></li>
-        </ul>
+          <li><a href="#">Perfil</a></li>
+          <li><a href="#">Chamada de video</a></li>
+          <li><a href="#">Carroussel</a></li>
+          <li><a href="#">Curtidas</a></li>
+          <li><a href="#">Planos</a></li>
+          <li><a href="#">Favoritos</a></li>
+          <li><a href="#">Configurações</a></li>
+          <li><a href="#">Mensagens</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li id="online-now">
+            Online agora
 
-        <div id="peoples-left">
-            
-            <h4>Pessoas pela região</h4>
+            <div class="changing-status">
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  value="online"
+                  id="online"
+                />
+                <label for="online">Online</label>
+              </div>
 
-            <div class="people-organizer">
-                <img src="../temp-2.svg">
-                <img src="../temp-2.svg">
-                <img src="../temp-2.svg">
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="ocupado"
+                  value="ocupado"
+                />
+                <label for="ocupado">Ocupado</label>
+              </div>
+
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="invisivel"
+                  value="invisivel"
+                />
+                <label for="invisivel">Invisível</label>
+              </div>
             </div>
-            
-        </div>
+          </li>
+          <li><a href="#">Teste de amor</a></li>
+        </ul>
+      </nav>
 
+      <div id="peoples-left">
+        <h4>Pessoas pela região</h4>
+
+        <div class="people-organizer">
+          <img src="../temp-2.svg" />
+          <img src="../temp-2.svg" />
+          <img src="../temp-2.svg" />
+        </div>
+      </div>
     </div>
     <div id="content-right">
-        <form action="#" class="principal-content">
+      <form action="#" class="principal-content">
+        <header class="content-header">
+          <img src="../images/Book_check_fill.svg" />
+          <h1>Características Físicas</h1>
+        </header>
 
-            <header class="content-header">
-                <img src="../images/Book_check_fill.svg" >
-                <h1>Características Físicas</h1>
-            </header>
+        <div id="container-elements" style="justify-content: flex-start">
+          <div class="part-1">
+            <div class="iten">
+              <label for="cor-cabelos">Cor dos cabelos</label>
+              <select id="cor-cabelos">
+                <option>Selecionar...</option>
+              </select>
+            </div>
 
-            <div id="container-elements" style="justify-content: flex-start;">
+            <div class="iten">
+              <label for="cor-olhos">Cor dos olhos</label>
+              <select id="cor-olhos">
+                <option>Selecionar...</option>
+              </select>
+            </div>
 
-                <div class="part-1">
+            <div class="iten">
+              <label for="altura">Altura</label>
+              <select id="altura">
+                <option>Selecionar...</option>
+              </select>
+            </div>
 
-                    <div class="iten">
+            <div class="iten">
+              <label for="peso">Peso</label>
+              <select id="peso">
+                <option selected disabled>Selecionar...</option>
+              </select>
+            </div>
 
-                        <label for="cor-cabelos">Cor dos cabelos</label>
-                        <select id="cor-cabelos">
-                            <option>Selecionar...</option>
-                        </select>
-    
-                    </div>
-    
-    
-                    <div class="iten">
-    
-                        <label for="cor-olhos">Cor dos olhos</label>
-                        <select id="cor-olhos">
-                            <option>Selecionar...</option>
-                        </select>
-    
-                    </div>
-    
-    
-                    <div class="iten">
-    
-                        <label for="altura">Altura</label>
-                        <select id="altura">
-                            <option>Selecionar...</option>
-                        </select>
-    
-                    </div>
-    
-    
-                    <div class="iten">
-    
-                        <label for="peso">Peso</label>
-                        <select id="peso">
-                            <option selected disabled>Selecionar...</option>
-                        </select>
-    
-                    </div>
-    
-    
-                    <div class="iten">
-    
-                        <label for="tipo-fisico">Tipo físico</label>
-                        <select id="tipo-fisico">
-                            <option selected disabled>Selecionar...</option>
-                        </select>
-    
-                    </div>
-    
-    
-                    <div class="iten">
-                        <label for="grupo-etnico">Grupo étnico</label>
-                        <select id="grupo-etnico">
-                            <option selected disabled>Selecionar...</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="part-2" style="justify-content: flex-start; display: none;">
+            <div class="iten">
+              <label for="tipo-fisico">Tipo físico</label>
+              <select id="tipo-fisico">
+                <option selected disabled>Selecionar...</option>
+              </select>
+            </div>
 
-                    <div class="iten" style="margin-bottom: 25px;">
-    
-                        <label for="arte-corporal">Arte corporal</label>
-                        <select id="arte-corporal">
-                            <option>Selecionar...</option>
-                        </select>
-    
-                    </div>
-    
-    
-                    <div class="iten">
-    
-                        <label for="aparencia">Minha aparência</label>
-                        <select id="aparencia">
-                            <option>Selecionar...</option>
-                        </select>
-    
-                    </div>
-                    
-                </div>
+            <div class="iten">
+              <label for="grupo-etnico">Grupo étnico</label>
+              <select id="grupo-etnico">
+                <option selected disabled>Selecionar...</option>
+              </select>
+            </div>
+          </div>
 
-            </div>    
+          <div
+            class="part-2"
+            style="justify-content: flex-start; display: none"
+          >
+            <div class="iten" style="margin-bottom: 25px">
+              <label for="arte-corporal">Arte corporal</label>
+              <select id="arte-corporal">
+                <option>Selecionar...</option>
+              </select>
+            </div>
 
-                <div class="progress-next">
+            <div class="iten">
+              <label for="aparencia">Minha aparência</label>
+              <select id="aparencia">
+                <option>Selecionar...</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
-                    <div class="progress-bar-content">
-                        <div class="progress-bar">
-                            <span class="progress-val"></span>
-                        </div>
+        <div class="progress-next">
+          <div class="progress-bar-content">
+            <div class="progress-bar">
+              <span class="progress-val"></span>
+            </div>
+          </div>
 
-                    </div>
-
-                <button class="next-page-about">></button>
-
-                </div>
-
-        </form>
-
+          <button class="next-page-about">></button>
+        </div>
+      </form>
     </div>
 
     <script src="../script/trabalho-profissao.js"></script>
-</body>
+    <script src="../script/script.js"></script>
+  </body>
 </html>

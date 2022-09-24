@@ -12,3 +12,5 @@ Comandos:
 
 document.querySelector('.part-1').style.display = 'none'
 document.querySelector('.part-2').style.display = 'block'
+
+Para ver as caixas de diálogo, devese definir suas propriedades display para block

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete o perfil - Keyslov</title>
+    <link rel="stylesheet" href="../style/home.css" />
+  </head>
+  <body>
+    <div id="div-left">
+      <div id="user-information">
+        <figure>
+          <div src="../temp-1.png" alt="Foto de perfil" id="img-perfil"></div>
+
+          <figcaption>
+            <div class="status"></div>
+            <h2>Lorem Ipsun Silva</h2>
+            <a href="#">Escolher status</a>
+          </figcaption>
+        </figure>
+
+        <img src="../images/option.svg" />
+      </div>
+
+      <nav>
+        <ul id="menu-left">
+          <li><a href="#">Perfil</a></li>
+          <li><a href="#">Chamada de video</a></li>
+          <li><a href="#">Carroussel</a></li>
+          <li><a href="#">Curtidas</a></li>
+          <li><a href="#">Planos</a></li>
+          <li><a href="#">Favoritos</a></li>
+          <li><a href="#">Configurações</a></li>
+          <li><a href="#">Mensagens</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li id="online-now">
+            Online agora
+
+            <div class="changing-status">
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  value="online"
+                  id="online"
+                />
+                <label for="online">Online</label>
+              </div>
+
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="ocupado"
+                  value="ocupado"
+                />
+                <label for="ocupado">Ocupado</label>
+              </div>
+
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="invisivel"
+                  value="invisivel"
+                />
+                <label for="invisivel">Invisível</label>
+              </div>
+            </div>
+          </li>
+          <li><a href="#">Teste de amor</a></li>
+        </ul>
+      </nav>
+      <div id="peoples-left">
+        <h4>Pessoas pela região</h4>
+
+        <div class="people-organizer">
+          <img src="../temp-2.svg" />
+          <img src="../temp-2.svg" />
+          <img src="../temp-2.svg" />
+        </div>
+      </div>
+    </div>
+
+    <main id="carroussel">
+      <h1 class="title">Carroussel</h1>
+
+      <figure id="informacoes-perfil">
+        <img src="../temp-4.png" alt="" />
+        <figcaption id="descricao-perfil">
+          <h2>Lorem Ipsum</h2>
+          <p>Lorem ipsum <span>.</span> <span class="idade">100</span>&nbsp;anos</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
+            fringilla lacus. Aliquam eget accumsan turpis<br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
+            fringilla lacus. Aliquam eget accumsan turpis<br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
+            fringilla lacus. Aliquam eget accumsan turpis<br />
+          </p>
+          <div class="botoes">
+            <button class="dislike"></button>
+            <button class="like"></button>
+          </div>
+        </figcaption>
+      </figure>
+      <div class="outras-pessoas">
+        <div class="outro-perfil">
+            <img src="../temp-4.png" alt="">
+            <div class="textual">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum<span>.</span><span class="idade">100</span>&nbsp;anos</p>    
+            </div>
+            <button class="conversar"></button>
+        </div>
+        <div class="outro-perfil">
+            <img src="../temp-4.png" alt="">
+            <div class="textual">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum<span>.</span><span class="idade">100</span>&nbsp;anos</p>    
+            </div>
+            <button class="conversar"></button>
+        </div>
+        <div class="outro-perfil">
+            <img src="../temp-4.png" alt="">
+            <div class="textual">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum<span>.</span><span class="idade">100</span>&nbsp;anos</p>    
+            </div>
+            <button class="conversar"></button>
+        </div>
+        <div class="outro-perfil">
+            <img src="../temp-4.png" alt="">
+            <div class="textual">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem ipsum<span>.</span><span class="idade">100</span>&nbsp;anos</p>    
+            </div>
+            <button class="conversar"></button>
+        </div>
+      </div>
+    </main>
+
+    <div class="dialog-container dialog-question">
+      <div class="dialog-content">
+        <button class="exit"></button>
+        <p>
+          Quer receber um aviso quando <strong>Joaquim Coutto</strong> curtir
+          você também?
+        </p>
+        <button id="active">Ativar</button>
+        <button id="pass-this">Não tenho interesse</button>
+      </div>
+    </div>
+
+    <div class="dialog-container dialog-information">
+        <div class="dialog-content">
+          <button class="exit" value="info-close"></button>
+          <h2>Entenda como funciona</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text ever
+            since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book
+          </p>
+        </div>
+      </div>
+
+    <script src="../script/script.js"></script>
+  </body>
+</html>

@@ -1,297 +1,293 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-:root{
-    --vermelho-principal: #FC003B;
-    --bg-color: #292929;
-    --color-white: #FFF;
-    --color-black: #000;
-    --status-on: #16C607;
+:root {
+  --vermelho-principal: #fc003b;
+  --bg-color: #292929;
+  --color-white: #fff;
+  --color-black: #000;
+  --status-on: #16c607;
+  --status-off: #aaaaaa;
 }
 
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins';
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
 }
 
-body{
-    max-width: 100vw;
-    box-sizing: border-box;
+body {
+  max-width: 100vw;
+  box-sizing: border-box;
 
-    background-color: var(--bg-color);
-    background-image: url(../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 100%;
+  background-color: var(--bg-color);
+  background-image: url(../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100%;
 }
 
-
-.bg-img{
-    max-width: 100vw;
-    min-height: 100vh;
-    position: absolute;
+.bg-img {
+  max-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
 }
 
-.header-logo{
-    position: absolute;
-    width: 193.62px;
-    height: 39.48px;
-    left: 46px;
-    top: 20px;
+.header-logo {
+  position: absolute;
+  width: 193.62px;
+  height: 39.48px;
+  left: 46px;
+  top: 20px;
 }
 
-#header-content{
-    height: 100px;
-    display: block;
+#header-content {
+  height: 100px;
+  display: block;
 }
 
 /* Botões criar conta e entrar*/
-.nav-btn{
-    display: flex;
-    position: relative;
-    top: 19px;
-    max-width: max-content;
-    float: right;
-    margin-right: 46px;
+.nav-btn {
+  display: flex;
+  position: relative;
+  top: 19px;
+  max-width: max-content;
+  float: right;
+  margin-right: 46px;
 }
 #create-account,
-#enter-account{
-    position: relative;
-    width: 189px;
-    height: 40px;
-    border-radius: 8px;
+#enter-account {
+  position: relative;
+  width: 189px;
+  height: 40px;
+  border-radius: 8px;
 
-    font-family: 'Poppins';
-    font-style: normal;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 0px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 0px;
 }
-#create-account{
-    border: 1px solid #fff;
-    background: none;
-    color: #fff;
-    margin-right: 15px;
-}
-
-#enter-account{
-    background-color: #fff;
-    border: none;
+#create-account {
+  border: 1px solid #fff;
+  background: none;
+  color: #fff;
+  margin-right: 15px;
 }
 
-.lang-selector{
-    margin-left: 15px;
-    display: flex;
-    flex-direction: column;
-    max-height: 40px;
+#enter-account {
+  background-color: #fff;
+  border: none;
 }
 
-.lang-selector img{
-    height: 25px;
+.lang-selector {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  max-height: 40px;
+}
+
+.lang-selector img {
+  height: 25px;
 }
 
 /*Caixa de formulário*/
-#enter-box{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 40px;
-    width: 35.9375em;
-    height: 611px;
-    background: #ffffff;
-    border-radius: 10px;
-    margin: auto;
-    box-sizing: border-box;
+#enter-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  width: 35.9375em;
+  height: 611px;
+  background: #ffffff;
+  border-radius: 10px;
+  margin: auto;
+  box-sizing: border-box;
 }
 
-#enter-box h2{
-    position: relative;
-    width: max-content;
-    height: 48px;
-    margin: 0 auto;
-    margin-top: 30px;
+#enter-box h2 {
+  position: relative;
+  width: max-content;
+  height: 48px;
+  margin: 0 auto;
+  margin-top: 30px;
 
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 48px;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
 }
 
-#enter-box p{
-    position: relative;
-    text-align: justify;
-    margin: 20px 0;
+#enter-box p {
+  position: relative;
+  text-align: justify;
+  margin: 20px 0;
 }
 
 /*Para as classes de continuar login*/
-.methods-continue{
-    position: relative;
-    height: 175px;
+.methods-continue {
+  position: relative;
+  height: 175px;
 }
-.continue{
-    width: 435px;
-    height: 66px;
-    display: block;
-    margin: auto;
-    margin-top: 27px;
-    border-radius: 8px;
-    border: solid 1px var(--vermelho-principal);
-    
-    text-align: center;
-    line-height: 66px;
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 5px;
+.continue {
+  width: 435px;
+  height: 66px;
+  display: block;
+  margin: auto;
+  margin-top: 27px;
+  border-radius: 8px;
+  border: solid 1px var(--vermelho-principal);
+
+  text-align: center;
+  line-height: 66px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 5px;
 }
-.google-continue{
-    background: url(../images/Logo\ google.png) no-repeat center left 20px;
+.google-continue {
+  background: url(../images/Logo\ google.png) no-repeat center left 20px;
 }
-.facebook-continue{
-    background: url(../images/Logo\ facebook.png) no-repeat center left 20px;
+.facebook-continue {
+  background: url(../images/Logo\ facebook.png) no-repeat center left 20px;
 }
 
-#enter-box p:nth-child(3n-2){
-    margin: 30px auto -5px;
-    font-size: 18px;
-    font-weight: 400;
+#enter-box p:nth-child(3n-2) {
+  margin: 30px auto -5px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 /*Para Botão cadastrar-se*/
-.btn-register{
-    position: relative;
-    background-color: var(--vermelho-principal);
-    border: none;
-    margin:  0 auto;
+.btn-register {
+  position: relative;
+  background-color: var(--vermelho-principal);
+  border: none;
+  margin: 0 auto;
 
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    color: #ffffff;
-    font-size: 20px;
-    letter-spacing: 0.2em;
-    letter-spacing: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  letter-spacing: 0;
 }
 
-#enter-box a{
-    position: relative;
-    color: var(--vermelho-principal);
-    text-align: center;
-    margin-top: 30px;
+#enter-box a {
+  position: relative;
+  color: var(--vermelho-principal);
+  text-align: center;
+  margin-top: 30px;
 
-    font-weight: 500;
-    font-size: 20px;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 /*Mensagens por baixo da caixinha*/
-.messages{
-    width: 90vw;
-    min-width: 890px;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 140px;
+.messages {
+  width: 90vw;
+  min-width: 890px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 140px;
 }
 
-.messages h3{
-    color: #fff;
-    font-weight: 400;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 48px;
-    line-height: 140px;
+.messages h3 {
+  color: #fff;
+  font-weight: 400;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 140px;
 
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-
-
-.footer{ 
-    height: 180px;
-    width: 100vw;
-    background: #FD003B;
-    box-sizing: border-box;
-    padding: 25px;
-    display: flex;
+.footer {
+  height: 180px;
+  width: 100vw;
+  background: #fd003b;
+  box-sizing: border-box;
+  padding: 25px;
+  display: flex;
 }
 
-.img-links div{
-    width: 128px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.img-links div {
+  width: 128px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-ul.footer-links{
-    width: 70%;
-    margin: auto;
-    max-height: 100%;
-    display: grid;
-    grid-template-columns: auto auto max-content;
-    grid-row: 2;
-    grid-column: 3;
-    gap: 35px 20px;
-    box-sizing: border-box;
+ul.footer-links {
+  width: 70%;
+  margin: auto;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: auto auto max-content;
+  grid-row: 2;
+  grid-column: 3;
+  gap: 35px 20px;
+  box-sizing: border-box;
 }
-ul .item-footer{
-    color: #fff;
-    text-decoration: none;
-    list-style: none;
-    padding: 0;
+ul .item-footer {
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
 }
-ul .item-footer a{
-    text-decoration: none;
+ul .item-footer a {
+  text-decoration: none;
 }
-ul .item-footer a:visited{
-    color: #fff;
-    text-decoration: none;
+ul .item-footer a:visited {
+  color: #fff;
+  text-decoration: none;
 }
-footer p{
-    display: block;
-    width: 100vw;
-    height: 31px;
-    background: #FFFFFF;
+footer p {
+  display: block;
+  width: 100vw;
+  height: 31px;
+  background: #ffffff;
 
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 31px;
-    text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 31px;
+  text-align: center;
 
-    color: var(--color-black);
-
-
+  color: var(--color-black);
 }
 
 /*O scrollbar*/
 textarea::-webkit-scrollbar,
-body::-webkit-scrollbar{
-    appearance: none;
-    width: 6px;
-    border-radius: 15px;
+body::-webkit-scrollbar {
+  appearance: none;
+  width: 6px;
+  border-radius: 15px;
 }
 textarea::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track{
-    border-radius: 15px;
-    background-color: none;
+body::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background-color: none;
 }
 textarea::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb{
-    background: rgba(133, 133, 133, 0.76);
-    border-radius: 15px;
-    border: 0.7px solid rgba(0, 0, 0, 0.336);
+body::-webkit-scrollbar-thumb {
+  background: rgba(133, 133, 133, 0.76);
+  border-radius: 15px;
+  border: 0.7px solid rgba(0, 0, 0, 0.336);
 }
 
 /*Para links*/
-a:visited{
-    color: currentColor;
-    text-decoration: none;
+a:visited {
+  color: currentColor;
+  text-decoration: none;
 }
-a{
-    text-decoration: none;
-    color: currentColor;
+a {
+  text-decoration: none;
+  color: currentColor;
 }

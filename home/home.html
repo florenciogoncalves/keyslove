@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Complete o perfil - Keyslov</title>
-    <link rel="stylesheet" href="../style/padrao.css" />
+    <link rel="stylesheet" href="../style/home.css" />
   </head>
   <body>
     <div id="div-left">
@@ -72,7 +72,6 @@
           <li><a href="#">Teste de amor</a></li>
         </ul>
       </nav>
-
       <div id="peoples-left">
         <h4>Pessoas pela região</h4>
 
@@ -83,72 +82,93 @@
         </div>
       </div>
     </div>
-    <div id="content-right">
-      <form action="#" class="principal-content">
-        <header class="content-header">
-          <img src="../images/Book_check_fill.svg" />
-          <h1>Educação e Cultura</h1>
-        </header>
 
-        <div id="container-elements">
-          <div class="iten">
-            <label for="nacionalidade">Nacionalidade</label>
+    <main id="home">
+      <ul class="home-bar">
+        <li class="visualized"></li>
+        <li class="visualized"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
 
-            <select id="nacionalidade">
-              <option>Selecionar...</option>
-            </select>
-          </div>
+      <div class="home-nav">
+        <button id="preview-carroussel">&lt;</button>
+        <button id="next-carroussel">&gt;</button>
+      </div>
 
-          <div class="iten">
-            <label for="educacao">Educação</label>
+      <div class="home-footer">
+        <h3 id="person-name">Nome pessoa 100</h3>
+        <div class="talk-now">
+          Conversar agora &nbsp;
 
-            <select id="educacao">
-              <option>Selecionar...</option>
-            </select>
-          </div>
+          <img
+            src="../images/bandeiradobrasil-2-cke (1) 1.png"
+            alt="Brasil"
+            class="img-2"
+          />&nbsp; <img src="../images/Group 8777.svg" />&nbsp;
+          <img
+            src="../images/bandeira-dos-eua-estados-unidos-da-america 1.png"
+            alt="Inglês"
+            class="img-1"
+          />
+        </div>
 
-          <div class="iten">
-            <label for="idiomas">Idiomas</label>
-            <select id="idiomas">
-              <option>Selecionar...</option>
-            </select>
-          </div>
+        <ul id="tag-area">
+          <li>#trabalhando</li>
+          <li></li>
+          <li></li>
+        </ul>
 
-          <div class="iten">
-            <label for="nivel-ingles">Seu nível de inglês</label>
-            <select id="nivel-ingles">
-              <option selected disabled>Selecionar...</option>
-            </select>
-          </div>
+        <p id="subtitle">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />Nullam
+          non fringilla lacus. Aliquam eget accumsan turpis
+        </p>
 
-          <div class="iten">
-            <label for="religiao">Religião</label>
-            <select id="religiao">
-              <option selected disabled>Selecionar...</option>
-            </select>
-          </div>
-
-          <div class="iten">
-            <label for="signo">Signo</label>
-            <select id="signo">
-              <option selected disabled>Selecionar...</option>
-            </select>
+        <div id="home-progress-content">
+          <div id="home-progress-bar">
+            <span id="home-progress-val"></span>
           </div>
         </div>
 
-        <div class="progress-next">
-          <div class="progress-bar-content">
-            <div class="progress-bar">
-              <span class="progress-val"></span>
-            </div>
-          </div>
-
-          <button class="next-page-about">></button>
+        <div id="home-btns">
+          <button id="retry"></button>
+          <button id="dislike"></button>
+          <button id="maybe">Talvez</button>
+          <button id="like"></button>
+          <button id="favorite"></button>
         </div>
-      </form>
+      </div>
+
+      <img src="../temp-3.png" id="main-image" alt="Fotografia" />
+    </main>
+
+    <div class="dialog-container dialog-information">
+      <div class="dialog-content">
+        <button class="exit" value="info-close"></button>
+        <h2>Entenda como funciona</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book
+        </p>
+      </div>
     </div>
 
-    <script src="../script/trabalho-profissao.js"></script>
+    <div class="dialog-container dialog-question">
+      <div class="dialog-content">
+        <button class="exit"></button>
+        <p>
+          Quer receber um aviso quando <strong>Joaquim Coutto</strong> curtir
+          você também?
+        </p>
+        <button id="active">Ativar</button>
+        <button id="pass-this">Não tenho interesse</button>
+      </div>
+    </div>
+
     <script src="../script/script.js"></script>
   </body>
 </html>
