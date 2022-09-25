@@ -8,78 +8,80 @@
     <link rel="stylesheet" href="../style/padrao.css" />
   </head>
   <body>
-    <div id="div-left">
-      <div id="user-information">
-        <figure>
-          <div src="../temp-1.png" alt="Foto de perfil" id="img-perfil"></div>
+    <div id="menu-esquerdo">
+      <div id="div-left">
+        <div id="user-information">
+          <figure>
+            <img src="../temp.png" alt="Foto de perfil" id="img-perfil" />
 
-          <figcaption>
-            <div class="status"></div>
-            <h2>Lorem Ipsun Silva</h2>
-            <a href="#">Escolher status</a>
-          </figcaption>
-        </figure>
+            <figcaption>
+              <div class="status"></div>
+              <h2>Lorem Ipsun Silva</h2>
+              <a href="#">Escolher status</a>
+            </figcaption>
+          </figure>
 
-        <img src="../images/option.svg" />
-      </div>
+          <img src="../images/option.svg" />
+        </div>
 
-      <nav>
-        <ul id="menu-left">
-          <li><a href="#">Perfil</a></li>
-          <li><a href="#">Chamada de video</a></li>
-          <li><a href="#">Carroussel</a></li>
-          <li><a href="#">Curtidas</a></li>
-          <li><a href="#">Planos</a></li>
-          <li><a href="#">Favoritos</a></li>
-          <li><a href="#">Configurações</a></li>
-          <li><a href="#">Mensagens</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li id="online-now">
-            Online agora
+        <nav>
+          <ul id="menu-left">
+            <li><a href="#">Perfil</a></li>
+            <li><a href="../home/chamada.html">Chamada de video</a></li>
+            <li><a href="../home/carroussel.html">Carroussel</a></li>
+            <li><a href="#">Curtidas</a></li>
+            <li><a href="#">Planos</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Mensagens</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li id="online-now">
+              Online agora
 
-            <div class="changing-status">
-              <div class="this-status">
-                <input
-                  type="radio"
-                  name="online-agora"
-                  value="online"
-                  id="online"
-                />
-                <label for="online">Online</label>
+              <div class="changing-status">
+                <div class="this-status">
+                  <input
+                    type="radio"
+                    name="online-agora"
+                    value="online"
+                    id="online"
+                  />
+                  <label for="online">Online</label>
+                </div>
+
+                <div class="this-status">
+                  <input
+                    type="radio"
+                    name="online-agora"
+                    id="ocupado"
+                    value="ocupado"
+                  />
+                  <label for="ocupado">Ocupado</label>
+                </div>
+
+                <div class="this-status">
+                  <input
+                    type="radio"
+                    name="online-agora"
+                    id="invisivel"
+                    value="invisivel"
+                  />
+                  <label for="invisivel">Invisível</label>
+                </div>
               </div>
+            </li>
+            <li><a href="#">Teste de amor</a></li>
+          </ul>
+        </nav>
 
-              <div class="this-status">
-                <input
-                  type="radio"
-                  name="online-agora"
-                  id="ocupado"
-                  value="ocupado"
-                />
-                <label for="ocupado">Ocupado</label>
-              </div>
+        <div id="peoples-left">
+          <h4>Pessoas pela região</h4>
 
-              <div class="this-status">
-                <input
-                  type="radio"
-                  name="online-agora"
-                  id="invisivel"
-                  value="invisivel"
-                />
-                <label for="invisivel">Invisível</label>
-              </div>
-            </div>
-          </li>
-          <li><a href="#">Teste de amor</a></li>
-        </ul>
-      </nav>
-
-      <div id="peoples-left">
-        <h4>Pessoas pela região</h4>
-
-        <div class="people-organizer">
-          <img src="../temp-2.svg" />
-          <img src="../temp-2.svg" />
-          <img src="../temp-2.svg" />
+          <div class="people-organizer">
+            <img src="../temp-2.svg" />
+            <img src="../temp-2.svg" />
+            <img src="../temp-2.svg" />
+          </div>
         </div>
       </div>
     </div>

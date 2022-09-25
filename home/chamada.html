@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete o perfil - Keyslov</title>
+    <link rel="stylesheet" href="../style/home.css" />
+  </head>
+  <body>
+    <div id="menu-esquerdo">
+      <div id="div-left">
+        <div id="user-information">
+          <figure>
+            <img src="../temp.png" id="img-perfil" />
+
+            <figcaption>
+              <div class="status"></div>
+              <h2>Lorem Ipsun Silva</h2>
+              <a href="#">Escolher status</a>
+            </figcaption>
+          </figure>
+
+          <img src="../images/option.svg" />
+        </div>
+
+        <nav>
+          <ul id="menu-left">
+            <li><a href="#">Perfil</a></li>
+            <li>
+              <a href="../home/chamada.html" class="pagina-selecionada"
+                >Chamada de video</a
+              >
+            </li>
+            <li><a href="../home/carroussel.html">Carroussel</a></li>
+            <li><a href="#">Curtidas</a></li>
+            <li><a href="#">Planos</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Mensagens</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li id="online-now">
+              Online agora
+
+              <div class="changing-status">
+                <div class="this-status">
+                  <input
+                    type="radio"
+                    name="online-agora"
+                    value="online"
+                    id="online"
+                  />
+                  <label for="online">Online</label>
+                </div>
+
+                <div class="this-status">
+                  <input
+                    type="radio"
+                    name="online-agora"
+                    id="ocupado"
+                    value="ocupado"
+                  />
+                  <label for="ocupado">Ocupado</label>
+                </div>
+
+                <div class="this-status">
+                  <input
+                    type="radio"
+                    name="online-agora"
+                    id="invisivel"
+                    value="invisivel"
+                  />
+                  <label for="invisivel">Invisível</label>
+                </div>
+              </div>
+            </li>
+            <li><a href="#">Teste de amor</a></li>
+          </ul>
+        </nav>
+        <div id="peoples-left">
+          <h4>Pessoas pela região</h4>
+
+          <div class="people-organizer">
+            <img src="../temp-2.svg" />
+            <img src="../temp-2.svg" />
+            <img src="../temp-2.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main id="chamada-video">
+      <video autoplay loop>
+        <source src="../800f4de5c4eb96a7ba94dde8b146afc2.mp4" />
+      </video>
+      <div class="legenda-chamada">
+        <button>&lt;</button>
+        <span>Lorem ipsum</span>
+      </div>
+      <div class="comandos-chamada">
+        <input type="checkbox" id="microfone" />
+        <button id="desligar"></button>
+        <button id="trocar-camera"></button>
+      </div>
+    </main>
+
+    <div class="dialog-container dialog-question">
+      <div class="dialog-content">
+        <button class="exit"></button>
+        <p>
+          Quer receber um aviso quando <strong>Joaquim Coutto</strong> curtir
+          você também?
+        </p>
+        <button id="active">Ativar</button>
+        <button id="pass-this">Não tenho interesse</button>
+      </div>
+    </div>
+
+    <div class="dialog-container dialog-information">
+      <div class="dialog-content">
+        <button class="exit" value="info-close"></button>
+        <h2>Entenda como funciona</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book
+        </p>
+      </div>
+    </div>
+
+    <script src="../script/script.js"></script>
+  </body>
+</html>
