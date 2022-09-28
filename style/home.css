@@ -130,9 +130,7 @@ main .talk-now img:not(.img-1, .img-2) {
 
 main .talk-now .img-1,
 main .talk-now .img-2 {
-  width: 28px;
-  height: 18.54px;
-  padding-top: 5px;
+
   align-self: center;
 }
 
@@ -251,7 +249,7 @@ main #home-progress-val {
 .dialog-container {
   overflow-y: hidden;
   position: fixed;
-  display: flex;
+  display: none;
   width: 100%;
   height: 100%;
   z-index: 4;
@@ -358,7 +356,8 @@ main#carroussel {
   box-sizing: border-box;
 }
 
-main#carroussel h1.title {
+#carroussel h1.title,
+h1.title{
   width: 152px;
   height: 48px;
   margin: 0 0 12px;
@@ -424,7 +423,8 @@ main#carroussel .botoes {
   align-items: center;
 }
 
-#informacoes-perfil button {
+#informacoes-perfil button,
+#curtidas .botoes button {
   border: none;
   background: none;
   background-repeat: no-repeat;
@@ -435,13 +435,15 @@ main#carroussel .botoes {
   background-size: 55%;
 }
 
-#carroussel button.dislike {
+#carroussel button.dislike,
+#curtidas button.dislike{
   background-image: url(../images/cross-ico.svg);
   background-color: #b42937;
   margin-right: 20px;
 }
 
-#carroussel button.like {
+#carroussel button.like,
+#curtidas button.like {
   background-image: url(../images/like-ico.svg);
   background-color: #5ccb5f;
 }

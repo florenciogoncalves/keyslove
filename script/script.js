@@ -17,9 +17,17 @@ try {
 }
 
 /*
- *Menu suspenso de 'online agora'
+ *Menu suspenso de 'changing-status'
  */
 const onlineAgora = document.querySelectorAll("[name = 'online-agora']");
+const changingStatus = document.querySelector(".changing-status");
+changingStatus.style.display = "none";
+document.querySelector("#online-now").addEventListener("click", () => {
+  if (changingStatus.style.display != "none")
+    changingStatus.style.display = "none";
+  else changingStatus.style.display = "block";
+});
+
 onlineAgora.forEach((element) =>
   element.addEventListener("click", () => {
     var setado = document.querySelector("#user-information .status");
@@ -62,3 +70,34 @@ try {
 } catch (erro) {
   console.error(erro);
 }
+
+/*Documento mensagens.html
+ *Mostrar janela de tradução*/
+const translatorWindow = document.querySelector(".options-container");
+
+try {
+  translatorWindow.setAttribute("style", "display: none;");
+  document
+    .querySelector(".botoes-top .options")
+    .addEventListener("click", () => {
+      translatorWindow.style.display = "block";
+    });
+} catch (e) {
+  console.error(e);
+}
+
+/*Para ocultar qualquer janela que por predefinição é oculta*/
+document.addEventListener("mousedown", (e) => {
+  try{if (translatorWindow.contains(e.target)) {
+    translatorWindow.style.display = "block";
+  } else {
+    translatorWindow.style.display = "none";
+  }}catch(erro){
+    console.log(erro)
+  }
+  if (changingStatus.contains(e.target)) {
+    changingStatus.style.display = "block";
+  } else {
+    changingStatus.style.display = "none";
+  }
+});
