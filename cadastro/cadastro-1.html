@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keyslov - Cadastro</title>
-    <link rel="stylesheet" href="../style/cadastro.css" >
-</head>
-<body>
-    <header id="header-content">
-        <img src="../images/Keyslov.svg" class="header-logo">
-        <nav class="nav-btn">
-            <button id="enter-account">Entrar</button>
-        </nav>
-
-        
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../style/cadastro.css" />
+  </head>
+  <body>
+    <header class="header-content">
+      <img src="../images/Keyslov.svg" class="header-logo" />
+      <nav class="nav-btn">
+        <a href="./cadastro/cadastro-1.html"><button>Criar conta</button></a>
+        <a href="./login.html"><button>Entrar</button></a>
+      </nav>
     </header>
-    <div class="cadastro-layout">
-        <form action="#"  id="form-cadastro1">
-            <h1>Cadastro de conta</h1>
-            <label for="cad-email">Email</label>
-            <input type="email" id="cad-email" placeholder="Nome exemplo" required>
-            <label for="cad-tel">Telefone</label>
-            <input type="tel" id="cad-tel" placeholder="+55(11) 900000000">
-            <label for="cad-pass">Senha</label>
-            <input type="password" id="cad-pass" placeholder="****************" required>
-            <label for="cad-confirm-pass">Senha de confirmação</label>
-            <input type="password" id="cad-confirm-pass" placeholder="****************" required>
-            <div class="checkbox">
-                <input type="checkbox" id="accept-terms">
-                <label for="accept-terms">Aceito a política de privacidade</label>
-            </div>
-            <button class="continue btn-register">CADASTRAR</button>
-        </form>
-    </div>
 
-</body>
+    <div class="form-cadastro-container">
+      <div class="cadastro-layout">
+        <form action="./cadastro-2.html" method="get" id="form-cadastro1">
+          <h1>Cadastro de conta</h1>
+          <label for="cad-email">Email</label>
+          <input
+            type="email"
+            id="cad-email"
+            placeholder="Nome exemplo"
+            required
+          />
+          <label for="cad-tel">Telefone</label>
+          <input
+            type="tel"
+            id="cad-tel"
+            placeholder="+55(11) 900000000"
+            required
+          />
+          <label for="cad-pass">Senha</label>
+          <input
+            type="password"
+            id="cad-pass"
+            placeholder="****************"
+            required
+          />
+          <label for="cad-confirm-pass">Senha de confirmação</label>
+          <input
+            type="password"
+            id="cad-confirm-pass"
+            placeholder="****************"
+            required
+          />
+          <div class="checkbox">
+            <input type="checkbox" id="accept-terms" required />
+            <label for="accept-terms">Aceito a política de privacidade</label>
+          </div>
+          <button class="continue btn-register">CADASTRAR</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

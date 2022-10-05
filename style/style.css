@@ -1,0 +1,1994 @@
+@import url(./logon.css);
+@import url(./home.css);
+@import url(./responsive.css);
+
+body {
+  position: relative;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  margin-top: 10px;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+
+
+  background-image: url(../images/hearth-bg-right.svg);
+  background-size: auto;
+  background-position: right center;
+}
+
+li{
+  list-style: none;
+    cursor: pointer;
+}
+
+#menu-esquerdo {
+  height: 100%;
+  width: max-content;
+  display: flex;
+}
+
+/*Estilo aplicado a todas as scrollbars*/
+*::-webkit-scrollbar {
+  appearance: none;
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(88, 88, 88, 0.61);
+  border-radius: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: none;
+}
+
+/*menu flutuante a direita*/
+#div-left {
+  width: 350px;
+  height: max-content;
+  background: none;
+  position: relative;
+  margin-left: 5%;
+}
+
+/*Barra vermelha com informações do usuário*/
+#user-information,
+#friend-information {
+  width: 100%;
+  max-height: 111px;
+  padding: 2% 0;
+  background: var(--vermelho-principal);
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  color: var(--color-white);
+}
+
+#user-information{
+  display: grid;
+  grid-template-columns: auto max-content;
+  padding: 0;
+}
+
+#user-information figure,
+#friend-information figure {
+  display: flex;
+  position: relative;
+}
+
+/*Imagens de perfil*/
+#user-information figure #img-perfil,
+#mensagens #friend-information figure #img-perfil,
+#mensagens .list-peoples object {
+  min-width: 5.38em;
+  max-width: 5.38em;
+  min-height: 5.38em;
+  max-width: 5.38em;
+  border-radius: 7em;
+  margin: auto 6% auto 20px;
+  background-color: rgba(51, 51, 51, 0.3);
+  font-size: 11px;
+  object-fit: cover;
+}
+
+#user-information figcaption,
+#friend-information figcaption {
+  height: 4.4em;
+  margin: auto 0;
+}
+
+#user-information figcaption > .status,
+#friend-information figcaption > .friend-status {
+  background-color: var(--status-on);
+  width: 1em;
+  height: 1em;
+  border-radius: 15px;
+  position: absolute;
+  left: 18%;
+  top: 71%;
+  transition: all 600ms;
+}
+
+#user-information h2 {
+  font-weight: 600;
+  font-size: 14px;
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 5%;
+}
+
+#user-information a {
+  font-weight: 400;
+  font-size: 12px;
+  text-decoration-line: underline;
+}
+
+#user-information > img {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  cursor: pointer;
+  margin: 10% 0.5em;
+}
+
+/*Menu oculto do ícone no topo*/
+#user-information .hidden-list{
+  background: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  display: none;
+  margin-top: 10%;
+  margin-left: 90%;
+  width: 269px;
+  color: #000;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.11);
+
+  font-size: 16px;
+}
+
+#user-information .hidden-list li:first-of-type{
+  background: url(../images/oculto.svg) no-repeat center left 2%;
+}
+
+#user-information ul{
+  margin: 10px;
+  width: 100%;
+}
+
+#user-information li{
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  text-indent: 15%;
+}
+
+/*Lista de opções branca*/
+#menu-left {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#menu-left li {
+  box-sizing: border-box;
+  height: 100%;
+  line-height: 2.4em;
+  padding: 0;
+  text-indent: 80px;
+
+  background-size: 1.25em;
+  background-repeat: no-repeat;
+  background-position: 2em center;
+  transition: all ease-in 250ms;
+
+  font-weight: 400;
+  font-size: 15px;
+  color: #333;
+}
+
+.pagina-selecionada {
+  background: #f5f5f5;
+  background-image: inherit;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 40px center;
+}
+#menu-left li:hover {
+  background-position: 60px center;
+  text-indent: 110px;
+}
+/*Aplicando as imagens de fundo das opcões da lista*/
+#menu-left li:nth-of-type(1) {
+  background-image: url(../images/Icon.svg);
+}
+#menu-left li:nth-of-type(2) {
+  background-image: url(../images/Vector-1.svg);
+}
+#menu-left li:nth-of-type(3) {
+  background-image: url(../images/Icon-4.svg);
+}
+#menu-left li:nth-of-type(4) {
+  background-image: url(../images/Vector-2.svg);
+}
+#menu-left li:nth-of-type(5) {
+  background-image: url(../images/Icon-2.svg);
+}
+#menu-left li:nth-of-type(6) {
+  background-image: url(../images/Icon-1.svg);
+}
+#menu-left li:nth-of-type(7) {
+  background-image: url(../images/Icon-3.svg);
+}
+#menu-left li:nth-of-type(8) {
+  background-image: url(../images/Vector.svg);
+}
+#menu-left li:nth-of-type(9) {
+  background-image: url(../images/Icon-5.svg);
+}
+#menu-left li:nth-of-type(10) {
+  background-image: url(../images/Icon-6.svg);
+}
+#menu-left li:nth-of-type(11) {
+  background-image: url(../images/Vector\ 15.svg);
+}
+
+#menu-left a {
+  display: flex;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+#online-now {
+  position: relative;
+  display: flex;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+#online-now .changing-status {
+  display: none;
+  position: absolute;
+  margin-top: 2em;
+  padding: .9em 0;
+  left: 185px;
+  width: 16em;
+  max-width: 246px;
+  box-sizing: border-box;
+  height: max-content;
+  border-radius: 10px;
+  box-shadow: 0px -1px 7px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+  text-indent: 0;
+  background-color: white;
+  z-index: 3;
+}
+
+#online-now input[type="radio"] {
+  background-color: #333333;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#online-now:hover .changing-status {
+  display: block;
+}
+
+.this-status {
+  height: max-content;
+  display: flex;
+}
+
+.this-status label {
+  display: inline-block;
+  height: 2.4em;
+  text-indent: 18px;
+  width: 100%;
+
+  font-size: 12px;
+  line-height: 2em;
+  font-weight: 400;
+  color: black;
+}
+
+/*Menu oculto para o status*/
+.this-status input:checked + label {
+  background-image: url(../images/confirm.svg);
+  background-repeat: no-repeat;
+  background-position: 210px center;
+  background-size: 18px;
+  transition: all 200ms;
+}
+
+.this-status label:hover {
+  background-color: rgba(252, 0, 59, 0.42);
+}
+
+/*Pessoas na região*/
+#peoples-left {
+  margin-top: 20px;
+  height: max-content;
+  padding: 10px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 0 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#peoples-left h4 {
+  font-weight: 400;
+  text-align: justify;
+  font-size: 20px;
+  background: url(../images/right-arrow.svg) no-repeat center right 145px;
+}
+
+#peoples-left .people-organizer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+}
+
+#peoples-left img {
+  width: 95%;
+  height: 135px;
+}
+
+/*Layout para o conteúdo da direita*/
+#content-right {
+  width: 690px;
+  height: 1040px;
+  margin-top: 30px;
+  background-color: var(--color-white);
+  box-sizing: border-box;
+  padding: 20px 95px;
+}
+
+#content-right .principal-content {
+  width: 480px;
+  margin: 0 auto;
+}
+
+#container-elements {
+  display: flex;
+  height: 720px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#content-right .principal-content label {
+  margin: 17px 0 6px;
+  font-size: 18px;
+  display: block;
+}
+
+#content-right .principal-content input:not([type="range"]),
+#content-right .principal-content select {
+  box-sizing: border-box;
+  min-width: 100%;
+  height: 56px;
+  padding: 0 15px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.901502px solid #000000;
+  border-radius: 7.21202px;
+
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 56px;
+  color: rgba(0, 0, 0);
+}
+
+#content-right .principal-content select {
+  appearance: none;
+  background: url(../images/arrow-down.svg) no-repeat center right 15px;
+}
+
+.content-header {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 31.76px auto;
+}
+
+.content-header > img {
+  width: 35.33px;
+  height: 39.75px;
+  margin: auto;
+}
+
+.content-header > h1 {
+  font-weight: 500;
+  font-size: 32px;
+  margin-top: 15px;
+  letter-spacing: 5px;
+}
+
+.progress-next {
+  display: flex;
+  width: 480px;
+  height: max-content;
+  justify-content: space-between;
+  margin-top: 55px;
+}
+
+.principal-content .progress-bar-content {
+  padding: 0;
+  margin: auto 0;
+  height: 24px;
+  width: 436px;
+  background: rgba(0, 0, 0, 0.48);
+  border-radius: 15px;
+  overflow: auto;
+}
+
+.principal-content .progress-bar {
+  background-color: var(--vermelho-principal);
+  height: 24px;
+  width: 0%;
+  display: flex;
+  border-radius: 15px;
+  overflow: visible;
+}
+
+.principal-content .progress-bar span.progress-val {
+  display: flex;
+  float: right;
+  line-height: 24px;
+  margin: 0 5px 0 auto;
+  color: var(--color-white);
+}
+
+.principal-content .next-page-about {
+  width: 33px;
+  height: 32px;
+
+  background: rgba(0, 0, 0, 0.11);
+  border: 1px solid #fc003b;
+  border-radius: 10px;
+
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 32px;
+  color: var(--vermelho-principal);
+}
+
+/*Mexendo em 'educacao-e-cultura.html*/
+.principal-content textarea {
+  box-sizing: border-box;
+  width: 480px;
+  height: 170px;
+  padding: 13px 17px;
+  overflow: auto;
+
+  text-align: justify;
+  resize: none;
+  font-size: 16px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.901502px solid #000000;
+  border-radius: 7.21202px;
+}
+
+/*Documento chamada.html*/
+#chamada-video {
+  width: 690px;
+  height: 964px;
+  box-sizing: border-box;
+  background: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#chamada-video video {
+  width: 690px;
+  height: 964px;
+  position: absolute;
+  object-fit: cover;
+}
+
+#chamada-video .legenda-chamada {
+  width: 100%;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+
+  color: #fff;
+  line-height: 57px;
+  font-size: 32px;
+  font-weight: 400;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#chamada-video .legenda-chamada span {
+  margin: 0 auto;
+}
+
+#chamada-video .legenda-chamada button {
+  width: 60px;
+  height: 57px;
+  margin: auto;
+  border: none;
+  background: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 32px;
+  position: absolute;
+}
+
+#chamada-video .comandos-chamada {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 34px;
+}
+
+#chamada-video .comandos-chamada button,
+#chamada-video .comandos-chamada #microfone {
+  border: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: auto 0;
+}
+
+#chamada-video #microfone {
+  appearance: none;
+  background: url(../images/mic-icon.svg) no-repeat center #fff;
+}
+
+#chamada-video #microfone:checked {
+  background-image: url(../images/microfone-off.svg);
+}
+
+#chamada-video #desligar {
+  width: 100px;
+  height: 100px;
+  border-radius: 70px;
+  background: url(../images/call-icon.svg) no-repeat center #b42937;
+}
+
+#chamada-video #trocar-camera {
+  background: url(../images/camera-icon.svg) no-repeat center #fff;
+}
+
+/*Estilizando o arquivo 'mensagens.html'
+*Para a lista de pessoas*/
+main#mensagens {
+  display: flex;
+}
+
+main#mensagens .peoples-to-chat {
+  width: 380px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 964px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#mensagens .peoples-to-chat h2 {
+  width: 100%;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100px;
+  text-align: center;
+}
+
+#mensagens .list-peoples {
+  overflow: hidden;
+  overflow-y: scroll;
+  display: grid;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+#mensagens .list-peoples::-webkit-scrollbar,
+#mensagens #sended::-webkit-scrollbar {
+  background: none;
+  width: 10px;
+}
+
+#mensagens .list-peoples::-webkit-scrollbar-thumb,
+#mensagens #sended::-webkit-scrollbar-thumb {
+  background-color: #b1aeae00;
+  border-radius: 10px;
+}
+
+#mensagens .list-peoples::-webkit-scrollbar-thumb:hover,
+#mensagens #sended::-webkit-scrollbar-thumb:hover {
+  background-color: #b1aeae;
+  transition: all ease-in-out 300ms;
+}
+
+#mensagens .gradient {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+}
+
+#mensagens .list-peoples .person {
+  display: flex;
+  height: 91px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+#mensagens .list-peoples .person-selected {
+  background-color: rgba(252, 0, 59, 0.12);
+}
+
+#mensagens .list-peoples .person object {
+  margin-left: 0px;
+}
+
+#mensagens .list-peoples .person h3 {
+  font-weight: 400;
+  width: 250px;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#mensagens .list-peoples p {
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(51, 51, 51, 0.4);
+  white-space: nowrap;
+  width: 270px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*Para o lado do chat corrente*/
+main#mensagens .chat {
+  width: 567px;
+  height: 964px;
+
+  background-color: #e2dfdf;
+}
+
+#mensagens #friend-information {
+  width: 100%;
+  display: flex;
+}
+
+#mensagens .friend-status {
+  margin-left: 870px;
+  margin-top: 30px;
+}
+
+#mensagens #friend-information h2 {
+  line-height: 75px;
+  width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 15px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  white-space: nowrap;
+}
+
+#mensagens .botoes-top {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  margin: auto 0 auto auto;
+  position: relative;
+}
+
+#mensagens .botoes-top button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+#mensagens .botoes-top .video-call {
+  background-image: url(../images/video-icon.svg);
+  margin-right: 5px;
+}
+#mensagens .botoes-top .options {
+  background-image: url(../images/dots-icon.svg);
+  background-size: 6px;
+}
+
+/*Para o menu de tradução oculto*/
+#mensagens .options-container {
+  top: 45px;
+  left: -200%;
+  position: absolute;
+  width: 260px;
+  min-height: 103px;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 2;
+}
+
+#mensagens .botoes-top .options-container .translate > span {
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#mensagens .botoes-top .options-container label {
+  width: 30px;
+  height: 15px;
+  display: block;
+  background: #c4c4c4;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#mensagens .botoes-top input[type="checkbox"] {
+  display: none;
+}
+
+#mensagens .botoes-top .options-container .translate-on-off {
+  width: 18px;
+  height: 18px;
+  border-radius: 16px;
+  background-color: var(--vermelho-principal);
+  margin-top: -2px;
+  padding: 0;
+  float: left;
+  transition: all 600ms;
+}
+
+#mensagens .botoes-top #active-translator:checked + .translate-on-off {
+  transform: translateX(100%);
+}
+/*Alteração do idioma*/
+#mensagens .talk-now {
+  width: 100%;
+  padding: 0;
+  margin-top: 20px;
+  justify-content: space-between;
+  display: flex;
+}
+
+#mensagens .talk-now img:nth-child(2) {
+  width: 30px;
+}
+
+#mensagens .img-1-container,
+#mensagens .img-2-container {
+  border: 1px solid var(--vermelho-principal);
+  border-radius: 10px;
+  color: #000;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 120px;
+}
+
+/*Área reservada para as mensagens já escritas e por fazer*/
+#mensagens #privado {
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 101px);
+}
+
+/*Mensagens já enviadas*/
+#mensagens #sended {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+#mensagens .the-message-container {
+  margin-top: 25px;
+}
+
+#mensagens .identifier {
+  width: 45%;
+  height: max-content;
+  display: flex;
+}
+
+#mensagens #sended object {
+  width: 42px;
+  height: 42px;
+  background: rgba(51, 51, 51, 0.3);
+  border-radius: 40px;
+  margin: 8px;
+  object-fit: cover;
+}
+
+#mensagens #sended .identifier > span {
+  height: 100%;
+  margin: auto 0 20px;
+  font-size: 10px;
+  font-weight: 500;
+}
+#mensagens #sended .identifier > span > span {
+  color: var(--vermelho-principal);
+  font-size: 32px;
+  background: var(--vermelho-principal);
+  border-radius: 4px;
+  display: inline-block;
+  height: 4px;
+  width: 4px;
+  margin: auto 2px 2px;
+}
+
+#mensagens .text-container {
+  background: #f4f4f4;
+  max-width: 60%;
+  min-height: 30px;
+  height: max-content;
+  margin-left: 25px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#mensagens .text-container .writed-message {
+  padding: 12px;
+  overflow: hidden;
+  max-height: max-content;
+  word-break: break-word;
+}
+
+#mensagens .text-container .blur {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+#mensagens .interaction {
+  margin: 10px;
+  background: #fff;
+  border: 5px;
+  padding: 7px 6px;
+}
+
+#mensagens .interaction-info {
+  display: grid;
+  width: 100%;
+  margin: 10px 0;
+  grid-template-columns: max-content auto;
+  font-size: 14px;
+  text-align: justify;
+}
+
+#mensagens .interaction-info img {
+  margin: auto 15px;
+  height: 50%;
+}
+
+#mensagens .text-container .confirm {
+  width: 100%;
+  height: 34px;
+  border: none;
+  background: var(--vermelho-principal);
+  color: #fff;
+  border-radius: 4px;
+
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Para a mensagem enviada pelo usuário */
+#mensagens #privado .user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 20px;
+}
+
+#mensagens #privado .user .identifier {
+  width: max-content;
+  margin-bottom: 5px;
+  height: max-content;
+  padding: 0;
+  display: inline;
+}
+
+#mensagens #privado .user .text-container {
+  background: rgba(255, 255, 255, 0.76);
+}
+
+#mensagens #create-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin: 10px auto 20px;
+}
+
+#mensagens #privado .add-media {
+  width: 52px;
+  height: 52px;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  margin: auto auto 0;
+  background-color: var(--vermelho-principal);
+
+  color: #fff;
+  font-size: 36px;
+}
+
+#mensagens .message-text-container {
+  width: 479px;
+  min-height: 47px;
+  height: max-content;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 15px;
+  overflow: hidden;
+}
+
+#mensagens #message-text {
+  width: 100%;
+  height: 47px;
+  max-height: 160px;
+  padding: 15px 0 15px 15px;
+  margin: 10px 0px;
+  resize: none;
+  border: none;
+  text-align: justify;
+  box-sizing: border-box;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: normal;
+}
+
+#mensagens #message-text::-webkit-scrollbar {
+  display: none;
+}
+
+#mensagens #message-text:focus {
+  outline: none;
+}
+
+#mensagens .send-message {
+  width: 47px;
+  height: 47px;
+  margin-right: 15px;
+  border: none;
+  position: relative;
+  background: url(../images/send-message-icon.svg) no-repeat center;
+}
+
+/* DOCUMENTO curtidas.html & localizar-pessoas.html*/
+.padrao {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  width: 860px;
+  min-height: 920px;
+  padding: 32px 29px;
+}
+
+.padrao ul.list {
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  row-gap: 30px;
+  grid-template-columns: repeat(auto-fit, 186px);
+  box-sizing: content-box;
+}
+
+.padrao .list li {
+  display: block;
+  flex-direction: column;
+  width: 186px;
+  height: 211px;
+  border-radius: 10px;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.padrao .list li img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.padrao .list section {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.padrao .list article {
+  display: block;
+  flex-direction: column;
+  margin: 72% 15px;
+}
+
+.padrao.list ul {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.padrao .list .status-div {
+  width: 13px;
+  height: 13px;
+  border-radius: 15px;
+  background-color: var(--status-on);
+  display: inline-flex;
+  margin-bottom: 5px;
+}
+
+.padrao .list span {
+  display: inline-block;
+  max-width: 120px;
+  font-size: 18px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.padrao ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.padrao .list article li {
+  width: 48.92px;
+  height: 13.94px;
+
+  background: rgba(0, 0, 0, 0.52);
+  border-radius: 6.69421px;
+
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 13.94px;
+}
+
+.padrao .list .botoes {
+  position: relative;
+  display: none;
+  margin: auto;
+  width: max-content;
+  justify-content: space-between;
+}
+
+/* Ao passar em algum item da lista */
+.padrao .list li:hover .status-div,
+.padrao li:hover ul {
+  display: none;
+}
+
+.padrao .list li:hover section {
+  display: flex;
+  flex-direction: column;
+}
+
+.padrao .list li:hover article {
+  display: block;
+  justify-content: center;
+  margin: 0;
+  align-items: center;
+}
+
+.padrao .list li:hover span {
+  text-align: center;
+  display: block;
+  margin: 10px auto 0;
+  max-width: 170px;
+  transition: all 400ms;
+}
+
+.padrao .list li:hover .botoes {
+  position: relative;
+  display: flex;
+  bottom: 0;
+  margin: auto auto 15px;
+}
+
+/*localizar-pessoas.html*/
+#pessoas-regiao .search {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  margin: 20px 0 70px;
+}
+#pessoas-regiao .search-field {
+  width: 615px;
+
+  height: 61px;
+  box-sizing: border-box;
+  display: flex;
+
+  border: 1px solid #31302e;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#pessoas-regiao .search-field input[type="search"] {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+}
+
+#pessoas-regiao .search-field button {
+  height: 45px;
+  margin: auto;
+  display: inline-block;
+  width: 45px;
+  border: none;
+  margin-right: 10px;
+  background: url(../images/Search.svg) no-repeat center;
+}
+
+/*para Filtros*/
+#pessoas-regiao .search > button {
+  width: 190px;
+  height: 61px;
+  left: 1153px;
+  top: 133px;
+  border: 1px solid #000000;
+  background: url(../images/Filter.svg) no-repeat center right 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-right: 20px;
+
+  font-size: 20px;
+}
+/*planos.html*/
+#planos,
+#pacotes-pagamento,
+#metodo-pagamento {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#pacotes-pagamento {
+  height: 100%;
+}
+
+#planos .card-container {
+  display: grid;
+  grid-template-columns: repeat(autofit, 250px);
+  grid-auto-flow: column dense;
+  column-gap: 40px;
+  max-height: 327px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0 5px 20px;
+  width: 100%;
+}
+
+#planos .card-container::-webkit-scrollbar-thumb {
+  display: block;
+  background: rgba(194, 194, 194, 0.308);
+  border-radius: 10px;
+}
+
+#planos .card-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(194, 194, 194);
+}
+
+#planos .card-content {
+  width: 250px;
+  height: 327px;
+  max-height: 327px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+#planos .card-content img {
+  width: 75%;
+  margin: auto;
+  display: block;
+  height: max-content;
+}
+
+#planos .card-content p {
+  width: 100%;
+  margin-top: 20px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
+  height: 100%;
+}
+
+#planos .card-content button {
+  width: 100%;
+  min-height: 46px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: auto auto 0;
+}
+
+#planos .card-bank-data {
+  width: 728.08px;
+  height: 282px;
+
+  display: flex;
+  flex-direction: row;
+
+  margin: auto;
+  box-sizing: border-box;
+  background: linear-gradient(
+    180deg,
+    #fd003b 0%,
+    rgba(253, 0, 59, 0.68) 74.79%,
+    rgba(253, 0, 59, 0.54) 93.02%,
+    rgba(253, 0, 59, 0.5) 100%
+  );
+}
+
+#planos .card-bank-data .left-side {
+  padding: 30px;
+  width: 100%;
+}
+
+#planos .card-bank-data label {
+  color: #fff;
+  font-size: 16px;
+  display: block;
+}
+
+#planos .card-bank-data input {
+  width: 277.6px;
+  height: 32.34px;
+  border: none;
+  margin: 8px 0;
+  box-sizing: border-box;
+  padding: 15px;
+
+  background: #ffffff;
+  border-radius: 6.73784px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+  appearance: none;
+  margin: 0;
+}
+
+#planos .card-bank-data .left-side > span:first-of-type {
+  display: block;
+  margin: 15px 0;
+}
+#planos .card-bank-data .left-side > span:last-of-type {
+  display: inline-block;
+}
+#planos .validate {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#planos .validate input {
+  width: 64px;
+  text-align: center;
+}
+
+#planos .card-bank-data .right-side {
+  width: 236.74px;
+}
+
+#planos .card-bank-data .right-side > div {
+  background: #000;
+  width: 236.74px;
+  height: 79.18px;
+  margin-top: 25%;
+}
+
+#planos button {
+  display: block;
+  width: 362px;
+  height: 57px;
+  border-radius: 8px;
+
+  font-size: 16px;
+}
+
+/*Janela de primeira oculta, #metodo-pagamento*/
+#metodo-pagamento {
+  padding: 30px;
+  height: max-content;
+}
+
+#metodo-pagamento .method-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 48% 48%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#metodo-pagamento h3 {
+  font-weight: 500;
+  background: url(../images/arrow-down-red.svg) no-repeat center right;
+  width: max-content;
+  margin-top: 8%;
+  margin-bottom: 6%;
+  padding-right: 8%;
+  font-size: 24px;
+  font-style: normal;
+  color: var(--vermelho-principal);
+  letter-spacing: -1px;
+}
+
+#metodo-pagamento input,
+#metodo-pagamento select {
+  appearance: none;
+  box-sizing: border-box;
+  height: 53px;
+  background: none;
+  padding: 13px 19px;
+  margin: 3.4% 0;
+
+  font-size: 18px;
+
+  border: 1.11552px solid #333333;
+  border-radius: 9px;
+}
+
+#metodo-pagamento .card-validity {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#metodo-pagamento .card-validity div {
+  width: 27%;
+}
+
+#metodo-pagamento .card-validity div:nth-of-type(3) {
+  width: 38%;
+}
+
+#metodo-pagamento .left-side > input,
+#metodo-pagamento .left-side button {
+  width: 100%;
+}
+
+#metodo-pagamento .left-side button {
+  margin-top: 5%;
+}
+
+#metodo-pagamento .card-validity select {
+  width: 100%;
+  text-align: center;
+  background: url(../images/arrow-down.svg) no-repeat center right 10%;
+}
+
+#metodo-pagamento .left-side > select {
+  width: 100%;
+  background: url(../images/arrow-down-red.svg) no-repeat center right 5%;
+  color: var(--vermelho-principal);
+  border: 1px solid var(--vermelho-principal);
+  outline: none;
+}
+
+#metodo-pagamento .card-validity div span {
+  display: block;
+}
+
+#metodo-pagamento .card-validity div input {
+  width: 100%;
+}
+
+/*Lado direito de planos#metodo-pagamento*/
+#metodo-pagamento .right-side {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  row-gap: 25%;
+  margin: auto 0 0;
+}
+
+/*Para o container das bandeiras de cartão*/
+#metodo-pagamento #payment-method {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  row-gap: 15px;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, 91.76px);
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+#metodo-pagamento #payment-method input[type="radio"] {
+  appearance: none;
+  height: 62.4px;
+  border: 1.37998px solid #d9d9d9;
+  border-radius: 8.2799px;
+  min-width: 100%;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+}
+
+#metodo-pagamento #payment-method input[type="radio"]:checked {
+  border: 2.69078px solid #fb6624;
+  border-radius: 8.2799px;
+  transition: all ease-in-out 200ms;
+}
+
+#metodo-pagamento .right-side #card-bank {
+  width: 100%;
+  height: 248px;
+  background: linear-gradient(
+    180deg,
+    #fd003b 0%,
+    rgba(253, 0, 59, 0.68) 74.79%,
+    rgba(253, 0, 59, 0.54) 93.02%,
+    rgba(253, 0, 59, 0.5) 100%
+  );
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 27px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#metodo-pagamento #card-bank .bank-indicative {
+  justify-content: space-between;
+  display: flex;
+  background: #5c0101a2;
+  padding: 0 60px 0 25px;
+}
+
+#metodo-pagamento #card-bank img {
+  height: max-content;
+  margin: 4px 0;
+}
+
+#metodo-pagamento #card-bank .bank-indicative span {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#metodo-pagamento #card-bank > span {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 400;
+}
+
+#metodo-pagamento #card-bank > div:last-of-type {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 60px;
+}
+/*Remover linha com js*/
+#metodo-pagamento {
+  display: none;
+}
+
+/*favoritos.html*/
+#favoritos > nav {
+  display: grid;
+  grid-auto-flow: column;
+  margin-bottom: 3%;
+}
+
+#favoritos > nav label {
+  border-bottom: 3px solid #999;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+  user-select: none;
+}
+
+#favoritos > nav input[type="radio"] {
+  appearance: none;
+  display: none;
+}
+
+#favoritos > nav input[type="radio"]:checked + label {
+  border-bottom: 6px solid var(--vermelho-principal);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  transition: all ease-in-out 300ms;
+}
+
+#favoritos #sep-vizualizou,
+#favoritos #sep-curtiu {
+  display: none;
+}
+
+/*Estilo especial e invertido de #curtiu*/
+#sep-curtiu .status-div,
+.padrao li:hover ul {
+  display: none;
+}
+
+#sep-curtiu section {
+  display: flex;
+  flex-direction: column;
+}
+
+#sep-curtiu .list article {
+  display: block;
+  justify-content: center;
+  margin: 0;
+  align-items: center;
+}
+
+#sep-curtiu .list span {
+  text-align: center;
+  display: block;
+  margin: 10px auto 0;
+  max-width: 170px;
+  transition: all 400ms;
+}
+
+#sep-curtiu .list .botoes {
+  position: relative;
+  display: flex;
+  bottom: 0;
+  margin: auto auto 15px;
+}
+
+/*configuracoes.html*/
+main#configuracoes {
+  width: 623px;
+  display: flex;
+  flex-direction: column;
+}
+#configuracoes #conf-select,
+#configuracoes #conf-account {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#configuracoes .title {
+  font-size: 40px;
+  margin: 0 auto;
+}
+#configuracoes ul#conf-list {
+  display: flex;
+  width: 100%;
+  margin-top: 13%;
+  flex-direction: column;
+}
+
+#configuracoes #conf-list li {
+  text-indent: 2%;
+  font-size: 22px;
+  padding: 4% 0;
+  background: url(../images/arrow-right.svg) no-repeat right 20px center;
+}
+
+/*Excluir a seguir*/
+#configuracoes #conf-account {
+  display: none;
+}
+
+/*Configurações da conta*/
+#configuracoes #conf-list li:hover,
+#configuracoes #conf-account li:hover {
+  transition: all ease-in-out 100ms;
+  background-color: rgba(153, 153, 153, 0.1);
+}
+
+#configuracoes button {
+  font-family: "Raleway";
+}
+
+#configuracoes #conf-select a,
+#configuracoes .back {
+  display: block;
+  margin: auto auto 0;
+  padding-top: 15px;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+#configuracoes #conf-account li {
+  background: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 68% 10%;
+  justify-content: center;
+  cursor: default;
+
+  font-size: 20px;
+}
+
+#configuracoes #conf-account .user-data-show {
+  color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  border: none;
+  background: none;
+  font-size: 20px;
+  padding: 0 5px;
+  margin-right: 5px;
+}
+
+#configuracoes #conf-account .user-data-show:focus {
+  background: rgba(207, 207, 207, 0.315);
+}
+
+#configuracoes .edit {
+  margin: 0 0 0 auto;
+  text-decoration: underline;
+  color: #36356d;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#configuracoes #conf-account #delete-account {
+  font-size: 20px;
+  text-decoration: underline;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 15px;
+  text-indent: 10px;
+}
+
+/*Configuracoes/metodo-de-pagamento*/
+#conf-payment {
+  height: 100%;
+  display: none;
+  flex-direction: column;
+}
+#conf-payment ul {
+  margin-top: 6%;
+  margin-bottom: 3%;
+  display: flex;
+  max-height: 760px;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+#configuracoes #conf-payment li {
+  width: 100%;
+  height: 95px;
+  margin: 2% auto;
+  padding: 10px 55px 10px 16%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto max-content;
+
+  background: url(../images/payment-card-bg.svg) no-repeat center left 4%;
+  background-size: 8%;
+
+  border: 1px solid #fc003b;
+  border-radius: 10px;
+}
+
+#conf-payment li > div {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+#conf-payment li > div span:first-of-type {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#conf-payment li > div span:last-of-type {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.62);
+}
+
+#conf-payment .edit {
+  color: var(--vermelho-principal);
+  margin: auto 0;
+}
+
+#conf-payment button,
+#form-delete-account button {
+  width: 100%;
+  height: 58px;
+  border-radius: 10px;
+  position: sticky;
+  margin-bottom: 10px;
+}
+
+/*confiracoes/notificacoes
+*configuracoes/configuracoes*/
+#conf-notifications,
+#conf-def {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+}
+#conf-notifications ul,
+#conf-def ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 15%;
+}
+
+#conf-notifications li,
+#conf-def li {
+  display: grid;
+  height: 55px;
+  grid-template-columns: auto max-content;
+  justify-content: space-between;
+  width: 100%;
+
+  font-size: 20px;
+}
+
+#conf-notifications input[type="checkbox"],
+#conf-def input[type="checkbox"] {
+  display: none;
+}
+#conf-notifications .switch-painel,
+#conf-def .switch-painel {
+  width: 50px;
+  height: 28px;
+  display: flex;
+
+  background: rgb(207, 207, 207);
+  border-radius: 40px;
+}
+
+#conf-notifications .btn-switch,
+#conf-def .btn-switch {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background: var(--vermelho-principal);
+  border: none;
+  margin: auto 0;
+  margin-left: 1px;
+  transition: all 200ms;
+}
+
+#conf-notifications
+  input[type="checkbox"]:checked
+  + .switch-painel
+  > .btn-switch,
+#conf-def input[type="checkbox"]:checked + .switch-painel > .btn-switch {
+  margin-left: auto;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  margin-right: 2px;
+}
+
+#conf-notifications input[type="checkbox"]:checked + .switch-painel,
+#conf-def input[type="checkbox"]:checked + .switch-painel {
+  background: var(--vermelho-principal);
+  transition: all ease-in-out 900ms;
+}
+
+/*Formulário de encerramento de conta*/
+#form-delete-account {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+}
+
+#form-delete-account .delete-list {
+  margin-left: 3%;
+  margin-top: 8%;
+  font-size: 20px;
+}
+
+#form-delete-account .delete-list > div {
+  height: max-content;
+  display: flex;
+  margin: 4% 0;
+}
+
+#form-delete-account span {
+  height: max-content;
+  margin-left: 5%;
+}
+
+#form-delete-account input[type="checkbox"],
+#form-delete-account input[type="checkbox"]:checked {
+  outline: none;
+  appearance: none;
+  box-sizing: border-box;
+  width: 22px;
+  height: 22px;
+  margin: auto 0;
+
+  background: none;
+  border: 1.26901px solid var(--vermelho-principal);
+  border-radius: 15%;
+}
+
+#form-delete-account input[type="checkbox"]:checked {
+  background: url(../images/Close_round.png) no-repeat;
+  background-size: 130%;
+  background-position: center;
+}
+
+#form-delete-account > div:last-of-type {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#form-delete-account button {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/*Escolha entre desativar e excluir conta*/
+#delete-account-options {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+}
+
+#delete-account-options .btns {
+  width: 100%;
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: 47% 47%;
+  justify-content: space-around;
+}
+
+#delete-account-options .btns button,
+#delete-account-options button:last-of-type {
+  width: 100%;
+  height: 58px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+#delete-account-options .btns button:last-of-type {
+  background: none;
+}
+
+#delete-account-options #justification {
+  display: grid;
+  margin-top: 7%;
+}
+
+#delete-account-options #justification span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#delete-account-options #justification textarea {
+  width: 100%;
+  height: 347px;
+  resize: none;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 18px;
+}
+
+#delete-account-options > div:last-of-type {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7%;
+  height: 100%;
+}
+
+/*Perfil.html*/
+#perfil{
+  width: 680px;
+}
+.add-more-photos{
+  display: grid;
+  grid-template-columns: repeat(4, 18%);
+  justify-content: space-evenly;
+  margin-bottom: 7%;
+}
+
+.add-more-photos .add-box{
+  height: 161px;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  
+  background: rgba(51, 51, 51, 0.47);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.add-more-photos .add-box input[type="file"]{
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.add-more-photos .add-box button,
+.btn-remove-def{
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  margin: 8px 8px 0 auto;
+
+  background: rgba(128, 128, 128, 0.603);
+  border: 0.2px solid rgba(85, 85, 85, 0.144);
+  cursor: pointer;
+}
+
+#perfil>img{
+  display: none;
+}
+
+#perfil>img ~ p{
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+#perfil-information{
+  background: #fff;
+  margin-left: 4%;
+  margin-right: 6%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+}

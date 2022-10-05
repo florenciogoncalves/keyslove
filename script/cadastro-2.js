@@ -7,6 +7,19 @@
 
 let dataAtual = new Date();
 
+document.querySelectorAll(".select-placeholder").forEach((element) => {
+  element.style.color = "#999";
+  element.addEventListener("change", () => (element.style.color = "#000"));
+});
+
+function colorDisabled() {
+  document.querySelectorAll("option").forEach((current) => {
+    if (!current.getAttribute("disabled")) {
+      current.style.color = "#000";
+    } else current.style.color = "#999";
+  });
+}
+
 //Pegando as tags select da data de nascimento
 const bornDay = document.querySelector("#born-day");
 const bornMonth = document.querySelector("#born-month");
@@ -15,6 +28,7 @@ const bornYear = document.querySelector("#born-year");
 upDay(31);
 upMonth();
 upYear();
+colorDisabled();
 
 //Variáveis usadas para pegar os valores selecionados na caixa de seleção
 let selectedDay = parseInt(bornDay.options[bornDay.selectedIndex].textContent);
@@ -87,6 +101,7 @@ function remove() {
 
 function reconfirm() {
   selectedDay = parseInt(bornDay.options[bornDay.selectedIndex].textContent);
+  colorDisabled()
 }
 
 //Adiciona os dias de acordo com o mês selecionado
@@ -104,7 +119,8 @@ function reconfirmDay() {
   reconfirmFebruary();
   if (preserved <= bornDay.childElementCount)
     bornDay.options[preserved - 1].setAttribute("selected", true);
-}
+  colorDisabled()
+  }
 
 //Verificando o ano, caso seja bissexto, seta o valor de Fevereiro para 29, caso não, volta para 28
 function reconfirmFebruary() {
@@ -118,7 +134,7 @@ function reconfirmFebruary() {
   }
 
   if (selectedYear == parseInt(dataAtual.getFullYear()) - 18) {
-    for (let c = parseInt(dataAtual.getMonth()) + 1; c < 12; c++)
+    for (let c = parseInt(dataAtual.getMonth()) + 1; c <= 12; c++)
       bornMonth.options[c].setAttribute("disabled", true);
 
     if (selectedMonth >= parseInt(dataAtual.getMonth()) + 1) {
@@ -160,5 +176,6 @@ function reconfirmFebruary() {
     for (let c = parseInt(dataAtual.getMonth()) + 1; c < 12; c++)
       bornMonth.options[c].removeAttribute("disabled");
   }
+  colorDisabled()
 }
 reconfirmFebruary();

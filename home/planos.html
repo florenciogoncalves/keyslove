@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete o perfil - Keyslov</title>
+    <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/responsive.css">
+  </head>
+  <body>
+    <div id="menu-esquerdo">
+      <div id="div-left">
+        <div id="user-information">
+          <figure>
+            <img src="../temp.png" id="img-perfil" />
+
+            <figcaption>
+              <div class="status"></div>
+              <h2>Lorem Ipsun Silva</h2>
+              <a href="#">Escolher status</a>
+            </figcaption>
+          </figure>
+
+          <img src="../images/option.svg" />
+          <div class="hidden-list">
+            <ul>
+              <li>Membros Bloqueados</li>
+              <li>Lorem Ipsum exemplo</li>
+            </ul>
+          </div>
+        </div>
+
+        <nav>
+          <ul id="menu-left">
+            <li><a href="../home/perfil.html">Perfil</a></li>
+            <li><a href="../home/chamada.html">Chamada de video</a></li>
+            <li><a href="../home/carroussel.html">Carroussel</a></li>
+            <li><a href="../home/curtidas.html">Curtidas</a></li>
+            <li>
+              <a href="../home/planos.html" class="pagina-selecionada"
+                >Planos</a
+              >
+            </li>
+            <li><a href="../home/favoritos.html">Favoritos</a></li>
+            <li><a href="../home/configuracoes.html">Configurações</a></li>
+            <li>
+              <a href="../home/mensagens.html">Mensagens</a>
+            </li>
+            <li><a href="../home/servicos.html">Serviços</a></li>
+            <li id="online-now">
+              Online agora
+
+              <div class="changing-status">
+                <div class="this-status">
+                  <input
+                    type="radio"
+                    name="online-agora"
+                    value="online"
+                    id="online"
+                  />
+                  <label for="online">Online</label>
+                </div>
+
+                <div class="this-status">
+                  <input
+                    type="radio"
+                    name="online-agora"
+                    id="ocupado"
+                    value="ocupado"
+                  />
+                  <label for="ocupado">Ocupado</label>
+                </div>
+
+                <div class="this-status">
+                  <input
+                    type="radio"
+                    name="online-agora"
+                    id="invisivel"
+                    value="invisivel"
+                  />
+                  <label for="invisivel">Invisível</label>
+                </div>
+              </div>
+            </li>
+            <li><a href="#">Teste de amor</a></li>
+          </ul>
+        </nav>
+        <a href="../home/localizar-pessoas.html"
+          ><div id="peoples-left">
+            <h4>Pessoas pela região</h4>
+
+            <div class="people-organizer">
+              <img src="../temp-2.svg" />
+              <img src="../temp-2.svg" />
+              <img src="../temp-2.svg" />
+            </div></div
+        ></a>
+      </div>
+    </div>
+
+    <main class="padrao" id="planos">
+      <section id="pacotes-pagamento">
+        <h1 class="title">Pacotes e pagamentos</h1>
+        <section class="card-container">
+          <div class="card-content">
+            <img src="../images/planos-card-logo.svg" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              non fringilla lacus. Aliquam eget accumsan turpis
+            </p>
+            <button class="btn-register">Lorem Ipsum</button>
+          </div>
+          <div class="card-content">
+            <img src="../images/planos-card-logo.svg" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              non fringilla lacus. Aliquam eget accumsan turpis
+            </p>
+            <button class="btn-register">Lorem Ipsum</button>
+          </div>
+          <div class="card-content">
+            <img src="../images/planos-card-logo.svg" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              non fringilla lacus. Aliquam eget accumsan turpis
+            </p>
+            <button class="btn-register">Lorem Ipsum</button>
+          </div>
+          <div class="card-content">
+            <img src="../images/planos-card-logo.svg" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              non fringilla lacus. Aliquam eget accumsan turpis
+            </p>
+            <button class="btn-register">Lorem Ipsum</button>
+          </div>
+          <div class="card-content">
+            <img src="../images/planos-card-logo.svg" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              non fringilla lacus. Aliquam eget accumsan turpis
+            </p>
+            <button class="btn-register">Lorem Ipsum</button>
+          </div>
+        </section>
+        <section class="card-bank-container">
+          <div class="card-bank-data">
+            <div class="left-side">
+              <span
+                ><label for="card-num">Número do cartão</label>
+                <input type="number" id="card-num" placeholder="0000000000000"
+              /></span>
+              <span>
+                <label for="titular-name">Nome do titular</label>
+                <input
+                  type="text"
+                  id="titular-name"
+                  placeholder="Lorem Ipsum"
+                />
+              </span>
+              <div class="validate">
+                <label for="validate">Validade</label>
+                <input type="number" min="1" max="99" placeholder="00" />
+                <input type="number" max="99" placeholder="00" />
+              </div>
+            </div>
+            <div class="right-side">
+              <div></div>
+            </div>
+          </div>
+        </section>
+        <button class="btn-register" id="goto-metodo-pagamento">
+          Métodos de pagamento
+        </button>
+      </section>
+
+      <section id="metodo-pagamento">
+        <h1 class="title">Métodos de Pagamento</h1>
+        <div class="method-container">
+        <section class="left-side">
+          <h3>Cadastrar cartão de credito</h3>
+          <label for="">Número do cartão</label>
+          <input type="number" placeholder="Insira o número">
+          <label for="">Nome do titular</label>
+          <input type="text" id="" placeholder="Nome titular">
+          <div class="card-validity">
+            <div>
+              <span>Mês</span>
+              <select class="select-placeholder">
+                <option hidden selected disabled value="">MM</option>
+              </select>
+            </div>
+
+            <div>
+              <span>Ano</span>
+              <select class="select-placeholder">
+                <option hidden disabled selected value="">AAAA</option>
+              </select>
+            </div>
+
+            <div>
+              <span>CVV</span>
+              <input type="number" placeholder="CVV">
+            </div>
+          </div>
+          <select>
+            <option hidden selected>Número de parcelas</option>
+          </select>
+          <button class="btn-register">Salvar método de pagamento</button>
+        </section>
+        <section class="right-side">
+          <section id="payment-method">
+            <!-- As opções aqui são dinamicamente inseridas pelo JavaScript -->
+          </section>
+
+          <div id="card-bank">
+            <div class="bank-indicative">
+              <img src="../images/card-chip.svg" alt=""> 
+              <span>banco</span>
+            </div>
+            <span id="card-number">XXXXXXXXXXXXXXXX</span>
+            <div>
+              <span>Nome exemplo</span>
+              <span>09/29</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      </section>
+    </main>
+
+    <div class="dialog-container dialog-question">
+      <div class="dialog-content">
+        <button class="exit"></button>
+        <p>
+          Quer receber um aviso quando <strong>Joaquim Coutto</strong> curtir
+          você também?
+        </p>
+        <button id="active">Ativar</button>
+        <button id="pass-this">Não tenho interesse</button>
+      </div>
+    </div>
+
+    <div class="dialog-container dialog-information">
+      <div class="dialog-content">
+        <button class="exit" value="info-close"></button>
+        <h2>Entenda como funciona</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book
+        </p>
+      </div>
+    </div>
+
+    <script src="../script/script.js"></script>
+  </body>
+</html>

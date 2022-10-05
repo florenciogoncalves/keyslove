@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keyslov - Cadastro</title>
-    <link rel="stylesheet" href="../style/cadastro.css" >
-</head>
-<body>
-    <header id="header-content">
-        <img src="../images/Keyslov.svg" class="header-logo">
-        <nav class="nav-btn">
-            <button id="enter-account">Entrar</button>
-        </nav>
-
-        
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../style/cadastro.css" />
+  </head>
+  <body>
+    <header class="header-content">
+      <img src="../images/Keyslov.svg" class="header-logo" />
+      <nav class="nav-btn">
+        <a href="./cadastro/cadastro-1.html"><button>Criar conta</button></a>
+        <a href="./login.html"><button>Entrar</button></a>
+      </nav>
     </header>
-    <div class="cadastro-layout">
-        <form action="#" id="form-cadastro6">
-            <h1>Código de confirmação</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non fringilla lacus. Aliquam eget accumsan turpis</p>
 
-            <div id="insert-password">
-                <input type="password" class="pass-camp" maxlength="1">
-                <input type="password" class="pass-camp" maxlength="1">
-                <input type="password" class="pass-camp" maxlength="1">
-                <input type="password" class="pass-camp" maxlength="1">
-            </div>
+    <div class="form-cadastro-container">
+      <div class="cadastro-layout">
+        <form action="../home/home.html" method="get" id="form-cadastro6">
+          <h1>Código de confirmação</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non
+            fringilla lacus. Aliquam eget accumsan turpis
+          </p>
 
-            <div>
-                <button class="continue btn-register">Enviar</button>
-                <button class="continue btn-register">Reenviar</button>
-            </div>
+          <div id="insert-password">
+            <input type="password" class="pass-camp" maxlength="1" required/>
+            <input type="password" class="pass-camp" maxlength="1" required/>
+            <input type="password" class="pass-camp" maxlength="1" required/>
+            <input type="password" class="pass-camp" maxlength="1" required/>
+          </div>
 
+          <div>
+            <button class="continue btn-register">Enviar</button>
+            <button class="continue btn-register" type="button">Reenviar</button>
+          </div>
         </form>
+      </div>
     </div>
     <script src="../script/cadastro.js"></script>
-</body>
+  </body>
 </html>

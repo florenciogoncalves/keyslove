@@ -1,66 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keyslov - Cadastro</title>
-    <link rel="stylesheet" href="../style/cadastro.css" >
-</head>
-<body>
-    <header id="header-content">
-        <img src="../images/Keyslov.svg" class="header-logo">
-        <nav class="nav-btn">
-            <button id="enter-account">Entrar</button>
-        </nav>
-
-        
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../style/cadastro.css" />
+  </head>
+  <body>
+    <header class="header-content">
+      <img src="../images/Keyslov.svg" class="header-logo" />
+      <nav class="nav-btn">
+        <a href="./cadastro/cadastro-1.html"><button>Criar conta</button></a>
+        <a href="./login.html"><button>Entrar</button></a>
+      </nav>
     </header>
-    <div class="cadastro-layout">
-        <form action="#"  id="form-cadastro2">
-            <h1>Cadastro de conta</h1>
-            <label for="">Nome</label>
-            <input type="text" placeholder="Nome exemplo" required>
-            <label for="">Data de nascimento</label>
-            <div class="the-date">
 
-                <select class="continue" id="born-day">
-                </select>
+    <div class="form-cadastro-container">
+      <div class="cadastro-layout">
+        <form action="./cadastro-3.html" method="get" id="form-cadastro2">
+          <h1>Cadastro de conta</h1>
+          <label for="">Nome</label>
+          <input type="text" placeholder="Nome exemplo" required />
+          <label for="">Data de nascimento</label>
+          <div class="the-date">
+            <select class="continue select-placeholder" id="born-day" required>
+              <option selected hidden disabled value="">01</option>
+            </select>
 
-                <select class="continue" id="born-month">
-                </select>
+            <select
+              class="continue select-placeholder"
+              id="born-month"
+              required
+            >
+              <option selected hidden disabled value="">01</option>
+            </select>
 
-                <select class="continue" id="born-year">
-                </select>
+            <select class="continue select-placeholder" id="born-year" required>
+              <option selected hidden disabled value="">2004</option>
+            </select>
+          </div>
 
+          <label for="" style="margin-top: 20px">Gênero</label>
+
+          <div class="the-genre">
+            <div for="male">
+              <input
+                type="radio"
+                name="genre"
+                id="male"
+                value="masculino"
+                required
+              />
+              <span>Masculino</span>
             </div>
 
-            <label for="" style="margin-top: 20px;">Gênero</label>
-
-            <div class="the-genre">
-
-                <div for="male">
-                    <input type="radio" name="genre" id="male" value="masculino">
-                    <span>Masculino</span>
-                </div>
-                    
-                <div for="female">
-                    <input type="radio" name="genre" id="female" value="feminino">
-                    <span>Feminino</span>
-                </div>
-                    
-                <div for="other">
-                    <input type="radio" name="genre" id="other" value="other">
-                    <span>Outro...</span>
-                </div>
-                
+            <div for="female">
+              <input type="radio" name="genre" id="female" value="feminino" />
+              <span>Feminino</span>
             </div>
 
-            <button class="continue btn-register">CADASTRAR</button>
+            <div for="other">
+              <input type="radio" name="genre" id="other" value="other" />
+              <span>Outro...</span>
+            </div>
+          </div>
+
+          <button class="continue btn-register">CADASTRAR</button>
         </form>
 
         <script src="../script/cadastro-2.js" defer></script>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>

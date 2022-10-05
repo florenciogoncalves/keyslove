@@ -1,19 +1,16 @@
-@import url(./padrao.css);
+@import url(./style.css);
 
-body {
-  position: relative;
-}
-
-main#home {
+main#home,
+main#perfil {
   position: relative;
   display: grid;
-  min-width: 721px;
-  height: 963px;
-  margin-top: 30px;
+  max-width: 721px;
+  min-height: 500px;
+  max-height: 963px;
   box-sizing: border-box;
-  grid-template-rows: max-content auto max-content;
+  grid-template-rows: 30% auto max-content;
   overflow: hidden;
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(83, 82, 82);
   z-index: 2;
 }
 
@@ -31,7 +28,8 @@ main li {
   list-style: none;
 }
 
-main#home .home-bar {
+main#home .home-bar,
+main#perfil .home-bar  {
   width: 100%;
   height: 80px;
   z-index: 2;
@@ -313,10 +311,6 @@ main #home-progress-val {
   color: rgba(0, 0, 0, 0.6);
 }
 
-button:hover {
-  cursor: pointer;
-}
-
 /*Caixa de diálogo 'entenda como funciona'*/
 .dialog-information .dialog-content {
   width: 552px;
@@ -356,9 +350,8 @@ main#carroussel {
   box-sizing: border-box;
 }
 
-#carroussel h1.title,
-h1.title{
-  width: 152px;
+.title{
+  width: max-content;
   height: 48px;
   margin: 0 0 12px;
 
@@ -424,7 +417,7 @@ main#carroussel .botoes {
 }
 
 #informacoes-perfil button,
-#curtidas .botoes button {
+.padrao .botoes button {
   border: none;
   background: none;
   background-repeat: no-repeat;
@@ -436,14 +429,14 @@ main#carroussel .botoes {
 }
 
 #carroussel button.dislike,
-#curtidas button.dislike{
+.padrao button.dislike{
   background-image: url(../images/cross-ico.svg);
   background-color: #b42937;
   margin-right: 20px;
 }
 
 #carroussel button.like,
-#curtidas button.like {
+.padrao button.like {
   background-image: url(../images/like-ico.svg);
   background-color: #5ccb5f;
 }

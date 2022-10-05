@@ -1,9 +1,9 @@
-@import url(./login.css);
+@import url(./logon.css);
 
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  max-height: 100vh;
 
   background-image: url(../images/heath-bg-left.svg),
     url(../images/hearth-bg-right.svg);
@@ -14,6 +14,10 @@ body {
 
 #header-content {
   min-height: 150px;
+}
+
+.form-cadastro-container{
+  display: flex;
 }
 
 /*LAYOUT DA CAIXA DE CADASTRO*/
@@ -32,8 +36,8 @@ body {
   text-align: center;
   font-weight: 500;
   letter-spacing: 5px;
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 1.8em;
+  margin-bottom: 1em;
 }
 
 .cadastro-layout p {
@@ -41,7 +45,8 @@ body {
 }
 
 .cadastro-layout form,
-#form-cadastro1 {
+#form-cadastro1 ,
+#form-cadastro5{
   position: relative;
   display: flex;
   flex-direction: column;
@@ -271,32 +276,25 @@ body {
 }
 
 #form-cadastro5 .add-photos-cad {
-  margin-left: -40px;
   display: flex;
-  flex-direction: row;
-  width: 560px;
+  align-items: center;
   justify-content: space-between;
+  width: 580px;
+  margin-left: -50px;
+  margin-bottom: 45px;
 }
 
-#form-cadastro5 input[type="file"] {
-  display: none;
-}
-
-#form-cadastro5 .span {
-  box-sizing: border-box;
-  width: 270px;
+.area-drop {
+  width: 276px;
   height: 156px;
   background: rgba(51, 51, 51, 0.17);
   border: 2px dashed #333333;
   border-radius: 12px;
   cursor: pointer;
-  margin: 0;
-  margin-bottom: 45px;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  text-align: center;
-  line-height: 156px;
 }
 
 /*Estilizando o arquivo 'cadastro-6.html'*/
@@ -354,7 +352,7 @@ body {
 }
 
 /*Para a div com os botões*/
-div:nth-last-child(1) {
+#form-cadstro6 div:nth-last-child(1) {
   margin-top: 70px;
   display: flex;
   flex-direction: column;

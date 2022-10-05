@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keyslov - Cadastro</title>
-    <link rel="stylesheet" href="../style/cadastro.css" >
-</head>
-<body>
-    <header id="header-content">
-        <img src="../images/Keyslov.svg" class="header-logo">
-        <nav class="nav-btn">
-            <button id="enter-account">Entrar</button>
-        </nav>
-
-        
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../style/cadastro.css" />
+  </head>
+  <body>
+    <header class="header-content">
+      <img src="../images/Keyslov.svg" class="header-logo" />
+      <nav class="nav-btn">
+        <a href="./cadastro/cadastro-1.html"><button>Criar conta</button></a>
+        <a href="./login.html"><button>Entrar</button></a>
+      </nav>
     </header>
-    <div class="cadastro-layout">
-        <form action="#" id="form-cadastro3">
-            <h1>Localização</h1>
-            <label for="">País</label>
-            <input type="text" placeholder="Nome exemplo">
-            <label for="">Estado</label>
-            <input type="text" placeholder="Nome exemplo">
-            <label for="">Cidade</label>
-            <input type="text" placeholder="Nome exemplo">
-            
-            <button class="continue btn-register">CADASTRAR</button>
-        </form>
-    </div>
+    <div class="form-cadastro-container">
+      <div class="cadastro-layout">
+        <form action="./cadastro-4.html" method="get" id="form-cadastro3">
+          <h1>Localização</h1>
+          <label for="">País</label>
+          <input type="text" placeholder="Nome exemplo" required/>
+          <label for="">Estado</label>
+          <input type="text" placeholder="Nome exemplo" required/>
+          <label for="">Cidade</label>
+          <input type="text" placeholder="Nome exemplo" required/>
 
-</body>
+          <button class="continue btn-register">CADASTRAR</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
