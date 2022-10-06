@@ -6,27 +6,35 @@ body {
   position: relative;
   width: 100vw;
   display: grid;
-  grid-template-columns: max-content max-content max-content;
-  margin-top: 10px;
+  grid-template-columns: max-content 1fr;
+  padding-top: 10px;
   justify-content: space-between;
   height: 100vh;
-  width: 100%;
-
+  width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding-left: 2%;
 
   background-image: url(../images/hearth-bg-right.svg);
   background-size: auto;
   background-position: right center;
 }
 
-li{
+li {
   list-style: none;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #menu-esquerdo {
-  height: 100%;
+  height: 100vh;
+  max-width: 420px;
+  margin-right: 2%;
+  float: left;
+  position: sticky;
+  top: 0;
+  overflow-y: scroll;
   width: max-content;
-  display: flex;
+  grid-template-rows: max-content max-content;
 }
 
 /*Estilo aplicado a todas as scrollbars*/
@@ -42,14 +50,25 @@ li{
 *::-webkit-scrollbar-track {
   background: none;
 }
+*::-webkit-scrollbar-corner {
+  appearance: none;
+}
 
 /*menu flutuante a direita*/
 #div-left {
-  width: 350px;
-  height: max-content;
+  height: calc(100vh - 10px);
   background: none;
-  position: relative;
-  margin-left: 5%;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  width: 370px;
+}
+
+#menu-esquerdo ~ main,
+#menu-esquerdo ~ div {
+  float: right;
+  overflow-y: scroll;
 }
 
 /*Barra vermelha com informações do usuário*/
@@ -65,7 +84,7 @@ li{
   color: var(--color-white);
 }
 
-#user-information{
+#user-information {
   display: grid;
   grid-template-columns: auto max-content;
   padding: 0;
@@ -135,7 +154,7 @@ li{
 }
 
 /*Menu oculto do ícone no topo*/
-#user-information .hidden-list{
+#user-information .hidden-list {
   background: #fff;
   border-radius: 10px;
   box-sizing: border-box;
@@ -150,16 +169,16 @@ li{
   font-size: 16px;
 }
 
-#user-information .hidden-list li:first-of-type{
+#user-information .hidden-list li:first-of-type {
   background: url(../images/oculto.svg) no-repeat center left 2%;
 }
 
-#user-information ul{
+#user-information ul {
   margin: 10px;
   width: 100%;
 }
 
-#user-information li{
+#user-information li {
   height: 40px;
   width: 100%;
   line-height: 40px;
@@ -170,7 +189,7 @@ li{
 #menu-left {
   display: flex;
   flex-direction: column;
-  height: max-content;
+  height: 100%;
   background-color: #fff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -188,8 +207,8 @@ li{
   background-position: 2em center;
   transition: all ease-in 250ms;
 
-  font-weight: 400;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 16px;
   color: #333;
 }
 
@@ -198,7 +217,7 @@ li{
   background-image: inherit;
   background-size: auto;
   background-repeat: no-repeat;
-  background-position: 40px center;
+  background-position: 2em center;
 }
 #menu-left li:hover {
   background-position: 60px center;
@@ -256,7 +275,7 @@ li{
   display: none;
   position: absolute;
   margin-top: 2em;
-  padding: .9em 0;
+  padding: 0.9em 0;
   left: 185px;
   width: 16em;
   max-width: 246px;
@@ -312,35 +331,41 @@ li{
 }
 
 /*Pessoas na região*/
+#menu-esquerdo #div-left > a {
+  margin-top: auto;
+}
 #peoples-left {
-  margin-top: 20px;
   height: max-content;
   padding: 10px;
+  box-sizing: border-box;
   background-color: var(--color-white);
   border-radius: 10px;
-  padding: 0 18px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-be;
+  margin-top: auto;
 }
 
 #peoples-left h4 {
   font-weight: 400;
   text-align: justify;
-  font-size: 20px;
+  font-size: 16px;
+  width: 130%;
   background: url(../images/right-arrow.svg) no-repeat center right 145px;
 }
 
 #peoples-left .people-organizer {
-  width: 100%;
+  margin: auto;
   display: grid;
-  grid-template-columns: auto auto auto;
+  width: 100%;
+  grid-template-columns: .9fr .9fr .9fr;
   justify-content: space-between;
 }
 
 #peoples-left img {
   width: 95%;
-  height: 135px;
+  height: 105px;
+  object-fit: cover;
 }
 
 /*Layout para o conteúdo da direita*/
@@ -481,19 +506,23 @@ li{
 
 /*Documento chamada.html*/
 #chamada-video {
-  width: 690px;
-  height: 964px;
+  margin-left: 5%;
+  width: max-content;
+  height: 100%;
+  position: relative;
+  max-height: 964px;
   box-sizing: border-box;
-  background: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 #chamada-video video {
-  width: 690px;
-  height: 964px;
-  position: absolute;
+  width: max-content;
+  min-width: 540px;
+  height: calc(100vh - 10px);
+  position: sticky;
+  top: 0;
   object-fit: cover;
 }
 
@@ -502,7 +531,8 @@ li{
   height: 57px;
   display: flex;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
+  position: absolute;
 
   color: #fff;
   line-height: 57px;
@@ -530,10 +560,13 @@ li{
 
 #chamada-video .comandos-chamada {
   display: flex;
-  position: relative;
+  width: 100%;
+  position: absolute;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-bottom: 34px;
+  /* margin-bottom: 34px; */
+  top: calc(100vh - 134px);
+  background-origin: 0;
 }
 
 #chamada-video .comandos-chamada button,
@@ -599,24 +632,6 @@ main#mensagens .peoples-to-chat {
   display: grid;
   flex-direction: column;
   box-sizing: border-box;
-}
-
-#mensagens .list-peoples::-webkit-scrollbar,
-#mensagens #sended::-webkit-scrollbar {
-  background: none;
-  width: 10px;
-}
-
-#mensagens .list-peoples::-webkit-scrollbar-thumb,
-#mensagens #sended::-webkit-scrollbar-thumb {
-  background-color: #b1aeae00;
-  border-radius: 10px;
-}
-
-#mensagens .list-peoples::-webkit-scrollbar-thumb:hover,
-#mensagens #sended::-webkit-scrollbar-thumb:hover {
-  background-color: #b1aeae;
-  transition: all ease-in-out 300ms;
 }
 
 #mensagens .gradient {
@@ -1925,29 +1940,35 @@ main#configuracoes {
 }
 
 /*Perfil.html*/
-#perfil{
-  width: 680px;
+#perfil-container {
+  display: grid;
+  grid-template-columns: 68% 35%;
+  height: calc(100vh - 10px);
 }
-.add-more-photos{
+#perfil {
+  min-width: 580px;
+  min-height: 940px;
+}
+.add-more-photos {
   display: grid;
   grid-template-columns: repeat(4, 18%);
   justify-content: space-evenly;
-  margin-bottom: 7%;
+  margin-bottom: 5%;
 }
 
-.add-more-photos .add-box{
+.add-more-photos .add-box {
   height: 161px;
   z-index: 2;
   position: relative;
   display: flex;
-  
+
   background: rgba(51, 51, 51, 0.47);
   background-size: cover;
   background-position: center;
   border-radius: 10px;
 }
 
-.add-more-photos .add-box input[type="file"]{
+.add-more-photos .add-box input[type="file"] {
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -1956,7 +1977,7 @@ main#configuracoes {
 }
 
 .add-more-photos .add-box button,
-.btn-remove-def{
+.btn-remove-def {
   width: 25px;
   height: 25px;
   z-index: 2;
@@ -1967,11 +1988,11 @@ main#configuracoes {
   cursor: pointer;
 }
 
-#perfil>img{
+#perfil > img {
   display: none;
 }
 
-#perfil>img ~ p{
+#perfil > img ~ p {
   color: #fff;
   position: absolute;
   width: 100%;
@@ -1984,11 +2005,145 @@ main#configuracoes {
   font-weight: 700;
 }
 
-#perfil-information{
+#perfil-information {
   background: #fff;
   margin-left: 4%;
   margin-right: 6%;
   height: 100%;
   box-sizing: border-box;
-  padding: 15px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+#perfil-information > h2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2em;
+}
+
+#perfil-information > span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: rgba(0, 0, 0, 0.52);
+}
+
+#perfil-information > div:first-of-type h3 {
+  width: max-content;
+  padding-right: 25px;
+  margin-top: 8%;
+  background: url(../images/edit.svg) no-repeat right center;
+}
+
+#perfil-information h3 {
+  color: var(--vermelho-principal);
+}
+
+#perfil-information textarea {
+  margin-top: 3%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  width: 100%;
+  height: calc(100vh - 450px);
+  min-height: 200px;
+  max-height: 300px;
+  resize: none;
+
+  border: 1px solid #fc003b;
+  border-radius: 12px;
+}
+
+#perfil-information > div:not(#perfil-information > div:first-of-type) {
+  display: grid;
+  grid-template-columns: repeat(2, 46%);
+  justify-content: space-between;
+  margin: 4% 0;
+}
+
+#perfil-information input[type="checkbox"],
+#perfil-information input[type="radio"] {
+  display: none;
+}
+
+#perfil-information label,
+#perfil-information button {
+  border: 1px solid var(--vermelho-principal);
+  margin: 5% 0;
+  text-align: center;
+  text-overflow: ellipsis;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 8px;
+
+  font-size: 16px;
+  font-family: "Inter";
+  line-height: 2em;
+  text-align: center;
+  letter-spacing: -0.022em;
+
+  transition: all 400ms;
+}
+
+#perfil-information button {
+  background: var(--vermelho-principal);
+  color: #fff;
+}
+
+#perfil-information input[type="checkbox"]:checked + label,
+#perfil-information input[type="radio"]:checked + label {
+  background: #fdb0b0;
+}
+
+/*Modaais de perfil*/
+dialog {
+  display: flex;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.199);
+}
+dialog > div {
+  background: #fff;
+  position: relative;
+  width: 540px;
+  display: grid;
+  height: 549px;
+  margin: auto;
+  border-radius: 10px;
+  align-items: center;
+  justify-items: center;
+  box-sizing: border-box;
+  padding: 60px;
+}
+dialog button{
+  width: 79%;
+  font-size: 16px;
+  line-height: 2.5em;
+}
+
+dialog button.red-btn{
+  color: white;
+  background: var(--vermelho-principal);
+  border: none;
+  border-radius: 10px;
+}
+
+dialog button.simple-btn{
+  width: max-content;
+  height: max-content;
+  line-height: 1em;
+  text-decoration: underline;
+  border: none;
+  background: none;
+  color: var(--vermelho-principal);
+}
+
+dialog #modal-perfil-1{
+  background: url(../images/modal-bg-perfil.svg) no-repeat #fff;
+  background-size: 40%;
+  background-position: center;
 }

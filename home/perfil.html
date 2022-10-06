@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Complete o perfil - Keyslov</title>
-    <link rel="shortcut icon" href="../images/favicon.svg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.svg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="../style/style.css" />
-    <link rel="stylesheet" href="../style/responsive.css">
+    <link rel="stylesheet" href="../style/responsive.css" />
   </head>
   <body>
     <div id="menu-esquerdo">
@@ -34,7 +38,11 @@
 
         <nav>
           <ul id="menu-left">
-            <li><a href="../home/perfil.html" class="pagina-selecionada">Perfil</a></li>
+            <li>
+              <a href="../home/perfil.html" class="pagina-selecionada"
+                >Perfil</a
+              >
+            </li>
             <li><a href="../home/chamada.html">Chamada de video</a></li>
             <li><a href="../home/carroussel.html">Carroussel</a></li>
             <li><a href="../home/curtidas.html">Curtidas</a></li>
@@ -94,86 +102,86 @@
       </div>
     </div>
 
-    <main id="perfil">
-      <ul class="home-bar">
-        <li class="visualized"></li>
-        <li class="visualized"></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+    <div id="perfil-container">
+      <main id="perfil">
+        <ul class="home-bar">
+          <li class="visualized"></li>
+          <li class="visualized"></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
 
-      <div class="home-nav">
-        <button id="preview-carroussel">&lt;</button>
-        <button id="next-carroussel">&gt;</button>
-      </div>
+        <div class="home-nav">
+          <button id="preview-carroussel">&lt;</button>
+          <button id="next-carroussel">&gt;</button>
+        </div>
 
-      <div class="add-more-photos">
-        <span class="add-box"><input type="file" accept="image/png, image/jpeg" required/><button></button></span
-        ><span class="add-box"><input type="file" accept="image/png, image/jpeg"/><button></button></span
-        ><span class="add-box"><input type="file" accept="image/png, image/jpeg"/><button></button></span
-        ><span class="add-box"><input type="file" accept="image/png, image/jpeg"/><button></button></span>
-      </div>
+        <div class="add-more-photos">
+          <span class="add-box"
+            ><input
+              type="file"
+              accept="image/png, image/jpeg"
+              required /><button></button></span
+          ><span class="add-box"
+            ><input
+              type="file"
+              accept="image/png, image/jpeg" /><button></button></span
+          ><span class="add-box"
+            ><input
+              type="file"
+              accept="image/png, image/jpeg" /><button></button></span
+          ><span class="add-box"
+            ><input
+              type="file"
+              accept="image/png, image/jpeg" /><button></button
+          ></span>
+        </div>
 
-      <img src="" id="main-image">
-      <p>Escolha antes uma Foto</p>
-    </main>
+        <img src="" id="main-image" />
+        <p>Escolha antes uma Foto</p>
+      </main>
 
-    <section id="perfil-information">
-      <h2>Lorem Ipsum</h2>
-      <span>Idade: 100 anos</span>
+      <section id="perfil-information">
+        <h2>Lorem Ipsum</h2>
+        <span>Idade: 100 anos</span>
 
-      <div>
-        <h3>Descrição</h3>
-        <textarea placeholder="Lorem Ipsum dolor sit amet"></textarea>
-      </div>
-
-      <div>
+        <div>
+          <h3>Descrição</h3>
+          <textarea placeholder="Lorem Ipsum dolor sit amet"></textarea>
+        </div>
         <h3>Tags</h3>
-        <label for=""><input type="checkbox"></label>
-        <label for=""><input type="checkbox"></label>
-        <label for=""><input type="checkbox"></label>
-        <label for=""><input type="checkbox"></label>
-        <label for=""><input type="checkbox"></label>
-        <label for=""><input type="checkbox" class="add-more"></label>
-      </div>
-
-      <div>
+        <div>
+          <input type="checkbox" id="tag-cachorros" />
+          <label for="tag-cachorros">Cachorros</label
+          ><input type="checkbox" id="tag-design" />
+          <label for="tag-design">Desing</label
+          ><input type="checkbox" id="tag-gatos" />
+          <label for="tag-gatos">Gatos</label
+          ><input type="checkbox" id="tag-geografia" />
+          <label for="tag-geografia">Geografia</label>
+          <button>+ Adicionar</button>
+        </div>
         <h3>Signo</h3>
-        <label for="">
-          <input type="radio">
-        </label>
-        <label for="">
-          <input type="checkbox" name="" id="">
-        </label>
-      </div>
-    </section>
 
-    <div class="dialog-container dialog-information">
-      <div class="dialog-content">
-        <button class="exit" value="info-close"></button>
-        <h2>Entenda como funciona</h2>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book
-        </p>
-      </div>
+        <div>
+          <input type="radio" id="signo-virgem"/>
+          <label for="signo-virgem">Virgem</label>
+          <button>+ Adicionar</button>
+        </div>
+      </section>
     </div>
 
-    <div class="dialog-container dialog-question">
-      <div class="dialog-content">
-        <button class="exit"></button>
-        <p>
-          Quer receber um aviso quando <strong>Joaquim Coutto</strong> curtir
-          você também?
-        </p>
-        <button id="active">Ativar</button>
-        <button id="pass-this">Não tenho interesse</button>
+    <dialog>
+      <div id="modal-perfil-1">
+        <img src="../images/capture-red.svg" alt="">
+        <h1>melhore seu perfil</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type </p>
+        <button class="red-btn">Melhorar agora</button>
+        <button class="simple-btn">Talvez mais tarde</button>
       </div>
-    </div>
+    </dialog>
 
     <script src="../script/script.js"></script>
   </body>

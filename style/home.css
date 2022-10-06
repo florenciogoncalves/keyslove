@@ -76,12 +76,12 @@ main .home-nav button {
   background: none;
   border: none;
   width: 120px;
-  height: 300px;
+  height: 200px;
 }
 
 main .home-nav button:hover {
   background: radial-gradient(
-    rgba(0, 0, 0, 0.469),
+    rgba(0, 0, 0, 0.369),
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0)
   );

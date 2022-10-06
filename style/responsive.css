@@ -1,5 +1,10 @@
 /*Telas de altura menor*/
-@media (min-height: 768px) {
+@media (min-height: 760px) {
+  body,
+  #menu-esquerdo {
+    height: calc(100vh - 10px);
+  }
+
   #user-information figure #img-perfil,
   #mensagens #friend-information figure #img-perfil,
   #mensagens .list-peoples object {
@@ -16,6 +21,7 @@
 
   #menu-left li {
     font-size: 20px;
+    font-weight: 400;
   }
 
   #user-information,
@@ -56,7 +62,7 @@
     text-overflow: ellipsis;
   }
 
-  .this-status label{
+  .this-status label {
     font-size: 16px;
   }
 
@@ -71,16 +77,25 @@
     justify-content: space-evenly;
   }
 
+  #peoples-left h4{
+    width: 107%;
+    margin: 10px 0 0;
+    font-size: 18px;
+  }
+
   #peoples-left .people-organizer {
     width: 100%;
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
   }
-  
+
   #peoples-left img {
     object-fit: cover;
     width: 94%;
     height: 125px;
   }
+}
+
+@media (min-width: 1200px) {
 }

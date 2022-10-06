@@ -399,4 +399,8 @@ document
     );
   });
 
-/*Remover as fotos*/
+/*Modais */
+document.querySelectorAll('dialog button').forEach((current) => this.addEventListener('click', () => {
+  current.parentNode.parentNode.style.display = 'none'
+}))
+
