@@ -23,7 +23,7 @@ body {
   display: grid;
 
   background-color: var(--bg-color);
-  background-image: url(../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg);
+  background-image: url(./../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg);
   background-repeat: no-repeat;
   background-position: top;
   background-size: 100%;
@@ -132,10 +132,10 @@ header.header-content{
   letter-spacing: 5px;
 }
 .google-continue {
-  background: url(../images/Logo\ google.png) no-repeat center left 1.6em;
+  background: url(./../images/Logo\ google.png) no-repeat center left 1.6em;
 }
 .facebook-continue {
-  background: url(../images/Logo\ facebook.png) no-repeat center left 1.8em;
+  background: url(./../images/Logo\ facebook.png) no-repeat center left 1.8em;
 }
 
 #enter-box p:nth-child(3n-2) {

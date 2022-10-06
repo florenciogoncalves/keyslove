@@ -5,8 +5,8 @@ body {
   grid-template-rows: max-content 1fr;
   max-height: 100vh;
 
-  background-image: url(../images/heath-bg-left.svg),
-    url(../images/hearth-bg-right.svg);
+  background-image: url(./../images/heath-bg-left.svg),
+    url(./../images/hearth-bg-right.svg);
   background-repeat: no-repeat;
   background-size: auto;
   background-position: left bottom, right center;
@@ -117,7 +117,7 @@ body {
 }
 
 #form-cadastro1 input[type="checkbox"]#accept-terms:checked {
-  background: url(../images/confirm.svg) no-repeat center;
+  background: url(./../images/confirm.svg) no-repeat center;
 }
 /*FIM cadastro-1.html*/
 
@@ -137,7 +137,7 @@ body {
 #born-day,
 #born-month,
 #born-year {
-  background: url(../images/arrow-down.svg) no-repeat center right 15px;
+  background: url(./../images/arrow-down.svg) no-repeat center right 15px;
   box-sizing: border-box;
   margin: 0;
   border: 0.901502px solid #000000;
@@ -249,7 +249,7 @@ body {
 }
 
 #form-cadastro4 input[type="checkbox"]:checked {
-  background-image: url(../images/Close_round.png);
+  background-image: url(./../images/Close_round.png);
   background-position: center;
 }
 
@@ -325,7 +325,7 @@ body {
   box-sizing: border-box;
 
   border: none;
-  background: url(../images/pass-camp.svg) no-repeat bottom;
+  background: url(./../images/pass-camp.svg) no-repeat bottom;
 
   text-align: center;
   color: rgba(252, 0, 59, 0.52);

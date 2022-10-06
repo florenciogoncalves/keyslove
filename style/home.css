@@ -1,5 +1,17 @@
 @import url(./style.css);
 
+.title{
+  width: max-content;
+  height: 48px;
+  margin: 0 0 12px;
+
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+  color: #000000;
+  line-height: 32px;
+}
+
 main#home,
 main#perfil {
   position: relative;
@@ -212,7 +224,7 @@ main #home-progress-val {
 }
 
 #home-btns #retry {
-  background: url(../images/retry-ico.svg) no-repeat center;
+  background: url(./../images/retry-ico.svg) no-repeat center;
   background-color: #7cd0ff;
   width: 56px;
   height: 56px;
@@ -220,7 +232,7 @@ main #home-progress-val {
 }
 
 #home-btns #dislike {
-  background: url(../images/cross-ico.svg) no-repeat center;
+  background: url(./../images/cross-ico.svg) no-repeat center;
   background-color: #b42937;
 }
 
@@ -231,12 +243,12 @@ main #home-progress-val {
 }
 
 #home-btns #like {
-  background: url(../images/like-ico.svg) no-repeat center;
+  background: url(./../images/like-ico.svg) no-repeat center;
   background-color: #5ccb5f;
 }
 
 #home-btns #favorite {
-  background: url(../images/star-ico.svg) no-repeat center;
+  background: url(./../images/star-ico.svg) no-repeat center;
   background-color: #ffea79;
   width: 56px;
   height: 56px;
@@ -273,7 +285,7 @@ main #home-progress-val {
   height: 40px;
   position: absolute;
   right: 0;
-  background: url(../images/close-icon.png) no-repeat center;
+  background: url(./../images/close-icon.png) no-repeat center;
   border: none;
 }
 
@@ -315,7 +327,7 @@ main #home-progress-val {
 .dialog-information .dialog-content {
   width: 552px;
   height: 316px;
-  background: url(../images/information-icon.svg) no-repeat center 17px #fff;
+  background: url(./../images/information-icon.svg) no-repeat center 17px #fff;
 }
 
 .dialog-information .dialog-content h2 {
@@ -333,16 +345,16 @@ main #home-progress-val {
 }
 
 .dialog-question .dialog-content {
-  background: url(../images/notification-icon.svg) no-repeat center 31px #fff;
+  background: url(./../images/notification-icon.svg) no-repeat center 31px #fff;
   width: 334px;
   height: 245px;
 }
 
 /*DOCUMENTO carroussel.html*/
 main#carroussel {
-  margin-top: 30px;
-  min-width: 898px;
-  min-height: 1001px;
+  margin: 0 auto;
+  max-width: 898px;
+  min-height: 100vh;
   background: #fff;
   padding: 32px 29px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -350,17 +362,7 @@ main#carroussel {
   box-sizing: border-box;
 }
 
-.title{
-  width: max-content;
-  height: 48px;
-  margin: 0 0 12px;
 
-  font-weight: 400;
-  font-style: normal;
-  font-size: 32px;
-  color: #000000;
-  line-height: 32px;
-}
 
 main#carroussel figure#informacoes-perfil {
   width: 861px;
@@ -430,14 +432,14 @@ main#carroussel .botoes {
 
 #carroussel button.dislike,
 .padrao button.dislike{
-  background-image: url(../images/cross-ico.svg);
+  background-image: url(./../images/cross-ico.svg);
   background-color: #b42937;
   margin-right: 20px;
 }
 
 #carroussel button.like,
 .padrao button.like {
-  background-image: url(../images/like-ico.svg);
+  background-image: url(./../images/like-ico.svg);
   background-color: #5ccb5f;
 }
 
@@ -483,7 +485,7 @@ main#carroussel .botoes {
 }
 
 .outras-pessoas button.conversar{
-    background: url(../images/conversar-icon.svg);
+    background: url(./../images/conversar-icon.svg);
     margin: auto;
     padding: 0;
     width: 25px;

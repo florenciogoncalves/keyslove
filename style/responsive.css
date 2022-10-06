@@ -1,9 +1,5 @@
 /*Telas de altura menor*/
 @media (min-height: 760px) {
-  body,
-  #menu-esquerdo {
-    height: calc(100vh - 10px);
-  }
 
   #user-information figure #img-perfil,
   #mensagens #friend-information figure #img-perfil,
@@ -12,11 +8,8 @@
     max-width: 80px;
     min-height: 80px;
     max-width: 80px;
-    border-radius: 7em;
     margin: auto 6% auto 20px;
-    background-color: rgba(51, 51, 51, 0.3);
     font-size: 20px;
-    object-fit: cover;
   }
 
   #menu-left li {
@@ -24,42 +17,21 @@
     font-weight: 400;
   }
 
-  #user-information,
-  #friend-information {
-    width: 100%;
-    max-height: 111px;
-    padding: 2% 0;
-    background: var(--vermelho-principal);
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    color: var(--color-white);
-  }
-
   #user-information figcaption > .status,
   #friend-information figcaption > .friend-status {
-    background-color: var(--status-on);
     width: 21px;
     height: 21px;
-    border-radius: 15px;
-    position: absolute;
     left: 30%;
     top: 73%;
-    transition: all 600ms;
   }
 
-  #friend-information figcaption > .friend-status {
+  /* #friend-information figcaption > .friend-status {
     left: 0;
     right: auto;
-  }
+  } */
 
   #user-information h2 {
-    font-weight: 600;
     font-size: 15px;
-    max-width: 200px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
   }
 
   .this-status label {

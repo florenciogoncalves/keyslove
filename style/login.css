@@ -65,7 +65,7 @@ body {
 }
 
 #enter-box .left-side li{
-  background: url(../images/check.svg) no-repeat left center;
+  background: url(./../images/check.svg) no-repeat left center;
 }
 
 /*Lado direito*/
@@ -135,7 +135,7 @@ body {
 }
 
 #enter-box .right-side input[type="checkbox"] {
-  background: url(../images/confirm.svg) no-repeat center;
+  background: url(./../images/confirm.svg) no-repeat center;
   background-size: 80%;
 }
 

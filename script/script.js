@@ -22,7 +22,7 @@ try {
 const onlineAgora = document.querySelectorAll("[name = 'online-agora']");
 const changingStatus = document.querySelector(".changing-status");
 changingStatus.style.display = "none";
-document.querySelector("#online-now").addEventListener("click", () => {
+document.querySelector("#show-status-window").addEventListener("click", () => {
   if (changingStatus.style.display != "none")
     changingStatus.style.display = "none";
   else changingStatus.style.display = "block";
@@ -202,7 +202,7 @@ try {
     insert.setAttribute("value", element);
     insert.setAttribute("name", "card-flag");
     insert.style.backgroundImage =
-      "url(../images/payment-method/" + element + ".svg)";
+      "url(./../images/payment-method/" + element + ".svg)";
 
     addFlag.appendChild(insert);
   });
@@ -362,7 +362,7 @@ document
             current.parentNode.style.boxShadow = "0px 0px 9px rgba(0, 0, 0, 1)";
             current.nextElementSibling.setAttribute(
               "style",
-              "background: url(../images/delete.svg) no-repeat center; background-size: 100%;"
+              "background: url(./../images/delete.svg) no-repeat center; background-size: 100%;"
             );
             current.nextElementSibling.setAttribute("class", "remove-photo");
           };
@@ -400,7 +400,7 @@ document
   });
 
 /*Modais */
-document.querySelectorAll('dialog button').forEach((current) => this.addEventListener('click', () => {
+document.querySelectorAll('dialog button').forEach((current) => current.addEventListener('click', () => {
   current.parentNode.parentNode.style.display = 'none'
 }))
 
