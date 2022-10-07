@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complete o perfil - Keyslov</title>
+    <title>Planos &mid; Keyslov</title>
     <link
       rel="shortcut icon"
       href="./../images/favicon.svg"
@@ -109,46 +109,30 @@
         <section id="pacotes-pagamento">
           <h1 class="title">Pacotes e pagamentos</h1>
           <section class="card-container">
-            <div class="card-content">
+            <input type="radio" name="plano" id="pack-bronze"><label for="pack-bronze" class="card-content">
               <img src="./../images/planos-card-logo.svg" />
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                 non fringilla lacus. Aliquam eget accumsan turpis
               </p>
               <button class="btn-register">Lorem Ipsum</button>
-            </div>
-            <div class="card-content">
+            </label>
+            <input type="radio" name="plano" id="pack-prata"><label for="pack-prata" class="card-content">
               <img src="./../images/planos-card-logo.svg" />
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                 non fringilla lacus. Aliquam eget accumsan turpis
               </p>
               <button class="btn-register">Lorem Ipsum</button>
-            </div>
-            <div class="card-content">
+            </label>
+            <input type="radio" name="plano" id="pack-ouro"><label for="pack-ouro" class="card-content">
               <img src="./../images/planos-card-logo.svg" />
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
                 non fringilla lacus. Aliquam eget accumsan turpis
               </p>
               <button class="btn-register">Lorem Ipsum</button>
-            </div>
-            <div class="card-content">
-              <img src="./../images/planos-card-logo.svg" />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                non fringilla lacus. Aliquam eget accumsan turpis
-              </p>
-              <button class="btn-register">Lorem Ipsum</button>
-            </div>
-            <div class="card-content">
-              <img src="./../images/planos-card-logo.svg" />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                non fringilla lacus. Aliquam eget accumsan turpis
-              </p>
-              <button class="btn-register">Lorem Ipsum</button>
-            </div>
+            </label>
           </section>
           <section class="card-bank-container">
             <div class="card-bank-data">
@@ -179,63 +163,11 @@
               </div>
             </div>
           </section>
-          <button class="btn-register" id="goto-metodo-pagamento">
-            Métodos de pagamento
-          </button>
-        </section>
-
-        <section id="metodo-pagamento">
-          <h1 class="title">Métodos de Pagamento</h1>
-          <div class="method-container">
-            <section class="left-side">
-              <h3>Cadastrar cartão de credito</h3>
-              <label for="">Número do cartão</label>
-              <input type="number" placeholder="Insira o número" />
-              <label for="">Nome do titular</label>
-              <input type="text" id="" placeholder="Nome titular" />
-              <div class="card-validity">
-                <div>
-                  <span>Mês</span>
-                  <select class="select-placeholder">
-                    <option hidden selected disabled value="">MM</option>
-                  </select>
-                </div>
-
-                <div>
-                  <span>Ano</span>
-                  <select class="select-placeholder">
-                    <option hidden disabled selected value="">AAAA</option>
-                  </select>
-                </div>
-
-                <div>
-                  <span>CVV</span>
-                  <input type="number" placeholder="CVV" />
-                </div>
-              </div>
-              <select>
-                <option hidden selected>Número de parcelas</option>
-              </select>
-              <button class="btn-register">Salvar método de pagamento</button>
-            </section>
-            <section class="right-side">
-              <section id="payment-method">
-                <!-- As opções aqui são dinamicamente inseridas pelo JavaScript -->
-              </section>
-
-              <div id="card-bank">
-                <div class="bank-indicative">
-                  <img src="./../images/card-chip.svg" alt="" />
-                  <span>banco</span>
-                </div>
-                <span id="card-number">XXXXXXXXXXXXXXXX</span>
-                <div>
-                  <span>Nome exemplo</span>
-                  <span>09/29</span>
-                </div>
-              </div>
-            </section>
-          </div>
+          <a href="./metodos-pagamento.html">
+            <button class="btn-register">
+              Métodos de pagamento
+            </button>
+          </a>
         </section>
       </main>
     </div>

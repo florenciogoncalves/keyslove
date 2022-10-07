@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil &mid; Keyslov</title>
+    <title>Métodos de pagamento &middot; Keyslov</title>
     <link
       rel="shortcut icon"
       href="./../images/favicon.svg"
@@ -12,13 +12,21 @@
     />
     <link rel="stylesheet" href="./../style/style.css" />
     <link rel="stylesheet" href="./../style/responsive.css" />
+    <style>
+      .padrao {
+        min-height: max-content;
+        height: calc(100vh - 100px);
+        max-height: max-content;
+        padding: 40px 30px;
+      }
+    </style>
   </head>
   <body>
     <div id="menu-esquerdo">
       <div id="div-left">
         <div id="user-information">
           <figure>
-            <img src="./../temp.png" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../temp.png" id="img-perfil" />
 
             <figcaption>
               <div class="status"></div>
@@ -38,18 +46,20 @@
 
         <nav>
           <ul id="menu-left">
-            <li>
-              <a href="./../home/perfil.html" class="pagina-selecionada"
-                >Perfil</a
-              >
-            </li>
+            <li><a href="./../home/perfil.html">Perfil</a></li>
             <li><a href="./../home/chamada.html">Chamada de video</a></li>
             <li><a href="./../home/carroussel.html">Carroussel</a></li>
             <li><a href="./../home/curtidas.html">Curtidas</a></li>
-            <li><a href="./../home/planos.html">Planos</a></li>
+            <li>
+              <a href="./../home/planos.html" class="pagina-selecionada"
+                >Planos</a
+              >
+            </li>
             <li><a href="./../home/favoritos.html">Favoritos</a></li>
             <li><a href="./../home/configuracoes.html">Configurações</a></li>
-            <li><a href="./../home/mensagens.html">Mensagens</a></li>
+            <li>
+              <a href="./../home/mensagens.html">Mensagens</a>
+            </li>
             <li><a href="./../home/servicos.html">Serviços</a></li>
             <li id="online-now">
               Online agora
@@ -102,86 +112,63 @@
       </div>
     </div>
 
-    <div id="perfil-container">
-      <main id="perfil">
-        <ul class="home-bar">
-          <li class="visualized"></li>
-          <li class="visualized"></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+    <div id="main-container">
+      <main class="padrao" id="planos">
+        <section id="metodo-pagamento">
+          <h1 class="title">Métodos de Pagamento</h1>
+          <div class="method-container">
+            <section class="left-side">
+              <h3>Cadastrar cartão de credito</h3>
+              <label for="">Número do cartão</label>
+              <input type="number" placeholder="Insira o número" />
+              <label for="">Nome do titular</label>
+              <input type="text" id="" placeholder="Nome titular" />
+              <div class="card-validity">
+                <div>
+                  <span>Mês</span>
+                  <select class="select-placeholder">
+                    <option hidden selected disabled value="">MM</option>
+                  </select>
+                </div>
 
-        <div class="home-nav">
-          <button id="preview-carroussel">&lt;</button>
-          <button id="next-carroussel">&gt;</button>
-        </div>
+                <div>
+                  <span>Ano</span>
+                  <select class="select-placeholder">
+                    <option hidden disabled selected value="">AAAA</option>
+                  </select>
+                </div>
 
-        <div class="add-more-photos">
-          <span class="add-box"
-            ><input
-              type="file"
-              accept="image/png, image/jpeg"
-              required /><button></button></span
-          ><span class="add-box"
-            ><input
-              type="file"
-              accept="image/png, image/jpeg" /><button></button></span
-          ><span class="add-box"
-            ><input
-              type="file"
-              accept="image/png, image/jpeg" /><button></button></span
-          ><span class="add-box"
-            ><input
-              type="file"
-              accept="image/png, image/jpeg" /><button></button
-          ></span>
-        </div>
+                <div>
+                  <span>CVV</span>
+                  <input type="number" placeholder="CVV" />
+                </div>
+              </div>
+              <select>
+                <option hidden selected>Número de parcelas</option>
+              </select>
+              <button class="btn-register">Salvar método de pagamento</button>
+            </section>
+            <section class="right-side">
+              <section id="payment-method">
+                <!-- As opções aqui são dinamicamente inseridas pelo JavaScript -->
+              </section>
 
-        <img src="" id="main-image" />
-        <p>Escolha antes uma Foto</p>
+              <div id="card-bank">
+                <div class="bank-indicative">
+                  <img src="./../images/card-chip.svg" alt="" />
+                  <span>banco</span>
+                </div>
+                <span id="card-number">XXXXXXXXXXXXXXXX</span>
+                <div>
+                  <span>Nome exemplo</span>
+                  <span>09/29</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
       </main>
-
-      <section id="perfil-information">
-        <h2>Lorem Ipsum</h2>
-        <span>Idade: 100 anos</span>
-
-        <div>
-          <h3>Descrição</h3>
-          <textarea placeholder="Lorem Ipsum dolor sit amet"></textarea>
-        </div>
-        <h3>Tags</h3>
-        <div>
-          <input type="checkbox" id="tag-cachorros" />
-          <label for="tag-cachorros">Cachorros</label
-          ><input type="checkbox" id="tag-design" />
-          <label for="tag-design">Desing</label
-          ><input type="checkbox" id="tag-gatos" />
-          <label for="tag-gatos">Gatos</label
-          ><input type="checkbox" id="tag-geografia" />
-          <label for="tag-geografia">Geografia</label>
-          <button>+ Adicionar</button>
-        </div>
-        <h3>Signo</h3>
-
-        <div>
-          <input type="radio" id="signo-virgem"/>
-          <label for="signo-virgem">Virgem</label>
-          <button>+ Adicionar</button>
-        </div>
-      </section>
     </div>
-
-    <dialog>
-      <div id="modal-perfil-1">
-        <img src="./../images/capture-red.svg" alt="">
-        <h1>melhore seu perfil</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type </p>
-        <button class="red-btn">Melhorar agora</button>
-        <button class="simple-btn">Talvez mais tarde</button>
-      </div>
-    </dialog>
 
     <script src="./../script/script.js"></script>
   </body>

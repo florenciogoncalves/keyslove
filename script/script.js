@@ -139,17 +139,6 @@ document.addEventListener(
   true
 );
 
-try {
-  document
-    .querySelector("#goto-metodo-pagamento")
-    .addEventListener("click", () => {
-      document.querySelector("#pacotes-pagamento").style.display = "none";
-      document.querySelector("#metodo-pagamento").style.display = "flex";
-    });
-} catch (erro) {
-  console.error("Sem janela de planos" + erro);
-}
-
 /*Gambiarra para placeholder cinza para preto de selects*/
 try {
   document.querySelectorAll(".select-placeholder").forEach((element, index) => {
@@ -202,7 +191,7 @@ try {
     insert.setAttribute("value", element);
     insert.setAttribute("name", "card-flag");
     insert.style.backgroundImage =
-      "url(./../images/payment-method/" + element + ".svg)";
+      "url(../images/payment-method/" + element + ".svg)";
 
     addFlag.appendChild(insert);
   });
@@ -336,11 +325,16 @@ try {
 
 /*Planos, pegar fotos e botoar como background*/
 const arrayPhotos = [];
-document
+try {
+  document
   .querySelectorAll(".add-more-photos input")
   .forEach((current, index) => {
     /*Current é o input actual
     ao ser efectuada uma mudança no input actual*/
+    current.nextElementSibling.addEventListener('click', () => {
+      if(current.nextElementSibling.className != 'remove-photo')
+        current.click()
+    })
     current.addEventListener(
       "change",
       () => {
@@ -362,10 +356,11 @@ document
             current.parentNode.style.boxShadow = "0px 0px 9px rgba(0, 0, 0, 1)";
             current.nextElementSibling.setAttribute(
               "style",
-              "background: url(./../images/delete.svg) no-repeat center; background-size: 100%;"
+              "background: url(../images/delete.svg) no-repeat center; background-size: 100%;"
             );
             current.nextElementSibling.setAttribute("class", "remove-photo");
           };
+
 
           file.readAsDataURL(current.files[0]);
 
@@ -389,7 +384,7 @@ document
               current.parentNode.removeAttribute("style", "background-image");
               current.nextElementSibling.setAttribute(
                 "style",
-                "background: rgba(128, 128, 128, 0.603); border: 0.2px solid rgba(85, 85, 85, 0.144);"
+                "background: url(./../images/plus.svg) no-repeat center;"
               );
             });
           
@@ -398,9 +393,17 @@ document
       false
     );
   });
+} catch (error) {
+  console.error('Tente postar uma foto antes, vá para perfil' + error)
+}
 
 /*Modais */
-document.querySelectorAll('dialog button').forEach((current) => current.addEventListener('click', () => {
+try {
+  document.querySelectorAll('dialog button').forEach((current) => current.addEventListener('click', () => {
   current.parentNode.parentNode.style.display = 'none'
 }))
+} catch (error) {
+  console.error('Não existem modais para esta página')
+}
+
 
