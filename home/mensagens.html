@@ -19,7 +19,7 @@
       <div id="div-left">
         <div id="user-information">
           <figure>
-            <img src="./../temp.png" id="img-perfil" />
+            <img src="./../debug-images/temp.png" id="img-perfil" />
 
             <figcaption>
               <div class="status"></div>
@@ -28,76 +28,73 @@
             </figcaption>
           </figure>
 
-          <img src="./../images/option.svg" />
+          <img  class="vizualizar-menu" src="./../images/option.svg" />
           <div class="hidden-list">
             <ul>
-              <li>Membros Bloqueados</li>
+              <a href="bloqueados.html"><li class="goto-blocked">Membros Bloqueados</li></a>
               <li>Lorem Ipsum exemplo</li>
             </ul>
+          </div>
+          <div id="online-now">
+
+            <div class="changing-status">
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  value="online"
+                  id="online"
+                />
+                <label for="online">Online</label>
+              </div>
+
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="ocupado"
+                  value="ocupado"
+                />
+                <label for="ocupado">Ocupado</label>
+              </div>
+
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="invisivel"
+                  value="invisivel"
+                />
+                <label for="invisivel">Invisível</label>
+              </div>
+            </div>
           </div>
         </div>
 
         <nav>
           <ul id="menu-left">
-            <li><a href="./../home/perfil.html">Perfil</a></li>
-            <li><a href="./../home/chamada.html">Chamada de video</a></li>
-            <li><a href="./../home/carroussel.html">Carroussel</a></li>
-            <li><a href="./../home/curtidas.html">Curtidas</a></li>
-            <li><a href="./../home/planos.html">Planos</a></li>
-            <li><a href="./../home/favoritos.html">Favoritos</a></li>
-            <li><a href="./../home/configuracoes.html">Configurações</a></li>
-            <li>
-              <a href="./../home/mensagens.html" class="pagina-selecionada"
-                >Mensagens</a
-              >
+            <li><a href="perfil.html">Perfil</a></li>
+            <li><a href="chamada.html">Chamada de video</a></li>
+            <li><a href="carroussel.html">Carroussel</a></li>
+            <li><a href="curtidas.html">Curtidas</a></li>
+            <li><a href="planos.html">Planos</a></li>
+            <li><a href="favoritos.html">Favoritos</a></li>
+            <li><a href="configuracoes.html">Configurações</a></li>
+            <li><a href="mensagens.html" class="pagina-selecionada">Mensagens</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="online.html">Online agora</a>
             </li>
-            <li><a href="./../home/servicos.html">Serviços</a></li>
-            <li id="online-now">
-              Online agora
-
-              <div class="changing-status">
-                <div class="this-status">
-                  <input
-                    type="radio"
-                    name="online-agora"
-                    value="online"
-                    id="online"
-                  />
-                  <label for="online">Online</label>
-                </div>
-
-                <div class="this-status">
-                  <input
-                    type="radio"
-                    name="online-agora"
-                    id="ocupado"
-                    value="ocupado"
-                  />
-                  <label for="ocupado">Ocupado</label>
-                </div>
-
-                <div class="this-status">
-                  <input
-                    type="radio"
-                    name="online-agora"
-                    id="invisivel"
-                    value="invisivel"
-                  />
-                  <label for="invisivel">Invisível</label>
-                </div>
-              </div>
-            </li>
-            <li><a href="#">Teste de amor</a></li>
+            <li><a href="teste-de-amor.html">Teste de amor</a></li>
           </ul>
         </nav>
-        <a href="./../home/localizar-pessoas.html"
+        <a href="localizar-pessoas.html"
           ><div id="peoples-left">
             <h4>Pessoas pela região</h4>
 
             <div class="people-organizer">
-              <img src="./../temp-2.svg" />
-              <img src="./../temp-2.svg" />
-              <img src="./../temp-2.svg" />
+              <img src="./../debug-images/temp-2.svg" />
+              <img src="./../debug-images/temp-2.svg" />
+              <img src="./../debug-images/temp-2.svg" />
             </div></div
         ></a>
       </div>
@@ -108,97 +105,97 @@
         <div class="peoples-to-chat">
           <h2>Últimas mensagens</h2>
           <ul class="list-peoples">
-            <li class="person person-selected">
+            <li class="person" id="person-selected">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <li class="person">
               <object data=""></object>
               <div class="dados">
-                <h3>Lorem ipsum</h3>
+                <span>Lorem ipsum</span>
                 <p>Pessoas conversando normal</p>
               </div>
             </li>
             <div class="gradient"></div>
           </ul>
         </div>
-        <div class="chat">
+        <section class="chat">
           <div id="friend-information">
             <figure>
-              <object data="./../temp.png" id="img-perfil"></object>
+              <object data="./../debug-images/temp.png" id="img-perfil"></object>
 
               <figcaption>
                 <div class="friend-status"></div>
@@ -226,7 +223,8 @@
                         />
                         <span>Port</span>
                       </div>
-                      &nbsp; <img src="./../images/Group 8777.svg" />&nbsp;
+                      &nbsp; 
+                      <img src="./../images/Group 8777.svg" id="invert-language"/>&nbsp;
                       <div class="img-2-container">
                         <img
                           src="./../images/usa-icon.svg"
@@ -246,8 +244,8 @@
               <!-- Contém as mensagens enviadas -->
               <div class="the-message-container">
                 <div class="identifier">
-                  <object data="./../temp-5.png"></object>
-                  <span>Lorem ipsum <span></span> as 14:40</span>
+                  <object data="./../debug-images/temp-5.png"></object>
+                  <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
                 </div>
                 <!-- Contém a mensagem já enviada -->
                 <div class="text-container">
@@ -263,13 +261,13 @@
                         similique molestias est
                       </span>
                     </div>
-                    <button class="confirm">Assinar pacote</button>
+                    <a href="planos.html"><button class="confirm">Assinar pacote</button></a>
                   </div>
                 </div>
               </div>
               <div class="the-message-container user">
                 <div class="identifier">
-                  <span>Hoje<span></span> as 14:40</span>
+                  <span>Hoje <span>&middot;</span> as 14:40</span>
                 </div>
                 <!-- Contém cada mensagem já enviada -->
                 <div class="text-container">
@@ -281,8 +279,8 @@
               </div>
               <div class="the-message-container">
                 <div class="identifier">
-                  <object data="./../temp-5.png"></object>
-                  <span>Lorem ipsum <span></span> as 14:40</span>
+                  <object data="./../debug-images/temp-5.png"></object>
+                  <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
                 </div>
                 <!-- Contém a mensagem já enviada -->
                 <div class="text-container">
@@ -294,7 +292,7 @@
               </div>
               <div class="the-message-container user">
                 <div class="identifier">
-                  <span>Hoje<span></span> as 14:40</span>
+                  <span>Hoje <span>&middot;</span> as 14:40</span>
                 </div>
                 <!-- Contém cada mensagem já enviada -->
                 <div class="text-container">
@@ -309,15 +307,15 @@
               <input type="file" id="select-file" style="display: none" />
               <label class="add-media" for="select-file">+</label>
               <div class="message-text-container">
-                <textarea
+                <textarea rows="1"
                   id="message-text"
                   placeholder="Escreva a mensagem..."
                 ></textarea>
-                <button class="send-message"></button>
+                <button class="send-message" onclick="enviar()"></button>
               </div>
             </div>
           </section>
-        </div>
+        </section>
       </main>
     </div>
 

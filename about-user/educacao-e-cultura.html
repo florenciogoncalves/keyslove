@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complete o perfil - Keyslov</title>
+    <title>Complete o perfil &mid; Keyslov</title>
+    <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./../style/style.css" />
     <link rel="stylesheet" href="./../style/responsive.css">
   </head>
@@ -13,7 +14,7 @@
       <div id="div-left">
         <div id="user-information">
           <figure>
-            <img src="./../temp.png" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
 
             <figcaption>
               <div class="status"></div>
@@ -22,12 +23,45 @@
             </figcaption>
           </figure>
 
-          <img src="./../images/option.svg" />
+          <img  class="vizualizar-menu" src="./../images/option.svg" />
           <div class="hidden-list">
             <ul>
-              <li>Membros Bloqueados</li>
+              <a href="bloqueados.html"><li>Membros Bloqueados</li></a>
               <li>Lorem Ipsum exemplo</li>
             </ul>
+          </div><div id="online-now">
+
+            <div class="changing-status">
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  value="online"
+                  id="online"
+                />
+                <label for="online">Online</label>
+              </div>
+
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="ocupado"
+                  value="ocupado"
+                />
+                <label for="ocupado">Ocupado</label>
+              </div>
+
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="invisivel"
+                  value="invisivel"
+                />
+                <label for="invisivel">Invisível</label>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -42,58 +76,26 @@
             <li><a href="./../home/configuracoes.html">Configurações</a></li>
             <li><a href="./../home/mensagens.html">Mensagens</a></li>
             <li><a href="./../home/servicos.html">Serviços</a></li>
-            <li id="online-now">
-              Online agora
-
-              <div class="changing-status">
-                <div class="this-status">
-                  <input
-                    type="radio"
-                    name="online-agora"
-                    value="online"
-                    id="online"
-                  />
-                  <label for="online">Online</label>
-                </div>
-
-                <div class="this-status">
-                  <input
-                    type="radio"
-                    name="online-agora"
-                    id="ocupado"
-                    value="ocupado"
-                  />
-                  <label for="ocupado">Ocupado</label>
-                </div>
-
-                <div class="this-status">
-                  <input
-                    type="radio"
-                    name="online-agora"
-                    id="invisivel"
-                    value="invisivel"
-                  />
-                  <label for="invisivel">Invisível</label>
-                </div>
-              </div>
+            <li><a href="./../home/online.html">Online agora</a>
             </li>
-            <li><a href="#">Teste de amor</a></li>
+            <li><a href="teste-de-amor.html">Teste de amor</a></li>
           </ul>
         </nav>
 
-        <a href="./../home/localizar-pessoas.html"><div id="peoples-left">
-          <h4>Pessoas pela região</h4>
+        <a href="./../home/localizar-pessoas.html">
+          <div id="peoples-left">
+            <h4>Pessoas pela região</h4>
 
-          <div class="people-organizer">
-            <img src="./../temp-2.svg" />
-            <img src="./../temp-2.svg" />
-            <img src="./../temp-2.svg" />
-          </div>
-        </div></a>
+            <div class="people-organizer">
+              <img src="./../debug-images/temp-2.svg" />
+              <img src="./../debug-images/temp-2.svg" />
+              <img src="./../debug-images/temp-2.svg" />
+            </div></div
+        ></a>
       </div>
     </div>
     <div id="content-right">
-      <form action="#" class="principal-content">
+      <form action="sobre-mim.html" class="principal-content">
         <header class="content-header">
           <img src="./../images/Book_check_fill.svg" />
           <h1>Educação e Cultura</h1>
@@ -104,7 +106,7 @@
             <label for="nacionalidade">Nacionalidade</label>
 
             <select id="nacionalidade">
-              <option>Selecionar...</option>
+              <option selected hidden disabled>Selecionar...</option>
             </select>
           </div>
 
@@ -112,35 +114,35 @@
             <label for="educacao">Educação</label>
 
             <select id="educacao">
-              <option>Selecionar...</option>
+              <option selected hidden disabled>Selecionar...</option>
             </select>
           </div>
 
           <div class="iten">
             <label for="idiomas">Idiomas</label>
             <select id="idiomas">
-              <option>Selecionar...</option>
+              <option selected hidden disabled>Selecionar...</option>
             </select>
           </div>
 
           <div class="iten">
             <label for="nivel-ingles">Seu nível de inglês</label>
             <select id="nivel-ingles">
-              <option selected disabled>Selecionar...</option>
+              <option selected disabled hidden>Selecionar...</option>
             </select>
           </div>
 
           <div class="iten">
             <label for="religiao">Religião</label>
             <select id="religiao">
-              <option selected disabled>Selecionar...</option>
+              <option selected disabled hidden>Selecionar...</option>
             </select>
           </div>
 
           <div class="iten">
             <label for="signo">Signo</label>
             <select id="signo">
-              <option selected disabled>Selecionar...</option>
+              <option selected disabled hidden>Selecionar...</option>
             </select>
           </div>
         </div>

@@ -19,7 +19,7 @@
 button{cursor: pointer;}
 
 body {
-  height: 100vh;
+  height: 100%;
   display: grid;
 
   background-color: var(--bg-color);
@@ -33,8 +33,9 @@ body {
 header.header-content{
   display: grid;
   grid-template-columns: auto max-content;
-  padding: 1.28em 2.5em;
+  margin: 1.2em 2.5em;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 .header-logo {
   width: 12.10em;
@@ -55,15 +56,15 @@ header.header-content{
   font-weight: 500;
 }
 /*Botão criar conta*/
-.nav-btn a:first-of-type > button {
+button.border-btn {
   border: 1px solid #fff;
   background: none;
   color: #fff;
-  margin-right: 0.9375em;
+  margin-right: 0.3375em;
 }
 
 /*Botão entrar*/
-.nav-btn a > button {
+.white-btn {
   background-color: #fff;
   border: none;
   color: #000;

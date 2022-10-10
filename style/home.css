@@ -16,22 +16,24 @@ main#home,
 main#perfil {
   position: relative;
   display: grid;
-  max-width: 721px;
-  min-height: 500px;
-  max-height: 963px;
-  height: 100%;
+  height: 97.5vh;
+  width: 70%;
   box-sizing: border-box;
-  grid-template-rows: 30% auto max-content;
+  grid-template-rows: max-content 1fr max-content;
   overflow: hidden;
   background-color: rgb(83, 82, 82);
   z-index: 2;
 }
 
+main#perfil{
+  width: 100%;
+}
+
 main #main-image {
   position: absolute;
   object-fit: cover;
-  width: 721px;
-  height: 963px;
+  height: 100%;
+  width: 100%;
 }
 
 main ul,
@@ -72,7 +74,6 @@ main .home-bar li.visualized {
 main .home-nav {
   width: 100%;
   position: relative;
-  height: 80px;
   padding: 0;
   align-items: center;
   box-sizing: border-box;
@@ -88,22 +89,21 @@ main .home-nav button {
   color: white;
   background: none;
   border: none;
-  width: 120px;
-  height: 200px;
+  width: 100px;
+  height: 100%;
 }
 
 main .home-nav button:hover {
   background: radial-gradient(
-    rgba(0, 0, 0, 0.369),
+    rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0),
     rgba(0, 0, 0, 0)
   );
-  transition: all 300ms;
 }
 
 main .home-footer {
   position: relative;
-  margin: 36px;
+  margin: 10px 36px;
   padding: 0;
   box-sizing: border-box;
   display: flex;
@@ -114,24 +114,24 @@ main .home-footer {
 main #person-name {
   font-style: normal;
   font-weight: 300;
-  font-size: 36px;
+  font-size: 28px;
   color: var(--color-white);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 main .talk-now {
   display: flex;
-  width: 255px;
-  height: 34px;
+  width: max-content;
+  height: 28px;
   background-color: var(--color-white);
   padding: 0 10px;
   border-radius: 15px;
   box-sizing: border-box;
 
-  line-height: 34px;
+  line-height: 28px;
   color: var(--vermelho-principal);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   justify-content: space-around;
 }
 
@@ -150,43 +150,44 @@ main ul#tag-area {
   display: grid;
 
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, 121px);
+  grid-template-columns: repeat(auto-fit, 100px);
 
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 13px;
+  margin-top: 10px;
+
 }
 
 main #tag-area li {
   white-space: nowrap;
   overflow: hidden;
-  width: 121px;
-  height: 31px;
+  width: 100px;
+  height: 28px;
   background-color: rgba(0, 0, 0, 0.26);
   border-radius: 15px;
   box-sizing: border-box;
   padding: 0 7px;
 
   line-height: 31px;
-  font-size: 14px;
+  font-size: 13px;
   color: rgb(161, 161, 161);
   text-overflow: ellipsis;
 }
 
 main #subtitle {
   text-align: justify;
-  margin-top: 10px;
+  margin-top: 5px;
 
   color: white;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /*Para a barra de progresso do home*/
 main #home-progress-content {
   padding: 0;
   margin: 30px auto;
-  height: 24px;
+  height: 18px;
   width: 100%;
   background: rgba(0, 0, 0, 0.48);
   border-radius: 15px;
@@ -194,7 +195,7 @@ main #home-progress-content {
 }
 main #home-progress-bar {
   background-color: var(--vermelho-principal);
-  height: 24px;
+  height: 18px;
   width: 0%;
   display: flex;
   border-radius: 15px;
@@ -204,7 +205,7 @@ main #home-progress-bar {
 main #home-progress-val {
   display: flex;
   float: right;
-  line-height: 24px;
+  line-height: 18px;
   margin: 0 5px 0 auto;
   color: var(--color-white);
 }
@@ -218,8 +219,8 @@ main #home-progress-val {
 #home-btns button {
   border: none;
   background: none;
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
   background-repeat: no-repeat;
   border-radius: 50px;
 }
@@ -240,7 +241,7 @@ main #home-progress-val {
 #home-btns #maybe {
   color: white;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 #home-btns #like {
@@ -254,101 +255,6 @@ main #home-progress-val {
   width: 56px;
   height: 56px;
   margin: auto 0 0;
-}
-
-/*Diálogo de notificação flutuante*/
-.dialog-container {
-  overflow-y: hidden;
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  z-index: 4;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.dialog-container .dialog-content {
-  z-index: 4;
-  position: relative;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-
-  border: none;
-
-  background-size: 28px 30px;
-  border-radius: 10px;
-}
-
-.dialog-container button.exit {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  right: 0;
-  background: url(./../images/close-icon.png) no-repeat center;
-  border: none;
-}
-
-.dialog-container p {
-  display: block;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 400;
-  width: 272px;
-  margin: 71px 31px 15px;
-}
-
-.dialog-container button#active {
-  width: 210px;
-  height: 34px;
-  margin: 0 auto;
-
-  background: #fc003b;
-  border: none;
-  border-radius: 4px;
-
-  color: white;
-  font-size: 14px;
-}
-
-.dialog-container button#pass-this {
-  width: max-content;
-  height: max-content;
-  line-height: 12px;
-  font-size: 12px;
-  background: none;
-  border: none;
-  margin: 5px auto 0;
-  text-decoration-line: underline;
-  color: rgba(0, 0, 0, 0.6);
-}
-
-/*Caixa de diálogo 'entenda como funciona'*/
-.dialog-information .dialog-content {
-  width: 552px;
-  height: 316px;
-  background: url(./../images/information-icon.svg) no-repeat center 17px #fff;
-}
-
-.dialog-information .dialog-content h2 {
-  margin-top: 120px;
-  font-size: 32px;
-  font-weight: 400;
-  text-align: center;
-}
-
-.dialog-information .dialog-content p {
-  width: 526px;
-  margin: 5px auto 0;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.dialog-question .dialog-content {
-  background: url(./../images/notification-icon.svg) no-repeat center 31px #fff;
-  width: 334px;
-  height: 245px;
 }
 
 /*DOCUMENTO carroussel.html*/

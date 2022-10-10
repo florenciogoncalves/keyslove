@@ -16,8 +16,7 @@
     <header class="header-content">
       <img src="./../images/Keyslov.svg" class="header-logo" />
       <nav class="nav-btn">
-        <a href="./cadastro/cadastro-1.html"><button>Criar conta</button></a>
-        <a href="./login.html"><button>Entrar</button></a>
+        <a href="../login.html"><button class="white-btn">Entrar</button></a>
       </nav>
     </header>
 
@@ -49,26 +48,20 @@
           <label for="" style="margin-top: 20px">Gênero</label>
 
           <div class="the-genre">
-            <div for="male">
-              <input
-                type="radio"
-                name="genre"
-                id="male"
-                value="masculino"
-                required
-              />
-              <span>Masculino</span>
-            </div>
+            <input
+              type="radio"
+              name="genre"
+              id="male"
+              value="masculino"
+              required
+            />
+            <label for="male"> Masculino </label>
 
-            <div for="female">
-              <input type="radio" name="genre" id="female" value="feminino" />
-              <span>Feminino</span>
-            </div>
+            <input type="radio" name="genre" id="female" value="feminino" />
+            <label for="female"> Feminino </label>
 
-            <div for="other">
-              <input type="radio" name="genre" id="other" value="other" />
-              <span>Outro...</span>
-            </div>
+            <input type="radio" name="genre" id="other" value="other" />
+            <label for="other"> Outro... </label>
           </div>
 
           <button class="continue btn-register">CADASTRAR</button>

@@ -13,31 +13,32 @@ body {
 }
 
 #header-content {
-  min-height: 150px;
+  height: 60px;
 }
 
 .form-cadastro-container{
-  display: flex;
+  display: grid;
+  height: max-content;
 }
 
 /*LAYOUT DA CAIXA DE CADASTRO*/
 .cadastro-layout {
   position: relative;
-  width: 710px;
-  height: 715px;
+  width: max-content;
+  height: 100%;
   margin: auto;
   background: #fff;
   box-shadow: 0px 0px 116px rgba(0, 0, 0, 0.26);
   border-radius: 8px;
-  padding: 60px 30px;
+  padding: 30px 80px;
   box-sizing: border-box;
 }
 .cadastro-layout h1 {
   text-align: center;
   font-weight: 500;
   letter-spacing: 5px;
-  font-size: 1.8em;
-  margin-bottom: 1em;
+  font-size: 1.65em;
+  margin-bottom: 0.45em;
 }
 
 .cadastro-layout p {
@@ -50,20 +51,20 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 480px;
+  width: 420px;
   max-width: 480px;
   margin: auto;
 }
 
 .cadastro-layout form label:not(.the-genre) {
-  margin: 14px 0 6px;
-  font-size: 18px;
+  margin: 10px 0 6px;
+  font-size: 16px;
 }
 .cadastro-layout form input:not([type="checkbox"], .pass-camp) {
   box-sizing: border-box;
   margin: auto;
   min-width: 100%;
-  height: 56px;
+  height: 40px;
   padding: 0 15px;
 
   background: rgba(255, 255, 255, 0.1);
@@ -71,7 +72,7 @@ body {
   border-radius: 7.21202px;
 
   font-weight: 400;
-  font-size: 19px;
+  font-size: 14px;
   line-height: 56px;
 }
 .cadastro-layout form input:not([type="radio"], .pass-camp):focus {
@@ -122,16 +123,24 @@ body {
 /*FIM cadastro-1.html*/
 
 /*  Estilizando o form do arquivo cadastro-2.html*/
+#form-cadastro2 input[type="text"]{
+  padding: 25px;
+  font-size: 16px;
+}
+
 .the-date {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   justify-content: space-between;
-  width: 100%;
+  grid-template-columns: 29% 29% 37%;
+  height: max-content;
 }
 
 #form-cadastro2 select {
   -webkit-appearance: none;
   -moz-appearance: none;
+  height: max-content;
+  font-size: 16px;
+  line-height: 3.5em;
 }
 
 #born-day,
@@ -140,20 +149,13 @@ body {
   background: url(./../images/arrow-down.svg) no-repeat center right 15px;
   box-sizing: border-box;
   margin: 0;
+  width: 100%;
   border: 0.901502px solid #000000;
 
   font-weight: 400;
-  font-size: 20px;
+  font-size: 15px;
 }
 
-#born-day,
-#born-month {
-  width: 136px;
-}
-
-#born-year {
-  width: 175px;
-}
 
 .disselect {
   color: #00f000;
@@ -161,8 +163,8 @@ body {
 
 /*Para a div de gênero*/
 #form-cadastro2 .the-genre {
-  display: flex;
-  width: 480px;
+  display: grid;
+  grid-template-columns: 31% 31% 31%;
   margin-bottom: 10px;
   max-height: 56px;
   justify-content: space-between;
@@ -173,33 +175,32 @@ body {
   margin: 0;
 }
 
-.the-genre div {
+.the-genre label{
   display: flex;
   position: relative;
-  width: 135px;
-  height: 56px;
-  text-align: center;
+  width: 100%;
+  height: 50px;
+  background: #000;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-}
 
-#form-cadastro2 input[type="radio"],
-#form-cadastro2 input[type="radio"]:checked {
-  display: flex;
-  position: relative;
-  appearance: none;
+
   box-sizing: border-box;
-  width: 135px;
-  height: 56px;
   z-index: 1;
   cursor: pointer;
-  margin: 0;
 
   background: rgba(255, 255, 255, 0.1);
   border: 0.901502px solid #000000;
   border-radius: 7.21202px;
 }
 
+#form-cadastro2 input[type="radio"],
 #form-cadastro2 input[type="radio"]:checked {
+  display: none;
+}
+
+#form-cadastro2 input[type="radio"]:checked + label {
   transition: all 100ms ease-in-out;
   border: 0.901502px solid var(--vermelho-principal);
 }
@@ -211,6 +212,10 @@ body {
   line-height: 56px;
   z-index: 0;
   user-select: none;
+}
+
+#form-cadastro2 button{
+  height: 60px;
 }
 
 /*Baixar um pouco o botão 'Cadastrar'*/
@@ -231,7 +236,7 @@ body {
 #form-cadastro4 > div {
   display: flex;
   height: max-content;
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
 #form-cadastro4 input[type="checkbox"],
@@ -239,9 +244,8 @@ body {
   outline: none;
   appearance: none;
   box-sizing: border-box;
-  width: 39.34px;
-  height: 38.07px;
-  margin: auto 40px;
+  width: 35px;
+  height: 35px;
 
   background: rgba(217, 217, 217, 0.2);
   border: 1.26901px solid var(--vermelho-principal);
@@ -256,11 +260,11 @@ body {
 #form-cadastro4 label {
   margin: 0;
   line-height: 38.07px;
+  text-indent: 20px;
 }
 
 #form-cadastro4 button {
-  top: 30px;
-  width: 480px;
+  margin-top: 25px;
 }
 
 /*Trabalhando no arquivo 'cadastro-5.html' */
@@ -272,20 +276,24 @@ body {
 #form-cadastro5 .social-cad-imgs {
   display: flex;
   justify-content: space-evenly;
-  margin: 40px 0;
+  margin: 20px 0;
+}
+
+#form-cadastro5 img{
+  width: 130px;
 }
 
 #form-cadastro5 .add-photos-cad {
-  display: flex;
+  display: grid;
+  width: 120%;
+  grid-template-columns: 48% 48%;
   align-items: center;
   justify-content: space-between;
-  width: 580px;
-  margin-left: -50px;
-  margin-bottom: 45px;
+  margin-left: -10%;
+  margin-bottom: 3%;
 }
 
 .area-drop {
-  width: 276px;
   height: 156px;
   background: rgba(51, 51, 51, 0.17);
   border: 2px dashed #333333;
@@ -297,7 +305,15 @@ body {
   justify-content: center;
 }
 
+#form-cadastro5 button{
+  height: 50px;
+}
+
 /*Estilizando o arquivo 'cadastro-6.html'*/
+#form-cadastro6{
+  width: max-content;
+}
+
 #form-cadastro6 h1 {
   width: max-content;
 
@@ -335,6 +351,10 @@ body {
 }
 .pass-camp:focus {
   outline: hidden;
+}
+
+#form-cadastro6 button{
+  height: 55px;
 }
 
 /*Para o primeiro btn-register com a mensagem enviar*/

@@ -7,7 +7,6 @@ body {
       rgba(253, 0, 59, 0.5) 100%
     )
     no-repeat;
-  object-fit: contain;
 }
 
 #enter-box {
@@ -23,6 +22,10 @@ body {
   display: flex;
   padding: 2.5em;
   box-sizing: border-box;
+}
+
+#enter-box .left-side{
+  background: url(./../images/bg-bottom.svg) no-repeat bottom 5% left 5%, url(./../images/bg-middle.svg) no-repeat bottom 34% left 15%, url(./../images/bg-top.svg) no-repeat bottom 62% left;
 }
 
 #enter-box .left-side > div {

@@ -6,9 +6,6 @@ const elementos = document.querySelectorAll("select").forEach((element) => {
     var search = ["exemplo", "Selecionar...", "01"];
     if (search.includes(element.options[element.selectedIndex].textContent)) {
       element.style.color = "rgba(0, 0, 0, .5)";
-      console.log(
-        search.includes(element.options[element.selectedIndex].textContent)
-      );
     } else element.style.color = "rgb(0, 0, 0)";
   }
   opacidade();

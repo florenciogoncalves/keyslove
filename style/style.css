@@ -68,7 +68,7 @@ li {
   float: right;
   overflow-y: scroll;
   position: sticky;
-  align-items: center;
+  margin-left: 20px;
   top: 0;
 }
 
@@ -84,16 +84,13 @@ li {
   color: var(--color-white);
 }
 
-
 #user-information {
-  padding: 2% 0;
   display: grid;
   grid-template-columns: auto max-content;
   padding: 0;
 }
 
-#user-information figure,
-#friend-information figure {
+#user-information figure{
   display: flex;
   position: relative;
 }
@@ -101,7 +98,8 @@ li {
 /*Imagens de perfil*/
 #user-information figure #img-perfil,
 #mensagens #friend-information figure #img-perfil,
-#mensagens .list-peoples object {
+#mensagens .list-peoples object,
+#bloqueados #blacklist object {
   min-width: 5.38em;
   max-width: 5.38em;
   min-height: 5.38em;
@@ -115,12 +113,11 @@ li {
 
 #user-information figcaption,
 #friend-information figcaption {
-  height: 4.4em;
-  margin: auto 0;
+  height: max-content;
+  margin: 2% 3%;
 }
 
-#user-information figcaption > .status,
-#friend-information figcaption > .friend-status {
+#user-information figcaption > .status {
   background-color: var(--status-on);
   width: 1em;
   height: 1em;
@@ -156,31 +153,6 @@ li {
   margin: 10% 0.5em;
 }
 
-/*Menu oculto do ícone no topo*/
-#hd-ls{
-  display: flex;
-  position: relative;
-  width: max-content;
-  height: max-content;
-}
-#user-information .hidden-list {
-  background: #fff;
-  border-radius: 10px;
-  box-sizing: border-box;
-  position: absolute;
-  display: none;
-  top: 10%;
-  left: 90%;
-  width: 269px;
-  color: #000;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.11);
-
-  font-size: 16px;
-}
-
-#user-information .hidden-list li:first-of-type {
-  background: url(./../images/oculto.svg) no-repeat center left 2%;
-}
 
 #user-information ul {
   margin: 10px;
@@ -217,12 +189,12 @@ li {
   transition: all ease-in 250ms;
 
   font-weight: 500;
-  font-size: 17px;
+  font-size: 16px;
   color: #333;
 }
 
 .pagina-selecionada {
-  background: #f5f5f5;
+  background: #dddcdc;
   background-image: inherit;
   background-size: auto;
   background-repeat: no-repeat;
@@ -280,13 +252,30 @@ li {
   -webkit-user-select: none;
   cursor: pointer;
 }
+
+/* {
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  display: none;
+  top: 10%;
+  right: 0%;
+  width: 269px;
+  color: #000;
+  font-size: 16px;
+} */
+
+#user-information .hidden-list .goto-blocked {
+  background: url(./../images/oculto.svg) no-repeat center left 2%;
+}
+#user-information .hidden-list, 
 #online-now .changing-status {
   display: none;
   position: absolute;
-  margin-top: 2em;
   padding: 0.9em 0;
-  left: 185px;
+  left: 0;
   width: 16em;
+  color: #000;
   max-width: 246px;
   box-sizing: border-box;
   height: max-content;
@@ -294,8 +283,15 @@ li {
   box-shadow: 0px -1px 7px rgba(0, 0, 0, 0.25);
   flex-direction: column;
   text-indent: 0;
-  background-color: white;
+  background-color: #fff;
   z-index: 3;
+  font-size: 12px;
+}
+
+#user-information .hidden-list{
+top: 10%;
+right: 0;
+left: auto;
 }
 
 #online-now input[type="radio"] {
@@ -311,7 +307,7 @@ li {
 
 .this-status {
   height: max-content;
-  display: flex;
+  display: block;
 }
 
 .this-status label {
@@ -319,6 +315,7 @@ li {
   height: 2.4em;
   text-indent: 18px;
   width: 100%;
+
 
   font-size: 12px;
   line-height: 2em;
@@ -330,8 +327,8 @@ li {
 .this-status input:checked + label {
   background-image: url(./../images/confirm.svg);
   background-repeat: no-repeat;
-  background-position: 210px center;
-  background-size: 18px;
+  background-position: center right 10px;
+  background-size: 14px;
   transition: all 200ms;
 }
 
@@ -381,29 +378,28 @@ li {
 
 /*Layout para o conteúdo da direita*/
 #content-right {
-  width: 690px;
-  height: 1040px;
-  margin-top: 30px;
+  width: 670px;
+  height: max-content;
   background-color: var(--color-white);
   box-sizing: border-box;
-  padding: 20px 95px;
+  padding: 0px 90px 1px;
+  margin-left: 20px;
 }
 
 #content-right .principal-content {
-  width: 480px;
   margin: 0 auto;
+  min-height: calc(97vh);
 }
 
 #container-elements {
   display: flex;
-  height: 720px;
   flex-direction: column;
   justify-content: space-around;
 }
 
 #content-right .principal-content label {
   margin: 17px 0 6px;
-  font-size: 18px;
+  font-size: 16px;
   display: block;
 }
 
@@ -411,7 +407,7 @@ li {
 #content-right .principal-content select {
   box-sizing: border-box;
   min-width: 100%;
-  height: 56px;
+  height: 45px;
   padding: 0 15px;
 
   background: rgba(255, 255, 255, 0.1);
@@ -419,8 +415,7 @@ li {
   border-radius: 7.21202px;
 
   font-weight: 400;
-  font-size: 19px;
-  line-height: 56px;
+  font-size: 14px;
   color: rgba(0, 0, 0);
 }
 
@@ -433,28 +428,30 @@ li {
   display: flex;
   flex-direction: column;
   width: max-content;
-  margin: 31.76px auto;
+  margin: 0 auto;
 }
 
 .content-header > img {
   width: 35.33px;
   height: 39.75px;
-  margin: auto;
+  margin: 20px auto;
 }
 
 .content-header > h1 {
   font-weight: 500;
-  font-size: 32px;
-  margin-top: 15px;
+  font-size: 26px;
   letter-spacing: 5px;
+}
+
+.content-right .principal-content #container-elements label{
+  font-size: 1px;
 }
 
 .progress-next {
   display: flex;
-  width: 480px;
   height: max-content;
   justify-content: space-between;
-  margin-top: 55px;
+  margin: 20px 0;
 }
 
 .principal-content .progress-bar-content {
@@ -501,8 +498,8 @@ li {
 /*Mexendo em 'educacao-e-cultura.html*/
 .principal-content textarea {
   box-sizing: border-box;
-  width: 480px;
-  height: 170px;
+  width: 100%;
+  height: 160px;
   padding: 13px 17px;
   overflow: auto;
 
@@ -537,6 +534,7 @@ li {
   position: sticky;
   top: 0;
   object-fit: cover;
+  background: rgb(27, 26, 26);
 }
 
 #chamada-video .legenda-chamada {
@@ -569,7 +567,6 @@ li {
   color: #fff;
   font-weight: 400;
   font-size: 32px;
-  position: absolute;
 }
 
 #chamada-video .comandos-chamada {
@@ -619,12 +616,13 @@ li {
 main#mensagens {
   display: flex;
   grid-template-columns: auto 1fr;
-  height: 100vh;
+  height: calc(100vh - 10px);
   margin: auto;
   width: max-content;
 }
 
-main#mensagens .peoples-to-chat {
+main#mensagens .peoples-to-chat,
+#bloqueados #blacklist {
   width: 330px;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
@@ -645,7 +643,8 @@ main#mensagens .peoples-to-chat {
   text-align: center;
 }
 
-#mensagens .list-peoples {
+#mensagens .list-peoples ,
+#bloqueados #blacklist{
   overflow: hidden;
   overflow-y: scroll;
   display: grid;
@@ -661,7 +660,7 @@ main#mensagens .peoples-to-chat {
   background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
 }
 
-#mensagens .list-peoples .person {
+#mensagens .list-peoples .person{
   display: flex;
   height: 71px;
   align-items: center;
@@ -669,11 +668,12 @@ main#mensagens .peoples-to-chat {
   padding: 0 10px;
 }
 
-#mensagens .list-peoples .person-selected {
+#mensagens .list-peoples #person-selected {
   background-color: rgba(252, 0, 59, 0.12);
 }
 
-#mensagens .list-peoples .person object {
+#mensagens .list-peoples .person object,
+#bloqueados #blacklist object {
   margin-left: 0px;
   font-size: 11px;
   height: 1em;
@@ -681,13 +681,15 @@ main#mensagens .peoples-to-chat {
   border-radius: 4em;
 }
 
-#mensagens .list-peoples .person h3 {
+#mensagens .list-peoples .person span,
+#blacklist .person span{
   font-weight: 400;
-  width: 250px;
   font-size: 16px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
+  width: 250px;
 }
 
 #mensagens .list-peoples p {
@@ -703,18 +705,37 @@ main#mensagens .peoples-to-chat {
 /*Para o lado do chat corrente*/
 main#mensagens .chat {
   width: 567px;
-  height: 100vh;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
 
   background-color: #e2dfdf;
 }
 
 #mensagens #friend-information {
   width: 100%;
+  height: 77px;
+  align-items: center;
   display: flex;
 }
 
+#friend-information figure{
+  display: grid;
+  width: 100%;
+  position: relative;
+  grid-template-columns: max-content 1fr max-content;
+}
+
 #mensagens .friend-status {
-  margin-left: -35px;
+  background-color: var(--status-on);
+  display: flex;
+  width: 1em;
+  height: 1em;
+  border-radius: 15px;
+  position: absolute;
+  left: 11.5%;
+  top: 71%;
+  transition: all 600ms;
 }
 
 #mensagens #friend-information h2 {
@@ -734,7 +755,8 @@ main#mensagens .chat {
   display: flex;
   flex-direction: row;
   width: max-content;
-  margin: auto 0 auto auto;
+  margin: auto auto auto 0;
+  padding-right: 20px;
   position: relative;
 }
 
@@ -760,6 +782,7 @@ main#mensagens .chat {
 /*Para o menu de tradução oculto*/
 #mensagens .options-container {
   top: 45px;
+  display: none;
   left: -200%;
   position: absolute;
   width: 260px;
@@ -833,11 +856,10 @@ main#mensagens .chat {
 /*Área reservada para as mensagens já escritas e por fazer*/
 #mensagens #privado {
   overflow: hidden;
-  display: flex;
+  display: grid;
   position: relative;
-  flex-direction: column;
   width: 100%;
-  height: calc(100% - 101px);
+  height: 100%;
 }
 
 /*Mensagens já enviadas*/
@@ -874,20 +896,15 @@ main#mensagens .chat {
   font-weight: 500;
 }
 #mensagens #sended .identifier > span > span {
+  line-height: 0px;
+  font-weight: bolder;
   color: var(--vermelho-principal);
-  font-size: 32px;
-  background: var(--vermelho-principal);
-  border-radius: 4px;
-  display: inline-block;
-  height: 4px;
-  width: 4px;
-  margin: auto 2px 2px;
 }
 
 #mensagens .text-container {
   background: #f4f4f4;
   max-width: 60%;
-  min-height: 30px;
+  min-height: 20px;
   height: max-content;
   margin-left: 25px;
   padding-bottom: 4px;
@@ -896,7 +913,7 @@ main#mensagens .chat {
 }
 
 #mensagens .text-container .writed-message {
-  padding: 12px;
+  padding: 9px;
   overflow: hidden;
   max-height: max-content;
   word-break: break-word;
@@ -919,7 +936,7 @@ main#mensagens .chat {
   width: 100%;
   margin: 10px 0;
   grid-template-columns: max-content auto;
-  font-size: 14px;
+  font-size: 12px;
   text-align: justify;
 }
 
@@ -939,7 +956,10 @@ main#mensagens .chat {
   font-size: 14px;
   font-weight: 400;
 }
-
+#mensagens a{
+  text-decoration: underline;
+  color: var(--vermelho-principal);
+}
 /* Para a mensagem enviada pelo usuário */
 #mensagens #privado .user {
   display: flex;
@@ -961,44 +981,43 @@ main#mensagens .chat {
 }
 
 #mensagens #create-message {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: max-content auto;
   justify-content: space-around;
   width: 100%;
-  margin: 10px auto 20px;
+  margin: 10px auto 10px;
 }
 
 #mensagens #privado .add-media {
-  width: 52px;
-  height: 52px;
+  width: 47px;
+  height: 47px;
   border-radius: 50px;
   border: none;
   text-align: center;
-  margin: auto auto 0;
+  margin: auto 0 0;
   background-color: var(--vermelho-principal);
 
   color: #fff;
-  font-size: 36px;
+  font-size: 32px;
 }
 
 #mensagens .message-text-container {
   width: 479px;
-  min-height: 47px;
   height: max-content;
   background: #fff;
   border-radius: 15px;
   display: flex;
   align-items: flex-end;
-  margin-right: 15px;
+  margin: auto;
   overflow: hidden;
+  cursor: pointer;
 }
 
 #mensagens #message-text {
   width: 100%;
-  height: 47px;
-  max-height: 160px;
-  padding: 15px 0 15px 15px;
-  margin: 10px 0px;
+  height: max-content;
+  max-height: 150px;
+  padding: 10px 0 10px 15px;
   resize: none;
   border: none;
   text-align: justify;
@@ -1007,7 +1026,6 @@ main#mensagens .chat {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: normal;
 }
 
 #mensagens #message-text::-webkit-scrollbar {
@@ -1019,9 +1037,9 @@ main#mensagens .chat {
 }
 
 #mensagens .send-message {
-  width: 47px;
-  height: 47px;
-  margin-right: 15px;
+  width: 45px;
+  height: 45px;
+  margin-right: 6px;
   border: none;
   position: relative;
   background: url(./../images/send-message-icon.svg) no-repeat center;
@@ -1036,16 +1054,17 @@ main#mensagens .chat {
   width: 90%;
   min-height: 100vh;
   padding: 32px 29px;
-  margin: 0 auto;
+  margin: 0 20px;
 }
 
 .padrao ul.list {
   width: 100%;
+  margin-top: 20px;
   display: grid;
+  justify-content: space-between;
   column-gap: 1vmax;
-  justify-content: center;
   row-gap: 30px;
-  grid-template-columns: repeat(auto-fit, 186px);
+  grid-template-columns: repeat(auto-fit, 180px);
   box-sizing: border-box;
 }
 
@@ -1165,15 +1184,15 @@ main#mensagens .chat {
 /*localizar-pessoas.html*/
 #pessoas-regiao .search {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 70% 20%;
   grid-auto-flow: column;
   justify-content: space-between;
-  margin: 20px 0 70px;
+  margin: 20px 0 40px;
 }
 #pessoas-regiao .search-field {
-  width: 615px;
+  width: 600px;
 
-  height: 61px;
+  height: 51px;
   box-sizing: border-box;
   display: flex;
 
@@ -1186,14 +1205,14 @@ main#mensagens .chat {
   height: 100%;
   width: 100%;
   display: inline-block;
-  font-size: 20px;
+  font-size: 16px;
   padding: 10px 15px;
   border: none;
   outline: none;
 }
 
 #pessoas-regiao .search-field button {
-  height: 45px;
+  height: 35px;
   margin: auto;
   display: inline-block;
   width: 45px;
@@ -1204,8 +1223,8 @@ main#mensagens .chat {
 
 /*para Filtros*/
 #pessoas-regiao .search > button {
-  width: 190px;
-  height: 61px;
+  width: 100%;
+  height: 51px;
   left: 1153px;
   top: 133px;
   border: 1px solid #000000;
@@ -1623,32 +1642,39 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /*configuracoes.html*/
-main#configuracoes {
+main#configuracoes,
+main#servicos {
   width: 623px;
   display: flex;
+  height: 100%;
   flex-direction: column;
 }
 #configuracoes #conf-select,
-#configuracoes #conf-account {
+#configuracoes #conf-account,
+#servicos #test-select {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-#configuracoes .title {
-  font-size: 40px;
+#configuracoes .title,
+#servicos .title {
+  font-size: 38px;
   margin: 0 auto;
 }
-#configuracoes ul#conf-list {
+#configuracoes ul#conf-list,
+#servicos ul#test-list {
   display: flex;
   width: 100%;
   margin-top: 13%;
   flex-direction: column;
 }
 
-#configuracoes #conf-list li {
+#configuracoes #conf-list li,
+#servicos #test-list li {
   text-indent: 2%;
-  font-size: 22px;
-  padding: 4% 0;
+  font-size: 20px;
+  padding: 3% 0;
+  margin: 1% 0;
   background: url(./../images/arrow-right.svg) no-repeat right 20px center;
 }
 
@@ -1874,8 +1900,8 @@ main#configuracoes {
   margin-left: 5%;
 }
 
-#form-delete-account input[type="checkbox"],
-#form-delete-account input[type="checkbox"]:checked {
+#form-delete-account input[type="radio"],
+#form-delete-account input[type="radio"]:checked {
   outline: none;
   appearance: none;
   box-sizing: border-box;
@@ -1888,7 +1914,7 @@ main#configuracoes {
   border-radius: 15%;
 }
 
-#form-delete-account input[type="checkbox"]:checked {
+#form-delete-account input[type="radio"]:checked {
   background: url(./../images/Close_round.png) no-repeat;
   background-size: 130%;
   background-position: center;
@@ -1906,15 +1932,19 @@ main#configuracoes {
 }
 
 /*Escolha entre desativar e excluir conta*/
+#delete-account{
+  width: max-content;
+}
+
 #delete-account-options {
   display: none;
-  flex-direction: column;
   height: 100%;
+  grid-template-rows: max-content max-content 1fr max-content;
+  row-gap: 15px;
 }
 
 #delete-account-options .btns {
   width: 100%;
-  margin-top: 10%;
   display: grid;
   grid-template-columns: 47% 47%;
   justify-content: space-around;
@@ -1925,6 +1955,7 @@ main#configuracoes {
   width: 100%;
   height: 58px;
   border-radius: 10px;
+  margin: 0;
 
   font-size: 14px;
   font-weight: 700;
@@ -1938,7 +1969,7 @@ main#configuracoes {
 
 #delete-account-options #justification {
   display: grid;
-  margin-top: 7%;
+  grid-template-rows: max-content 1fr;
 }
 
 #delete-account-options #justification span {
@@ -1948,7 +1979,6 @@ main#configuracoes {
 
 #delete-account-options #justification textarea {
   width: 100%;
-  height: 347px;
   resize: none;
   box-sizing: border-box;
   padding: 10px;
@@ -1958,8 +1988,8 @@ main#configuracoes {
 #delete-account-options > div:last-of-type {
   display: flex;
   flex-direction: column;
-  margin-top: 7%;
-  height: 100%;
+  margin-top: auto;
+  height: max-content;
 }
 
 /*Perfil.html*/
@@ -1969,8 +1999,7 @@ main#configuracoes {
   height: calc(100vh - 10px);
 }
 #perfil {
-  min-width: 580px;
-  min-height: 940px;
+  max-width: 100%;
 }
 .add-more-photos {
   display: grid;
@@ -2118,8 +2147,61 @@ main#configuracoes {
 
 #perfil-information input[type="checkbox"]:checked + label,
 #perfil-information input[type="radio"]:checked + label {
-  background: #fdb0b0;
+  background: linear-gradient(#fc003b57, #fc003bd5);
+  color: rgb(29, 29, 29);
 }
+
+/*Teste do amor*/
+#teste-de-amor{
+  width: max-content;
+  min-width: 700px;
+  max-width: 90%;
+}
+#teste-de-amor>h1{
+  margin: 0 auto;
+}
+
+#teste-de-amor .categoria{
+  margin: 40px 0;
+}
+
+#formulario-teste .opcao{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#formulario-teste h3{
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#formulario-teste .categoria{
+  display: grid;
+  row-gap: 15px;
+
+}
+
+#formulario-teste input[type="radio"]{
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  background: rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
+}
+
+#formulario-teste input[type="radio"]:checked{
+  background: var(--vermelho-principal);
+  border: 3px solid rgb(207, 207, 207);
+}
+
+#formulario-teste label{
+  text-indent: 15px;
+}
+
+
+
 
 /*Modaais de perfil*/
 dialog {
@@ -2142,10 +2224,23 @@ dialog > div {
   box-sizing: border-box;
   padding: 60px;
 }
+
+dialog h1{
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 22px;
+/* identical to box height, or 90% */
+
+letter-spacing: 5px;
+
+}
+
 dialog button {
   width: 79%;
   font-size: 16px;
-  line-height: 2.5em;
+  line-height: 4em;
 }
 
 dialog button.red-btn {
@@ -2155,7 +2250,7 @@ dialog button.red-btn {
   border-radius: 10px;
 }
 
-dialog button.simple-btn {
+.simple-btn {
   width: max-content;
   height: max-content;
   line-height: 1em;
@@ -2169,4 +2264,107 @@ dialog #modal-perfil-1 {
   background: url(./../images/modal-bg-perfil.svg) no-repeat #fff;
   background-size: 40%;
   background-position: center;
+}
+
+dialog .close-modal{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  font-family: 'Raleway';
+  text-decoration: none;
+  color: #000;
+  background-blend-mode: color-burn;
+  padding: 12px;
+  margin-right: 10px;
+}
+
+/*Modal de teste de amor*/
+dialog#modal-teste-amor img{
+  width: 30%;
+}
+
+dialog > div{
+  padding: 30px;
+}
+
+dialog#modal-teste-amor{
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+/*Membros bloqueados*/
+#bloqueados{
+  width: 72%;
+}
+
+#bloqueados #blacklist{
+  width: 90%;
+}
+
+#bloqueados .person{
+  height: 90px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr max-content;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 10px;
+  cursor: default;
+}
+
+#bloqueados #blacklist .person span{
+  font-size: 20px;
+  margin-left: 15px;
+  width: 320px;
+}
+
+#bloqueados #blacklist .simple-btn{
+  font-size: 18px;
+}
+
+#modal-home-1,
+#modal-home-2{
+  backdrop-filter: blur(1px);
+}
+#modal-home-1>div,
+#modal-home-2>div{
+  padding: 20px;
+}
+
+#modal-home-1>div{
+  height: max-content;
+  display: grid;
+  row-gap: 20px;
+  padding-bottom: 40px;
+}
+
+#modal-home-2>div{
+  height: 280px;
+  width: 334px;
+}
+
+#modal-home-2 p{
+  width: 100%;
+  text-align: center;
+}
+
+#modal-home-2 .red-btn{
+  line-height: 45px;
+}
+
+#modal-home-2 .simple-btn{
+  color: #000;
+}
+
+/*Modal para adicionar tags em planos.html*/
+#add-option-modal img{
+  width: 14%;
+}
+
+#add-option-modal input{
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid rgb(97, 97, 97);
 }

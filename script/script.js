@@ -9,7 +9,7 @@ function setProgressVal(val) {
   }
 }
 
-//Esta chamada serve simplesmente para demonstração. Apagar de seguida
+//Esta chamada serve simplesmente para demonstração da barra de progresso. Apagar de seguida
 try {
   setProgressVal(34);
 } catch (erro) {
@@ -20,13 +20,6 @@ try {
  *Menu suspenso de 'changing-status'
  */
 const onlineAgora = document.querySelectorAll("[name = 'online-agora']");
-const changingStatus = document.querySelector(".changing-status");
-changingStatus.style.display = "none";
-document.querySelector("#show-status-window").addEventListener("click", () => {
-  if (changingStatus.style.display != "none")
-    changingStatus.style.display = "none";
-  else changingStatus.style.display = "block";
-});
 
 onlineAgora.forEach((element) =>
   element.addEventListener("click", () => {
@@ -42,89 +35,76 @@ onlineAgora.forEach((element) =>
     }
   })
 );
-
-/*Para as caixas de confirmação flutuante*/
-const closes = document.querySelectorAll(".dialog-container button");
-closes.forEach((element) => {
-  element.addEventListener("click", () => {
-    if (element.value == "info-close") var i = 0;
-    else var i = 1;
-    document.querySelectorAll(".dialog-container")[i].style.display = "none";
-  });
-});
-
-/*Chamar caixa de confirmação flutuante
- *Valores possíveis para windowName: ['information', 'question'],
- *Valores possíveis para displayName:['flex', 'none']*/
-function callDialogWindow(windowName, displayName) {
-  document.querySelector(
-    ".dialog-container.dialog-" + windowName
-  ).style.display = displayName;
-  if (displayName != "none")
-    document.querySelector("body").setAttribute("style", "overflow: hidden;");
-  else document.querySelector("body").removeAttribute("style", "overflow");
-}
+/*Ocultar qualquer janela por click*/
 try {
-  callDialogWindow("information", "none");
-  callDialogWindow("question", "none");
-} catch (erro) {
-  console.error(erro);
-}
+  janelas = [
+    ".vizualizar-menu",
+    ".hidden-list",
+    "#show-status-window",
+    ".changing-status",
+    ".botoes-top .options",
+    ".botoes-top .options-container",
+  ].map((element) => pegar(element));
+  janelas.forEach((element, index) => {
+    if ((index + 1) % 2 == 0) element.style.display = "none";
+  });
 
-/*Documento mensagens.html
- *Mostrar janela de tradução*/
-const translatorWindow = document.querySelector(".options-container");
-const menuOculto = document.querySelector(".hidden-list");
-menuOculto.setAttribute("style", "display: none;");
-
-document
-  .querySelector("#user-information>img")
-  .addEventListener("click", (e) => {
-    if (menuOculto.style.display == "none") {
-      menuOculto.style.display = "flex";
-      var temp = true;
-      document.removeEventListener("click", () => {});
-    } else {
-      menuOculto.style.display = "none";
-      var temp = false;
-    }
-    if (temp)
-      document.addEventListener("click", (e) => {
-        if (document.querySelector("#user-information>img").contains(e.target))
-          menuOculto.style.display = "flex";
-        else if (!menuOculto.contains(e.target))
-          menuOculto.style.display = "none";
+  document.addEventListener("click", function fecharJanela(e) {
+    if (!janelas.includes(e.target)) {
+      janelas.forEach((current, index) => {
+        if (index == 1 || index == 3 || index == 5)
+          current.style.display = "none";
       });
+    } else if (e.target == janelas[0]) {
+      janelas[1].style.display = "flex";
+      janelas[3].style.display = janelas[5].style.display = "none";
+    } else if (e.target == janelas[2]) {
+      janelas[3].style.display = "flex";
+      janelas[1].style.display = janelas[5].style.display = "none";
+    } else if (e.target == janelas[4]) {
+      janelas[5].style.display = "block";
+      janelas[1].style.display = janelas[3].style.display = "none";
+    }
+  });
+} catch (error) {
+  janelas = [
+    ".vizualizar-menu",
+    ".hidden-list",
+    "#show-status-window",
+    ".changing-status",
+  ].map((element) => pegar(element));
+  janelas.forEach((element, index) => {
+    if ((index + 1) % 2 == 0) element.style.display = "none";
   });
 
+  document.addEventListener("click", function fecharJanela(e) {
+    if (!janelas.includes(e.target)) {
+      janelas.forEach((current, index) => {
+        if (index == 1 || index == 3) current.style.display = "none";
+      });
+    } else if (e.target == janelas[0]) {
+      janelas[1].style.display = "flex";
+      janelas[3].style.display = "none";
+    } else if (e.target == janelas[2]) {
+      janelas[3].style.display = "flex";
+      janelas[1].style.display = "none";
+    }
+  });
+  console.error("Janelas ocultas não encontradas" + error);
+}
+
+/*Inverter idioma em mensagens*/
 try {
-  translatorWindow.setAttribute("style", "display: none;");
-  document
-    .querySelector(".botoes-top .options")
-    .addEventListener("click", () => {
-      translatorWindow.style.display = "block";
-    });
+  const switchLang = pegar("#invert-language");
+  switchLang.parentNode.style.flexDirection = "row";
+  switchLang.addEventListener("click", () => {
+    if (switchLang.parentNode.style.flexDirection == "row")
+      switchLang.parentNode.style.flexDirection = "row-reverse";
+    else switchLang.parentNode.style.flexDirection = "row";
+  });
 } catch (e) {
   console.error("Disponível só na área de mensagens >" + e);
 }
-
-/*Para ocultar qualquer janela por click*/
-document.addEventListener("mousedown", (e) => {
-  try {
-    if (translatorWindow.contains(e.target)) {
-      translatorWindow.style.display = "block";
-    } else {
-      translatorWindow.style.display = "none";
-    }
-  } catch (erro) {
-    console.log("Sem janela para ocultar" + erro);
-  }
-  if (changingStatus.contains(e.target)) {
-    changingStatus.style.display = "block";
-  } else {
-    changingStatus.style.display = "none";
-  }
-});
 
 //Redimensionando automaticamente a textarea da mensagem com uma biblioteca externa
 document.addEventListener(
@@ -199,6 +179,7 @@ try {
   console.error("Meios de pagamento" + notFound);
 }
 
+/*Criando o espaçamento no número de cartão */
 try {
   const cardNumber = document.querySelector("#card-number");
   let newCardNum = "";
@@ -301,7 +282,7 @@ try {
       });
   });
 } catch (error) {
-  console.log("Não está na tela de configurações > " + error);
+  console.error("Não está na tela de configurações > " + error);
 }
 
 /*Ir para exclusão de conta*/
@@ -317,68 +298,59 @@ try {
     .querySelector("#form-delete-account button")
     .addEventListener("click", () => {
       document.querySelector("#form-delete-account").style.display = "none";
-      document.querySelector("#delete-account-options").style.display = "flex";
+      document.querySelector("#delete-account-options").style.display = "grid";
     });
 } catch (error) {
   console.error("Não foi requisitada a exclusão da conta >" + error);
 }
 
 /*Planos, pegar fotos e botoar como background*/
-const arrayPhotos = [];
 try {
+  const arrayPhotos = ["", "", "", ""];
+  navImages(arrayPhotos, pegar("#perfil>img"));
   document
-  .querySelectorAll(".add-more-photos input")
-  .forEach((current, index) => {
-    /*Current é o input actual
-    ao ser efectuada uma mudança no input actual*/
-    current.nextElementSibling.addEventListener('click', () => {
-      if(current.nextElementSibling.className != 'remove-photo')
-        current.click()
-    })
-    current.addEventListener(
-      "change",
-      () => {
-        if (current.files && current.files[0]) {
-          const preview = document.querySelector("#perfil>img");
-          
-          preview.style.display = "flex";
-          preview.nextElementSibling.style.display = "none";
-          
-          var file = new FileReader();
+    .querySelectorAll(".add-more-photos input")
+    .forEach((current, index) => {
+      /*Current é o input actual
+       *Ao ser efectuada uma mudança no input actual*/
+      current.nextElementSibling.addEventListener("click", () => {
+        if (current.nextElementSibling.className != "remove-photo")
+          current.click();
+      });
+      current.addEventListener(
+        "change",
+        () => {
+          if (current.files && current.files[0]) {
+            const preview = document.querySelector("#perfil>img");
 
-          file.onload = function (e) {
-            arrayPhotos.splice(index, 1, e.target.result);
-            preview.src = e.target.result;
+            preview.style.display = "flex";
+            preview.nextElementSibling.style.display = "none";
 
-            /*Estiliza a card contendo a imagem, quando possui um caminho*/
-            current.parentNode.style.backgroundImage =
-              "url(" + e.target.result + ")";
-            current.parentNode.style.boxShadow = "0px 0px 9px rgba(0, 0, 0, 1)";
-            current.nextElementSibling.setAttribute(
-              "style",
-              "background: url(../images/delete.svg) no-repeat center; background-size: 100%;"
-            );
-            current.nextElementSibling.setAttribute("class", "remove-photo");
-          };
+            var file = new FileReader();
 
+            file.onload = function (e) {
+              arrayPhotos.splice(index, 1, e.target.result);
+              preview.src = e.target.result;
 
-          file.readAsDataURL(current.files[0]);
+              /*Estiliza a card contendo a imagem, quando possui um caminho*/
+              current.parentNode.style.backgroundImage =
+                "url(" + e.target.result + ")";
+              current.parentNode.style.boxShadow =
+                "0px 0px 9px rgba(0, 0, 0, 1)";
+              current.nextElementSibling.setAttribute(
+                "style",
+                "background: url(../images/delete.svg) no-repeat center; background-size: 100%;"
+              );
+              current.nextElementSibling.setAttribute("class", "remove-photo");
+            };
 
-          /*Ao remover uma imagem*/
+            file.readAsDataURL(current.files[0]);
+
+            /*Ao remover uma imagem*/
             current.nextElementSibling.addEventListener("click", () => {
-              current.value = ''
-              // arrayPhotos.splice(index, 1)
-              arrayPhotos.splice(index, 1);
-              let test = false
-              for(element in arrayPhotos) {
-                if (arrayPhotos[element].length > 1) {
-                  preview.src = arrayPhotos[element];
-                  test = true
-                } else if(!test){
-                  preview.style.display = "none";
-                  document.querySelector("#perfil>p").display = "flex";
-                }
-              };
+              current.value = "";
+              arrayPhotos.splice(index, 1, "");
+              var resta = false;
 
               current.nextElementSibling.removeAttribute("class");
               current.parentNode.removeAttribute("style", "background-image");
@@ -386,24 +358,160 @@ try {
                 "style",
                 "background: url(./../images/plus.svg) no-repeat center;"
               );
+              for (let c in arrayPhotos) {
+                if (!arrayPhotos[c] == "") {
+                  return (preview.src = arrayPhotos[c]);
+                  resta = true;
+                }
+              }
+              if (!resta) {
+                preview.style.display = "none";
+                preview.nextElementSibling.style.display = "flex";
+              }
             });
-          
-        }
-      },
-      false
-    );
-  });
+          }
+        },
+        false
+      );
+    });
 } catch (error) {
-  console.error('Tente postar uma foto antes, vá para perfil' + error)
+  console.error("Tente postar uma foto antes, vá para perfil" + error);
 }
 
 /*Modais */
 try {
-  document.querySelectorAll('dialog button').forEach((current) => current.addEventListener('click', () => {
-  current.parentNode.parentNode.style.display = 'none'
-}))
+  document.querySelectorAll("dialog button").forEach((current) =>
+    current.addEventListener("click", () => {
+      current.parentNode.parentNode.style.display = "none";
+    })
+  );
 } catch (error) {
-  console.error('Não existem modais para esta página')
+  console.error("Não existem modais para esta página");
 }
 
+/*Comum querySelector*/
+function pegar(selector) {
+  return document.querySelector(selector);
+}
 
+/*Comum querySelectorAll*/
+function pegarTodos(selector) {
+  return document.querySelectorAll(selector);
+}
+
+/*Próxima janela oculta, em user-about*/
+function proxJanela(aoClicar, janelaMostrar, janelaOcultar) {
+  janelaMostrar.style.display = "grid";
+  janelaOcultar.style.display = "none";
+  var pai = aoClicar.parentNode;
+  pai.removeChild(aoClicar);
+  filho = document.createElement("button");
+  filho.setAttribute("class", "next-page-about");
+  filho.textContent = ">";
+  pai.appendChild(filho);
+  aoClicar.setAttribute("type", "submit");
+}
+
+/*Adicionar tags, perfil*/
+pegarTodos(".add-option-before").forEach((current) => {
+  current.addEventListener("click", () => {
+    pegar("#add-option-modal").setAttribute("open", "true");
+    pegar("#add-option-modal").style.display = "grid";
+    pegar("#add-elemento").addEventListener("click", pegarCaixa);
+  });
+  function pegarCaixa() {
+    var valorPegado = pegar("#add-option-modal input").value;
+    pegar("#add-option-modal input").value = "";
+
+    var theInput = document.createElement("input");
+    theInput.setAttribute("type", "checkbox");
+    theInput.setAttribute("id", "tag-" + valorPegado);
+    current.parentNode.insertBefore(theInput, current);
+
+    var theLabel = document.createElement("label");
+    theLabel.setAttribute("for", "tag-" + valorPegado);
+    theLabel.textContent = valorPegado;
+    current.parentNode.insertBefore(theLabel, current);
+
+    pegar("#add-option-modal").close();
+    pegar("#add-elemento").removeEventListener("click", pegarCaixa);
+  }
+});
+
+/*Navegar entre imagens*/
+function navImages(arrayNavegado, ondeMostrar) {
+  actual = 0;
+  const proxima = pegar("#next-carroussel");
+  const anterior = pegar("#preview-carroussel");
+
+  proxima.addEventListener("click", () => {
+    if (actual >= arrayNavegado.length - 1) actual = 0;
+    else actual++;
+
+    ondeMostrar.src = arrayNavegado[actual];
+  });
+
+  anterior.addEventListener("click", () => {
+    if (actual <= 0) actual = arrayNavegado.length - 1;
+    else actual--;
+
+    ondeMostrar.src = arrayNavegado[actual];
+  });
+}
+
+/*Ao clicar em outro perfil, ir para home.html*/
+pegarTodos(".outro-perfil").forEach((current) => {
+  current.addEventListener("dblclick", () => {
+    window.location.replace("./../home/home.html");
+  });
+});
+
+/*Enviar mensagem */
+try {
+  const escreverMensagem = pegar("textarea#message-text");
+  escreverMensagem.addEventListener("keydown", (e) => {
+    if (e.keyCode == 13 && e.ctrlKey) escreverMensagem.value += "\n";
+    else if (e.keyCode == 13 && !e.ctrlKey) {
+      enviar();
+    }
+  });
+  function enviar() {
+    if (escreverMensagem.value != "") {
+      dia = "Segunda";
+      hora = "18";
+      minuto = "22";
+      var enviar =
+        "<div class='the-message-container user'><div class='identifier'><span>" +
+        dia +
+        "<span> &middot; </span> as " +
+        hora +
+        ":" +
+        minuto +
+        "</span></div><div class='text-container'><p class='writed-message'>" +
+        escreverMensagem.value.replaceAll('\n', '<br>') +
+        "</p></div>";
+      pegar("#sended").innerHTML += enviar;
+      
+    }
+    escreverMensagem.blur();
+    pegar('#sended').lastChild.focus()
+    escreverMensagem.value = "";
+    escreverMensagem.style.height = "max-content";
+    pegar('#sended').scrollTo(0, 1000)
+  }
+  
+} catch (error) {
+  console.error("Tente mandar uma mensagem" + error);
+}
+
+/*Alterar pessoa com quem se conversa */
+try {
+  pegarTodos('.person').forEach(person => {
+    person.addEventListener('click', () => {
+      pegar('#person-selected').removeAttribute('id')
+      person.setAttribute('id', 'person-selected')
+    })
+  })
+} catch (error) {
+  console.error('Altere antes entre as conversas' + error)
+}

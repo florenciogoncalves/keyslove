@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complete o perfil - Keyslov</title>
+    <title>Complete o perfil &mid; Keyslov</title>
+    <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./../style/style.css" />
     <link rel="stylesheet" href="./../style/responsive.css">
   </head>
@@ -13,7 +14,7 @@
       <div id="div-left">
         <div id="user-information">
           <figure>
-            <img src="./../temp.png" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
 
             <figcaption>
               <div class="status"></div>
@@ -22,12 +23,45 @@
             </figcaption>
           </figure>
 
-          <img src="./../images/option.svg" />
+          <img  class="vizualizar-menu" src="./../images/option.svg" />
           <div class="hidden-list">
             <ul>
-              <li>Membros Bloqueados</li>
+              <a href="bloqueados.html"><li>Membros Bloqueados</li></a>
               <li>Lorem Ipsum exemplo</li>
             </ul>
+          </div><div id="online-now">
+
+            <div class="changing-status">
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  value="online"
+                  id="online"
+                />
+                <label for="online">Online</label>
+              </div>
+
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="ocupado"
+                  value="ocupado"
+                />
+                <label for="ocupado">Ocupado</label>
+              </div>
+
+              <div class="this-status">
+                <input
+                  type="radio"
+                  name="online-agora"
+                  id="invisivel"
+                  value="invisivel"
+                />
+                <label for="invisivel">Invisível</label>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -42,58 +76,26 @@
             <li><a href="./../home/configuracoes.html">Configurações</a></li>
             <li><a href="./../home/mensagens.html">Mensagens</a></li>
             <li><a href="./../home/servicos.html">Serviços</a></li>
-            <li id="online-now">
-              Online agora
-
-              <div class="changing-status">
-                <div class="this-status">
-                  <input
-                    type="radio"
-                    name="online-agora"
-                    value="online"
-                    id="online"
-                  />
-                  <label for="online">Online</label>
-                </div>
-
-                <div class="this-status">
-                  <input
-                    type="radio"
-                    name="online-agora"
-                    id="ocupado"
-                    value="ocupado"
-                  />
-                  <label for="ocupado">Ocupado</label>
-                </div>
-
-                <div class="this-status">
-                  <input
-                    type="radio"
-                    name="online-agora"
-                    id="invisivel"
-                    value="invisivel"
-                  />
-                  <label for="invisivel">Invisível</label>
-                </div>
-              </div>
+            <li><a href="./../home/online.html">Online agora</a>
             </li>
-            <li><a href="#">Teste de amor</a></li>
+            <li><a href="teste-de-amor.html">Teste de amor</a></li>
           </ul>
         </nav>
 
-        <a href="./../home/localizar-pessoas.html"><div id="peoples-left">
-          <h4>Pessoas pela região</h4>
+        <a href="./../home/localizar-pessoas.html">
+          <div id="peoples-left">
+            <h4>Pessoas pela região</h4>
 
-          <div class="people-organizer">
-            <img src="./../temp-2.svg" />
-            <img src="./../temp-2.svg" />
-            <img src="./../temp-2.svg" />
-          </div>
-        </div></a>
+            <div class="people-organizer">
+              <img src="./../debug-images/temp-2.svg" />
+              <img src="./../debug-images/temp-2.svg" />
+              <img src="./../debug-images/temp-2.svg" />
+            </div></div
+        ></a>
       </div>
     </div>
     <div id="content-right">
-      <form action="#" class="principal-content">
+      <form action="../home/home.html" method="get" class="principal-content">
         <header class="content-header">
           <img src="./../images/Book_check_fill.svg" />
           <h1>Estilo de vida</h1>
@@ -104,31 +106,31 @@
             <div class="iten">
               <label for="beber">Você bebe?</label>
               <select id="beber">
-                <option>Selecionar...</option>
+                <option selected hidden disabled>Selecionar...</option>
               </select>
             </div>
             <div class="iten">
               <label for="fumar">Você fuma?</label>
               <select id="fumar">
-                <option>Selecionar...</option>
+                <option selected hidden disabled>Selecionar...</option>
               </select>
             </div>
             <div class="iten">
               <label for="ocupacao">Ocupação</label>
               <select id="ocupacao">
-                <option>Selecionar...</option>
+                <option selected hidden disabled>Selecionar...</option>
               </select>
             </div>
             <div class="iten">
               <label for="filhos">Possui filhos?</label>
               <select id="filhos">
-                <option>Selecionar...</option>
+                <option selected hidden disabled>Selecionar...</option>
               </select>
             </div>
             <div class="iten">
               <label for="quantidade-filhos">Quantidade de filhos</label>
               <select id="quantidade-filhos">
-                <option>01</option>
+                <option selected hidden disabled>01</option>
               </select>
             </div>
           </div>
@@ -137,21 +139,21 @@
             <div class="iten">
               <label for="pets">Possui animais de estimação?</label>
               <select id="pets">
-                <option>Selecionar...</option>
+                <option selected hidden disabled>Selecionar...</option>
               </select>
             </div>
 
             <div class="iten">
               <label for="quantidade-pets">Quantidade</label>
               <select id="quantidade-pets">
-                <option>Selecionar...</option>
+                <option selected hidden disabled>Selecionar...</option>
               </select>
             </div>
 
             <div class="iten">
               <label for="moradia">Situação de moradia</label>
               <select id="moradia">
-                <option>Selecionar...</option>
+                <option selected hidden disabled>Selecionar...</option>
               </select>
             </div>
 
@@ -160,14 +162,14 @@
                 >Disposição para mudar de país</label
               >
               <select id="disposi-mudar-pais">
-                <option>Selecionar...</option>
+                <option selected hidden disabled>Selecionar...</option>
               </select>
             </div>
 
             <div class="iten">
               <label for="religiao">Religião</label>
               <select id="religia">
-                <option>Selecionar...</option>
+                <option selected hidden disabled>Selecionar...</option>
               </select>
             </div>
           </div>
@@ -180,7 +182,14 @@
             </div>
           </div>
 
-          <button class="next-page-about">></button>
+          <button
+              class="next-page-about"
+              type="button"
+              onclick="proxJanela(document.querySelector('button.next-page-about'), 
+          document.querySelector('.part-2'), document.querySelector('.part-1'))"
+            >
+              >
+            </button>
         </div>
       </form>
     </div>
