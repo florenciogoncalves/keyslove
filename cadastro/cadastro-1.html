@@ -1,10 +1,13 @@
+<!--
+  Não permita o login caso haja alguma class="not-correct"
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Keyslov - Cadastro</title>
+    <title>Cadastro &mid; Keyslov</title>
     <link
       rel="shortcut icon"
       href="./../images/favicon.svg"
@@ -23,43 +26,52 @@
 
     <div class="form-cadastro-container">
       <div class="cadastro-layout">
-        <form action="./cadastro-2.html" method="get" id="form-cadastro1">
+
+        <form action="cadastro-2.html" method="get" id="form-cadastro1">
           <h1>Cadastro de conta</h1>
           <label for="cad-email">Email</label>
           <input
             type="email"
             id="cad-email"
-            placeholder="Nome exemplo"
+            name="email"
+            placeholder="Insira seu email"
             required
           />
           <label for="cad-tel">Telefone</label>
           <input
             type="tel"
+            name="telemovel"
             id="cad-tel"
-            placeholder="+55(11) 900000000"
+            placeholder="+55(11) 9000000"
             required
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
           />
           <label for="cad-pass">Senha</label>
+          <p class="erro-preenchimento info-erro-senha"></p>
+
           <input
             type="password"
             id="cad-pass"
-            placeholder="****************"
+            name="password"
+            placeholder="*********"
             required
           />
           <label for="cad-confirm-pass">Senha de confirmação</label>
           <input
             type="password"
             id="cad-confirm-pass"
-            placeholder="****************"
+            placeholder="*********"
             required
           />
           <div class="checkbox">
             <input type="checkbox" id="accept-terms" required />
             <label for="accept-terms">Aceito a política de privacidade</label>
           </div>
-          <button class="continue btn-register">CADASTRAR</button>
+          <button class="continue btn-register" id="verify-pass" type="submit">CADASTRAR</button>
         </form>
       </div>
     </div>
+
+    <script src="./../script/cadastro.js"></script>
   </body>
 </html>

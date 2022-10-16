@@ -1,3 +1,5 @@
+import Dropzone from 'dropzone'
+
 const dropzoneArea = document.querySelectorAll("#photo1");
 
 dropzoneArea.addEventListener("dragover", (e) => {

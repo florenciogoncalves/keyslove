@@ -18,6 +18,7 @@ main#perfil {
   display: grid;
   height: 97.5vh;
   width: 70%;
+  min-width: 450px !important;
   box-sizing: border-box;
   grid-template-rows: max-content 1fr max-content;
   overflow: hidden;
@@ -369,7 +370,7 @@ main#carroussel .botoes {
   height: max-content;
   display: grid;
   background: none;
-  grid-template-columns: repeat(auto-fit, 270px);
+  grid-template-columns: repeat(auto-fit, 260px);
   padding: 15px 0 0;
   justify-items: end;
   box-sizing: border-box;

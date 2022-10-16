@@ -3,34 +3,41 @@
 body {
   display: grid;
   grid-template-rows: max-content 1fr;
-  max-height: 100vh;
+  height: 100vh;
 
   background-image: url(./../images/heath-bg-left.svg),
-    url(./../images/hearth-bg-right.svg);
+  url(./../images/hearth-bg-right.svg);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 31vw;
   background-position: left bottom, right center;
+  background-origin: border-box;
+
+
 }
 
-#header-content {
-  height: 60px;
+
+input,
+select{
+  outline: none !important;
+
 }
 
 .form-cadastro-container{
   display: grid;
-  height: max-content;
+  height: 100%;
+  align-items: center;
 }
 
 /*LAYOUT DA CAIXA DE CADASTRO*/
 .cadastro-layout {
   position: relative;
   width: max-content;
-  height: 100%;
+  height: max-content;
   margin: auto;
   background: #fff;
   box-shadow: 0px 0px 116px rgba(0, 0, 0, 0.26);
   border-radius: 8px;
-  padding: 30px 80px;
+  padding: 25px 70px;
   box-sizing: border-box;
 }
 .cadastro-layout h1 {
@@ -43,6 +50,14 @@ body {
 
 .cadastro-layout p {
   height: max-content;
+}
+
+/*Para mensagens de erro*/
+.erro-preenchimento{
+  font-size: 11px;
+  text-indent: 10px;
+  display: none;
+  color: var(--vermelho-principal);
 }
 
 .cadastro-layout form,
@@ -75,8 +90,9 @@ body {
   font-size: 14px;
   line-height: 56px;
 }
-.cadastro-layout form input:not([type="radio"], .pass-camp):focus {
-  outline: solid 0.01px var(--color-black);
+
+.not-correct{
+  border: 2px solid var(--vermelho-principal) !important;
 }
 
 /*Botões dentro da caixa de cadastro*/
@@ -94,7 +110,7 @@ body {
 /*ESTILIZANDO O ARQUIVO 'cadastro-1.html'*/
 #form-cadastro1 .checkbox {
   display: flex;
-  margin: 22px 0;
+  margin: 16px 0;
 }
 #form-cadastro1 .checkbox label {
   margin: 0;
@@ -109,7 +125,7 @@ body {
   position: relative;
   appearance: none;
   cursor: pointer;
-  width: 27px;
+  width: 25px;
   margin-right: 10px;
   height: 25px;
 
@@ -120,7 +136,6 @@ body {
 #form-cadastro1 input[type="checkbox"]#accept-terms:checked {
   background: url(./../images/confirm.svg) no-repeat center;
 }
-/*FIM cadastro-1.html*/
 
 /*  Estilizando o form do arquivo cadastro-2.html*/
 #form-cadastro2 input[type="text"]{
@@ -303,6 +318,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.area-drop input[type="file"]{
+  height: 100% !important;
+  opacity: 0;
+}
+
+.area-drop span{
+  position: absolute;
 }
 
 #form-cadastro5 button{

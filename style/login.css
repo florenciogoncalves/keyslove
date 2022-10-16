@@ -5,8 +5,17 @@ body {
       rgba(253, 0, 59, 0.68) 74.79%,
       rgba(253, 0, 59, 0.54) 93.02%,
       rgba(253, 0, 59, 0.5) 100%
-    )
-    no-repeat;
+    );
+    grid-template-rows: auto 1fr max-content;
+    height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+input{
+  outline: none !important;
+
 }
 
 #enter-box {

@@ -1,3 +1,5 @@
+const statusOn = localStorage.getItem('status')
+
 //Para a barra de progresso para o carroussel da página home
 function setProgressVal(val) {
   if (val <= 100) {
@@ -25,16 +27,48 @@ onlineAgora.forEach((element) =>
   element.addEventListener("click", () => {
     var setado = document.querySelector("#user-information .status");
     if (element.value == "online") {
+
+      localStorage.clear()
+
+      localStorage.setItem('status', 'online');
+    
       setado.style.display = "block";
       setado.style.backgroundColor = "var(--status-on)";
+
     } else if (element.value == "ocupado") {
+      // if(statusOn){
+      //   localStorage.removeItem('status')
+      // }
+
+      localStorage.clear()
+      localStorage.setItem('status', 'ocupado');
+
       setado.style.display = "block";
       setado.style.backgroundColor = "var(--status-off)";
+
+     
     } else {
+
+      // if(statusOn){
+      //   localStorage.removeItem('status')
+      // }
+
+      localStorage.clear()
+
+      localStorage.setItem('status', 'offline')
       setado.style.display = "none";
+
+      console.log('Status Offline')
+     
+      
     }
+  
   })
-);
+
+
+
+  );
+
 /*Ocultar qualquer janela por click*/
 try {
   janelas = [
