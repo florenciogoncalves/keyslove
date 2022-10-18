@@ -121,6 +121,14 @@ try {
       confPassWord.className = "not-correct";
     } else confPassWord.removeAttribute("class", "not-correct");
   }
+
+  setInterval(() => {
+    if (document.querySelectorAll(".not-correct").length < 1 && passWord.value != '' && confPassWord.value != '' && telefone.value.length >= 14) {
+      document.querySelector("#verify-pass").setAttribute("type", "submit");
+    } else {
+      document.querySelector("#verify-pass").setAttribute("type", "button");
+    }
+  }), 1000;
 } catch (error) {
   console.error("Verifique a primeira janela de cadastro" + error);
 }
@@ -132,11 +140,13 @@ try {
 try {
   let dataAtual = new Date();
 
+  //Pegando os campos de seleção de data
   document.querySelectorAll(".select-placeholder").forEach((element) => {
     element.style.color = "#999";
     element.addEventListener("change", () => (element.style.color = "#000"));
   });
 
+  //Botando cor cinza para opções que ficam de placeholder
   function colorDisabled() {
     document.querySelectorAll("option").forEach((current) => {
       if (!current.getAttribute("disabled")) {
@@ -149,6 +159,8 @@ try {
   const bornDay = document.querySelector("#born-day");
   const bornMonth = document.querySelector("#born-month");
   const bornYear = document.querySelector("#born-year");
+  
+  document.querySelector('#first-year').textContent = dataAtual.getFullYear() - 18
 
   upDay(31);
   upMonth();
@@ -212,7 +224,7 @@ try {
     }
   }
 
-  //Pega os valores dos da data escolhida pelo usuário
+  //Pega os valores da data escolhida pelo usuário
   function upDate() {
     selectedDay = parseInt(bornDay.options[bornDay.selectedIndex].textContent);
     selectedMonth = parseInt(
@@ -238,6 +250,7 @@ try {
     const preserved = selectedDay;
     upDate();
 
+    //Caso o novo mês selecionado possua o dia selecionado, matém o valor
     if (max30.includes(selectedMonth)) {
       remove();
       upDay(30);
@@ -246,6 +259,7 @@ try {
       upDay(31);
     }
     reconfirmFebruary();
+
     if (preserved <= bornDay.childElementCount)
       bornDay.options[preserved - 1].setAttribute("selected", true);
     colorDisabled();
@@ -257,13 +271,14 @@ try {
     upDate();
     if (selectedYear % 4 == 0) valFeb = 29;
     else valFeb = 28;
+    //Setando os valores, caso seja selecionado Fevereiro
     if (selectedMonth == 2) {
       remove();
       upDay(valFeb);
     }
-
+    //Define o limite de data, caso tenha selecionado o último ano possível
     if (selectedYear == parseInt(dataAtual.getFullYear()) - 18) {
-      for (let c = parseInt(dataAtual.getMonth()) + 1; c <= 12; c++)
+      for (let c = parseInt(dataAtual.getMonth()) + 2; c <= 12; c++)
         bornMonth.options[c].setAttribute("disabled", true);
 
       if (selectedMonth >= parseInt(dataAtual.getMonth()) + 1) {
@@ -340,27 +355,27 @@ try {
   console.log("Cadastro OTP code not found" + error);
 }
 
-
 //Imagens para pegar em cadastro-5
 try {
   document.querySelectorAll('input[type="file"]').forEach((current) => {
-    console.log(current)
+    console.log(current);
     current.addEventListener(
       "change",
       () => {
         if (current.files && current.files[0]) {
           const preview = document.querySelector("#perfil>img");
 
-
           var file = new FileReader();
 
           file.onload = function (e) {
-            current.parentNode.style.background = 'url(' + e.target.result + ') cover no-repeat';
+            current.parentNode.style.background =
+              "url(" + e.target.result + ") cover no-repeat";
 
             /*Estiliza a card contendo a imagem, quando possui um caminho*/
             current.parentNode.style.backgroundImage =
               "url(" + e.target.result + ")";
-            current.parentNode.style.boxShadow = "0px 0px 9px rgba(0, 0, 0, .2)";
+            current.parentNode.style.boxShadow =
+              "0px 0px 9px rgba(0, 0, 0, .2)";
             current.parentNode.style.border = "none";
             current.parentNode.style.backgroundSize = "cover";
             current.parentNode.style.backgroundPosition = "center";
@@ -369,10 +384,8 @@ try {
               "background: url(../images/delete.svg) no-repeat center; background-size: 100%;"
             );
             current.nextElementSibling.setAttribute("class", "remove-photo");
-          
-          
-          
-            current.nextElementSibling.style.display = 'none'
+
+            current.nextElementSibling.style.display = "none";
           };
 
           file.readAsDataURL(current.files[0]);
@@ -382,5 +395,5 @@ try {
     );
   });
 } catch (error) {
-  console.error('Tente pegar uma imagem para a dropzone' + error)
+  console.error("Tente pegar uma imagem para a dropzone" + error);
 }

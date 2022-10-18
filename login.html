@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="./style/logon.css" />
     <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./style/login.css" />
+    <link rel="stylesheet" href="./style/style-responsivo.css">
+    <link rel="stylesheet" href="./style/responsive-login.css" />
   </head>
-  <body>
-    <header class="header-content">
+  <body class="body-login">
+    <header class="header-content header-login">
       <img src="./images/Keyslov.svg" style="visibility: hidden;" class="header-logo" />
       <nav class="nav-btn">
         <a href="./cadastro/cadastro-1.html"
@@ -20,7 +22,7 @@
       </nav>
     </header>
 
-    <div id="enter-box">
+    <div id="enter-box" class="logon-split">
       <div class="left-side">
         <div>
           <img src="./images/bg.png" />
@@ -37,17 +39,17 @@
       <form action="./home/home.html" method="get" class="right-side">
         <img src="./images/favicon.svg" />
         <h1><span>K</span>eys<span>l</span>ov</h1>
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Senha" required />
+        <input type="email" placeholder="Email" required name="email"/>
+        <input type="password" placeholder="Senha" required name="password"/>
         <div>
-          <span><input type="checkbox" />Lembrar de mim</span>
+          <span><input type="checkbox" id="lembrar-me"/><label for="lembrar-me">Lembrar de mim</label></span>
           <a href="#">Esqueci minha senha</a>
         </div>
 
         <a href="">
           <button>entrar na minha conta</button>
         </a>
-        <a href="./cadastro/cadastro-1.html">criar conta</a>
+        <a href="./cadastro/cadastro-1.html" class="criar-conta">criar conta</a>
       </form>
     </div>
 

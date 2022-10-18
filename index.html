@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conecte-se - Keyslov</title>
     <link rel="stylesheet" href="./style/logon.css" />
-    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./style/responsive-login.css" />
   </head>
   <body>
-    <header class="header-content">        
-      <img src="./images/Keyslov.svg" class="header-logo" />
+    <header class="header-content">
+      <a href=""><img src="./images/Keyslov.svg" class="header-logo" /></a>
       <nav class="nav-btn index">
-        <a href="./cadastro/cadastro-1.html"><button class="border-btn">Criar conta</button></a>
+        <a href="./cadastro/cadastro-1.html"
+          ><button class="border-btn">Criar conta</button></a
+        >
         <a href="./login.html"><button class="white-btn">Entrar</button></a>
         <div class="lang-selector">
           <img src="./images/bandeiradobrasil-2-cke (1) 1.png" />
@@ -23,37 +26,47 @@
       </nav>
     </header>
 
-    <div id="enter-box">
-      <h2>Seja bem vindo (a)</h2>
-      <p>
-        Lorem ipsum dolor sit amet. Est minima aliquam sit quia ratione aut nemo
-        libero et necessitatibus dolorum
-      </p>
-      <div class="methods-continue">
-        <button class="google-continue continue">Continuar com google</button>
-        <button class="facebook-continue continue">
-          Continuar com Facebook
-        </button>
+    <section id="menu-logon">
+      <div id="enter-box">
+        <h2>Seja bem vindo (a)</h2>
+        <p>
+          Lorem ipsum dolor sit amet. Est minima aliquam sit quia ratione aut
+          nemo libero et necessitatibus dolorum
+        </p>
+        <div class="methods-continue">
+          <button class="google-continue continue">Continuar com google</button>
+          <button class="facebook-continue continue">
+            Continuar com Facebook
+          </button>
+        </div>
+        <p>Ou</p>
+        <a href="./cadastro/cadastro-1.html"
+          ><button class="continue btn-register">Cadastra - se</button></a
+        >
+        <a href="./login.html">Efectuar login</a>
       </div>
-      <p>Ou</p>
-      <a href="./cadastro/cadastro-1.html"
-        ><button class="continue btn-register">Cadastra - se</button></a
-      >
-      <a href="./login.html">Efectuar login</a>
-    </div>
-    <div class="messages">
-      <h3>Off para indecisões</h3>
-      <h3>On para atitudes</h3>
-    </div>
+      <div class="messages">
+        <h3>Off para indecisões</h3>
+        <h3>On para atitudes</h3>
+      </div>
+    </section>
     <footer>
       <div class="footer">
         <div class="img-links">
-          <img src="./images/Logo branca.png" />
+          <a href="#"><img src="./images/Logo branca.png" /></a>
           <div>
-            <img src="./images/Vector.png" />
-            <img src="./images/Vector(1).png" />
-            <img src="./images/Vector(2).png" />
-            <img src="./images/Vector(3).png" />
+            <a href="http://facebook.com" target="_blank"
+              ><img src="./images/Vector.png"
+            /></a>
+            <a href="http://whatsapp.com" target="_blank"
+              ><img src="./images/Vector(1).png"
+            /></a>
+            <a href="http://instagram.com" target="_blank"
+              ><img src="./images/Vector(2).png"
+            /></a>
+            <a href="http://twitter.com" target="_blank"
+              ><img src="./images/Vector(3).png"
+            /></a>
           </div>
         </div>
         <ul class="footer-links">

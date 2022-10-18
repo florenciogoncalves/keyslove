@@ -25,10 +25,15 @@
         <form action="cadastro-3.html" method="get" id="form-cadastro2">
           <h1>Cadastro de conta</h1>
           <label for="">Nome</label>
-          <input type="text" placeholder="Nome exemplo" required />
+          <input type="text" placeholder="Nome exemplo" name="nome" required />
           <label for="">Data de nascimento</label>
           <div class="the-date">
-            <select class="continue select-placeholder" id="born-day" required>
+            <select
+              class="continue select-placeholder"
+              id="born-day"
+              required
+              name="dia-nascimento"
+            >
               <option selected hidden disabled value="">01</option>
             </select>
 
@@ -36,12 +41,20 @@
               class="continue select-placeholder"
               id="born-month"
               required
+              name="mes-nascimento"
             >
               <option selected hidden disabled value="">01</option>
             </select>
 
-            <select class="continue select-placeholder" id="born-year" required>
-              <option selected hidden disabled value="">2004</option>
+            <select
+              class="continue select-placeholder"
+              id="born-year"
+              required
+              name="ano-nascimento"
+            >
+              <option selected hidden disabled value="" id="first-year">
+                e
+              </option>
             </select>
           </div>
 

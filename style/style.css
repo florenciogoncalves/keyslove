@@ -1,6 +1,6 @@
 @import url(./logon.css);
 @import url(./home.css);
-@import url(./responsive.css);
+@import url(./style-responsivo.css);
 
 body {
   position: relative;
@@ -24,6 +24,7 @@ li {
   list-style: none;
   cursor: pointer;
 }
+select, textarea{outline: none !important;}
 
 #menu-esquerdo {
   height: 100%;
@@ -90,6 +91,7 @@ li {
   padding: 0;
 }
 
+
 #user-information figure{
   display: flex;
   position: relative;
@@ -141,6 +143,8 @@ li {
 #user-information #show-status-window {
   font-weight: 400;
   font-size: 12px;
+  user-select: none;
+  -webkit-user-select: none;
   text-decoration-line: underline;
   cursor: pointer;
 }
@@ -265,8 +269,8 @@ li {
   font-size: 16px;
 } */
 
-#user-information .hidden-list .goto-blocked {
-  background: url(./../images/oculto.svg) no-repeat center left 2%;
+#user-information .hidden-list .pessoas-bloqueadas li{
+  background: url(./../images/oculto.svg) no-repeat center left 2% !important;
 }
 #user-information .hidden-list, 
 #online-now .changing-status {
@@ -389,25 +393,40 @@ left: auto;
 #content-right .principal-content {
   margin: 0 auto;
   min-height: calc(97vh);
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+}
+
+#content-right .principal-content .iten option{
+  color: #000;
 }
 
 #container-elements {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  margin-top: 30px;
 }
 
 #content-right .principal-content label {
-  margin: 17px 0 6px;
+  margin: 8px 0 6px;
   font-size: 16px;
   display: block;
+}
+
+#content-right .principal-content #nacionalidade{
+  appearance: none !important;
+  outline: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
 }
 
 #content-right .principal-content input:not([type="range"]),
 #content-right .principal-content select {
   box-sizing: border-box;
   min-width: 100%;
-  height: 45px;
+  height: 40px;
   padding: 0 15px;
 
   background: rgba(255, 255, 255, 0.1);
@@ -1256,12 +1275,11 @@ main#mensagens .chat {
 
 #planos .card-container {
   display: flex;
-  grid-template-columns: repeat(autofit, 250px);
   grid-auto-flow: column dense;
   column-gap: 1.5vmax;
   max-height: 300px;
-  margin-top: -2%;
-  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   justify-content: space-between;
 }
 
@@ -1269,29 +1287,25 @@ main#mensagens .chat {
   display: none;
 }
 
+/*Bordas vermelhas para card selecionado*/
 #planos .card-container input[type="radio"]:checked + label{
   border: 2px solid #FC003B;
 }
 
 #planos .card-content {
-  width: 250px;
-  height: 100%;
   max-height: 300px;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
 
-  background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
 
 #planos .card-content img {
-  width: 70%;
   margin: auto;
-  display: block;
-  height: max-content;
   user-select: none;
 }
 
@@ -1299,11 +1313,8 @@ main#mensagens .chat {
   width: 100%;
   margin: 10px auto;
 
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
   text-align: justify;
-  height: 144px;
+  height: 100%;
   overflow: hidden;
   word-break: break-all;
   line-clamp: 2;
