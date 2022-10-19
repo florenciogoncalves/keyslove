@@ -13,14 +13,24 @@
   header.header-content {
     margin: 0;
     padding: 15px;
-    width: max-content;
+    width: 100%;
+    height: max-content;
   }
   .header-logo {
     height: 28px;
     width: max-content;
   }
-  .nav-btn {
+  .nav-btn  button{
     display: none;
+  }
+
+  .header-content .lang-selector{
+    flex-direction: row;
+    height: max-content;
+  }
+  .header-content .lang-selector img{
+    width: 33px;
+    height: 23px;
   }
 
   #menu-logon {
@@ -88,7 +98,11 @@
   }
 
   footer .footer .img-links {
-    display: none;
+    display: none;  
+  }
+
+  footer .footer .img-links div > a > img{
+    width: 60%;
   }
 
   .footer .footer-links {
@@ -100,9 +114,9 @@
   }
 
   footer p {
-    font-size: 5px;
+    font-size: 7px;
     height: max-content !important;
-    line-height: 15px;
+    line-height: 16px;
   }
 
   footer {
@@ -132,6 +146,7 @@
     height: max-content;
     width: 100%;
     background: #fff;
+    padding: 25px;
   }
 
   #enter-box form.right-side img {
@@ -165,7 +180,7 @@
   }
 
   #enter-box form.right-side div span + a {
-    font-size: 12px;
+    font-size: 10px;
     width: max-content;
     height: max-content !important;
     line-height: normal;
