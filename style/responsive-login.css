@@ -4,6 +4,7 @@
   body {
     background-size: contain !important;
     display: grid;
+    height: 100vh;
     grid-template-rows: auto auto auto;
     max-width: 100vw;
     background-size: auto !important;
