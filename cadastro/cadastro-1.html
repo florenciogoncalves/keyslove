@@ -14,19 +14,18 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./../style/cadastro.css" />
+    <link rel="stylesheet" href="./../style/responsive-login.css" />
   </head>
   <body>
     <header class="header-content">
       <img src="./../images/Keyslov.svg" class="header-logo" />
       <nav class="nav-btn">
-        
         <a href="../login.html"><button class="white-btn">Entrar</button></a>
       </nav>
     </header>
 
     <div class="form-cadastro-container">
       <div class="cadastro-layout">
-
         <form action="cadastro-2.html" method="get" id="form-cadastro1">
           <h1>Cadastro de conta</h1>
           <label for="cad-email">Email</label>
@@ -67,11 +66,14 @@
             <input type="checkbox" id="accept-terms" required />
             <label for="accept-terms">Aceito a política de privacidade</label>
           </div>
-          <button class="continue btn-register" id="verify-pass" type="submit">CADASTRAR</button>
+          <button class="continue btn-register" id="verify-pass" type="submit">
+            CADASTRAR
+          </button>
         </form>
       </div>
     </div>
 
     <script src="./../script/cadastro.js"></script>
+    <script src="./../script/resize-windown.js"></script>
   </body>
 </html>

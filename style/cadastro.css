@@ -130,7 +130,7 @@ select{
   height: 25px;
 
   border: 1px solid #000000;
-  border-radius: 7px;
+  border-radius: 7\x;
 }
 
 #form-cadastro1 input[type="checkbox"]#accept-terms:checked {
@@ -347,7 +347,9 @@ select{
 }
 
 #form-cadastro6 p {
-  text-align: justify;
+  text-align: center !important;
+  overflow-wrap: break-word;
+  inline-size: 480px !important;
 }
 
 #form-cadastro6 #insert-password {
