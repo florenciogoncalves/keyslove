@@ -317,7 +317,7 @@ try {
     }
 
     function ableMonth() {
-      for (let c = parseInt(dataAtual.getMonth()) + 1; c < 12; c++)
+      for (let c = parseInt(dataAtual.getMonth()) + 1; c <= 12; c++)
         bornMonth.options[c].removeAttribute("disabled");
     }
     colorDisabled();

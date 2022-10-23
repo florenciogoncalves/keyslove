@@ -20,7 +20,7 @@
   }
 
   body:not(.especify){
-    grid-template-rows: max-content 1fr;
+    grid-template-rows:  4% 1fr !important;
   }
 
   .form-cadastro-container{
@@ -28,8 +28,8 @@
     box-sizing: border-box;
   }
   .cadastro-layout{
-    margin: 0 auto !important;
-    top: 13%;
+    margin: auto !important;
+    max-width: 95vw !important;
   }
 
   header.header-content {
