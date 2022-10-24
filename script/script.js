@@ -493,10 +493,10 @@ function navImages(arrayNavegado, ondeMostrar) {
   });
 }
 
-/*Ao clicar em outro perfil, ir para home.html*/
+/*Ao clicar em outro perfil, ir para index.html*/
 pegarTodos(".outro-perfil").forEach((current) => {
   current.addEventListener("dblclick", () => {
-    window.location.replace("./../home/home.html");
+    window.location.replace("./../home/index.html");
   });
 });
 

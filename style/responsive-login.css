@@ -104,6 +104,7 @@
     margin: 0 auto;
     font-size: 10px;
     min-height: 20px;
+    height: 4.1em;
   }
   .methods-continue ~ p ~ a ~ a {
     font-size: 10px !important;
