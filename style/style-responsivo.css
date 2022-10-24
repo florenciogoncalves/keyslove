@@ -166,7 +166,7 @@ body:not(#sobre-usuario) #main-container{
     max-width: 100vw !important;
     min-width: 100vw !important;
     margin: 0 !important;
-    height: 100vh !important;
+    height: 100% !important;
 }
 
 #home{
