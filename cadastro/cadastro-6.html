@@ -36,15 +36,18 @@
 
           <section id="password-section">
             <div id="insert-password">
-              <input type="password" class="pass-camp" maxlength="1" required name="char-1"/>
-              <input type="password" class="pass-camp" maxlength="1" required name="char-2"/>
-              <input type="password" class="pass-camp" maxlength="1" required name="char-3"/>
-              <input type="password" class="pass-camp" maxlength="1" required name="char-4"/>
+              <!-- Este input recebe o valor completo da password-otp que é inserida por fatias -->
+              <input type="password" id="otp-pass" name="otp-pass" style="display: none">
+
+              <input type="password" class="pass-camp" maxlength="1" required/>
+              <input type="password" class="pass-camp" maxlength="1" required/>
+              <input type="password" class="pass-camp" maxlength="1" required/>
+              <input type="password" class="pass-camp" maxlength="1" required/>
             </div>
           </section>
           
           <div>
-            <button class="continue btn-register">Enviar</button>
+            <button id="requisicao-otp" class="continue btn-register">Enviar</button>
             <button class="continue btn-register" type="button">
               Reenviar
             </button>

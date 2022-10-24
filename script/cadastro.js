@@ -123,12 +123,18 @@ try {
   }
 
   setInterval(() => {
-    if (document.querySelectorAll(".not-correct").length < 1 && passWord.value != '' && confPassWord.value != '' && telefone.value.length >= 14) {
+    if (
+      document.querySelectorAll(".not-correct").length < 1 &&
+      passWord.value != "" &&
+      confPassWord.value != "" &&
+      telefone.value.length >= 14
+    ) {
       document.querySelector("#verify-pass").setAttribute("type", "submit");
     } else {
       document.querySelector("#verify-pass").setAttribute("type", "button");
     }
-  }), 1000;
+  }),
+    1000;
 } catch (error) {
   console.error("Verifique a primeira janela de cadastro" + error);
 }
@@ -140,13 +146,13 @@ try {
 try {
   let dataAtual = new Date();
 
-  //Pegando os campos de seleção de data
+  //Pegando os campos de seleção de data e definindo a cor de texto padrão para cinza
   document.querySelectorAll(".select-placeholder").forEach((element) => {
     element.style.color = "#999";
     element.addEventListener("change", () => (element.style.color = "#000"));
   });
 
-  //Botando cor cinza para opções que ficam de placeholder
+  //Função que bota cor cinza para opções desabilitadas e remove
   function colorDisabled() {
     document.querySelectorAll("option").forEach((current) => {
       if (!current.getAttribute("disabled")) {
@@ -155,16 +161,19 @@ try {
     });
   }
 
-  //Pegando as tags select da data de nascimento
+  //Pegando os selectores de data
   const bornDay = document.querySelector("#born-day");
   const bornMonth = document.querySelector("#born-month");
   const bornYear = document.querySelector("#born-year");
-  
-  document.querySelector('#first-year').textContent = dataAtual.getFullYear() - 18
 
+  document.querySelector("#first-year").textContent =
+    dataAtual.getFullYear() - 18;
+
+  //Atribuindo os valores aos selectores de data(DD - MM - YYYY)
   upDay(31);
   upMonth();
   upYear();
+  //Deixando os selectores com toque de placeholder
   colorDisabled();
 
   //Variáveis usadas para pegar os valores selecionados na caixa de seleção
@@ -258,6 +267,7 @@ try {
       remove();
       upDay(31);
     }
+
     reconfirmFebruary();
 
     if (preserved <= bornDay.childElementCount)
@@ -267,6 +277,7 @@ try {
 
   //Verificando o ano, caso seja bissexto, seta o valor de Fevereiro para 29, caso não, volta para 28
   function reconfirmFebruary() {
+    let armazenaDia = selectedDay;
     const preservedM = selectedMonth;
     upDate();
     if (selectedYear % 4 == 0) valFeb = 29;
@@ -327,30 +338,67 @@ try {
   console.error("Sem data a inserir" + error);
 }
 
-/*   Formatando o arquivo cadastro-6.html
- *   Interatividade da área de inserção de senha*/
+/*************************************************
+ ***    Formatando o arquivo cadastro-6.html    ***
+ ***  Interatividade da área de senha           ***
+ **************************************************/const passCamp = document.querySelectorAll(".pass-camp");
 try {
-  const passCamp = document.querySelectorAll(".pass-camp");
+  
+
   Object.keys(passCamp).map((indice) => {
     passCamp[indice].loc = indice;
-    passCamp[indice].addEventListener("input", nextPassCamp);
-    passCamp[indice].addEventListener("keyup", keyPassCamp);
+    //Recua para o campo anterior quando eliminado o valor do campo atual
+    passCamp[indice].addEventListener("keydown", (evt) =>
+      keyPassCamp(evt, passCamp[indice])
+    );
+
+    passCamp[indice].addEventListener(
+      "keyup",
+      (evt, element = passCamp[indice]) => {
+        if (evt.key == "ArrowRight") {
+          if (element.loc <= 2) {
+            let guardar = passCamp[parseInt(element.loc) + 1].value;
+            passCamp[parseInt(element.loc) + 1].value = "";
+            passCamp[parseInt(element.loc) + 1].focus();
+            passCamp[parseInt(element.loc) + 1].value = guardar;
+          }
+        }
+        if (evt.key == "ArrowLeft") {
+          if (element.loc > 0) {
+            let guardar = passCamp[parseInt(element.loc) - 1].value;
+            passCamp[parseInt(element.loc) - 1].value = "";
+            passCamp[parseInt(element.loc) - 1].focus();
+            passCamp[parseInt(element.loc) - 1].value = guardar;
+          }
+        }
+      }
+    );
   });
-
-  function nextPassCamp() {
-    if (passCamp[this.loc].value != "")
-      passCamp[parseInt(this.loc) + 1].focus();
-    console.log(this);
-  }
-
-  function keyPassCamp() {
-    if (event.key == "Backspace" && passCamp[this.loc].value == "")
-      passCamp[parseInt(this.loc) - 1].focus();
-    if (event.key.length == 1 && passCamp[this.loc].value != "") {
-      passCamp[parseInt(this.loc) + 1].focus();
-      passCamp[parseInt(this.loc) + 1].value = event.key;
+  //Quando em foco sobre um campo e clica uma tecla, seta o foco para o campo de senha a seguir
+  function keyPassCamp(evt, element) {
+    if (
+      evt.key == "Backspace" &&
+      passCamp[element.loc].value == "" &&
+      element.loc > 0
+    )
+      passCamp[parseInt(element.loc) - 1].focus();
+    if (
+      evt.key.length == 1 &&
+      passCamp[element.loc].value != "" &&
+      element.loc <= 2
+    ) {
+      passCamp[parseInt(element.loc) + 1].focus();
+      passCamp[parseInt(element.loc) + 1].value = evt.key;
     }
   }
+
+  document.querySelector("#requisicao-otp").addEventListener("click", () => {
+    const otpPass = document.querySelector("#otp-pass")
+    otpPass.value = ''
+    Object.keys(passCamp).forEach( index => {
+      otpPass.value += passCamp[index].value;
+    });
+  });
 } catch (error) {
   console.log("Cadastro OTP code not found" + error);
 }
