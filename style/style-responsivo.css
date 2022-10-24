@@ -74,7 +74,7 @@
     #sobre-usuario select,
     #sobre-usuario label,
     #sobre-usuario textarea{
-        font-size: 9pt !important;
+        font-size: 10pt !important;
     }
 
     #sobre-usuario label{
@@ -97,7 +97,7 @@
     }
 
     #sobre-usuario header h1{
-        font-size: 11pt !important;
+        font-size: 13pt !important;
         text-align: center;
     }
 
