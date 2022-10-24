@@ -5,27 +5,33 @@
         background-size: contain !important;
         display: flex !important;
     }
+
+    *::-webkit-scrollbar{
+        display: none !important;
+    }
+
+    input:-webkit-autofill {
+        box-shadow: 0 0 0 30px #fff inset;
+    }
+
     #menu-esquerdo{
         display: none !important;
     }
 
     #main-container{
-        margin: 0 !important;
+        margin: auto !important;
         max-width: max-content !important;
         padding: 0 !important;
         box-sizing: border-box !important;
         position: relative;
         max-height: max-content !important;
+        height: max-content;
     }
 
-    #main-container::-webkit-scrollbar{
-        position: none !important;
-    }
     #content-right{
         margin: 0 !important;
         width: 100vw !important;
         position: relative !important;
-        overflow: scroll;
         max-width: 460px !important;
         max-height: max-content !important;
         padding: 5px 4vw !important;
@@ -38,6 +44,8 @@
         display: flex !important;
         flex-direction: column;
         width: 100% !important;
+        min-height: 400px;
+        height: max-content !important;
     }
 
     /*
@@ -55,6 +63,7 @@
         background-size: 11px !important;
         padding: 0 8px !important;
         background-position: center right 8px !important;
+        outline: none !important;
     }
     #sobre-usuario input,
     #sobre-usuario select,
@@ -102,7 +111,7 @@
 
     .progress-next{
         width: 100% !important;
-        margin: 10px 0;
+        margin: auto 0 15px;
         display: grid;
         grid-template-columns: 1fr max-content;
         column-gap: 10px;
@@ -129,6 +138,10 @@
         border-radius: 3px !important;
         line-height: 22px !important;
         font-size: 17pt !important;
+    }
+
+    .iten[style="margin-bottom: 24px"]{
+        margin-bottom: 0px !important;
     }
 }
 
