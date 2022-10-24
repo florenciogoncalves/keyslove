@@ -65,14 +65,20 @@
         background-position: center right 8px !important;
         outline: none !important;
     }
+
+    #sobre-usuario textarea{
+        padding: 5px 8px !important;
+    }
+
     #sobre-usuario input,
     #sobre-usuario select,
-    #sobre-usuario label{
+    #sobre-usuario label,
+    #sobre-usuario textarea{
         font-size: 9pt !important;
     }
 
     #sobre-usuario label{
-        margin: 6px 0 0 !important;
+        margin: 9px 0 1px !important;
     }
 
     #sobre-usuario input,
@@ -102,7 +108,7 @@
     #sobre-usuario #container-elements{
         max-width: 100% !important;
         box-sizing: border-box;
-        margin: 10px 0;
+        margin: 10px 0 18px;
     }
 
     #sobre-usuario .iten{
