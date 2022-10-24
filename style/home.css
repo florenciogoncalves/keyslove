@@ -18,7 +18,7 @@ main#perfil {
   display: grid;
   height: 97.5vh;
   width: 70%;
-  min-width: 450px !important;
+  /* min-width: 450px; */
   box-sizing: border-box;
   grid-template-rows: max-content 1fr max-content;
   overflow: hidden;
@@ -182,6 +182,9 @@ main #subtitle {
   color: white;
   font-weight: 400;
   font-size: 15px;
+  overflow-y: scroll;
+  height: max-content;
+  max-height: 20vh;
 }
 
 /*Para a barra de progresso do home*/
