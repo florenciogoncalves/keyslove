@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home &middot; Keyslov</title>
+    <title>Keyslov &mid; Home</title>
     <link
       rel="shortcut icon"
       href="./../images/favicon.svg"
@@ -18,23 +18,31 @@
       <div id="div-left">
         <div id="user-information">
           <figure>
-            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
-
-            <figcaption>
+            <div class="foto-de-perfil">
+              <img
+                src="./../debug-images/temp.png"
+                alt="Foto de perfil"
+                id="img-perfil"
+              />
               <div class="status"></div>
+            </div>
+            <figcaption>
+              
               <h2>Lorem Ipsun Silva</h2>
               <span id="show-status-window">Escolher status</span>
             </figcaption>
           </figure>
 
-          <img  class="vizualizar-menu" src="./../images/option.svg" />
+          <img class="vizualizar-menu" src="./../images/option.svg" />
           <div class="hidden-list">
             <ul>
-              <a href="bloqueados.html" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
+              <a href="bloqueados.html" class="pessoas-bloqueadas"
+                ><li>Membros Bloqueados</li></a
+              >
               <li>Lorem Ipsum exemplo</li>
             </ul>
-          </div><div id="online-now">
-
+          </div>
+          <div id="online-now">
             <div class="changing-status">
               <div class="this-status">
                 <input
@@ -80,8 +88,7 @@
             <li><a href="configuracoes.html">Configurações</a></li>
             <li><a href="mensagens.html">Mensagens</a></li>
             <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="online.html">Online agora</a>
-            </li>
+            <li><a href="online.html">Online agora</a></li>
             <li><a href="teste-de-amor.html">Teste de amor</a></li>
           </ul>
         </nav>
@@ -99,6 +106,10 @@
     </div>
 
     <div id="main-container">
+      <header id="mobile-header">
+        <img src="./../images/Keyslov.svg" alt="Keyslov - logo" />
+        <button id="mostra-menu-mobile"></button>
+      </header>
       <main id="home">
         <ul class="home-bar">
           <li class="visualized"></li>
@@ -116,13 +127,21 @@
 
         <div class="home-footer">
           <h3 id="person-name">Nome pessoa 100</h3>
-          <a href="mensagens.html"><div class="talk-now">
-            Conversar agora &nbsp;
+          <a href="mensagens.html"
+            ><div class="talk-now">
+              Conversar agora &nbsp;
 
-            <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />&nbsp;
-            <img src="./../images/Group 8777.svg" />&nbsp;
-            <img src="./../images/usa-icon.svg" alt="Inglês" class="img-1" />
-          </div></a>
+              <img
+                src="./../images/br-icon.svg"
+                alt="Brasil"
+                class="img-2"
+              />&nbsp; <img src="./../images/Group 8777.svg" />&nbsp;
+              <img
+                src="./../images/usa-icon.svg"
+                alt="Inglês"
+                class="img-1"
+              /></div
+          ></a>
 
           <ul id="tag-area">
             <li>#trabalhando</li>
@@ -133,7 +152,7 @@
           <p id="subtitle">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             <br />Nullam non fringilla lacus. Aliquam eget accumsan turpis
-            </p>
+          </p>
 
           <div id="home-progress-content">
             <div id="home-progress-bar">
@@ -150,13 +169,17 @@
           </div>
         </div>
 
-        <object data="./../debug-images/temp-3.png" id="main-image" alt="Fotografia"></object>
+        <object
+          data="./../debug-images/temp-3.png"
+          id="main-image"
+          alt="Fotografia"
+        ></object>
       </main>
     </div>
 
     <dialog open="true" id="modal-home-1">
       <div class="dialog-content">
-        <img src="./../images/information-icon.svg" alt="">
+        <img src="./../images/information-icon.svg" alt="" />
         <h2>Entenda como funciona</h2>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -170,7 +193,7 @@
 
     <dialog open="true" id="modal-home-2">
       <div class="dialog-content">
-        <img src="./../images/notification-icon.svg">
+        <img src="./../images/notification-icon.svg" />
         <p>
           Quer receber um aviso quando <strong>Joaquim Coutto</strong> curtir
           você também?

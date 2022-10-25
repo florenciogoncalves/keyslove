@@ -1,4 +1,24 @@
-const statusOn = localStorage.getItem('status')
+const statusOn = localStorage.getItem("status");
+
+try {
+  let estado = false;
+  //Botão de acesso ao menu oculto
+  const mostrarMenuMobile = document.querySelector("#mostra-menu-mobile");
+  //Seleciona o menu oculto
+  const menuMobile = document.querySelector("#menu-esquerdo");
+
+  
+  //Mostrar menu oculto ao clicar no botão de acesso ao menu oculto
+  mostrarMenuMobile.addEventListener("click", () => menuMobile.style.display = 'flex');
+  
+  //Evento para clique no menu oculto
+  menuMobile.addEventListener("click", (evt) => {
+    if(!(document.querySelector('#div-left').contains(evt.target)))
+      menuMobile.style.display = 'none'
+  });
+} catch (error) {
+  console.error(error);
+}
 
 //Para a barra de progresso para o carroussel da página home
 function setProgressVal(val) {
@@ -27,47 +47,36 @@ onlineAgora.forEach((element) =>
   element.addEventListener("click", () => {
     var setado = document.querySelector("#user-information .status");
     if (element.value == "online") {
+      localStorage.clear();
 
-      localStorage.clear()
+      localStorage.setItem("status", "online");
 
-      localStorage.setItem('status', 'online');
-    
       setado.style.display = "block";
       setado.style.backgroundColor = "var(--status-on)";
-
     } else if (element.value == "ocupado") {
       // if(statusOn){
       //   localStorage.removeItem('status')
       // }
 
-      localStorage.clear()
-      localStorage.setItem('status', 'ocupado');
+      localStorage.clear();
+      localStorage.setItem("status", "ocupado");
 
       setado.style.display = "block";
       setado.style.backgroundColor = "var(--status-off)";
-
-     
     } else {
-
       // if(statusOn){
       //   localStorage.removeItem('status')
       // }
 
-      localStorage.clear()
+      localStorage.clear();
 
-      localStorage.setItem('status', 'offline')
+      localStorage.setItem("status", "offline");
       setado.style.display = "none";
 
-      console.log('Status Offline')
-     
-      
+      console.log("Status Offline");
     }
-  
   })
-
-
-
-  );
+);
 
 /*Ocultar qualquer janela por click*/
 try {
@@ -522,30 +531,28 @@ try {
         ":" +
         minuto +
         "</span></div><div class='text-container'><p class='writed-message'>" +
-        escreverMensagem.value.replaceAll('\n', '<br>') +
+        escreverMensagem.value.replaceAll("\n", "<br>") +
         "</p></div>";
       pegar("#sended").innerHTML += enviar;
-      
     }
     escreverMensagem.blur();
-    pegar('#sended').lastChild.focus()
+    pegar("#sended").lastChild.focus();
     escreverMensagem.value = "";
     escreverMensagem.style.height = "max-content";
-    pegar('#sended').scrollTo(0, 1000)
+    pegar("#sended").scrollTo(0, 1000);
   }
-  
 } catch (error) {
   console.error("Tente mandar uma mensagem" + error);
 }
 
 /*Alterar pessoa com quem se conversa */
 try {
-  pegarTodos('.person').forEach(person => {
-    person.addEventListener('click', () => {
-      pegar('#person-selected').removeAttribute('id')
-      person.setAttribute('id', 'person-selected')
-    })
-  })
+  pegarTodos(".person").forEach((person) => {
+    person.addEventListener("click", () => {
+      pegar("#person-selected").removeAttribute("id");
+      person.setAttribute("id", "person-selected");
+    });
+  });
 } catch (error) {
-  console.error('Altere antes entre as conversas' + error)
+  console.error("Altere antes entre as conversas" + error);
 }

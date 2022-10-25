@@ -16,21 +16,139 @@
     box-shadow: 0 0 0 30px #fff inset;
   }
 
-  #menu-esquerdo {
-    display: none !important;
-  }
-
   #main-container {
     margin: auto !important;
-    padding: 0 !important;
+    padding: 10px !important;
     box-sizing: border-box !important;
     position: relative;
-    max-height: max-content !important;
+    max-height: 100% !important;
+    max-width: 100vw !important;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    height: 100%;
+  }
+  /*
+    **********************************************
+    ***               Menu oculto              ***
+    **********************************************
+    */
+  #menu-esquerdo {
+    display: flex;
+    position: fixed;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    z-index: 5;
+    overflow: hidden;
+    margin: 0 !important;
+    background: rgba(0, 0, 0, 0.315);
+    backdrop-filter: blur(2px);
+  }
+
+  #div-left {
+    max-width: 85vw !important;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
     height: max-content;
   }
 
+  #user-information {
+    height: 200px;
+    top: 0;
+  }
+
+  #user-information .foto-de-perfil{
+    margin-right: 5px;
+  }
+
+  #user-information .foto-de-perfil img{
+    width: 75px !important;
+    height: 75px !important;
+    border-radius: 40px !important;
+  }
+
+  #user-information figure{
+    position: absolute;
+    top: 55%;
+    color: #000;
+    width: 95%;
+  }
+
+  #user-information figcaption{
+    margin: auto 0 -5px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  #user-information > img{
+    margin: 5px 5px 0 auto;
+  }
+
+  #user-information .hidden-list,
+  #online-now .changing-status {
+    padding: 0 !important;
+    width: 16em;
+    color: #000;
+    max-width: 180px;
+    box-sizing: border-box;
+    height: max-content;
+    border-radius: 10px;
+    box-shadow: 0px -1px 7px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    text-indent: 0;
+    background-color: #fff;
+    z-index: 3;
+    font-size: 12px;
+    overflow: hidden !important;
+  }
+
+  #menu-left {padding-top: 50px;}
+  #menu-left li:hover,
+  #menu-left li {
+    text-indent: 65px;
+    font-size: 10pt;
+    background-position: 1.5em center;
+  }
+
+  #peoples-left {
+    margin-top: 10px;
+  }
+
+  #peoples-left h4 {
+    margin: 0;
+    width: 100%;
+    font-size: 11pt;
+    background-position: center right 3%;
+  }
+
+  .people-organizer {
+    display: none !important;
+  }
+  /*
+    **********************************************
+    ***    Arquivos do diretório /about-user   ***
+    **********************************************
+    */
+  #mobile-header {
+    width: 100%;
+    display: flex;
+  }
+
+  #mobile-header > img:first-of-type {
+    height: 25px;
+    margin: auto 0 4px;
+  }
+
+  #mobile-header > button {
+    height: 70%;
+    margin: auto 0 auto auto;
+    width: 30px;
+    border: none;
+    background: url(./../images/arrow-down-red.svg) center no-repeat;
+  }
+
   #sobre-usuario #main-container,
-  #sobre-usuario #content-right{
+  #sobre-usuario #content-right {
     max-width: 460px !important;
   }
 
@@ -155,63 +273,60 @@
     margin-bottom: 0px !important;
   }
 
-
   /*
 **********************************************
 ***       Página inicial index.html         ***
 **********************************************
 */
-body:not(#sobre-usuario) #main-container{
+  body:not(#sobre-usuario) #main-container {
     width: 100vw !important;
     max-width: 100vw !important;
     min-width: 100vw !important;
     margin: 0 !important;
     height: 100% !important;
-}
+  }
 
-#home{
+  #home {
     width: 100% !important;
     min-width: none !important;
     max-width: 100% !important;
     height: 100% !important;
+    border-radius: 12px;
     padding: 3vw;
     box-sizing: border-box !important;
+    grid-template-rows: max-content 1fr max-content !important;
+  }
 
-    display: flex !important;
-    flex-direction: column;
-}
-
-
-#home object{
+  #home object {
     top: 0;
     left: 0;
+    box-sizing: border-box !important;
     width: 100% !important;
-    min-width: 100% !important;
     max-width: 100% !important;
     height: 100% !important;
-    
-}
+  }
 
-.home-bar{
+  .home-bar {
     padding: 0 !important;
     width: 100%;
     min-width: 100%;
     height: 4vh !important;
-}
+    max-height: 12px;
+  }
 
-.home-bar li{
-    min-height: 2px;
-    max-height: 3px;
-    height: .7vh !important;
-}
+  .home-bar li {
+    max-height: 5px;
+    height: 0.6vh !important;
+  }
 
-.home-nav{
-    display: none !important;
-}
+  .home-nav {
+    height: 95%;
+    visibility: hidden;
+  }
 
-button#dislike,
-button#maybe,
-button#like{
+  button#dislike,
+  button#maybe,
+  button#like {
     width: 17vw !important;
     max-width: 50px !important;
     height: 17vw !important;
@@ -220,95 +335,97 @@ button#like{
     font-size: 100% !important;
     border-radius: 12vw !important;
     background-size: 50% !important;
-}
+  }
 
-button#retry,
-button#favorite{
+  button#retry,
+  button#favorite {
     width: 12vw !important;
     max-width: 56px !important;
     height: 12vw !important;
     max-height: 56px !important;
 
     border-radius: 12vw !important;
-}
+  }
 
-.home-footer{
+  .home-footer {
     margin: auto 0 !important;
     padding: 0 !important;
     width: 100% !important;
     min-width: 100% !important;
     margin: auto 0 0 !important;
-}
+  }
 
-.home-footer #person-name{
+  .home-footer #person-name {
     font-size: 6vw !important;
-}
+  }
 
-.home-footer .talk-now{
+  .home-footer .talk-now {
     height: 3.2vh;
     font-size: 1.6vh;
     line-height: 3.5vh;
-}
+  }
 
-.home-footer .talk-now img{
+  .home-footer .talk-now img {
     height: 4vw;
     max-height: 18px;
-}
+  }
 
-.home-footer .talk-now img.img-1{
+  .home-footer .talk-now img.img-1 {
     height: 5.2vw;
     max-height: 24px;
-}
+  }
 
-.home-footer #tag-area{
+  .home-footer #tag-area {
     display: flex;
     column-gap: 5px;
-}
+  }
 
-.home-footer #tag-area li{
+  .home-footer #tag-area li {
     width: 25vw !important;
     height: 5.8vw;
     font-size: 3.1vw !important;
     line-height: 5.8vw;
     padding: 0 3px !important;
-}
+  }
 
-.home-footer #subtitle{
+  .home-footer #subtitle {
     line-height: normal;
     font-size: 9pt !important;
-}
+  }
 
-#home-progress-content{
+  #home-progress-content {
     margin: 10px 0 !important;
     height: 12px !important;
-}
+  }
 
-#home-progress-bar{
+  #home-progress-bar {
     height: 100% !important;
     font-size: 8pt;
     display: flex;
     justify-items: center;
-}
+  }
 
-#home-progress-bar span{
+  #home-progress-bar span {
     line-height: 150%;
-}
+  }
 
-/*Modais de home*/
-dialog div{
+  /*Modais de home*/
+  dialog {
+    z-index: 10;
+  }
+  dialog div {
     width: 85vw !important;
     max-width: 360px !important;
     font-size: 9pt;
-}
+  }
 
-#pass-this{
+  #pass-this {
     font-size: 9pt;
-}
+  }
 
-#modal-home-1 img{
+  #modal-home-1 img {
     width: 25%;
-}
-
+  }
 }
 
 /*Dispositivos médios(landscape tablets, 768px para cima)*/
