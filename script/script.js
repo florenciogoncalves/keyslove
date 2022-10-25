@@ -6,15 +6,24 @@ try {
   const mostrarMenuMobile = document.querySelector("#mostra-menu-mobile");
   //Seleciona o menu oculto
   const menuMobile = document.querySelector("#menu-esquerdo");
+  //Menu esquerdo
+  const menu = document.querySelector('#div-left')
 
-  
+
   //Mostrar menu oculto ao clicar no botão de acesso ao menu oculto
-  mostrarMenuMobile.addEventListener("click", () => menuMobile.style.display = 'flex');
-  
+  mostrarMenuMobile.addEventListener(
+    "click",
+    () => (menuMobile.style.display = "flex")
+  );
+
   //Evento para clique no menu oculto
   menuMobile.addEventListener("click", (evt) => {
-    if(!(document.querySelector('#div-left').contains(evt.target)))
-      menuMobile.style.display = 'none'
+    if (!menu.contains(evt.target)) {
+      setTimeout(() => {
+        
+      }, 1000)
+      menuMobile.style.display = "none";
+    }
   });
 } catch (error) {
   console.error(error);
