@@ -39,6 +39,7 @@
     max-width: 100% !important;
     z-index: 5;
     overflow: hidden;
+    overflow-y: scroll;
     margin: 0 !important;
     background: rgba(0, 0, 0, 0.315);
     backdrop-filter: blur(2px);
@@ -46,16 +47,16 @@
 
 
   #div-left {
-    max-width: 85vw !important;
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
     height: max-content;
-    transition: all 1s;
+    transition: all .35s;
+    margin: auto 0 0px;
   }
 
   #user-information {
-    height: 200px;
+    height: 90px;
     top: 0;
   }
 
