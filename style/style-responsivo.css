@@ -47,12 +47,14 @@
 
 
   #div-left {
-    max-width: 100%;
+    max-width: 95%;
     overflow-x: hidden;
     overflow-y: scroll;
     height: max-content;
     transition: all .35s;
-    margin: auto 0 0px;
+    margin: auto;
+    margin-bottom: 5px;
+    max-height: 95vh;
   }
 
   #user-information {
@@ -105,7 +107,9 @@
     overflow: hidden !important;
   }
 
-  #menu-left {padding-top: 50px;}
+  #menu-left {
+    padding-top: 60px;
+  }
   #menu-left li:hover,
   #menu-left li {
     text-indent: 65px;
