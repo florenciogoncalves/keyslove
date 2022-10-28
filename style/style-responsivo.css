@@ -18,7 +18,6 @@
 
   #main-container {
     margin: auto !important;
-    padding: 10px !important;
     box-sizing: border-box !important;
     position: relative;
     max-height: 100% !important;
@@ -47,13 +46,14 @@
 
 
   #div-left {
-    max-width: 95%;
+    width: 100%;
+    max-width: 420px;
     overflow-x: hidden;
     overflow-y: scroll;
     height: max-content;
     transition: all .35s;
     margin: auto;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     max-height: 95vh;
   }
 
@@ -109,7 +109,9 @@
 
   #menu-left {
     padding-top: 60px;
+    border-radius: 0;
   }
+  
   #menu-left li:hover,
   #menu-left li {
     text-indent: 65px;
@@ -118,19 +120,9 @@
   }
 
   #peoples-left {
-    margin-top: 10px;
+    display: none;
   }
 
-  #peoples-left h4 {
-    margin: 0;
-    width: 100%;
-    font-size: 11pt;
-    background-position: center right 3%;
-  }
-
-  .people-organizer {
-    display: none !important;
-  }
   /*
     **********************************************
     ***    Arquivos do diretório /about-user   ***
@@ -139,19 +131,12 @@
   #mobile-header {
     width: 100%;
     display: flex;
+    margin-bottom: 5px;
   }
 
   #mobile-header > img:first-of-type {
     height: 25px;
     margin: auto 0 4px;
-  }
-
-  #mobile-header > button {
-    height: 70%;
-    margin: auto 0 auto auto;
-    width: 30px;
-    border: none;
-    background: url(./../images/arrow-down-red.svg) center no-repeat;
   }
 
   #sobre-usuario #main-container,
@@ -300,6 +285,7 @@
     height: 100% !important;
     border-radius: 12px;
     padding: 3vw;
+    bottom: 7px !important;
     box-sizing: border-box !important;
     grid-template-rows: max-content 1fr max-content !important;
   }
@@ -438,6 +424,82 @@
 
   #modal-home-1 img {
     width: 25%;
+  }
+
+  #footer-mobile{
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    position: sticky;
+    overflow: hidden;
+    display: block;
+
+    border-radius: 8px 8px 0 0;
+  }
+
+  #footer-mobile nav{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  #footer-mobile ul{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    padding: 0 9%;
+    grid-template-columns: repeat(auto-fit, 20%);
+    background: var(--vermelho-principal);
+  }
+
+  #footer-mobile li{
+    height: 100%;
+    margin: auto 0;
+    display: flex;
+    width: 35px;
+    height: 35px;
+
+    background-size: 60%;
+    background-position: center !important;
+    background-repeat: no-repeat;
+  }
+
+  #footer-mobile li:nth-of-type(1){
+    background-image: url(../images/home.svg);
+  }
+
+  #footer-mobile li:nth-of-type(2){
+    background-image: url(../images/Search.svg);
+    filter: invert();
+  }
+
+  #footer-mobile li:nth-of-type(3){
+    background-image: url(../images/star-ico.svg);
+  }
+
+  #footer-mobile li:nth-of-type(4){
+    background-image: url(../images/like-ico.svg);
+  }
+
+  /*Ocultando algumas opções do menu*/
+  #menu-left li:nth-of-type(){
+    display: none;
+  }
+
+  #mostra-menu-mobile {
+    height: 100%;
+    margin: auto 0 auto auto;
+    width: 30px;
+    border: none;
+    background-size: 17% !important;
+    background: url(./../images/dots-icon.svg) center no-repeat;
+  }
+
+  #nav-selecionada{
+    background-color: var(--bg-color);
+    border-radius: 100%;
+    object-fit: cover;
   }
 }
 

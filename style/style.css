@@ -2391,3 +2391,12 @@ dialog#modal-teste-amor{
   border-radius: 10px;
   border: 1px solid rgb(97, 97, 97);
 }
+
+/*Para mobile, mas, oculto*/
+#mobile-header{
+  display: none;
+}
+
+#footer-mobile{
+  display: none;
+}
