@@ -215,8 +215,8 @@ select, textarea{outline: none !important;}
   background-position: 2em center;
 }
 #menu-left li:hover {
-  background-position: 60px center;
-  text-indent: 110px;
+  background-position: 40px center;
+  text-indent: 90px;
 }
 /*Aplicando as imagens de fundo das opcões do menu*/
 #menu-left li:nth-of-type(1) {

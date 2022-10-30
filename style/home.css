@@ -110,6 +110,16 @@ main .home-footer {
   display: flex;
   flex-direction: column;
   z-index: 2;
+  overflow: hidden;
+}
+
+.home-footer h3,
+.home-footer a{
+  width: max-content;
+  max-width: 100%;
+  word-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 main #person-name {

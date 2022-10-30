@@ -32,7 +32,7 @@
     **********************************************
     */
   #menu-esquerdo {
-    display: flex;
+    display: none;
     position: fixed;
     min-width: 100% !important;
     max-width: 100% !important;
@@ -108,7 +108,7 @@
   }
 
   #menu-left {
-    padding-top: 60px;
+    padding: 70px 0 0;
     border-radius: 0;
   }
   
@@ -116,7 +116,9 @@
   #menu-left li {
     text-indent: 65px;
     font-size: 10pt;
-    background-position: 1.5em center;
+    height: 40px;
+    line-height: 40px;
+    background-position: 2.3em center;
   }
 
   #peoples-left {
@@ -131,7 +133,12 @@
   #mobile-header {
     width: 100%;
     display: flex;
-    margin-bottom: 5px;
+    padding: 10px;
+    position: sticky;
+    box-sizing: border-box;
+    top: 0;
+    background: var(--bg-color) !important;
+    z-index: 10;
   }
 
   #mobile-header > img:first-of-type {
@@ -145,7 +152,7 @@
   }
 
   #content-right {
-    margin: 0 !important;
+    margin: auto !important;
     width: 100vw !important;
     position: relative !important;
     max-height: max-content !important;
@@ -159,7 +166,7 @@
     display: flex !important;
     flex-direction: column;
     width: 100% !important;
-    min-height: 400px;
+    min-height: 460px;
     height: max-content !important;
   }
 
@@ -206,7 +213,7 @@
     height: max-content !important;
   }
 
-  #sobre-usuario header img {
+  #sobre-usuario header:not(#mobile-header) img {
     width: 28px !important;
     margin: 15px auto 10px;
   }
@@ -279,12 +286,13 @@
   }
 
   #home {
-    width: 100% !important;
+    width: calc(100% - 10px) !important;
     min-width: none !important;
     max-width: 100% !important;
     height: 100% !important;
     border-radius: 12px;
     padding: 3vw;
+    left: 5px;
     bottom: 7px !important;
     box-sizing: border-box !important;
     grid-template-rows: max-content 1fr max-content !important;
@@ -441,6 +449,7 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    position: relative;
   }
 
   #footer-mobile ul{
@@ -455,7 +464,7 @@
 
   #footer-mobile li{
     height: 100%;
-    margin: auto 0;
+    margin: auto;
     display: flex;
     width: 35px;
     height: 35px;
@@ -470,8 +479,7 @@
   }
 
   #footer-mobile li:nth-of-type(2){
-    background-image: url(../images/Search.svg);
-    filter: invert();
+    background-image: url(../images/search-white.svg);
   }
 
   #footer-mobile li:nth-of-type(3){
@@ -479,21 +487,22 @@
   }
 
   #footer-mobile li:nth-of-type(4){
-    background-image: url(../images/like-ico.svg);
+    background-image: url(../images/message-icon-white.png);
   }
 
   /*Ocultando algumas opções do menu*/
-  #menu-left li:nth-of-type(){
+  #menu-left li:nth-of-type(2),
+  #menu-left li:nth-of-type(6),
+  #menu-left li:nth-of-type(8){
     display: none;
   }
 
   #mostra-menu-mobile {
     height: 100%;
-    margin: auto 0 auto auto;
     width: 30px;
     border: none;
-    background-size: 17% !important;
-    background: url(./../images/dots-icon.svg) center no-repeat;
+    background-size: 60% !important;
+    background: url(./../images/up-menu.png) center no-repeat;
   }
 
   #nav-selecionada{
