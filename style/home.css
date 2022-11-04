@@ -338,10 +338,10 @@ main#carroussel figcaption#descricao-perfil p:first-of-type {
 main#carroussel figcaption#descricao-perfil span:nth-child(1),
 main#carroussel .outras-pessoas span:first-of-type {
   color: var(--vermelho-principal);
-  font-weight: 900;
+  font-weight: bolder;
   display: inline-block;
   margin: 0 5px;
-  font-size: 22px;
+  font-size: inherit;
 }
 
 main#carroussel .botoes {

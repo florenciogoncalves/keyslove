@@ -23,7 +23,7 @@
     max-height: 100% !important;
     max-width: 100vw !important;
     display: grid;
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: 1fr max-content !important;
     height: 100%;
   }
   /*
@@ -474,6 +474,11 @@
     background-repeat: no-repeat;
   }
 
+  #footer-mobile a{
+    width: 100%;
+    height: 100%;
+  }
+
   #footer-mobile li:nth-of-type(1){
     background-image: url(../images/home.svg);
   }
@@ -509,6 +514,309 @@
     background-color: var(--bg-color);
     border-radius: 100%;
     object-fit: cover;
+  }
+
+  /*
+  ***************************************
+  ***          carroussel.html        ***
+  ***************************************
+  */
+  body:not(#sobre-usuario) main{
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    overflow: scroll;
+    border-radius:  8px 8px 0 0;
+  }
+
+  main > .title,
+  #pacotes-pagamento .title {
+    font-size: 13pt;
+    height: max-content;
+    margin-bottom: 12px;
+  }
+
+  main#carroussel{
+    grid-template-rows: max-content max-content 1fr;
+    min-height: max-content;
+  }
+
+  #carroussel #informacoes-perfil {
+    min-height: max-content;
+    height: 200px !important;
+    padding: 10px !important;
+    box-sizing: border-box;
+  }
+  
+  #carroussel figure img{
+    max-height: 100% !important;
+    object-fit: cover !important;
+    min-width: 110px !important;
+    width: 100% !important;
+    max-width: 150px;
+  }
+
+  #descricao-perfil{
+    margin: 0 7px 0 15px !important;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: max-content max-content 1fr max-content !important;
+  }
+
+  #descricao-perfil > *:not(h2){
+    font-size: 9pt !important;
+  }
+
+  #carroussel h2{
+    font-size: 12pt;
+  }
+
+  #descricao-perfil p:nth-of-type(2){
+    max-height: 100% !important;
+    height: auto !important;
+    line-height: normal !important;
+    word-wrap: nowrap !important;
+    overflow: scroll !important;
+  }
+
+  #carroussel p {
+    font-size: 10pt;
+  }
+
+  #descricao-perfil .botoes{
+    height: 100% !important;
+    padding: 3px 0;
+  }
+
+  #descricao-perfil .botoes button{
+    width: 30px;
+    height: 30px;
+  }
+
+  .outras-pessoas{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    row-gap: 10px !important;
+    justify-content: space-between;
+    box-sizing: border-box !important;
+  }
+
+  .outro-perfil{
+    overflow: hidden !important;
+    min-width: 150px !important;
+    width: 100%;
+    margin: auto !important;
+    min-height: 250px !important;
+    max-height: 280px;
+    padding: 10px !important;
+    row-gap: 2px;
+  }
+
+  .outro-perfil > img{
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  button.conversar{
+    width: 20px !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% !important;
+    height: 20px !important;
+  }
+
+
+  .padrao{
+    margin: 0;
+    max-height: 100% !important;
+    min-height: 300px !important;
+    box-sizing: border-box !important;
+  }
+
+  .padrao .list > li{
+    height: 180px !important;
+  }
+
+  /*Curtidas.html*/
+  #curtidas .list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+    row-gap: 15px !important;
+    column-gap: 15px !important;
+    justify-content: space-between;
+    box-sizing: border-box !important;
+  }
+
+  #curtidas{
+    box-sizing: border-box !important;
+  }
+  #curtidas .list{
+    max-width: 100% !important;
+  }
+
+  #curtidas span{
+    font-size: 11pt;
+  }
+
+  #curtidas li li{
+    font-size: 8pt;
+  }
+  #curtidas li section {
+    position: relative !important;
+    height: 100% !important;
+    display: flex;
+    margin: auto 0 0 !important;
+    bottom: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #curtidas li section article{
+    box-sizing: border-box !important;
+    margin: auto auto 10px !important;
+    max-width: 100%;
+  }
+
+  /*Removendo efeito hover*/
+  #curtidas .list>li:hover .botoes{
+    display: none;
+  }
+
+  #curtidas .list li article>div{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+  }
+
+  #curtidas .list>li:hover .status-div,
+  #curtidas .list>li .status-div{
+    display: inline-flex;
+    width: 10px;
+    margin: auto 5px;
+    height: 10px;
+  }
+
+  #curtidas .list>li:hover span {
+    display: inline-block !important;
+    margin: 0px;
+    max-width: 170px
+  }
+
+  #curtidas .list>li:hover ul{
+    display: flex;
+  }
+
+  /*Planos*/
+  .card-container{
+    overflow-x: scroll;
+    padding: 5px;
+  }
+
+  .card-bank-data{
+    width: 100% !important;
+    display: grid !important;
+    height: max-content !important;
+    grid-template-columns: 65% 35% !important;
+    max-width: 420px;
+  }
+
+  #planos .left-side,
+  #planos .right-side{
+    box-sizing: border-box;
+    width: 100% !important;
+    padding: 0 0 10px 10px !important;
+  }
+
+  .card-bank-data input:not(.validate input){
+    width: 100% !important;
+  }
+
+  .card-bank-data input,
+  .card-bank-data label{
+    font-size: 9pt !important;
+    height: max-content !important;
+    box-sizing: border-box !important;
+  }
+  .card-bank-data input{
+    padding: 5px !important;
+    margin: 0 2px !important;
+  }
+
+  .card-bank-data .right-side > div {
+    width: 100% !important;
+  }
+
+  #pacotes-pagamento{
+    width: 100% !important;
+    box-sizing: border-box;
+    height: 100% !important;
+    max-height: 700px;
+  }
+
+  #planos .card-content{
+    max-height: 240px;
+    font-size: 9pt;
+    min-width: 200px;
+  }
+
+  #planos .card-content img{
+    height: 30px;
+  }
+
+  #planos .card-content button{
+    height: 32px;
+    font-size: 8pt;
+  }
+
+  #pacotes-pagamento > a > button{
+    font-size: 9pt;
+    height: max-content;
+    line-height: 32pt;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  #planos .right-side>div{
+    height: 50px !important;
+  }
+
+  #planos {
+    height: 100%;
+  }
+
+  #metodo-pagamento{
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100% !important;
+  }
+
+  #metodo-pagamento .title{
+    font-size: 13pt;
+  }
+
+  #metodo-pagamento .left-side,
+  #metodo-pagamento .right-side{
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+
+  #card-bank{
+    min-height: 200px !important;
+  }
+  #metodo-pagamento label{
+    height: max-content !important;
+  }
+
+  #metodo-pagamento .method-container{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #payment-method{
+    gap: 10px !important;
+    grid-template-columns: repeat(auto-fit, 70px) !important;
+  }
+
+  #payment-method input{
+    height: 50px !important;
   }
 }
 

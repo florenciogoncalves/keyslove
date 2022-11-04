@@ -60,6 +60,8 @@
     margin: auto;
   }
   #enter-box {
+    border-radius: 4px;
+    min-height: 360px;
     width: 100vw;
     max-width: 360px;
     overflow: hidden;
@@ -107,7 +109,7 @@
     height: 4.1em;
   }
   .methods-continue ~ p ~ a ~ a {
-    font-size: 10px !important;
+    font-size: 9pt !important;
     margin-top: 8px !important;
   }
 
@@ -116,6 +118,9 @@
     font-size: 5px;
   }
 
+  .messages h3{
+    font-size: 13pt;
+  }
   footer .footer {
     height: auto;
   }
@@ -132,16 +137,16 @@
     justify-content: space-around;
     margin: 0;
     width: 100%;
-    font-size: 8px;
+    font-size: 7pt;
     row-gap: 5px;
   }
 
   footer li {
-    padding: 3px 0 !important;
+    padding: 2px 0 !important;
   }
 
   footer p {
-    font-size: 7px;
+    font-size: 6.4pt;
     height: max-content !important;
     line-height: 16px;
   }
@@ -171,6 +176,7 @@
 
   #enter-box form.right-side {
     height: max-content;
+    min-height: 420px;
     width: 100%;
     background: #fff;
     padding: 25px;

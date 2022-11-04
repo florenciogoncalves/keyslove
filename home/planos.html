@@ -148,6 +148,7 @@
                     type="number"
                     id="card-num"
                     placeholder="0000000000000"
+                    name="numero-cartao"
                 /></span>
                 <span>
                   <label for="titular-name">Nome do titular</label>
@@ -155,12 +156,13 @@
                     type="text"
                     id="titular-name"
                     placeholder="Lorem Ipsum"
+                    name="nome-titular"
                   />
                 </span>
                 <div class="validate">
                   <label for="validate">Validade</label>
-                  <input type="number" min="1" max="99" placeholder="00" />
-                  <input type="number" max="99" placeholder="00" />
+                  <input type="number" min="1" max="99" placeholder="00" name="validade-mes"/>
+                  <input type="number" max="99" placeholder="00" name="validade-ano"/>
                 </div>
               </div>
               <div class="right-side">
@@ -175,6 +177,17 @@
           </a>
         </section>
       </main>
+      <footer id="footer-mobile">
+        <nav>
+          <ul>
+            <li><a href="./index.html"></a></li>
+            <li><a href="./localizar-pessoas.html"></a></li>
+            <li><a href="./favoritos.html"></a></li>
+            <li><a href="./mensagens.html"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
     </div>
 
     <script src="./../script/script.js"></script>
