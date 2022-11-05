@@ -500,12 +500,20 @@ function navImages(arrayNavegado, ondeMostrar) {
     if (actual >= arrayNavegado.length - 1) actual = 0;
     else actual++;
 
+    while(arrayNavegado[actual] == ''){
+      proxima.click()
+    }
+
     ondeMostrar.src = arrayNavegado[actual];
   });
 
   anterior.addEventListener("click", () => {
     if (actual <= 0) actual = arrayNavegado.length - 1;
     else actual--;
+
+    while(arrayNavegado[actual] == ''){
+      anterior.click()
+    }
 
     ondeMostrar.src = arrayNavegado[actual];
   });

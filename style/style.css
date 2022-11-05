@@ -2016,10 +2016,11 @@ main#servicos {
 }
 
 /*Perfil.html*/
-#perfil-container {
+#perfil-container,
+#perfil-container > section {
   display: grid;
-  grid-template-columns: 68% 35%;
-  height: calc(100vh - 10px);
+  grid-template-columns: 1fr max-content;
+  height: 100%;
 }
 #perfil {
   max-width: 100%;
