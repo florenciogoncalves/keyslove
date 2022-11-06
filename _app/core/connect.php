@@ -2,9 +2,6 @@
 
 
 
-// namespace Source\Core;
-
-// require __DIR__."./../../vendor/autoload.php";
 require __DIR__."./../boot/config.php";
 
 // use PDO;

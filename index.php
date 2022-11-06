@@ -13,10 +13,10 @@
     <header class="header-content">
       <a href=""><img src="./images/Keyslov.svg" class="header-logo" /></a>
       <nav class="nav-btn index">
-        <a href="./cadastro/cadastro-1.html"
+        <a href="./cadastro/cadastro-1.php"
           ><button class="border-btn">Criar conta</button></a
         >
-        <a href="./login.html"><button class="white-btn">Entrar</button></a>
+        <a href="./login.php"><button class="white-btn">Entrar</button></a>
         <div class="lang-selector">
           <img src="./images/bandeiradobrasil-2-cke (1) 1.png" />
           <img
@@ -40,10 +40,10 @@
           </button>
         </div>
         <p>Ou</p>
-        <a href="./cadastro/cadastro-1.html"
+        <a href="./cadastro/cadastro-1.php"
           ><button class="continue btn-register">Cadastra - se</button></a
         >
-        <a href="./login.html">Efectuar login</a>
+        <a href="./login.php">Efectuar login</a>
       </div>
       <div class="messages">
         <h3>Off para indecisões</h3>

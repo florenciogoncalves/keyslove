@@ -1,53 +1,29 @@
 <?php
 
 
-session_start();
-require __DIR__ . "/../controllers/cadastro4-Controller.php";
-
+require __DIR__ . "./../models/userModel.php";
 
 if (isset($_POST['btn'])) {
 
+
+    $alerts = [];
     $FILTER = filter_input_array(INPUT_POST, FILTER_DEFAULT);
     if (in_array("", $FILTER)) {
-        $_SESSION['error_empty'] = "Preencha todos os campos";
+        $alerts[] = "Escolha pelo menos uma das opções!";
+        $_SESSION['error'] = $alerts;
         header("Location: ../../cadastro/cadastro-4.php");
-    } else {
+    }
+    // var_dump($FILTER);
 
 
-        $inputs = [];
-        $values = [];
+    if (in_array("btn", $FILTER)) {
+        var_dump($FILTER);
+    }
 
-        for ($count = 1; $count <= 6; $count++) {
+    $key = array_search('btn', $FILTER);
+    if ($key !== false) {
+        unset($FILTER[$key]);
 
-
-            // if (in_array("procurando" . $count, $inputs)) {
-
-            //     if(array_key_exists("procurando".$count, $inputs)){
-            //         $values[$count] = $inputs[$count];
-            //     }
-
-            //     // // echo $inputs[$count];
-            //     // $values[] = $inputs[$count];
-            //     // echo $values;
-            // }
-        }
-
-        // for ($count = 1; $count <= 6; $count++) {
-
-
-
-        // //     echo $inputs[$count];
-        // // }
-
-        // }
-
-
-        // for ($count = 1; $count <= 6; $count++) {
-        //     ((new CadastroRelacionamento($inputs[$count])));
-        // }
-
-        echo "<pre>";
-        var_dump($inputs);
-        // header("Location: ../../cadastro/cadastro-5.php");
+        var_dump($key);
     }
 }
