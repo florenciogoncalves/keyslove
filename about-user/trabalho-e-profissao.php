@@ -108,7 +108,7 @@
         <img src="./../images/Keyslov.svg" alt="Keyslov - logo" />
       </header>
       <div id="content-right">
-        <form action="educacao-e-cultura.html" class="principal-content">
+        <form action="educacao-e-cultura.php" class="principal-content">
           <header class="content-header">
             <img src="./../images/Book_check_fill.svg" />
             <h1>Trabalho e Profissão</h1>

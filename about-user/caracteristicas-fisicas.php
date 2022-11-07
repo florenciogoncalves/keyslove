@@ -24,25 +24,23 @@
                 alt="Foto de perfil"
                 id="img-perfil"
               />
+              <div class="status"></div>
             </div>
 
             <figcaption>
-              <div class="status"></div>
               <h2>Lorem Ipsun Silva</h2>
               <span id="show-status-window">Escolher status</span>
             </figcaption>
           </figure>
 
-          <img class="vizualizar-menu" src="./../images/option.svg" />
+          <img  class="vizualizar-menu" src="./../images/option.svg" />
           <div class="hidden-list">
             <ul>
-              <a href="bloqueados.html" class="pessoas-bloqueadas"
-                ><li>Membros Bloqueados</li></a
-              >
+              <a href="bloqueados.html" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
               <li>Lorem Ipsum exemplo</li>
             </ul>
-          </div>
-          <div id="online-now">
+          </div><div id="online-now">
+
             <div class="changing-status">
               <div class="this-status">
                 <input
@@ -76,7 +74,6 @@
             </div>
           </div>
         </div>
-
         <nav>
           <ul id="menu-left">
             <li><a href="./../home/perfil.html">Perfil</a></li>
@@ -88,7 +85,8 @@
             <li><a href="./../home/configuracoes.html">Configurações</a></li>
             <li><a href="./../home/mensagens.html">Mensagens</a></li>
             <li><a href="./../home/servicos.html">Serviços</a></li>
-            <li><a href="./../home/online.html">Online agora</a></li>
+            <li><a href="./../home/online.html">Online agora</a>
+            </li>
             <li><a href="teste-de-amor.html">Teste de amor</a></li>
           </ul>
         </nav>
@@ -105,119 +103,133 @@
         ></a>
       </div>
     </div>
-
     <div id="main-container">
       <header id="mobile-header">
         <img src="./../images/Keyslov.svg" alt="Keyslov - logo" />
       </header>
       <div id="content-right">
-        <form action="../home/index.html" method="get" class="principal-content">
+        <form
+          action="estilo-de-vida.php"
+          method="get"
+          class="principal-content"
+        >
           <header class="content-header">
             <img src="./../images/Book_check_fill.svg" />
-            <h1>Estilo de vida</h1>
+            <h1>Características Físicas</h1>
           </header>
 
-          <div id="container-elements" style="justify-content: flex-start">
+          <div id="container-elements">
             <div class="part-1">
               <div class="iten">
-                <label for="beber">Você bebe?</label>
-                <select id="beber" name="beber">
+                <label for="cor-cabelos">Cor dos cabelos</label>
+                <select id="cor-cabelos" name="cor-cabelos">
                   <option selected hidden disabled>Selecionar...</option>
-                  <option value="Sim">Sim</option>
-                  <option value="Não">Não</option>
-                  <option value="Por vezes">Por vezes</option>
+                  <option value="Loiro">Loiro</option>
+                  <option value="Castanho claro">Castanho Claro</option>
+                  <option value="Castanho médio">Castanho Médio</option>
+                  <option value="Castanho escuro">Castanho Escuro</option>
+                  <option value="Castanho meio ruivo">Castanho meio Ruivo</option>
+                  <option value="Ruivo">Ruivo</option>
+                  <option value="Moreno">Moreno</option>
+                  <option value="Preto">Preto</option>
+                  <option value="Cinza ou Grisalho">Cinza ou Grizalho</option>
+                  <option value="Branco">Branco</option>
                 </select>
               </div>
+
               <div class="iten">
-                <label for="fumar">Você fuma?</label>
-                <select id="fumar" name="fumar">
+                <label for="cor-olhos">Cor dos olhos</label>
+                <select id="cor-olhos" name="cor-olhos">
                   <option selected hidden disabled>Selecionar...</option>
-                  <option value="Sim">Sim</option>
-                  <option value="Não">Não</option>
-                  <option value="Por vezes">Por vezes</option>
+                  <option value="Azul">Azul</option>
+                  <option value="Azul-esverdeado">Azul-esverdeado</option>
+                  <option value="Cinza">Cinza</option>
+                  <option value="Castanho">Castanho</option>
+                  <option value="Verde">Verde</option>
+                  <option value="Avelã">Avelã(castanhos-esverdeados)</option>
+                  <option value="Âmbar">Âmbar(ocre ou mel)</option>
+                  <option value="Vermelho">Vermelho(albinismo)</option>
+                  <option value="">Violeta</option>
                 </select>
               </div>
+
               <div class="iten">
-                <label for="ocupacao">Ocupação</label>
-                <select id="ocupacao" name="ocupacao">
+                <label for="altura">Altura</label>
+                <select id="altura" name="altura">
                   <option selected hidden disabled>Selecionar...</option>
+                  <option value="1.41m - 1.50m">1.41 metros - 1.50 metros</option>
+                  <option value="1.51m - 1.60m">1.51 metros - 1.60 metros</option>
+                  <option value="1.61m - 1.70m">1.61 metros - 1.70 metros</option>
+                  <option value="1.71m - 1.80m">1.71 metros - 1.80 metros</option>
+                  <option value="1.81m - 1.90m">1.81 metros - 1.90 metros</option>
+                  <option value="1.91m - 2.00m">1.91 metros - 2.00 metros</option>
+                  <option value="+2.00m">+2.00 metros</option>
                 </select>
               </div>
+
               <div class="iten">
-                <label for="filhos">Possui filhos?</label>
-                <select id="filhos" name="filhos">
+                <label for="peso">Peso</label>
+                <select id="peso" name="peso">
                   <option selected hidden disabled>Selecionar...</option>
-                  <option value="Sim">Sim</option>
-                  <option value="Não">Não</option>
-                </select>
-              </div>
-              <div class="iten">
-                <label for="quantidade-filhos">Quantidade de filhos</label>
-                <select
-                  id="quantidade-filhos"
-                  name="quantidade-filhos"
-                  disabled
-                >
-                  <option selected hidden disabled>00</option>
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="+7">+7</option>
+                  <option value="40Kg - 50Kg">40Kg - 50Kg</option>
+                  <option value="50Kg - 60Kg">50Kg - 60Kg</option>
+                  <option value="60Kg - 70Kg">60Kg - 70Kg</option>
+                  <option value="70Kg - 80Kg">70Kg - 80Kg</option>
+                  <option value="80Kg - 90Kg">80Kg - 90Kg</option>
+                  <option value="90Kg - 100Kg">90Kg - 100Kg</option>
+                  <option value="+100Kg">+100Kg</option>
                 </select>
               </div>
             </div>
 
             <div class="part-2" style="display: none">
               <div class="iten">
-                <label for="pets">Possui animais de estimação?</label>
-                <select id="pets" name="pets">
+                <label for="tipo-fisico">Tipo físico</label>
+                <select id="tipo-fisico" name="tipo-fisico">
                   <option selected hidden disabled>Selecionar...</option>
-                  <option value="Sim">Sim</option>
-                  <option value="Não">Não</option>
+                  <option value="Ectomorfo">Ectomorfo</option>
+                  <option value="Mesomorfo">Mesomorfo</option>
+                  <option value="Endomorfo">Endomorfo</option>
                 </select>
               </div>
 
               <div class="iten">
-                <label for="quantidade-pets">Quantidade</label>
-                <select id="quantidade-pets" disabled name="quantidade-pets">
+                <label for="grupo-etnico">Grupo étnico</label>
+                <select id="grupo-etnico" name="grupo-etnico">
                   <option selected hidden disabled>Selecionar...</option>
-                  <option value="0">00</option>
-                  <option value="1">01</option>
-                  <option value="2">02</option>
-                  <option value="3">03</option>
-                  <option value="4">04</option>
-                  <option value="5">05</option>
-                  <option value="6">06</option>
-                  <option value="7">07</option>
-                  <option value="+7">+7</option>
+                  <option value="Branco">Branco</option>
+                  <option value="Pardo">Pardo</option>
+                  <option value="Preto">Preto</option>
+                  <option value="Amarelo">Amarelo</option>
+                  <option value="Indígena">Indígena</option>
                 </select>
               </div>
 
               <div class="iten">
-                <label for="moradia">Situação de moradia</label>
-                <select id="moradia" name="moradia">
+                <label for="arte-corporal">Arte corporal</label>
+                <select id="arte-corporal" name="arte-corporal">
                   <option selected hidden disabled>Selecionar...</option>
+                  <option value="Nenhuma">Nenhuma</option>
+                  <option value="Tatuagem">Tatuagem</option>
+                  <option value="Piercings">Piercings</option>
+                  <option value="Alargadores">Alargadores</option>
+                  <option value="Pintura corporal">Pintura corporal</option>
+                  <option value="Microdermal">Microdermal</option>
+                  <option value="Escarificação">Escarificação</option>
+                  <option value="Implante Subcutâneo">Implante Subcutâneo</option>
+                  <option value="Bifurcação da língua">Bifurcação da língua</option>
                 </select>
               </div>
 
               <div class="iten">
-                <label for="disposi-mudar-pais"
-                  >Disposição para mudar de país</label
-                >
-                <select id="disposi-mudar-pais" name="disposi-mudar-pais">
+                <label for="aparencia">Minha aparência</label>
+                <select id="aparencia" name="aparencia">
                   <option selected hidden disabled>Selecionar...</option>
-                </select>
-              </div>
-
-              <div class="iten">
-                <label for="religiao">Religião</label>
-                <select id="religia" name="religia">
-                  <option selected hidden disabled>Selecionar...</option>
+                  <option value="Bagunçado">Bagunçado</option>
+                  <option value="Ralo">Ralo</option>
+                  <option value="Com frizz">Com frizz</option>
+                  <option value="Brilhante">Brilhante</option>
+                  <option value="Limpo">Limpo</option>
                 </select>
               </div>
             </div>
@@ -253,6 +265,7 @@
         </nav>
       </footer>
     </div>
+
     <script src="./../script/trabalho-profissao.js"></script>
     <script src="./../script/script.js"></script>
     <script src="./../script/resize-windown.js"></script>

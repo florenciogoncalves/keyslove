@@ -24,9 +24,10 @@
                 alt="Foto de perfil"
                 id="img-perfil"
               />
-              <div class="status"></div>
             </div>
+
             <figcaption>
+              <div class="status"></div>
               <h2>Lorem Ipsun Silva</h2>
               <span id="show-status-window">Escolher status</span>
             </figcaption>
@@ -110,31 +111,115 @@
         <img src="./../images/Keyslov.svg" alt="Keyslov - logo" />
       </header>
       <div id="content-right">
-        <form action="caracteristicas-fisicas.html" class="principal-content">
+        <form action="../home/index.php" method="get" class="principal-content">
           <header class="content-header">
             <img src="./../images/Book_check_fill.svg" />
-            <h1>Mais sobre mim</h1>
+            <h1>Estilo de vida</h1>
           </header>
 
           <div id="container-elements" style="justify-content: flex-start">
-            <div class="iten" style="margin-bottom: 24px">
-              <label for="write-about">Escreva sobre você</label>
-
-              <textarea
-                id="write-about"
-                placeholder="Escreva..."
-                name="sobre-voce"
-              ></textarea>
+            <div class="part-1">
+              <div class="iten">
+                <label for="beber">Você bebe?</label>
+                <select id="beber" name="beber">
+                  <option selected hidden disabled>Selecionar...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                  <option value="Por vezes">Por vezes</option>
+                </select>
+              </div>
+              <div class="iten">
+                <label for="fumar">Você fuma?</label>
+                <select id="fumar" name="fumar">
+                  <option selected hidden disabled>Selecionar...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                  <option value="Por vezes">Por vezes</option>
+                </select>
+              </div>
+              <div class="iten">
+                <label for="ocupacao">Ocupação</label>
+                <select id="ocupacao" name="ocupacao">
+                  <option selected hidden disabled>Selecionar...</option>
+                </select>
+              </div>
+              <div class="iten">
+                <label for="filhos">Possui filhos?</label>
+                <select id="filhos" name="filhos">
+                  <option selected hidden disabled>Selecionar...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+              </div>
+              <div class="iten">
+                <label for="quantidade-filhos">Quantidade de filhos</label>
+                <select
+                  id="quantidade-filhos"
+                  name="quantidade-filhos"
+                  disabled
+                >
+                  <option selected hidden disabled>00</option>
+                  <option value="0">00</option>
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                  <option value="5">05</option>
+                  <option value="6">06</option>
+                  <option value="7">07</option>
+                  <option value="+7">+7</option>
+                </select>
+              </div>
             </div>
 
-            <div class="iten">
-              <label for="write-about">O que você busca</label>
+            <div class="part-2" style="display: none">
+              <div class="iten">
+                <label for="pets">Possui animais de estimação?</label>
+                <select id="pets" name="pets">
+                  <option selected hidden disabled>Selecionar...</option>
+                  <option value="Sim">Sim</option>
+                  <option value="Não">Não</option>
+                </select>
+              </div>
 
-              <textarea
-                id="find-out"
-                placeholder="Escreva..."
-                name="o-que-busca"
-              ></textarea>
+              <div class="iten">
+                <label for="quantidade-pets">Quantidade</label>
+                <select id="quantidade-pets" disabled name="quantidade-pets">
+                  <option selected hidden disabled>Selecionar...</option>
+                  <option value="0">00</option>
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4">04</option>
+                  <option value="5">05</option>
+                  <option value="6">06</option>
+                  <option value="7">07</option>
+                  <option value="+7">+7</option>
+                </select>
+              </div>
+
+              <div class="iten">
+                <label for="moradia">Situação de moradia</label>
+                <select id="moradia" name="moradia">
+                  <option selected hidden disabled>Selecionar...</option>
+                </select>
+              </div>
+
+              <div class="iten">
+                <label for="disposi-mudar-pais"
+                  >Disposição para mudar de país</label
+                >
+                <select id="disposi-mudar-pais" name="disposi-mudar-pais">
+                  <option selected hidden disabled>Selecionar...</option>
+                </select>
+              </div>
+
+              <div class="iten">
+                <label for="religiao">Religião</label>
+                <select id="religia" name="religia">
+                  <option selected hidden disabled>Selecionar...</option>
+                </select>
+              </div>
             </div>
           </div>
 
@@ -145,7 +230,14 @@
               </div>
             </div>
 
-            <button class="next-page-about">></button>
+            <button
+              class="next-page-about"
+              type="button"
+              onclick="proxJanela(document.querySelector('button.next-page-about'), 
+          document.querySelector('.part-2'), document.querySelector('.part-1'))"
+            >
+              >
+            </button>
           </div>
         </form>
       </div>
@@ -161,7 +253,6 @@
         </nav>
       </footer>
     </div>
-
     <script src="./../script/trabalho-profissao.js"></script>
     <script src="./../script/script.js"></script>
     <script src="./../script/resize-windown.js"></script>

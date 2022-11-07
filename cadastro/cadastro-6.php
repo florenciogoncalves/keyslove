@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -17,15 +20,15 @@
     <header class="header-content">
       <img src="./../images/Keyslov.svg" class="header-logo" />
       <nav class="nav-btn">
-        <a href="../login.html"><button class="white-btn">Entrar</button></a>
+        <a href="../login.php"><button class="white-btn">Entrar</button></a>
       </nav>
     </header>
 
     <div class="form-cadastro-container">
       <div class="cadastro-layout">
         <form
-          action="./../about-user/trabalho-e-profissao.html"
-          method="get"
+          action="./../_app/controllers/Cadastro6-Controller.php"   
+          method="POST"
           id="form-cadastro6"
         >
           <h1 id="h1">Código de confirmação</h1>
