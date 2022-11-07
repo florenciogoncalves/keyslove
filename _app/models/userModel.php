@@ -26,6 +26,11 @@ class userModel extends connect
         $this->thirdInsert($Pais, $Estado, $Cidade);
     }
 
+    public function insertUserImage($photo)
+    {
+        $this->imageInsert($photo);
+    }
+
 
     public function cadastro4($preferencia)
     {
@@ -82,6 +87,20 @@ class userModel extends connect
 
         if ($query->execute()) {
 
+            return true;
+        }
+
+        return false;
+    }
+
+
+
+    private function imageInsert($photo, string $user = null,): bool
+    {
+        $query = $this->connect->prepare("INSERT INTO photos(photo) VALUES (?)");
+        $query->bindParam(1, $photo);
+
+        if ($query->execute()) {
             return true;
         }
 
