@@ -68,17 +68,17 @@ session_start();
         </div>
 
         <div>
-          <input type="checkbox" id="escolha-4" name="escolha-4" />
+          <input type="checkbox" id="escolha-4" name="escolha-4" value="casamentoViverJuntos" />
           <label for="escolha-4" name="escolha-4" value="casamentoViverJuntos">Casamento viver juntos</label>
         </div>
 
         <div>
-          <input type="checkbox" id="escolha-5" name="escolha-5" />
+          <input type="checkbox" id="escolha-5" name="escolha-5" value="casamentoViverSeparados" />
           <label for="escolha-5" name="escolha-5" value="casamentoViverSeparados">Casamento viver separados</label>
         </div>
 
         <div>
-          <input type="checkbox" id="escolha-6" name="escolha-6"value="Amizade" />
+          <input type="checkbox" id="escolha-6" name="escolha-6" value="Amizade" />
           <label for="escolha-6" name="escolha-6" value="Amizade">Amizade</label>
         </div>
 

@@ -12,18 +12,15 @@ if (isset($_POST['btn'])) {
         $alerts[] = "Escolha pelo menos uma das opções!";
         $_SESSION['error'] = $alerts;
         header("Location: ../../cadastro/cadastro-4.php");
-    }
-    // var_dump($FILTER);
-
-
-    if (in_array("btn", $FILTER)) {
-        var_dump($FILTER);
+        die;
     }
 
-    $key = array_search('btn', $FILTER);
-    if ($key !== false) {
-        unset($FILTER[$key]);
+    unset($FILTER["btn"]);
 
-        var_dump($key);
+    for ($c = 1; $c <= 6; $c++) {
+        if (key_exists('escolha-' . $c, $FILTER)) {
+            ((new userModel))->cadastro4($FILTER['escolha-' . $c]);
+        }
     }
+    header("Location: ../../cadastro/cadastro-5.php");
 }
