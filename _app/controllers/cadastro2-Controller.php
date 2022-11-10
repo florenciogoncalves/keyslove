@@ -19,6 +19,8 @@ if (isset($_POST['btn-submit'])) {
     $date = $_POST['dia-nascimento'] . "/" . $_POST['mes-nascimento'] . "/" . $_POST['ano-nascimento'];
     $genero = $_POST['genre'];
 
+    $_SESSION['username'] = $nome;
+
     ((new userModel))->cadastro2($nome, $date, $genero);
     header("Location: ../../cadastro/cadastro-3.php");
 }

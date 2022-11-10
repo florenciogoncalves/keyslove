@@ -36,6 +36,18 @@ if (!max_size_allowed($firstImageSize) || !max_size_allowed($secondImageSize)) {
     die;
 }
 
+
+
+if (isset($_SESSION['username'])) {
+    $user = $_SESSION['username'];
+} else {
+    $alerts[] = "Erro! Siga todos os passos para o cadastro.";
+    $_SESSION['error'] = $alerts;
+    header("Location: ../../cadastro/cadastro-5.php");
+    die;
+}
+
+
 if (!in_array($_FILES['img-1']['type'], $allowedTypes) || (!in_array($_FILES['img-2']['type'], $allowedTypes))) {
 
     $errors[] = "Apenas é permitido o upload de imagens do tipo: PNG, JPEG, JPG";
@@ -45,12 +57,8 @@ if (!in_array($_FILES['img-1']['type'], $allowedTypes) || (!in_array($_FILES['im
 } else {
     uploader($_FILES['img-1']['tmp_name'], __DIR__ . "./../../_storage/images/{$firstImageNewName}");
     uploader($_FILES['img-2']['tmp_name'], __DIR__ . "./../../_storage/images/{$secondImageNewName}");
-    ((new userModel))->insertUserImage($firstImageNewName);
-    ((new userModel))->insertUserImage($secondImageNewName);
+    ((new userModel))->insertUserImage($user, $firstImageNewName);
+    ((new userModel))->insertUserImage($user, $secondImageNewName);
 
     header("Location: ../../cadastro/cadastro-6.php");
 }
-
-
-
-

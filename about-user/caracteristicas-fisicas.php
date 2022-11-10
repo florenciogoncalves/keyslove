@@ -1,273 +1,286 @@
+<?php
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Complete o perfil &mid; Keyslov</title>
-    <link
-      rel="shortcut icon"
-      href="./../images/favicon.svg"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="./../style/style.css" />
-    <link rel="stylesheet" href="./../style/style-responsivo.css" />
-  </head>
-  <body id="sobre-usuario">
-    <div id="menu-esquerdo">
-      <div id="div-left">
-        <div id="user-information">
-          <figure>
-            <div class="foto-de-perfil">
-              <img
-                src="./../debug-images/temp.png"
-                alt="Foto de perfil"
-                id="img-perfil"
-              />
-              <div class="status"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete o perfil &mid; Keyslov</title>
+  <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="./../style/style.css" />
+  <link rel="stylesheet" href="./../style/style-responsivo.css" />
+</head>
+
+<body id="sobre-usuario">
+  <div id="menu-esquerdo">
+    <div id="div-left">
+      <div id="user-information">
+        <figure>
+          <div class="foto-de-perfil">
+            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
+            <div class="status"></div>
+          </div>
+
+          <figcaption>
+
+            <?php
+            if (isset($_SESSION['username'])) :
+            ?>
+
+              <h2><?= $_SESSION['username'];
+                endif ?></h2>
+              <span id="show-status-window">Escolher status</span>
+          </figcaption>
+        </figure>
+
+        <img class="vizualizar-menu" src="./../images/option.svg" />
+        <div class="hidden-list">
+          <ul>
+            <a href="bloqueados.html" class="pessoas-bloqueadas">
+              <li>Membros Bloqueados</li>
+            </a>
+            <li>Lorem Ipsum exemplo</li>
+          </ul>
+        </div>
+        <div id="online-now">
+
+          <div class="changing-status">
+            <div class="this-status">
+              <input type="radio" name="online-agora" value="online" id="online" />
+              <label for="online">Online</label>
             </div>
 
-            <figcaption>
-              <h2>Lorem Ipsun Silva</h2>
-              <span id="show-status-window">Escolher status</span>
-            </figcaption>
-          </figure>
+            <div class="this-status">
+              <input type="radio" name="online-agora" id="ocupado" value="ocupado" />
+              <label for="ocupado">Ocupado</label>
+            </div>
 
-          <img  class="vizualizar-menu" src="./../images/option.svg" />
-          <div class="hidden-list">
-            <ul>
-              <a href="bloqueados.html" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
-              <li>Lorem Ipsum exemplo</li>
-            </ul>
-          </div><div id="online-now">
-
-            <div class="changing-status">
-              <div class="this-status">
-                <input
-                  type="radio"
-                  name="online-agora"
-                  value="online"
-                  id="online"
-                />
-                <label for="online">Online</label>
-              </div>
-
-              <div class="this-status">
-                <input
-                  type="radio"
-                  name="online-agora"
-                  id="ocupado"
-                  value="ocupado"
-                />
-                <label for="ocupado">Ocupado</label>
-              </div>
-
-              <div class="this-status">
-                <input
-                  type="radio"
-                  name="online-agora"
-                  id="invisivel"
-                  value="invisivel"
-                />
-                <label for="invisivel">Invisível</label>
-              </div>
+            <div class="this-status">
+              <input type="radio" name="online-agora" id="invisivel" value="invisivel" />
+              <label for="invisivel">Invisível</label>
             </div>
           </div>
         </div>
-        <nav>
-          <ul id="menu-left">
-            <li><a href="./../home/perfil.html">Perfil</a></li>
-            <li><a href="./../home/chamada.html">Chamada de video</a></li>
-            <li><a href="./../home/carroussel.html">Carroussel</a></li>
-            <li><a href="./../home/curtidas.html">Curtidas</a></li>
-            <li><a href="./../home/planos.html">Planos</a></li>
-            <li><a href="./../home/favoritos.html">Favoritos</a></li>
-            <li><a href="./../home/configuracoes.html">Configurações</a></li>
-            <li><a href="./../home/mensagens.html">Mensagens</a></li>
-            <li><a href="./../home/servicos.html">Serviços</a></li>
-            <li><a href="./../home/online.html">Online agora</a>
-            </li>
-            <li><a href="teste-de-amor.html">Teste de amor</a></li>
-          </ul>
-        </nav>
-
-        <a href="./../home/localizar-pessoas.html">
-          <div id="peoples-left">
-            <h4>Pessoas pela região</h4>
-
-            <div class="people-organizer">
-              <img src="./../debug-images/temp-2.svg" />
-              <img src="./../debug-images/temp-2.svg" />
-              <img src="./../debug-images/temp-2.svg" />
-            </div></div
-        ></a>
       </div>
+      <nav>
+        <ul id="menu-left">
+          <li><a href="./../home/perfil.html">Perfil</a></li>
+          <li><a href="./../home/chamada.html">Chamada de video</a></li>
+          <li><a href="./../home/carroussel.html">Carroussel</a></li>
+          <li><a href="./../home/curtidas.html">Curtidas</a></li>
+          <li><a href="./../home/planos.html">Planos</a></li>
+          <li><a href="./../home/favoritos.html">Favoritos</a></li>
+          <li><a href="./../home/configuracoes.html">Configurações</a></li>
+          <li><a href="./../home/mensagens.html">Mensagens</a></li>
+          <li><a href="./../home/servicos.html">Serviços</a></li>
+          <li><a href="./../home/online.html">Online agora</a>
+          </li>
+          <li><a href="teste-de-amor.html">Teste de amor</a></li>
+        </ul>
+      </nav>
+
+      <a href="./../home/localizar-pessoas.html">
+        <div id="peoples-left">
+          <h4>Pessoas pela região</h4>
+
+          <div class="people-organizer">
+            <img src="./../debug-images/temp-2.svg" />
+            <img src="./../debug-images/temp-2.svg" />
+            <img src="./../debug-images/temp-2.svg" />
+          </div>
+        </div>
+      </a>
     </div>
-    <div id="main-container">
-      <header id="mobile-header">
-        <img src="./../images/Keyslov.svg" alt="Keyslov - logo" />
-      </header>
-      <div id="content-right">
-        <form
-          action="estilo-de-vida.php"
-          method="get"
-          class="principal-content"
-        >
-          <header class="content-header">
-            <img src="./../images/Book_check_fill.svg" />
-            <h1>Características Físicas</h1>
-          </header>
+  </div>
+  <div id="main-container">
+    <header id="mobile-header">
+      <img src="./../images/Keyslov.svg" alt="Keyslov - logo" />
+    </header>
+    <div id="content-right">
 
-          <div id="container-elements">
-            <div class="part-1">
-              <div class="iten">
-                <label for="cor-cabelos">Cor dos cabelos</label>
-                <select id="cor-cabelos" name="cor-cabelos">
-                  <option selected hidden disabled>Selecionar...</option>
-                  <option value="Loiro">Loiro</option>
-                  <option value="Castanho claro">Castanho Claro</option>
-                  <option value="Castanho médio">Castanho Médio</option>
-                  <option value="Castanho escuro">Castanho Escuro</option>
-                  <option value="Castanho meio ruivo">Castanho meio Ruivo</option>
-                  <option value="Ruivo">Ruivo</option>
-                  <option value="Moreno">Moreno</option>
-                  <option value="Preto">Preto</option>
-                  <option value="Cinza ou Grisalho">Cinza ou Grizalho</option>
-                  <option value="Branco">Branco</option>
-                </select>
-              </div>
+      <?php
+      if (isset($_SESSION['error'])) :
+      ?>
 
-              <div class="iten">
-                <label for="cor-olhos">Cor dos olhos</label>
-                <select id="cor-olhos" name="cor-olhos">
-                  <option selected hidden disabled>Selecionar...</option>
-                  <option value="Azul">Azul</option>
-                  <option value="Azul-esverdeado">Azul-esverdeado</option>
-                  <option value="Cinza">Cinza</option>
-                  <option value="Castanho">Castanho</option>
-                  <option value="Verde">Verde</option>
-                  <option value="Avelã">Avelã(castanhos-esverdeados)</option>
-                  <option value="Âmbar">Âmbar(ocre ou mel)</option>
-                  <option value="Vermelho">Vermelho(albinismo)</option>
-                  <option value="">Violeta</option>
-                </select>
-              </div>
+        <div class="alert alert-danger text-center" role="alert">
 
-              <div class="iten">
-                <label for="altura">Altura</label>
-                <select id="altura" name="altura">
-                  <option selected hidden disabled>Selecionar...</option>
-                  <option value="1.41m - 1.50m">1.41 metros - 1.50 metros</option>
-                  <option value="1.51m - 1.60m">1.51 metros - 1.60 metros</option>
-                  <option value="1.61m - 1.70m">1.61 metros - 1.70 metros</option>
-                  <option value="1.71m - 1.80m">1.71 metros - 1.80 metros</option>
-                  <option value="1.81m - 1.90m">1.81 metros - 1.90 metros</option>
-                  <option value="1.91m - 2.00m">1.91 metros - 2.00 metros</option>
-                  <option value="+2.00m">+2.00 metros</option>
-                </select>
-              </div>
+          <?php
+          if (isset($_SESSION['error'])) {
+            foreach ($_SESSION['error'] as $errors) {
+              echo $errors;
+              unset($_SESSION['error']);
+              unset($errors);
+            }
+          }
 
-              <div class="iten">
-                <label for="peso">Peso</label>
-                <select id="peso" name="peso">
-                  <option selected hidden disabled>Selecionar...</option>
-                  <option value="40Kg - 50Kg">40Kg - 50Kg</option>
-                  <option value="50Kg - 60Kg">50Kg - 60Kg</option>
-                  <option value="60Kg - 70Kg">60Kg - 70Kg</option>
-                  <option value="70Kg - 80Kg">70Kg - 80Kg</option>
-                  <option value="80Kg - 90Kg">80Kg - 90Kg</option>
-                  <option value="90Kg - 100Kg">90Kg - 100Kg</option>
-                  <option value="+100Kg">+100Kg</option>
-                </select>
-              </div>
+          ?>
+
+        </div>
+
+      <?php
+      endif;
+      ?>
+
+      <form action="./../_app/controllers/caracteristicasFisicasController.php" method="POST" class="principal-content">
+        <header class="content-header">
+          <img src="./../images/Book_check_fill.svg" />
+          <h1>Características Físicas</h1>
+        </header>
+
+        <div id="container-elements">
+          <div class="part-1">
+            <div class="iten">
+              <label for="cor-cabelos">Cor dos cabelos</label>
+              <select id="cor-cabelos" name="cor-cabelos">
+                <option selected hidden disabled>Selecionar...</option>
+                <option value="Loiro">Loiro</option>
+                <option value="Castanho claro">Castanho Claro</option>
+                <option value="Castanho médio">Castanho Médio</option>
+                <option value="Castanho escuro">Castanho Escuro</option>
+                <option value="Castanho meio ruivo">Castanho meio Ruivo</option>
+                <option value="Ruivo">Ruivo</option>
+                <option value="Moreno">Moreno</option>
+                <option value="Preto">Preto</option>
+                <option value="Cinza ou Grisalho">Cinza ou Grizalho</option>
+                <option value="Branco">Branco</option>
+              </select>
             </div>
 
-            <div class="part-2" style="display: none">
-              <div class="iten">
-                <label for="tipo-fisico">Tipo físico</label>
-                <select id="tipo-fisico" name="tipo-fisico">
-                  <option selected hidden disabled>Selecionar...</option>
-                  <option value="Ectomorfo">Ectomorfo</option>
-                  <option value="Mesomorfo">Mesomorfo</option>
-                  <option value="Endomorfo">Endomorfo</option>
-                </select>
-              </div>
+            <div class="iten">
+              <label for="cor-olhos">Cor dos olhos</label>
+              <select id="cor-olhos" name="cor-olhos">
+                <option selected hidden disabled>Selecionar...</option>
+                <option value="Azul">Azul</option>
+                <option value="Azul-esverdeado">Azul-esverdeado</option>
+                <option value="Cinza">Cinza</option>
+                <option value="Castanho">Castanho</option>
+                <option value="Verde">Verde</option>
+                <option value="Avelã">Avelã(castanhos-esverdeados)</option>
+                <option value="Âmbar">Âmbar(ocre ou mel)</option>
+                <option value="Vermelho">Vermelho(albinismo)</option>
+                <option value="">Violeta</option>
+              </select>
+            </div>
 
-              <div class="iten">
-                <label for="grupo-etnico">Grupo étnico</label>
-                <select id="grupo-etnico" name="grupo-etnico">
-                  <option selected hidden disabled>Selecionar...</option>
-                  <option value="Branco">Branco</option>
-                  <option value="Pardo">Pardo</option>
-                  <option value="Preto">Preto</option>
-                  <option value="Amarelo">Amarelo</option>
-                  <option value="Indígena">Indígena</option>
-                </select>
-              </div>
+            <div class="iten">
+              <label for="altura">Altura</label>
+              <select id="altura" name="altura">
+                <option selected hidden disabled>Selecionar...</option>
+                <option value="1.41m - 1.50m">1.41 metros - 1.50 metros</option>
+                <option value="1.51m - 1.60m">1.51 metros - 1.60 metros</option>
+                <option value="1.61m - 1.70m">1.61 metros - 1.70 metros</option>
+                <option value="1.71m - 1.80m">1.71 metros - 1.80 metros</option>
+                <option value="1.81m - 1.90m">1.81 metros - 1.90 metros</option>
+                <option value="1.91m - 2.00m">1.91 metros - 2.00 metros</option>
+                <option value="+2.00m">+2.00 metros</option>
+              </select>
+            </div>
 
-              <div class="iten">
-                <label for="arte-corporal">Arte corporal</label>
-                <select id="arte-corporal" name="arte-corporal">
-                  <option selected hidden disabled>Selecionar...</option>
-                  <option value="Nenhuma">Nenhuma</option>
-                  <option value="Tatuagem">Tatuagem</option>
-                  <option value="Piercings">Piercings</option>
-                  <option value="Alargadores">Alargadores</option>
-                  <option value="Pintura corporal">Pintura corporal</option>
-                  <option value="Microdermal">Microdermal</option>
-                  <option value="Escarificação">Escarificação</option>
-                  <option value="Implante Subcutâneo">Implante Subcutâneo</option>
-                  <option value="Bifurcação da língua">Bifurcação da língua</option>
-                </select>
-              </div>
-
-              <div class="iten">
-                <label for="aparencia">Minha aparência</label>
-                <select id="aparencia" name="aparencia">
-                  <option selected hidden disabled>Selecionar...</option>
-                  <option value="Bagunçado">Bagunçado</option>
-                  <option value="Ralo">Ralo</option>
-                  <option value="Com frizz">Com frizz</option>
-                  <option value="Brilhante">Brilhante</option>
-                  <option value="Limpo">Limpo</option>
-                </select>
-              </div>
+            <div class="iten">
+              <label for="peso">Peso</label>
+              <select id="peso" name="peso">
+                <option selected hidden disabled>Selecionar...</option>
+                <option value="40Kg - 50Kg">40Kg - 50Kg</option>
+                <option value="50Kg - 60Kg">50Kg - 60Kg</option>
+                <option value="60Kg - 70Kg">60Kg - 70Kg</option>
+                <option value="70Kg - 80Kg">70Kg - 80Kg</option>
+                <option value="80Kg - 90Kg">80Kg - 90Kg</option>
+                <option value="90Kg - 100Kg">90Kg - 100Kg</option>
+                <option value="+100Kg">+100Kg</option>
+              </select>
             </div>
           </div>
 
-          <div class="progress-next">
-            <div class="progress-bar-content">
-              <div class="progress-bar">
-                <span class="progress-val"></span>
-              </div>
+          <div class="part-2" style="display: none">
+            <div class="iten">
+              <label for="tipo-fisico">Tipo físico</label>
+              <select id="tipo-fisico" name="tipo-fisico">
+                <option selected hidden disabled>Selecionar...</option>
+                <option value="Ectomorfo">Ectomorfo</option>
+                <option value="Mesomorfo">Mesomorfo</option>
+                <option value="Endomorfo">Endomorfo</option>
+              </select>
             </div>
 
-            <button
-              class="next-page-about"
-              type="button"
-              onclick="proxJanela(document.querySelector('button.next-page-about'), 
-          document.querySelector('.part-2'), document.querySelector('.part-1'))"
+            <div class="iten">
+              <label for="grupo-etnico">Grupo étnico</label>
+              <select id="grupo-etnico" name="grupo-etnico">
+                <option selected hidden disabled>Selecionar...</option>
+                <option value="Branco">Branco</option>
+                <option value="Pardo">Pardo</option>
+                <option value="Preto">Preto</option>
+                <option value="Amarelo">Amarelo</option>
+                <option value="Indígena">Indígena</option>
+              </select>
+            </div>
+
+            <div class="iten">
+              <label for="arte-corporal">Arte corporal</label>
+              <select id="arte-corporal" name="arte-corporal">
+                <option selected hidden disabled>Selecionar...</option>
+                <option value="Nenhuma">Nenhuma</option>
+                <option value="Tatuagem">Tatuagem</option>
+                <option value="Piercings">Piercings</option>
+                <option value="Alargadores">Alargadores</option>
+                <option value="Pintura corporal">Pintura corporal</option>
+                <option value="Microdermal">Microdermal</option>
+                <option value="Escarificação">Escarificação</option>
+                <option value="Implante Subcutâneo">Implante Subcutâneo</option>
+                <option value="Bifurcação da língua">Bifurcação da língua</option>
+              </select>
+            </div>
+
+            <div class="iten">
+              <label for="aparencia">Minha aparência</label>
+              <select id="aparencia" name="aparencia">
+                <option selected hidden disabled>Selecionar...</option>
+                <option value="Bagunçado">Bagunçado</option>
+                <option value="Ralo">Ralo</option>
+                <option value="Com frizz">Com frizz</option>
+                <option value="Brilhante">Brilhante</option>
+                <option value="Limpo">Limpo</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-next">
+          <div class="progress-bar-content">
+            <div class="progress-bar">
+              <span class="progress-val"></span>
+            </div>
+          </div>
+
+          <button class="next-page-about" type="button" name="btn-submit" onclick="proxJanela(document.querySelector('button.next-page-about'), 
+          document.querySelector('.part-2'), document.querySelector('.part-1'))">
             >
-              >
-            </button>
-          </div>
-        </form>
-      </div>
-      <footer id="footer-mobile">
-        <nav>
-          <ul>
-            <li  ><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><button id="mostra-menu-mobile"></button></li>
-          </ul>
-        </nav>
-      </footer>
+          </button>
+        </div>
+      </form>
     </div>
+    <footer id="footer-mobile">
+      <nav>
+        <ul>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+          <li><button id="mostra-menu-mobile"></button></li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
 
-    <script src="./../script/trabalho-profissao.js"></script>
-    <script src="./../script/script.js"></script>
-    <script src="./../script/resize-windown.js"></script>
-  </body>
+  <script src="./../script/trabalho-profissao.js"></script>
+  <script src="./../script/script.js"></script>
+  <script src="./../script/resize-windown.js"></script>
+</body>
+
 </html>

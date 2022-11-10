@@ -4,23 +4,29 @@
  * Testes não temrinados!
  */
 
+
+//var_dump(mail('keyslove2022teste@gmail.com', "Testando", "Keyslove"));
+
+
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
-
+use PHPMailer\PHPMailer\POP3;
 require_once __DIR__ . "/PHPMailer.php";
 require __DIR__ . "/SMTP.php";
 require __DIR__ . "/POP3.php";
 require __DIR__ . "/Exception.php";
 
-$mail = new PHPMailer(true);
+$mail = new PHPMailer();
 try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = '*';          //SMTP username
-    $mail->Password   = '*';                         //SMTP password
+    $mail->Username   = 'keyslove2022teste@gmail.com';          //SMTP username
+    $mail->Password   = 'Keyslove2022';                         //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -33,7 +39,7 @@ try {
     // $mail->addBCC('bcc@example.com');
 
 
-    $mail->setLanguage('pt', __DIR__ . "/language/phpmailer.lang-pt.php");
+    //$mail->setLanguage('pt', __DIR__ . "/language/phpmailer.lang-pt.php");
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
@@ -46,3 +52,4 @@ try {
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+

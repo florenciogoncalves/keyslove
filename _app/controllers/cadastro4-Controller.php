@@ -15,11 +15,21 @@ if (isset($_POST['btn'])) {
         die;
     }
 
+    if (isset($_SESSION['username'])) {
+        $user = $_SESSION['username'];
+    } else {
+
+        $alerts[] = "Erro! Siga todos os passos para o cadastro.";
+        $_SESSION['error'] = $alerts;
+        header("Location: ../../cadastro/cadastro-4.php");
+        die;
+    }
+
     unset($FILTER["btn"]);
 
     for ($c = 1; $c <= 6; $c++) {
         if (key_exists('escolha-' . $c, $FILTER)) {
-            ((new userModel))->cadastro4($FILTER['escolha-' . $c]);
+            ((new userModel))->cadastro4($user, $FILTER['escolha-' . $c]);
         }
     }
     header("Location: ../../cadastro/cadastro-5.php");

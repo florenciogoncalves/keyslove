@@ -16,6 +16,11 @@ function is_password(string $password): bool
     return true;
 }
 
+function filter($input)
+{
+    return filter_var($input, FILTER_DEFAULT);
+}
+
 /**
  * UPLOAD HELPERS
  */
@@ -46,4 +51,11 @@ function uploader($origin, $destination): bool
         return true;
     }
     return false;
+}
+
+
+
+function generateVerificationCode(): int
+{
+    return random_int(1000, 9999);
 }

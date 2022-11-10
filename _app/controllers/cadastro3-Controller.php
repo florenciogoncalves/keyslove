@@ -15,9 +15,20 @@ if (isset($_POST['btn-submit'])) {
         die;
     }
 
+    if (isset($_SESSION['username'])) {
+
+        $user = $_SESSION['username'];
+    } else {
+
+        $alerts[] = "Erro! Siga todos os passos para o cadastro.";
+        $_SESSION['error'] = $alerts;
+        header("Location: ../../cadastro/cadastro-3.php");
+        die;
+    }
+
     $Pais = $_POST['pais'];
     $Estado = $_POST['estado'];
     $Cidade = $_POST['cidade'];
-    ((new userModel))->cadastro3($Pais, $Estado, $Cidade);
+    ((new userModel))->cadastro3($user, $Pais, $Estado, $Cidade);
     header("Location: ../../cadastro/cadastro-4.php");
 }
