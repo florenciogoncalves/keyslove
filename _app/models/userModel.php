@@ -14,6 +14,15 @@ class userModel extends connect
      */
 
 
+    public function authUser(string $email, string $senha)
+    {
+        if ($this->login($email, $senha)) {
+            return true;
+        }
+        return false;
+    }
+
+
     public function cadastro1(string $email, string $telefone, string $senha)
     {
         $this->firstInsert($email, $telefone, $senha);
@@ -138,6 +147,50 @@ class userModel extends connect
      ********************************
      */
 
+
+    private function getName(string $email, string $senha): ?string
+    {
+        $queryUser = $this->connect->prepare("SELECT * FROM tb_cadastroConta WHERE email = ? AND senha = ?");
+        $queryUser->bindParam(1, $email);
+        $queryUser->bindParam(2, $senha);
+        $queryUser->execute();
+
+
+        $fetch = $queryUser->fetch(PDO::FETCH_ASSOC);
+
+
+        $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `user_id` = ?");
+        $query->bindParam(1, $fetch['user_id']);
+        $query->execute();
+
+        $getName = $query->fetch(PDO::FETCH_ASSOC);
+        return $getName['nome'];
+    }
+
+
+    private function login(string $email, string $senha): object|bool
+    {
+        $queryUser = $this->connect->prepare("SELECT * FROM tb_cadastroConta WHERE email = ? AND senha = ?");
+        $queryUser->bindParam(1, $email);
+        $queryUser->bindParam(2, $senha);
+        $queryUser->execute();
+
+        $fetch = $queryUser->fetch(PDO::FETCH_ASSOC);
+
+        $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `user_id` = ?");
+        $query->bindParam(1, $fetch['user_id']);
+        $query->execute();
+
+        $getName = $query->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['username'] = $getName['nome'];
+
+
+
+        if ($queryUser->rowCount() > 0) {
+            return true;
+        }
+        return false;
+    }
 
     private function firstInsert(string $email, string $telefone, string $senha): bool
     {
