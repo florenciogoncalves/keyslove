@@ -36,10 +36,10 @@
           <img class="vizualizar-menu" src="./../images/option.svg" />
           <div class="hidden-list">
             <ul>
-              <a href="bloqueados.html" class="pessoas-bloqueadas"
+              <a href="bloqueados.php" class="pessoas-bloqueadas"
                 ><li class="goto-blocked">Membros Bloqueados</li></a
               >
-              <li>Lorem Ipsum exemplo</li>
+              <a class="logout" href="./../index.php"><li>Sair</li></a>
             </ul>
           </div>
           <div id="online-now">
@@ -79,22 +79,22 @@
 
         <nav>
           <ul id="menu-left">
-            <li><a href="perfil.html">Perfil</a></li>
-            <li><a href="chamada.html">Chamada de video</a></li>
-            <li><a href="carroussel.html">Carroussel</a></li>
-            <li><a href="curtidas.html">Curtidas</a></li>
-            <li><a href="planos.html">Planos</a></li>
-            <li><a href="favoritos.html">Favoritos</a></li>
-            <li><a href="configuracoes.html">Configurações</a></li>
+            <li><a href="perfil.php">Perfil</a></li>
+            <li><a href="chamada.php">Chamada de video</a></li>
+            <li><a href="carroussel.php">Carroussel</a></li>
+            <li><a href="curtidas.php">Curtidas</a></li>
+            <li><a href="planos.php">Planos</a></li>
+            <li><a href="favoritos.php">Favoritos</a></li>
+            <li><a href="configuracoes.php">Configurações</a></li>
             <li>
-              <a href="mensagens.html" class="pagina-selecionada">Mensagens</a>
+              <a href="mensagens.php" class="pagina-selecionada">Mensagens</a>
             </li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="online.html">Online agora</a></li>
-            <li><a href="teste-de-amor.html">Teste de amor</a></li>
+            <li><a href="servicos.php">Serviços</a></li>
+            <li><a href="online.php">Online agora</a></li>
+            <li><a href="teste-de-amor.php">Teste de amor</a></li>
           </ul>
         </nav>
-        <a href="localizar-pessoas.html"
+        <a href="localizar-pessoas.php"
           ><div id="peoples-left">
             <h4>Pessoas pela região</h4>
 
@@ -285,7 +285,7 @@
             <div class="gradient"></div>
           </ul>
         </div>
-        <section class="chat">
+        <section class="chat chat-mobile">
           <div id="friend-information">
             <figure>
               <div class="foto-de-perfil">
@@ -300,7 +300,7 @@
                 <h2>Lorem Ipsun Silva</h2>
               </figcaption>
               <div class="botoes-top">
-                <a href="/home/chamada.html"
+                <a href="./chamada.php"
                   ><button class="video-call"></button
                 ></a>
                 <button class="options"></button>
@@ -346,7 +346,7 @@
               <!-- Contém as mensagens enviadas -->
               <div class="the-message-container">
                 <div class="identifier">
-                  <object data="./../debug-images/temp-5.png"></object>
+                  <img src="./../debug-images/temp-5.png">
                   <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
                 </div>
                 <!-- Contém a mensagem já enviada -->
@@ -363,7 +363,7 @@
                         similique molestias est
                       </span>
                     </div>
-                    <a href="planos.html"
+                    <a href="planos.php"
                       ><button class="confirm">Assinar pacote</button></a
                     >
                   </div>
@@ -383,7 +383,7 @@
               </div>
               <div class="the-message-container">
                 <div class="identifier">
-                  <object data="./../debug-images/temp-5.png"></object>
+                  <img src="./../debug-images/temp-5.png">
                   <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
                 </div>
                 <!-- Contém a mensagem já enviada -->
@@ -425,10 +425,10 @@
       <footer id="footer-mobile">
         <nav>
           <ul>
-            <li><a href="./index.html"></a></li>
-            <li><a href="./localizar-pessoas.html"></a></li>
-            <li><a href="./favoritos.html"></a></li>
-            <li><a href="./mensagens.html"></a></li>
+            <li><a href="./index.php"></a></li>
+            <li><a href="./localizar-pessoas.php"></a></li>
+            <li><a href="./favoritos.php"></a></li>
+            <li id="nav-selecionada"><a href="./mensagens.php"></a></li>
             <li><button id="mostra-menu-mobile"></button></li>
           </ul>
         </nav>

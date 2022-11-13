@@ -17,34 +17,33 @@ session_start();
 </head>
 
 <body id="sobre-usuario">
-  <div id="menu-esquerdo">
+<div id="menu-esquerdo">
     <div id="div-left">
       <div id="user-information">
         <figure>
           <div class="foto-de-perfil">
             <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
+            <div class="status"></div>
           </div>
-
           <figcaption>
+
             <?php
             if (isset($_SESSION['username'])) :
             ?>
 
-              <div class="status"></div>
-              <h2>
-                <h2><?= $_SESSION['username'];
-                  endif ?></h2>
-                <span id="show-status-window">Escolher status</span>
+              <h2><?= $_SESSION['username'];
+                endif ?></h2>
+              <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
         <img class="vizualizar-menu" src="./../images/option.svg" />
         <div class="hidden-list">
           <ul>
-            <a href="bloqueados.html" class="pessoas-bloqueadas">
+            <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <li>Lorem Ipsum exemplo</li>
+            <a class="logout" href="./../index.php"><li>Sair</li></a>
           </ul>
         </div>
         <div id="online-now">
@@ -69,21 +68,21 @@ session_start();
 
       <nav>
         <ul id="menu-left">
-          <li><a href="./../home/perfil.html">Perfil</a></li>
-          <li><a href="./../home/chamada.html">Chamada de video</a></li>
-          <li><a href="./../home/carroussel.html">Carroussel</a></li>
-          <li><a href="./../home/curtidas.html">Curtidas</a></li>
-          <li><a href="./../home/planos.html">Planos</a></li>
-          <li><a href="./../home/favoritos.html">Favoritos</a></li>
-          <li><a href="./../home/configuracoes.html">Configurações</a></li>
-          <li><a href="./../home/mensagens.html">Mensagens</a></li>
-          <li><a href="./../home/servicos.html">Serviços</a></li>
-          <li><a href="./../home/online.html">Online agora</a></li>
-          <li><a href="teste-de-amor.html">Teste de amor</a></li>
+          <li><a href="./../home/perfil.php">Perfil</a></li>
+          <li><a href="./../home/chamada.php">Chamada de video</a></li>
+          <li><a href="./../home/carroussel.php">Carroussel</a></li>
+          <li><a href="./../home/curtidas.php">Curtidas</a></li>
+          <li><a href="./../home/planos.php">Planos</a></li>
+          <li><a href="./../home/favoritos.php">Favoritos</a></li>
+          <li><a href="./../home/configuracoes.php">Configurações</a></li>
+          <li><a href="./../home/mensagens.php">Mensagens</a></li>
+          <li><a href="./../home/servicos.php">Serviços</a></li>
+          <li><a href="./../home/online.php">Online agora</a></li>
+          <li><a href="teste-de-amor.php">Teste de amor</a></li>
         </ul>
       </nav>
 
-      <a href="./../home/localizar-pessoas.html">
+      <a href="./../home/localizar-pessoas.php">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
 
@@ -109,11 +108,16 @@ session_start();
         </header>
 
         <div id="container-elements" style="justify-content: flex-start">
-          <div class="part-1">
+
+        <div class="iten">
+              <label for="ocupacao">Ocupação</label>
+              <input type="text" id="ocupacao" name="ocupacao" placeholder="Selecionar..." required>
+            </div>
+          
             <div class="iten">
               <label for="beber">Você bebe?</label>
-              <select id="beber" name="beber">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="beber" name="beber" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
                 <option value="Por vezes">Por vezes</option>
@@ -121,32 +125,26 @@ session_start();
             </div>
             <div class="iten">
               <label for="fumar">Você fuma?</label>
-              <select id="fumar" name="fumar">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="fumar" name="fumar" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
                 <option value="Por vezes">Por vezes</option>
               </select>
             </div>
-            <div class="iten">
-              <label for="ocupacao">Ocupação</label>
-              <select id="ocupacao" name="ocupacao">
-                <option selected hidden disabled>Selecionar...</option>
-              </select>
-            </div>
+
             <div class="iten">
               <label for="filhos">Possui filhos?</label>
-              <select id="filhos" name="filhos">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="filhos" name="filhos" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
               </select>
             </div>
             <div class="iten">
               <label for="quantidade-filhos">Quantidade de filhos</label>
-              <select id="quantidade-filhos" name="quantidade-filhos" disabled>
-                <option selected hidden disabled>00</option>
-                <option value="0">00</option>
+              <select id="quantidade-filhos" name="quantidade-filhos" >
+                <option selected hidden disabled >00</option>
                 <option value="1">01</option>
                 <option value="2">02</option>
                 <option value="3">03</option>
@@ -157,13 +155,13 @@ session_start();
                 <option value="+7">+7</option>
               </select>
             </div>
-          </div>
+          
 
-          <div class="part-2" style="display: none">
+          
             <div class="iten">
               <label for="pets">Possui animais de estimação?</label>
-              <select id="pets" name="pets">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="pets" name="pets" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
               </select>
@@ -171,9 +169,8 @@ session_start();
 
             <div class="iten">
               <label for="quantidade-pets">Quantidade</label>
-              <select id="quantidade-pets" disabled name="quantidade-pets">
-                <option selected hidden disabled>Selecionar...</option>
-                <option value="0">00</option>
+              <select id="quantidade-pets" name="quantidade-pets">
+              <option selected hidden disabled >00</option>
                 <option value="1">01</option>
                 <option value="2">02</option>
                 <option value="3">03</option>
@@ -185,27 +182,8 @@ session_start();
               </select>
             </div>
 
-            <div class="iten">
-              <label for="moradia">Situação de moradia</label>
-              <select id="moradia" name="moradia">
-                <option selected hidden disabled>Selecionar...</option>
-              </select>
-            </div>
-
-            <div class="iten">
-              <label for="disposi-mudar-pais">Disposição para mudar de país</label>
-              <select id="disposi-mudar-pais" name="disposi-mudar-pais">
-                <option selected hidden disabled>Selecionar...</option>
-              </select>
-            </div>
-
-            <div class="iten">
-              <label for="religiao">Religião</label>
-              <select id="religia" name="religia">
-                <option selected hidden disabled>Selecionar...</option>
-              </select>
-            </div>
-          </div>
+          
+          
         </div>
 
         <div class="progress-next">
@@ -215,26 +193,25 @@ session_start();
             </div>
           </div>
 
-          <button class="next-page-about" type="button" onclick="proxJanela(document.querySelector('button.next-page-about'), 
-          document.querySelector('.part-2'), document.querySelector('.part-1'))">
+          <button class="next-page-about">
             >
           </button>
         </div>
       </form>
     </div>
     <footer id="footer-mobile">
-      <nav>
-        <ul>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><button id="mostra-menu-mobile"></button></li>
-        </ul>
-      </nav>
-    </footer>
+        <nav>
+          <ul>
+            <li><a href="./../home/index.php"></a></li>
+            <li><a href="./../home/localizar-pessoas.php"></a></li>
+            <li><a href="./../home/favoritos.php"></a></li>
+            <li><a href="./../home/mensagens.php"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
   </div>
-  <script src="./../script/trabalho-profissao.js"></script>
+  <script src="./../script/about-user.js"></script>
   <script src="./../script/script.js"></script>
   <script src="./../script/resize-windown.js"></script>
 </body>

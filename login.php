@@ -1,4 +1,3 @@
-testando
 <!DOCTYPE html>
 <html lang="pt-Br">
   <head>
@@ -15,10 +14,10 @@ testando
     <header class="header-content header-login">
       <img src="./images/Keyslov.svg" style="visibility: hidden;" class="header-logo" />
       <nav class="nav-btn">
-        <a href="./cadastro/cadastro-1.html"
+        <a href="./cadastro/cadastro-1.php"
           ><button class="border-btn">Criar conta</button></a
         >
-        <a href="index.html"><button class="white-btn">Entrar</button></a>
+        <a href="index.php"><button class="white-btn">Entrar</button></a>
       </nav>
     </header>
 
@@ -36,7 +35,7 @@ testando
           </ul>
         </div>
       </div>
-      <form action="./home/index.html" method="get" class="right-side">
+      <form action="./home/index.php" method="POST" class="right-side">
         <img src="./images/favicon.svg" />
         <h1><span>K</span>eys<span>l</span>ov</h1>
         <input type="email" placeholder="Email" required name="email"/>
@@ -49,7 +48,7 @@ testando
         <a href="">
           <button>entrar na minha conta</button>
         </a>
-        <a href="./cadastro/cadastro-1.html" class="criar-conta">criar conta</a>
+        <a href="./cadastro/cadastro-1.php" class="criar-conta">criar conta</a>
       </form>
     </div>
 

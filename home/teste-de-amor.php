@@ -35,8 +35,8 @@
           <img  class="vizualizar-menu" src="./../images/option.svg" />
           <div class="hidden-list">
             <ul>
-              <a href="bloqueados.html" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
-              <li>Lorem Ipsum exemplo</li>
+              <a href="bloqueados.php" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
+              <a class="logout" href="./../index.php"><li>Sair</li></a>
             </ul>
           </div><div id="online-now">
 
@@ -76,33 +76,33 @@
 
         <nav>
           <ul id="menu-left">
-            <li><a href="./perfil.html">Perfil</a></li>
-            <li><a href="chamada.html">Chamada de video</a></li>
-            <li><a href="carroussel.html">Carroussel</a></li>
-            <li><a href="curtidas.html">Curtidas</a></li>
-            <li><a href="planos.html">Planos</a></li>
+            <li><a href="./perfil.php">Perfil</a></li>
+            <li><a href="chamada.php">Chamada de video</a></li>
+            <li><a href="carroussel.php">Carroussel</a></li>
+            <li><a href="curtidas.php">Curtidas</a></li>
+            <li><a href="planos.php">Planos</a></li>
             <li>
-              <a href="favoritos.html">Favoritos</a>
+              <a href="favoritos.php">Favoritos</a>
             </li>
             <li>
-              <a href="configuracoes.html">Configurações</a>
+              <a href="configuracoes.php">Configurações</a>
             </li>
             <li>
-              <a href="mensagens.html">Mensagens</a>
+              <a href="mensagens.php">Mensagens</a>
             </li>
             <li>
-              <a href="servicos.html">Serviços</a>
+              <a href="servicos.php">Serviços</a>
             </li>
-            <li><a href="online.html">Online agora</a>
+            <li><a href="online.php">Online agora</a>
             </li>
             <li>
-              <a href="teste-de-amor.html" class="pagina-selecionada"
+              <a href="teste-de-amor.php" class="pagina-selecionada"
                 >Teste de amor</a
               >
             </li>
           </ul>
         </nav>
-        <a href="localizar-pessoas.html"
+        <a href="localizar-pessoas.php"
           ><div id="peoples-left">
             <h4>Pessoas pela região</h4>
 
@@ -118,11 +118,11 @@
     <div id="main-container">
       <main class="padrao" id="teste-de-amor">
         <h1 class="title">Teste do amor</h1>
-        <section id="formulario-teste">
+        <form id="formulario-teste">
           <div class="categoria">
             <h3>Como você gosta de aproveitar seu tempo?</h3>
             <div class="opcao">
-              <input type="radio" name="opcoes-1" id="opcoes-1-1"/>
+              <input type="radio" name="opcoes-1" id="opcoes-1-1" required/>
               <label for="opcoes-1-1">Assistindo filmes e séries.</label>
             </div>
             <div class="opcao">
@@ -142,7 +142,7 @@
           <div class="categoria">
             <h3 >Como você se imagina daqui para frente?</h3>
             <div class="opcao">
-              <input type="radio" name="opcoes-2" id="opcoes-2-1"/>
+              <input type="radio" name="opcoes-2" id="opcoes-2-1" required/>
               <label for="opcoes-2-1">Ter uma família sua.</label>
             </div>
             <div class="opcao">
@@ -162,7 +162,7 @@
           <div class="categoria">
             <h3 >Para você o amor verdadeiro é?</h3>
             <div class="opcao">
-              <input type="radio" name="opcoes-3" id="opcoes-3-1"/>
+              <input type="radio" name="opcoes-3" id="opcoes-3-1" required/>
               <label for="opcoes-3-1">Sentimento muito forte de afeto entre duas pessoas.</label>
             </div>
             <div class="opcao">
@@ -182,7 +182,7 @@
           <div class="categoria">
             <h3 >Pensa nos seus ex...</h3>
             <div class="opcao">
-              <input type="radio" name="opcoes-4" id="opcoes-4-1"/>
+              <input type="radio" name="opcoes-4" id="opcoes-4-1" required/>
               <label for="opcoes-4-1">Nunca.</label>
             </div>
             <div class="opcao">
@@ -198,7 +198,7 @@
           <div class="categoria">
             <h3 >O que mais incomoda em um relacionamento?</h3>
             <div class="opcao">
-              <input type="radio" name="opcoes-5" id="opcoes-5-1"/>
+              <input type="radio" name="opcoes-5" id="opcoes-5-1" required/>
               <label for="opcoes-5-1">No calor da emoção do negativismo a pessoa mostra ser desiquilibrada, falta de paciência.</label>
             </div>
             <div class="opcao">
@@ -218,7 +218,7 @@
           <div class="categoria">
             <h3 >Quais são as vantagens de ter um relacionamento?</h3>
             <div class="opcao">
-              <input type="radio" name="opcoes-6" id="opcoes-6-1"/>
+              <input type="radio" name="opcoes-6" id="opcoes-6-1" required/>
               <label for="opcoes-6-1">Mais a felicidade te faz ser uma pessoa melhor.</label>
             </div>
             <div class="opcao">
@@ -238,15 +238,17 @@
               <label for="opcoes-6-5">Só vantagens!!</label>
             </div>
           </div>
-        </section>
+
+          <button class="btn-register continue">Enviar</button>
+        </form>
       </main>
       <footer id="footer-mobile">
         <nav>
           <ul>
-            <li><a href="./index.html"></a></li>
-            <li><a href="./localizar-pessoas.html"></a></li>
-            <li><a href="./favoritos.html"></a></li>
-            <li><a href="./mensagens.html"></a></li>
+            <li><a href="./index.php"></a></li>
+            <li><a href="./localizar-pessoas.php"></a></li>
+            <li><a href="./favoritos.php"></a></li>
+            <li><a href="./mensagens.php"></a></li>
             <li><button id="mostra-menu-mobile"></button></li>
           </ul>
         </nav>

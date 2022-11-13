@@ -1,4 +1,25 @@
-const statusOn = localStorage.getItem("status");
+const erros = [];
+
+// LocalStorage de status
+if (!localStorage.status) {
+  const statusOn = localStorage.setItem("status", "online");
+}
+
+if (localStorage.status == "online") {
+  localStorage.setItem("status", "online");
+
+  document.body.style.setProperty("--status-user", "#16c607");
+} else if (localStorage.status == "ocupado") {
+  localStorage.status = "ocupado";
+
+  document.body.style.setProperty("--status-user", "#aaaaaa");
+} else {
+  localStorage.setItem("status", "offline");
+
+  localStorage.status = "offline";
+
+  document.body.style.setProperty("--status-user", "#aaaaaa00");
+}
 
 try {
   let estado = false;
@@ -12,23 +33,28 @@ try {
   //Mostrar menu oculto ao clicar no botão de acesso ao menu oculto
   mostrarMenuMobile.addEventListener("click", () => {
     menuMobile.style.display = "flex";
-    ;
-    setTimeout(() => {menu.style.transform = "translateY(0%)"}, 100)
+    setTimeout(() => {
+      menu.style.tran;
+      sform = "translateY(0%)";
+    }, 100);
   });
-
   //Evento para clique no menu oculto
-  menuMobile.addEventListener("click", (evt) => {
-    if (!menu.contains(evt.target)) {
-      menu.style.transform = "translateY(100%)";
-      setTimeout(() => {
-        menuMobile.style.display = "none";
-      }, 350);
-    }
-  });
+  if (
+    parseInt(window.getComputedStyle(document.querySelector("body")).width) <=
+    992
+  ) {
+    menuMobile.addEventListener("click", (evt) => {
+      if (!menu.contains(evt.target)) {
+        menu.style.transform = "translateY(100%)";
+        setTimeout(() => {
+          menuMobile.style.display = "none";
+        }, 350);
+      }
+    });
+  }
 } catch (error) {
-  console.error(error);
+  erros.push(error);
 }
-
 //Para a barra de progresso para o carroussel da página home
 function setProgressVal(val) {
   if (val <= 100) {
@@ -43,12 +69,12 @@ function setProgressVal(val) {
 //Esta chamada serve simplesmente para demonstração da barra de progresso. Apagar de seguida
 try {
   setProgressVal(34);
-} catch (erro) {
-  console.error("Demonstrando barra de progresso" + erro);
+} catch (error) {
+  erros.push(error);
 }
 
 /*
- *Menu suspenso de 'changing-status'
+ *Menu suspenso de 'changing-status & Trocar status'
  */
 const onlineAgora = document.querySelectorAll("[name = 'online-agora']");
 
@@ -56,33 +82,19 @@ onlineAgora.forEach((element) =>
   element.addEventListener("click", () => {
     var setado = document.querySelector("#user-information .status");
     if (element.value == "online") {
-      localStorage.clear();
-
       localStorage.setItem("status", "online");
 
-      setado.style.display = "block";
-      setado.style.backgroundColor = "var(--status-on)";
+      document.body.style.setProperty("--status-user", "#16c607");
     } else if (element.value == "ocupado") {
-      // if(statusOn){
-      //   localStorage.removeItem('status')
-      // }
+      localStorage.status = "ocupado";
 
-      localStorage.clear();
-      localStorage.setItem("status", "ocupado");
-
-      setado.style.display = "block";
-      setado.style.backgroundColor = "var(--status-off)";
+      document.body.style.setProperty("--status-user", "#aaaaaa");
     } else {
-      // if(statusOn){
-      //   localStorage.removeItem('status')
-      // }
-
-      localStorage.clear();
-
       localStorage.setItem("status", "offline");
-      setado.style.display = "none";
 
-      console.log("Status Offline");
+      localStorage.status = "offline";
+
+      document.body.style.setProperty("--status-user", "#aaaaaa00");
     }
   })
 );
@@ -142,7 +154,7 @@ try {
       janelas[1].style.display = "none";
     }
   });
-  console.error("Janelas ocultas não encontradas" + error);
+  erros.push(error);
 }
 
 /*Inverter idioma em mensagens*/
@@ -154,8 +166,8 @@ try {
       switchLang.parentNode.style.flexDirection = "row-reverse";
     else switchLang.parentNode.style.flexDirection = "row";
   });
-} catch (e) {
-  console.error("Disponível só na área de mensagens >" + e);
+} catch (error) {
+  erros.push(error);
 }
 
 //Redimensionando automaticamente a textarea da mensagem com uma biblioteca externa
@@ -164,8 +176,8 @@ document.addEventListener(
   function () {
     try {
       autosize(document.querySelectorAll("#message-text"));
-    } catch (erro) {
-      console.error("Disponível em mensagens " + erro);
+    } catch (error) {
+      erros.push(error);
     }
   },
   true
@@ -203,10 +215,10 @@ try {
     element.addEventListener("change", () => (element.style.color = "#000"));
   });
 } catch (erro) {
-  console.error("Gambiarra placeholder" + erro);
+  erros.push(error);
 }
 
-/* incrementando os meios de pagamento de forma dinâmica*/
+/* inplementando os meios de pagamento de forma dinâmica*/
 try {
   const addFlag = document.querySelector("#planos #payment-method");
   const flags = [
@@ -227,8 +239,8 @@ try {
 
     addFlag.appendChild(insert);
   });
-} catch (notFound) {
-  console.error("Meios de pagamento" + notFound);
+} catch (error) {
+  erros.push(error);
 }
 
 /*Criando o espaçamento no número de cartão */
@@ -240,8 +252,8 @@ try {
     if ((ind + 1) % 4 == 0) newCardNum += " ";
   });
   cardNumber.textContent = newCardNum;
-} catch (erro) {
-  console.error("Elemento não encontrado" + erro);
+} catch (error) {
+  erros.push(error);
 }
 document.querySelectorAll("#favoritos nav label").forEach((element) => {
   element.addEventListener("click", () => {
@@ -334,7 +346,7 @@ try {
       });
   });
 } catch (error) {
-  console.error("Não está na tela de configurações > " + error);
+  erros.push(error);
 }
 
 /*Ir para exclusão de conta*/
@@ -353,7 +365,7 @@ try {
       document.querySelector("#delete-account-options").style.display = "grid";
     });
 } catch (error) {
-  console.error("Não foi requisitada a exclusão da conta >" + error);
+  erros.push(error);
 }
 
 /*Planos, pegar fotos e botoar como background*/
@@ -427,7 +439,7 @@ try {
       );
     });
 } catch (error) {
-  console.error("Tente postar uma foto antes, vá para perfil" + error);
+  erros.push(error);
 }
 
 /*Modais */
@@ -438,7 +450,7 @@ try {
     })
   );
 } catch (error) {
-  console.error("Não existem modais para esta página");
+  erros.push(error);
 }
 
 /*Comum querySelector*/
@@ -500,8 +512,8 @@ function navImages(arrayNavegado, ondeMostrar) {
     if (actual >= arrayNavegado.length - 1) actual = 0;
     else actual++;
 
-    while(arrayNavegado[actual] == ''){
-      proxima.click()
+    while (arrayNavegado[actual] == "") {
+      proxima.click();
     }
 
     ondeMostrar.src = arrayNavegado[actual];
@@ -511,18 +523,18 @@ function navImages(arrayNavegado, ondeMostrar) {
     if (actual <= 0) actual = arrayNavegado.length - 1;
     else actual--;
 
-    while(arrayNavegado[actual] == ''){
-      anterior.click()
+    while (arrayNavegado[actual] == "") {
+      anterior.click();
     }
 
     ondeMostrar.src = arrayNavegado[actual];
   });
 }
 
-/*Ao clicar em outro perfil, ir para index.html*/
+/*Ao clicar em outro perfil, ir para index.php*/
 pegarTodos(".outro-perfil").forEach((current) => {
   current.addEventListener("dblclick", () => {
-    window.location.replace("./../home/index.html");
+    window.location.replace("./../home/index.php");
   });
 });
 
@@ -537,9 +549,31 @@ try {
   });
   function enviar() {
     if (escreverMensagem.value != "") {
-      dia = "Segunda";
-      hora = "18";
-      minuto = "22";
+      let horario = new Date();
+      const diasDeSemana = [
+        "Domingo",
+        "Segunda",
+        "Terça",
+        "Quarta",
+        "Quinta",
+        "Sexta",
+        "Sábado",
+      ];
+      dia = diasDeSemana[horario.getDay()];
+      hora = horario.getDay();
+      minuto = horario.getMinutes();
+
+      function formating(value) {
+        if (value < 10) {
+          value = '0' + value
+        }
+
+        return value
+      }
+
+      hora = formating(hora)
+      minuto = formating(minuto)
+
       var enviar =
         "<div class='the-message-container user'><div class='identifier'><span>" +
         dia +
@@ -559,17 +593,166 @@ try {
     pegar("#sended").scrollTo(0, 1000);
   }
 } catch (error) {
-  console.error("Tente mandar uma mensagem" + error);
+  erros.push(error);
 }
 
 /*Alterar pessoa com quem se conversa */
 try {
-  pegarTodos(".person").forEach((person) => {
+  const peoples = pegarTodos(".person");
+  const backToPeoples = document.createElement("button");
+
+  if (innerWidth <= 992) {
+    pegar("#person-selected").removeAttribute("id");
+  }
+  else {
+    backToPeoples.style.display = 'none'
+  }
+
+  peoples.forEach((person) => {
     person.addEventListener("click", () => {
-      pegar("#person-selected").removeAttribute("id");
-      person.setAttribute("id", "person-selected");
+      if (innerWidth > 992) {
+        pegar("#person-selected").removeAttribute("id");
+        person.setAttribute("id", "person-selected");
+      }
+
+      if (innerWidth <= 992) {
+        pegar(".peoples-to-chat").style.display = "none";
+        pegar(".chat").className = "chat";
+
+        backToPeoples.id = "back-to-peoples";
+        backToPeoples.addEventListener("click", () => {
+          pegar(".peoples-to-chat").style.display = "grid";
+          pegar(".chat").className = "chat chat-mobile";
+        });
+
+        const headerFriend = pegar("#friend-information");
+        headerFriend.insertBefore(backToPeoples, headerFriend.children[0]);
+      }
     });
   });
+
+  /* A diferenciação do comportamento quanto a tela de mensagens será diferenciada pelo display, quando grid, desktop, e quando flex, mobile.
+   *Desse jeito poderá ocorrer comportamentos diferentes em ambientes diferentes*/
 } catch (error) {
-  console.error("Altere antes entre as conversas" + error);
+  erros.push(error);
+}
+
+/*
+ *********************************************************
+ ***     Máximo de 2000 caractéres para text-area      ***
+ *********************************************************
+ */
+function maxCharTextArea(elemento) {
+  //Atribuindo tamanho máximo de caractéres
+  elemento.setAttribute("maxlength", "2000");
+  const contador = elemento.parentNode.querySelector(".chars-count");
+  contador.textContent = elemento.value.length + "/2000";
+
+  //Elemento-contador
+}
+
+function showModalCondition(theModal, theButton, refModalName, definitive) {
+  theModal = document.querySelector("#" + theModal);
+  theButton = theModal.querySelector(theButton);
+
+  if (definitive) {
+    theButton.addEventListener("click", () => {
+      localStorage.setItem(refModalName, "dontShowAgain");
+    });
+
+    if (localStorage.getItem(refModalName) == "dontShowAgain") {
+      theModal.style.display = "none";
+    }
+  } else {
+    theButton.addEventListener("click", () => {
+      sessionStorage.setItem(refModalName, "showInNextSession");
+    });
+
+    if (sessionStorage.getItem(refModalName) == "showInNextSession") {
+      theModal.style.display = "none";
+    }
+  }
+}
+
+//Para o modal de perfil 'Melhore seu perfil'
+try {
+  showModalCondition("modal-perfil-1", ".close-modal", "perfilModal", true);
+  showModalCondition("modal-perfil-1", ".red-btn", "perfilModal", true);
+  showModalCondition(
+    "modal-perfil-1",
+    ".simple-btn:not(.close-modal)",
+    "perfilModal",
+    false
+  );
+} catch (error) {
+  erros.push(error);
+}
+
+//Para modal de teste do amor
+try {
+  showModalCondition(
+    "modal-teste-amor",
+    ".simple-btn:not(.close-modal)",
+    "testeAmorModal",
+    false
+  );
+  showModalCondition(
+    "modal-teste-amor",
+    ".close-modal",
+    "testeAmorModal",
+    true
+  );
+  showModalCondition("modal-teste-amor", ".red-btn", "testeAmorModal", true);
+} catch (error) {
+  erros.push(error);
+}
+
+//Para modal de teste do amor
+try {
+  showModalCondition(
+    "modal-teste-amor",
+    ".simple-btn:not(.close-modal)",
+    "testeAmorModal",
+    false
+  );
+  showModalCondition(
+    "modal-teste-amor",
+    ".close-modal",
+    "testeAmorModal",
+    true
+  );
+  showModalCondition("modal-teste-amor", ".red-btn", "testeAmorModal", true);
+} catch (error) {
+  erros.push(error);
+}
+
+//LocalStorage para  as configurações
+try {
+  function switchStorage (element, ref) {
+    element = document.querySelector(element)
+if(localStorage.getItem(ref) == 'on')
+      element.checked = true
+    else 
+      element.checked = false
+
+
+    element.addEventListener('change', () => {
+    if(element.checked){
+      localStorage.setItem(ref, 'on')
+    }
+    else localStorage.setItem(ref, 'off')
+    
+    })
+  }
+
+  //chamando...
+  switchStorage('#showme-online', 'beOnline')
+  switchStorage('#let-invisible', 'beInvisible')
+  switchStorage('#show-me', 'showMe')
+
+  switchStorage('#active-notifications', 'activeNotifications')
+  switchStorage('#message-notifications', 'messagesNotifications')
+  switchStorage('#match-notifications', 'matchNotifications')
+} catch (error) {
+  erros.push(error)
 }

@@ -10,7 +10,7 @@ body {
   padding-top: 10px;
   justify-content: space-between;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
   padding-left: 2%;
@@ -57,7 +57,7 @@ select, textarea{outline: none !important;}
 
 /*menu flutuante a direita*/
 #div-left {
-  height: calc(100vh - 10px);
+  height: max-content;
   background: none;
   display: flex;
   flex-direction: column;
@@ -86,6 +86,7 @@ select, textarea{outline: none !important;}
 }
 
 #user-information {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: auto max-content;
   padding: 0;
@@ -177,7 +178,7 @@ select, textarea{outline: none !important;}
   height: 40px;
   width: 100%;
   line-height: 40px;
-  text-indent: 15%;
+  text-indent: 16%;
 }
 
 /*Lista de opções branca*/
@@ -267,9 +268,21 @@ select, textarea{outline: none !important;}
   cursor: pointer;
 }
 
+/*menu de mais opções*/
 #user-information .hidden-list .pessoas-bloqueadas li{
   background: url(./../images/oculto.svg) no-repeat center left 2% !important;
+  background-size: 18px !important;
+  object-fit: scale-down !important;
 }
+
+#user-information .hidden-list .logout li{
+  background: url(./../images/logout-1.png) no-repeat center left 2% !important;
+  background-size: 18px !important;
+  object-fit: scale-down !important;
+}
+
+
+
 #user-information .hidden-list, 
 #online-now .changing-status {
   display: none;
@@ -414,9 +427,16 @@ left: auto;
 }
 
 #content-right .principal-content label {
-  margin: 8px 0 6px;
+  margin: 8px 0 0px;
   font-size: 16px;
   display: block;
+}
+
+.chars-count {
+  font-size: 10px;
+  display: flex;
+  width: max-content;
+  margin-left: auto;
 }
 
 #content-right .principal-content #nacionalidade{
@@ -520,7 +540,7 @@ input::-webkit-calendar-picker-indicator {
   color: var(--vermelho-principal);
 }
 
-/*Mexendo em 'educacao-e-cultura.html*/
+/*Mexendo em 'educacao-e-cultura.php*/
 .principal-content textarea {
   box-sizing: border-box;
   width: 100%;
@@ -528,7 +548,6 @@ input::-webkit-calendar-picker-indicator {
   padding: 13px 17px;
   overflow: auto;
 
-  text-align: justify;
   resize: none;
   font-size: 16px;
 
@@ -537,7 +556,7 @@ input::-webkit-calendar-picker-indicator {
   border-radius: 7.21202px;
 }
 
-/*Documento chamada.html*/
+/*Documento chamada.php*/
 #chamada-video {
   margin-left: 5%;
   width: max-content;
@@ -636,7 +655,7 @@ input::-webkit-calendar-picker-indicator {
   background: url(./../images/camera-icon.svg) no-repeat center #fff;
 }
 
-/*Estilizando o arquivo 'mensagens.html'
+/*Estilizando o arquivo 'mensagens.php'
 *Para a lista de pessoas*/
 main#mensagens {
   display: flex;
@@ -804,10 +823,11 @@ main#mensagens .chat {
 #mensagens .botoes-top .video-call {
   background-image: url(./../images/video-icon.svg);
   margin-right: 5px;
+  object-fit: scale-down;
 }
 #mensagens .botoes-top .options {
-  background-image: url(./../images/dots-icon.svg);
-  background-size: 6px;
+  background-image: url(./../images/menu-mensagens.png);
+  object-fit: scale-down;
 }
 
 /*Para o menu de tradução oculto*/
@@ -906,12 +926,12 @@ main#mensagens .chat {
 }
 
 #mensagens .identifier {
-  width: 45%;
+  width: 40%;
   height: max-content;
   display: flex;
 }
 
-#mensagens #sended object {
+#mensagens #sended .identifier img {
   width: 42px;
   height: 42px;
   background: rgba(51, 51, 51, 0.3);
@@ -1033,7 +1053,7 @@ main#mensagens .chat {
 }
 
 #mensagens .message-text-container {
-  width: 479px;
+  width: 100%;
   height: max-content;
   background: #fff;
   border-radius: 15px;
@@ -1076,7 +1096,7 @@ main#mensagens .chat {
   background: url(./../images/send-message-icon.svg) no-repeat center;
 }
 
-/* DOCUMENTO curtidas.html & localizar-pessoas.html*/
+/* DOCUMENTO curtidas.php & localizar-pessoas.php*/
 
 .padrao {
   background: #fff;
@@ -1212,7 +1232,7 @@ main#mensagens .chat {
   margin: auto auto 15px;
 }
 
-/*localizar-pessoas.html*/
+/*localizar-pessoas.php*/
 #pessoas-regiao .search {
   display: grid;
   grid-template-columns: 70% 20%;
@@ -1266,7 +1286,7 @@ main#mensagens .chat {
 
   font-size: 20px;
 }
-/*planos.html*/
+/*planos.php*/
 #planos,
 #pacotes-pagamento,
 #metodo-pagamento {
@@ -1318,7 +1338,7 @@ main#mensagens .chat {
 
 #planos .card-content img {
   margin: auto;
-  user-select: none;
+  /* user-select: none; dando bug*/
 }
 
 #planos .card-content p {
@@ -1601,7 +1621,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0 60px;
 }
 
-/*favoritos.html*/
+/*favoritos.php*/
 #favoritos > nav {
   display: grid;
   grid-auto-flow: column;
@@ -1614,7 +1634,6 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 22px;
   text-align: center;
   padding-bottom: 5px;
-  user-select: none;
 }
 
 #favoritos > nav input[type="radio"] {
@@ -1664,7 +1683,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: auto auto 15px;
 }
 
-/*configuracoes.html*/
+/*configuracoes.php*/
 main#configuracoes,
 main#servicos {
   width: 623px;
@@ -1875,6 +1894,7 @@ main#servicos {
   height: 25px;
   border-radius: 30px;
   background: var(--vermelho-principal);
+  box-sizing: border-box;
   border: none;
   margin: auto 0;
   margin-left: 1px;
@@ -1890,7 +1910,8 @@ main#servicos {
   width: 25px;
   height: 25px;
   background: #fff;
-  margin-right: 2px;
+  border: solid 1px var(--vermelho-principal);
+  margin-right: 0px;
 }
 
 #conf-notifications input[type="checkbox"]:checked + .switch-painel,
@@ -2015,7 +2036,7 @@ main#servicos {
   height: max-content;
 }
 
-/*Perfil.html*/
+/*Perfil.php*/
 #perfil-container,
 #perfil-container > section {
   display: grid;
@@ -2143,7 +2164,6 @@ main#servicos {
 
 #perfil-information label,
 #perfil-information button {
-  user-select: none;
   border: 1px solid var(--vermelho-principal);
   margin: 5% 0;
   text-align: center;
@@ -2235,6 +2255,11 @@ dialog {
   height: 100vh;
   background: rgba(0, 0, 0, 0.199);
 }
+
+  #add-option-modal {
+    display: none;
+  }
+
 dialog > div {
   background: #fff;
   position: relative;
@@ -2349,7 +2374,7 @@ dialog#modal-teste-amor{
 
 #modal-home-1,
 #modal-home-2{
-  backdrop-filter: blur(1px);
+  /* backdrop-filter: blur(1px); dando-bug*/
 }
 #modal-home-1>div,
 #modal-home-2>div{
@@ -2381,7 +2406,7 @@ dialog#modal-teste-amor{
   color: #000;
 }
 
-/*Modal para adicionar tags em planos.html*/
+/*Modal para adicionar tags em planos.php*/
 #add-option-modal img{
   width: 14%;
 }
@@ -2400,4 +2425,16 @@ dialog#modal-teste-amor{
 
 #footer-mobile{
   display: none;
+}
+
+input, select {
+  outline: none !important;
+}
+
+@media only screen and (max-width: 992px) {
+  #online-now {
+    position: absolute !important;
+    right: 55%;
+    top: 35px;
+  }
 }

@@ -35,8 +35,8 @@
           <img  class="vizualizar-menu" src="./../images/option.svg" />
           <div class="hidden-list">
             <ul>
-              <a href="bloqueados.html" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
-              <li>Lorem Ipsum exemplo</li>
+              <a href="bloqueados.php" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
+              <a class="logout" href="./../index.php"><li>Sair</li></a>
             </ul>
           </div><div id="online-now">
 
@@ -76,25 +76,25 @@
 
         <nav>
           <ul id="menu-left">
-            <li><a href="./perfil.html">Perfil</a></li>
+            <li><a href="./perfil.php">Perfil</a></li>
             <li>
-              <a href="chamada.html" class="pagina-selecionada"
+              <a href="chamada.php" class="pagina-selecionada"
                 >Chamada de video</a
               >
             </li>
-            <li><a href="carroussel.html">Carroussel</a></li>
-            <li><a href="curtidas.html">Curtidas</a></li>
-            <li><a href="planos.html">Planos</a></li>
-            <li><a href="favoritos.html">Favoritos</a></li>
-            <li><a href="configuracoes.html">Configurações</a></li>
-            <li><a href="mensagens.html">Mensagens</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="online.html">Online agora</a>
+            <li><a href="carroussel.php">Carroussel</a></li>
+            <li><a href="curtidas.php">Curtidas</a></li>
+            <li><a href="planos.php">Planos</a></li>
+            <li><a href="favoritos.php">Favoritos</a></li>
+            <li><a href="configuracoes.php">Configurações</a></li>
+            <li><a href="mensagens.php">Mensagens</a></li>
+            <li><a href="servicos.php">Serviços</a></li>
+            <li><a href="online.php">Online agora</a>
             </li>
-            <li><a href="teste-de-amor.html">Teste de amor</a></li>
+            <li><a href="teste-de-amor.php">Teste de amor</a></li>
           </ul>
         </nav>
-        <a href="localizar-pessoas.html"
+        <a href="localizar-pessoas.php"
           ><div id="peoples-left">
             <h4>Pessoas pela região</h4>
 
@@ -113,15 +113,26 @@
           <source src="" />
         </video>
         <div class="legenda-chamada">
-          <a href="mensagens.html"><button>&lt;</button></a>
+          <a href="mensagens.php"><button>&lt;</button></a>
           <span>Lorem ipsum</span>
         </div>
         <div class="comandos-chamada">
           <input type="checkbox" id="microfone" />
-          <a href="mensagens.html"><button id="desligar"></button></a>
+          <a href="mensagens.php"><button id="desligar"></button></a>
           <button id="trocar-camera"></button>
         </div>
       </main>
+      <footer id="footer-mobile">
+        <nav>
+          <ul>
+            <li><a href="./index.php"></a></li>
+            <li><a href="./localizar-pessoas.php"></a></li>
+            <li><a href="./favoritos.php"></a></li>
+            <li><a href="./mensagens.php"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
     </div>
 
     <script src="./../script/script.js"></script>

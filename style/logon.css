@@ -7,8 +7,8 @@
   --bg-color: #292929;
   --color-white: #fff;
   --color-black: #000;
-  --status-on: #16c607;
-  --status-off: #aaaaaa;
+  --status-user: #16c607;
+  --status-on : #16c607;
 }
 
 * {
@@ -29,9 +29,10 @@ body {
 
   background-color: var(--bg-color);
   background-image: url(./../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: top;
-  background-size: 100%;
+  background-size: fill;
 }
 
 /*Contâiner do header*/

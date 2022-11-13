@@ -43,10 +43,10 @@ session_start();
         <img class="vizualizar-menu" src="./../images/option.svg" />
         <div class="hidden-list">
           <ul>
-            <a href="bloqueados.html" class="pessoas-bloqueadas">
+            <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <li>Lorem Ipsum exemplo</li>
+            <a class="logout" href="./../index.php"><li>Sair</li></a>
           </ul>
         </div>
         <div id="online-now">
@@ -71,22 +71,22 @@ session_start();
       </div>
       <nav>
         <ul id="menu-left">
-          <li><a href="./../home/perfil.html">Perfil</a></li>
-          <li><a href="./../home/chamada.html">Chamada de video</a></li>
-          <li><a href="./../home/carroussel.html">Carroussel</a></li>
-          <li><a href="./../home/curtidas.html">Curtidas</a></li>
-          <li><a href="./../home/planos.html">Planos</a></li>
-          <li><a href="./../home/favoritos.html">Favoritos</a></li>
-          <li><a href="./../home/configuracoes.html">Configurações</a></li>
-          <li><a href="./../home/mensagens.html">Mensagens</a></li>
-          <li><a href="./../home/servicos.html">Serviços</a></li>
-          <li><a href="./../home/online.html">Online agora</a>
+          <li><a href="./../home/perfil.php">Perfil</a></li>
+          <li><a href="./../home/chamada.php">Chamada de video</a></li>
+          <li><a href="./../home/carroussel.php">Carroussel</a></li>
+          <li><a href="./../home/curtidas.php">Curtidas</a></li>
+          <li><a href="./../home/planos.php">Planos</a></li>
+          <li><a href="./../home/favoritos.php">Favoritos</a></li>
+          <li><a href="./../home/configuracoes.php">Configurações</a></li>
+          <li><a href="./../home/mensagens.php">Mensagens</a></li>
+          <li><a href="./../home/servicos.php">Serviços</a></li>
+          <li><a href="./../home/online.php">Online agora</a>
           </li>
-          <li><a href="teste-de-amor.html">Teste de amor</a></li>
+          <li><a href="teste-de-amor.php">Teste de amor</a></li>
         </ul>
       </nav>
 
-      <a href="./../home/localizar-pessoas.html">
+      <a href="./../home/localizar-pessoas.php">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
 
@@ -135,11 +135,11 @@ session_start();
         </header>
 
         <div id="container-elements">
-          <div class="part-1">
+          
             <div class="iten">
               <label for="cor-cabelos">Cor dos cabelos</label>
-              <select id="cor-cabelos" name="cor-cabelos">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="cor-cabelos" name="cor-cabelos" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Loiro">Loiro</option>
                 <option value="Castanho claro">Castanho Claro</option>
                 <option value="Castanho médio">Castanho Médio</option>
@@ -155,8 +155,8 @@ session_start();
 
             <div class="iten">
               <label for="cor-olhos">Cor dos olhos</label>
-              <select id="cor-olhos" name="cor-olhos">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="cor-olhos" name="cor-olhos" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Azul">Azul</option>
                 <option value="Azul-esverdeado">Azul-esverdeado</option>
                 <option value="Cinza">Cinza</option>
@@ -171,8 +171,8 @@ session_start();
 
             <div class="iten">
               <label for="altura">Altura</label>
-              <select id="altura" name="altura">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="altura" name="altura" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="1.41m - 1.50m">1.41 metros - 1.50 metros</option>
                 <option value="1.51m - 1.60m">1.51 metros - 1.60 metros</option>
                 <option value="1.61m - 1.70m">1.61 metros - 1.70 metros</option>
@@ -185,8 +185,8 @@ session_start();
 
             <div class="iten">
               <label for="peso">Peso</label>
-              <select id="peso" name="peso">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="peso" name="peso" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="40Kg - 50Kg">40Kg - 50Kg</option>
                 <option value="50Kg - 60Kg">50Kg - 60Kg</option>
                 <option value="60Kg - 70Kg">60Kg - 70Kg</option>
@@ -196,13 +196,13 @@ session_start();
                 <option value="+100Kg">+100Kg</option>
               </select>
             </div>
-          </div>
+          
 
-          <div class="part-2" style="display: none">
+          
             <div class="iten">
               <label for="tipo-fisico">Tipo físico</label>
-              <select id="tipo-fisico" name="tipo-fisico">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="tipo-fisico" name="tipo-fisico" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Ectomorfo">Ectomorfo</option>
                 <option value="Mesomorfo">Mesomorfo</option>
                 <option value="Endomorfo">Endomorfo</option>
@@ -211,8 +211,8 @@ session_start();
 
             <div class="iten">
               <label for="grupo-etnico">Grupo étnico</label>
-              <select id="grupo-etnico" name="grupo-etnico">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="grupo-etnico" name="grupo-etnico" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Branco">Branco</option>
                 <option value="Pardo">Pardo</option>
                 <option value="Preto">Preto</option>
@@ -223,8 +223,8 @@ session_start();
 
             <div class="iten">
               <label for="arte-corporal">Arte corporal</label>
-              <select id="arte-corporal" name="arte-corporal">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="arte-corporal" name="arte-corporal" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Nenhuma">Nenhuma</option>
                 <option value="Tatuagem">Tatuagem</option>
                 <option value="Piercings">Piercings</option>
@@ -239,8 +239,8 @@ session_start();
 
             <div class="iten">
               <label for="aparencia">Minha aparência</label>
-              <select id="aparencia" name="aparencia">
-                <option selected hidden disabled>Selecionar...</option>
+              <select id="aparencia" name="aparencia" required>
+                <option selected hidden disabled value="">Selecionar...</option>
                 <option value="Bagunçado">Bagunçado</option>
                 <option value="Ralo">Ralo</option>
                 <option value="Com frizz">Com frizz</option>
@@ -248,7 +248,7 @@ session_start();
                 <option value="Limpo">Limpo</option>
               </select>
             </div>
-          </div>
+          
         </div>
 
         <div class="progress-next">
@@ -258,27 +258,26 @@ session_start();
             </div>
           </div>
 
-          <button class="next-page-about" type="button" name="btn-submit" onclick="proxJanela(document.querySelector('button.next-page-about'), 
-          document.querySelector('.part-2'), document.querySelector('.part-1'))">
+          <button class="next-page-about" name="btn-submit">
             >
           </button>
         </div>
       </form>
     </div>
     <footer id="footer-mobile">
-      <nav>
-        <ul>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><button id="mostra-menu-mobile"></button></li>
-        </ul>
-      </nav>
-    </footer>
+        <nav>
+          <ul>
+            <li><a href="./../home/index.php"></a></li>
+            <li><a href="./../home/localizar-pessoas.php"></a></li>
+            <li><a href="./../home/favoritos.php"></a></li>
+            <li><a href="./../home/mensagens.php"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
   </div>
 
-  <script src="./../script/trabalho-profissao.js"></script>
+  <script src="./../script/about-user.js"></script>
   <script src="./../script/script.js"></script>
   <script src="./../script/resize-windown.js"></script>
 </body>

@@ -42,10 +42,10 @@ session_start();
         <img class="vizualizar-menu" src="./../images/option.svg" />
         <div class="hidden-list">
           <ul>
-            <a href="bloqueados.html" class="pessoas-bloqueadas">
+            <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <li>Lorem Ipsum exemplo</li>
+            <a class="logout" href="./../index.php"><li>Sair</li></a>
           </ul>
         </div>
         <div id="online-now">
@@ -70,21 +70,21 @@ session_start();
 
       <nav>
         <ul id="menu-left">
-          <li><a href="./../home/perfil.html">Perfil</a></li>
-          <li><a href="./../home/chamada.html">Chamada de video</a></li>
-          <li><a href="./../home/carroussel.html">Carroussel</a></li>
-          <li><a href="./../home/curtidas.html">Curtidas</a></li>
-          <li><a href="./../home/planos.html">Planos</a></li>
-          <li><a href="./../home/favoritos.html">Favoritos</a></li>
-          <li><a href="./../home/configuracoes.html">Configurações</a></li>
-          <li><a href="./../home/mensagens.html">Mensagens</a></li>
-          <li><a href="./../home/servicos.html">Serviços</a></li>
-          <li><a href="./../home/online.html">Online agora</a></li>
-          <li><a href="teste-de-amor.html">Teste de amor</a></li>
+          <li><a href="./../home/perfil.php">Perfil</a></li>
+          <li><a href="./../home/chamada.php">Chamada de video</a></li>
+          <li><a href="./../home/carroussel.php">Carroussel</a></li>
+          <li><a href="./../home/curtidas.php">Curtidas</a></li>
+          <li><a href="./../home/planos.php">Planos</a></li>
+          <li><a href="./../home/favoritos.php">Favoritos</a></li>
+          <li><a href="./../home/configuracoes.php">Configurações</a></li>
+          <li><a href="./../home/mensagens.php">Mensagens</a></li>
+          <li><a href="./../home/servicos.php">Serviços</a></li>
+          <li><a href="./../home/online.php">Online agora</a></li>
+          <li><a href="teste-de-amor.php">Teste de amor</a></li>
         </ul>
       </nav>
 
-      <a href="./../home/localizar-pessoas.html">
+      <a href="./../home/localizar-pessoas.php">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
 
@@ -112,14 +112,15 @@ session_start();
         <div id="container-elements" style="justify-content: flex-start">
           <div class="iten" style="margin-bottom: 24px">
             <label for="write-about">Escreva sobre você</label>
-
-            <textarea id="write-about" placeholder="Escreva..." name="sobre-voce"></textarea>
+            
+            <span class="chars-count"></span>
+            <textarea id="write-about" placeholder="Escreva..." name="sobre-voce" oninput="maxCharTextArea(this)" required></textarea>
           </div>
 
           <div class="iten">
             <label for="write-about">O que você busca</label>
-
-            <textarea id="find-out" placeholder="Escreva..." name="o-que-busca"></textarea>
+              <span class="chars-count"></span>
+            <textarea id="find-out" placeholder="Escreva..." name="o-que-busca" oninput="maxCharTextArea(this)" required></textarea>
           </div>
         </div>
 
@@ -135,19 +136,19 @@ session_start();
       </form>
     </div>
     <footer id="footer-mobile">
-      <nav>
-        <ul>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><button id="mostra-menu-mobile"></button></li>
-        </ul>
-      </nav>
-    </footer>
+        <nav>
+          <ul>
+            <li><a href="./../home/index.php"></a></li>
+            <li><a href="./../home/localizar-pessoas.php"></a></li>
+            <li><a href="./../home/favoritos.php"></a></li>
+            <li><a href="./../home/mensagens.php"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
   </div>
 
-  <script src="./../script/trabalho-profissao.js"></script>
+  <script src="./../script/about-user.js"></script>
   <script src="./../script/script.js"></script>
   <script src="./../script/resize-windown.js"></script>
 </body>

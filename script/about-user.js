@@ -1,3 +1,6 @@
+const erros2 = []
+
+
 const elementos = document.querySelectorAll("select").forEach((element) => {
   element.addEventListener("change", opacidade);
 
@@ -10,7 +13,13 @@ const elementos = document.querySelectorAll("select").forEach((element) => {
   opacidade();
 });
 
-//Para a barra de progresso
+
+
+/*
+*****************************************
+***     Para a barra de progresso     ***
+*****************************************
+*/
 function setProgressVal(val) {
   const progressBar = document.querySelector(".progress-bar");
   const progressVal = document.querySelector(".progress-val");
@@ -21,38 +30,59 @@ function setProgressVal(val) {
 
 //Esta chamada serve simplesmente para demonstração. Apagar de seguida
 setProgressVal(20);
+
+
+
+/*
+***************************************************************************************
+***     Campos que se completam com outros, que nem quantidade de filhos e pets     ***
+***************************************************************************************
+*/
 try {
   function onOff(conf, fazerEm) {
-    const qtdFilhos = document.querySelector("#"+fazerEm);
+    const qtdFilhos = document.querySelector("#" + fazerEm);
     qtdFilhos.addEventListener("change", condicionar);
-    const filhos = document.querySelector("#"+conf);
-    filhos.addEventListener("change", condicionar);
+    const filhos = document.querySelector("#" + conf);
+    filhos.addEventListener("change", () => {
+      condicionar();
+      if (filhos.value == "Sim") {
+        qtdFilhos.options[1].selected = true
+        qtdFilhos.style.color = "#000"
+      }
+    });
+
+
     function condicionar() {
-      if (filhos.value == "Sim") qtdFilhos.removeAttribute("disabled");
-      else {
-        qtdFilhos.setAttribute("disabled", "true");
+      if (filhos.value == "Sim") {
+        qtdFilhos.removeAttribute("disabled");
+        qtdFilhos.setAttribute("required", "true");
+      } else {
         qtdFilhos.value = "00";
+        qtdFilhos.setAttribute("disabled", "true");
+        qtdFilhos.removeAttribute("required");
       }
     }
   }
-  onOff('filhos', 'quantidade-filhos')
-  onOff('pets', 'quantidade-pets')
+  onOff("filhos", "quantidade-filhos");
+  onOff("pets", "quantidade-pets");
 
   const qtdPets = document.querySelector("#quantidade-pets");
   qtdPets.addEventListener("change", Pets);
   const pets = document.querySelector("#pets");
   pets.addEventListener("change", Pets);
   function Pets() {
-    if (pets.value == "Sim") qtdPets.removeAttribute("disabled");
+    if (pets.value == "Sim") {
+      qtdPets.removeAttribute("disabled")
+    }
     else {
       qtdPets.setAttribute("disabled", "true");
-      qtdPets.value = "Selecionar...";
     }
 
-    if ("01".includes(element.options[element.selectedIndex].textContent))
-      element.style.color = "rgba(0, 0, 0, 1)";
+    if ("01".includes(pets.options[pets.selectedIndex].textContent))
+      pets.style.color = "rgba(0, 0, 0, 1)";
   }
   Pets();
 } catch (error) {
-  console.error(error);
+  erros2.push(error)
 }
+
