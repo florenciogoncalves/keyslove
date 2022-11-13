@@ -19,7 +19,7 @@ session_start();
 <body id="sobre-usuario">
   <div id="menu-esquerdo">
     <div id="div-left">
-      <div id="user-information">
+    <div id="user-information">
         <figure>
           <div class="foto-de-perfil">
             <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
@@ -40,10 +40,12 @@ session_start();
         <img class="vizualizar-menu" src="./../images/option.svg" />
         <div class="hidden-list">
           <ul>
-            <a href="bloqueados.html" class="pessoas-bloqueadas">
+            <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <li>Lorem Ipsum exemplo</li>
+            <a href="./../index.php">
+              <li class="logout">Sair</li>
+            </a>
           </ul>
         </div>
         <div id="online-now">
@@ -68,21 +70,21 @@ session_start();
 
       <nav>
         <ul id="menu-left">
-          <li><a href="./../home/perfil.html">Perfil</a></li>
-          <li><a href="./../home/chamada.html">Chamada de video</a></li>
-          <li><a href="./../home/carroussel.html">Carroussel</a></li>
-          <li><a href="./../home/curtidas.html">Curtidas</a></li>
-          <li><a href="./../home/planos.html">Planos</a></li>
-          <li><a href="./../home/favoritos.html">Favoritos</a></li>
-          <li><a href="./../home/configuracoes.html">Configurações</a></li>
-          <li><a href="./../home/mensagens.html">Mensagens</a></li>
-          <li><a href="./../home/servicos.html">Serviços</a></li>
-          <li><a href="./../home/online.html">Online agora</a></li>
-          <li><a href="teste-de-amor.html">Teste de amor</a></li>
+          <li><a href="./../home/perfil.php">Perfil</a></li>
+          <li><a href="./../home/chamada.php">Chamada de video</a></li>
+          <li><a href="./../home/carroussel.php">Carroussel</a></li>
+          <li><a href="./../home/curtidas.php">Curtidas</a></li>
+          <li><a href="./../home/planos.php">Planos</a></li>
+          <li><a href="./../home/favoritos.php">Favoritos</a></li>
+          <li><a href="./../home/configuracoes.php">Configurações</a></li>
+          <li><a href="./../home/mensagens.php">Mensagens</a></li>
+          <li><a href="./../home/servicos.php">Serviços</a></li>
+          <li><a href="./../home/online.php">Online agora</a></li>
+          <li><a href="teste-de-amor.php">Teste de amor</a></li>
         </ul>
       </nav>
 
-      <a href="./../home/localizar-pessoas.html">
+      <a href="./../home/localizar-pessoas.php">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
 
@@ -111,7 +113,7 @@ session_start();
           <div class="iten">
             <label for="nacionalidade">Nacionalidade</label>
 
-            <input type="text" list="nacionalidade-lista" id="nacionalidade" name="nacionalidade" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
+            <input type="text" list="nacionalidade-lista" id="nacionalidade" name="nacionalidade" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);" placeholder="Selecionar..." required>
             <!-- <select id="nacionalidade">
                 <option selected hidden disabled>Selecionar...</option>
               </select> -->
@@ -318,8 +320,8 @@ session_start();
           <div class="iten">
             <label for="educacao">Educação</label>
 
-            <select id="educacao" name="educacao">
-              <option selected hidden disabled>Selecionar...</option>
+            <select id="educacao" name="educacao" required>
+              <option selected hidden disabled value="">Selecionar...</option>
               <option value="Educação Básica">Educação básica</option>
               <option value="Educação superior">Educação superior</option>
               <option value="Mestrado">Mestrado</option>
@@ -329,8 +331,8 @@ session_start();
 
           <div class="iten">
             <label for="idiomas">Idiomas</label>
-            <select id="idiomas" name="idiomas">
-              <option selected hidden disabled>Selecionar...</option>
+            <select id="idiomas" name="idiomas" required>
+              <option selected hidden disabled value="">Selecionar...</option>
               <option value="Inglês">Inglês</option>
               <option value="Mandarim">Mandarim</option>
               <option value="Hindi">Hindi</option>
@@ -356,8 +358,8 @@ session_start();
 
           <div class="iten">
             <label for="nivel-ingles">Seu nível de inglês</label>
-            <select id="nivel-ingles" name="nivel-ingles">
-              <option selected disabled hidden>Selecionar...</option>
+            <select id="nivel-ingles" name="nivel-ingles" required>
+              <option selected disabled hidden value="">Selecionar...</option>
               <option value="A1">A1</option>
               <option value="A2">A2</option>
               <option value="B1">B1</option>
@@ -369,8 +371,8 @@ session_start();
 
           <div class="iten">
             <label for="religiao">Religião</label>
-            <select id="religiao" name="religiao">
-              <option selected disabled hidden>Selecionar...</option>
+            <select id="religiao" name="religiao" required>
+              <option selected disabled hidden value="">Selecionar...</option>
               <option value="Cristianismo">Cristianismo</option>
               <option value="Umnanda">Umbanda</option>
               <option value="Candomblé">Candomblé</option>
@@ -384,8 +386,8 @@ session_start();
 
           <div class="iten">
             <label for="signo">Signo</label>
-            <select id="signo" name="signo">
-              <option selected disabled hidden>Selecionar...</option>
+            <select id="signo" name="signo" required>
+              <option selected disabled hidden value="">Selecionar...</option>
               <option value="Áries">Áries</option>
               <option value="Touro">Touro</option>
               <option value="Gêmeos">Gêmeos</option>
@@ -415,19 +417,19 @@ session_start();
       </form>
     </div>
     <footer id="footer-mobile">
-      <nav>
-        <ul>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><button id="mostra-menu-mobile"></button></li>
-        </ul>
-      </nav>
-    </footer>
+        <nav>
+          <ul>
+            <li><a href="./../home/index.php"></a></li>
+            <li><a href="./../home/localizar-pessoas.php"></a></li>
+            <li><a href="./../home/favoritos.php"></a></li>
+            <li><a href="./../home/mensagens.php"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
   </div>
 
-  <script src="./../script/trabalho-profissao.js"></script>
+  <script src="./../script/about-user.js"></script>
   <script src="./../script/script.js"></script>
   <script src="./../script/resize-windown.js"></script>
 </body>

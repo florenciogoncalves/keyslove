@@ -1,4 +1,12 @@
-/*Formatando cadastro-1 */
+const erros = []
+
+
+
+/*
+*************************************
+***     Formatando cadastro-1     ***
+*************************************
+*/
 //Input Tel > Número de telefone
 try {
   //Adicionar o indicativo automaticamente
@@ -85,7 +93,7 @@ try {
       } else if (!passWord.value.match(/[@#$%&;*?_+*!]/)) {
         forcaPass("A senha deve conter: caracter especial");
         return;
-      } else if (!passWord.value.match(/[1-9]+/)) {
+      } else if (!passWord.value.match(/[0-9]+/)) {
         forcaPass("A senha deve conter: número");
         return;
       } else if (passWord.value.length < 6 && passWord.value != "") {
@@ -136,12 +144,17 @@ try {
   }),
     1000;
 } catch (error) {
-  console.error("Verifique a primeira janela de cadastro" + error);
-}
+  erros.push(error)}
 
-/*   Formatando o arquivo cadastro-2.html
- *  Inserir datas possíveis nos selects,
- * Proibe o usuário de selecionar uma data que não seja de exatamente 18 anos do dia anterior
+
+
+/*
+*********************************************************
+ ***       Formatando o arquivo cadastro-2.php        ***
+ ***       Inserir datas possíveis nos selects        ***
+ ***    Proibe o usuário de selecionar uma data que   ***
+ ***  não seja de exatamente 18 anos do dia anterior  ***
+ * ******************************************************
  */
 try {
   let dataAtual = new Date();
@@ -335,12 +348,13 @@ try {
   }
   reconfirmFebruary();
 } catch (error) {
-  console.error("Sem data a inserir" + error);
-}
+  erros.push(error)}
+
+
 
 /*************************************************
- ***    Formatando o arquivo cadastro-6.html    ***
- ***  Interatividade da área de senha           ***
+ ***    Formatando o arquivo cadastro-6.php    ***
+ ***      Interatividade da área de senha      ***
  **************************************************/const passCamp = document.querySelectorAll(".pass-camp");
 try {
   
@@ -400,10 +414,15 @@ try {
     });
   });
 } catch (error) {
-  console.log("Cadastro OTP code not found" + error);
-}
+erros.push(error)}
 
-//Imagens para pegar em cadastro-5
+
+
+/*
+*********************************************
+***   Imagens para pegar em cadastro-5    ***
+*********************************************
+*/
 try {
   document.querySelectorAll('input[type="file"]').forEach((current) => {
     console.log(current);
@@ -443,5 +462,4 @@ try {
     );
   });
 } catch (error) {
-  console.error("Tente pegar uma imagem para a dropzone" + error);
-}
+  erros.push(error)}

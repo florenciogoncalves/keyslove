@@ -65,10 +65,20 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
               <label for="online">Online</label>
             </div>
 
+<<<<<<< HEAD
             <div class="this-status">
               <input type="radio" name="online-agora" id="ocupado" value="ocupado" />
               <label for="ocupado">Ocupado</label>
             </div>
+=======
+          <img  class="vizualizar-menu" src="./../images/option.svg" />
+          <div class="hidden-list">
+            <ul>
+              <a href="bloqueados.php" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
+              <a class="logout" href="./../index.php"><li>Sair</li></a>
+            </ul>
+          </div><div id="online-now">
+>>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
 
             <div class="this-status">
               <input type="radio" name="online-agora" id="invisivel" value="invisivel" />
@@ -76,6 +86,42 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
             </div>
           </div>
         </div>
+<<<<<<< HEAD
+=======
+
+        <nav>
+          <ul id="menu-left">
+            <li><a href="./perfil.php">Perfil</a></li>
+            <li><a href="chamada.php">Chamada de video</a></li>
+            <li><a href="carroussel.php">Carroussel</a></li>
+            <li><a href="curtidas.php">Curtidas</a></li>
+            <li>
+              <a href="planos.php" class="pagina-selecionada"
+                >Planos</a
+              >
+            </li>
+            <li><a href="favoritos.php">Favoritos</a></li>
+            <li><a href="configuracoes.php">Configurações</a></li>
+            <li>
+              <a href="mensagens.php">Mensagens</a>
+            </li>
+            <li><a href="servicos.php">Serviços</a></li>
+            <li><a href="online.php">Online agora</a>
+            </li>
+            <li><a href="teste-de-amor.php">Teste de amor</a></li>
+          </ul>
+        </nav>
+        <a href="localizar-pessoas.php"
+          ><div id="peoples-left">
+            <h4>Pessoas pela região</h4>
+
+            <div class="people-organizer">
+              <img src="./../debug-images/temp-2.svg" />
+              <img src="./../debug-images/temp-2.svg" />
+              <img src="./../debug-images/temp-2.svg" />
+            </div></div
+        ></a>
+>>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
       </div>
 
       <nav>
@@ -163,6 +209,7 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
                 <div></div>
               </div>
             </div>
+<<<<<<< HEAD
         </section>
         <a href="./metodos-pagamento.php">
           <button class="btn-register">
@@ -183,6 +230,28 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
       </nav>
     </footer>
   </div>
+=======
+          </section>
+          <a href="./metodos-pagamento.php">
+            <button class="btn-register">
+              Métodos de pagamento
+            </button>
+          </a>
+        </section>
+      </main>
+      <footer id="footer-mobile">
+        <nav>
+          <ul>
+            <li><a href="./index.php"></a></li>
+            <li><a href="./localizar-pessoas.php"></a></li>
+            <li><a href="./favoritos.php"></a></li>
+            <li><a href="./mensagens.php"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+>>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
 
   <script src="./../script/script.js"></script>
 </body>

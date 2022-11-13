@@ -58,7 +58,7 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
             <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <li>Lorem Ipsum exemplo</li>
+            <a class="logout" href="./../index.php"><li>Sair</li></a>
           </ul>
         </div>
         <div id="online-now">
@@ -131,7 +131,7 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
 
       <div class="home-footer">
         <h3 id="person-name">Nome pessoa 100</h3>
-        <a href="mensagens.html">
+        <a href="mensagens.php">
           <div class="talk-now">
             Conversar agora &nbsp;
 

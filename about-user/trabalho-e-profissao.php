@@ -40,10 +40,10 @@ session_start();
         <img class="vizualizar-menu" src="./../images/option.svg" />
         <div class="hidden-list">
           <ul>
-            <a href="bloqueados.html" class="pessoas-bloqueadas">
+            <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <li>Lorem Ipsum exemplo</li>
+            <a class="logout" href="./../index.php"><li>Sair</li></a>
           </ul>
         </div>
         <div id="online-now">
@@ -68,21 +68,21 @@ session_start();
 
       <nav>
         <ul id="menu-left">
-          <li><a href="./../home/perfil.html">Perfil</a></li>
-          <li><a href="./../home/chamada.html">Chamada de video</a></li>
-          <li><a href="./../home/carroussel.html">Carroussel</a></li>
-          <li><a href="./../home/curtidas.html">Curtidas</a></li>
-          <li><a href="./../home/planos.html">Planos</a></li>
-          <li><a href="./../home/favoritos.html">Favoritos</a></li>
-          <li><a href="./../home/configuracoes.html">Configurações</a></li>
-          <li><a href="./../home/mensagens.html">Mensagens</a></li>
-          <li><a href="./../home/servicos.html">Serviços</a></li>
-          <li><a href="./../home/online.html">Online agora</a></li>
-          <li><a href="teste-de-amor.html">Teste de amor</a></li>
+          <li><a href="./../home/perfil.php">Perfil</a></li>
+          <li><a href="./../home/chamada.php">Chamada de video</a></li>
+          <li><a href="./../home/carroussel.php">Carroussel</a></li>
+          <li><a href="./../home/curtidas.php">Curtidas</a></li>
+          <li><a href="./../home/planos.php">Planos</a></li>
+          <li><a href="./../home/favoritos.php">Favoritos</a></li>
+          <li><a href="./../home/configuracoes.php">Configurações</a></li>
+          <li><a href="./../home/mensagens.php">Mensagens</a></li>
+          <li><a href="./../home/servicos.php">Serviços</a></li>
+          <li><a href="./../home/online.php">Online agora</a></li>
+          <li><a href="teste-de-amor.php">Teste de amor</a></li>
         </ul>
       </nav>
 
-      <a href="./../home/localizar-pessoas.html">
+      <a href="./../home/localizar-pessoas.php">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
 
@@ -109,23 +109,23 @@ session_start();
         <div id="container-elements">
           <div class="iten">
             <label for="cargo">Cargo</label>
-            <input type="text" id="cargo" placeholder="exemplo" name="cargo" />
+            <input type="text" id="cargo" placeholder="exemplo" name="cargo" required/>
           </div>
 
           <div class="iten">
             <label for="empresa">Empresa</label>
-            <input type="text" id="empresa" placeholder="exemplo" name="empresa" />
+            <input type="text" id="empresa" placeholder="exemplo" name="empresa" required/>
           </div>
 
           <div class="iten">
             <label for="formado-em">Formado em:</label>
-            <input type="text" id="formado-em" placeholder="exemplo" name="formacao" />
+            <input type="text" id="formado-em" placeholder="exemplo" name="formacao" required/>
           </div>
 
           <div class="iten">
             <label for="regime-trabalho">Regime de trabalho</label>
-            <select id="regime-trabalho" name="regime-trabalho">
-              <option selected disabled hidden>exemplo</option>
+            <select id="regime-trabalho" name="regime-trabalho" required>
+              <option selected disabled hidden value="">exemplo</option>
               <option value="clt">CLT</option>
               <option value="contratacao-temporaria">
                 Contratação temporária
@@ -146,31 +146,34 @@ session_start();
             <label for="renda-anual">Renda Anual</label>
             <!-- <select id="renda-anual" name="renda-anual">
                 <option selected disabled hidden>exemplo</option></select> -->
-            <input list="renda" id="renda-anual" name="renda-anual" placeholder="exemplo">
+            <input list="renda" id="renda-anual" name="renda-anual" placeholder="exemplo" required>
 
             <datalist id="renda">
-              <option value="Mínimo">1000,00 R$</option>
+              <option value="Mínimo">13.200,00 R$</option>
+              <option value="Médio">84.000,00 R$</option>
+              <option value="Máximo">180.000,00 R$</option>
             </datalist>
           </div>
 
           <div class="iten">
             <label for="situacao-moradia">Situação de moradia</label>
-            <select id="situacao-moradia" name="situacao-moradia">
+            <select id="situacao-moradia" name="situacao-moradia" required>
               <option selected disabled hidden>exemplo</option>
               <option value="casa-propria">Casa própria</option>
               <option value="Aluguel">Aluguel</option>
               <option value="casa-dos-pais">Casa dos pais</option>
+              <option value="Outra...">Outra...</option>
             </select>
           </div>
 
           <div class="iten">
             <label for="disp-mudar-pais">Disposição para mudar de país</label>
-            <select id="disp-mudar-pais" name="disp-mudar-pais">
+            <select id="disp-mudar-pais" name="disp-mudar-pais" required>
               <option selected disabled hidden>exemplo</option>
               <option value="Disponível">Disponível</option>
               <option value="por-um-certo-prazo">Por um certo prazo</option>
               <option value="Tanto faz">Tanto faz</option>
-              <option value="Não quero">Não quero</option>
+              <option value="Não quero">Não disponível</option>
             </select>
           </div>
         </div>
@@ -187,19 +190,19 @@ session_start();
       </form>
     </div>
     <footer id="footer-mobile">
-      <nav>
-        <ul>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><a href=""></a></li>
-          <li><button id="mostra-menu-mobile"></button></li>
-        </ul>
-      </nav>
-    </footer>
+        <nav>
+          <ul>
+            <li><a href="./../home/index.php"></a></li>
+            <li><a href="./../home/localizar-pessoas.php"></a></li>
+            <li><a href="./../home/favoritos.php"></a></li>
+            <li><a href="./../home/mensagens.php"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
   </div>
 
-  <script src="./../script/trabalho-profissao.js"></script>
+  <script src="./../script/about-user.js"></script>
   <script src="./../script/script.js"></script>
   <script src="./../script/resize-windown.js"></script>
 </body>

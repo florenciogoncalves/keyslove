@@ -3,7 +3,7 @@
   /*
 
 ******************************
-***       index.html       ***
+***       index.php       ***
 ******************************
 */
 
@@ -157,7 +157,7 @@
     height: max-content;
   }
 
-  /*login.html*/
+  /*login.php*/
   .body-login {
     grid-template-rows: 1fr auto;
   }

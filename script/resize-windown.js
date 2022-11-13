@@ -15,6 +15,11 @@ let addEvent = function (elem, type, eventHandle) {
 addEvent(window, "resize", function () {
   document.querySelector("body").style.height =
     document.documentElement.clientHeight + "px";
-  document.querySelector("body").style.width =
+    document.querySelector("body").style.maxHeight =
+    document.documentElement.clientHeight + "px";
+    document.querySelector("body").style.width =
+    document.documentElement.clientWidth + "px";
+  document.querySelector("body").style.maxWidth =
     document.documentElement.clientWidth + "px";
 });
+
