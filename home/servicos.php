@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+// session_start();
+require_once __DIR__ . "./../_app/models/profileModel.php";
+
 
 ?>
 <!DOCTYPE html>
@@ -21,19 +23,28 @@ session_start();
     <div id="div-left">
       <div id="user-information">
         <figure>
+          <?php
+        $photo = new profileModel();
+        $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+        $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+        ?>
+
+
           <div class="foto-de-perfil">
-            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+
             <div class="status"></div>
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])) :
+            if (isset($_SESSION['username'])):
             ?>
 
 
-              <h2><?= $_SESSION['username'];
-                endif ?></h2>
-              <span id="show-status-window">Escolher status</span>
+            <h2>
+              <?= $_SESSION['username']; endif ?>
+        </h2>
+            <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -112,7 +123,7 @@ session_start();
         <h1 class="title">Testes do amor</h1>
         <ul id="test-list">
           <li>Teste de Compatibilidade</li>
-          <a href="teste-de-amor.html">
+          <a href="teste-de-amor.php">
             <li>Teste de Amor</li>
           </a>
           <li>Teste de Personalidade</li>
@@ -123,10 +134,10 @@ session_start();
     <footer id="footer-mobile">
       <nav>
         <ul>
-          <li><a href="./index.html"></a></li>
-          <li><a href="./localizar-pessoas.html"></a></li>
-          <li><a href="./favoritos.html"></a></li>
-          <li><a href="./mensagens.html"></a></li>
+          <li><a href="./index.php"></a></li>
+          <li><a href="./localizar-pessoas.php"></a></li>
+          <li><a href="./favoritos.php"></a></li>
+          <li><a href="./mensagens.php"></a></li>
           <li><button id="mostra-menu-mobile"></button></li>
         </ul>
       </nav>

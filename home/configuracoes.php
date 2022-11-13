@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+require __DIR__ . "./../_app/models/profileModel.php";
+
+// session_start();
 
 ?>
 <!DOCTYPE html>
@@ -21,19 +23,28 @@ session_start();
     <div id="div-left">
       <div id="user-information">
         <figure>
+        <?php
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
+
+        
           <div class="foto-de-perfil">
-            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
+          <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+
             <div class="status"></div>
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])) :
+            if (isset($_SESSION['username'])):
             ?>
 
 
-              <h2><?= $_SESSION['username'];
-                endif ?></h2>
-              <span id="show-status-window">Escolher status</span>
+            <h2>
+              <?= $_SESSION['username']; endif ?>
+            </h2>
+            <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -89,7 +100,7 @@ session_start();
           <li><a href="teste-de-amor.php">Teste de amor</a></li>
         </ul>
       </nav>
-      <a href="localizar-pessoas.html">
+      <a href="localizar-pessoas.php">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
 
@@ -116,60 +127,89 @@ session_start();
         <a href="#">Sair</a>
       </section>
 
+
+
+
+
+      <?php
+      //require __DIR__ . "./../core/connect.php";
+      
+
+
+      $data = new profileModel();
+
+      $for = $data->FirstUserData();
+
+      $fore = $data->UserData();
+
+      $city = $data->UserData('tb_localizacao');
+      $card = $data->user('tb_metodo_pagamento', 'user', $_SESSION['username']);
+
+      ?>
+
+
+
+
+
       <section id="conf-account">
         <h1 class="title">Configurações da conta</h1>
         <ul id="conf-list">
           <li>
             Nome:
-            <input type="text" class="user-data-show" value="Lorem Silva da Montes" disabled required /><span class="edit">Editar</span>
+            <input type="text" class="user-data-show" value="<?= $for['nome']; ?>" disabled required /><span
+              class="edit">Editar</span>
           </li>
           <li>
             Número:
-            <input type="tel" class="user-data-show" value="21 97440-1576" disabled required /><span class="edit">Editar</span>
+            <input type="tel" class="user-data-show" value="<?= $fore['telefone']; ?>" disabled required /><span
+              class="edit">Editar</span>
           </li>
           <li>
             Email:
-            <input type="email" class="user-data-show" value="Loremip152@gmail.com" disabled required /><span class="edit">Editar</span>
+            <input type="email" class="user-data-show" value="<?= $fore['email']; ?>" disabled required /><span
+              class="edit">Editar</span>
           </li>
           <li>
             Senha:
-            <input type="password" class="user-data-show" value="LoremIpsum123" disabled required /><span class="edit">Editar</span>
+            <input type="password" class="user-data-show" value="<?= $fore['senha'] ?>" disabled required /><span
+              class="edit">Editar</span>
           </li>
           <li>
             Cidade:
-            <input type="text" class="user-data-show" value="Rio de Janeiro" disabled required /><span class="edit">Editar</span>
+            <input type="text" class="user-data-show" value="<?= $city['cidade']; ?>" disabled required /><span
+              class="edit">Editar</span>
           </li>
           <span id="delete-account">Excluir conta</span>
         </ul>
         <a href="#conf-select" class="back">Sair</a>
       </section>
 
+
+
       <section id="conf-payment">
         <h1 class="title">Métodos de pagamento</h1>
         <ul class="card-list">
+
+          <?php
+          ?>
           <li>
             <div class="information-card">
-              <span>Cartão de crédito tal</span>
-              <span>Agencia: 000000000000</span>
+              <span>
+                <?= $card['entity_card']; ?>
+              </span>
+              <span>
+                <?= $card['agencia']; ?>
+              </span>
             </div>
-            <a href="./planos.html" class="edit">Editar</a>
+            <a href="./planos.php" class="edit">Editar</a>
           </li>
-          <li>
-            <div class="information-card">
-              <span>Cartão de crédito tal</span>
-              <span>Agencia: 000000000000</span>
-            </div>
-            <a href="./planos.html" class="edit">Editar</a>
-          </li>
-          <li>
-            <div class="information-card">
-              <span>Cartão de crédito tal</span>
-              <span>Agencia: 000000000000</span>
-            </div>
-            <a href="./planos.html" class="edit">Editar</a>
-          </li>
+
+          <?php
+
+          ?>
+
         </ul>
-        <a href="metodos-pagamento.html"><button class="btn-register">Adicionar novo cartão</button></a>
+        <a href="metodos-pagamento.php"><button class="btn-register">Adicionar novo cartão</button></a>
         <a href="#" class="back">Sair</a>
       </section>
 

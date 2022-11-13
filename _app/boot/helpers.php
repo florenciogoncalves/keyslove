@@ -54,8 +54,22 @@ function uploader($origin, $destination): bool
 }
 
 
-
 function generateVerificationCode(): int
 {
     return random_int(1000, 9999);
 }
+
+function UserAge(int $bornYear): int|null
+{
+    return date('Y') - $bornYear;
+}
+
+/*
+$string = "03/05/2004";
+
+echo "<pre>";
+
+var_dump([
+    "teste" => explode('/', $string)[2]
+]);
+*/

@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+// session_start();
+require_once __DIR__ . "./../_app/models/profileModel.php";
+
 
 ?>
 <!DOCTYPE html>
@@ -21,19 +23,28 @@ session_start();
     <div id="div-left">
       <div id="user-information">
         <figure>
+        <?php
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
+
+        
           <div class="foto-de-perfil">
-            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
+          <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+
             <div class="status"></div>
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])) :
+            if (isset($_SESSION['username'])):
             ?>
 
 
-              <h2><?= $_SESSION['username'];
-                endif ?></h2>
-              <span id="show-status-window">Escolher status</span>
+            <h2>
+              <?= $_SESSION['username']; endif ?>
+            </h2>
+            <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -131,27 +142,29 @@ session_start();
             <button class="btn-register">Lorem Ipsum</button>
           </label>
         </section>
+
         <section class="card-bank-container">
-          <div class="card-bank-data">
-            <div class="left-side">
-              <span><label for="card-num">Número do cartão</label>
-                <input type="number" id="card-num" placeholder="0000000000000" name="numero-cartao" /></span>
-              <span>
-                <label for="titular-name">Nome do titular</label>
-                <input type="text" id="titular-name" placeholder="Lorem Ipsum" name="nome-titular" />
-              </span>
-              <div class="validate">
-                <label for="validate">Validade</label>
-                <input type="number" min="1" max="99" placeholder="00" name="validade-mes" />
-                <input type="number" max="99" placeholder="00" name="validade-ano" />
+          <form action="./../_app/controllers/planosController.php" method="post" novalidate>
+            <div class="card-bank-data">
+              <div class="left-side">
+                <span><label for="card-num">Número do cartão</label>
+                  <input type="number" id="card-num" placeholder="0000000000000" name="numero-cartao" /></span>
+                <span>
+                  <label for="titular-name">Nome do titular</label>
+                  <input type="text" id="titular-name" placeholder="Lorem Ipsum" name="nome-titular" />
+                </span>
+                <div class="validate">
+                  <label for="validate">Validade</label>
+                  <input type="number" min="1" max="99" placeholder="00" name="validade-mes" />
+                  <input type="number" max="99" placeholder="00" name="validade-ano" />
+                </div>
+              </div>
+              <div class="right-side">
+                <div></div>
               </div>
             </div>
-            <div class="right-side">
-              <div></div>
-            </div>
-          </div>
         </section>
-        <a href="./metodos-pagamento.html">
+        <a href="./metodos-pagamento.php">
           <button class="btn-register">
             Métodos de pagamento
           </button>

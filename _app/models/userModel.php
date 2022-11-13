@@ -160,7 +160,7 @@ class userModel extends connect
 
 
         $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `user_id` = ?");
-        $query->bindParam(1, $fetch['user_id']);
+        $query->bindParam(1, $fetch['id']);
         $query->execute();
 
         $getName = $query->fetch(PDO::FETCH_ASSOC);
@@ -177,11 +177,12 @@ class userModel extends connect
 
         $fetch = $queryUser->fetch(PDO::FETCH_ASSOC);
 
-        $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `user_id` = ?");
-        $query->bindParam(1, $fetch['user_id']);
+        $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `id` = ?");
+        $query->bindParam(1, $fetch['id']);
         $query->execute();
 
         $getName = $query->fetch(PDO::FETCH_ASSOC);
+        $_SESSION['username_id'] = $fetch['id'];
         $_SESSION['username'] = $getName['nome'];
 
 
@@ -264,7 +265,7 @@ class userModel extends connect
         string $aparencia = NULL
     ): bool {
 
-        $query = $this->connect->prepare("INSERT INTO caracteristicas(user, corCabelos, corOlhos, altura, peso, tipoFisico, grupoEtnico, arteCorporal, minhaAparencia) VALUES (?, ? , ?, ?, ?, ?, ?, ?, ?)");
+        $query = $this->connect->prepare("INSERT INTO tb_caracteristicas(user, corCabelos, corOlhos, altura, peso, tipoFisico, grupoEtnico, arteCorporal, minhaAparencia) VALUES (?, ? , ?, ?, ?, ?, ?, ?, ?)");
         $query->bindParam(1, $user);
         $query->bindParam(2, $corCabelos);
         $query->bindParam(3, $corOlhos);
@@ -292,7 +293,7 @@ class userModel extends connect
         string $dispPais
     ): bool {
 
-        $query = $this->connect->prepare("INSERT INTO job_tb(user, cargo, empresa, formado_em, regime_trabalho, renda_anual, situacaoMoradia, changePais) VALUES (? , ?, ?, ?, ?, ?, ?, ?)");
+        $query = $this->connect->prepare("INSERT INTO tb_job_tb(user, cargo, empresa, formado_em, regime_trabalho, renda_anual, situacaoMoradia, changePais) VALUES (? , ?, ?, ?, ?, ?, ?, ?)");
         $query->bindParam(1, $user);
         $query->bindParam(2, $cargo);
         $query->bindParam(3, $empresa);
@@ -318,7 +319,7 @@ class userModel extends connect
         string $signo
     ): bool {
 
-        $query = $this->connect->prepare("INSERT INTO cultura(user, nacionalidade, educacao, idiomas, nivel_ingles, religiao, signo) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $query = $this->connect->prepare("INSERT INTO tb_cultura(user, nacionalidade, educacao, idiomas, nivel_ingles, religiao, signo) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $query->bindParam(1, $user);
         $query->bindParam(2, $nacionalidade);
         $query->bindParam(3, $educacao);
@@ -336,7 +337,7 @@ class userModel extends connect
 
     private function aboutMeInsert(string $user, string $about, string $busca): bool
     {
-        $query = $this->connect->prepare("INSERT INTO sobre_mim(cliente, sobre, busca) VALUES (?, ?, ?)");
+        $query = $this->connect->prepare("INSERT INTO tb_sobre_mim(user, sobre, busca) VALUES (?, ?, ?)");
         $query->bindParam(1, $user);
         $query->bindParam(2, $about);
         $query->bindParam(3, $busca);
@@ -361,7 +362,7 @@ class userModel extends connect
         string $religiao = NULL
     ): bool {
 
-        $query = $this->connect->prepare("INSERT INTO estilo_vida(
+        $query = $this->connect->prepare("INSERT INTO tb_estilo_vida(
             user, 
             voceBebe, 
             voceFuma,
@@ -395,7 +396,7 @@ class userModel extends connect
 
     private function imageInsert(string $user, $photo): bool
     {
-        $query = $this->connect->prepare("INSERT INTO photos(user, photo) VALUES (?, ?)");
+        $query = $this->connect->prepare("INSERT INTO tb_photos(user, photo) VALUES (?, ?)");
         $query->bindParam(1, $user);
         $query->bindParam(2, $photo);
 

@@ -1,6 +1,7 @@
 <?php
-
-session_start();
+require_once __DIR__ . "./../_app/models/profileModel.php";
+require_once __DIR__ . "./../_app/boot/helpers.php";
+// session_start();
 
 ?>
 <!DOCTYPE html>
@@ -12,8 +13,35 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carroussel &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
+
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+
+
+  <style>
+    .carrousselPhoto {
+      width: 721px !important;
+      height: 963px !important;
+    }
+
+    .alert {
+      position: relative;
+      padding: 1rem 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      border-radius: 0.25rem;
+    }
+
+    .alert-warning {
+      color: #664d03;
+      background-color: #fff3cd;
+      border-color: #ffecb5;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -21,19 +49,29 @@ session_start();
     <div id="div-left">
       <div id="user-information">
         <figure>
+
+
+          <?php
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
+
           <div class="foto-de-perfil">
-            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
             <div class="status"></div>
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])) :
+            if (isset($_SESSION['username'])):
             ?>
 
 
-              <h2><?= $_SESSION['username'];
-                endif ?></h2>
-              <span id="show-status-window">Escolher status</span>
+            <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+            </h2>
+            <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -103,87 +141,130 @@ session_start();
       <h1 class="title">Carroussel</h1>
 
       <figure id="informacoes-perfil">
-        <img src="./../debug-images/temp-4.png" alt="Foto de perfil" />
+
+
+        <?php
+
+        ?>
+
+        <img src="./../_storage/images/<?= $get['photo']; ?>" alt="Foto de perfil" class="carrousselPhoto" />
         <figcaption id="descricao-perfil">
-          <h2>Lorem Ipsum</h2>
+
+          <?php
+
+          $data = new profileModel();
+          $for = $data->getUserToCarroussel();
+
+          $others = $data->User('tb_job_tb', 'user', $_SESSION['username']);
+
+          $about = $data->User('tb_sobre_mim', 'user', $_SESSION['username'], '!=');
+
+
+          ?>
+
+          <h2>
+            <?= $for['nome']; ?>
+          </h2>
           <p>
-            Lorem ipsum <span>&middot;</span>
-            <span class="idade">100</span>&nbsp;anos
+            <?= $others['cargo']; ?><span>&middot;</span>
+              <span class="idade">
+                <?php
+
+
+                $fullYear = new profileModel();
+                $getY = $fullYear->Age('data_nascimento', $for['nome']);
+                $show = UserAge($getY);
+                echo $show;
+
+                ?>
+              </span>&nbsp;anos
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            non fringilla lacus. Aliquam eget accumsan turpis<br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            non fringilla lacus. Aliquam eget accumsan turpis<br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            non fringilla lacus. Aliquam eget accumsan turpis<br />
+            <?= $about['sobre'] . "<br>"; ?>
           </p>
           <div class="botoes">
-            <button class="dislike"></button>
-            <button class="like"></button>
+
+            <form action="./../_app/controllers/curtidasController.php" method="post">
+
+              <button class="dislike" name="deslike" value="<?= $for['nome']; ?>"></button>
+              <button class="like" name="like" value="<?= $for['nome']; ?>"></button>
+            </form>
+
+            <?php
+            if (isset($_SESSION['message'])):
+            ?>
+
+            <script>
+              alert("<?php echo $_SESSION['message'];
+              unset($_SESSION['message']); ?> ")
+            </script>
+            <?php
+
+            endif;
+            ?>
           </div>
         </figcaption>
       </figure>
 
+
+      <?php
+
+      $teste = new profileModel();
+      echo "<pre>";
+      // var_dump($teste->User('tb_sobre_mim', 'user', '!=', 'fetchAll'));
+      echo "</pre>";
+      ?>
+
+
       <section class="outras-pessoas">
 
-        <div class="outro-perfil">
-          <img src="./../debug-images/temp-4.png" alt="Foto perfil" />
-          <div class="textual">
-            <h2>Lorem Ipsum</h2>
-            <p>
-              Lorem ipsum<span>&middot;</span>
-              <span class="idade">100</span>&nbsp;anos
-            </p>
-          </div>
-          <a href="mensagens.html">
-            <button class="conversar"></button>
-          </a>
-        </div>
 
-        <div class="outro-perfil">
-          <img src="./../debug-images/temp-4.png" alt="Foto perfil" />
-          <div class="textual">
-            <h2>Lorem Ipsum</h2>
-            <p>
-              Lorem ipsum<span>&middot;</span>
-              <span class="idade">100</span>&nbsp;anos
-            </p>
-          </div>
-          <a href="mensagens.html">
-            <button class="conversar"></button>
-          </a>
-        </div>
 
-        <div class="outro-perfil">
-          <img src="./../debug-images/temp-4.png" alt="Foto perfil" />
-          <div class="textual">
-            <h2>Lorem Ipsum</h2>
-            <p>
-              Lorem ipsum<span>&middot;</span>
-              <span class="idade">100</span>&nbsp;anos
-            </p>
-          </div>
-          <a href="mensagens.html">
-            <button class="conversar"></button>
-          </a>
-        </div>
+        <?php
+        $fullYear = new profileModel();
+        $age = UserAge($fullYear->userAge());
 
-        <div class="outro-perfil">
-          <img src="./../debug-images/temp-4.png" alt="Foto perfil" />
-          <div class="textual">
-            <h2>Lorem Ipsum</h2>
-            <p>
-              Lorem ipsum<span>&middot;</span>
-              <span class="idade">100</span>&nbsp;anos
-            </p>
+
+        // $get = ;
+        // $dd = $fullYear->User('tb_cadastroConta2', 'nome', $_SESSION['username'], '!=', 'fetchAll', 4);
+        
+
+
+        $user = $teste->User('tb_job_tb', 'user', $_SESSION['username'], '!=', 'fetchAll');
+        foreach ($user as $item) {
+          $_SESSION['nameUser'] = $item['user'];
+          $Modal = $photo->User('tb_photos', 'user', $item['user'], '=');
+
+          $getY = $fullYear->Age('data_nascimento', $item['user']);
+          $show = UserAge($getY);
+
+          echo "
+          <div class='outro-perfil'>
+          <img src='./../_storage/images/{$Modal['photo']}'alt='Foto Perfil'>
+          <div class='textual'>
+          {$item['user']}
+
+          <p>
+          {$item['cargo']}<span>&middot;</span>
+          <span class='idade'>
+            {$show}
+          </span> &nbsp; anos
+          </p>
           </div>
-          <a href="mensagens.html">
-            <button class="conversar"></button>
-          </a>
-        </div>
+
+          <a href='mensagens.php'>
+          <button class='conversar'></button>
+        </a>
+
+          </div>";
+
+        }
+
+        ?>
+
 
       </section>
+
     </main>
     <footer id="footer-mobile">
       <nav>

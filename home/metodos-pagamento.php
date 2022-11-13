@@ -7,6 +7,7 @@ session_start();
 <html lang="pt-BR">
 
 <head>
+
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +15,8 @@ session_start();
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+
+
   <style>
     .padrao {
       min-height: max-content;
@@ -21,7 +24,32 @@ session_start();
       max-height: max-content;
       padding: 40px 30px;
     }
+
+    .alert {
+      position: relative;
+      padding: 1rem 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      border-radius: 0.25rem;
+    }
+
+    .alert-danger {
+      color: #842029;
+      background-color: #f8d7da;
+      border-color: #f5c2c7;
+    }
+
+    .alert-success {
+      color: #0f5132;
+      background-color: #d1e7dd;
+      border-color: #badbcc;
+    }
+
+    .text-center {
+      text-align: center;
+    }
   </style>
+
 </head>
 
 <body>
@@ -35,13 +63,14 @@ session_start();
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])) :
+            if (isset($_SESSION['username'])):
             ?>
 
 
-              <h2><?= $_SESSION['username'];
-                endif ?></h2>
-              <span id="show-status-window">Escolher status</span>
+            <h2>
+              <?= $_SESSION['username']; endif ?>
+            </h2>
+            <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -77,25 +106,25 @@ session_start();
 
       <nav>
         <ul id="menu-left">
-          <li><a href="./perfil.html">Perfil</a></li>
-          <li><a href="chamada.html">Chamada de video</a></li>
-          <li><a href="carroussel.html">Carroussel</a></li>
-          <li><a href="curtidas.html">Curtidas</a></li>
+          <li><a href="./perfil.php">Perfil</a></li>
+          <li><a href="chamada.php">Chamada de video</a></li>
+          <li><a href="carroussel.php">Carroussel</a></li>
+          <li><a href="curtidas.php">Curtidas</a></li>
           <li>
-            <a href="planos.html" class="pagina-selecionada">Planos</a>
+            <a href="planos.php" class="pagina-selecionada">Planos</a>
           </li>
-          <li><a href="favoritos.html">Favoritos</a></li>
-          <li><a href="configuracoes.html">Configurações</a></li>
+          <li><a href="favoritos.php">Favoritos</a></li>
+          <li><a href="configuracoes.php">Configurações</a></li>
           <li>
-            <a href="mensagens.html">Mensagens</a>
+            <a href="mensagens.php">Mensagens</a>
           </li>
-          <li><a href="servicos.html">Serviços</a></li>
-          <li><a href="online.html">Online agora</a>
+          <li><a href="servicos.php">Serviços</a></li>
+          <li><a href="online.php">Online agora</a>
           </li>
-          <li><a href="teste-de-amor.html">Teste de amor</a></li>
+          <li><a href="teste-de-amor.php">Teste de amor</a></li>
         </ul>
       </nav>
-      <a href="localizar-pessoas.html">
+      <a href="localizar-pessoas.php">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
 
@@ -110,49 +139,105 @@ session_start();
   </div>
 
   <div id="main-container">
+
+
+
+
     <main class="padrao" id="planos">
+
+
+      <?php
+    if (isset($_SESSION['error'])):
+    ?>
+
+      <div class="alert alert-danger text-center" role="alert">
+
+        <?php
+      if (isset($_SESSION['error'])) {
+        foreach ($_SESSION['error'] as $errors) {
+          echo $errors;
+          unset($_SESSION['error']);
+          unset($errors);
+        }
+      }
+
+      ?>
+
+      </div>
+
+      <?php
+    endif;
+    ?>
+
+      <?php
+    if (isset($_SESSION['return'])):
+    ?>
+
+      <div class="alert alert-success text-center" role="alert">
+
+        <?php
+    
+      echo $_SESSION['return'];
+      unset($_SESSION['return']);
+
+      ?>
+
+      </div>
+
+      <?php
+    endif;
+    ?>
+
       <section id="metodo-pagamento">
         <h1 class="title">Métodos de Pagamento</h1>
         <div class="method-container">
           <section class="left-side">
+
             <h3>Cadastrar cartão de credito</h3>
-            <label for="">Número do cartão</label>
-            <input type="number" placeholder="Insira o número" />
-            <label for="">Nome do titular</label>
-            <input type="text" id="" placeholder="Nome titular" />
-            <div class="card-validity">
-              <div>
-                <span>Mês</span>
-                <select class="select-placeholder">
-                  <option hidden selected disabled value="">MM</option>
-                </select>
-              </div>
 
-              <div>
-                <span>Ano</span>
-                <select class="select-placeholder">
-                  <option hidden disabled selected value="">AAAA</option>
-                </select>
-              </div>
+            <form action="./../_app/controllers/planosController.php" method="post" class="left-side" novalidate>
 
-              <div>
-                <span>CVV</span>
-                <input type="number" placeholder="CVV" />
+
+              <label for="">Número do cartão</label>
+              <input type="number" placeholder="Insira o número" name="card-number" />
+              <label for="">Nome do titular</label>
+              <input type="text" id="" placeholder="Nome titular" name="card-titular" />
+              <div class="card-validity">
+                <div>
+                  <span>Mês</span>
+                  <select class="select-placeholder" name="mes">
+                    <option hidden selected disabled value="">MM</option>
+                  </select>
+                </div>
+
+                <div>
+                  <span>Ano</span>
+                  <select class="select-placeholder" name="ano">
+                    <option hidden disabled selected value="">AAAA</option>
+                  </select>
+                </div>
+
+                <div>
+                  <span>CVV</span>
+                  <input type="number" placeholder="CVV" name="cvv" />
+                </div>
               </div>
-            </div>
-            <select>
-              <option hidden selected>Número de parcelas</option>
-              <option value="1">1 parcela</option>
-              <option value="2">2 parcelas</option>
-              <option value="3">3 parcelas</option>
-              <option value="4">4 parcelas</option>
-            </select>
-            <button class="btn-register">Salvar método de pagamento</button>
+              <select>
+                <option hidden selected name="parcelas">Número de parcelas</option>
+                <option value="1">1 parcela</option>
+                <option value="2">2 parcelas</option>
+                <option value="3">3 parcelas</option>
+                <option value="4">4 parcelas</option>
+              </select>
+              <button class="btn-register">Salvar método de pagamento</button>
+
           </section>
           <section class="right-side">
-            <section id="payment-method">
+            <section id="payment-method" name="metodoPagamento  ">
               <!-- As opções aqui são dinamicamente inseridas pelo JavaScript -->
             </section>
+
+            </form>
 
             <div id="card-bank">
               <div class="bank-indicative">
