@@ -7,22 +7,12 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<<<<<<< HEAD
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carroussel &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
-=======
-          <img  class="vizualizar-menu" src="./../images/option.svg" />
-          <div class="hidden-list">
-            <ul>
-              <a href="bloqueados.php" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
-              <a class="logout" href="./../index.php"><li>Sair</li></a>
-            </ul>
-          </div><div id="online-now">
->>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
 
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
@@ -76,28 +66,6 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
             if (isset($_SESSION['username'])):
             ?>
 
-<<<<<<< HEAD
-=======
-        <nav>
-          <ul id="menu-left">
-            <li><a href="./perfil.php">Perfil</a></li>
-            <li><a href="chamada.php">Chamada de video</a></li>
-            <li><a href="#" class="pagina-selecionada">Carroussel</a></li>
-            <li><a href="curtidas.php">Curtidas</a></li>
-            <li><a href="planos.php">Planos</a></li>
-            <li><a href="favoritos.php">Favoritos</a></li>
-            <li><a href="configuracoes.php">Configurações</a></li>
-            <li><a href="mensagens.php">Mensagens</a></li>
-            <li><a href="servicos.php">Serviços</a></li>
-            <li><a href="online.php">Online agora</a>
-            </li>
-            <li><a href="teste-de-amor.php">Teste de amor</a></li>
-          </ul>
-        </nav>
-        <a href="localizar-pessoas.php"
-          ><div id="peoples-left">
-            <h4>Pessoas pela região</h4>
->>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
 
             <h2>
               <?= $_SESSION['username'];
@@ -107,7 +75,6 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
           </figcaption>
         </figure>
 
-<<<<<<< HEAD
         <img class="vizualizar-menu" src="./../images/option.svg" />
         <div class="hidden-list">
           <ul>
@@ -115,76 +82,6 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
               <li>Membros Bloqueados</li>
             </a>
             <li>Lorem Ipsum exemplo</li>
-=======
-        <section class="outras-pessoas">
-
-          <div class="outro-perfil">
-            <img src="./../debug-images/temp-4.png" alt="Foto perfil" />
-            <div class="textual">
-              <h2>Lorem Ipsum</h2>
-              <p>
-                Lorem ipsum<span>&middot;</span>
-                <span class="idade">100</span>&nbsp;anos
-              </p>
-            </div>
-            <a href="mensagens.php">
-              <button class="conversar"></button>
-            </a>
-          </div>
-
-          <div class="outro-perfil">
-            <img src="./../debug-images/temp-4.png" alt="Foto perfil" />
-            <div class="textual">
-              <h2>Lorem Ipsum</h2>
-              <p>
-                Lorem ipsum<span>&middot;</span>
-                <span class="idade">100</span>&nbsp;anos
-              </p>
-            </div>
-            <a href="mensagens.php">
-              <button class="conversar"></button>
-            </a>
-          </div>
-
-          <div class="outro-perfil">
-            <img src="./../debug-images/temp-4.png" alt="Foto perfil" />
-            <div class="textual">
-              <h2>Lorem Ipsum</h2>
-              <p>
-                Lorem ipsum<span>&middot;</span>
-                <span class="idade">100</span>&nbsp;anos
-              </p>
-            </div>
-            <a href="mensagens.php">
-              <button class="conversar"></button>
-            </a>
-          </div>
-
-          <div class="outro-perfil">
-            <img src="./../debug-images/temp-4.png" alt="Foto perfil" />
-            <div class="textual">
-              <h2>Lorem Ipsum</h2>
-              <p>
-                Lorem ipsum<span>&middot;</span>
-                <span class="idade">100</span>&nbsp;anos
-              </p>
-            </div>
-            <a href="mensagens.php">
-              <button class="conversar"></button>
-            </a>
-          </div>
-
-        </section>
-      </main>
-      <footer id="footer-mobile">
-        <nav>
-          <ul>
-            <li><a href="./index.php"></a></li>
-            <li><a href="./localizar-pessoas.php"></a></li>
-            <li><a href="./favoritos.php"></a></li>
-            <li><a href="./mensagens.php"></a></li>
-            <li><button id="mostra-menu-mobile"></button></li>
->>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
           </ul>
         </div>
         <div id="online-now">
