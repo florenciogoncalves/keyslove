@@ -669,8 +669,8 @@ input::-webkit-calendar-picker-indicator {
 /*Estilizando o arquivo 'mensagens.php'
 *Para a lista de pessoas*/
 main#mensagens {
-  display: flex;
-  grid-template-columns: auto 1fr;
+  display: grid;
+  grid-template-columns: 34% 1fr;
   height: calc(100vh - 10px);
   margin: auto;
   width: 100%;
@@ -678,8 +678,6 @@ main#mensagens {
 
 main#mensagens .peoples-to-chat,
 #bloqueados #blacklist {
-  width: 330px;
-
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   background: #fff;
@@ -823,8 +821,8 @@ main#mensagens .chat {
 }
 
 #mensagens .botoes-top button {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   border: none;
   background: none;
   background-repeat: no-repeat;
@@ -966,7 +964,7 @@ main#mensagens .chat {
 
 #mensagens .text-container {
   background: #f4f4f4;
-  max-width: 60%;
+  max-width: 55%;
   min-height: 20px;
   height: max-content;
   margin-left: 25px;
@@ -980,6 +978,7 @@ main#mensagens .chat {
   overflow: hidden;
   max-height: max-content;
   word-break: break-word;
+  font-size: 13px;
 }
 
 #mensagens .text-container .blur {
