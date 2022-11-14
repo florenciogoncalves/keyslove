@@ -406,8 +406,12 @@
                   </p>
                 </div>
               </div>
+
             </div>
+            <span id="message-file">File<button class="clear-file">X</button></span>
+
             <div id="create-message">
+
               <input type="file" id="select-file" style="display: none" />
               <label class="add-media" for="select-file">+</label>
               <div class="message-text-container">
@@ -416,7 +420,7 @@
                   id="message-text"
                   placeholder="Escreva a mensagem..."
                 ></textarea>
-                <button class="send-message" onclick="enviar()"></button>
+                <button class="send-message"></button>
               </div>
             </div>
           </section>

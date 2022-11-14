@@ -113,84 +113,84 @@
           <h2 class="title">Membros bloqueados</h2>
           <ul id="blacklist">
             <li class="person person-selected">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
               </div>
               <button class="simple-btn">Desbloquear</button>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
               </div>
               <button class="simple-btn">Desbloquear</button>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
               </div>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
               </div>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
               </div>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
               </div>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
               </div>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
               </div>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
               </div>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
               </div>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
               </div>
             </li>
             <li class="person">
-              <object data=""></object>
+              <img src="">
               <div class="dados">
                 <span>Lorem Ipsum Exemplo</span>
                 
@@ -200,6 +200,18 @@
           </ul>
         
       </main>
+
+      <footer id="footer-mobile">
+        <nav>
+          <ul>
+            <li><a href="./index.php"></a></li>
+            <li><a href="./localizar-pessoas.php"></a></li>
+            <li><a href="./favoritos.php"></a></li>
+            <li><a href="./mensagens.php"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
     </div>
 
     <script src="./../script/script.js"></script>
