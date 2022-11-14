@@ -34,8 +34,7 @@ try {
   mostrarMenuMobile.addEventListener("click", () => {
     menuMobile.style.display = "flex";
     setTimeout(() => {
-      menu.style.tran;
-      sform = "translateY(0%)";
+      menu.style.transform = "translateY(0%)";
     }, 100);
   });
   //Evento para clique no menu oculto
@@ -44,7 +43,7 @@ try {
     992
   ) {
     menuMobile.addEventListener("click", (evt) => {
-      if (!menu.contains(evt.target)) {
+      if (!menu.contains(evt.target) && menuMobile.style.display == "flex") {
         menu.style.transform = "translateY(100%)";
         setTimeout(() => {
           menuMobile.style.display = "none";
@@ -270,34 +269,94 @@ document.querySelectorAll("#favoritos nav label").forEach((element) => {
     ).style.display = "block";
   });
 });
+try {
+  document
+    .querySelectorAll("#conf-list span.edit")
+    .forEach((element, index) => {
+      const btnsEdit = document.querySelectorAll("#conf-list input");
+      const saveValue = [];
 
-/*Adicionando função editar*/
-document.querySelectorAll("#conf-list span.edit").forEach((element, index) => {
-  btnsEdit = document.querySelectorAll("#conf-list input");
-  element.addEventListener("click", () => {
-    btnsEdit[index].removeAttribute("disabled");
-    btnsEdit[index].focus();
-    /*Mostrar campo de password*/
-    if (btnsEdit[index].getAttribute("type") == "password") {
-      btnsEdit[index].setAttribute("type", "text");
-    }
-    if (
-      btnsEdit[index].addEventListener("keyup", (e) => {
-        if (e.key == "Enter") btnsEdit[index].setAttribute("disabled", true);
-      })
-    )
-      alert();
-    btnsEdit[index].addEventListener("focusout", () => {
-      btnsEdit[index].setAttribute("disabled", true);
-      /*Ocultar password*/
-      if (index == 3) {
-        btnsEdit[index].setAttribute("type", "password");
-      }
+      element.addEventListener("click", () => {
+        btnsEdit[index].removeAttribute("disabled");
+        btnsEdit[index].focus();
+        saveValue[index] = btnsEdit[index].value;
+
+        //Mostrar campo de password
+        if (btnsEdit[index].getAttribute("type") == "password") {
+          btnsEdit[index].setAttribute("type", "text");
+        }
+        if (
+          btnsEdit[index].addEventListener("keyup", (e) => {
+            if (e.key == "Enter")
+              btnsEdit[index].setAttribute("disabled", true);
+          })
+        ) {
+          btnsEdit[index].setAttribute("type", "text");
+        }
+
+        /*As requisições vão aqui*/
+      });
+      //Ao perder foco, deixar imutável
+      btnsEdit[index].addEventListener("focusout", () => {
+        if (index == 1 && btnsEdit[index].value.length < 11) {
+          btnsEdit[index].value = saveValue[index];
+        }
+
+        if (index == 2) {
+          if (
+            !(
+              btnsEdit[index].value.match("@") &&
+              btnsEdit[index].value
+                .substring(btnsEdit[index].value.match("@").index + 1)
+                .includes(".") &&
+              btnsEdit[index] != saveValue[index]
+            )
+          ) {
+            alert("Insira um email correcto.");
+            btnsEdit[index].value = saveValue[index];
+          }
+        }
+
+        //Campo password
+        if (index == 3) {
+          btnsEdit[index].setAttribute("type", "password");
+          function testPass() {
+            if (!btnsEdit[index].value.match(/[A-Z]+/)) {
+              return false;
+            } else if (!btnsEdit[index].value.match(/[@#$%&;*?_+*!]/)) {
+              return false;
+            } else if (!btnsEdit[index].value.match(/[0-9]+/)) {
+              return false;
+            } else if (
+              btnsEdit[index].value.length < 6 &&
+              btnsEdit[index].value != ""
+            ) {
+              return false;
+            } else return true;
+          }
+
+          if (!testPass()) {
+            btnsEdit[index].setAttribute("disabled", true);
+            btnsEdit;
+            alert("Escolha uma password forte.");
+          } else if (btnsEdit[index].value != saveValue[index]) {
+            console.log(btnsEdit[index].value + " <> " + saveValue[index]);
+            btnsEdit[index].setAttribute("disabled", true);
+            alert("Sua palavra passe foi alterada.");
+          }
+        }
+
+        if (btnsEdit[index].value.length < 2) {
+          btnsEdit[index].value = saveValue[index];
+        }
+
+        btnsEdit[index].setAttribute("disabled", true);
+      });
     });
-
-    /*As requisições vão aqui*/
-  });
-});
+} catch (error) {
+  console.error(error);
+}
+/*Adicionando função editar*/
 
 /*Para .exit de configurações
  *Constantes das telas*/
@@ -540,16 +599,88 @@ pegarTodos(".outro-perfil").forEach((current) => {
 
 /*Enviar mensagem */
 try {
+  //Enviar arquivo
   const escreverMensagem = pegar("textarea#message-text");
-  escreverMensagem.addEventListener("keydown", (e) => {
-    if (e.keyCode == 13 && e.ctrlKey) escreverMensagem.value += "\n";
-    else if (e.keyCode == 13 && !e.ctrlKey) {
-      enviar();
+
+  const sendFile = document.querySelector("#select-file");
+  const labelFile = document.querySelector("#message-file");
+  let refFile
+
+  labelFile.querySelector("button").addEventListener("click", () => {
+    labelFile.firstChild.textContent = "File";
+    labelFile.style.display = "none";
+    sendFile.value = "";
+  });
+
+  //Evento para o envio de arquivo
+  document.querySelector('#create-message .send-message').addEventListener('click', () => {
+    if(labelFile.style.display == 'block') {
+      setSendFile()
+    }
+    else enviar()
+  })
+
+  sendFile.addEventListener("change", () => {
+    
+    //Evento para o envio
+    window.addEventListener('keydown',  (k) => {
+      console.log(k.code)
+      if (k.key == 'Enter' && labelFile.style.display == 'block'){
+        setSendFile()
+      }
+    })
+
+
+    // Caso tenha sido carregado algum ficheiro
+    if (sendFile.files && sendFile.files[0]) {
+      var file = new FileReader();
+
+      file.onload = function (e) {
+        labelFile.style.display = "block";
+
+        labelFile.firstChild.textContent = sendFile.files[0].name;
+        refFile = e.target.result;
+      };
+      file.readAsDataURL(sendFile.files[0]);
     }
   });
-  function enviar() {
-    if (escreverMensagem.value != "") {
-      let horario = new Date();
+
+  function setSendFile() {
+    updateDate()
+    let enviarFicheiro =
+        "<div class='the-message-container user'><div class='identifier'><span>" +
+        dia +
+        "<span> &middot; </span> as " +
+        hora +
+        ":" +
+        minuto +
+        "</span></div><div class='text-container sended-file'><a class='writed-message' href='" + refFile + "' download>" +
+        sendFile.files[0].name +
+        "</a></div>";
+
+      document.querySelector("#sended").innerHTML += enviarFicheiro;
+      refFile = ''
+      
+      labelFile.style.display = 'none'
+      pegar("#sended").scrollTo(0, 1000);
+  }
+
+  //Enviar mensagem de texto
+  //Nova linha <br> \n
+  escreverMensagem.addEventListener("keydown", (e) => {
+    if ((e.keyCode == 13 && e.ctrlKey) || (e.keyCode == 13 && e.shiftKey))
+      escreverMensagem.value += "\n";
+    else if (e.keyCode == 13 && !e.ctrlKey && labelFile.style.display != 'block') {
+      enviar();
+    }
+    else if (e.keyCode == 13 && labelFile.style.display == 'block'){
+      escreverMensagem.blur()
+      setSendFile()
+    }
+  });
+
+  function updateDate() {
+    let horario = new Date();
       const diasDeSemana = [
         "Domingo",
         "Segunda",
@@ -560,34 +691,38 @@ try {
         "Sábado",
       ];
       dia = diasDeSemana[horario.getDay()];
-      hora = horario.getDay();
+      hora = horario.getHours();
       minuto = horario.getMinutes();
 
-      function formating(value) {
+function formating(value) {
         if (value < 10) {
-          value = '0' + value
+          value = "0" + value;
         }
 
-        return value
+        return value;
       }
 
-      hora = formating(hora)
-      minuto = formating(minuto)
+      hora = formating(hora);
+      minuto = formating(minuto);
+
+  }
+
+  function enviar() {
+    if (escreverMensagem.value != "") {
+      updateDate()
 
       var enviar =
-        "<div class='the-message-container user'><div class='identifier'><span>" +
+        ("<div class='the-message-container user'><div class='identifier'><span>" +
         dia +
         "<span> &middot; </span> as " +
         hora +
         ":" +
         minuto +
-        "</span></div><div class='text-container'><p class='writed-message'>" +
-        escreverMensagem.value.replaceAll("\n", "<br>") +
-        "</p></div>";
+        "</span></div><div class='text-container'><p class='writed-message'></p></div>").toString();
       pegar("#sended").innerHTML += enviar;
+      document.querySelector('#sended .user:last-of-type .writed-message').innerText = (escreverMensagem.value.replaceAll("<br>", "\n"))
     }
     escreverMensagem.blur();
-    pegar("#sended").lastChild.focus();
     escreverMensagem.value = "";
     escreverMensagem.style.height = "max-content";
     pegar("#sended").scrollTo(0, 1000);
@@ -603,9 +738,8 @@ try {
 
   if (innerWidth <= 992) {
     pegar("#person-selected").removeAttribute("id");
-  }
-  else {
-    backToPeoples.style.display = 'none'
+  } else {
+    backToPeoples.style.display = "none";
   }
 
   peoples.forEach((person) => {
@@ -674,6 +808,17 @@ function showModalCondition(theModal, theButton, refModalName, definitive) {
   }
 }
 
+//Para modal de home
+try {
+  showModalCondition("modal-home-1", ".close-modal", "homeModal1", true);
+
+  showModalCondition("modal-home-2", ".close-modal", "homeModal2", true);
+  showModalCondition("modal-home-2", "#active", "homeModal2", true);
+  showModalCondition("modal-home-2", "#pass-this", "homeModal2", true);
+} catch (error) {
+  erros.push(error);
+}
+
 //Para o modal de perfil 'Melhore seu perfil'
 try {
   showModalCondition("modal-perfil-1", ".close-modal", "perfilModal", true);
@@ -707,7 +852,7 @@ try {
   erros.push(error);
 }
 
-//Para modal de teste do amor
+/*Para modal de teste do amor
 try {
   showModalCondition(
     "modal-teste-amor",
@@ -725,34 +870,70 @@ try {
 } catch (error) {
   erros.push(error);
 }
-
-//LocalStorage para  as configurações
+*/
+/*
+ ***************************************************
+ ***     LocalStorage para  as configurações     ***
+ ***************************************************
+ */
 try {
-  function switchStorage (element, ref) {
-    element = document.querySelector(element)
-if(localStorage.getItem(ref) == 'on')
-      element.checked = true
-    else 
-      element.checked = false
+  function switchStorage(element, ref, definitive) {
+    element = document.querySelector(element);
+    if (definitive) {
+      if (localStorage.getItem(ref) == "on") element.checked = true;
+      else element.checked = false;
 
+      element.addEventListener("change", () => {
+        if (element.checked) {
+          localStorage.setItem(ref, "on");
+        } else localStorage.setItem(ref, "off");
+      });
+    } else {
+      if (sessionStorage.getItem(ref) == "on") element.checked = true;
+      else element.checked = false;
 
-    element.addEventListener('change', () => {
-    if(element.checked){
-      localStorage.setItem(ref, 'on')
+      element.addEventListener("change", () => {
+        if (element.checked) {
+          sessionStorage.setItem(ref, "on");
+        } else sessionStorage.setItem(ref, "off");
+      });
     }
-    else localStorage.setItem(ref, 'off')
-    
-    })
+  }
+
+  try {
+    switchStorage("#active-translator", "translateChat", false);
+  } catch (error) {
+    erros.push(error);
   }
 
   //chamando...
-  switchStorage('#showme-online', 'beOnline')
-  switchStorage('#let-invisible', 'beInvisible')
-  switchStorage('#show-me', 'showMe')
+  switchStorage("#showme-online", "beOnline", true);
+  switchStorage("#let-invisible", "beInvisible", true);
+  switchStorage("#show-me", "showMe", true);
 
-  switchStorage('#active-notifications', 'activeNotifications')
-  switchStorage('#message-notifications', 'messagesNotifications')
-  switchStorage('#match-notifications', 'matchNotifications')
+  switchStorage("#active-notifications", "activeNotifications", true);
+  switchStorage("#message-notifications", "messagesNotifications", true);
+  switchStorage("#match-notifications", "matchNotifications", true);
 } catch (error) {
-  erros.push(error)
+  erros.push(error);
+}
+
+try {
+  document.querySelector("#home .talk-now").addEventListener("click", () => {
+    if (innerWidth <= 992) {
+      sessionStorage.openChat = "on";
+    }
+  });
+} catch (error) {
+  erros.push(error);
+}
+
+try {
+  if (sessionStorage.openChat == "on") {
+    pegar(".peoples-to-chat").style.display = "none";
+    pegar(".chat").className = "chat";
+    sessionStorage.openChat = "off";
+  }
+} catch (error) {
+  erros.push(error);
 }

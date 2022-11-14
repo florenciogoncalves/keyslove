@@ -1,5 +1,5 @@
 /*Extra dispositivos pequenos(phones, 600px para baixo)*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 992px) {
   body {
     padding: 0 !important;
     background-size: contain !important;
@@ -46,7 +46,6 @@
     max-width: 100% !important;
     z-index: 5;
     overflow: hidden;
-    overflow-y: scroll;
     margin: 0 !important;
     background: rgba(0, 0, 0, 0.315);
     backdrop-filter: blur(2px);
@@ -672,11 +671,11 @@
   /*Curtidas.php*/
   .list,
   #curtidas .list {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
-    row-gap: 15px !important;
-    column-gap: 15px !important;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+    gap: 20px !important;
     justify-content: space-between;
     box-sizing: border-box !important;
+    padding: 0 10px !important;
   }
 
   #curtidas {
@@ -686,21 +685,34 @@
     max-width: 100% !important;
   }
 
+  /*pessoas região*/
+  #pessoas-regiao,
+  #favoritos {
+    grid-template-rows: max-content max-content 1fr !important;
+  }
+
+
+
+  .list .botoes button{
+    width: 35px !important;
+    height: 35px !important;
+  }
+
   #pessoas-regiao span,
   #online-agora span,
-  #curtidas span {
+  .list span {
     font-size: 11pt;
   }
 
   #pessoas-regiao li li,
   #online-agora li li,
-  #curtidas li li {
+  .list li li {
     font-size: 8pt;
   }
 
   #pessoas-regiao li section,
   #online-agora li section,
-  #curtidas li section {
+  .list li section {
     position: relative !important;
     height: 100% !important;
     display: flex;
@@ -711,7 +723,7 @@
 
   #pessoas-regiao  li section article,
   #online-agora li section article,
-  #curtidas li section article {
+  .list li section article {
     box-sizing: border-box !important;
     margin: auto auto 10px !important;
     max-width: 100%;
@@ -1306,6 +1318,11 @@
   #mensagens .chat-mobile {
     display: none !important;
   }
+
+  #mensagens .options-container {
+    left: auto !important;
+    right: 10px !important;
+  }
   
   /*Botão voltar para pessoas para conversar*/
   #back-to-peoples {
@@ -1443,6 +1460,96 @@
   dialog#modal-teste-amor img {
     width: 25%;
 }
+
+/*
+*******************************
+***     page bloqueados     ***
+*******************************
+*/
+#bloqueados #blacklist {
+  width: 100% !important;
+}
+
+#bloqueados #blacklist .person {
+  height: max-content !important;
+  margin: 5px 0 !important;
+}
+
+#bloqueados #blacklist img {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+#bloqueados #blacklist .person span {
+  font-size: 11px !important;
+}
+
+#bloqueados #blacklist .person button {
+  font-size: 10px !important;
+}
+
+/*
+*******************************
+***       video-chamada     ***
+*******************************
+*/
+#chamada-video {
+  position: relative;
+  margin: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  padding: 0 !important;
+  width: 100%;
+}
+#chamada-video video {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#chamada-video .legenda-chamada,
+#chamada-video .comandos-chamada {
+  position: relative;
+}
+
+#chamada-video .legenda-chamada {
+  width: 100%;
+  height: max-content;
+  font-size: 16px !important;
+  position: relative;
+}
+
+#chamada-video .legenda-chamada button {
+  position: absolute;
+  width: 35px;
+  height: 100%;
+  top: 0;
+}
+
+#chamada-video .legenda-chamada span {
+  line-height: 3em;
+}
+
+#chamada-video .comandos-chamada {
+  bottom: 0;
+  top: auto;
+}
+
+#chamada-video .comandos-chamada #desligar {
+  max-width: 80px;
+  max-height: 80px;
+  background-size: 60%;
+}
+
+#chamada-video .comandos-chamada button:not(#desligar),
+#chamada-video .comandos-chamada input{
+  max-width: 45px;
+  max-height: 45px;
+  background-size: 40% !important;
+}
+
+
 }
 
 /*Dispositivos médios(landscape tablets, 768px para cima)*/

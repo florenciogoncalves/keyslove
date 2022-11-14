@@ -122,6 +122,7 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
 >>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
       </div>
 
+<<<<<<< HEAD
       <nav>
         <ul id="menu-left">
           <li><a href="./perfil.html">Perfil</a></li>
@@ -143,6 +144,114 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
       <a href="localizar-pessoas.html">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
+=======
+    <div id="main-container">
+      <main id="bloqueados" class="padrao">
+        
+          <h2 class="title">Membros bloqueados</h2>
+          <ul id="blacklist">
+            <li class="person person-selected">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+              </div>
+              <button class="simple-btn">Desbloquear</button>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+              </div>
+              <button class="simple-btn">Desbloquear</button>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <li class="person">
+              <img src="">
+              <div class="dados">
+                <span>Lorem Ipsum Exemplo</span>
+                
+              </div>
+            </li>
+            <div class="gradient"></div>
+          </ul>
+        
+      </main>
+
+      <footer id="footer-mobile">
+        <nav>
+          <ul>
+            <li><a href="./index.php"></a></li>
+            <li><a href="./localizar-pessoas.php"></a></li>
+            <li><a href="./favoritos.php"></a></li>
+            <li><a href="./mensagens.php"></a></li>
+            <li><button id="mostra-menu-mobile"></button></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+>>>>>>> fd982d1ac4dc6a74f2d5191c32b6bee8a634ac2b
 
           <div class="people-organizer">
             <img src="./../debug-images/temp-2.svg" />
