@@ -1225,7 +1225,7 @@ main#mensagens .chat {
   position: relative;
   max-width: 100%;
   height: 100%;
-  display: block;
+  display: flex;
 }
 
 .padrao .list article {
