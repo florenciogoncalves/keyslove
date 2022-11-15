@@ -147,19 +147,24 @@ if (!$_SESSION['username']) {
         </section>
 
         <section class="card-bank-container">
-          <form action="./../_app/controllers/planosController.php" method="post" novalidate>
+
+        <?php
+          $getCard = new profileModel();
+          $card = $getCard->User('tb_metodo_pagamento', 'nomeTitular', $_SESSION['username'], '=', 'fetch');
+        ?>
+
             <div class="card-bank-data">
               <div class="left-side">
                 <span><label for="card-num">Número do cartão</label>
-                  <input type="number" id="card-num" placeholder="0000000000000" name="numero-cartao" /></span>
+                  <input type="number" id="card-num" placeholder="<?= $card['numeroCartao'] ?>" name="numero-cartao" disabled/></span>
                 <span>
                   <label for="titular-name">Nome do titular</label>
-                  <input type="text" id="titular-name" placeholder="Lorem Ipsum" name="nome-titular" />
+                  <input type="text" id="titular-name" placeholder="<?= $card['nomeTitular'] ?>" name="nome-titular" disabled/>
                 </span>
                 <div class="validate">
                   <label for="validate">Validade</label>
-                  <input type="number" min="1" max="99" placeholder="00" name="validade-mes" />
-                  <input type="number" max="99" placeholder="00" name="validade-ano" />
+                  <input type="number" min="1" max="99" placeholder="<?= $card['mes'] ?>" name="validade-mes" disabled/>
+                  <input type="number" max="99" placeholder="<?= $card['ano'] ?>" name="validade-ano" disabled/>
                 </div>
               </div>
               <div class="right-side">
