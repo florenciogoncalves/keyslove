@@ -1,7 +1,10 @@
 <?php
 
 session_start();
-
+if (!$_SESSION['username']) {
+  header("Location: ../");
+  $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

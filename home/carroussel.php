@@ -2,7 +2,10 @@
 require_once __DIR__ . "./../_app/models/profileModel.php";
 require_once __DIR__ . "./../_app/boot/helpers.php";
 // session_start();
-
+if (!$_SESSION['username']) {
+  header("Location: ../");
+  $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -68,8 +71,7 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
 
 
             <h2>
-              <?= $_SESSION['username'];
-            endif ?>
+              <?= $_SESSION['username']; endif ?>
             </h2>
             <span id="show-status-window">Escolher status</span>
           </figcaption>
@@ -196,7 +198,7 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
 
             <script>
               alert("<?php echo $_SESSION['message'];
-              unset($_SESSION['message']); ?> ")
+              unset($_SESSION[' message ']); ?> ")
             </script>
             <?php
 
@@ -208,11 +210,7 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
 
 
       <?php
-
       $teste = new profileModel();
-      echo "<pre>";
-      // var_dump($teste->User('tb_sobre_mim', 'user', '!=', 'fetchAll'));
-      echo "</pre>";
       ?>
 
 
@@ -248,7 +246,7 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
           {$item['cargo']}<span>&middot;</span>
           <span class='idade'>
             {$show}
-          </span> &nbsp; anos
+          </span> &nbsp;anos
           </p>
           </div>
 

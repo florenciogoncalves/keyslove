@@ -168,43 +168,31 @@ class profileModel extends connect
         return $user;
     }
 
-    // public function getMorePeople(): bool
-    // {
-    //     if (isset($_SESSION['username_id'])) {
-    //         $id = $_SESSION['username_id'];
-    //     }
-
-    //     $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `id` != ?");
-    //     $query->bindParam(1, $id);
-    //     $query->execute();
-    //     $user = $query->fetch(PDO::FETCH_ASSOC);
-
-    //     $about = $this->connect->prepare("SELECT * FROM tb_sobre_mim WHERE id != ?");
-    //     $about->bindParam(1, $id);
-    //     $about->execute();
-
-    //     $getAbout = $about->fetch(PDO::FETCH_ASSOC);
-
-    //     if ($query->rowCount() > 1) {
-    //         return true;
-    //     }
-    //     return false;
-
-    // }
-
 
     public function reactAction(string $curtiu, string $curtido, string $action): bool
     {
-        $query = $this->connect->prepare("INSERT INTO tb_curtidas(curtiu, curtido, action) VALUES (?, ?, ?)");
-        $query->bindParam(1, $curtiu);
-        $query->bindParam(2, $curtido);
-        $query->bindParam(3, $action);
 
-        if ($query->execute()) {
-            return true;
+        if ($this->verifyReaction($curtiu)) {
+            $Updatequery = $this->connect->prepare("UPDATE tb_curtidas SET action = ? WHERE curtido = ?");
+            $Updatequery->bindParam(1, $action);
+            $Updatequery->bindParam(2, $curtido);
+            $Updatequery->execute();
+        } else {
+
+            $query = $this->connect->prepare("INSERT INTO tb_curtidas(curtiu, curtido, action) VALUES (?, ?, ?)");
+            $query->bindParam(1, $curtiu);
+            $query->bindParam(2, $curtido);
+            $query->bindParam(3, $action);
+
+            if ($query->execute()) {
+                return true;
+            }
+
         }
         return false;
     }
+
+
 
     public function verifyReaction(string $user): bool
     {
@@ -212,7 +200,7 @@ class profileModel extends connect
         $query->bindParam(1, $user);
         $query->execute();
 
-        if ($query->rowCount() > 1) {
+        if ($query->rowCount() > 0) {
             return true;
         }
         return false;

@@ -64,12 +64,13 @@ function UserAge(int $bornYear): int|null
     return date('Y') - $bornYear;
 }
 
-/*
-$string = "03/05/2004";
+function dispatch(string $target)
+{
 
-echo "<pre>";
+    if (isset($_SESSION[$target])) {
+        unset($_SESSION[$target]);
+        die;
+    }
 
-var_dump([
-    "teste" => explode('/', $string)[2]
-]);
-*/
+
+}

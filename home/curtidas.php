@@ -2,7 +2,10 @@
 
 // session_start();
 require_once __DIR__ . "./../_app/models/profileModel.php";
-
+if (!$_SESSION['username']) {
+  header("Location: ../");
+  $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
 
 ?>
 <!DOCTYPE html>
@@ -16,6 +19,13 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+
+  <style>
+    .photoModal {
+      width: 271px !important;
+      height: 302px !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -23,27 +33,31 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
     <div id="div-left">
       <div id="user-information">
         <figure>
-        <?php
+          <?php
           $photo = new profileModel();
           $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
           $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+
+
           ?>
 
-        
+
           <div class="foto-de-perfil">
-          <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
 
             <div class="status"></div>
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])) :
+            if (isset($_SESSION['username'])):
             ?>
 
 
-              <h2><?= $_SESSION['username'];
-                endif ?></h2>
-              <span id="show-status-window">Escolher status</span>
+            <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+            </h2>
+            <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -109,11 +123,74 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
     </div>
   </div>
 
+
+
+
   <div id="main-container">
     <main class="padrao" id="curtidas">
       <h1 class="title">Curtidas</h1>
+
+
+      <?php
+      $getLiked = new profileModel();
+
+      $user = $getLiked->User('tb_curtidas', 'curtiu', $_SESSION['username'], '=', 'fetchAll');
+
+
+      foreach ($user as $item) {
+
+
+
+        $getterPhoto = $getLiked->User('tb_job_tb', 'user', $item['curtido'], '=', 'fetchAll');
+        foreach ($getterPhoto as $item2) {
+          $_SESSION['nameUser'] = $item2['user'];
+          $Modal = $getLiked->User('tb_photos', 'user', $item2['user'], '=');
+        }
+
+
+
+
+        if ($item['action'] == 'like') {
+          $button = "<button class='dislike'name='deslike' value='{$item['curtido']}'></button>";
+        } else {
+          $button = "<button class='like'name='like' value='{$item['curtido']}'></button>";
+        }
+        echo "
+        <ul class='list'>
+        <li>
+        <img src='./../_storage/images/{$Modal['photo']}' class='photoModal'/>
+          <section>
+            <article>
+              <div>
+                <div class='status-div'></div>
+                <span>{$item['curtido']}</span>
+              </div>
+              <ul>
+                <li>Drinks</li>
+                <li>Drinks</li>
+                <li>Drinks</li>
+              </ul>
+            </article>
+              <div class='botoes'>
+            <form action='./../_app/controllers/curtidasController.php' method='post'>
+                {$button}
+            </form>
+
+              </div>
+          </section>
+        </li>
+        </ul>
+        
+        
+        ";
+      }
+      ?>
+      <!--
+
       <ul class="list">
         <li>
+
+
           <img src="./../debug-images/temp-4.png" />
           <section>
             <article>
@@ -133,6 +210,9 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
             </div>
           </section>
         </li>
+     
+       
+
         <li>
           <img src="./../debug-images/temp-4.png" />
           <section>
@@ -454,6 +534,7 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
           </section>
         </li>
       </ul>
+    -->
     </main>
     <footer id="footer-mobile">
       <nav>

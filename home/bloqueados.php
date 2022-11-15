@@ -3,7 +3,10 @@
 // session_start();
 require_once __DIR__ . "./../_app/models/profileModel.php";
 require_once __DIR__ . "./../_app/boot/helpers.php";
-
+if (!$_SESSION['username']) {
+  header("Location: ../");
+  $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -49,26 +52,16 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
           </figcaption>
         </figure>
 
-<<<<<<< HEAD
         <img class="vizualizar-menu" src="./../images/option.svg" />
         <div class="hidden-list">
           <ul>
-            <a href="bloqueados.html" class="pessoas-bloqueadas">
+            <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
             <li>Lorem Ipsum Exemplo exemplo</li>
           </ul>
         </div>
         <div id="online-now">
-=======
-          <img  class="vizualizar-menu" src="./../images/option.svg" />
-          <div class="hidden-list">
-            <ul>
-              <a href="bloqueados.php" class="pessoas-bloqueadas"><li>Membros Bloqueados</li></a>
-              <li>Lorem Ipsum Exemplo exemplo</li>
-            </ul>
-          </div><div id="online-now">
->>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
 
           <div class="changing-status">
             <div class="this-status">
@@ -87,171 +80,29 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-=======
-
-        <nav>
-          <ul id="menu-left">
-            <li><a href="./perfil.php">Perfil</a></li>
-            <li><a href="chamada.php">Chamada de video</a></li>
-            <li><a href="carroussel.php">Carroussel</a></li>
-            <li><a href="curtidas.php">Curtidas</a></li>
-            <li><a href="planos.php">Planos</a></li>
-            <li><a href="favoritos.php">Favoritos</a></li>
-            <li><a href="configuracoes.php">Configurações</a></li>
-            <li>
-              <a href="mensagens.php">Mensagens</a
-              >
-            </li>
-            <li><a href="servicos.php">Serviços</a></li>
-            <li><a href="online.php">Online agora</a>
-            </li>
-            <li><a href="teste-de-amor.php">Teste de amor</a></li>
-          </ul>
-        </nav>
-        <a href="localizar-pessoas.php"
-          ><div id="peoples-left">
-            <h4>Pessoas pela região</h4>
-
-            <div class="people-organizer">
-              <img src="./../debug-images/temp-2.svg" />
-              <img src="./../debug-images/temp-2.svg" />
-              <img src="./../debug-images/temp-2.svg" />
-            </div></div
-        ></a>
->>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
       </div>
 
-<<<<<<< HEAD
       <nav>
         <ul id="menu-left">
-          <li><a href="./perfil.html">Perfil</a></li>
-          <li><a href="chamada.html">Chamada de video</a></li>
-          <li><a href="carroussel.html">Carroussel</a></li>
-          <li><a href="curtidas.html">Curtidas</a></li>
-          <li><a href="planos.html">Planos</a></li>
-          <li><a href="favoritos.html">Favoritos</a></li>
-          <li><a href="configuracoes.html">Configurações</a></li>
+          <li><a href="./perfil.php">Perfil</a></li>
+          <li><a href="chamada.php">Chamada de video</a></li>
+          <li><a href="carroussel.php">Carroussel</a></li>
+          <li><a href="curtidas.php">Curtidas</a></li>
+          <li><a href="planos.php">Planos</a></li>
+          <li><a href="favoritos.php">Favoritos</a></li>
+          <li><a href="configuracoes.php">Configurações</a></li>
           <li>
-            <a href="mensagens.html">Mensagens</a>
+            <a href="mensagens.php">Mensagens</a>
           </li>
-          <li><a href="servicos.html">Serviços</a></li>
-          <li><a href="online.html">Online agora</a>
+          <li><a href="servicos.php">Serviços</a></li>
+          <li><a href="online.php">Online agora</a>
           </li>
-          <li><a href="teste-de-amor.html">Teste de amor</a></li>
+          <li><a href="teste-de-amor.php">Teste de amor</a></li>
         </ul>
       </nav>
-      <a href="localizar-pessoas.html">
+      <a href="localizar-pessoas.php">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
-=======
-    <div id="main-container">
-      <main id="bloqueados" class="padrao">
-        
-          <h2 class="title">Membros bloqueados</h2>
-          <ul id="blacklist">
-            <li class="person person-selected">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-              </div>
-              <button class="simple-btn">Desbloquear</button>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-              </div>
-              <button class="simple-btn">Desbloquear</button>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <li class="person">
-              <img src="">
-              <div class="dados">
-                <span>Lorem Ipsum Exemplo</span>
-                
-              </div>
-            </li>
-            <div class="gradient"></div>
-          </ul>
-        
-      </main>
-
-      <footer id="footer-mobile">
-        <nav>
-          <ul>
-            <li><a href="./index.php"></a></li>
-            <li><a href="./localizar-pessoas.php"></a></li>
-            <li><a href="./favoritos.php"></a></li>
-            <li><a href="./mensagens.php"></a></li>
-            <li><button id="mostra-menu-mobile"></button></li>
-          </ul>
-        </nav>
-      </footer>
-    </div>
->>>>>>> fd982d1ac4dc6a74f2d5191c32b6bee8a634ac2b
 
           <div class="people-organizer">
             <img src="./../debug-images/temp-2.svg" />

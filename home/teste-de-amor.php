@@ -3,7 +3,10 @@
 // session_start();
 require_once __DIR__ . "./../_app/models/profileModel.php";
 
-
+if (!$_SESSION['username']) {
+  header("Location: ../");
+  $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

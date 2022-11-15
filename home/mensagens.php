@@ -3,7 +3,10 @@
 // session_start();
 require_once __DIR__ . "./../_app/models/profileModel.php";
 
-
+if (!$_SESSION['username']) {
+  header("Location: ../");
+  $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -341,7 +344,6 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
               </div>
             </div>
           </div>
-<<<<<<< HEAD
           <div id="create-message">
             <input type="file" id="select-file" style="display: none" />
             <label class="add-media" for="select-file">+</label>
@@ -350,91 +352,6 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
               <button class="send-message" onclick="enviar()"></button>
             </div>
           </div>
-=======
-          <section id="privado">
-            <div id="sended">
-              <!-- Contém as mensagens enviadas -->
-              <div class="the-message-container">
-                <div class="identifier">
-                  <img src="./../debug-images/temp-5.png">
-                  <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
-                </div>
-                <!-- Contém a mensagem já enviada -->
-                <div class="text-container">
-                  <p class="writed-message blur">
-                    Lorem ipsum dolor sit amet. Quo voluptas tenetur et
-                    similique molestias est
-                  </p>
-                  <div class="interaction">
-                    <div class="interaction-info">
-                      <img src="./../images/unlocked.svg" />
-                      <span
-                        >Lorem ipsum dolor sit amet. Quo voluptas tenetur et
-                        similique molestias est
-                      </span>
-                    </div>
-                    <a href="planos.php"
-                      ><button class="confirm">Assinar pacote</button></a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="the-message-container user">
-                <div class="identifier">
-                  <span>Hoje <span>&middot;</span> as 14:40</span>
-                </div>
-                <!-- Contém cada mensagem já enviada -->
-                <div class="text-container">
-                  <p class="writed-message">
-                    Lorem ipsum dolor sait amet. Quo voluptas tenetur et
-                    similique molestias est
-                  </p>
-                </div>
-              </div>
-              <div class="the-message-container">
-                <div class="identifier">
-                  <img src="./../debug-images/temp-5.png">
-                  <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
-                </div>
-                <!-- Contém a mensagem já enviada -->
-                <div class="text-container">
-                  <p class="writed-message">
-                    Lorem ipsum dolor sit amet. Quo voluptas tenetur et
-                    similique molestias est
-                  </p>
-                </div>
-              </div>
-              <div class="the-message-container user">
-                <div class="identifier">
-                  <span>Hoje <span>&middot;</span> as 14:40</span>
-                </div>
-                <!-- Contém cada mensagem já enviada -->
-                <div class="text-container">
-                  <p class="writed-message">
-                    Lorem ipsum dolor sit amet. Quo voluptas tenetur et
-                    similique molestias est
-                  </p>
-                </div>
-              </div>
-
-            </div>
-            <span id="message-file">File<button class="clear-file">X</button></span>
-
-            <div id="create-message">
-
-              <input type="file" id="select-file" style="display: none" />
-              <label class="add-media" for="select-file">+</label>
-              <div class="message-text-container">
-                <textarea
-                  rows="1"
-                  id="message-text"
-                  placeholder="Escreva a mensagem..."
-                ></textarea>
-                <button class="send-message"></button>
-              </div>
-            </div>
-          </section>
->>>>>>> fd982d1ac4dc6a74f2d5191c32b6bee8a634ac2b
         </section>
       </section>
     </main>

@@ -3,7 +3,10 @@
 // session_start();
 require_once __DIR__ . "./../_app/models/profileModel.php";
 
-
+if (!$_SESSION['username']) {
+  header("Location: ../");
+  $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -50,7 +53,7 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
         <img class="vizualizar-menu" src="./../images/option.svg" />
         <div class="hidden-list">
           <ul>
-            <a href="bloqueados.html" class="pessoas-bloqueadas">
+            <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
             <li>Lorem Ipsum exemplo</li>

@@ -1,6 +1,6 @@
 <?php
-
-session_start();
+require_once __DIR__ . "./../_app/models/profileModel.php";
+// session_start();
 
 ?>
 <!DOCTYPE html>
@@ -57,8 +57,16 @@ session_start();
     <div id="div-left">
       <div id="user-information">
         <figure>
+        <?php
+        $photo = new profileModel();
+        $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+        $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+        ?>
+
+
           <div class="foto-de-perfil">
-            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+
             <div class="status"></div>
           </div>
           <figcaption>
@@ -102,16 +110,16 @@ session_start();
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-=======
+      </div>
 
-        <nav>
-          <ul id="menu-left">
-            <li><a href="./perfil.php">Perfil</a></li>
-            <li><a href="chamada.php">Chamada de video</a></li>
-            <li><a href="carroussel.php">Carroussel</a></li>
-            <li><a href="curtidas.php">Curtidas</a></li>
-            <li>
+      <nav>
+        <ul id="menu-left">
+          <li><a href="./perfil.php">Perfil</a></li>
+          <li><a href="chamada.php">Chamada de video</a></li>
+          <li><a href="carroussel.php">Carroussel</a></li>
+          <li><a href="curtidas.php">Curtidas</a></li>
+          <li>
+            <a href="planos.php" class="pagina-selecionada">Planos</a>
           </li>
           <li><a href="favoritos.php">Favoritos</a></li>
           <li><a href="configuracoes.php">Configurações</a></li>
@@ -244,7 +252,6 @@ session_start();
                 <img src="./../images/card-chip.svg" alt="" />
                 <span>banco</span>
               </div>
-<<<<<<< HEAD
               <span id="card-number">XXXXXXXXXXXXXXXX</span>
               <div>
                 <span>Nome exemplo</span>
@@ -267,24 +274,6 @@ session_start();
       </nav>
     </footer>
   </div>
-=======
-            </section>
-          </div>
-        </section>
-      </main>
-      <footer id="footer-mobile">
-        <nav>
-          <ul>
-            <li><a href="./index.php"></a></li>
-            <li><a href="./localizar-pessoas.php"></a></li>
-            <li><a href="./favoritos.php"></a></li>
-            <li><a href="./mensagens.php"></a></li>
-            <li><button id="mostra-menu-mobile"></button></li>
-          </ul>
-        </nav>
-      </footer>
-    </div>
->>>>>>> 2f6691773fa1d5025fc77512763dcb97e0162e27
 
   <script src="./../script/script.js"></script>
 </body>

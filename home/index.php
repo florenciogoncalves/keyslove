@@ -1,7 +1,13 @@
 <?php
 
+
 require_once __DIR__ . "./../_app/models/profileModel.php";
 require_once __DIR__ . "./../_app/boot/helpers.php";
+
+if (!$_SESSION['username']) {
+  header("Location: ../");
+  $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
 
 // session_start();
 
@@ -27,28 +33,29 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
         <figure>
 
 
-        <?php
-          $photo = new profileModel();
-          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
-          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
-          ?>
+          <?php
+        $photo = new profileModel();
+        $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+        $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+        ?>
 
-        
+
           <div class="foto-de-perfil">
-          <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
 
             <div class="status"></div>
           </div>
           <figcaption>
 
             <?php
-            if (isset($_SESSION['username'])) :
+            if (isset($_SESSION['username'])):
             ?>
 
 
-              <h2><?= $_SESSION['username'];
-                endif ?></h2>
-              <span id="show-status-window">Escolher status</span>
+            <h2>
+              <?= $_SESSION['username']; endif ?>
+          </h2>
+            <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -58,7 +65,9 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
             <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <a class="logout" href="./../index.php"><li>Sair</li></a>
+            <a class="logout" href="./logout.php">
+              <li>Sair</li>
+            </a>
           </ul>
         </div>
         <div id="online-now">
@@ -94,6 +103,9 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
           <li><a href="servicos.php">Serviços</a></li>
           <li><a href="online.php">Online agora</a></li>
           <li><a href="teste-de-amor.php">Teste de amor</a></li>
+
+
+
         </ul>
       </nav>
       <a href="localizar-pessoas.php">
@@ -135,7 +147,8 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
           <div class="talk-now">
             Conversar agora &nbsp;
 
-            <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />&nbsp; <img src="./../images/Group 8777.svg" />&nbsp;
+            <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />&nbsp; <img
+              src="./../images/Group 8777.svg" />&nbsp;
             <img src="./../images/usa-icon.svg" alt="Inglês" class="img-1" />
           </div>
         </a>
