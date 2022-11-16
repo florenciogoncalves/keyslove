@@ -150,7 +150,7 @@ if (!$_SESSION['username']) {
 
         <?php
           $getCard = new profileModel();
-          $card = $getCard->User('tb_metodo_pagamento', 'nomeTitular', $_SESSION['username'], '=', 'fetch');
+          $card = $getCard->User('tb_metodo_pagamento', 'user', $_SESSION['username'], '=', 'fetch');
         ?>
 
             <div class="card-bank-data">
@@ -159,7 +159,7 @@ if (!$_SESSION['username']) {
                   <input type="number" id="card-num" placeholder="<?= $card['numeroCartao'] ?>" name="numero-cartao" disabled/></span>
                 <span>
                   <label for="titular-name">Nome do titular</label>
-                  <input type="text" id="titular-name" placeholder="<?= $card['nomeTitular'] ?>" name="nome-titular" disabled/>
+                  <input type="text" id="titular-name" placeholder="<?= $card['user'] ?>" name="nome-titular" disabled/>
                 </span>
                 <div class="validate">
                   <label for="validate">Validade</label>

@@ -128,9 +128,6 @@ class profileModel extends connect
             $id = $_SESSION['username_id'];
         }
 
-        // if (isset($_SESSION['username'])) {
-        //     $user = $_SESSION['username'];
-        // }
 
 
         $firstQuery = $this->connect->prepare("SELECT * FROM {$entity} WHERE {$where} {$operation} ?");
@@ -172,7 +169,8 @@ class profileModel extends connect
     public function reactAction(string $curtiu, string $curtido, string $action): bool
     {
 
-        if ($this->verifyReaction($curtiu)) {
+
+        if ($this->verifyAction($curtiu, $curtido, $action)) {
             $Updatequery = $this->connect->prepare("UPDATE tb_curtidas SET action = ? WHERE curtido = ?");
             $Updatequery->bindParam(1, $action);
             $Updatequery->bindParam(2, $curtido);
@@ -192,12 +190,13 @@ class profileModel extends connect
         return false;
     }
 
-
-
-    public function verifyReaction(string $user): bool
+    public function verifyAction(string $user, string $curtido, string $action): bool
     {
-        $query = $this->connect->prepare("SELECT * FROM tb_curtidas WHERE curtiu = ?");
+        $query = $this->connect->prepare("SELECT curtiu = ? , curtido = ? FROM tb_curtidas WHERE action = ?");
         $query->bindParam(1, $user);
+        $query->bindParam(2, $curtido);
+        $query->bindParam(3, $action);
+
         $query->execute();
 
         if ($query->rowCount() > 0) {
@@ -206,4 +205,23 @@ class profileModel extends connect
         return false;
     }
 
+
+    public function addNewReacts(string $user, string $reacted, string $reaction)
+    {
+        $selectQuery = $this->connect->prepare("SELECT user_react = ? , reacted = ? FROM tb_reacts WHERE reaction = ?");
+        $selectQuery->bindParam(1, $user);
+        $selectQuery->bindParam(2, $reacted);
+        $selectQuery->bindParam(3, $reaction);
+        $selectQuery->execute();
+
+        if ($selectQuery->rowCount() <= 0) {
+
+            $query = $this->connect->prepare("INSERT INTO tb_reacts(user_react, reacted, reaction) VALUES (?, ?, ?)");
+            $query->bindParam(1, $user);
+            $query->bindParam(2, $reacted);
+            $query->bindParam(3, $reaction);
+            $query->execute();
+
+        }
+    }
 }

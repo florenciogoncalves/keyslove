@@ -24,6 +24,14 @@ if (!$_SESSION['username']) {
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+
+  <style>
+    .mainPhoto {
+      width: 721px !important;
+      height: 963px !important;
+    }
+  </style>
+
 </head>
 
 <body id="corpo-com-logo">
@@ -34,10 +42,10 @@ if (!$_SESSION['username']) {
 
 
           <?php
-        $photo = new profileModel();
-        $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
-        $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
-        ?>
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
 
 
           <div class="foto-de-perfil">
@@ -54,7 +62,7 @@ if (!$_SESSION['username']) {
 
             <h2>
               <?= $_SESSION['username']; endif ?>
-          </h2>
+            </h2>
             <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
@@ -122,6 +130,19 @@ if (!$_SESSION['username']) {
     </div>
   </div>
 
+
+  <?php
+
+  $model = new profileModel();
+  $getUser = $model->User('tb_cadastroConta2', 'nome', $_SESSION['username'], '!=', 'fetchAll');
+  foreach ($getUser as $Users) {
+    $getPhoto = $model->User('tb_photos', 'user', $Users['nome'], '=');
+    $description = $model->User('tb_sobre_mim', 'user', $Users['nome'], '=');
+  }
+
+  ?>
+
+
   <div id="main-container">
     <header id="mobile-header">
       <img src="./../images/Keyslov.svg" alt="Keyslov - logo" />
@@ -142,7 +163,9 @@ if (!$_SESSION['username']) {
       </div>
 
       <div class="home-footer">
-        <h3 id="person-name">Nome pessoa 100</h3>
+        <h3 id="person-name">
+          <?= $getPhoto['user'] ?>
+        </h3>
         <a href="mensagens.php">
           <div class="talk-now">
             Conversar agora &nbsp;
@@ -160,8 +183,11 @@ if (!$_SESSION['username']) {
         </ul>
 
         <p id="subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          <br />Nullam non fringilla lacus. Aliquam eget accumsan turpis
+
+          <?php
+          echo str_limit_words($description['sobre'], 20);
+          ?>
+
         </p>
 
         <div id="home-progress-content">
@@ -170,17 +196,20 @@ if (!$_SESSION['username']) {
           </div>
         </div>
 
-        <div id="home-btns">
-          <button id="retry"></button>
-          <button id="dislike"></button>
-          <button id="maybe">Talvez</button>
-          <button id="like"></button>
-          <button id="favorite"></button>
-        </div>
+        <form action="./../_app/controllers/curtidasControllerHome.php" method="post">
+          <div id="home-btns">
+            <button id="retry" name="retry" value="<?= $description['user'] ?>"></button>
+            <button id="dislike" name="deslike" value="<?= $description['user'] ?>"></button>
+            <button id="maybe" name="maybe" value="<?= $description['user'] ?>">Talvez</button>
+            <button id="like" name="like" value="<?= $description['user'] ?>"></button>
+            <button id="favorite" name="favorite" value="<?= $description['user'] ?>"></button>
+          </div>
+        </form>
       </div>
 
 
-      <object data="./../debug-images/temp-3.png" id="main-image" alt="Fotografia"></object>
+      <object data="./../_storage/images/<?= $getPhoto['photo']; ?>" id="main-image" alt="Fotografia"
+        class="mainPhoto"></object>
     </main>
     <footer id="footer-mobile">
       <nav>
@@ -225,5 +254,7 @@ if (!$_SESSION['username']) {
   <script src="./../script/script.js"></script>
   <script src="./../script/resize-windown.js"></script>
 </body>
+
+</html>
 
 </html>
