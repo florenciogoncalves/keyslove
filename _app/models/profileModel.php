@@ -170,7 +170,7 @@ class profileModel extends connect
     {
 
 
-        if ($this->verifyAction($curtiu, $curtido, $action)) {
+        if (!$this->verifyAction($curtiu, $curtido)) {
             $Updatequery = $this->connect->prepare("UPDATE tb_curtidas SET action = ? WHERE curtido = ?");
             $Updatequery->bindParam(1, $action);
             $Updatequery->bindParam(2, $curtido);
@@ -190,19 +190,18 @@ class profileModel extends connect
         return false;
     }
 
-    public function verifyAction(string $user, string $curtido, string $action): bool
+    public function verifyAction(string $user, string $curtido): bool
     {
-        $query = $this->connect->prepare("SELECT curtiu = ? , curtido = ? FROM tb_curtidas WHERE action = ?");
+        $query = $this->connect->prepare("SELECT curtiu = ? , curtido = ? FROM tb_curtidas");
         $query->bindParam(1, $user);
         $query->bindParam(2, $curtido);
-        $query->bindParam(3, $action);
 
         $query->execute();
 
         if ($query->rowCount() > 0) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
 
