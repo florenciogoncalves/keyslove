@@ -54,8 +54,37 @@ function uploader($origin, $destination): bool
 }
 
 
-
 function generateVerificationCode(): int
 {
     return random_int(1000, 9999);
+}
+
+function UserAge(int $bornYear): int|null
+{
+    return date('Y') - $bornYear;
+}
+
+function dispatch(string $target)
+{
+
+    if (isset($_SESSION[$target])) {
+        unset($_SESSION[$target]);
+        die;
+    }
+
+
+}
+
+function str_limit_words(string $string, int $limit, string $pointer = "..."): string
+{
+    $string = trim(filter_var($string, FILTER_SANITIZE_SPECIAL_CHARS));
+    $arrWords = explode(" ", $string);
+    $numWords = count($arrWords);
+
+    if ($numWords < $limit) {
+        return $string;
+    }
+
+    $words = implode(" ", array_slice($arrWords, 0, $limit));
+    return "{$words}{$pointer}";
 }

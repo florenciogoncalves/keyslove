@@ -1,6 +1,16 @@
 <?php
 
-session_start();
+
+require_once __DIR__ . "./../_app/models/profileModel.php";
+require_once __DIR__ . "./../_app/boot/helpers.php";
+
+if (!$_SESSION['username']) {
+  header("Location: ../");
+  $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
+
+// session_start();
+
 
 ?>
 <!DOCTYPE html>
@@ -14,6 +24,14 @@ session_start();
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+
+  <style>
+    .mainPhoto {
+      width: 721px !important;
+      height: 963px !important;
+    }
+  </style>
+
 </head>
 
 <body id="corpo-com-logo">
@@ -21,20 +39,31 @@ session_start();
     <div id="div-left">
       <div id="user-information">
         <figure>
+
+
+          <?php
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
+
+
           <div class="foto-de-perfil">
-            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+
             <div class="status"></div>
           </div>
           <figcaption>
 
             <?php
-            if (isset($_SESSION['username'])) :
+            if (isset($_SESSION['username'])):
             ?>
 
 
-              <h2><?= $_SESSION['username'];
-                endif ?></h2>
-              <span id="show-status-window">Escolher status</span>
+            <h2>
+              <?= $_SESSION['username']; endif ?>
+            </h2>
+            <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -44,7 +73,9 @@ session_start();
             <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <a class="logout" href="./../index.php"><li>Sair</li></a>
+            <a class="logout" href="./logout.php">
+              <li>Sair</li>
+            </a>
           </ul>
         </div>
         <div id="online-now">
@@ -80,6 +111,9 @@ session_start();
           <li><a href="servicos.php">Serviços</a></li>
           <li><a href="online.php">Online agora</a></li>
           <li><a href="teste-de-amor.php">Teste de amor</a></li>
+
+
+
         </ul>
       </nav>
       <a href="localizar-pessoas.php">
@@ -95,6 +129,19 @@ session_start();
       </a>
     </div>
   </div>
+
+
+  <?php
+
+  $model = new profileModel();
+  $getUser = $model->User('tb_cadastroConta2', 'nome', $_SESSION['username'], '!=', 'fetchAll');
+  foreach ($getUser as $Users) {
+    $getPhoto = $model->User('tb_photos', 'user', $Users['nome'], '=');
+    $description = $model->User('tb_sobre_mim', 'user', $Users['nome'], '=');
+  }
+
+  ?>
+
 
   <div id="main-container">
     <header id="mobile-header">
@@ -116,12 +163,15 @@ session_start();
       </div>
 
       <div class="home-footer">
-        <h3 id="person-name">Nome pessoa 100</h3>
+        <h3 id="person-name">
+          <?= $getPhoto['user'] ?>
+        </h3>
         <a href="mensagens.php">
           <div class="talk-now">
             Conversar agora &nbsp;
 
-            <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />&nbsp; <img src="./../images/Group 8777.svg" />&nbsp;
+            <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />&nbsp; <img
+              src="./../images/Group 8777.svg" />&nbsp;
             <img src="./../images/usa-icon.svg" alt="Inglês" class="img-1" />
           </div>
         </a>
@@ -133,8 +183,11 @@ session_start();
         </ul>
 
         <p id="subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          <br />Nullam non fringilla lacus. Aliquam eget accumsan turpis
+
+          <?php
+          echo str_limit_words($description['sobre'], 20);
+          ?>
+
         </p>
 
         <div id="home-progress-content">
@@ -143,17 +196,20 @@ session_start();
           </div>
         </div>
 
-        <div id="home-btns">
-          <button id="retry"></button>
-          <button id="dislike"></button>
-          <button id="maybe">Talvez</button>
-          <button id="like"></button>
-          <button id="favorite"></button>
-        </div>
+        <form action="./../_app/controllers/curtidasControllerHome.php" method="post">
+          <div id="home-btns">
+            <button id="retry" name="retry" value="<?= $description['user'] ?>"></button>
+            <button id="dislike" name="deslike" value="<?= $description['user'] ?>"></button>
+            <button id="maybe" name="maybe" value="<?= $description['user'] ?>">Talvez</button>
+            <button id="like" name="like" value="<?= $description['user'] ?>"></button>
+            <button id="favorite" name="favorite" value="<?= $description['user'] ?>"></button>
+          </div>
+        </form>
       </div>
 
 
-      <object data="./../debug-images/temp-3.png" id="main-image" alt="Fotografia"></object>
+      <object data="./../_storage/images/<?= $getPhoto['photo']; ?>" id="main-image" alt="Fotografia"
+        class="mainPhoto"></object>
     </main>
     <footer id="footer-mobile">
       <nav>
@@ -198,5 +254,7 @@ session_start();
   <script src="./../script/script.js"></script>
   <script src="./../script/resize-windown.js"></script>
 </body>
+
+</html>
 
 </html>
