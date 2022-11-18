@@ -47,8 +47,7 @@ if (!$_SESSION['username']) {
 
 
             <h2>
-              <?= $_SESSION['username'];
-            endif ?>
+              <?= $_SESSION['username']; endif ?>
             </h2>
             <span id="show-status-window">Escolher status</span>
           </figcaption>
@@ -137,17 +136,28 @@ if (!$_SESSION['username']) {
         $user = $model->User('tb_reacts', 'user_react', $_SESSION['username'], '=', 'fetchAll');
 
 
+
         foreach ($user as $users) {
 
-          $favorite = $model->User('tb_reacts', 'reacted', $users['reacted'], '=', 'fetchAll');
+          // $favorite = $model->User('tb_reacts', 'reacted', $users['reacted'], '=', 'fetchAll');
           $favoritee = $model->getFavorites($_SESSION['username'], $users['reacted'], 'favorite');
+
+
         }
-        foreach ($favoritee as $favorites) {
-          $_SESSION['favoriteName'] = $favorites['reacted'];
-          $getPhoto = $model->User('tb_photos', 'user', $favorites['reacted'], '=');
 
 
-          echo "
+
+        $error = new stdClass();
+        $error->error = '<center><h2>Você ainda não favoritou ninguém!</h2></center>';
+        $error->view = '<center><h2>Em desenvolvimento!</h2></center>';
+        if ($user) {
+
+          foreach ($favoritee as $favorites) {
+
+            $_SESSION['favoriteName'] = $favorites['reacted'];
+            $getPhoto = $model->User('tb_photos', 'user', $favorites['reacted'], '=');
+
+            echo "
         <ul class='list'>
         <li>
           <img src='./../_storage/images/{$getPhoto['photo']}' />
@@ -172,19 +182,22 @@ if (!$_SESSION['username']) {
           </ul>
         
         ";
-        }
-        ?>
 
+
+          }
+        } else {
+          echo $error->error;
+        }
+
+        ?>
+      </section>
 
       <section id="sep-vizualizou">
 
 
-        <center>
-          <h1>Em Desenvolvimento...</h1>
-        </center>
-
-    
-
+        <?php
+          echo $error->view;
+          ?>
       </section>
 
 
@@ -192,24 +205,24 @@ if (!$_SESSION['username']) {
 
       <?php
 
-      $model = new profileModel();
-      $user = $model->User('tb_curtidas', 'curtido', $_SESSION['username'], '=', 'fetchAll');
-    
-      $error = new stdClass();
-      $error->error = "<center><h2>Ainda ninguém curtiu você!</h2></center>";
-   
-    
+        $model = new profileModel();
+        $user = $model->User('tb_curtidas', 'curtido', $_SESSION['username'], '=', 'fetchAll');
 
-      foreach ($user as $users) {
+        $error = new stdClass();
+        $error->error = "<center><h2>Ainda ninguém curtiu você!</h2></center>";
 
-        // $favorite = $model->User('tb_reacts', 'reacted', $users['reacted'], '=', 'fetchAll');
-        // foreach ($favorite as $favorites) {
-        //   $_SESSION['favoriteName'] = $favorites['reacted'];
-        $getPhoto = $model->User('tb_photos', 'user', $users['curtiu'], '=');
-        // }
 
-        // echo $error->error;
-        echo "
+
+        foreach ($user as $users) {
+
+          // $favorite = $model->User('tb_reacts', 'reacted', $users['reacted'], '=', 'fetchAll');
+          // foreach ($favorite as $favorites) {
+          //   $_SESSION['favoriteName'] = $favorites['reacted'];
+          $getPhoto = $model->User('tb_photos', 'user', $users['curtiu'], '=');
+          // }
+        
+          // echo $error->error;
+          echo "
   
   <section id='sep-curtiu'>
   <ul class='list'>
@@ -229,8 +242,8 @@ if (!$_SESSION['username']) {
 </section>
   
   ";
-      }
-      ?>
+        }
+        ?>
 
 
 
