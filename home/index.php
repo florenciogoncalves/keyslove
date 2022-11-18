@@ -158,6 +158,18 @@ if (!$_SESSION['username']) {
       </ul>
 
       <div class="home-nav">
+
+        <?php
+
+        echo "
+        
+        <script src='./../script/home.js'>
+        
+        </script>
+
+        ";
+
+        ?>
         <button id="preview-carroussel">&lt;</button>
         <button id="next-carroussel">&gt;</button>
       </div>
@@ -252,6 +264,7 @@ if (!$_SESSION['username']) {
   </dialog>
 
   <script src="./../script/script.js"></script>
+  <script src=""></script>
   <script src="./../script/resize-windown.js"></script>
 </body>
 

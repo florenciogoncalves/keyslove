@@ -55,7 +55,7 @@ if (!$_SESSION['username']) {
         <img class="vizualizar-menu" src="./../images/option.svg" />
         <div class="hidden-list">
           <ul>
-            <a href="bloqueados.html" class="pessoas-bloqueadas">
+            <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li class="goto-blocked">Membros Bloqueados</li>
             </a>
             <li>Lorem Ipsum exemplo</li>
@@ -98,7 +98,7 @@ if (!$_SESSION['username']) {
           <li><a href="teste-de-amor.php">Teste de amor</a></li>
         </ul>
       </nav>
-      <a href="localizar-pessoas.html">
+      <a href="localizar-pessoas.php">
         <div id="peoples-left">
           <h4>Pessoas pela região</h4>
 
@@ -253,7 +253,7 @@ if (!$_SESSION['username']) {
               <h2>Lorem Ipsun Silva</h2>
             </figcaption>
             <div class="botoes-top">
-              <a href="/home/chamada.html"><button class="video-call"></button></a>
+              <a href="/home/chamada.php"><button class="video-call"></button></a>
               <button class="options"></button>
               <div class="options-container">
                 <div class="translate">
@@ -302,7 +302,7 @@ if (!$_SESSION['username']) {
                       similique molestias est
                     </span>
                   </div>
-                  <a href="planos.html"><button class="confirm">Assinar pacote</button></a>
+                  <a href="planos.php"><button class="confirm">Assinar pacote</button></a>
                 </div>
               </div>
             </div>

@@ -28,15 +28,15 @@ if (!$_SESSION['username']) {
     <div id="div-left">
       <div id="user-information">
         <figure>
-        <?php
-        $photo = new profileModel();
-        $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
-        $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
-        ?>
+          <?php
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
 
-        
+
           <div class="foto-de-perfil">
-          <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
 
             <div class="status"></div>
           </div>
@@ -46,9 +46,11 @@ if (!$_SESSION['username']) {
             ?>
 
 
-              <h2><?= $_SESSION['username'];
-            endif ?></h2>
-              <span id="show-status-window">Escolher status</span>
+            <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+            </h2>
+            <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -129,20 +131,23 @@ if (!$_SESSION['username']) {
 
       <section id="sep-favoritados">
 
-      <?php
+        <?php
 
-      $model = new profileModel();
-      $user = $model->User('tb_reacts', 'user_react', $_SESSION['username'], '=', 'fetchAll');
+        $model = new profileModel();
+        $user = $model->User('tb_reacts', 'user_react', $_SESSION['username'], '=', 'fetchAll');
 
-      foreach ($user as $users) {
 
-        $favorite = $model->User('tb_reacts', 'reacted', $users['reacted'], '=', 'fetchAll');
-        foreach ($favorite as $favorites) {
+        foreach ($user as $users) {
+
+          $favorite = $model->User('tb_reacts', 'reacted', $users['reacted'], '=', 'fetchAll');
+          $favoritee = $model->getFavorites($_SESSION['username'], $users['reacted'], 'favorite');
+        }
+        foreach ($favoritee as $favorites) {
           $_SESSION['favoriteName'] = $favorites['reacted'];
           $getPhoto = $model->User('tb_photos', 'user', $favorites['reacted'], '=');
-        }
 
-        echo "
+
+          echo "
         <ul class='list'>
         <li>
           <img src='./../_storage/images/{$getPhoto['photo']}' />
@@ -167,691 +172,18 @@ if (!$_SESSION['username']) {
           </ul>
         
         ";
+        }
+        ?>
 
-      }
-      ?>
-
-     
-            <!--
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-        </ul>  -->
-
-
-      </section>
-
-
-           
 
       <section id="sep-vizualizou">
 
 
-      <center><h1>Em Desenvolvimento...</h1></center>
+        <center>
+          <h1>Em Desenvolvimento...</h1>
+        </center>
 
-      <!--
-
-        <ul class="list">
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsumssssssssssssssss</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-          <li>
-            <img src="./../debug-images/temp-4.png" />
-            <section>
-              <article>
-                <div>
-                  <div class="status-div"></div>
-                  <span>Lorem Ipsum</span>
-                </div>
-                <ul>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                  <li>Drinks</li>
-                </ul>
-              </article>
-              <div class="botoes">
-                <button class="dislike"></button>
-                <button class="like"></button>
-              </div>
-            </section>
-          </li>
-        </ul>
-
-    -->
+    
 
       </section>
 
@@ -862,15 +194,21 @@ if (!$_SESSION['username']) {
 
       $model = new profileModel();
       $user = $model->User('tb_curtidas', 'curtido', $_SESSION['username'], '=', 'fetchAll');
+    
+      $error = new stdClass();
+      $error->error = "<center><h2>Ainda ninguém curtiu você!</h2></center>";
+   
+    
 
       foreach ($user as $users) {
 
         // $favorite = $model->User('tb_reacts', 'reacted', $users['reacted'], '=', 'fetchAll');
         // foreach ($favorite as $favorites) {
         //   $_SESSION['favoriteName'] = $favorites['reacted'];
-          $getPhoto = $model->User('tb_photos', 'user', $users['curtiu'], '=');
+        $getPhoto = $model->User('tb_photos', 'user', $users['curtiu'], '=');
         // }
 
+        // echo $error->error;
         echo "
   
   <section id='sep-curtiu'>
@@ -895,9 +233,9 @@ if (!$_SESSION['username']) {
       ?>
 
 
- 
 
-<!--
+
+      <!--
 
           <li>
             <img src="./../debug-images/temp-4.png" />

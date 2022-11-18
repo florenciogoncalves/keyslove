@@ -69,6 +69,8 @@ function dispatch(string $target)
 
     if (isset($_SESSION[$target])) {
         unset($_SESSION[$target]);
+        header("Location: ../");
+
         die;
     }
 

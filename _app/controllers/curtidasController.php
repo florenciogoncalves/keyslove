@@ -25,9 +25,9 @@ if (isset($_SESSION['username'])) {
 //     header("Location: ../../home/carroussel.php");
 //     die;
 // } else {
-    ((new profileModel))->reactAction($user, $curtido, $action);
-    $_SESSION['message'] = 'Você deu ' . $action . ' ao usuário ' . $curtido;
-    header("Location: ../../home/carroussel.php");
+((new profileModel))->reactAction($user, $curtido, $action);
+$_SESSION['message'] = 'Você deu ' . $action . ' ao usuário ' . $curtido;
+header("Location: ../../home/carroussel.php");
 
 // }
 

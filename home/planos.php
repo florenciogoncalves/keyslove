@@ -26,15 +26,15 @@ if (!$_SESSION['username']) {
     <div id="div-left">
       <div id="user-information">
         <figure>
-        <?php
+          <?php
           $photo = new profileModel();
           $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
           $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
           ?>
 
-        
+
           <div class="foto-de-perfil">
-          <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
 
             <div class="status"></div>
           </div>
@@ -148,29 +148,62 @@ if (!$_SESSION['username']) {
 
         <section class="card-bank-container">
 
-        <?php
+          <?php
           $getCard = new profileModel();
           $card = $getCard->User('tb_metodo_pagamento', 'user', $_SESSION['username'], '=', 'fetch');
-        ?>
+          if (!$card) {
+            $error = new stdClass();
+            $error->Error = 'Não cadastrado!';
+            $error->year = '00';
+          }
+          ?>
 
-            <div class="card-bank-data">
-              <div class="left-side">
-                <span><label for="card-num">Número do cartão</label>
-                  <input type="number" id="card-num" placeholder="<?= $card['numeroCartao'] ?>" name="numero-cartao" disabled/></span>
-                <span>
-                  <label for="titular-name">Nome do titular</label>
-                  <input type="text" id="titular-name" placeholder="<?= $card['user'] ?>" name="nome-titular" disabled/>
-                </span>
-                <div class="validate">
-                  <label for="validate">Validade</label>
-                  <input type="number" min="1" max="99" placeholder="<?= $card['mes'] ?>" name="validade-mes" disabled/>
-                  <input type="number" max="99" placeholder="<?= $card['ano'] ?>" name="validade-ano" disabled/>
-                </div>
-              </div>
-              <div class="right-side">
-                <div></div>
+          <div class="card-bank-data">
+            <div class="left-side">
+              <span><label for="card-num">Número do cartão</label>
+                <input type="number" id="card-num" placeholder="<?php
+                if ($card) {
+                  echo $card['numeroCartao'];
+                } else {
+                  echo $error->Error;
+                }
+
+                ?>" name="numero-cartao" disabled /></span>
+              <span>
+                <label for="titular-name">Nome do titular</label>
+                <input type="text" id="titular-name" placeholder="<?php
+                if ($card) {
+                  echo $card['user'];
+                } else {
+                  echo $error->Error;
+                }
+
+                ?>" name="nome-titular" disabled />
+              </span>
+              <div class="validate">
+                <label for="validate">Validade</label>
+                <input type="number" min="1" max="99" placeholder="<?php
+                if ($card) {
+                  echo $card['mes'];
+                } else {
+                  echo $error->year;
+                }
+
+                ?>" name="validade-mes" disabled />
+                <input type="number" max="99" placeholder="<?php
+                if ($card) {
+                  echo $card['ano'];
+                } else {
+                  echo $error->year;
+                }
+
+                ?>" name="validade-ano" disabled />
               </div>
             </div>
+            <div class="right-side">
+              <div></div>
+            </div>
+          </div>
         </section>
         <a href="./metodos-pagamento.php">
           <button class="btn-register">

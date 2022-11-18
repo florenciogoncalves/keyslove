@@ -197,11 +197,14 @@ if (!$_SESSION['username']) {
             ?>
 
             <script>
-              alert("<?php echo $_SESSION['message'];
-              unset($_SESSION[' message ']); ?> ")
+              alert("<?php echo $_SESSION['message']; ?>");
+              // unset(<?php $_SESSION['message']; ?>);
+              <?php
+
+              ?>
             </script>
             <?php
-
+              unset($_SESSION['message']);
             endif;
             ?>
           </div>

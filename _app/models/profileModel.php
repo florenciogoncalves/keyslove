@@ -122,7 +122,7 @@ class profileModel extends connect
 
     }
 
-    public function User(string $entity = 'tb_cadastroConta', string $where = 'user', string $user, string $operation = '=', string $method = 'fetch'): iterable|object
+    public function User(string $entity = 'tb_cadastroConta', string $where = 'user', string $user, string $operation = '=', string $method = 'fetch'): iterable|object|bool
     {
         if (isset($_SESSION['username_id'])) {
             $id = $_SESSION['username_id'];
@@ -136,12 +136,23 @@ class profileModel extends connect
         $firstQuery->execute();
         $data = $firstQuery->{$method}(PDO::FETCH_ASSOC);
 
-
-
         return $data;
 
     }
 
+
+    public function getFavorites(string $user, string $reacted, string $reaction = 'favorite'): iterable|object
+    {
+        $query = $this->connect->prepare("SELECT * FROM tb_reacts WHERE user_react = ? AND reaction = ?");
+        $query->bindParam(1, $user);
+        $query->bindParam(2, $reaction);
+
+        $query->execute();
+
+        $data = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
     public function getUserToCarroussel(string $entity = 'tb_cadastroConta'): iterable|object
     {
         if (isset($_SESSION['username_id'])) {
@@ -152,7 +163,7 @@ class profileModel extends connect
         $firstQuery = $this->connect->prepare("SELECT * FROM {$entity} WHERE id != ?");
 
         $firstQuery->bindParam(1, $id);
-        // $data = $firstQuery->fetch(PDO::FETCH_ASSOC);
+
 
 
 
@@ -170,10 +181,12 @@ class profileModel extends connect
     {
 
 
-        if (!$this->verifyAction($curtiu, $curtido)) {
-            $Updatequery = $this->connect->prepare("UPDATE tb_curtidas SET action = ? WHERE curtido = ?");
+        if ($this->verifyAction($curtiu, $curtido)) {
+            $Updatequery = $this->connect->prepare("UPDATE tb_curtidas SET action = ? WHERE curtido = ? AND curtiu = ?");
             $Updatequery->bindParam(1, $action);
             $Updatequery->bindParam(2, $curtido);
+            $Updatequery->bindParam(3, $curtiu);
+
             $Updatequery->execute();
         } else {
 
@@ -192,16 +205,16 @@ class profileModel extends connect
 
     public function verifyAction(string $user, string $curtido): bool
     {
-        $query = $this->connect->prepare("SELECT curtiu = ? , curtido = ? FROM tb_curtidas");
+        $query = $this->connect->prepare("SELECT * FROM tb_curtidas WHERE curtiu = ? AND curtido = ?");
         $query->bindParam(1, $user);
         $query->bindParam(2, $curtido);
 
         $query->execute();
 
         if ($query->rowCount() > 0) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
 
@@ -223,4 +236,5 @@ class profileModel extends connect
 
         }
     }
+
 }

@@ -52,17 +52,16 @@ if (isset($_SESSION['username'])) {
     $user = $_SESSION['username'];
 }
 
-
-
-
-
 foreach ($reacts as $item) {
     if (in_array($item, $otherReactions)) {
         ((new profileModel))->addNewReacts($user, $curtido, $item);
+        header("Location: ../../home/");
     }
 
     if (in_array($item, $normalReacts)) {
         ((new profileModel))->reactAction($user, $curtido, $item);
+        header("Location: ../../home/");
+
 
     }
 

@@ -561,35 +561,6 @@ pegarTodos(".add-option-before").forEach((current) => {
   }
 });
 
-/*Navegar entre imagens*/
-function navImages(arrayNavegado, ondeMostrar) {
-  actual = 0;
-  const proxima = pegar("#next-carroussel");
-  const anterior = pegar("#preview-carroussel");
-
-  proxima.addEventListener("click", () => {
-    if (actual >= arrayNavegado.length - 1) actual = 0;
-    else actual++;
-
-    while (arrayNavegado[actual] == "") {
-      proxima.click();
-    }
-
-    ondeMostrar.src = arrayNavegado[actual];
-  });
-
-  anterior.addEventListener("click", () => {
-    if (actual <= 0) actual = arrayNavegado.length - 1;
-    else actual--;
-
-    while (arrayNavegado[actual] == "") {
-      anterior.click();
-    }
-
-    ondeMostrar.src = arrayNavegado[actual];
-  });
-}
-
 /*Ao clicar em outro perfil, ir para index.php*/
 pegarTodos(".outro-perfil").forEach((current) => {
   current.addEventListener("dblclick", () => {
@@ -604,7 +575,7 @@ try {
 
   const sendFile = document.querySelector("#select-file");
   const labelFile = document.querySelector("#message-file");
-  let refFile
+  let refFile;
 
   labelFile.querySelector("button").addEventListener("click", () => {
     labelFile.firstChild.textContent = "File";
@@ -613,23 +584,22 @@ try {
   });
 
   //Evento para o envio de arquivo
-  document.querySelector('#create-message .send-message').addEventListener('click', () => {
-    if(labelFile.style.display == 'block') {
-      setSendFile()
-    }
-    else enviar()
-  })
+  document
+    .querySelector("#create-message .send-message")
+    .addEventListener("click", () => {
+      if (labelFile.style.display == "block") {
+        setSendFile();
+      } else enviar();
+    });
 
   sendFile.addEventListener("change", () => {
-    
     //Evento para o envio
-    window.addEventListener('keydown',  (k) => {
-      console.log(k.code)
-      if (k.key == 'Enter' && labelFile.style.display == 'block'){
-        setSendFile()
+    window.addEventListener("keydown", (k) => {
+      console.log(k.code);
+      if (k.key == "Enter" && labelFile.style.display == "block") {
+        setSendFile();
       }
-    })
-
+    });
 
     // Caso tenha sido carregado algum ficheiro
     if (sendFile.files && sendFile.files[0]) {
@@ -646,23 +616,25 @@ try {
   });
 
   function setSendFile() {
-    updateDate()
+    updateDate();
     let enviarFicheiro =
-        "<div class='the-message-container user'><div class='identifier'><span>" +
-        dia +
-        "<span> &middot; </span> as " +
-        hora +
-        ":" +
-        minuto +
-        "</span></div><div class='text-container sended-file'><a class='writed-message' href='" + refFile + "' download>" +
-        sendFile.files[0].name +
-        "</a></div>";
+      "<div class='the-message-container user'><div class='identifier'><span>" +
+      dia +
+      "<span> &middot; </span> as " +
+      hora +
+      ":" +
+      minuto +
+      "</span></div><div class='text-container sended-file'><a class='writed-message' href='" +
+      refFile +
+      "' download>" +
+      sendFile.files[0].name +
+      "</a></div>";
 
-      document.querySelector("#sended").innerHTML += enviarFicheiro;
-      refFile = ''
-      
-      labelFile.style.display = 'none'
-      pegar("#sended").scrollTo(0, 1000);
+    document.querySelector("#sended").innerHTML += enviarFicheiro;
+    refFile = "";
+
+    labelFile.style.display = "none";
+    pegar("#sended").scrollTo(0, 1000);
   }
 
   //Enviar mensagem de texto
@@ -670,57 +642,62 @@ try {
   escreverMensagem.addEventListener("keydown", (e) => {
     if ((e.keyCode == 13 && e.ctrlKey) || (e.keyCode == 13 && e.shiftKey))
       escreverMensagem.value += "\n";
-    else if (e.keyCode == 13 && !e.ctrlKey && labelFile.style.display != 'block') {
+    else if (
+      e.keyCode == 13 &&
+      !e.ctrlKey &&
+      labelFile.style.display != "block"
+    ) {
       enviar();
-    }
-    else if (e.keyCode == 13 && labelFile.style.display == 'block'){
-      escreverMensagem.blur()
-      setSendFile()
+    } else if (e.keyCode == 13 && labelFile.style.display == "block") {
+      escreverMensagem.blur();
+      setSendFile();
     }
   });
 
   function updateDate() {
     let horario = new Date();
-      const diasDeSemana = [
-        "Domingo",
-        "Segunda",
-        "Terça",
-        "Quarta",
-        "Quinta",
-        "Sexta",
-        "Sábado",
-      ];
-      dia = diasDeSemana[horario.getDay()];
-      hora = horario.getHours();
-      minuto = horario.getMinutes();
+    const diasDeSemana = [
+      "Domingo",
+      "Segunda",
+      "Terça",
+      "Quarta",
+      "Quinta",
+      "Sexta",
+      "Sábado",
+    ];
+    dia = diasDeSemana[horario.getDay()];
+    hora = horario.getHours();
+    minuto = horario.getMinutes();
 
-function formating(value) {
-        if (value < 10) {
-          value = "0" + value;
-        }
-
-        return value;
+    function formating(value) {
+      if (value < 10) {
+        value = "0" + value;
       }
 
-      hora = formating(hora);
-      minuto = formating(minuto);
+      return value;
+    }
 
+    hora = formating(hora);
+    minuto = formating(minuto);
   }
 
   function enviar() {
     if (escreverMensagem.value != "") {
-      updateDate()
+      updateDate();
 
-      var enviar =
-        ("<div class='the-message-container user'><div class='identifier'><span>" +
+      var enviar = (
+        "<div class='the-message-container user'><div class='identifier'><span>" +
         dia +
         "<span> &middot; </span> as " +
         hora +
         ":" +
         minuto +
-        "</span></div><div class='text-container'><p class='writed-message'></p></div>").toString();
+        "</span></div><div class='text-container'><p class='writed-message'></p></div>"
+      ).toString();
       pegar("#sended").innerHTML += enviar;
-      document.querySelector('#sended .user:last-of-type .writed-message').innerText = (escreverMensagem.value.replaceAll("<br>", "\n"))
+      document.querySelector(
+        "#sended .user:last-of-type .writed-message"
+      ).innerText = escreverMensagem.value.replaceAll("<br>", "\n");
     }
     escreverMensagem.blur();
     escreverMensagem.value = "";

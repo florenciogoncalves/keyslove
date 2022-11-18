@@ -26,15 +26,15 @@ if (!$_SESSION['username']) {
     <div id="div-left">
       <div id="user-information">
         <figure>
-        <?php
+          <?php
           $photo = new profileModel();
           $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
           $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
           ?>
 
-        
+
           <div class="foto-de-perfil">
-          <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
 
             <div class="status"></div>
           </div>
@@ -147,7 +147,10 @@ if (!$_SESSION['username']) {
 
       $city = $data->UserData('tb_localizacao');
       $card = $data->user('tb_metodo_pagamento', 'user', $_SESSION['username']);
-
+      if (!$card) {
+        $error = new stdClass();
+        $error->Error = 'Não cadastrado!';
+      }
       ?>
 
 
@@ -198,10 +201,22 @@ if (!$_SESSION['username']) {
           <li>
             <div class="information-card">
               <span>
-                <?= $card['entity_card']; ?>
+                <?php
+                if ($card) {
+                  echo $card['entity_card'];
+                } else {
+                  echo $error->Error;
+                }
+                ?>
               </span>
               <span>
-                <?= $card['agencia']; ?>
+                <?php
+                if ($card) {
+                  echo $card['agencia'];
+                } else {
+                  echo $error->Error;
+                }
+                ?>
               </span>
             </div>
             <a href="./planos.php" class="edit">Editar</a>
@@ -349,5 +364,7 @@ if (!$_SESSION['username']) {
 
   <script src="./../script/script.js"></script>
 </body>
+
+</html>
 
 </html>
