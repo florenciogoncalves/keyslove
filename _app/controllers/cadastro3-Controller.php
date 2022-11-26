@@ -30,5 +30,6 @@ if (isset($_POST['btn-submit'])) {
     $Estado = $_POST['estado'];
     $Cidade = $_POST['cidade'];
     ((new userModel))->cadastro3($user, $Pais, $Estado, $Cidade);
+    $_SESSION['step'] += 1;
     header("Location: ../../cadastro/cadastro-4.php");
 }

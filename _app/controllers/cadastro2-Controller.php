@@ -4,6 +4,7 @@ require_once __DIR__ . "./../models/userModel.php";
 
 if (isset($_POST['btn-submit'])) {
 
+
     $alerts = [];
 
     $FILTER = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -22,5 +23,6 @@ if (isset($_POST['btn-submit'])) {
     $_SESSION['username'] = $nome;
 
     ((new userModel))->cadastro2($nome, $date, $genero);
+    $_SESSION['step'] += 1;
     header("Location: ../../cadastro/cadastro-3.php");
 }

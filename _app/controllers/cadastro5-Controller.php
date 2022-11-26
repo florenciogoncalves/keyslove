@@ -59,6 +59,6 @@ if (!in_array($_FILES['img-1']['type'], $allowedTypes) || (!in_array($_FILES['im
     uploader($_FILES['img-2']['tmp_name'], __DIR__ . "./../../_storage/images/{$secondImageNewName}");
     ((new userModel))->insertUserImage($user, $firstImageNewName);
     ((new userModel))->insertUserImage($user, $secondImageNewName);
-
+    $_SESSION['step'] += 1;
     header("Location: ../../cadastro/cadastro-6.php");
 }

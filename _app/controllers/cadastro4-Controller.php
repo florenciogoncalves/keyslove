@@ -32,5 +32,6 @@ if (isset($_POST['btn'])) {
             ((new userModel))->cadastro4($user, $FILTER['escolha-' . $c]);
         }
     }
+    $_SESSION['step'] += 1;
     header("Location: ../../cadastro/cadastro-5.php");
 }

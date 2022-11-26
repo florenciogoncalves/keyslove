@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['step'])) {
+  header("Location: ./cadastro-1.php");
+}
 ?>
 
 

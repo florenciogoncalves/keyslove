@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['step']) || $_SESSION['step'] < 3) {
+  header("Location: ./cadastro-2.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

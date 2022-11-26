@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!isset($_SESSION['step']) || $_SESSION['step'] < 2) {
+  header("Location: ./cadastro-2.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,30 +34,30 @@ session_start();
 
   <div class="form-cadastro-container">
 
-  <?php
-  if (isset($_SESSION['error'])) :
-  ?>
+    <?php
+    if (isset($_SESSION['error'])) :
+    ?>
 
-    <div class="alert alert-danger text-center" role="alert">
+      <div class="alert alert-danger text-center" role="alert">
 
-      <?php
-      if (isset($_SESSION['error'])) {
-        foreach ($_SESSION['error'] as $errors) {
-          $erro = $errors;
-          echo $errors;
-          unset($_SESSION['error']);
-          unset($errors);
+        <?php
+        if (isset($_SESSION['error'])) {
+          foreach ($_SESSION['error'] as $errors) {
+            $erro = $errors;
+            echo $errors;
+            unset($_SESSION['error']);
+            unset($errors);
+          }
         }
-      }
 
-      ?>
+        ?>
 
-    </div>
+      </div>
 
-  <?php
-  endif;
-  ?>
-  
+    <?php
+    endif;
+    ?>
+
     <div class="cadastro-layout">
       <form action="./../_app/controllers/cadastro3-Controller.php" method="POST" id="form-cadastro3" novalidate>
         <h1>Localização</h1>

@@ -6,7 +6,9 @@
 require __DIR__ . "./../models/userModel.php";
 include_once __DIR__ . "/../boot/helpers.php";
 
+
 if (isset($_POST['btn-submit'])) {
+
 
     $alerts = [];
 
@@ -32,5 +34,6 @@ if (isset($_POST['btn-submit'])) {
 
 
     ((new userModel()))->cadastro1($email, $telefone, $senha);
+    $_SESSION['step'] = 1;
     header("Location: ../../cadastro/cadastro-2.php");
 }
