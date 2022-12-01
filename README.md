@@ -1,1 +1,1 @@
-# Keyslov &mid; Front-end
+# Keyslov
