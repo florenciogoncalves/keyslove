@@ -56,14 +56,15 @@ if (!$_SESSION['username']) {
           <figcaption>
 
             <?php
-            if (isset($_SESSION['username'])):
+            if (isset($_SESSION['username'])) :
             ?>
 
 
-            <h2>
-              <?= $_SESSION['username']; endif ?>
-            </h2>
-            <span id="show-status-window">Escolher status</span>
+              <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+              </h2>
+              <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -140,6 +141,12 @@ if (!$_SESSION['username']) {
     $description = $model->User('tb_sobre_mim', 'user', $Users['nome'], '=');
   }
 
+  $empty = new stdClass();
+  if (!$getUser) {
+    $empty->alert = 'Nenhum usúario disponível no momento!';
+    $empty->style = 'none';
+  }
+
   ?>
 
 
@@ -176,14 +183,18 @@ if (!$_SESSION['username']) {
 
       <div class="home-footer">
         <h3 id="person-name">
-          <?= $getPhoto['user'] ?>
+          <?php
+          if (!isset($_SESSION['alert'])) :
+            echo $getPhoto['user'];
+          else :
+            echo $empty->alert;
+          endif; ?>
         </h3>
         <a href="mensagens.php">
           <div class="talk-now">
             Conversar agora &nbsp;
 
-            <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />&nbsp; <img
-              src="./../images/Group 8777.svg" />&nbsp;
+            <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />&nbsp; <img src="./../images/Group 8777.svg" />&nbsp;
             <img src="./../images/usa-icon.svg" alt="Inglês" class="img-1" />
           </div>
         </a>
@@ -197,31 +208,42 @@ if (!$_SESSION['username']) {
         <p id="subtitle">
 
           <?php
-          echo str_limit_words($description['sobre'], 20);
+          if (isset($empty->alert)) :
+            echo $empty->alert;
+          else :
+            echo str_limit_words($description['sobre'], 20);
+          endif;
           ?>
 
         </p>
+        <?php
 
-        <div id="home-progress-content">
-          <div id="home-progress-bar">
-            <span id="home-progress-val"></span>
-          </div>
-        </div>
+        if (!isset($empty->alert)) :
 
-        <form action="./../_app/controllers/curtidasControllerHome.php" method="post">
-          <div id="home-btns">
-            <button id="retry" name="retry" value="<?= $description['user'] ?>"></button>
-            <button id="dislike" name="deslike" value="<?= $description['user'] ?>"></button>
-            <button id="maybe" name="maybe" value="<?= $description['user'] ?>">Talvez</button>
-            <button id="like" name="like" value="<?= $description['user'] ?>"></button>
-            <button id="favorite" name="favorite" value="<?= $description['user'] ?>"></button>
+        ?>
+
+          <div style="display:<?php echo $empty->style ?>" id="home-progress-content">
+            <div id="home-progress-bar">
+              <span id="home-progress-val"></span>
+            </div>
           </div>
-        </form>
+
+          <form action="./../_app/controllers/curtidasControllerHome.php" method="post">
+            <div style="display:<?php echo $empty->style ?>" id="home-btns">
+              <button id="retry" name="retry" value="<?= $description['user'] ?>"></button>
+              <button id="dislike" name="deslike" value="<?= $description['user'] ?>"></button>
+              <button id="maybe" name="maybe" value="<?= $description['user'] ?>">Talvez</button>
+              <button id="like" name="like" value="<?= $description['user'] ?>"></button>
+              <button id="favorite" name="favorite" value="<?= $description['user'] ?>"></button>
+            </div>
+          </form>
       </div>
+    <?php
 
+        endif;
+    ?>
 
-      <object data="./../_storage/images/<?= $getPhoto['photo']; ?>" id="main-image" alt="Fotografia"
-        class="mainPhoto"></object>
+    <object data="./../_storage/images/<?= $getPhoto['photo'] ?? $empty->alert; ?>" id="main-image" alt="Fotografia" class="mainPhoto"></object>
     </main>
     <footer id="footer-mobile">
       <nav>

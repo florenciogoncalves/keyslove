@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+if (!isset($_SESSION['step']) || $_SESSION['step'] < 6) {
+  header("Location: ./../cadastro/cadastro-6.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -14,6 +17,14 @@ session_start();
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+
+  <style>
+    #nav,
+    #peoples-left {
+      display: none;
+    }
+  </style>
+
 </head>
 
 <body id="sobre-usuario">
@@ -43,7 +54,9 @@ session_start();
             <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <a class="logout" href="./../index.php"><li>Sair</li></a>
+            <a class="logout" href="./../index.php">
+              <li>Sair</li>
+            </a>
           </ul>
         </div>
         <div id="online-now">
@@ -66,7 +79,7 @@ session_start();
         </div>
       </div>
 
-      <nav>
+      <nav id="nav">
         <ul id="menu-left">
           <li><a href="./../home/perfil.php">Perfil</a></li>
           <li><a href="./../home/chamada.php">Chamada de video</a></li>
@@ -109,17 +122,17 @@ session_start();
         <div id="container-elements">
           <div class="iten">
             <label for="cargo">Cargo</label>
-            <input type="text" id="cargo" placeholder="exemplo" name="cargo" required/>
+            <input type="text" id="cargo" placeholder="exemplo" name="cargo" required />
           </div>
 
           <div class="iten">
             <label for="empresa">Empresa</label>
-            <input type="text" id="empresa" placeholder="exemplo" name="empresa" required/>
+            <input type="text" id="empresa" placeholder="exemplo" name="empresa" required />
           </div>
 
           <div class="iten">
             <label for="formado-em">Formado em:</label>
-            <input type="text" id="formado-em" placeholder="exemplo" name="formacao" required/>
+            <input type="text" id="formado-em" placeholder="exemplo" name="formacao" required />
           </div>
 
           <div class="iten">
@@ -190,16 +203,16 @@ session_start();
       </form>
     </div>
     <footer id="footer-mobile">
-        <nav>
-          <ul>
-            <li><a href="./../home/index.php"></a></li>
-            <li><a href="./../home/localizar-pessoas.php"></a></li>
-            <li><a href="./../home/favoritos.php"></a></li>
-            <li><a href="./../home/mensagens.php"></a></li>
-            <li><button id="mostra-menu-mobile"></button></li>
-          </ul>
-        </nav>
-      </footer>
+      <nav>
+        <ul>
+          <li><a href="./../home/index.php"></a></li>
+          <li><a href="./../home/localizar-pessoas.php"></a></li>
+          <li><a href="./../home/favoritos.php"></a></li>
+          <li><a href="./../home/mensagens.php"></a></li>
+          <li><button id="mostra-menu-mobile"></button></li>
+        </ul>
+      </nav>
+    </footer>
   </div>
 
   <script src="./../script/about-user.js"></script>

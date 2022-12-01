@@ -11,13 +11,14 @@ class profileModel extends connect
     public function userAge(string $entity = 'data_nascimento')
     {
 
-        if (isset($_SESSION['username_id'])) {
-            $id = $_SESSION['username_id'];
-        }
+        // if (isset($_SESSION['username_id'])) {
+        //     $id = $_SESSION['username_id'];
+        // }
+        $name = $_SESSION['username'];
 
 
-        $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `id` = ?");
-        $query->bindParam(1, $id);
+        $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `nome` = ?");
+        $query->bindParam(1, $name);
         $query->execute();
 
         $user = $query->fetch(PDO::FETCH_ASSOC);
@@ -54,22 +55,22 @@ class profileModel extends connect
         string $card_titular,
         string $mes,
         string $ano,
-        string $cvv
-    ): bool
-    {
-        $query = $this->connect->prepare("INSERT INTO tb_metodo_pagamento(user, numeroCartao, nomeTitular, mes, ano, cvv) VALUES (?, ?, ?, ?, ?, ?)");
+        string $cvv,
+        int $parcelas
+    ): bool {
+        $query = $this->connect->prepare("INSERT INTO tb_metodo_pagamento(user, numeroCartao, nomeTitular, mes, ano, cvv, parcelas) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $query->bindParam(1, $user);
         $query->bindParam(2, $card_number);
         $query->bindParam(3, $card_titular);
         $query->bindParam(4, $mes);
         $query->bindParam(5, $ano);
         $query->bindParam(6, $cvv);
+        $query->bindParam(7, $parcelas);
 
         if ($query->execute()) {
             return true;
         }
         return false;
-
     }
 
 
@@ -79,6 +80,7 @@ class profileModel extends connect
             $id = $_SESSION['username_id'];
         }
 
+        $nome = $_SESSION['username'];
 
         $firstQuery = $this->connect->prepare("SELECT * FROM {$entity} WHERE id = ?");
 
@@ -87,8 +89,8 @@ class profileModel extends connect
 
 
 
-        $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `id` = ?");
-        $query->bindParam(1, $id);
+        $query = $this->connect->prepare("SELECT * FROM `keyslov_bd`.`tb_cadastroConta2` WHERE `nome` = ?");
+        $query->bindParam(1, $nome);
         $query->execute();
 
         $user = $query->fetch(PDO::FETCH_ASSOC);
@@ -119,7 +121,6 @@ class profileModel extends connect
 
 
         return $data;
-
     }
 
     public function User(string $entity = 'tb_cadastroConta', string $where = 'user', string $user, string $operation = '=', string $method = 'fetch'): iterable|object|bool
@@ -137,7 +138,6 @@ class profileModel extends connect
         $data = $firstQuery->{$method}(PDO::FETCH_ASSOC);
 
         return $data;
-
     }
 
 
@@ -153,12 +153,12 @@ class profileModel extends connect
 
         return $data;
     }
-    public function getUserToCarroussel(string $entity = 'tb_cadastroConta'): iterable|object
+    public function getUserToCarroussel(string $entity = 'tb_cadastroConta'): bool|iterable|object
     {
         if (isset($_SESSION['username_id'])) {
             $id = $_SESSION['username_id'];
         }
-
+        // $id = 2;
 
         $firstQuery = $this->connect->prepare("SELECT * FROM {$entity} WHERE id != ?");
 
@@ -198,7 +198,6 @@ class profileModel extends connect
             if ($query->execute()) {
                 return true;
             }
-
         }
         return false;
     }
@@ -233,8 +232,6 @@ class profileModel extends connect
             $query->bindParam(2, $reacted);
             $query->bindParam(3, $reaction);
             $query->execute();
-
         }
     }
-
 }

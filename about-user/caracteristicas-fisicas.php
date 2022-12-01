@@ -16,6 +16,12 @@ session_start();
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <style>
+    nav,
+    #peoples-left {
+      display: none;
+    }
+  </style>
 </head>
 
 <body id="sobre-usuario">
@@ -46,7 +52,9 @@ session_start();
             <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <a class="logout" href="./../index.php"><li>Sair</li></a>
+            <a class="logout" href="./../index.php">
+              <li>Sair</li>
+            </a>
           </ul>
         </div>
         <div id="online-now">
@@ -135,120 +143,120 @@ session_start();
         </header>
 
         <div id="container-elements">
-          
-            <div class="iten">
-              <label for="cor-cabelos">Cor dos cabelos</label>
-              <select id="cor-cabelos" name="cor-cabelos" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Loiro">Loiro</option>
-                <option value="Castanho claro">Castanho Claro</option>
-                <option value="Castanho médio">Castanho Médio</option>
-                <option value="Castanho escuro">Castanho Escuro</option>
-                <option value="Castanho meio ruivo">Castanho meio Ruivo</option>
-                <option value="Ruivo">Ruivo</option>
-                <option value="Moreno">Moreno</option>
-                <option value="Preto">Preto</option>
-                <option value="Cinza ou Grisalho">Cinza ou Grizalho</option>
-                <option value="Branco">Branco</option>
-              </select>
-            </div>
 
-            <div class="iten">
-              <label for="cor-olhos">Cor dos olhos</label>
-              <select id="cor-olhos" name="cor-olhos" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Azul">Azul</option>
-                <option value="Azul-esverdeado">Azul-esverdeado</option>
-                <option value="Cinza">Cinza</option>
-                <option value="Castanho">Castanho</option>
-                <option value="Verde">Verde</option>
-                <option value="Avelã">Avelã(castanhos-esverdeados)</option>
-                <option value="Âmbar">Âmbar(ocre ou mel)</option>
-                <option value="Vermelho">Vermelho(albinismo)</option>
-                <option value="">Violeta</option>
-              </select>
-            </div>
+          <div class="iten">
+            <label for="cor-cabelos">Cor dos cabelos</label>
+            <select id="cor-cabelos" name="cor-cabelos" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Loiro">Loiro</option>
+              <option value="Castanho claro">Castanho Claro</option>
+              <option value="Castanho médio">Castanho Médio</option>
+              <option value="Castanho escuro">Castanho Escuro</option>
+              <option value="Castanho meio ruivo">Castanho meio Ruivo</option>
+              <option value="Ruivo">Ruivo</option>
+              <option value="Moreno">Moreno</option>
+              <option value="Preto">Preto</option>
+              <option value="Cinza ou Grisalho">Cinza ou Grizalho</option>
+              <option value="Branco">Branco</option>
+            </select>
+          </div>
 
-            <div class="iten">
-              <label for="altura">Altura</label>
-              <select id="altura" name="altura" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="1.41m - 1.50m">1.41 metros - 1.50 metros</option>
-                <option value="1.51m - 1.60m">1.51 metros - 1.60 metros</option>
-                <option value="1.61m - 1.70m">1.61 metros - 1.70 metros</option>
-                <option value="1.71m - 1.80m">1.71 metros - 1.80 metros</option>
-                <option value="1.81m - 1.90m">1.81 metros - 1.90 metros</option>
-                <option value="1.91m - 2.00m">1.91 metros - 2.00 metros</option>
-                <option value="+2.00m">+2.00 metros</option>
-              </select>
-            </div>
+          <div class="iten">
+            <label for="cor-olhos">Cor dos olhos</label>
+            <select id="cor-olhos" name="cor-olhos" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Azul">Azul</option>
+              <option value="Azul-esverdeado">Azul-esverdeado</option>
+              <option value="Cinza">Cinza</option>
+              <option value="Castanho">Castanho</option>
+              <option value="Verde">Verde</option>
+              <option value="Avelã">Avelã(castanhos-esverdeados)</option>
+              <option value="Âmbar">Âmbar(ocre ou mel)</option>
+              <option value="Vermelho">Vermelho(albinismo)</option>
+              <option value="">Violeta</option>
+            </select>
+          </div>
 
-            <div class="iten">
-              <label for="peso">Peso</label>
-              <select id="peso" name="peso" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="40Kg - 50Kg">40Kg - 50Kg</option>
-                <option value="50Kg - 60Kg">50Kg - 60Kg</option>
-                <option value="60Kg - 70Kg">60Kg - 70Kg</option>
-                <option value="70Kg - 80Kg">70Kg - 80Kg</option>
-                <option value="80Kg - 90Kg">80Kg - 90Kg</option>
-                <option value="90Kg - 100Kg">90Kg - 100Kg</option>
-                <option value="+100Kg">+100Kg</option>
-              </select>
-            </div>
-          
+          <div class="iten">
+            <label for="altura">Altura</label>
+            <select id="altura" name="altura" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="1.41m - 1.50m">1.41 metros - 1.50 metros</option>
+              <option value="1.51m - 1.60m">1.51 metros - 1.60 metros</option>
+              <option value="1.61m - 1.70m">1.61 metros - 1.70 metros</option>
+              <option value="1.71m - 1.80m">1.71 metros - 1.80 metros</option>
+              <option value="1.81m - 1.90m">1.81 metros - 1.90 metros</option>
+              <option value="1.91m - 2.00m">1.91 metros - 2.00 metros</option>
+              <option value="+2.00m">+2.00 metros</option>
+            </select>
+          </div>
 
-          
-            <div class="iten">
-              <label for="tipo-fisico">Tipo físico</label>
-              <select id="tipo-fisico" name="tipo-fisico" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Ectomorfo">Ectomorfo</option>
-                <option value="Mesomorfo">Mesomorfo</option>
-                <option value="Endomorfo">Endomorfo</option>
-              </select>
-            </div>
+          <div class="iten">
+            <label for="peso">Peso</label>
+            <select id="peso" name="peso" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="40Kg - 50Kg">40Kg - 50Kg</option>
+              <option value="50Kg - 60Kg">50Kg - 60Kg</option>
+              <option value="60Kg - 70Kg">60Kg - 70Kg</option>
+              <option value="70Kg - 80Kg">70Kg - 80Kg</option>
+              <option value="80Kg - 90Kg">80Kg - 90Kg</option>
+              <option value="90Kg - 100Kg">90Kg - 100Kg</option>
+              <option value="+100Kg">+100Kg</option>
+            </select>
+          </div>
 
-            <div class="iten">
-              <label for="grupo-etnico">Grupo étnico</label>
-              <select id="grupo-etnico" name="grupo-etnico" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Branco">Branco</option>
-                <option value="Pardo">Pardo</option>
-                <option value="Preto">Preto</option>
-                <option value="Amarelo">Amarelo</option>
-                <option value="Indígena">Indígena</option>
-              </select>
-            </div>
 
-            <div class="iten">
-              <label for="arte-corporal">Arte corporal</label>
-              <select id="arte-corporal" name="arte-corporal" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Nenhuma">Nenhuma</option>
-                <option value="Tatuagem">Tatuagem</option>
-                <option value="Piercings">Piercings</option>
-                <option value="Alargadores">Alargadores</option>
-                <option value="Pintura corporal">Pintura corporal</option>
-                <option value="Microdermal">Microdermal</option>
-                <option value="Escarificação">Escarificação</option>
-                <option value="Implante Subcutâneo">Implante Subcutâneo</option>
-                <option value="Bifurcação da língua">Bifurcação da língua</option>
-              </select>
-            </div>
 
-            <div class="iten">
-              <label for="aparencia">Minha aparência</label>
-              <select id="aparencia" name="aparencia" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Bagunçado">Bagunçado</option>
-                <option value="Ralo">Ralo</option>
-                <option value="Com frizz">Com frizz</option>
-                <option value="Brilhante">Brilhante</option>
-                <option value="Limpo">Limpo</option>
-              </select>
-            </div>
-          
+          <div class="iten">
+            <label for="tipo-fisico">Tipo físico</label>
+            <select id="tipo-fisico" name="tipo-fisico" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Ectomorfo">Ectomorfo</option>
+              <option value="Mesomorfo">Mesomorfo</option>
+              <option value="Endomorfo">Endomorfo</option>
+            </select>
+          </div>
+
+          <div class="iten">
+            <label for="grupo-etnico">Grupo étnico</label>
+            <select id="grupo-etnico" name="grupo-etnico" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Branco">Branco</option>
+              <option value="Pardo">Pardo</option>
+              <option value="Preto">Preto</option>
+              <option value="Amarelo">Amarelo</option>
+              <option value="Indígena">Indígena</option>
+            </select>
+          </div>
+
+          <div class="iten">
+            <label for="arte-corporal">Arte corporal</label>
+            <select id="arte-corporal" name="arte-corporal" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Nenhuma">Nenhuma</option>
+              <option value="Tatuagem">Tatuagem</option>
+              <option value="Piercings">Piercings</option>
+              <option value="Alargadores">Alargadores</option>
+              <option value="Pintura corporal">Pintura corporal</option>
+              <option value="Microdermal">Microdermal</option>
+              <option value="Escarificação">Escarificação</option>
+              <option value="Implante Subcutâneo">Implante Subcutâneo</option>
+              <option value="Bifurcação da língua">Bifurcação da língua</option>
+            </select>
+          </div>
+
+          <div class="iten">
+            <label for="aparencia">Minha aparência</label>
+            <select id="aparencia" name="aparencia" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Bagunçado">Bagunçado</option>
+              <option value="Ralo">Ralo</option>
+              <option value="Com frizz">Com frizz</option>
+              <option value="Brilhante">Brilhante</option>
+              <option value="Limpo">Limpo</option>
+            </select>
+          </div>
+
         </div>
 
         <div class="progress-next">
@@ -265,16 +273,16 @@ session_start();
       </form>
     </div>
     <footer id="footer-mobile">
-        <nav>
-          <ul>
-            <li><a href="./../home/index.php"></a></li>
-            <li><a href="./../home/localizar-pessoas.php"></a></li>
-            <li><a href="./../home/favoritos.php"></a></li>
-            <li><a href="./../home/mensagens.php"></a></li>
-            <li><button id="mostra-menu-mobile"></button></li>
-          </ul>
-        </nav>
-      </footer>
+      <nav>
+        <ul>
+          <li><a href="./../home/index.php"></a></li>
+          <li><a href="./../home/localizar-pessoas.php"></a></li>
+          <li><a href="./../home/favoritos.php"></a></li>
+          <li><a href="./../home/mensagens.php"></a></li>
+          <li><button id="mostra-menu-mobile"></button></li>
+        </ul>
+      </nav>
+    </footer>
   </div>
 
   <script src="./../script/about-user.js"></script>

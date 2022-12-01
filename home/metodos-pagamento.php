@@ -57,11 +57,11 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
     <div id="div-left">
       <div id="user-information">
         <figure>
-        <?php
-        $photo = new profileModel();
-        $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
-        $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
-        ?>
+          <?php
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
 
 
           <div class="foto-de-perfil">
@@ -71,14 +71,15 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])):
+            if (isset($_SESSION['username'])) :
             ?>
 
 
-            <h2>
-              <?= $_SESSION['username']; endif ?>
-            </h2>
-            <span id="show-status-window">Escolher status</span>
+              <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+              </h2>
+              <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -155,46 +156,46 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
 
 
       <?php
-    if (isset($_SESSION['error'])):
-    ?>
-
-      <div class="alert alert-danger text-center" role="alert">
-
-        <?php
-      if (isset($_SESSION['error'])) {
-        foreach ($_SESSION['error'] as $errors) {
-          echo $errors;
-          unset($_SESSION['error']);
-          unset($errors);
-        }
-      }
-
+      if (isset($_SESSION['error'])) :
       ?>
 
-      </div>
+        <div class="alert alert-danger text-center" role="alert">
+
+          <?php
+          if (isset($_SESSION['error'])) {
+            foreach ($_SESSION['error'] as $errors) {
+              echo $errors;
+              unset($_SESSION['error']);
+              unset($errors);
+            }
+          }
+
+          ?>
+
+        </div>
 
       <?php
-    endif;
-    ?>
-
-      <?php
-    if (isset($_SESSION['return'])):
-    ?>
-
-      <div class="alert alert-success text-center" role="alert">
-
-        <?php
-    
-      echo $_SESSION['return'];
-      unset($_SESSION['return']);
-
+      endif;
       ?>
 
-      </div>
+      <?php
+      if (isset($_SESSION['return'])) :
+      ?>
+
+        <div class="alert alert-success text-center" role="alert">
+
+          <?php
+
+          echo $_SESSION['return'];
+          unset($_SESSION['return']);
+
+          ?>
+
+        </div>
 
       <?php
-    endif;
-    ?>
+      endif;
+      ?>
 
       <section id="metodo-pagamento">
         <h1 class="title">Métodos de Pagamento</h1>
@@ -230,7 +231,7 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
                   <input type="number" placeholder="CVV" name="cvv" />
                 </div>
               </div>
-              <select>
+              <select name="parcelas">
                 <option hidden selected name="parcelas">Número de parcelas</option>
                 <option value="1">1 parcela</option>
                 <option value="2">2 parcelas</option>
@@ -241,8 +242,17 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
 
           </section>
           <section class="right-side">
-            <section id="payment-method" name="metodoPagamento  ">
+            <section id="payment-method" name="metodoPagamento">
               <!-- As opções aqui são dinamicamente inseridas pelo JavaScript -->
+
+              <script>
+                // const teste = document.getElementById('payment-method')
+                // const inputs = document.getElementsByTagName('input')[0]
+                // teste.addEventListener('click', () => {
+                //   console.log(teste);
+
+                // })
+              </script>
             </section>
 
             </form>

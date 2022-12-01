@@ -14,10 +14,16 @@ session_start();
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <style>
+    nav,
+    #peoples-left {
+      display: none;
+    }
+  </style>
 </head>
 
 <body id="sobre-usuario">
-<div id="menu-esquerdo">
+  <div id="menu-esquerdo">
     <div id="div-left">
       <div id="user-information">
         <figure>
@@ -43,7 +49,9 @@ session_start();
             <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <a class="logout" href="./../index.php"><li>Sair</li></a>
+            <a class="logout" href="./../index.php">
+              <li>Sair</li>
+            </a>
           </ul>
         </div>
         <div id="online-now">
@@ -109,81 +117,81 @@ session_start();
 
         <div id="container-elements" style="justify-content: flex-start">
 
-        <div class="iten">
-              <label for="ocupacao">Ocupação</label>
-              <input type="text" id="ocupacao" name="ocupacao" placeholder="Selecionar..." required>
-            </div>
-          
-            <div class="iten">
-              <label for="beber">Você bebe?</label>
-              <select id="beber" name="beber" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-                <option value="Por vezes">Por vezes</option>
-              </select>
-            </div>
-            <div class="iten">
-              <label for="fumar">Você fuma?</label>
-              <select id="fumar" name="fumar" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-                <option value="Por vezes">Por vezes</option>
-              </select>
-            </div>
+          <div class="iten">
+            <label for="ocupacao">Ocupação</label>
+            <input type="text" id="ocupacao" name="ocupacao" placeholder="Selecionar..." required>
+          </div>
 
-            <div class="iten">
-              <label for="filhos">Possui filhos?</label>
-              <select id="filhos" name="filhos" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-              </select>
-            </div>
-            <div class="iten">
-              <label for="quantidade-filhos">Quantidade de filhos</label>
-              <select id="quantidade-filhos" name="quantidade-filhos" >
-                <option selected hidden disabled >00</option>
-                <option value="1">01</option>
-                <option value="2">02</option>
-                <option value="3">03</option>
-                <option value="4">04</option>
-                <option value="5">05</option>
-                <option value="6">06</option>
-                <option value="7">07</option>
-                <option value="+7">+7</option>
-              </select>
-            </div>
-          
+          <div class="iten">
+            <label for="beber">Você bebe?</label>
+            <select id="beber" name="beber" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+              <option value="Por vezes">Por vezes</option>
+            </select>
+          </div>
+          <div class="iten">
+            <label for="fumar">Você fuma?</label>
+            <select id="fumar" name="fumar" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+              <option value="Por vezes">Por vezes</option>
+            </select>
+          </div>
 
-          
-            <div class="iten">
-              <label for="pets">Possui animais de estimação?</label>
-              <select id="pets" name="pets" required>
-                <option selected hidden disabled value="">Selecionar...</option>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
-              </select>
-            </div>
+          <div class="iten">
+            <label for="filhos">Possui filhos?</label>
+            <select id="filhos" name="filhos" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
+          </div>
+          <div class="iten">
+            <label for="quantidade-filhos">Quantidade de filhos</label>
+            <select id="quantidade-filhos" name="quantidade-filhos">
+              <option selected hidden disabled>00</option>
+              <option value="1">01</option>
+              <option value="2">02</option>
+              <option value="3">03</option>
+              <option value="4">04</option>
+              <option value="5">05</option>
+              <option value="6">06</option>
+              <option value="7">07</option>
+              <option value="+7">+7</option>
+            </select>
+          </div>
 
-            <div class="iten">
-              <label for="quantidade-pets">Quantidade</label>
-              <select id="quantidade-pets" name="quantidade-pets">
-              <option selected hidden disabled >00</option>
-                <option value="1">01</option>
-                <option value="2">02</option>
-                <option value="3">03</option>
-                <option value="4">04</option>
-                <option value="5">05</option>
-                <option value="6">06</option>
-                <option value="7">07</option>
-                <option value="+7">+7</option>
-              </select>
-            </div>
 
-          
-          
+
+          <div class="iten">
+            <label for="pets">Possui animais de estimação?</label>
+            <select id="pets" name="pets" required>
+              <option selected hidden disabled value="">Selecionar...</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+            </select>
+          </div>
+
+          <div class="iten">
+            <label for="quantidade-pets">Quantidade</label>
+            <select id="quantidade-pets" name="quantidade-pets">
+              <option selected hidden disabled>00</option>
+              <option value="1">01</option>
+              <option value="2">02</option>
+              <option value="3">03</option>
+              <option value="4">04</option>
+              <option value="5">05</option>
+              <option value="6">06</option>
+              <option value="7">07</option>
+              <option value="+7">+7</option>
+            </select>
+          </div>
+
+
+
         </div>
 
         <div class="progress-next">
@@ -200,16 +208,16 @@ session_start();
       </form>
     </div>
     <footer id="footer-mobile">
-        <nav>
-          <ul>
-            <li><a href="./../home/index.php"></a></li>
-            <li><a href="./../home/localizar-pessoas.php"></a></li>
-            <li><a href="./../home/favoritos.php"></a></li>
-            <li><a href="./../home/mensagens.php"></a></li>
-            <li><button id="mostra-menu-mobile"></button></li>
-          </ul>
-        </nav>
-      </footer>
+      <nav>
+        <ul>
+          <li><a href="./../home/index.php"></a></li>
+          <li><a href="./../home/localizar-pessoas.php"></a></li>
+          <li><a href="./../home/favoritos.php"></a></li>
+          <li><a href="./../home/mensagens.php"></a></li>
+          <li><button id="mostra-menu-mobile"></button></li>
+        </ul>
+      </nav>
+    </footer>
   </div>
   <script src="./../script/about-user.js"></script>
   <script src="./../script/script.js"></script>

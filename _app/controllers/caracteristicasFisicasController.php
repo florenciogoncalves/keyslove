@@ -38,5 +38,5 @@ $aparencia = filter($_POST['aparencia']);
     $arteCorporal,
     $aparencia
 );
+$_SESSION['step'] += 1;
 header("Location: ../../about-user/estilo-de-vida.php");
-

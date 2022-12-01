@@ -232,7 +232,7 @@ try {
     let insert = document.createElement("input");
     insert.setAttribute("type", "radio");
     insert.setAttribute("value", element);
-    insert.setAttribute("name", "card-flag");
+    insert.setAttribute("name", element);
     insert.style.backgroundImage =
       "url(../images/payment-method/" + element + ".svg)";
 

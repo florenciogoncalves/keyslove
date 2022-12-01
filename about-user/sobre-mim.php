@@ -16,6 +16,12 @@ session_start();
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <style>
+    nav,
+    #peoples-left {
+      display: none;
+    }
+  </style>
 </head>
 
 <body id="sobre-usuario">
@@ -45,7 +51,9 @@ session_start();
             <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <a class="logout" href="./../index.php"><li>Sair</li></a>
+            <a class="logout" href="./../index.php">
+              <li>Sair</li>
+            </a>
           </ul>
         </div>
         <div id="online-now">
@@ -112,14 +120,14 @@ session_start();
         <div id="container-elements" style="justify-content: flex-start">
           <div class="iten" style="margin-bottom: 24px">
             <label for="write-about">Escreva sobre você</label>
-            
+
             <span class="chars-count"></span>
             <textarea id="write-about" placeholder="Escreva..." name="sobre-voce" oninput="maxCharTextArea(this)" required></textarea>
           </div>
 
           <div class="iten">
             <label for="write-about">O que você busca</label>
-              <span class="chars-count"></span>
+            <span class="chars-count"></span>
             <textarea id="find-out" placeholder="Escreva..." name="o-que-busca" oninput="maxCharTextArea(this)" required></textarea>
           </div>
         </div>
@@ -136,16 +144,16 @@ session_start();
       </form>
     </div>
     <footer id="footer-mobile">
-        <nav>
-          <ul>
-            <li><a href="./../home/index.php"></a></li>
-            <li><a href="./../home/localizar-pessoas.php"></a></li>
-            <li><a href="./../home/favoritos.php"></a></li>
-            <li><a href="./../home/mensagens.php"></a></li>
-            <li><button id="mostra-menu-mobile"></button></li>
-          </ul>
-        </nav>
-      </footer>
+      <nav>
+        <ul>
+          <li><a href="./../home/index.php"></a></li>
+          <li><a href="./../home/localizar-pessoas.php"></a></li>
+          <li><a href="./../home/favoritos.php"></a></li>
+          <li><a href="./../home/mensagens.php"></a></li>
+          <li><button id="mostra-menu-mobile"></button></li>
+        </ul>
+      </nav>
+    </footer>
   </div>
 
   <script src="./../script/about-user.js"></script>

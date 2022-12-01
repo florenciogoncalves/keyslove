@@ -14,12 +14,20 @@ session_start();
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+
+  <style>
+    nav,
+    #peoples-left {
+      display: none;
+    }
+  </style>
+
 </head>
 
 <body id="sobre-usuario">
   <div id="menu-esquerdo">
     <div id="div-left">
-    <div id="user-information">
+      <div id="user-information">
         <figure>
           <div class="foto-de-perfil">
             <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
@@ -417,16 +425,16 @@ session_start();
       </form>
     </div>
     <footer id="footer-mobile">
-        <nav>
-          <ul>
-            <li><a href="./../home/index.php"></a></li>
-            <li><a href="./../home/localizar-pessoas.php"></a></li>
-            <li><a href="./../home/favoritos.php"></a></li>
-            <li><a href="./../home/mensagens.php"></a></li>
-            <li><button id="mostra-menu-mobile"></button></li>
-          </ul>
-        </nav>
-      </footer>
+      <nav>
+        <ul>
+          <li><a href="./../home/index.php"></a></li>
+          <li><a href="./../home/localizar-pessoas.php"></a></li>
+          <li><a href="./../home/favoritos.php"></a></li>
+          <li><a href="./../home/mensagens.php"></a></li>
+          <li><button id="mostra-menu-mobile"></button></li>
+        </ul>
+      </nav>
+    </footer>
   </div>
 
   <script src="./../script/about-user.js"></script>

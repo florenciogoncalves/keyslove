@@ -24,17 +24,6 @@ if (!is_email($_POST['email'])) {
 $email = filter($_POST['email']);
 $senha = filter($_POST['password']);
 
-// echo "<pre>";
-
-// // if (isset($_SESSION['USERNAME_LOGIN'])) {
-// //     echo $_SESSION['USERNAME_LOGIN'];
-// //     unset($_SESSION['USERNAME_LOGIN']);
-// // }
-
-// var_dump([
-//     "teste" => ((new userModel)->authUser($email, $senha)),
-// ]);
-
 $auth = new userModel();
 
 if (!$auth->authUser($email, $senha)) {

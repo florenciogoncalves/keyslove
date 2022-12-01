@@ -58,6 +58,12 @@ if (!$_SESSION['username']) {
           $photo = new profileModel();
           $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
           $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          $empty = new stdClass();
+
+          if (!$get) {
+            $empty->alert = 'none';
+          }
+
           ?>
 
           <div class="foto-de-perfil">
@@ -66,14 +72,15 @@ if (!$_SESSION['username']) {
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])):
+            if (isset($_SESSION['username'])) :
             ?>
 
 
-            <h2>
-              <?= $_SESSION['username']; endif ?>
-            </h2>
-            <span id="show-status-window">Escolher status</span>
+              <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+              </h2>
+              <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -146,10 +153,13 @@ if (!$_SESSION['username']) {
 
 
         <?php
-
+        if (!isset($empty->alert)) :
         ?>
 
-        <img src="./../_storage/images/<?= $get['photo']; ?>" alt="Foto de perfil" class="carrousselPhoto" />
+          <img src="./../_storage/images/<?= $get['photo']; ?>" alt="Foto de perfil" class="carrousselPhoto" />
+        <?php
+        endif;
+        ?>
         <figcaption id="descricao-perfil">
 
           <?php
@@ -161,53 +171,103 @@ if (!$_SESSION['username']) {
 
           $about = $data->User('tb_sobre_mim', 'user', $_SESSION['username'], '!=');
 
+          if (!$for) :
+            $empty->alertNotUserYet = '<h3><center>Nenhum usuário disponível no momento para ser exibido!</center></h3>';
+            $empty->empty = '';
+          endif;
 
           ?>
 
+
+
           <h2>
-            <?= $for['nome']; ?>
+            <?php
+            if (isset($empty->alert)) :
+              echo $empty->alertNotUserYet;
+            else :
+              echo $for['nome'];
+            endif;
+            ?>
           </h2>
+
           <p>
-            <?= $others['cargo']; ?><span>&middot;</span>
-              <span class="idade">
-                <?php
+            <?php
+            if (!isset($empty->alertNotUserYet)) :
+              echo $others['cargo'];
+            else :
+              echo $empty->empty;
+            endif;
+
+            ?>
+            <?php
+            if (!isset($empty->alertNotUserYet)) :
+            ?>
+              <span>&middot;</span>
+            <?php
+            else :
+              echo $empty->empty;
+            endif;
+            ?>
+            <span class="idade">
+              <?php
 
 
-                $fullYear = new profileModel();
+              $fullYear = new profileModel();
+              if (!isset($empty->alertNotUserYet)) :
                 $getY = $fullYear->Age('data_nascimento', $for['nome']);
                 $show = UserAge($getY);
                 echo $show;
-
-                ?>
-              </span>&nbsp;anos
-          </p>
-          <p>
-            <?= $about['sobre'] . "<br>"; ?>
-          </p>
-          <div class="botoes">
-
-            <form action="./../_app/controllers/curtidasController.php" method="post">
-
-              <button class="dislike" name="deslike" value="<?= $for['nome']; ?>"></button>
-              <button class="like" name="like" value="<?= $for['nome']; ?>"></button>
-            </form>
-
-            <?php
-            if (isset($_SESSION['message'])):
-            ?>
-
-            <script>
-              alert("<?php echo $_SESSION['message']; ?>");
-              // unset(<?php $_SESSION['message']; ?>);
-              <?php
+              endif;
 
               ?>
-            </script>
+              <?php
+              if (!isset($empty->alertNotUserYet)) :
+              ?>
+            </span>&nbsp;anos
+          <?php
+              endif;
+          ?>
+          </p>
+          <p>
             <?php
-              unset($_SESSION['message']);
-            endif;
-            ?>
-          </div>
+            if (isset($empty->alertNotUserYet)) :
+              echo $empty->empty;
+            else :
+              echo $about['sobre'] . "<br>";
+            endif; ?>
+          </p>
+          <?php
+          if (!isset($empty->alertNotUserYet)) :
+          ?>
+            <div class="botoes">
+
+              <form action="./../_app/controllers/curtidasController.php" method="post">
+
+                <button class="dislike" name="deslike" value="<?= $for['nome']; ?>"></button>
+                <button class="like" name="like" value="<?= $for['nome']; ?>"></button>
+              </form>
+
+              <?php
+              if (isset($_SESSION['message'])) :
+              ?>
+
+                <script>
+                  alert("<?php echo $_SESSION['message']; ?>");
+                  // unset(<?php $_SESSION['message']; ?>);
+                  <?php
+
+                  ?>
+                </script>
+              <?php
+                unset($_SESSION['message']);
+              endif;
+              ?>
+            </div>
+          <?php
+          else :
+            echo $empty->empty;
+          endif;
+          ?>
         </figcaption>
       </figure>
 
@@ -228,7 +288,7 @@ if (!$_SESSION['username']) {
 
         // $get = ;
         // $dd = $fullYear->User('tb_cadastroConta2', 'nome', $_SESSION['username'], '!=', 'fetchAll', 4);
-        
+
 
 
         $user = $teste->User('tb_job_tb', 'user', $_SESSION['username'], '!=', 'fetchAll');
@@ -253,12 +313,11 @@ if (!$_SESSION['username']) {
           </p>
           </div>
 
-          <a href='mensagens.php'>
+          <a href='mensagens.php?user={$item['user']}'>
           <button class='conversar'></button>
         </a>
 
           </div>";
-
         }
 
         ?>

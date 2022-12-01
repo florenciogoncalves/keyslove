@@ -1,11 +1,14 @@
 <?php
 
 // session_start();
-require_once __DIR__ . "./../_app/models/profileModel.php";
+require_once __DIR__ . "./../_app/models/messageModel.php";
 
 if (!$_SESSION['username']) {
   header("Location: ../");
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
+}
+if (isset($_GET['user'])) {
+  $reciver = $_GET['user'];
 }
 ?>
 <!DOCTYPE html>
@@ -20,6 +23,15 @@ if (!$_SESSION['username']) {
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
+
+  <style>
+    .sender_img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -27,28 +39,29 @@ if (!$_SESSION['username']) {
     <div id="div-left">
       <div id="user-information">
         <figure>
-        <?php
+          <?php
           $photo = new profileModel();
           $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
           $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
           ?>
 
-        
+
           <div class="foto-de-perfil">
-          <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
 
             <div class="status"></div>
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])):
+            if (isset($_SESSION['username'])) :
             ?>
 
 
-            <h2>
-              <?= $_SESSION['username']; endif ?>
-        </h2>
-            <span id="show-status-window">Escolher status</span>
+              <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+              </h2>
+              <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -116,142 +129,70 @@ if (!$_SESSION['username']) {
     <main id="mensagens">
       <div class="peoples-to-chat">
         <h2>Últimas mensagens</h2>
-        <ul class="list-peoples">
-          <li class="person" id="person-selected">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
 
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
+        <?php
+        $model = new messageModel();
+        $reciver_photo = $model->User('tb_photos', 'user', $reciver);
+        $short_message = $model->User('tb_mensagens', 'reciver', $reciver);
+        if ($model->existe_chat($_SESSION['username'], $reciver)) :
+        ?>
 
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <li class="person">
-            <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
-              <div class="status"></div>
-            </div>
-            <div class="dados">
-              <span>Lorem ipsum</span>
-              <p>Pessoas conversando normal</p>
-            </div>
-          </li>
-          <div class="gradient"></div>
-        </ul>
+
+          <ul class="list-peoples">
+            <li class="person" id="person-selected">
+              <div class="foto-de-perfil">
+                <img src="./../_storage/images/<?= $reciver_photo['photo']; ?>" alt="Foto de perfil" class="img-perfil" />
+                <div class="status"></div>
+              </div>
+              <div class="dados">
+                <span>
+                  <?php
+                  echo $short_message['reciver'];
+                  ?></span>
+                <p>
+                  <?php
+                  echo $short_message['message'];
+                  ?></p>
+              </div>
+            </li>
+          </ul>
+        <?php
+        else :
+          $empty = new stdClass();
+          $empty->empty = '<center><h3>Você ainda não conversou com ninguém!</h3></center>';
+          echo $empty->empty;
+        endif;
+
+        ?>
+
+
       </div>
       <section class="chat">
+
+        <?php
+        if (isset($_GET['user'])) {
+          $reciver = $_GET['user'];
+        }
+        ?>
+
         <div id="friend-information">
           <figure>
             <div class="foto-de-perfil">
-              <img src="./../debug-images/temp.png" alt="Foto de perfil" class="img-perfil" />
+              <img src="./../_storage/images/<?= $reciver_photo['photo']; ?>" alt="Foto de perfil" class="img-perfil" />
               <div class="friend-status"></div>
             </div>
             <figcaption>
-              <h2>Lorem Ipsun Silva</h2>
+              <h2>
+                <?php
+                if (isset($reciver)) {
+                  echo $reciver;
+                }
+                ?>
+              </h2>
             </figcaption>
+
+
+
             <div class="botoes-top">
               <a href="/home/chamada.php"><button class="video-call"></button></a>
               <button class="options"></button>
@@ -278,18 +219,25 @@ if (!$_SESSION['username']) {
                   </div>
                 </div>
               </div>
+
+
+
             </div>
           </figure>
         </div>
         <section id="privado">
+
+
+
           <div id="sended">
             <!-- Contém as mensagens enviadas -->
             <div class="the-message-container">
               <div class="identifier">
-                <object data="./../debug-images/temp-5.png"></object>
+                <object data="./../_storage/images/<?= $reciver_photo['photo']; ?>" class="sender_img"></object>
                 <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
               </div>
               <!-- Contém a mensagem já enviada -->
+              <!--
               <div class="text-container">
                 <p class="writed-message blur">
                   Lorem ipsum dolor sit amet. Quo voluptas tenetur et
@@ -305,6 +253,7 @@ if (!$_SESSION['username']) {
                   <a href="planos.php"><button class="confirm">Assinar pacote</button></a>
                 </div>
               </div>
+              -->
             </div>
             <div class="the-message-container user">
               <div class="identifier">
@@ -352,7 +301,14 @@ if (!$_SESSION['username']) {
               <button class="send-message" onclick="enviar()"></button>
             </div>
           </div>
+
+
+
+
         </section>
+
+
+
       </section>
     </main>
     <footer id="footer-mobile">
