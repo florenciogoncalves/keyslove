@@ -1,5 +1,5 @@
 _storage/images
 _source
-.jpg
-.png
-.jpeg
+*.jpg
+*.png
+*.jpeg
