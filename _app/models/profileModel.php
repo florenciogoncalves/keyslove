@@ -234,4 +234,15 @@ class profileModel extends connect
             $query->execute();
         }
     }
+
+    public function searchPeople(string $people, string $table = 'tb_cadastroConta2'): bool|iterable|object
+    {
+        $replace = "%" . $people . "%";
+
+        $query = $this->connect->prepare("SELECT nome FROM {$table} WHERE nome LIKE ? ORDER BY nome ASC");
+        $query->bindParam(1, $replace);
+        $query->execute();
+
+        return $query->fetch(PDO::FETCH_ASSOC);
+    }
 }

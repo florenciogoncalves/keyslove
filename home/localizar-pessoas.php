@@ -19,6 +19,24 @@ if (!$_SESSION['username']) {
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+
+
+  <style>
+    .alert {
+      position: relative;
+      padding: 1rem 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      border-radius: 0.25rem;
+    }
+
+    .alert-danger {
+      color: #842029;
+      background-color: #f8d7da;
+      border-color: #f5c2c7;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -113,14 +131,40 @@ if (!$_SESSION['username']) {
   </div>
 
   <div id="main-container">
+
+
     <main class="padrao" id="pessoas-regiao">
+
+
+      <?php
+      if (isset($_SESSION['error'])) :
+      ?>
+
+        <div class="alert alert-danger text-center" role="alert">
+
+          <?php
+          if (isset($_SESSION['error'])) {
+            // foreach ($_SESSION['error'] as $errors) {
+            echo $_SESSION['error'];
+            unset($_SESSION['error']);
+            // unset($errors);
+            // }
+          }
+
+          ?>
+
+        </div>
+
+      <?php
+      endif;
+      ?>
       <h1 class="title">Localizar pessoas</h1>
 
       <section class="search">
         <form action="./../_app/controllers/searchPeopleController.php" method="post">
 
           <div class="search-field">
-            <input type="search" />
+            <input type="search" name="searchInput" />
             <button></button>
           </div>
         </form>
@@ -132,7 +176,19 @@ if (!$_SESSION['username']) {
       <?php
 
       $model = new profileModel();
-      $allUsers = $model->User('tb_cadastroConta2', 'nome', $_SESSION['username'], '!=', 'fetchAll');
+
+      if (isset($_SESSION['userFounded'])) {
+        $user = $_SESSION['userFounded'];
+        $get = $user ?? $_SESSION['username'];
+      }
+
+
+      if (isset($_SESSION['userFounded'])) {
+        $allUsers = $model->User('tb_cadastroConta2', 'nome', $get, '=', 'fetchAll');
+        unset($_SESSION['userFounded']);
+      } else {
+        $allUsers = $model->User('tb_cadastroConta2', 'nome', $_SESSION['username'], '!=', 'fetchAll');
+      }
 
       foreach ($allUsers as $Users) {
         $usersPhoto = $model->User('tb_photos', 'user', $Users['nome']);
@@ -171,13 +227,6 @@ if (!$_SESSION['username']) {
 
 
       ?>
-
-
-
-
-
-
-
 
     </main>
     <footer id="footer-mobile">
