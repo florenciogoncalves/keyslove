@@ -64,17 +64,15 @@ function UserAge(int $bornYear): int|null
     return date('Y') - $bornYear;
 }
 
-function dispatch(string $target)
+function dispatch()
 {
 
-    if (isset($_SESSION[$target])) {
-        unset($_SESSION[$target]);
-        header("Location: ../");
-
-        die;
-    }
-
-
+    // if (isset($_SESSION[$target])) {
+    //     unset($_SESSION[$target]);
+    session_destroy();
+    header("Location: ../");
+    die;
+    // }
 }
 
 function str_limit_words(string $string, int $limit, string $pointer = "..."): string
