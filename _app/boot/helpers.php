@@ -66,13 +66,9 @@ function UserAge(int $bornYear): int|null
 
 function dispatch()
 {
-
-    // if (isset($_SESSION[$target])) {
-    //     unset($_SESSION[$target]);
     session_destroy();
     header("Location: ../");
     die;
-    // }
 }
 
 function str_limit_words(string $string, int $limit, string $pointer = "..."): string

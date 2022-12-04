@@ -19,6 +19,7 @@ if (!$_SESSION['username']) {
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <script src="./../_app/support/jquery.js"></script>
 </head>
 
 <body>
@@ -26,11 +27,11 @@ if (!$_SESSION['username']) {
     <div id="div-left">
       <div id="user-information">
         <figure>
-        <?php
-        $photo = new profileModel();
-        $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
-        $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
-        ?>
+          <?php
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
 
 
           <div class="foto-de-perfil">
@@ -59,6 +60,9 @@ if (!$_SESSION['username']) {
             <li>Lorem Ipsum exemplo</li>
           </ul>
         </div>
+
+        <input type="hidden" value="" id="hidden">
+
         <div id="online-now">
 
           <div class="changing-status">

@@ -6,6 +6,8 @@ if (!$_SESSION['username']) {
   header("Location: ../");
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -105,6 +107,10 @@ if (!$_SESSION['username']) {
               <input type="radio" name="online-agora" id="ocupado" value="ocupado" />
               <label for="ocupado">Ocupado</label>
             </div>
+
+            <?php
+
+            ?>
 
             <div class="this-status">
               <input type="radio" name="online-agora" id="invisivel" value="invisivel" />

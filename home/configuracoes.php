@@ -40,14 +40,15 @@ if (!$_SESSION['username']) {
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])):
+            if (isset($_SESSION['username'])) :
             ?>
 
 
-            <h2>
-              <?= $_SESSION['username']; endif ?>
-            </h2>
-            <span id="show-status-window">Escolher status</span>
+              <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+              </h2>
+              <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -136,7 +137,7 @@ if (!$_SESSION['username']) {
 
       <?php
       //require __DIR__ . "./../core/connect.php";
-      
+
 
 
       $data = new profileModel();
@@ -162,28 +163,23 @@ if (!$_SESSION['username']) {
         <ul id="conf-list">
           <li>
             Nome:
-            <input type="text" class="user-data-show" value="<?= $for['nome']; ?>" disabled required /><span
-              class="edit">Editar</span>
+            <input type="text" class="user-data-show" value="<?= $for['nome']; ?>" disabled required /><span class="edit">Editar</span>
           </li>
           <li>
             Número:
-            <input type="tel" class="user-data-show" value="<?= $fore['telefone']; ?>" disabled required /><span
-              class="edit">Editar</span>
+            <input type="tel" class="user-data-show" value="<?= $fore['telefone']; ?>" disabled required /><span class="edit">Editar</span>
           </li>
           <li>
             Email:
-            <input type="email" class="user-data-show" value="<?= $fore['email']; ?>" disabled required /><span
-              class="edit">Editar</span>
+            <input type="email" class="user-data-show" value="<?= $fore['email']; ?>" disabled required /><span class="edit">Editar</span>
           </li>
           <li>
             Senha:
-            <input type="password" class="user-data-show" value="<?= $fore['senha'] ?>" disabled required /><span
-              class="edit">Editar</span>
+            <input type="password" class="user-data-show" value="<?= $fore['senha'] ?>" disabled required /><span class="edit">Editar</span>
           </li>
           <li>
             Cidade:
-            <input type="text" class="user-data-show" value="<?= $city['cidade']; ?>" disabled required /><span
-              class="edit">Editar</span>
+            <input type="text" class="user-data-show" value="<?= $city['cidade']; ?>" disabled required /><span class="edit">Editar</span>
           </li>
           <span id="delete-account">Excluir conta</span>
         </ul>
@@ -228,7 +224,7 @@ if (!$_SESSION['username']) {
 
         </ul>
         <a href="metodos-pagamento.php"><button class="btn-register">Adicionar novo cartão</button></a>
-        <a href="#" class="back">Sair</a>
+        <a href="./logout.php" class="back">Sair</a>
       </section>
 
       <section id="conf-notifications">
@@ -257,7 +253,7 @@ if (!$_SESSION['username']) {
           </li>
         </ul>
 
-        <a href="#" class="back">Sair</a>
+        <a href="./logout.php" class="back">Sair</a>
       </section>
 
       <section id="conf-def">
@@ -286,7 +282,7 @@ if (!$_SESSION['username']) {
           </li>
         </ul>
 
-        <a href="#" class="back">Sair</a>
+        <a href="./logout.php" class="back">Sair</a>
       </section>
 
       <section id="form-delete-account">
@@ -329,7 +325,7 @@ if (!$_SESSION['username']) {
 
         <div>
           <button class="btn-register">Prosseguir</button>
-          <a href="#" class="back">Sair</a>
+          <a href="./logout.php" class="back">Sair</a>
         </div>
       </section>
       <form action="#" id="delete-account-options">
@@ -345,7 +341,7 @@ if (!$_SESSION['username']) {
 
         <div>
           <button class="btn-register">Prosseguir</button>
-          <a href="#" class="back">Sair</a>
+          <a href="./logout.php" class="back">Sair</a>
         </div>
       </form>
     </main>

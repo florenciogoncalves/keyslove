@@ -184,7 +184,7 @@ if (!$_SESSION['username']) {
       <div class="home-footer">
         <h3 id="person-name">
           <?php
-          if (!isset($_SESSION['alert'])) :
+          if (!isset($empty->alert)) :
             echo $getPhoto['user'];
           else :
             echo $empty->alert;
