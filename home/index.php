@@ -182,6 +182,7 @@ if (!$_SESSION['username']) {
       </div>
 
       <div class="home-footer">
+      
         <h3 id="person-name">
           <?php
           if (!isset($empty->alert)) :

@@ -1,0 +1,71 @@
+ <!--
+            <div class="the-message-container">
+              <div class="identifier">
+                <object data="./../debug-images/temp-5.png"></object>
+                <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
+              </div>
+              
+              <div class="text-container">
+                <p class="writed-message">
+                  Lorem ipsum dolor sit amaet. Quo voluptas tenetur et
+                  similique molestias est
+                </p>
+              </div>
+            </div>
+            <div class="the-message-container user">
+              <div class="identifier">
+                <span>Hoje <span>&middot;</span> as 14:40</span>
+              </div>
+              Contém cada mensagem já enviada 
+              <div class="text-container">
+                <p class="writed-message">
+                  Lorem ipsum dolor sit amet. Quo voluptas tenetur et
+                  similique molestias est
+                </p>
+              </div>
+            </div>
+            -->
+
+
+
+
+                           <!-- Contém as mensagens enviadas 
+              <div class="identifier">
+                <object data="./../_storage/images/<?= $reciver_photo['photo']; ?>" class="sender_img"></object>
+                <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
+              </div>
+            
+
+
+
+
+
+
+              <div class="text-container">
+                <p class="writed-message blur">
+                  Lorem ipsum dolor sit amet. Quo voluptas tenetur et
+                  similique molestias est
+                </p>
+                <div class="interaction">
+                  <div class="interaction-info">
+                    <img src="./../images/unlocked.svg" />
+                    <span>Lorem ipsum dolor sit amet. Quo voluptas tenetur et
+                      similique molestias est
+                    </span>
+                  </div>
+                  <a href="planos.php"><button class="confirm">Assinar pacote</button></a>
+                </div>
+              </div>
+              -->
+
+
+                 <div class="interaction">
+                  <div class="interaction-info">
+                    <img src="./../images/unlocked.svg" />
+                    <span>Lorem ipsum dolor sit amet. Quo voluptas tenetur et
+                      similique molestias est
+                    </span>
+                  </div>
+                  <a href="planos.php"><button class="confirm">Assinar pacote</button></a>
+                </div>
+              </div>

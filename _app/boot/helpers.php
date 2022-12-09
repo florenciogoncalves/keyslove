@@ -84,3 +84,9 @@ function str_limit_words(string $string, int $limit, string $pointer = "..."): s
     $words = implode(" ", array_slice($arrWords, 0, $limit));
     return "{$words}{$pointer}";
 }
+
+function getHour(string $time): string
+{
+
+    return mb_strcut($time, 0, 5);
+}

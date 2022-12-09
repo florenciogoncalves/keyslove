@@ -8,6 +8,10 @@ require __DIR__ . "/../core/connect.php";
 
 class profileModel extends connect
 {
+
+
+
+
     public function userAge(string $entity = 'data_nascimento')
     {
 
@@ -140,6 +144,16 @@ class profileModel extends connect
         return $data;
     }
 
+
+    public function where(string $table,  ?string $operation = '=', string $field, string $arg, string $orderBy = 'ORDER BY id DESC'): iterable|object
+    {
+        $query = $this->connect->prepare("SELECT * FROM {$table} WHERE {$field} {$operation} ? {$orderBy}");
+        $query->bindParam(1, $arg);
+        $query->execute();
+
+        $data = $query->fetch(PDO::FETCH_ASSOC);
+        return $data;
+    }
 
     public function getFavorites(string $user, string $reacted, string $reaction = 'favorite'): iterable|object
     {

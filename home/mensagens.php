@@ -7,9 +7,26 @@ if (!$_SESSION['username']) {
   header("Location: ../");
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
 }
+
 if (isset($_GET['user'])) {
   $reciver = $_GET['user'];
+} else {
+  $_SESSION['message'] = 'Nenhum usuário foi indicado para iniciar o chat';
+  header("Location: ./carroussel.php");
 }
+
+$verify = new messageModel;
+if ($verify->existe_chat($_SESSION['username'], $reciver)) {
+  $bool = true;
+} else {
+  $_SESSION['message'] = 'Nenhum usuário foi indicado para iniciar o chat';
+  header("Location: ./carroussel.php");
+  $bool = false;
+}
+
+$_SESSION['reciver'] = $_GET['user'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -131,9 +148,16 @@ if (isset($_GET['user'])) {
         <h2>Últimas mensagens</h2>
 
         <?php
+
         $model = new messageModel();
-        $reciver_photo = $model->User('tb_photos', 'user', $reciver);
-        $short_message = $model->User('tb_mensagens', 'reciver', $reciver);
+
+        $reciver_photo = $model->User('tb_photos', 'user', $reciver, '=');
+        $sender_photo = $model->User('tb_photos', 'user', $_SESSION['username']);
+
+        // $short_message = $model->User('tb_mensagens', 'reciver', $reciver);
+        $short_message = $model->where('tb_mensagens', '=', 'sender', $reciver);
+
+
         if ($model->existe_chat($_SESSION['username'], $reciver)) :
         ?>
 
@@ -147,7 +171,7 @@ if (isset($_GET['user'])) {
               <div class="dados">
                 <span>
                   <?php
-                  echo $short_message['reciver'];
+                  echo $short_message['sender'];
                   ?></span>
                 <p>
                   <?php
@@ -228,81 +252,75 @@ if (isset($_GET['user'])) {
         <section id="privado">
 
 
-
           <div id="sended">
-            <!-- Contém as mensagens enviadas -->
-            <div class="the-message-container">
-              <div class="identifier">
-                <object data="./../_storage/images/<?= $reciver_photo['photo']; ?>" class="sender_img"></object>
-                <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
-              </div>
-              <!-- Contém a mensagem já enviada -->
-              <!--
-              <div class="text-container">
-                <p class="writed-message blur">
-                  Lorem ipsum dolor sit amet. Quo voluptas tenetur et
-                  similique molestias est
-                </p>
-                <div class="interaction">
-                  <div class="interaction-info">
-                    <img src="./../images/unlocked.svg" />
-                    <span>Lorem ipsum dolor sit amet. Quo voluptas tenetur et
-                      similique molestias est
-                    </span>
+            <?php
+            include_once __DIR__ . "/../_app/boot/helpers.php";
+            $model = new messageModel();
+            $getMessageByActiveUser = $model->showMessages($_SESSION['username'], $reciver, 110);
+            foreach ($getMessageByActiveUser as $message) {
+
+              $hora = $message['created_at'];
+              $str1 = explode(' ', $hora);
+              $str2 = $str1[1];
+              $sendHour = getHour($str2);
+              if ($message['sender'] == $_SESSION['username']) :
+
+            ?>
+
+
+                <div class='the-message-container'>
+                  <div class='identifier'>
+                    <object data='./../_storage/images/<?= $sender_photo['photo'] ?>' class='sender_img'></object>
+                    <span><b>Você</b><span> &middot;</span> as <?= $sendHour ?></span>
                   </div>
-                  <a href="planos.php"><button class="confirm">Assinar pacote</button></a>
+                  <div class='text-container'>
+                    <p class='writed-message'>
+                      <?= $message['message'] ?>
+                    </p>
+                  </div>
+
+                <?php
+              else :
+                ?>
+
+                  <div class='the-message-container user'>
+                    <div class='identifier'>
+                      <span><b><?= $reciver ?></b><span> &middot; </span> as <?= $sendHour ?></span>
+                    </div>
+
+                    <div class='text-container'>
+                      <p class='writed-message'>
+                        <?= $message['message'] ?>
+                      </p>
+                    </div>
+
+                  </div>
+
+
+
+
+
+              <?php
+              endif;
+            }
+              ?>
+
+
+
+
+
+              <form method="POST" action="./../_app/controllers/messageController.php" enctype="multipart/form-data">
+
+                <div id="create-message">
+                  <input type="file" id="select-file" style="display: none" name="fileUser" />
+                  <label class="add-media" for="select-file">+</label>
+                  <div class="message-text-container">
+                    <textarea rows="1" id="message-text" placeholder="Escreva a mensagem..." name="message"></textarea>
+                    <button class="send-message" onclick="enviar()" type="submit" name="submitBtn"></button>
+                  </div>
                 </div>
-              </div>
-              -->
-            </div>
-            <div class="the-message-container user">
-              <div class="identifier">
-                <span>Hoje <span>&middot;</span> as 14:40</span>
-              </div>
-              <!-- Contém cada mensagem já enviada -->
-              <div class="text-container">
-                <p class="writed-message">
-                  Lorem ipsum dolor sait amet. Quo voluptas tenetur et
-                  similique molestias est
-                </p>
-              </div>
-            </div>
-            <div class="the-message-container">
-              <div class="identifier">
-                <object data="./../debug-images/temp-5.png"></object>
-                <span>Lorem ipsum <span>&middot;</span> as 14:40</span>
-              </div>
-              <!-- Contém a mensagem já enviada -->
-              <div class="text-container">
-                <p class="writed-message">
-                  Lorem ipsum dolor sit amet. Quo voluptas tenetur et
-                  similique molestias est
-                </p>
-              </div>
-            </div>
-            <div class="the-message-container user">
-              <div class="identifier">
-                <span>Hoje <span>&middot;</span> as 14:40</span>
-              </div>
-              <!-- Contém cada mensagem já enviada -->
-              <div class="text-container">
-                <p class="writed-message">
-                  Lorem ipsum dolor sit amet. Quo voluptas tenetur et
-                  similique molestias est
-                </p>
-              </div>
-            </div>
-          </div>
-          <div id="create-message">
-            <input type="file" id="select-file" style="display: none" />
-            <label class="add-media" for="select-file">+</label>
-            <div class="message-text-container">
-              <textarea rows="1" id="message-text" placeholder="Escreva a mensagem..."></textarea>
-              <button class="send-message" onclick="enviar()"></button>
-            </div>
-          </div>
 
-
+              </form>
 
 
         </section>
