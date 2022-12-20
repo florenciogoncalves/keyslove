@@ -7,19 +7,32 @@ class messageModel extends profileModel
 
 
 
-    public function existe_chat(string $sender, string $reciver): bool
+    public function existe_chat(string $sender, string $reciver = null): bool
     {
-        $query = $this->connect->prepare("SELECT * FROM tb_mensagens WHERE sender = ? AND reciver = ? OR reciver = ? AND sender = ?");
-        $query->bindParam(1, $sender);
-        $query->bindParam(2, $reciver);
-        $query->bindParam(3, $sender);
-        $query->bindParam(4, $reciver);
-        $query->execute();
 
-        if ($query->rowCount() > 0) {
-            return true;
+        if ($reciver) {
+
+            $query = $this->connect->prepare("SELECT * FROM tb_mensagens WHERE sender = ? AND reciver = ? OR reciver = ? AND sender = ?");
+            $query->bindParam(1, $sender);
+            $query->bindParam(2, $reciver);
+            $query->bindParam(3, $sender);
+            $query->bindParam(4, $reciver);
+            $query->execute();
+
+            if ($query->rowCount() > 0) {
+                return true;
+            }
+            return false;
+        } else {
+            $query = $this->connect->prepare("SELECT * FROM tb_mensagens WHERE sender = ?");
+            $query->bindParam(1, $sender);
+            $query->execute();
+
+            if ($query->rowCount() > 0) {
+                return true;
+            }
+            return false;
         }
-        return false;
     }
 
     public function sendMessage(string $sender, string $reciver, string $message): bool

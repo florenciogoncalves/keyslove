@@ -22,6 +22,14 @@ class userModel extends connect
         return false;
     }
 
+    public function VerifyUser(string $email)
+    {
+        if ($this->verify_register($email)) {
+            return true;
+        }
+        return false;
+    }
+
 
     public function cadastro1(string $email, string $telefone, string $senha)
     {
@@ -40,6 +48,7 @@ class userModel extends connect
 
     public function insertUserImage(string $user, $photo)
     {
+        
         $this->imageInsert($user, $photo);
     }
 
@@ -357,9 +366,7 @@ class userModel extends connect
         int $quant_filhos,
         string $animais = NULL,
         string $quantidade = NULL,
-        string $moradia = NULL,
-        string $disposicao = NULL,
-        string $religiao = NULL
+
     ): bool {
 
         $query = $this->connect->prepare("INSERT INTO tb_estilo_vida(
@@ -370,11 +377,8 @@ class userModel extends connect
             filhos,
             quantidadeFilhos,
             animais,
-            quantidade,
-            moradia,
-            disposicao,
-            religiao) VALUES 
-            (?,?,?, ?, ?, ?, ?, ?, ?, ? ,?)");
+            quantidade) VALUES 
+            (?,?,?, ?, ?, ?, ?, ?)");
 
         $query->bindParam(1, $user);
         $query->bindParam(2, $voceBebe);
@@ -384,9 +388,7 @@ class userModel extends connect
         $query->bindParam(6, $quant_filhos);
         $query->bindParam(7, $animais);
         $query->bindParam(8, $quantidade);
-        $query->bindParam(9, $moradia);
-        $query->bindParam(10, $disposicao);
-        $query->bindParam(11, $religiao);
+
 
         if ($query->execute()) {
             return true;
@@ -405,6 +407,19 @@ class userModel extends connect
             return true;
         }
 
+        return false;
+    }
+
+    private function verify_register(string $email): bool
+    {
+        $query = $this->connect->prepare("SELECT email = ? FROM tb_cadastroConta");
+        $query->bindParam(1, $email);
+        $query->execute();
+
+        if ($query->rowCount() > 0) {
+
+            return true;
+        }
         return false;
     }
 }

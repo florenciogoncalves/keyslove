@@ -1,6 +1,9 @@
 <?php
 
-session_start();
+require_once __DIR__ . "./../_app/models/profileModel.php";
+require_once __DIR__ . "./../_app/boot/helpers.php";
+
+// session_start();
 if (!isset($_SESSION['step']) || $_SESSION['step'] < 6) {
   header("Location: ./../cadastro/cadastro-6.php");
 }
@@ -32,8 +35,17 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 6) {
     <div id="div-left">
       <div id="user-information">
         <figure>
+
+          <?php
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
+
+
           <div class="foto-de-perfil">
-            <img src="./../debug-images/temp.png" alt="Foto de perfil" id="img-perfil" />
+            <img src="./../_storage/images/<?= $profile['photo']; ?>" alt="Foto de perfil" id="img-perfil" />
+
             <div class="status"></div>
           </div>
 

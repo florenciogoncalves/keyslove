@@ -8,23 +8,51 @@ if (!$_SESSION['username']) {
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
 }
 
-if (isset($_GET['user'])) {
-  $reciver = $_GET['user'];
-} else {
-  $_SESSION['message'] = 'Nenhum usuário foi indicado para iniciar o chat';
-  header("Location: ./carroussel.php");
-}
+// if (isset($_GET['user'])) {
+//   $reciver = $_GET['user'];
+// }
 
-$verify = new messageModel;
-if ($verify->existe_chat($_SESSION['username'], $reciver)) {
-  $bool = true;
-} else {
-  $_SESSION['message'] = 'Nenhum usuário foi indicado para iniciar o chat';
-  header("Location: ./carroussel.php");
-  $bool = false;
-}
+// $reciver = $_GET['user'] ?? 'Edson Silva';
 
-$_SESSION['reciver'] = $_GET['user'];
+// if (!isset($_GET['user']) || !$reciver) {
+//   header("Location: ./carroussel.php");
+// }
+// $_SESSION['reciver'] = $_GET['user'] ?? $reciver;
+
+
+// else {
+//   $_SESSION['message'] = 'Nenhum usuário foi indicado para iniciar o chat';
+//   header("Location: ./carroussel.php");
+// }
+
+// $verify = new messageModel;
+// if ($verify->existe_chat($_SESSION['username'], $reciver)) {
+//   $bool = true;
+// } else {
+//   $_SESSION['message'] = 'Nenhum usuário foi indicado para iniciar o chat';
+//   header("Location: ./carroussel.php");
+//   $bool = false;
+// }
+
+
+// $model = new messageModel();
+// $messages = $model->existe_chat($_SESSION['username']);
+
+// if ($messages) {
+//   $data = $model->User('tb_mensagens', 'sender', $_SESSION['username']);
+
+//   $reciver = $data['reciver'];
+//   // $_SESSION['reciver'] = $_GET['user'] ?? $reciver;
+
+
+//   // foreach ($data as $users) {
+//   //   $reciver = $users;
+//   // }
+
+// }
+// else {
+//   header("Location: ./carroussel.php");
+// }
 
 
 ?>
@@ -145,72 +173,142 @@ $_SESSION['reciver'] = $_GET['user'];
   <div id="main-container">
     <main id="mensagens">
       <div class="peoples-to-chat">
-        <h2>Últimas mensagens</h2>
+        <h2>Últimas mensagens | Converse agora</h2>
 
         <?php
 
         $model = new messageModel();
 
-        $reciver_photo = $model->User('tb_photos', 'user', $reciver, '=');
-        $sender_photo = $model->User('tb_photos', 'user', $_SESSION['username']);
 
         // $short_message = $model->User('tb_mensagens', 'reciver', $reciver);
-        $short_message = $model->where('tb_mensagens', '=', 'sender', $reciver);
 
 
-        if ($model->existe_chat($_SESSION['username'], $reciver)) :
+
+        $getAll = $model->User('tb_curtidas', 'curtiu', $_SESSION['username'], '=', 'fetch');
+
+
+
+        // foreach ($getAll as $lastMessages) {
+        // $short_message = $model->where('tb_mensagens', '=', 'sender', $lastMessages['reciver']);
+        // $reciver_photo = $model->User('tb_photos', 'user', $lastMessages['reciver'], '=');
+        // $sender_photo = $model->User('tb_photos', 'user', $lastMessages['sender']);
+
+        // foreach ($getAll as $users) {
+        // }
+        $_SESSION['reciver'] = $_GET['user'] ?? $getAll['curtido'];
+
+
+        // $reciver_photo = $model->User('tb_photos', 'user', $users['curtido'], '=');
+        // $sender_photo = $model->User('tb_photos', 'user', $users['curtiu']);
+
+        // $reciver_photo = $model->User('tb_photos', 'user', $getAll['curtido'], '=');
+        // $sender_photo = $model->User('tb_photos', 'user', $getAll['curtiu']);
+        // $short_message = $model->where('tb_mensagens', '=', 'sender', $getAll['curtido']);
+
+        // if ($model->existe_chat($_SESSION['username'], $users['curtido'])) :
+
+
+
         ?>
-
-
-          <ul class="list-peoples">
-            <li class="person" id="person-selected">
-              <div class="foto-de-perfil">
-                <img src="./../_storage/images/<?= $reciver_photo['photo']; ?>" alt="Foto de perfil" class="img-perfil" />
-                <div class="status"></div>
-              </div>
-              <div class="dados">
-                <span>
-                  <?php
-                  echo $short_message['sender'];
-                  ?></span>
-                <p>
-                  <?php
-                  echo $short_message['message'];
-                  ?></p>
-              </div>
-            </li>
-          </ul>
         <?php
-        else :
-          $empty = new stdClass();
-          $empty->empty = '<center><h3>Você ainda não conversou com ninguém!</h3></center>';
-          echo $empty->empty;
-        endif;
 
+        if (!isset($_GET['user'])) {
+          $peopleToChat = $model->User('tb_curtidas', 'curtiu', $_SESSION['username'], '=', 'fetch', 1);
+          $_GET['user'] = $peopleToChat['curtido'];
+        }
+        $peopleToChat = $model->User('tb_curtidas', 'curtiu', $_SESSION['username'], '=', 'fetchAll');
+
+        if (!$peopleToChat) {
+          header("Location: ./carroussel.php");
+        }
+
+        $sender_photo = $model->User('tb_photos', 'user', $_SESSION['username']);
+
+
+        foreach ($peopleToChat as $users) {
+
+
+
+          $user = $users['curtido'] ?? $_GET['user'];
+
+
+
+
+
+          $reciver_photo_user = $model->User('tb_photos', 'user', $user, '=');
+          $_SESSION['photo'] = $reciver_photo_user;
+          $short_message_user = $model->where('tb_mensagens', '=', 'sender', $user);
+          // $short_message_user = $model->User('tb_mensagens', 'sender', $user, '=');
+
+          // $short_message_user = $model->SELECT($user, $_SESSION['username']);
+
+          // print_r($short_message_user);
+
+
+
+        ?>
+          <a href="?user=<?= $users['curtido'] ?? null; ?>" style="text-decoration:none;color:black">
+            <ul class="list-peoples">
+              <li class="person" id="person-selected">
+                <div class="foto-de-perfil">
+                  <img src="./../_storage/images/<?= $reciver_photo_user['photo']; ?>" alt="Foto de perfil" class="img-perfil" />
+                  <div class="status"></div>
+                </div>
+                <div class="dados">
+                  <span>
+                    <?php
+
+                    if (isset($short_message_user['sender'])) {
+                      echo  $short_message_user['sender'];
+                    } else {
+                      echo $user;
+                    }
+                    ?></span>
+                  <p>
+                    <?php
+                    echo $short_message_user['message'] ?? 'Me envie uma mensagem!';
+                    ?></p>
+                </div>
+              </li>
+            </ul>
+          </a>
+        <?php
+        }
+        // else :
+        //   $empty = new stdClass();
+        //   $empty->empty = '<center><h3>Você ainda não conversou com ninguém!</h3></center>';
+        //   echo $empty->empty;
+        // endif;
         ?>
 
 
       </div>
+
+
+
+
       <section class="chat">
 
         <?php
-        if (isset($_GET['user'])) {
-          $reciver = $_GET['user'];
-        }
+
+
+
+
         ?>
 
         <div id="friend-information">
           <figure>
             <div class="foto-de-perfil">
-              <img src="./../_storage/images/<?= $reciver_photo['photo']; ?>" alt="Foto de perfil" class="img-perfil" />
+              <img src="./../_storage/images/<?= $reciver_photo_user['photo']; ?>" alt="Foto de perfil" class="img-perfil" />
               <div class="friend-status"></div>
             </div>
             <figcaption>
               <h2>
                 <?php
-                if (isset($reciver)) {
-                  echo $reciver;
-                }
+                // if (isset($reciver)) {
+                //   echo $reciver;
+                // }
+                echo $_GET['user'] ?? $user;
                 ?>
               </h2>
             </figcaption>
@@ -256,8 +354,18 @@ $_SESSION['reciver'] = $_GET['user'];
             <?php
             include_once __DIR__ . "/../_app/boot/helpers.php";
             $model = new messageModel();
-            $getMessageByActiveUser = $model->showMessages($_SESSION['username'], $reciver, 110);
+
+            $user = $_GET['user'] ?? $getAll['curtido'];
+
+
+            $getMessageByActiveUser = $model->showMessages($_SESSION['username'], $user, 110);
+
+
+
             foreach ($getMessageByActiveUser as $message) {
+
+
+
 
               $hora = $message['created_at'];
               $str1 = explode(' ', $hora);
@@ -285,7 +393,7 @@ $_SESSION['reciver'] = $_GET['user'];
 
                   <div class='the-message-container user'>
                     <div class='identifier'>
-                      <span><b><?= $reciver ?></b><span> &middot; </span> as <?= $sendHour ?></span>
+                      <span><b><?= $user ?></b><span> &middot; </span> as <?= $sendHour ?></span>
                     </div>
 
                     <div class='text-container'>
@@ -301,8 +409,10 @@ $_SESSION['reciver'] = $_GET['user'];
 
 
               <?php
+
               endif;
             }
+
               ?>
 
 

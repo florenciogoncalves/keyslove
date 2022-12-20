@@ -39,10 +39,11 @@ function max_size_allowed($file): bool
     return true;
 }
 
-function rename_image($file): string
+function rename_image($file, int $time = 0): string
 {
-    return time() . mb_strstr($file, '.');
+    return "KV - IMAGE " . time() + $time . mb_strstr($file, '.');
 }
+
 
 function uploader($origin, $destination): bool
 {

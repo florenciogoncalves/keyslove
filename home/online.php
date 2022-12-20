@@ -19,7 +19,9 @@ if (!$_SESSION['username']) {
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
-  <script src="./../_app/support/jquery.js"></script>
+
+  <script src="./../script/ajax.js"></script>
+
 </head>
 
 <body>
@@ -65,6 +67,8 @@ if (!$_SESSION['username']) {
 
         <div id="online-now">
 
+
+
           <div class="changing-status">
             <div class="this-status">
               <input type="radio" name="online-agora" value="online" id="online" />
@@ -81,6 +85,11 @@ if (!$_SESSION['username']) {
               <label for="invisivel">Invisível</label>
             </div>
           </div>
+
+
+
+
+
         </div>
       </div>
 
@@ -105,6 +114,7 @@ if (!$_SESSION['username']) {
                 <input type="radio" name="online-agora" value="online" id="online" />
                 <label for="online">Online</label>
               </div>
+
 
               <div class="this-status">
                 <input type="radio" name="online-agora" id="ocupado" value="ocupado" />
@@ -494,6 +504,12 @@ if (!$_SESSION['username']) {
   </div>
 
   <script src="./../script/script.js"></script>
+  <script>
+    const status = localStorage.getItem('status');
+  </script>
+
+
+
 </body>
 
 </html>

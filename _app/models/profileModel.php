@@ -127,25 +127,31 @@ class profileModel extends connect
         return $data;
     }
 
-    public function User(string $entity = 'tb_cadastroConta', string $where = 'user', string $user, string $operation = '=', string $method = 'fetch'): iterable|object|bool
+    public function User(string $entity = 'tb_cadastroConta', string $where = 'user', string $user, string $operation = '=', string $method = 'fetch', int $LIMIT = null): iterable|object|bool
     {
         if (isset($_SESSION['username_id'])) {
             $id = $_SESSION['username_id'];
         }
 
+        if (isset($LIMIT)) {
+            $firstQuery = $this->connect->prepare("SELECT * FROM {$entity} WHERE {$where} {$operation} ? LIMIT {$LIMIT}");
+            $firstQuery->bindParam(1, $user);
+            $firstQuery->execute();
+            $data = $firstQuery->{$method}(PDO::FETCH_ASSOC);
 
+            return $data;
+        } else {
+            $firstQuery = $this->connect->prepare("SELECT * FROM {$entity} WHERE {$where} {$operation} ?");
+            $firstQuery->bindParam(1, $user);
+            $firstQuery->execute();
+            $data = $firstQuery->{$method}(PDO::FETCH_ASSOC);
 
-        $firstQuery = $this->connect->prepare("SELECT * FROM {$entity} WHERE {$where} {$operation} ?");
-
-        $firstQuery->bindParam(1, $user);
-        $firstQuery->execute();
-        $data = $firstQuery->{$method}(PDO::FETCH_ASSOC);
-
-        return $data;
+            return $data;
+        }
     }
 
 
-    public function where(string $table,  ?string $operation = '=', string $field, string $arg, string $orderBy = 'ORDER BY id DESC'): iterable|object
+    public function where(string $table,  ?string $operation = '=', string $field, string $arg, string $orderBy = 'ORDER BY id DESC'): iterable|object|bool
     {
         $query = $this->connect->prepare("SELECT * FROM {$table} WHERE {$field} {$operation} ? {$orderBy}");
         $query->bindParam(1, $arg);
@@ -153,6 +159,18 @@ class profileModel extends connect
 
         $data = $query->fetch(PDO::FETCH_ASSOC);
         return $data;
+    }
+
+    public function SELECT(string $arg1, string $arg2): iterable|object|bool
+    {
+        $query = $this->connect->prepare("SELECT * FROM tb_mensagens WHERE sender = ? AND reciver = ? OR reciver = ? AND sender = ? ORDER BY id DESC");
+        $query->bindParam(1, $arg1);
+        $query->bindParam(2, $arg2);
+        $query->bindParam(3, $arg1);
+        $query->bindParam(4, $arg2);
+        $query->execute();
+
+        return $query->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getFavorites(string $user, string $reacted, string $reaction = 'favorite'): iterable|object

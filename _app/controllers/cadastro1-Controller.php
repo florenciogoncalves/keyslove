@@ -10,6 +10,7 @@ include_once __DIR__ . "/../boot/helpers.php";
 if (isset($_POST['btn-submit'])) {
 
 
+
     $alerts = [];
 
     $FILTER = filter_input_array(INPUT_POST, FILTER_DEFAULT);
@@ -32,6 +33,14 @@ if (isset($_POST['btn-submit'])) {
     $telefone = filter_var($_POST['telemovel'], FILTER_DEFAULT);
     $senha = filter_var($_POST['password'], FILTER_DEFAULT);
 
+
+    if ((new userModel)->VerifyUser($email, $telefone)) {
+
+        $alerts[] = "Desculpe! Mas já existe um usuário cadastro com este e-mail :(";
+        $_SESSION['error'] = $alerts;
+        header("Location: ../../cadastro/cadastro-1.php");
+        die;
+    }
 
     ((new userModel()))->cadastro1($email, $telefone, $senha);
     $_SESSION['step'] = 1;

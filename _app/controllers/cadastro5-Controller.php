@@ -18,7 +18,8 @@ $firstImageSize = $_FILES['img-1']['size'];
 $secondImageSize = $_FILES['img-2']['size'];
 
 $firstImageNewName = rename_image($_FILES['img-1']['name']);
-$secondImageNewName = rename_image($_FILES['img-2']['name']);
+$secondImageNewName = rename_image($_FILES['img-2']['name'], 60);
+
 
 
 if (empty($_FILES['img-1']['name'] || $_FILES['img-2']['name'])) {
@@ -61,4 +62,5 @@ if (!in_array($_FILES['img-1']['type'], $allowedTypes) || (!in_array($_FILES['im
     ((new userModel))->insertUserImage($user, $secondImageNewName);
     $_SESSION['step'] += 1;
     header("Location: ../../cadastro/cadastro-6.php");
+    echo "<pre>";
 }

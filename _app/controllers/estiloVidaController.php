@@ -19,6 +19,13 @@ $quant_filhos = filter($_POST['quantidade-filhos']);
 $pets = filter($_POST['pets']);
 $quant_pets = filter($_POST['quantidade-pets']);
 
+if (empty($quant_filhos) || empty($quant_pets)) {
+
+    $quant_filhos = 0;
+    $quant_pets = 0;
+}
+
+
 ((new userModel))->addEstiloVida($user, $bebe, $fumar, '', $filhos, $quant_filhos, $pets, $quant_pets);
 
 
