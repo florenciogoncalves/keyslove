@@ -4,8 +4,8 @@ require __DIR__ . "./../support/PHPMailer/Exception.php";
 require __DIR__ . "./../support/PHPMailer/PHPMailer.php";
 require __DIR__ . "./../support/PHPMailer/POP3.php";
 require __DIR__ . "./../support/PHPMailer/SMTP.php";
-require __DIR__ . "/config.php";
-require __DIR__ . "/helpers.php";
+include_once __DIR__ . "/config.php";
+include_once __DIR__ . "/helpers.php";
 
 
 //Import PHPMailer classes into the global namespace
@@ -80,6 +80,8 @@ class Email
         }
 
         try {
+            
+            
             $this->PHPMailer->Subject = $this->Data->subject;
             $this->PHPMailer->msgHTML($this->Data->body);
             $this->PHPMailer->addAddress($this->Data->recipient_email, $this->Data->recipient_name);
@@ -103,6 +105,4 @@ class Email
     }
 }
 
-$email = new Email();
-$email->bootstrap("Código de Confirmação", "Seu código de confirmação: 1234", 'keyslove2022@gmail.com', 'Keyslove')->send();
-print_r($email->getMessage());
+
