@@ -1,10 +1,12 @@
 <?php
 
 require __DIR__ . "./../support/PHPMailer/Exception.php";
-require __DIR__ . "./../support/PHPMailer/OAuth.php";
 require __DIR__ . "./../support/PHPMailer/PHPMailer.php";
 require __DIR__ . "./../support/PHPMailer/POP3.php";
 require __DIR__ . "./../support/PHPMailer/SMTP.php";
+require __DIR__ . "/config.php";
+require __DIR__ . "/helpers.php";
+
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -12,41 +14,95 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
-// require __DIR__."./../support/PHPMailer/vendor/autoload.php";
-
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
-try {
-    //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'keyslove2022teste@gmail.com';          //SMTP username
-    $mail->Password   = 'Keyslove2022';                         //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-    //Recipients
-    $mail->setFrom('keyslove2022teste@gmail.com', 'Teste Keyslove');
-    $mail->addAddress('keyslove2022teste@gmail.com', 'Keyslove');     //Add a recipient
-    $mail->addReplyTo('info@example.com', 'Information');
-    
-    // $mail->addCC('cc@example.com');
-    // $mail->addBCC('bcc@example.com');
 
 
-    $mail->setLanguage('pt', __DIR__ . "./../support/PHPMailer/language/phpmailer.lang-pt_br.php");
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+class Email
+{
 
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    private $PHPMailer;
+    private $Data;
+    private $Message;
+
+
+    public function __construct()
+    {
+        $this->PHPMailer = new PHPMailer(true);
+        $this->Data = new \stdClass;
+        $this->Message = new \stdClass;
+
+        $this->PHPMailer->isSMTP();
+        $this->PHPMailer->setLanguage(CONF_MAIL_OPTION_LANG);
+        $this->PHPMailer->SMTPAuth = CONF_MAIL_OPTION_AUTH;
+        $this->PHPMailer->SMTPSecure = CONF_MAIL_OPTION_SECURE;
+        $this->PHPMailer->CharSet = CONF_MAIL_OPTION_CHARSET;
+
+        /**
+         * Auth
+         */
+
+        $this->PHPMailer->Host = CONF_MAIL_HOST;
+        $this->PHPMailer->Port = CONF_MAIL_PORT;
+        $this->PHPMailer->Username = CONF_MAIL_USER;
+        $this->PHPMailer->Password = CONF_MAIL_PASS;
+    }
+
+    /**
+     * @param string $subject
+     * @param string $body
+     * @param string $recipient
+     * @param string $recipientName
+     * @return Email
+     */
+    public function bootstrap(string $subject, string $body, string $recipient, string $recipientName): Email
+    {
+        $this->Data->subject = $subject;
+        $this->Data->body = $body;
+        $this->Data->recipient_email = $recipient;
+        $this->Data->recipient_name = $recipientName;
+        return $this;
+    }
+
+    public function send(string $from = CONF_MAIL_SENDER['address'], string $fromName = CONF_MAIL_SENDER["name"]): bool
+    {
+        if (empty($this->Data)) {
+            $this->Message->Error = "Erro ao enviar o e-mail para confirmação do código! Verifique os dados e tente novamente.";
+            return false;
+        }
+        if (!is_email($this->Data->recipient_email)) {
+            $this->Message->Warning = "O e-mail de destinatário não é válido";
+            return false;
+        }
+
+        if (!is_email($from)) {
+            $this->Message->Warning = "O e-mail de remetente não é válido";
+            return false;
+        }
+
+        try {
+            $this->PHPMailer->Subject = $this->Data->subject;
+            $this->PHPMailer->msgHTML($this->Data->body);
+            $this->PHPMailer->addAddress($this->Data->recipient_email, $this->Data->recipient_name);
+            $this->PHPMailer->setFrom($from, $fromName);
+
+            $this->PHPMailer->send();
+            $this->Message->Sucess = "E-mail de confirmação enviado com sucesso!";
+            return true;
+        } catch (Exception $exception) {
+
+            $this->Message->Error = $exception->getMessage();
+            return false;
+        }
+    }
+
+    public function getMessage()
+    {
+        foreach ($this->Message as $Message) {
+            return $Message;
+        }
+    }
 }
+
+$email = new Email();
+$email->bootstrap("Código de Confirmação", "Seu código de confirmação: 1234", 'keyslove2022@gmail.com', 'Keyslove')->send();
+print_r($email->getMessage());
