@@ -1,0 +1,69 @@
+/*Contâiner do header*/
+.header-content {
+	height: 3rem;
+	width: 100%;
+	max-width: 100%;
+	padding: 0.6rem 0.75rem 0.8rem 1.5rem;
+	margin: 0;
+	justify-content: space-between;
+	box-sizing: border-box;
+
+	.header-logo-content {
+		height: 100%;
+		box-sizing: border-box;
+		.__header-logo {
+			object-fit: contain;
+			height: 1.45rem;
+		}
+	}
+
+	.header-controllers-container {
+		gap: 0.5rem;
+    margin: 0;
+		& > .btn {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+			border-radius: 0.35rem;
+
+			font-size: 0.675rem;
+			font-weight: 500;
+		}
+		.lang-selector {
+			gap: 0.2rem;
+			.btn {
+				padding: 0;
+				margin: 0;
+
+				background: none;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				background-color: #fc003b;
+			}
+			.__lang-br {
+				background-image: url(./../../images/up-menu.png);
+			}
+			.__lang-in {
+				background-image: url(./../../images/eua-flag.png);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.header-content {
+		padding: 0.5rem;
+		.header-controllers-container {
+			.lang-selector {
+				gap: 0.3rem;
+        align-items: center;
+				.btn {
+					height: 65% !important;
+				}
+			}
+		}
+	}
+}

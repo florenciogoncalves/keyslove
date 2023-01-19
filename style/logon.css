@@ -2,6 +2,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-size: calc(16px + 0.390625vw);
+  font-style: normal;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 100%;
+}
+html * {
+  font-family: "Poppins";
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: calc(18px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: calc(19px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  html {
+    font-size: calc(20px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 1536px) {
+  html {
+    font-size: calc(21px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 1920px) {
+  html {
+    font-size: calc(23px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html {
+    font-size: calc(25px + 0.390625vw);
+  }
+}
 :root {
   --vermelho-principal: #fc003b;
   --bg-color: #292929;
@@ -11,120 +51,147 @@
   --status-on: #16c607;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins";
-}
-
-html {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*pode ser transparent também*/
-  height: 100%;
-}
-
-button {
-  cursor: pointer;
-}
-
 body {
   height: 100%;
   display: grid;
-  background-color: var(--bg-color);
-  background-image: url(./../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg);
+  grid-template-rows: 1fr 1fr auto;
+  background: url(./../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg) no-repeat center, var(--bg-color);
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: fill;
+  background-size: cover !important;
+}
+body > footer + div:last-of-type {
+  display: none !important;
 }
 
 /*Contâiner do header*/
-header.header-content {
-  display: grid;
-  grid-template-columns: auto max-content;
-  margin: 1.2em 2.5em;
+.header-content {
+  height: 3rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.6rem 0.75rem 0.8rem 1.5rem;
+  margin: 0;
   justify-content: space-between;
   box-sizing: border-box;
 }
-
-.header-logo {
-  width: 12.1em;
-  height: 2.4em;
+.header-content .header-logo-content {
+  height: 100%;
+  box-sizing: border-box;
 }
-
-.nav-btn {
-  display: grid;
-  grid-template-columns: auto auto auto;
+.header-content .header-logo-content .__header-logo {
+  object-fit: contain;
+  height: 1.45rem;
 }
-
-.nav-btn button {
-  width: 11em;
-  height: 2.6em;
-  border-radius: 0.6em;
-  font-style: normal;
-  font-size: 1em;
+.header-content .header-controllers-container {
+  gap: 0.5rem;
+  margin: 0;
+}
+.header-content .header-controllers-container > .btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 0.35rem;
+  font-size: 0.675rem;
   font-weight: 500;
+}
+.header-content .header-controllers-container .lang-selector {
+  gap: 0.2rem;
+}
+.header-content .header-controllers-container .lang-selector .btn {
+  padding: 0;
+  margin: 0;
+  background: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #fc003b;
+}
+.header-content .header-controllers-container .lang-selector .__lang-br {
+  background-image: url(./../../images/up-menu.png);
+}
+.header-content .header-controllers-container .lang-selector .__lang-in {
+  background-image: url(./../../images/eua-flag.png);
+}
+
+@media only screen and (max-width: 768px) {
+  .header-content {
+    padding: 0.5rem;
+  }
+  .header-content .header-controllers-container .lang-selector {
+    gap: 0.3rem;
+    align-items: center;
+  }
+  .header-content .header-controllers-container .lang-selector .btn {
+    height: 65% !important;
+  }
+}
+.btn {
+  box-sizing: border-box;
+  white-space: nowrap;
+  word-wrap: nowrap;
 }
 
 /*Botão criar conta*/
-button.border-btn {
+.border-btn, .border-btn:hover, .border-btn:active {
   border: 1px solid #fff;
-  background: none;
   color: #fff;
-  margin-right: 0.3375em;
+  background: none;
+}
+.border-btn:hover {
+  opacity: 0.91;
 }
 
 /*Botão entrar*/
-.white-btn {
-  background-color: #fff;
+.white-btn, .white-btn:hover, .white-btn:active {
   border: none;
   color: #000;
+  background-color: #fff;
+}
+.white-btn:hover {
+  opacity: 0.91;
 }
 
-.lang-selector {
-  margin-left: 15px;
-  display: flex;
-  flex-direction: column;
-  max-height: 2.53em;
-}
-
-.lang-selector img {
-  height: 1.5625em;
+.row {
+  margin: 0;
 }
 
 /*Caixa de formulário*/
 #enter-box {
+  width: max-content;
+  height: max-content;
   display: flex;
   flex-direction: column;
-  padding: 1.25em 2.5em;
-  width: 35.9375em;
-  height: 34.775em;
-  background: #fff;
+  padding: 1.25rem 2.5rem;
   border-radius: 0.75em;
   margin: auto;
   box-sizing: border-box;
+  background: #fff;
 }
-
-#enter-box h2 {
+#enter-box ._title {
   position: relative;
   width: max-content;
   height: 2em;
   margin: 0 auto;
   margin-top: 0.4em;
-  font-size: 1.5em;
+  font-size: 1.35rem;
   font-weight: 400;
   line-height: 1.6em;
 }
-
-#enter-box p {
+#enter-box ._subtitle {
+  margin: 0 auto 2.7em;
   position: relative;
-  text-align: justify;
-  margin: 1.6em 0 1.1em;
+  font-size: 0.625rem;
+  text-align: center;
+}
+#enter-box button,
+#enter-box a {
+  font-size: 0.625rem;
 }
 
 /*Para as classes de continuar login*/
 .methods-continue {
   position: relative;
-  height: 10.7em;
 }
 
 .continue {
@@ -191,7 +258,6 @@ button.border-btn {
   color: #fff;
   font-weight: 400;
   font-family: "Inter";
-  font-style: normal;
   font-weight: 300;
   font-size: 2.8em;
   line-height: 3em;
@@ -250,7 +316,6 @@ footer p {
   width: 100%;
   height: 31px;
   background: #ffffff;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 31px;
@@ -295,6 +360,9 @@ footer {
   flex-direction: column;
   bottom: 0;
   background: #000;
+}
+footer ._brand-mkti {
+  margin-bottom: 0;
 }
 
 footer > p {

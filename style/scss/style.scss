@@ -5,6 +5,7 @@
 html {
   height: 100%;
 }
+@import "responsive-font-size";
 
 body {
   position: relative;
@@ -170,8 +171,8 @@ textarea {
 #user-information #show-status-window {
   font-weight: 400;
   font-size: 12px;
-  user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   text-decoration-line: underline;
   cursor: pointer;
 }
@@ -278,8 +279,8 @@ textarea {
 #online-now {
   position: relative;
   display: flex;
-  user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   cursor: pointer;
 }
 
@@ -806,7 +807,6 @@ main#mensagens .chat {
   margin-right: 15px;
 
   font-family: "Poppins";
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   white-space: nowrap;
@@ -985,7 +985,6 @@ main#mensagens .chat {
 #mensagens .text-container .blur {
   -webkit-filter: blur(2px);
   filter: blur(2px);
-  -webkit-filter: blur(2px);
 }
 
 #mensagens .interaction {
@@ -1160,7 +1159,6 @@ main#mensagens .chat {
   text-align: justify;
   box-sizing: border-box;
 
-  font-style: normal;
   font-weight: 400;
   font-size: 14px;
 }
@@ -1550,7 +1548,6 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-bottom: 4%;
   padding-right: 7%;
   font-size: 23px;
-  font-style: normal;
   color: var(--vermelho-principal);
   letter-spacing: -1px;
 }
@@ -2354,7 +2351,6 @@ dialog > div {
 
 dialog h1 {
   font-family: "Poppins";
-  font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 22px;
@@ -2449,10 +2445,6 @@ dialog#modal-teste-amor {
   font-size: 18px;
 }
 
-#modal-home-1,
-#modal-home-2 {
-  /* backdrop-filter: blur(1px); dando-bug*/
-}
 #modal-home-1 > div,
 #modal-home-2 > div {
   padding: 20px;

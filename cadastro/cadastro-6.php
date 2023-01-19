@@ -55,7 +55,7 @@ if ($support->count() <= 0) {
 <body>
   <header class="header-content">
     <img src="./../images/Keyslov.svg" class="header-logo" />
-    <nav class="nav-btn">
+    <nav class="header-controllers-container">
       <a href="../login.php"><button class="white-btn" name="submit">Entrar</button></a>
     </nav>
   </header>

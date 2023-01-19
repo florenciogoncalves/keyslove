@@ -2,7 +2,7 @@
 
 session_start();
 
-if(isset($_SESSION['username'])){
+if (isset($_SESSION['username'])) {
   header("Location: ./home/");
 }
 ?>
@@ -25,7 +25,7 @@ if(isset($_SESSION['username'])){
 <body class="body-login especify">
   <header class="header-content header-login">
     <img src="./images/Keyslov.svg" style="visibility: hidden;" class="header-logo" />
-    <nav class="nav-btn">
+    <nav class="header-controllers-container">
       <a href="./cadastro/cadastro-1.php"><button class="border-btn">Criar conta</button></a>
       <a href="index.html"><button class="white-btn">Entrar</button></a>
     </nav>

@@ -2,7 +2,7 @@
 
 session_start();
 
-if(isset($_SESSION['username'])){
+if (isset($_SESSION['username'])) {
   header("Location: ./home/");
 }
 
@@ -21,15 +21,15 @@ if(isset($_SESSION['username'])){
   <link rel="stylesheet" href="./style/responsive-login.css" />
 </head>
 
-<body class="especify">
-  <header class="header-content">
-    <a href=""><img src="./images/Keyslov.svg" class="header-logo" /></a>
-    <nav class="nav-btn index">
-      <a href="./cadastro/cadastro-1.php"><button class="border-btn">Criar conta</button></a>
-      <a href="./login.php"><button class="white-btn">Entrar</button></a>
-      <div class="lang-selector">
-        <img src="./images/bandeiradobrasil-2-cke (1) 1.png" />
-        <img src="./images/bandeira-dos-eua-estados-unidos-da-america 1.png" />
+<body class="especify m-0 p-0">
+  <header class="header-content row">
+    <a class="header-logo-content col-auto p-0" href="./"><img src="./images/Keyslov.svg" class="__header-logo img-fluid" /></a>
+    <nav class="header-controllers-container index row col-2 col-md-1 col-lg-4 col-xl-3 col-xxl-2 p-0">
+      <a class="btn border-btn d-none d-lg-flex col" href="./cadastro/cadastro-1.php">Criar conta</a>
+      <a class="btn white-btn d-none d-lg-flex col" href="./login.php">Entrar</a>
+      <div class="lang-selector row col-12 col-lg-1 p-0 ms-auto">
+        <button class="btn __lang-br col col-lg-12"></button>
+        <button class="btn __lang-in col col-lg-12"></button>
       </div>
     </nav>
   </header>
@@ -41,29 +41,29 @@ if(isset($_SESSION['username'])){
     if (isset($_SESSION['messageAuth'])) :
     ?>
 
-    <div class="alert alert-danger text-center" role="alert">
+      <div class="alert alert-danger text-center" role="alert">
 
-      <?php
+        <?php
         if (isset($_SESSION['messageAuth'])) {
           // foreach ($_SESSION['messageAuth'] as $errors) {
           //   echo $errors;
           echo $_SESSION['messageAuth'];
-            unset($_SESSION['messageAuth']);
-            // unset($errors);
-          }
-        
+          unset($_SESSION['messageAuth']);
+          // unset($errors);
+        }
+
 
         ?>
 
-    </div>
+      </div>
 
     <?php
     endif;
     ?>
 
     <div id="enter-box">
-      <h2>Seja bem vindo (a)</h2>
-      <p>
+      <h2 class="_title">Seja bem vindo (a)</h2>
+      <p class="_subtitle">
         Lorem ipsum dolor sit amet. Est minima aliquam sit quia ratione aut
         nemo libero et necessitatibus dolorum
       </p>
@@ -73,7 +73,7 @@ if(isset($_SESSION['username'])){
           Continuar com Facebook
         </button>
       </div>
-      <p>Ou</p>
+      <p class="_span-ou">Ou</p>
       <a href="./cadastro/cadastro-1.php"><button class="continue btn-register">Cadastra - se</button></a>
       <a href="./login.php">Efectuar login</a>
     </div>
@@ -82,7 +82,7 @@ if(isset($_SESSION['username'])){
       <h3>On para atitudes</h3>
     </div>
   </section>
-  <footer>
+  <footer class="d-none d-lg-flex">
     <div class="footer">
       <div class="img-links">
         <a href="#"><img src="./images/Logo branca.png" /></a>
@@ -102,9 +102,8 @@ if(isset($_SESSION['username'])){
         <li class="item-footer"><a href="">Dicas de Segurança</a></li>
       </ul>
     </div>
-    <p>Keyslov - © 2022 All Rights Reserved Feito com ♥ Widu</p>
+    <p class="_brand-mkti">Keyslov - © 2022 All Rights Reserved Feito com ♥ Widu</p>
   </footer>
-  <script src="./script/resize-windown.js"></script>
 </body>
 
 </html>

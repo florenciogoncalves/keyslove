@@ -22,7 +22,7 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 3) {
 <body>
   <header class="header-content">
     <img src="./../images/Keyslov.svg" class="header-logo" />
-    <nav class="nav-btn">
+    <nav class="header-controllers-container">
       <a href="../login.php"><button class="white-btn">Entrar</button></a>
     </nav>
   </header>
