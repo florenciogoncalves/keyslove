@@ -16,7 +16,7 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 3) {
 
   <link rel="stylesheet" href="./../style/bootstrap.min.css">
   <link rel="stylesheet" href="./../style/cadastro.css" />
-  <link rel="stylesheet" href="./../style/responsive-login.css" />
+  <link rel="stylesheet" href="./../style/css/responsive-login.css" />
 </head>
 
 <body>

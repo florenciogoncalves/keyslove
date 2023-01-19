@@ -49,7 +49,7 @@ if ($support->count() <= 0) {
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/bootstrap.min.css">
   <link rel="stylesheet" href="./../style/cadastro.css" />
-  <link rel="stylesheet" href="./../style/responsive-login.css" />
+  <link rel="stylesheet" href="./../style/css/responsive-login.css" />
 </head>
 
 <body>

@@ -17,7 +17,7 @@ if (!$_SESSION['username']) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Favoritos &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
-  <link rel="stylesheet" href="./../style/style.css" />
+  <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
 
   <style>
@@ -69,14 +69,15 @@ if (!$_SESSION['username']) {
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])):
+            if (isset($_SESSION['username'])) :
             ?>
 
 
-            <h2>
-              <?= $_SESSION['username']; endif ?>
-            </h2>
-            <span id="show-status-window">Escolher status</span>
+              <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+              </h2>
+              <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -168,8 +169,6 @@ if (!$_SESSION['username']) {
 
           // $favorite = $model->User('tb_reacts', 'reacted', $users['reacted'], '=', 'fetchAll');
           $favoritee = $model->getFavorites($_SESSION['username'], $users['reacted'], 'favorite');
-
-
         }
 
 
@@ -209,8 +208,6 @@ if (!$_SESSION['username']) {
           </ul>
         
         ";
-
-
           }
         } else {
           echo "
@@ -253,7 +250,7 @@ if (!$_SESSION['username']) {
         //   $_SESSION['favoriteName'] = $favorites['reacted'];
         $getPhoto = $model->User('tb_photos', 'user', $users['curtiu'], '=');
         // }
-      
+
         // echo $error->error;
         echo "
   

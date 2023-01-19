@@ -22,7 +22,7 @@ if (!$_SESSION['username']) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Keyslov &mid; Home</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
-  <link rel="stylesheet" href="./../style/style.css" />
+  <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
 
   <style>
@@ -182,7 +182,7 @@ if (!$_SESSION['username']) {
       </div>
 
       <div class="home-footer">
-      
+
         <h3 id="person-name">
           <?php
           if (!isset($empty->alert)) :

@@ -17,7 +17,7 @@ if (!$_SESSION['username']) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planos &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
-  <link rel="stylesheet" href="./../style/style.css" />
+  <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
 </head>
 
@@ -40,14 +40,15 @@ if (!$_SESSION['username']) {
           </div>
           <figcaption>
             <?php
-            if (isset($_SESSION['username'])):
+            if (isset($_SESSION['username'])) :
             ?>
 
 
-            <h2>
-              <?= $_SESSION['username']; endif ?>
-            </h2>
-            <span id="show-status-window">Escolher status</span>
+              <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+              </h2>
+              <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -162,42 +163,42 @@ if (!$_SESSION['username']) {
             <div class="left-side">
               <span><label for="card-num">Número do cartão</label>
                 <input type="number" id="card-num" placeholder="<?php
-                if ($card) {
-                  echo $card['numeroCartao'];
-                } else {
-                  echo $error->Error;
-                }
+                                                                if ($card) {
+                                                                  echo $card['numeroCartao'];
+                                                                } else {
+                                                                  echo $error->Error;
+                                                                }
 
-                ?>" name="numero-cartao" disabled /></span>
+                                                                ?>" name="numero-cartao" disabled /></span>
               <span>
                 <label for="titular-name">Nome do titular</label>
                 <input type="text" id="titular-name" placeholder="<?php
-                if ($card) {
-                  echo $card['user'];
-                } else {
-                  echo $error->Error;
-                }
+                                                                  if ($card) {
+                                                                    echo $card['user'];
+                                                                  } else {
+                                                                    echo $error->Error;
+                                                                  }
 
-                ?>" name="nome-titular" disabled />
+                                                                  ?>" name="nome-titular" disabled />
               </span>
               <div class="validate">
                 <label for="validate">Validade</label>
                 <input type="number" min="1" max="99" placeholder="<?php
-                if ($card) {
-                  echo $card['mes'];
-                } else {
-                  echo $error->year;
-                }
+                                                                    if ($card) {
+                                                                      echo $card['mes'];
+                                                                    } else {
+                                                                      echo $error->year;
+                                                                    }
 
-                ?>" name="validade-mes" disabled />
+                                                                    ?>" name="validade-mes" disabled />
                 <input type="number" max="99" placeholder="<?php
-                if ($card) {
-                  echo $card['ano'];
-                } else {
-                  echo $error->year;
-                }
+                                                            if ($card) {
+                                                              echo $card['ano'];
+                                                            } else {
+                                                              echo $error->year;
+                                                            }
 
-                ?>" name="validade-ano" disabled />
+                                                            ?>" name="validade-ano" disabled />
               </div>
             </div>
             <div class="right-side">

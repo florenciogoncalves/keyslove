@@ -19,7 +19,7 @@ if (!$_SESSION['username']) {
   <title>Carroussel &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
 
-  <link rel="stylesheet" href="./../style/style.css" />
+  <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
 
 

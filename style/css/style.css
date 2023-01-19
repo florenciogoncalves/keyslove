@@ -1,12 +1,54 @@
+@charset "UTF-8";
 @import url(./css/logon.css);
 @import url(./home.css);
 @import url(./style-responsivo.css);
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
 	height: 100%;
 }
-@import "font";
 
+html {
+	font-size: calc(16px + 0.390625vw);
+	font-style: normal;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	height: 100%;
+}
+html * {
+	font-family: "Poppins";
+}
+
+@media only screen and (min-width: 768px) {
+	html {
+		font-size: calc(18px + 0.390625vw);
+	}
+}
+@media only screen and (min-width: 1024px) {
+	html {
+		font-size: calc(19px + 0.390625vw);
+	}
+}
+@media only screen and (min-width: 1280px) {
+	html {
+		font-size: calc(20px + 0.390625vw);
+	}
+}
+@media only screen and (min-width: 1536px) {
+	html {
+		font-size: calc(21px + 0.390625vw);
+	}
+}
+@media only screen and (min-width: 1920px) {
+	html {
+		font-size: calc(23px + 0.390625vw);
+	}
+}
+@media only screen and (min-width: 2560px) {
+	html {
+		font-size: calc(25px + 0.390625vw);
+	}
+}
 body {
 	position: relative;
 	width: 100vw;
@@ -19,7 +61,6 @@ body {
 	overflow-x: hidden;
 	box-sizing: border-box;
 	padding-left: 2%;
-
 	background-image: url(./../images/hearth-bg-right.svg);
 	background-size: auto;
 	background-position: right bottom;
@@ -29,6 +70,7 @@ li {
 	list-style: none;
 	cursor: pointer;
 }
+
 select,
 textarea {
 	outline: none !important;
@@ -52,13 +94,16 @@ textarea {
 	width: 6px;
 	height: 6px;
 }
+
 *::-webkit-scrollbar-thumb:hover {
 	background-color: rgba(88, 88, 88, 0.61);
 	border-radius: 10px;
 }
+
 *::-webkit-scrollbar-track {
 	background: none;
 }
+
 *::-webkit-scrollbar-corner {
 	appearance: none;
 }
@@ -142,7 +187,6 @@ textarea {
 	position: absolute;
 	bottom: 3%;
 	border-radius: 15px;
-
 	transition: all 600ms;
 }
 
@@ -213,12 +257,10 @@ textarea {
 	line-height: 2.4em;
 	padding: 0;
 	text-indent: 80px;
-
 	background-size: 1.25em;
 	background-repeat: no-repeat;
 	background-position: 2em center;
 	transition: all ease-in 250ms;
-
 	font-weight: 500;
 	font-size: 16px;
 	color: #333;
@@ -231,41 +273,53 @@ textarea {
 	background-repeat: no-repeat;
 	background-position: 2em center;
 }
+
 #menu-left li:hover {
 	background-position: 40px center;
 	text-indent: 90px;
 }
+
 /*Aplicando as imagens de fundo das opcões do menu*/
 #menu-left li:nth-of-type(1) {
 	background-image: url(./../images/Icon.svg);
 }
+
 #menu-left li:nth-of-type(2) {
 	background-image: url(./../images/Vector-1.svg);
 }
+
 #menu-left li:nth-of-type(3) {
 	background-image: url(./../images/Icon-4.svg);
 }
+
 #menu-left li:nth-of-type(4) {
 	background-image: url(./../images/Vector-2.svg);
 }
+
 #menu-left li:nth-of-type(5) {
 	background-image: url(./../images/Icon-2.svg);
 }
+
 #menu-left li:nth-of-type(6) {
 	background-image: url(./../images/Icon-1.svg);
 }
+
 #menu-left li:nth-of-type(7) {
 	background-image: url(./../images/Icon-3.svg);
 }
+
 #menu-left li:nth-of-type(8) {
 	background-image: url(./../images/Vector.svg);
 }
+
 #menu-left li:nth-of-type(9) {
 	background-image: url(./../images/Icon-5.svg);
 }
+
 #menu-left li:nth-of-type(10) {
 	background-image: url(./../images/Icon-6.svg);
 }
+
 #menu-left li:nth-of-type(11) {
 	background-image: url(./../images/Vector\ 15.svg);
 }
@@ -319,6 +373,7 @@ textarea {
 	right: 0;
 	left: auto;
 }
+
 #user-information .hidden-list ul {
 	overflow: hidden;
 	max-width: 100%;
@@ -331,6 +386,7 @@ textarea {
 	width: 100% !important;
 	overflow: hidden;
 }
+
 #online-now .changing-status {
 	top: 5% !important;
 }
@@ -352,7 +408,6 @@ textarea {
 	height: 2.4em;
 	text-indent: 18px;
 	width: 100%;
-
 	font-size: 12px;
 	line-height: 2em;
 	font-weight: 400;
@@ -376,6 +431,7 @@ textarea {
 #menu-esquerdo #div-left > a {
 	margin-top: auto;
 }
+
 #peoples-left {
 	height: max-content;
 	padding: 10px;
@@ -424,7 +480,7 @@ textarea {
 
 #content-right .principal-content {
 	margin: 0 auto;
-	min-height: calc(97vh);
+	min-height: 97vh;
 	display: grid;
 	grid-template-rows: max-content 1fr max-content;
 }
@@ -467,14 +523,12 @@ input::-webkit-calendar-picker-indicator {
 	min-width: 100%;
 	height: 40px;
 	padding: 0 15px;
-
 	background: rgba(255, 255, 255, 0.1);
 	border: 0.901502px solid #000000;
 	border-radius: 7.21202px;
-
 	font-weight: 400;
 	font-size: 14px;
-	color: rgba(0, 0, 0);
+	color: rgb(0, 0, 0);
 }
 
 #content-right .principal-content select {
@@ -542,11 +596,9 @@ input::-webkit-calendar-picker-indicator {
 .principal-content .next-page-about {
 	width: 33px;
 	height: 32px;
-
 	background: rgba(0, 0, 0, 0.11);
 	border: 1px solid #fc003b;
 	border-radius: 10px;
-
 	font-weight: 400;
 	font-size: 30px;
 	line-height: 32px;
@@ -560,10 +612,8 @@ input::-webkit-calendar-picker-indicator {
 	height: 160px;
 	padding: 13px 17px;
 	overflow: auto;
-
 	resize: none;
 	font-size: 16px;
-
 	background: rgba(255, 255, 255, 0.1);
 	border: 0.901502px solid #000000;
 	border-radius: 7.21202px;
@@ -602,12 +652,10 @@ input::-webkit-calendar-picker-indicator {
 	align-items: center;
 	z-index: 2;
 	position: absolute;
-
 	color: #fff;
 	line-height: 57px;
 	font-size: 32px;
 	font-weight: 400;
-
 	background: rgba(0, 0, 0, 0.5);
 }
 
@@ -683,7 +731,6 @@ main#mensagens .peoples-to-chat,
 	border-bottom-left-radius: 10px;
 	border-top-left-radius: 10px;
 	background: #fff;
-
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -693,7 +740,6 @@ main#mensagens .peoples-to-chat,
 
 #mensagens .peoples-to-chat h2 {
 	width: 100%;
-
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 80px;
@@ -782,7 +828,6 @@ main#mensagens .chat {
 	height: 100%;
 	display: grid;
 	grid-template-rows: 1fr auto;
-
 	background-color: #e2dfdf;
 }
 
@@ -805,7 +850,6 @@ main#mensagens .chat {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-right: 15px;
-
 	font-family: "Poppins";
 	font-weight: 600;
 	font-size: 24px;
@@ -836,6 +880,7 @@ main#mensagens .chat {
 	margin-right: 5px;
 	object-fit: scale-down;
 }
+
 #mensagens .botoes-top .options {
 	background-image: url(./../images/menu-mensagens.png);
 	object-fit: scale-down;
@@ -891,6 +936,7 @@ main#mensagens .chat {
 #mensagens .botoes-top #active-translator:checked + .translate-on-off {
 	transform: translateX(100%);
 }
+
 /*Alteração do idioma*/
 #mensagens .talk-now {
 	width: 100%;
@@ -957,6 +1003,7 @@ main#mensagens .chat {
 	font-size: 10px;
 	font-weight: 500;
 }
+
 #mensagens #sended .identifier > span > span {
 	line-height: 0px;
 	font-weight: bolder;
@@ -1015,14 +1062,15 @@ main#mensagens .chat {
 	background: var(--vermelho-principal);
 	color: #fff;
 	border-radius: 4px;
-
 	font-size: 14px;
 	font-weight: 400;
 }
+
 #mensagens a {
 	text-decoration: underline;
 	color: var(--vermelho-principal);
 }
+
 /* Para a mensagem enviada pelo usuário */
 #mensagens #privado .user {
 	display: flex;
@@ -1062,7 +1110,6 @@ main#mensagens .chat {
 	text-align: center;
 	margin: auto 0 0;
 	background-color: var(--vermelho-principal);
-
 	color: #fff;
 	font-size: 32px;
 }
@@ -1134,7 +1181,6 @@ main#mensagens .chat {
   background-size: fill;
   object-fit: scale-down;
 } */
-
 #mensagens .clear-file {
 	width: 23px;
 	height: 23px;
@@ -1144,7 +1190,6 @@ main#mensagens .chat {
 	right: 5px;
 	border: none;
 	border-radius: 25px;
-
 	background: #fff;
 	color: var(--vermelho-principal);
 }
@@ -1158,7 +1203,6 @@ main#mensagens .chat {
 	border: none;
 	text-align: justify;
 	box-sizing: border-box;
-
 	font-weight: 400;
 	font-size: 14px;
 }
@@ -1181,7 +1225,6 @@ main#mensagens .chat {
 }
 
 /* DOCUMENTO curtidas.php & localizar-pessoas.php*/
-
 .padrao {
 	background: #fff;
 	border-radius: 10px;
@@ -1256,17 +1299,14 @@ main#mensagens .chat {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-
 	justify-content: space-between;
 }
 
 .padrao .list article li {
 	width: 48.92px;
 	height: 13.94px;
-
 	background: rgba(0, 0, 0, 0.52);
 	border-radius: 6.69421px;
-
 	font-size: 12px;
 	color: #fff;
 	text-align: center;
@@ -1322,13 +1362,12 @@ main#mensagens .chat {
 	justify-content: space-between;
 	margin: 20px 0 40px;
 }
+
 #pessoas-regiao .search-field {
 	width: 600px;
-
 	height: 51px;
 	box-sizing: border-box;
 	display: flex;
-
 	border: 1px solid #31302e;
 	border-radius: 10px;
 	overflow: hidden;
@@ -1365,9 +1404,9 @@ main#mensagens .chat {
 	border-radius: 10px;
 	box-sizing: border-box;
 	padding-right: 20px;
-
 	font-size: 20px;
 }
+
 /*planos.php*/
 #planos,
 #pacotes-pagamento,
@@ -1411,7 +1450,6 @@ main#mensagens .chat {
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-
 	background: #fff;
 	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
@@ -1425,7 +1463,6 @@ main#mensagens .chat {
 #planos .card-content p {
 	width: 100%;
 	margin: 10px auto;
-
 	text-align: justify;
 	height: 100%;
 	overflow: hidden;
@@ -1445,10 +1482,8 @@ main#mensagens .chat {
 #planos .card-bank-data {
 	width: 728.08px;
 	height: 282px;
-
 	display: flex;
 	flex-direction: row;
-
 	margin: auto;
 	box-sizing: border-box;
 	background: linear-gradient(
@@ -1478,10 +1513,10 @@ main#mensagens .chat {
 	margin: 8px 0;
 	box-sizing: border-box;
 	padding: 15px;
-
 	background: #ffffff;
 	border-radius: 6.73784px;
 }
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
 	display: none;
@@ -1493,9 +1528,11 @@ input[type="number"]::-webkit-inner-spin-button {
 	display: block;
 	margin: 15px 0;
 }
+
 #planos .card-bank-data .left-side > span:last-of-type {
 	display: inline-block;
 }
+
 #planos .validate {
 	display: inline-block;
 	margin-left: 10px;
@@ -1522,7 +1559,6 @@ input[type="number"]::-webkit-inner-spin-button {
 	width: 362px;
 	height: 57px;
 	border-radius: 8px;
-
 	font-size: 16px;
 }
 
@@ -1560,9 +1596,7 @@ input[type="number"]::-webkit-inner-spin-button {
 	background: none;
 	padding: 13px 19px;
 	margin: 3% 0;
-
 	font-size: 18px;
-
 	border: 1.11552px solid #333333;
 	border-radius: 9px;
 }
@@ -1639,7 +1673,6 @@ input[type="number"]::-webkit-inner-spin-button {
 	border: 1.37998px solid #d9d9d9;
 	border-radius: 8.2799px;
 	min-width: 100%;
-
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 75%;
@@ -1672,7 +1705,7 @@ input[type="number"]::-webkit-inner-spin-button {
 #metodo-pagamento #card-bank .bank-indicative {
 	justify-content: space-between;
 	display: flex;
-	background: #5c0101a2;
+	background: rgba(92, 1, 1, 0.6352941176);
 	padding: 0 60px 0 25px;
 }
 
@@ -1770,6 +1803,7 @@ main#servicos {
 	height: 100%;
 	flex-direction: column;
 }
+
 #configuracoes #conf-select,
 #configuracoes #conf-account,
 #servicos #test-select {
@@ -1777,11 +1811,13 @@ main#servicos {
 	flex-direction: column;
 	height: 100%;
 }
+
 #configuracoes .title,
 #servicos .title {
 	font-size: 38px;
 	margin: 0 auto;
 }
+
 #configuracoes ul#conf-list,
 #servicos ul#test-list {
 	display: flex;
@@ -1831,7 +1867,6 @@ main#servicos {
 	grid-template-columns: 20% 68% 10%;
 	justify-content: center;
 	cursor: default;
-
 	font-size: 20px;
 }
 
@@ -1872,6 +1907,7 @@ main#servicos {
 	display: none;
 	flex-direction: column;
 }
+
 #conf-payment ul {
 	margin-top: 6%;
 	margin-bottom: 3%;
@@ -1880,6 +1916,7 @@ main#servicos {
 	flex-direction: column;
 	overflow-y: scroll;
 }
+
 #configuracoes #conf-payment li {
 	width: 100%;
 	height: 95px;
@@ -1888,10 +1925,8 @@ main#servicos {
 	box-sizing: border-box;
 	display: grid;
 	grid-template-columns: auto max-content;
-
 	background: url(./../images/payment-card-bg.svg) no-repeat center left 4%;
 	background-size: 8%;
-
 	border: 1px solid #fc003b;
 	border-radius: 10px;
 }
@@ -1934,6 +1969,7 @@ main#servicos {
 	height: 100%;
 	flex-direction: column;
 }
+
 #conf-notifications ul,
 #conf-def ul {
 	display: flex;
@@ -1949,7 +1985,6 @@ main#servicos {
 	grid-template-columns: auto max-content;
 	justify-content: space-between;
 	width: 100%;
-
 	font-size: 20px;
 }
 
@@ -1957,12 +1992,12 @@ main#servicos {
 #conf-def input[type="checkbox"] {
 	display: none;
 }
+
 #conf-notifications .switch-painel,
 #conf-def .switch-painel {
 	width: 50px;
 	height: 28px;
 	display: flex;
-
 	background: rgb(207, 207, 207);
 	border-radius: 40px;
 }
@@ -2031,7 +2066,6 @@ main#servicos {
 	width: 22px;
 	height: 22px;
 	margin: auto 0;
-
 	background: none;
 	border: 1.26901px solid var(--vermelho-principal);
 	border-radius: 15%;
@@ -2079,7 +2113,6 @@ main#servicos {
 	height: 58px;
 	border-radius: 10px;
 	margin: 0;
-
 	font-size: 14px;
 	font-weight: 700;
 	letter-spacing: 0.2em;
@@ -2122,9 +2155,11 @@ main#servicos {
 	grid-template-columns: 1fr max-content;
 	height: 100%;
 }
+
 #perfil {
 	max-width: 100%;
 }
+
 .add-more-photos {
 	display: grid;
 	grid-template-columns: repeat(4, 18%);
@@ -2137,7 +2172,6 @@ main#servicos {
 	z-index: 2;
 	position: relative;
 	display: flex;
-
 	background: rgba(51, 51, 51, 0.47);
 	background-size: cover;
 	background-position: center;
@@ -2158,7 +2192,6 @@ main#servicos {
 	height: 25px;
 	z-index: 2;
 	margin: 8px 8px 0 auto;
-
 	background: url(./../images/plus.svg) no-repeat center;
 	border: none;
 }
@@ -2175,7 +2208,6 @@ main#servicos {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	font-size: 30px;
 	font-weight: 700;
 }
@@ -2200,7 +2232,6 @@ main#servicos {
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 24px;
-
 	color: rgba(0, 0, 0, 0.52);
 }
 
@@ -2224,7 +2255,6 @@ main#servicos {
 	min-height: 200px;
 	max-height: 300px;
 	resize: none;
-
 	border: 1px solid #fc003b;
 	border-radius: 12px;
 }
@@ -2253,13 +2283,11 @@ main#servicos {
 	box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 0 8px;
-
 	font-size: 16px;
 	font-family: "Inter";
 	line-height: 2em;
 	text-align: center;
 	letter-spacing: -0.022em;
-
 	transition: all 400ms;
 }
 
@@ -2270,7 +2298,10 @@ main#servicos {
 
 #perfil-information input[type="checkbox"]:checked + label,
 #perfil-information input[type="radio"]:checked + label {
-	background: linear-gradient(#fc003b57, #fc003bd5);
+	background: linear-gradient(
+		rgba(252, 0, 59, 0.3411764706),
+		rgba(252, 0, 59, 0.8352941176)
+	);
 	color: rgb(29, 29, 29);
 }
 
@@ -2280,6 +2311,7 @@ main#servicos {
 	min-width: 700px;
 	max-width: 90%;
 }
+
 #teste-de-amor > h1 {
 	margin: 0 auto;
 }
@@ -2355,7 +2387,6 @@ dialog h1 {
 	font-size: 24px;
 	line-height: 22px;
 	/* identical to box height, or 90% */
-
 	letter-spacing: 5px;
 }
 
@@ -2508,3 +2539,5 @@ select {
 		top: 35px;
 	}
 }
+
+/*# sourceMappingURL=style.css.map */

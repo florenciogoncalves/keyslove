@@ -16,9 +16,9 @@ if (isset($_SESSION['username'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conecte-se - Keyslov</title>
   <link rel="stylesheet" href="./style/bootstrap.min.css" />
-  <link rel="stylesheet" href="./style/logon.css" />
+  <link rel="stylesheet" href="./style/css/logon.css" />
   <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
-  <link rel="stylesheet" href="./style/responsive-login.css" />
+  <link rel="stylesheet" href="./style/css/responsive-login.css" />
 </head>
 
 <body class="especify m-0 p-0">
@@ -28,8 +28,8 @@ if (isset($_SESSION['username'])) {
       <a class="btn border-btn d-none d-lg-flex col" href="./cadastro/cadastro-1.php">Criar conta</a>
       <a class="btn white-btn d-none d-lg-flex col" href="./login.php">Entrar</a>
       <div class="lang-selector row col-12 col-lg-1 p-0 ms-auto">
-        <button class="btn __lang-br col col-lg-12"></button>
-        <button class="btn __lang-in col col-lg-12"></button>
+        <button class="btn __lang-br col col-lg-12" type="button"></button>
+        <button class="btn __lang-in col col-lg-12" type="button"></button>
       </div>
     </nav>
   </header>
@@ -61,7 +61,7 @@ if (isset($_SESSION['username'])) {
     endif;
     ?>
 
-    <div id="enter-box">
+    <div id="enter-box" class="container">
       <h2 class="_title">Seja bem vindo (a)</h2>
       <p class="_subtitle">
         Lorem ipsum dolor sit amet. Est minima aliquam sit quia ratione aut

@@ -16,7 +16,7 @@ if (!$_SESSION['username']) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perfil &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
-  <link rel="stylesheet" href="./../style/style.css" />
+  <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/style-responsivo.css" />
 </head>
 
@@ -25,11 +25,11 @@ if (!$_SESSION['username']) {
     <div id="div-left">
       <div id="user-information">
         <figure>
-        <?php
-        $photo = new profileModel();
-        $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
-        $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
-        ?>
+          <?php
+          $photo = new profileModel();
+          $get = $photo->User('tb_photos', 'user', $_SESSION['username'], '!=');
+          $profile = $photo->User('tb_photos', 'user', $_SESSION['username'], '=');
+          ?>
 
 
           <div class="foto-de-perfil">
@@ -40,14 +40,15 @@ if (!$_SESSION['username']) {
           <figcaption>
 
             <?php
-            if (isset($_SESSION['username'])):
+            if (isset($_SESSION['username'])) :
             ?>
 
 
-            <h2>
-              <?= $_SESSION['username']; endif ?>
-          </h2>
-            <span id="show-status-window">Escolher status</span>
+              <h2>
+              <?= $_SESSION['username'];
+            endif ?>
+              </h2>
+              <span id="show-status-window">Escolher status</span>
           </figcaption>
         </figure>
 
@@ -134,14 +135,10 @@ if (!$_SESSION['username']) {
 
         <div class="add-more-photos">
 
-          <span class="add-box"><input type="file" accept="image/png, image/jpeg"
-              name="foto-1" /><button></button></span>
-          <span class="add-box"><input type="file" accept="image/png, image/jpeg"
-              name="foto-2" /><button></button></span>
-          <span class="add-box"><input type="file" accept="image/png, image/jpeg"
-              name="foto-3" /><button></button></span>
-          <span class="add-box"><input type="file" accept="image/png, image/jpeg"
-              name="foto-4" /><button></button></span>
+          <span class="add-box"><input type="file" accept="image/png, image/jpeg" name="foto-1" /><button></button></span>
+          <span class="add-box"><input type="file" accept="image/png, image/jpeg" name="foto-2" /><button></button></span>
+          <span class="add-box"><input type="file" accept="image/png, image/jpeg" name="foto-3" /><button></button></span>
+          <span class="add-box"><input type="file" accept="image/png, image/jpeg" name="foto-4" /><button></button></span>
 
         </div>
         <img src="" id="main-image" />
@@ -150,53 +147,51 @@ if (!$_SESSION['username']) {
 
       <section id="perfil-information">
         <?php
-        if (isset($_SESSION['username'])):
+        if (isset($_SESSION['username'])) :
         ?>
 
 
-        <h2>
-          <?= $_SESSION['username']; endif ?>
-    </h2>
-        <span>Idade:
-          <?php
+          <h2>
+          <?= $_SESSION['username'];
+        endif ?>
+          </h2>
+          <span>Idade:
+            <?php
 
 
             $fullYear = new profileModel();
             echo UserAge($fullYear->userAge());
-            
+
             ?>
-          anos
-        </span>
+            anos
+          </span>
 
-        <!--   -->
+          <!--   -->
 
 
-        <div>
+          <div>
 
-          <h3>Descrição</h3>
-          <textarea placeholder="Lorem Ipsum dolor sit amet" name="description"></textarea>
-        </div>
-        <h3>Tags</h3>
-        <div>
-          <input type="checkbox" id="tag-cachorros" />
-          <label for="tag-cachorros" name="tag-cachorros">Cachorros</label><input type="checkbox" id="tag-design"
-            name="tag-cachorros" />
-          <label for="tag-design" name="tag-gatos">Desing</label><input type="checkbox" id="tag-gatos"
-            name="tag-gatos" />
-          <label for="tag-gatos" name="tag-gatos">Gatos</label><input type="checkbox" id="tag-geografia"
-            name="tag-gatos" />
-          <label for="tag-geografia" name="tag-geografia">Geografia</label>
-          <button class="add-option-before">+ Adicionar</button>
-        </div>
-        <h3>Signo</h3>
+            <h3>Descrição</h3>
+            <textarea placeholder="Lorem Ipsum dolor sit amet" name="description"></textarea>
+          </div>
+          <h3>Tags</h3>
+          <div>
+            <input type="checkbox" id="tag-cachorros" />
+            <label for="tag-cachorros" name="tag-cachorros">Cachorros</label><input type="checkbox" id="tag-design" name="tag-cachorros" />
+            <label for="tag-design" name="tag-gatos">Desing</label><input type="checkbox" id="tag-gatos" name="tag-gatos" />
+            <label for="tag-gatos" name="tag-gatos">Gatos</label><input type="checkbox" id="tag-geografia" name="tag-gatos" />
+            <label for="tag-geografia" name="tag-geografia">Geografia</label>
+            <button class="add-option-before">+ Adicionar</button>
+          </div>
+          <h3>Signo</h3>
 
-        <div>
-          <input type="radio" id="signo-virgem" />
-          <label for="signo-virgem">Virgem</label>
-          <button class="add-option-before">+ Adicionar</button>
-        </div>
+          <div>
+            <input type="radio" id="signo-virgem" />
+            <label for="signo-virgem">Virgem</label>
+            <button class="add-option-before">+ Adicionar</button>
+          </div>
 
-        <button style="width: 100%; line-height: 40px;">Postar</button>
+          <button style="width: 100%; line-height: 40px;">Postar</button>
 
       </section>
     </section>
