@@ -162,7 +162,7 @@ if (!$_SESSION['username']) {
         if (!isset($empty->alert)) :
         ?>
 
-          <img src="./../_storage/images/<?= $get['photo']; ?>" alt="Foto de perfil" class="carrousselPhoto" />
+          <img src="./../_storage/images/<?= $get['photo']; ?>" alt="Foto de perfil" class="carroussel-photo" />
         <?php
         endif;
         ?>
