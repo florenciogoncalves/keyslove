@@ -20,6 +20,7 @@ input {
 #enter-box {
 	padding: 0;
 	background: #fff;
+  height: max-content;
 	.left-side,
 	.right-side {
 		display: flex;
@@ -45,7 +46,7 @@ input {
 		}
 		h2 {
 			font-weight: 700;
-			font-size: 1.15rem;
+			font-size: 1rem;
 			line-height: 1;
 
 			text-align: center;
@@ -59,7 +60,7 @@ input {
 			flex-direction: column;
 			justify-content: space-around;
 			text-indent: 1rem;
-			font-size: 0.75rem;
+			font-size: 0.65rem;
 			li {
 				background: url(./../../images/check.svg) no-repeat left 0 center;
 			}

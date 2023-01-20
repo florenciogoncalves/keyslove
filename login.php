@@ -24,7 +24,7 @@ if (isset($_SESSION['username'])) {
 
 <body class="body-login especify">
   <header class="header-content row">
-    <nav class="header-controllers-container index row ms-auto col-2 col-sm-1 col-md-1 col-lg-3 col-xl-3 col-xxl-1 p-0">
+    <nav class="header-controllers-container index row ms-auto col-2 col-sm-1 col-md-1 col-lg-3 col-xl-4 col-xxl-2 p-0">
       <a class="btn border-btn d-none d-lg-flex col" href="./cadastro/cadastro-1.php">Criar conta</a>
       <a class="btn white-btn d-none d-lg-flex col" href="./login.php">Entrar</a>
     </nav>
@@ -53,8 +53,8 @@ if (isset($_SESSION['username'])) {
   endif;
   ?>
 
-  <div id="enter-box" class="logon-split row col-lg-9 mx-auto my-4 rounded-3">
-    <div class="left-side col d-none d-lg-flex p-4">
+  <div id="enter-box" class="logon-split row col-lg-9 col-xl-8 col-xxl-7 m-auto rounded-3">
+    <div class="left-side col d-none d-lg-flex p-3">
       <div class="left-container p-2 rounded-3">
         <img class="mx-auto my-3 img-fluid" src="./images/bg.png" />
         <h2>Encontre o seu verdadeiro amor!!</h2>
@@ -70,7 +70,7 @@ if (isset($_SESSION['username'])) {
 
     <form action="./_app/controllers/loginController.php" method="POST" class="right-side col-7 px-4" novalidate>
 
-<div class="right-container my-auto">
+<div class="right-container my-auto py-3">
   <fieldset class="logo col-11 mx-auto row">
         <img class="img-fluid col-3 mx-auto" src="./images/favicon.svg" alt="Keyslov" />
         <h1 class="col-auto mx-auto"><span class="_text--red">K</span>eys<span class="_text--red">l</span>ov</h1>
@@ -96,7 +96,7 @@ if (isset($_SESSION['username'])) {
     </form>
   </div>
 
-  <footer class="d-none d-lg-flex">
+  <footer class="d-none d-lg-flex mt-3">
     <div class="footer px-2 p-3 pb-2">
       <div class="img-links col-2 row gap-1">
         <a class="mx-auto logo-container" href="#">
