@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @media only screen and (max-width: 575.97px) {
   #enter-box {
-    background: none;
+    background: none !important;
     color: #fff;
   }
   #enter-box .facebook-continue,

@@ -166,13 +166,12 @@ body > footer + div:last-of-type {
   margin: 0;
 }
 
-/*Caixa de formulário*/
 #menu-logon {
   height: max-content;
+  width: 100%;
   margin: auto;
 }
-
-#enter-box {
+#menu-logon #enter-box {
   height: max-content;
   display: flex;
   flex-direction: column;
@@ -180,7 +179,7 @@ body > footer + div:last-of-type {
   box-sizing: border-box;
   background: #fff;
 }
-#enter-box ._title {
+#menu-logon #enter-box ._title {
   position: relative;
   width: max-content;
   margin: 0 auto;
@@ -189,39 +188,39 @@ body > footer + div:last-of-type {
   font-weight: 400;
   line-height: 1.6em;
 }
-#enter-box ._subtitle {
+#menu-logon #enter-box ._subtitle {
   position: relative;
   font-size: 0.525rem;
   text-align: center;
 }
-#enter-box button,
-#enter-box a,
-#enter-box .__span-ou {
+#menu-logon #enter-box button,
+#menu-logon #enter-box a,
+#menu-logon #enter-box .__span-ou {
   font-size: 0.575rem !important;
   font-weight: 500;
 }
-#enter-box button.__span-ou,
-#enter-box a.__span-ou,
-#enter-box .__span-ou.__span-ou {
+#menu-logon #enter-box button.__span-ou,
+#menu-logon #enter-box a.__span-ou,
+#menu-logon #enter-box .__span-ou.__span-ou {
   margin: 0 auto;
   font-weight: 400;
 }
-#enter-box button.__a-login,
-#enter-box a.__a-login,
-#enter-box .__span-ou.__a-login {
+#menu-logon #enter-box button.__a-login,
+#menu-logon #enter-box a.__a-login,
+#menu-logon #enter-box .__span-ou.__a-login {
   width: max-content;
   text-decoration: underline;
   color: var(--vermelho-principal);
 }
-#enter-box button.__a-login:hover,
-#enter-box a.__a-login:hover,
-#enter-box .__span-ou.__a-login:hover {
+#menu-logon #enter-box button.__a-login:hover,
+#menu-logon #enter-box a.__a-login:hover,
+#menu-logon #enter-box .__span-ou.__a-login:hover {
   opacity: 0.7;
 }
-#enter-box .methods-continue {
+#menu-logon #enter-box .methods-continue {
   position: relative;
 }
-#enter-box .continue {
+#menu-logon #enter-box .continue {
   height: 2.25rem;
   display: block;
   margin: auto;
@@ -232,32 +231,29 @@ body > footer + div:last-of-type {
   font-size: 0.625em;
   letter-spacing: 5px;
 }
-#enter-box .continue.google-continue {
+#menu-logon #enter-box .continue.google-continue {
   background: url(./../../images/Logo\ google.png) no-repeat center left 1.15rem;
 }
-#enter-box .continue.facebook-continue {
+#menu-logon #enter-box .continue.facebook-continue {
   background: url(./../../images/Logo\ facebook.png) no-repeat center left 1.15rem;
 }
-#enter-box .continue.btn-register {
+#menu-logon #enter-box .continue.btn-register {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/*Mensagens por baixo da caixinha*/
-.messages {
+#menu-logon .messages {
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
-.messages h3 {
+#menu-logon .messages h3 {
   color: #fff;
   font-weight: 400;
   font-family: "Inter";
   font-weight: 300;
-  font-size: 2.8em;
+  font-size: 1.65rem;
   line-height: 3em;
   -moz-user-select: none;
   -webkit-user-select: none;

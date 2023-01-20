@@ -61,7 +61,7 @@ if (isset($_SESSION['username'])) {
     endif;
     ?>
 
-    <div id="enter-box" class="rounded my-lg-4 py-3 px-2 p-lg-4 px-sm-3 px-md-4 col-12 col-sm-8 col-md-9 col-lg-6">
+    <div id="enter-box" class="rounded my-lg-4 py-3 px-2 p-lg-4 px-sm-3 px-md-4 col-12 col-sm-8 col-md-7 col-lg-5">
       <h2 class="_title mb-2 mt-0">Seja bem vindo (a)</h2>
       <p class="_subtitle mb-3">
         Lorem ipsum dolor sit amet. Est minima aliquam sit quia ratione aut
@@ -78,7 +78,7 @@ if (isset($_SESSION['username'])) {
       <a class="__a-login mt-3 mt-lg-2 mx-auto" href="./login.php">Efectuar login</a>
     </div>
 
-    <div class="messages d-none d-sm-flex">
+    <div class="messages d-none d-sm-flex px-2 px-lg-5">
       <h3>Off para indecisões</h3>
       <h3>On para atitudes</h3>
     </div>
