@@ -35,7 +35,7 @@
   .body-login.especify #enter-box {
     height: 100%;
     border-radius: 0 !important;
-    background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg) center no-repeat;
+    background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg) no-repeat center, rgb(0, 0, 0);
     background-attachment: fixed;
     background-size: cover;
   }
@@ -46,7 +46,8 @@
   }
   .body-login.especify #enter-box form.right-side .logo h1 {
     color: #fff;
-    font-size: 0.9rem !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 0.1rem;
   }
   .body-login.especify #enter-box .campos *:not(input),
   .body-login.especify #enter-box .others-options *:not(input) {
