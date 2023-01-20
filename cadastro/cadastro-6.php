@@ -48,15 +48,15 @@ if ($support->count() <= 0) {
   <title>Cadastro &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/bootstrap.min.css">
-  <link rel="stylesheet" href="./../style/cadastro.css" />
+  <link rel="stylesheet" href="./../style/css/cadastro.css" />
   <link rel="stylesheet" href="./../style/css/responsive-login.css" />
 </head>
 
 <body>
-  <header class="header-content">
-    <img src="./../images/Keyslov.svg" class="header-logo" />
-    <nav class="header-controllers-container">
-      <a href="../login.php"><button class="white-btn" name="submit">Entrar</button></a>
+  <header class="header-content p-2 px-3 px-lg-4 row m-0">
+    <a class="col-6 p-0" href="./../index.php"><img src="./../images/Keyslov.svg" class="header-logo img-fluid" alt="Keyslov" /></a>
+    <nav class="header-controllers-container col-3 col-lg-2 row px-0 py-1">
+      <a class="white-btn rounded col-10" href="../login.php">Entrar</a>
     </nav>
   </header>
 
@@ -89,9 +89,9 @@ if ($support->count() <= 0) {
 
 
     <div class="cadastro-layout">
-      <form action="./../_app/controllers/Cadastro6-Controller.php" method="POST" id="form-cadastro6">
-        <h1 id="h1">Código de confirmação</h1>
-        <p class="p6">
+      <form class="py-2" action="./../_app/controllers/Cadastro6-Controller.php" method="POST" id="form-cadastro6">
+        <h1 id="h1" class="__title mx-auto">Código de confirmação</h1>
+        <p class="p6 __subtitle">
 
 
           Olá Sr(a) <?php
@@ -118,23 +118,24 @@ if ($support->count() <= 0) {
         </p>
 
         <section id="password-section">
-          <div id="insert-password">
+          <div id="insert-password" class="row gap-1 gap-md-1 gap-lg-2">
             <!-- Este input recebe o valor completo da password-otp que é inserida por fatias -->
             <input type="password" id="otp-pass" name="otp-pass" style="display: none">
 
-            <input type="password" class="pass-camp" maxlength="1" required />
-            <input type="password" class="pass-camp" maxlength="1" required />
-            <input type="password" class="pass-camp" maxlength="1" required />
-            <input type="password" class="pass-camp" maxlength="1" required />
+            <input type="password" class="col p-0 pass-camp" maxlength="1" required />
+            <input type="password" class="col p-0 pass-camp" maxlength="1" required />
+            <input type="password" class="col p-0 pass-camp" maxlength="1" required />
+            <input type="password" class="col p-0 pass-camp" maxlength="1" required />
           </div>
         </section>
 
-        <div>
-          <button id="requisicao-otp" class="continue btn-register">Enviar</button>
+        <div class="row gap-2 col-12 col-md-11 mx-auto">
+          <button id="requisicao-otp" class="continue btn-register" type="submit">Enviar</button>
           <button class="continue btn-register" type="button">
             Reenviar
           </button>
         </div>
+
       </form>
     </div>
   </div>

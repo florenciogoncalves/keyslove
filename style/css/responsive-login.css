@@ -234,32 +234,9 @@
   #form-cadastro6 #password-section {
     margin: auto;
   }
-  #h1 {
-    width: 150vw !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-  #form-cadastro6 p {
-    font-size: 9pt;
-  }
   #insert-password {
     width: 100% !important;
-    left: 0 !important;
     box-sizing: border-box !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 20px !important;
-    margin: 20px 0 !important;
-  }
-  .pass-camp {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    object-fit: cover !important;
-    font-size: 50px !important;
-    height: 60px;
   }
   #form-cadastro6 > div:last-of-type {
     margin-top: auto;

@@ -70,7 +70,7 @@ if (isset($_SESSION['username'])) {
 
     <form action="./_app/controllers/loginController.php" method="POST" class="right-side col-12 col-lg-7 px-4" novalidate>
 
-<div class="right-container my-auto py-3">
+<div class="right-container my-auto py-4">
   <fieldset class="logo col-11 mx-auto row">
         <img class="img-fluid col-4 col-lg-3 mx-auto" src="./images/favicon.svg" alt="Keyslov" />
         <h1 class="col-auto mx-auto"><span class="_text--red">K</span>eys<span class="_text--red">l</span>ov</h1>
