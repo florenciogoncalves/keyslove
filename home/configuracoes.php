@@ -136,7 +136,7 @@ if (!$_SESSION['username']) {
 
 
       <?php
-      //require __DIR__ . "./../core/connect.php";
+      require __DIR__ . "./../core/connect.php";
 
 
 
@@ -223,7 +223,7 @@ if (!$_SESSION['username']) {
           ?>
 
         </ul>
-        <a href="metodos-pagamento.php"><button class="btn-register">Adicionar novo cartão</button></a>
+        <a href="metodos-pagamento.php" class="btn-register">Adicionar novo cartão</a>
         <a href="./logout.php" class="back">Sair</a>
       </section>
 
@@ -328,6 +328,7 @@ if (!$_SESSION['username']) {
           <a href="./logout.php" class="back">Sair</a>
         </div>
       </section>
+
       <form action="#" id="delete-account-options">
         <h1 class="title">Opção de conta</h1>
         <div class="btns">
@@ -359,6 +360,7 @@ if (!$_SESSION['username']) {
   </div>
 
   <script src="./../script/script.js"></script>
+  <script src="./../script/conf.js"></script>
 </body>
 
 </html>

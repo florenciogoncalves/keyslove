@@ -61,7 +61,7 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   padding-left: 2%;
-  background-image: url(./../../../images/hearth-bg-right.svg);
+  background-image: url(./../../images/hearth-bg-right.svg);
   background-size: auto !important;
   background-position: right bottom;
 }
@@ -119,9 +119,13 @@ textarea {
 
 #menu-esquerdo ~ main,
 #menu-esquerdo ~ div {
+  height: 100%;
+  max-height: 100%;
+  display: flex;
   float: right;
-  overflow-y: scroll;
+  overflow-y: hidden;
   position: sticky;
+  box-sizing: border-box;
   margin-left: 20px;
   top: 0;
 }
@@ -641,7 +645,6 @@ input::-webkit-calendar-picker-indicator {
   width: max-content;
   height: 100%;
   position: relative;
-  max-height: 964px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -650,10 +653,9 @@ input::-webkit-calendar-picker-indicator {
 
 #chamada-video video {
   width: max-content;
-  min-width: 640px;
-  width: 50vw;
+  width: 21rem;
   max-width: 800px;
-  height: calc(100vh - 10px);
+  height: 100%;
   position: sticky;
   top: 0;
   object-fit: cover;
@@ -670,24 +672,24 @@ input::-webkit-calendar-picker-indicator {
   position: absolute;
   color: #fff;
   line-height: 57px;
-  font-size: 32px;
+  font-size: 0.95rem;
   font-weight: 400;
   background: rgba(0, 0, 0, 0.5);
 }
-
 #chamada-video .legenda-chamada span {
   margin: 0 auto;
+  text-indent: -60px;
 }
 
 #chamada-video .legenda-chamada button {
   width: 60px;
-  height: 57px;
+  height: 100%;
   margin: auto;
   border: none;
   background: none;
   color: #fff;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 0.97rem;
 }
 
 #chamada-video .comandos-chamada {
@@ -697,17 +699,17 @@ input::-webkit-calendar-picker-indicator {
   flex-direction: row;
   justify-content: space-evenly;
   /* margin-bottom: 34px; */
-  top: calc(100vh - 134px);
+  bottom: 0.75rem;
   background-origin: 0;
 }
 
 #chamada-video .comandos-chamada button,
 #chamada-video .comandos-chamada #microfone {
   border: none;
-  width: 56em;
-  height: 56em;
+  width: 2.25rem;
+  height: 2.25rem;
   font-size: 1px;
-  border-radius: 40px;
+  border-radius: 50%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: auto 0;
 }
@@ -722,10 +724,11 @@ input::-webkit-calendar-picker-indicator {
 }
 
 #chamada-video #desligar {
-  width: 95em;
-  height: 95em;
+  width: 3.25rem;
+  height: 3.25rem;
   border-radius: 70px;
   background: url(./../../images/call-icon.svg) no-repeat center #b42937;
+  background-size: 80%;
 }
 
 #chamada-video #trocar-camera {
@@ -1246,7 +1249,6 @@ main#mensagens .chat {
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 90%;
-  min-height: 100vh;
   padding: 32px 29px;
   margin: 0 20px;
 }
@@ -1806,6 +1808,7 @@ main#servicos {
   display: flex;
   height: 100%;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 #configuracoes #conf-select,
@@ -1814,11 +1817,12 @@ main#servicos {
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-sizing: border-box;
 }
 
 #configuracoes .title,
 #servicos .title {
-  font-size: 38px;
+  font-size: 1.25rem;
   margin: 0 auto;
 }
 
@@ -1833,10 +1837,11 @@ main#servicos {
 #configuracoes #conf-list li,
 #servicos #test-list li {
   text-indent: 2%;
-  font-size: 20px;
+  font-size: 0.75rem;
   padding: 3% 0;
   margin: 1% 0;
   background: url(./../../images/arrow-right.svg) no-repeat right 20px center;
+  background-size: 0.45rem;
 }
 
 /*Excluir a seguir*/
@@ -1861,7 +1866,7 @@ main#servicos {
   margin: auto auto 0;
   padding-top: 15px;
   text-decoration: underline;
-  font-size: 20px;
+  font-size: 0.85rem;
 }
 
 #configuracoes #conf-account li {
@@ -1871,17 +1876,17 @@ main#servicos {
   grid-template-columns: 20% 68% 10%;
   justify-content: center;
   cursor: default;
-  font-size: 20px;
+  font-size: 0.7rem;
 }
 
 #configuracoes #conf-account .user-data-show {
   color: rgba(0, 0, 0, 0.5);
   height: 100%;
   border: none;
-  background: none;
-  font-size: 20px;
   padding: 0 5px;
   margin-right: 5px;
+  font-size: 0.7rem;
+  background: none;
 }
 
 #configuracoes #conf-account .user-data-show:focus {
@@ -1897,7 +1902,7 @@ main#servicos {
 }
 
 #configuracoes #conf-account #delete-account {
-  font-size: 20px;
+  font-size: 0.7rem;
   text-decoration: underline;
   font-weight: 400;
   cursor: pointer;
@@ -1923,16 +1928,20 @@ main#servicos {
 
 #configuracoes #conf-payment li {
   width: 100%;
-  height: 95px;
+  height: 3rem;
   margin: 2% auto;
-  padding: 10px 55px 10px 16%;
+  padding: 10px 1.25rem 10px 2.772rem;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: auto max-content;
-  background: url(./../../images/payment-card-bg.svg) no-repeat center left 4%;
-  background-size: 8%;
+  background: url(./../../images/payment-card-bg.svg) no-repeat;
+  background-position: center left 0.75rem;
+  background-size: 1.275rem;
   border: 1px solid #fc003b;
   border-radius: 10px;
+}
+#configuracoes #conf-payment li * {
+  font-size: 0.67rem;
 }
 
 #conf-payment li > div {
@@ -1956,13 +1965,21 @@ main#servicos {
   margin: auto 0;
 }
 
-#conf-payment button,
+#conf-payment .btn-register,
 #form-delete-account button {
-  width: 100%;
-  height: 58px;
+  width: 90%;
+  margin: 0 auto !important;
+  height: 40px;
   border-radius: 10px;
   position: sticky;
   margin-bottom: 10px;
+}
+#conf-payment .btn-register.btn-register,
+#form-delete-account button.btn-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
 }
 
 /*confiracoes/notificacoes
@@ -1989,7 +2006,7 @@ main#servicos {
   grid-template-columns: auto max-content;
   justify-content: space-between;
   width: 100%;
-  font-size: 20px;
+  font-size: 0.67rem;
 }
 
 #conf-notifications input[type=checkbox],
@@ -1999,8 +2016,8 @@ main#servicos {
 
 #conf-notifications .switch-painel,
 #conf-def .switch-painel {
-  width: 50px;
-  height: 28px;
+  width: 2rem;
+  height: 1rem;
   display: flex;
   background: rgb(207, 207, 207);
   border-radius: 40px;
@@ -2008,9 +2025,9 @@ main#servicos {
 
 #conf-notifications .btn-switch,
 #conf-def .btn-switch {
-  width: 25px;
-  height: 25px;
-  border-radius: 30px;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
   background: var(--vermelho-principal);
   box-sizing: border-box;
   border: none;
@@ -2022,8 +2039,8 @@ main#servicos {
 #conf-notifications input[type=checkbox]:checked + .switch-painel > .btn-switch,
 #conf-def input[type=checkbox]:checked + .switch-painel > .btn-switch {
   margin-left: auto;
-  width: 25px;
-  height: 25px;
+  width: 1rem;
+  height: 1rem;
   background: #fff;
   border: solid 1px var(--vermelho-principal);
   margin-right: 0px;
