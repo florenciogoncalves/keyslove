@@ -24,17 +24,17 @@ if (isset($_SESSION['username'])) {
 <body class="especify m-0 p-0">
   <header class="header-content row">
     <a class="header-logo-content col-auto p-0" href="./"><img src="./images/Keyslov.svg" class="__header-logo img-fluid" /></a>
-    <nav class="header-controllers-container index row col-2 col-md-1 col-lg-4 col-xl-3 col-xxl-2 p-0">
+    <nav class="header-controllers-container index row col-3 col-sm-2 col-md-1 col-lg-4 col-xl-4 col-xxl-2 p-0">
       <a class="btn border-btn d-none d-lg-flex col" href="./cadastro/cadastro-1.php">Criar conta</a>
       <a class="btn white-btn d-none d-lg-flex col" href="./login.php">Entrar</a>
-      <div class="lang-selector row col-12 col-lg-1 p-0 ms-auto">
+      <div class="lang-selector row col-12 col-lg-2 p-0 ms-auto">
         <button class="btn __lang-br col col-lg-12" type="button"></button>
         <button class="btn __lang-in col col-lg-12" type="button"></button>
       </div>
     </nav>
   </header>
 
-  <section id="menu-logon">
+  <section id="menu-logon" class="mx-auto">
 
 
     <?php
@@ -61,27 +61,29 @@ if (isset($_SESSION['username'])) {
     endif;
     ?>
 
-    <div id="enter-box" class="container">
-      <h2 class="_title">Seja bem vindo (a)</h2>
-      <p class="_subtitle">
+    <div id="enter-box" class="rounded my-lg-4 py-3 px-2 p-lg-4 px-sm-3 px-md-4 col-12 col-sm-8 col-md-9 col-lg-6">
+      <h2 class="_title mb-2 mt-0">Seja bem vindo (a)</h2>
+      <p class="_subtitle mb-3">
         Lorem ipsum dolor sit amet. Est minima aliquam sit quia ratione aut
         nemo libero et necessitatibus dolorum
       </p>
-      <div class="methods-continue">
-        <button class="google-continue continue">Continuar com google</button>
-        <button class="facebook-continue continue">
+      <div class="methods-continue row gap-2">
+        <button class="google-continue continue col-11 mt-0">Continuar com google</button>
+        <button class="facebook-continue continue col-11 mt-0">
           Continuar com Facebook
         </button>
       </div>
-      <p class="_span-ou">Ou</p>
-      <a href="./cadastro/cadastro-1.php"><button class="continue btn-register">Cadastra - se</button></a>
-      <a href="./login.php">Efectuar login</a>
+      <p class="__span-ou my-5 my-lg-2">Ou</p>
+      <a class="continue btn-register col-11 mx-auto" href="./cadastro/cadastro-1.php">Cadastra - se</a>
+      <a class="__a-login mt-3 mt-lg-2 mx-auto" href="./login.php">Efectuar login</a>
     </div>
-    <div class="messages">
+
+    <div class="messages d-none d-sm-flex">
       <h3>Off para indecisões</h3>
       <h3>On para atitudes</h3>
     </div>
   </section>
+  
   <footer class="d-none d-lg-flex">
     <div class="footer">
       <div class="img-links">
