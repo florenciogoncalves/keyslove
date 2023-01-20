@@ -1,0 +1,140 @@
+body {
+  background: linear-gradient(180deg, #fd003b 0%, rgba(253, 0, 59, 0.68) 74.79%, rgba(253, 0, 59, 0.54) 93.02%, rgba(253, 0, 59, 0.5) 100%);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+input {
+  outline: none !important;
+}
+
+#enter-box {
+  padding: 0;
+  background: #fff;
+}
+#enter-box .left-side,
+#enter-box .right-side {
+  display: flex;
+  box-sizing: border-box;
+}
+#enter-box .left-side.left-side,
+#enter-box .right-side.left-side {
+  background: url(./../../images/bg-bottom.svg) no-repeat bottom 5% left 5%, url(./../../images/bg-middle.svg) no-repeat bottom 34% left 15%, url(./../../images/bg-top.svg) no-repeat bottom 62% left;
+}
+#enter-box .left-side.left-side .left-container,
+#enter-box .right-side.left-side .left-container {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(51, 51, 51, 0.81);
+  display: flex;
+  flex-direction: column;
+}
+#enter-box .left-side img {
+  width: 20%;
+  filter: brightness(10);
+  background-blend-mode: hard-light;
+}
+#enter-box .left-side h2 {
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1;
+  text-align: center;
+  color: #fff;
+}
+#enter-box .left-side ul {
+  list-style: none;
+  color: #fff;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: space-around;
+  text-indent: 1rem;
+  font-size: 0.75rem;
+}
+#enter-box .left-side ul li {
+  background: url(./../../images/check.svg) no-repeat left 0 center;
+}
+#enter-box .right-side {
+  background-color: rgba(255, 88, 129, 0.25);
+  flex-direction: column;
+}
+#enter-box .right-side input:not([type=checkbox]) {
+  width: 100%;
+  height: max-content;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  background: none;
+  font-size: 0.575rem;
+}
+#enter-box .right-side .logo {
+  display: flex;
+  flex-direction: column;
+}
+#enter-box .right-side h1 {
+  margin: 0 auto;
+  width: max-content;
+  font-size: 1.7rem;
+}
+#enter-box .right-side h1 ._text--red {
+  color: var(--vermelho-principal);
+}
+#enter-box .right-side .others-options {
+  justify-content: space-between;
+}
+#enter-box .right-side .others-options .remember-me-container {
+  display: flex;
+  align-items: center;
+}
+#enter-box .right-side .others-options * {
+  font-size: 0.57rem;
+  white-space: nowrap;
+}
+#enter-box .right-side .others-options > a {
+  margin: 0;
+  width: max-content;
+  color: #000;
+  font-weight: 400;
+  text-align: end;
+  text-decoration: underline;
+}
+#enter-box .right-side input[type=checkbox],
+#enter-box .right-side input[type=checkbox]:checked {
+  appearance: none;
+  cursor: pointer;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: none;
+  border: 0.02rem solid #000;
+  border-radius: 0.25rem;
+}
+#enter-box .right-side input[type=checkbox] {
+  background: url(./../../images/confirm.svg) no-repeat center;
+  background-size: 0.775rem;
+}
+#enter-box .right-side .criar-conta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--vermelho-principal);
+  color: var(--vermelho-principal);
+}
+#enter-box .right-side .criar-conta, #enter-box .right-side .btn-register {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-family: "Raleway";
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+#enter-box .footer {
+  height: 100%;
+}
+
+footer p {
+  height: max-content;
+}
+
+/*# sourceMappingURL=login.css.map */

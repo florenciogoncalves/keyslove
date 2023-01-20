@@ -73,7 +73,7 @@ if (isset($_SESSION['username'])) {
           Continuar com Facebook
         </button>
       </div>
-      <p class="__span-ou my-5 my-lg-2">Ou</p>
+      <p class="__span-ou my-2 my-lg-2">Ou</p>
       <a class="continue btn-register col-11 mx-auto" href="./cadastro/cadastro-1.php">Cadastra - se</a>
       <a class="__a-login mt-3 mt-lg-2 mx-auto" href="./login.php">Efectuar login</a>
     </div>

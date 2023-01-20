@@ -9,6 +9,10 @@ html {
   height: 100%;
 }
 
+@font-face {
+  font-family: "Poppins-local";
+  src: url(./../../font/Poppins/Poppins-Regular.ttf);
+}
 html {
   font-size: calc(16px + 0.390625vw);
   font-style: normal;
@@ -16,7 +20,7 @@ html {
   height: 100%;
 }
 html * {
-  font-family: "Poppins";
+  font-family: "Poppins-local";
 }
 
 @media only screen and (min-width: 768px) {

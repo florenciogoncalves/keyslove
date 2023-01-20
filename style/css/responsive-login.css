@@ -1,21 +1,16 @@
 @charset "UTF-8";
 @media only screen and (max-width: 575.97px) {
-  #enter-box {
-    background: none !important;
+  #menu-logon #enter-box {
+    background: transparent !important;
     color: #fff;
   }
-  #enter-box .facebook-continue,
-  #enter-box .google-continue {
+  #menu-logon #enter-box .facebook-continue,
+  #menu-logon #enter-box .google-continue {
     color: #fff;
   }
 }
 @media only screen and (max-width: 992px) {
-  /*
-
-  ******************************
-  ***       index.php       ***
-  ******************************
-  */
+  /* ================= index.php ================= */
   body {
     display: grid;
     grid-template-rows: 12vh auto auto;
@@ -34,66 +29,9 @@
     margin: auto !important;
     max-width: 95vw !important;
   }
-  header.header-content {
-    margin: 0 !important;
-    padding: 15px;
-    width: 100%;
-    height: max-content;
-  }
-  .header-logo {
-    height: 28px;
-    width: max-content;
-  }
-  #menu-logon {
-    height: max-content;
-    margin: auto;
-  }
-  #enter-box {
-    overflow: hidden;
-    display: grid;
-    height: max-content;
-  }
-  #enter-box h2 {
-    font-size: 19px;
-    margin: 0 auto;
-  }
-  #enter-box p {
-    font-size: 9px;
-    margin: 8px;
-  }
-  .methods-continue {
-    display: grid;
-    width: 100%;
-    row-gap: 8px;
-    height: max-content;
-  }
-  .google-continue,
-  .facebook-continue {
-    height: 7vh;
-    max-height: 45px;
-    font-size: 8px;
-    letter-spacing: 2px;
-    background-size: fill;
-    object-fit: scale-down;
-    margin-top: 0;
-  }
-  .methods-continue ~ p {
-    margin: 5px auto !important;
-    padding: 0;
-    font-size: 10px !important;
-  }
-  .btn-register {
-    margin: 0 auto;
-    font-size: 10px;
-    min-height: 20px;
-    height: 4.1em;
-  }
-  /*login.php*/
+  /* ================ login.php ================ */
   .body-login {
     grid-template-rows: 1fr auto;
-  }
-  .header-login {
-    display: none !important;
   }
   .logon-split {
     display: flex !important;
@@ -114,12 +52,10 @@
     width: 50px;
   }
   #enter-box form.right-side img + h1 {
-    font-size: 26px;
     margin-bottom: 30px;
   }
   #enter-box form.right-side input:not([type=checkbox]) {
     height: 40px !important;
-    font-size: 11px;
   }
   #enter-box form.right-side > div {
     display: flex;
@@ -128,16 +64,12 @@
     margin-right: 3px;
     height: max-content !important;
   }
-  #enter-box form.right-side div span {
-    font-size: 10px;
-  }
   #enter-box form.right-side span input {
     margin: 0 3px !important;
     width: 15px !important;
     height: 15px !important;
   }
   #enter-box form.right-side div span + a {
-    font-size: 10px;
     width: max-content;
     height: max-content !important;
     line-height: normal;
@@ -145,7 +77,6 @@
   #enter-box form.right-side button,
   #enter-box form.right-side a.criar-conta {
     height: 40px !important;
-    font-size: 10px !important;
     margin: 0;
   }
   /*
