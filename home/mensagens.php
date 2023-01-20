@@ -66,7 +66,7 @@ if (!$_SESSION['username']) {
   <title>Mensagens &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/css/style.css" />
-  <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
 
   <style>

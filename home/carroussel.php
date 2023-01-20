@@ -20,7 +20,7 @@ if (!$_SESSION['username']) {
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
 
   <link rel="stylesheet" href="./../style/css/style.css" />
-  <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
 
 
   <style>

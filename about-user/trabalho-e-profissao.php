@@ -19,7 +19,7 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 6) {
   <title>Complete o perfil &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/css/style.css" />
-  <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
 
   <style>
     #nav,
