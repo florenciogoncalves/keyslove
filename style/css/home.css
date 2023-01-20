@@ -15,8 +15,8 @@ main#home,
 main#perfil {
   position: relative;
   display: grid;
-  height: 97.5vh;
-  width: 70%;
+  height: 100%;
+  width: 22rem;
   /* min-width: 450px; */
   box-sizing: border-box;
   grid-template-rows: max-content 1fr max-content;

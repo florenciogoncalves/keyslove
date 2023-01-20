@@ -287,7 +287,6 @@ if (!$_SESSION['username']) {
   </dialog>
 
   <script src="./../script/script.js"></script>
-  <script src=""></script>
 </body>
 
 </html>

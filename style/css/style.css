@@ -61,7 +61,7 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   padding-left: 2%;
-  background-image: url(./../../images/hearth-bg-right.svg);
+  background-image: url(./../../../images/hearth-bg-right.svg);
   background-size: auto !important;
   background-position: right bottom;
 }
@@ -77,7 +77,7 @@ textarea {
 }
 
 #menu-esquerdo {
-  height: 100%;
+  height: max-content;
   max-width: 420px;
   margin-right: 2%;
   float: left;
@@ -149,6 +149,7 @@ textarea {
 #user-information figure {
   display: flex;
   position: relative;
+  margin: 0;
 }
 
 .foto-de-perfil {
@@ -170,6 +171,7 @@ textarea {
   border-radius: 32px;
   background-color: rgba(51, 51, 51, 0.3);
   object-fit: cover;
+  font-size: 0.5rem;
 }
 
 #user-information figcaption,
@@ -246,9 +248,11 @@ textarea {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #fff;
+  margin: 0;
+  padding-left: 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  background-color: #fff;
 }
 
 #menu-left li {
@@ -281,47 +285,47 @@ textarea {
 
 /*Aplicando as imagens de fundo das opcões do menu*/
 #menu-left li:nth-of-type(1) {
-  background-image: url(./../images/Icon.svg);
+  background-image: url(./../../images/Icon.svg);
 }
 
 #menu-left li:nth-of-type(2) {
-  background-image: url(./../images/Vector-1.svg);
+  background-image: url(./../../images/Vector-1.svg);
 }
 
 #menu-left li:nth-of-type(3) {
-  background-image: url(./../images/Icon-4.svg);
+  background-image: url(./../../images/Icon-4.svg);
 }
 
 #menu-left li:nth-of-type(4) {
-  background-image: url(./../images/Vector-2.svg);
+  background-image: url(./../../images/Vector-2.svg);
 }
 
 #menu-left li:nth-of-type(5) {
-  background-image: url(./../images/Icon-2.svg);
+  background-image: url(./../../images/Icon-2.svg);
 }
 
 #menu-left li:nth-of-type(6) {
-  background-image: url(./../images/Icon-1.svg);
+  background-image: url(./../../images/Icon-1.svg);
 }
 
 #menu-left li:nth-of-type(7) {
-  background-image: url(./../images/Icon-3.svg);
+  background-image: url(./../../images/Icon-3.svg);
 }
 
 #menu-left li:nth-of-type(8) {
-  background-image: url(./../images/Vector.svg);
+  background-image: url(./../../images/Vector.svg);
 }
 
 #menu-left li:nth-of-type(9) {
-  background-image: url(./../images/Icon-5.svg);
+  background-image: url(./../../images/Icon-5.svg);
 }
 
 #menu-left li:nth-of-type(10) {
-  background-image: url(./../images/Icon-6.svg);
+  background-image: url(./../../images/Icon-6.svg);
 }
 
 #menu-left li:nth-of-type(11) {
-  background-image: url(./../images/Vector\ 15.svg);
+  background-image: url(./../../images/Vector\ 15.svg);
 }
 
 #menu-left a {
@@ -340,13 +344,13 @@ textarea {
 
 /*menu de mais opções*/
 #user-information .hidden-list .pessoas-bloqueadas li {
-  background: url(./../images/oculto.svg) no-repeat center left 2% !important;
+  background: url(./../../images/oculto.svg) no-repeat center left 2% !important;
   background-size: 18px !important;
   object-fit: scale-down !important;
 }
 
 #user-information .hidden-list .logout li {
-  background: url(./../images/logout-1.png) no-repeat center left 2% !important;
+  background: url(./../../images/logout-1.png) no-repeat center left 2% !important;
   background-size: 18px !important;
   object-fit: scale-down !important;
 }
@@ -416,7 +420,7 @@ textarea {
 
 /*Menu oculto para o status*/
 .this-status input:checked + label {
-  background-image: url(./../images/confirm.svg);
+  background-image: url(./../../images/confirm.svg);
   background-repeat: no-repeat;
   background-position: center right 10px;
   background-size: 14px;
@@ -434,7 +438,7 @@ textarea {
 
 #peoples-left {
   height: max-content;
-  padding: 10px;
+  padding: 0.5rem;
   box-sizing: border-box;
   background-color: var(--color-white);
   border-radius: 10px;
@@ -448,24 +452,27 @@ textarea {
   font-weight: 400;
   text-align: justify;
   font-size: 18px;
-  margin-bottom: 1.5%;
-  width: 130%;
-  background: url(./../images/right-arrow.svg) no-repeat center right 145px;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  background: url(./../../images/right-arrow.svg) no-repeat center right 15px;
 }
 
 #peoples-left .people-organizer {
   margin: auto;
   display: grid;
   width: 100%;
-  grid-template-columns: 0.9fr 0.9fr 0.9fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem;
   justify-content: space-between;
   justify-items: center;
+  padding-bottom: 0.25rem;
 }
 
 #peoples-left img {
-  width: 95%;
-  height: 125px;
-  object-fit: cover;
+  height: 5rem;
+  width: 100%;
+  object-fit: cover !important;
+  box-shadow: 0 0 1px black;
 }
 
 /*Layout para o conteúdo da direita*/
@@ -481,7 +488,6 @@ textarea {
 
 #content-right .principal-content {
   margin: 0 auto;
-  min-height: 97vh;
   display: grid;
   grid-template-rows: max-content 1fr max-content;
 }
@@ -539,7 +545,7 @@ input::-webkit-calendar-picker-indicator {
 
 #content-right .principal-content select {
   appearance: none;
-  background: url(./../images/arrow-down.svg) no-repeat center right 15px;
+  background: url(./../../images/arrow-down.svg) no-repeat center right 15px;
 }
 
 .content-header {
@@ -708,22 +714,22 @@ input::-webkit-calendar-picker-indicator {
 
 #chamada-video #microfone {
   appearance: none;
-  background: url(./../images/mic-icon.svg) no-repeat center #fff;
+  background: url(./../../images/mic-icon.svg) no-repeat center #fff;
 }
 
 #chamada-video #microfone:checked {
-  background-image: url(./../images/microfone-off.svg);
+  background-image: url(./../../images/microfone-off.svg);
 }
 
 #chamada-video #desligar {
   width: 95em;
   height: 95em;
   border-radius: 70px;
-  background: url(./../images/call-icon.svg) no-repeat center #b42937;
+  background: url(./../../images/call-icon.svg) no-repeat center #b42937;
 }
 
 #chamada-video #trocar-camera {
-  background: url(./../images/camera-icon.svg) no-repeat center #fff;
+  background: url(./../../images/camera-icon.svg) no-repeat center #fff;
 }
 
 /*Estilizando o arquivo 'mensagens.php'
@@ -886,13 +892,13 @@ main#mensagens .chat {
 }
 
 #mensagens .botoes-top .video-call {
-  background-image: url(./../images/video-icon.svg);
+  background-image: url(./../../images/video-icon.svg);
   margin-right: 5px;
   object-fit: scale-down;
 }
 
 #mensagens .botoes-top .options {
-  background-image: url(./../images/menu-mensagens.png);
+  background-image: url(./../../images/menu-mensagens.png);
   object-fit: scale-down;
 }
 
@@ -1172,7 +1178,7 @@ main#mensagens .chat {
   text-overflow: ellipsis;
   word-wrap: nowrap;
   white-space: nowrap;
-  background: url(./../images/file.png) no-repeat right 5px center;
+  background: url(./../../images/file.png) no-repeat right 5px center;
   background-size: 20px;
   object-fit: scale-down;
 }
@@ -1187,7 +1193,7 @@ main#mensagens .chat {
   padding-left: 30px;
   margin: auto 0;
   margin: auto;
-  background: url(./../images/file.png) no-repeat center center;
+  background: url(./../../images/file.png) no-repeat center center;
   background-size: fill;
   object-fit: scale-down;
 } */
@@ -1231,7 +1237,7 @@ main#mensagens .chat {
   margin-right: 6px;
   border: none;
   position: relative;
-  background: url(./../images/send-message-icon.svg) no-repeat center;
+  background: url(./../../images/send-message-icon.svg) no-repeat center;
 }
 
 /* DOCUMENTO curtidas.php & localizar-pessoas.php*/
@@ -1400,7 +1406,7 @@ main#mensagens .chat {
   width: 45px;
   border: none;
   margin-right: 10px;
-  background: url(./../images/Search.svg) no-repeat center;
+  background: url(./../../images/Search.svg) no-repeat center;
 }
 
 /*para Filtros*/
@@ -1410,7 +1416,7 @@ main#mensagens .chat {
   left: 1153px;
   top: 133px;
   border: 1px solid #000000;
-  background: url(./../images/Filter.svg) no-repeat center right 20px;
+  background: url(./../../images/Filter.svg) no-repeat center right 20px;
   border-radius: 10px;
   box-sizing: border-box;
   padding-right: 20px;
@@ -1582,7 +1588,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 #metodo-pagamento h3 {
   font-weight: 500;
-  background: url(./../images/arrow-down-red.svg) no-repeat center right;
+  background: url(./../../images/arrow-down-red.svg) no-repeat center right;
   width: max-content;
   margin-top: 4%;
   margin-bottom: 4%;
@@ -1631,12 +1637,12 @@ input[type=number]::-webkit-inner-spin-button {
 #metodo-pagamento .card-validity select {
   width: 100%;
   text-align: center;
-  background: url(./../images/arrow-down.svg) no-repeat center right 10%;
+  background: url(./../../images/arrow-down.svg) no-repeat center right 10%;
 }
 
 #metodo-pagamento .left-side > select {
   width: 100%;
-  background: url(./../images/arrow-down-red.svg) no-repeat center right 5%;
+  background: url(./../../images/arrow-down-red.svg) no-repeat center right 5%;
   color: var(--vermelho-principal);
   border: 1px solid var(--vermelho-principal);
   outline: none;
@@ -1830,7 +1836,7 @@ main#servicos {
   font-size: 20px;
   padding: 3% 0;
   margin: 1% 0;
-  background: url(./../images/arrow-right.svg) no-repeat right 20px center;
+  background: url(./../../images/arrow-right.svg) no-repeat right 20px center;
 }
 
 /*Excluir a seguir*/
@@ -1923,7 +1929,7 @@ main#servicos {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: auto max-content;
-  background: url(./../images/payment-card-bg.svg) no-repeat center left 4%;
+  background: url(./../../images/payment-card-bg.svg) no-repeat center left 4%;
   background-size: 8%;
   border: 1px solid #fc003b;
   border-radius: 10px;
@@ -2067,7 +2073,7 @@ main#servicos {
 }
 
 #form-delete-account input[type=radio]:checked {
-  background: url(./../images/Close_round.png) no-repeat;
+  background: url(./../../images/Close_round.png) no-repeat;
   background-size: 130%;
   background-position: center;
 }
@@ -2187,7 +2193,7 @@ main#servicos {
   height: 25px;
   z-index: 2;
   margin: 8px 8px 0 auto;
-  background: url(./../images/plus.svg) no-repeat center;
+  background: url(./../../images/plus.svg) no-repeat center;
   border: none;
 }
 
@@ -2234,7 +2240,7 @@ main#servicos {
   width: max-content;
   padding-right: 25px;
   margin-top: 8%;
-  background: url(./../images/edit.svg) no-repeat right center;
+  background: url(./../../images/edit.svg) no-repeat right center;
 }
 
 #perfil-information h3 {
@@ -2406,7 +2412,7 @@ dialog button.red-btn {
 }
 
 dialog #modal-perfil-1 {
-  background: url(./../images/modal-bg-perfil.svg) no-repeat #fff;
+  background: url(./../../images/modal-bg-perfil.svg) no-repeat #fff;
   background-size: 40%;
   background-position: center;
 }
