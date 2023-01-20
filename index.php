@@ -83,19 +83,21 @@ if (isset($_SESSION['username'])) {
       <h3>On para atitudes</h3>
     </div>
   </section>
-  
+
   <footer class="d-none d-lg-flex">
-    <div class="footer">
-      <div class="img-links">
-        <a href="#"><img src="./images/Logo branca.png" /></a>
-        <div>
-          <a href="http://facebook.com" target="_blank"><img src="./images/Vector.png" /></a>
-          <a href="http://whatsapp.com" target="_blank"><img src="./images/Vector(1).png" /></a>
-          <a href="http://instagram.com" target="_blank"><img src="./images/Vector(2).png" /></a>
-          <a href="http://twitter.com" target="_blank"><img src="./images/Vector(3).png" /></a>
+    <div class="footer px-2 p-3 pb-2">
+      <div class="img-links col-2 row gap-1">
+        <a class="mx-auto logo-container" href="#">
+          <img class="img-fluid mx-auto" src="./images/Logo branca.png" />
+        </a>
+        <div class="row p-0 col-9 mx-auto social-links ">
+          <a class="col-3 d-flex" href="http://facebook.com" target="_blank"><img class="img-fluid mx-auto" src="./images/Vector.png" /></a>
+          <a class="col-3 d-flex" href="http://whatsapp.com" target="_blank"><img class="img-fluid mx-auto" src="./images/Vector(1).png" /></a>
+          <a class="col-3 d-flex" href="http://instagram.com" target="_blank"><img class="img-fluid mx-auto" src="./images/Vector(2).png" /></a>
+          <a class="col-3 d-flex" href="http://twitter.com" target="_blank"><img class="img-fluid mx-auto" src="./images/Vector(3).png" /></a>
         </div>
       </div>
-      <ul class="footer-links">
+      <ul class="footer-links py-2">
         <li class="item-footer"><a href="">Contacto</a></li>
         <li class="item-footer"><a href="">Sobre nós</a></li>
         <li class="item-footer"><a href="">Termos de serviços</a></li>
