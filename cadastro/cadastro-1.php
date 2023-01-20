@@ -89,7 +89,6 @@ session_start();
   </div>
 
   <script src="./../script/cadastro.js"></script>
-  <script src="./../script/resize-windown.js"></script>
 </body>
 
 </html>

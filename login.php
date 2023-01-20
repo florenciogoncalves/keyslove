@@ -15,19 +15,18 @@ if (isset($_SESSION['username'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Keyslov</title>
-  <link rel="stylesheet" href="./style/css/logon.css" />
   <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./style/bootstrap.min.css">
+  <link rel="stylesheet" href="./style/css/logon.css" />
   <link rel="stylesheet" href="./style/login.css" />
   <link rel="stylesheet" href="./style/css/responsive-login.css" />
 </head>
 
 <body class="body-login especify">
-  <header class="header-content header-login">
-    <img src="./images/Keyslov.svg" style="visibility: hidden;" class="header-logo" />
-    <nav class="header-controllers-container">
-      <a href="./cadastro/cadastro-1.php"><button class="border-btn">Criar conta</button></a>
-      <a href="index.html"><button class="white-btn">Entrar</button></a>
+  <header class="header-content row">
+    <nav class="header-controllers-container index row col-3 col-sm-2 col-md-1 col-lg-4 col-xl-4 col-xxl-2 p-0">
+      <a class="btn border-btn d-none d-lg-flex col" href="./cadastro/cadastro-1.php">Criar conta</a>
+      <a class="btn white-btn d-none d-lg-flex col" href="./login.php">Entrar</a>
     </nav>
   </header>
 
@@ -92,10 +91,14 @@ if (isset($_SESSION['username'])) {
     </form>
   </div>
 
-  <footer>
-    <div class="footer">
-      <img class="img-links" src="./images/Logo branca.png" />
-      <ul class="footer-links">
+  <footer class="d-none d-lg-flex">
+    <div class="footer px-2 p-3 pb-2">
+      <div class="img-links col-2 row gap-1">
+        <a class="mx-auto logo-container" href="#">
+          <img class="img-fluid mx-auto" src="./images/Logo branca.png" />
+        </a>
+      </div>
+      <ul class="footer-links py-2">
         <li class="item-footer"><a href="">Contacto</a></li>
         <li class="item-footer"><a href="">Sobre nós</a></li>
         <li class="item-footer"><a href="">Termos de serviços</a></li>
@@ -104,9 +107,8 @@ if (isset($_SESSION['username'])) {
         <li class="item-footer"><a href="">Dicas de Segurança</a></li>
       </ul>
     </div>
-    <p>Keyslov - © 2022 All Rights Reserved Feito com ♥ Widu</p>
+    <p class="_brand-mkti">Keyslov - © 2022 All Rights Reserved Feito com ♥ Widu</p>
   </footer>
-  <script src="./script/resize-windown.js"></script>
 </body>
 
 </html>

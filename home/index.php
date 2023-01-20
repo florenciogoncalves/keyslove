@@ -288,7 +288,6 @@ if (!$_SESSION['username']) {
 
   <script src="./../script/script.js"></script>
   <script src=""></script>
-  <script src="./../script/resize-windown.js"></script>
 </body>
 
 </html>

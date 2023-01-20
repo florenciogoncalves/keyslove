@@ -450,7 +450,6 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
 
   <script src="./../script/about-user.js"></script>
   <script src="./../script/script.js"></script>
-  <script src="./../script/resize-windown.js"></script>
 </body>
 
 </html>

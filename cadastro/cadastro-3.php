@@ -72,7 +72,6 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 2) {
       </form>
     </div>
   </div>
-  <script src="./../script/resize-windown.js"></script>
 </body>
 
 </html>

@@ -84,7 +84,6 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 4) {
 
       <!-- <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script> -->
       <script src="./../script/cadastro.js"></script>
-      <script src="./../script/resize-windown.js"></script>
     </div>
   </div>
 </body>

@@ -229,7 +229,6 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 6) {
 
   <script src="./../script/about-user.js"></script>
   <script src="./../script/script.js"></script>
-  <script src="./../script/resize-windown.js"></script>
 </body>
 
 </html>

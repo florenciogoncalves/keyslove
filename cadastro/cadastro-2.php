@@ -96,7 +96,6 @@ if (!isset($_SESSION['step'])) {
       </form>
 
       <script src="./../script/cadastro.js"></script>
-      <script src="./../script/resize-windown.js"></script>
     </div>
   </div>
 </body>

@@ -139,7 +139,6 @@ if ($support->count() <= 0) {
     </div>
   </div>
   <script src="./../script/cadastro.js"></script>
-  <script src="./../script/resize-windown.js"></script>
 </body>
 
 </html>
