@@ -13,8 +13,15 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Métodos de pagamento &middot; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
+<<<<<<< HEAD
+  <link rel="stylesheet" href="./../style/style.css" />
+  <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+=======
   <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
+>>>>>>> 82eb7063303bb762f6888a9f338020fef3636522
 
 
   <style>
@@ -238,24 +245,18 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
                 <option value="3">3 parcelas</option>
                 <option value="4">4 parcelas</option>
               </select>
-              <button class="btn-register">Salvar método de pagamento</button>
+              <button class="btn-register" id="btn">Salvar método de pagamento</button>
 
           </section>
           <section class="right-side">
             <section id="payment-method" name="metodoPagamento">
               <!-- As opções aqui são dinamicamente inseridas pelo JavaScript -->
-
-              <script>
-                // const teste = document.getElementById('payment-method')
-                // const inputs = document.getElementsByTagName('input')[0]
-                // teste.addEventListener('click', () => {
-                //   console.log(teste);
-
-                // })
-              </script>
             </section>
 
+
             </form>
+
+          
 
             <div id="card-bank">
               <div class="bank-indicative">
@@ -286,6 +287,8 @@ require_once __DIR__ . "./../_app/models/profileModel.php";
   </div>
 
   <script src="./../script/script.js"></script>
+
+
 </body>
 
 </html>

@@ -24,11 +24,9 @@ class userModel extends connect
 
     public function VerifyUser(string $email)
     {
-        if ($this->verify_register($email)) {
-            return true;
-        }
-        return false;
+        return $this->verify_register($email);
     }
+
 
 
     public function cadastro1(string $email, string $telefone, string $senha)
@@ -48,7 +46,7 @@ class userModel extends connect
 
     public function insertUserImage(string $user, $photo)
     {
-        
+
         $this->imageInsert($user, $photo);
     }
 
@@ -412,14 +410,13 @@ class userModel extends connect
 
     private function verify_register(string $email): bool
     {
-        $query = $this->connect->prepare("SELECT email = ? FROM tb_cadastroConta");
+        $query = $this->connect->prepare("SELECT email FROM tb_cadastroConta WHERE email = ?");
         $query->bindParam(1, $email);
         $query->execute();
 
         if ($query->rowCount() > 0) {
-
             return true;
         }
         return false;
-    }
+        }
 }
