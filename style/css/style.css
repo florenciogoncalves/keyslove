@@ -263,7 +263,7 @@ textarea {
 #menu-left li {
   box-sizing: border-box;
   height: 100%;
-  line-height: 1.67rem;
+  line-height: 1.57rem;
   padding: 0;
   font-weight: 500;
   font-size: 0.625rem;
@@ -281,6 +281,7 @@ textarea {
   background-color: #dddcdc;
   background-image: inherit;
   background-repeat: no-repeat;
+  background-position: inherit;
 }
 
 /*Aplicando as imagens de fundo das opcões do menu*/
@@ -737,8 +738,7 @@ input::-webkit-calendar-picker-indicator {
 main#mensagens {
   display: grid;
   grid-template-columns: 34% 1fr;
-  height: calc(100vh - 10px);
-  margin: auto;
+  margin: 0 auto;
   width: 100%;
 }
 
