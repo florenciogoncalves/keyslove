@@ -18,15 +18,15 @@ session_start();
   <title>Cadastro &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/bootstrap.min.css">
-  <link rel="stylesheet" href="./../style/cadastro.css" />
-  <link rel="stylesheet" href="./../style/responsive-login.css" />
+  <link rel="stylesheet" href="./../style/css/cadastro.css" />
+  <link rel="stylesheet" href="./../style/css/responsive-login.css" />
 </head>
 
 <body>
-  <header class="header-content">
-    <img src="./../images/Keyslov.svg" class="header-logo" />
-    <nav class="nav-btn">
-      <a href="../login.php"><button class="white-btn">Entrar</button></a>
+  <header class="header-content p-2 px-3 px-lg-4 row m-0">
+    <a class="col-6 p-0" href="./../index.php"><img src="./../images/Keyslov.svg" class="header-logo img-fluid" alt="Keyslov" /></a>
+    <nav class="header-controllers-container col-3 col-lg-2 row px-0 py-1">
+      <a class="white-btn rounded col-10" href="../login.php">Entrar</a>
     </nav>
   </header>
 
@@ -79,7 +79,7 @@ session_start();
           <input type="checkbox" id="accept-terms" required />
           <label for="accept-terms">Aceito a política de privacidade</label>
         </div>
-        <button class="continue btn-register" id="verify-pass" type="submit" name="btn-submit" value="btn">
+        <button class="continue btn-register rounded" id="verify-pass" type="submit" name="btn-submit" value="btn">
           CADASTRAR
         </button>
 
@@ -89,7 +89,6 @@ session_start();
   </div>
 
   <script src="./../script/cadastro.js"></script>
-  <script src="./../script/resize-windown.js"></script>
 </body>
 
 </html>

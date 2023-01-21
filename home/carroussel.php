@@ -19,8 +19,8 @@ if (!$_SESSION['username']) {
   <title>Carroussel &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
 
-  <link rel="stylesheet" href="./../style/style.css" />
-  <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <link rel="stylesheet" href="./../style/css/style.css" />
+  <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
 
 
   <style>
@@ -162,7 +162,7 @@ if (!$_SESSION['username']) {
         if (!isset($empty->alert)) :
         ?>
 
-          <img src="./../_storage/images/<?= $get['photo']; ?>" alt="Foto de perfil" class="carrousselPhoto" />
+          <img src="./../_storage/images/<?= $get['photo']; ?>" alt="Foto de perfil" class="carroussel-photo" />
         <?php
         endif;
         ?>

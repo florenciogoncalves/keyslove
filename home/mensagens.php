@@ -65,8 +65,8 @@ if (!$_SESSION['username']) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mensagens &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
-  <link rel="stylesheet" href="./../style/style.css" />
-  <link rel="stylesheet" href="./../style/style-responsivo.css" />
+  <link rel="stylesheet" href="./../style/css/style.css" />
+  <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
 
   <style>

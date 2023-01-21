@@ -1,0 +1,47 @@
+.btn {
+	box-sizing: border-box;
+
+	white-space: nowrap;
+	word-wrap: nowrap;
+}
+/*Botão criar conta*/
+.border-btn {
+	&,
+	&:hover,
+	&:active {
+		border: 1px solid #fff;
+
+		color: #fff !important;
+
+		background: none;
+	}
+	&:hover {
+		opacity: 0.91;
+	}
+}
+
+/*Botão entrar*/
+.white-btn {
+	&,
+	&:hover,
+	&:active {
+		border: none;
+
+		color: #000;
+
+		background-color: #fff;
+	}
+	&:hover {
+		opacity: 0.91;
+	}
+}
+
+// Botão de registro
+.btn-register {
+	background-color: var(--vermelho-principal);
+	border: none;
+
+	font-weight: 500;
+	color: #fff !important;
+	letter-spacing: 0.2em;
+}

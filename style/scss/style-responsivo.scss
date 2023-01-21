@@ -1,0 +1,1556 @@
+/*Extra dispositivos pequenos(phones, 600px para baixo)*/
+@media only screen and (max-width: 992px) {
+	body {
+		padding: 0 !important;
+		background-size: contain !important;
+		display: flex !important;
+		background-size: contain !important;
+		background-size: 48% !important;
+	}
+
+	*::-webkit-scrollbar {
+		display: none !important;
+	}
+
+	input:-webkit-autofill {
+		box-shadow: 0 0 0 30px #fff inset;
+	}
+
+	#main-container {
+		margin: auto !important;
+		box-sizing: border-box !important;
+		position: relative;
+		max-height: 100% !important;
+		max-width: 100vw !important;
+		display: grid;
+		grid-template-rows: 1fr max-content !important;
+		height: 100%;
+	}
+
+	#sobre-usuario #main-container {
+		grid-template-rows: max-content 1fr max-content !important;
+	}
+
+	#corpo-com-logo #main-container {
+		grid-template-rows: max-content 1fr auto !important;
+	}
+	/*
+    **********************************************
+    ***               Menu oculto              ***
+    **********************************************
+    */
+	#menu-esquerdo {
+		display: none;
+		position: fixed;
+		min-width: 100% !important;
+		max-width: 100% !important;
+		z-index: 5;
+		overflow: hidden;
+		margin: 0 !important;
+		background: rgba(0, 0, 0, 0.315);
+		backdrop-filter: blur(2px);
+	}
+
+	#div-left {
+		width: 100%;
+		max-width: 420px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		height: max-content;
+		transition: all 0.35s;
+		margin: auto;
+		margin-bottom: 0;
+		max-height: 95vh;
+	}
+
+	#user-information {
+		height: 90px;
+		top: 0;
+	}
+
+	#user-information .foto-de-perfil {
+		margin-right: 5px;
+	}
+
+	#user-information .foto-de-perfil img {
+		width: 75px !important;
+		height: 75px !important;
+		border-radius: 40px !important;
+	}
+
+	#user-information figure {
+		position: absolute;
+		top: 55%;
+		color: #000;
+		width: 95%;
+	}
+
+	#user-information figcaption {
+		margin: auto 0 -5px;
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+	#user-information > img {
+		margin: 5px 5px 0 auto;
+	}
+
+	#user-information .hidden-list,
+	#online-now .changing-status {
+		padding: 0 !important;
+		width: 16em;
+		color: #000;
+		max-width: 180px;
+		box-sizing: border-box;
+		height: max-content;
+		border-radius: 10px;
+		box-shadow: 0px -1px 7px rgba(0, 0, 0, 0.25);
+		flex-direction: column;
+		text-indent: 0;
+		background-color: #fff;
+		z-index: 3;
+		margin-right: 15px;
+		top: 33px !important;
+		font-size: 12px;
+		overflow: hidden !important;
+	}
+
+	#menu-left {
+		padding: 70px 0 0;
+		border-radius: 0;
+	}
+
+	#menu-left li:hover,
+	#menu-left li {
+		text-indent: 65px;
+		font-size: 10pt;
+		height: 40px;
+		line-height: 40px;
+		background-position: 2.3em center;
+	}
+
+	#peoples-left {
+		display: none;
+	}
+
+	/*
+    **********************************************
+    ***    Arquivos do diretório /about-user   ***
+    **********************************************
+    */
+	#mobile-header {
+		width: 100%;
+		display: flex;
+		padding: 10px;
+		position: sticky;
+		box-sizing: border-box;
+		top: 0;
+		background: var(--bg-color) !important;
+		z-index: 10;
+	}
+
+	#mobile-header > img:first-of-type {
+		height: 25px;
+		margin: auto 0 4px;
+	}
+
+	#sobre-usuario #main-container,
+	#sobre-usuario #content-right {
+		max-width: 460px !important;
+	}
+
+	#content-right {
+		margin: auto !important;
+		width: 100vw !important;
+		position: relative !important;
+		max-height: max-content !important;
+		padding: 5px 20px !important;
+		box-sizing: border-box !important;
+	}
+
+	#sobre-usuario #content-right form {
+		max-width: 100vw !important;
+		box-sizing: border-box !important;
+		display: flex !important;
+		flex-direction: column;
+		width: 100% !important;
+		min-height: 460px;
+		height: max-content !important;
+	}
+
+	/*
+    **********************************************
+    ***    Arquivos do diretório /about-user   ***
+    **********************************************
+    */
+	#sobre-usuario .content-header {
+		width: 100% !important;
+	}
+	#sobre-usuario input,
+	#sobre-usuario select {
+		width: 100% !important;
+		height: 35px !important;
+		background-size: 11px !important;
+		padding: 0 8px !important;
+		background-position: center right 8px !important;
+		outline: none !important;
+	}
+
+	#content-right .principal-content input:not([type="range"]),
+	#content-right .principal-content select {
+		border-radius: 5px !important;
+	}
+
+	#sobre-usuario textarea {
+		padding: 5px 8px !important;
+	}
+
+	#sobre-usuario input,
+	#sobre-usuario select,
+	#sobre-usuario label,
+	#sobre-usuario textarea {
+		font-size: 10pt !important;
+	}
+
+	#sobre-usuario label {
+		margin: 9px 0 1px !important;
+	}
+
+	#sobre-usuario input,
+	#sobre-usuario select {
+		height: 33px !important;
+	}
+
+	#sobre-usuario header {
+		width: 100% !important;
+		height: max-content !important;
+	}
+
+	#sobre-usuario header:not(#mobile-header) img {
+		width: 28px !important;
+		margin: 15px auto 10px;
+	}
+
+	#sobre-usuario header h1 {
+		font-size: 13pt !important;
+		text-align: center;
+	}
+
+	#sobre-usuario form.principal-content {
+		width: 100%;
+	}
+
+	#sobre-usuario #container-elements {
+		max-width: 100% !important;
+		box-sizing: border-box;
+		margin: 10px 0 25px;
+	}
+
+	#sobre-usuario .iten {
+		width: 100%;
+	}
+
+	.progress-next {
+		width: 100% !important;
+		margin: auto 0 15px;
+		display: grid;
+		grid-template-columns: 1fr max-content;
+		column-gap: 10px;
+	}
+
+	.progress-bar-content {
+		margin: auto 0 !important;
+		height: 18px !important;
+		width: 100% !important;
+	}
+
+	.progress-bar {
+		height: 100% !important;
+		font-size: 8.5pt !important;
+	}
+
+	.progress-val {
+		line-height: 150% !important;
+	}
+
+	.next-page-about {
+		height: 22px !important;
+		width: 22px !important;
+		border-radius: 3px !important;
+		line-height: 22px !important;
+		font-size: 17pt !important;
+	}
+
+	.iten[style="margin-bottom: 24px"] {
+		margin-bottom: 0px !important;
+	}
+
+	/*
+**********************************************
+***       Página inicial index.php         ***
+**********************************************
+*/
+	body:not(#sobre-usuario) #main-container {
+		width: 100vw !important;
+		max-width: 100vw !important;
+		min-width: 100vw !important;
+		margin: 0 !important;
+		height: 100% !important;
+		max-height: 100vh !important;
+	}
+
+	#home {
+		width: calc(100% - 10px) !important;
+		min-width: none !important;
+		max-width: 100% !important;
+		height: 100% !important;
+		border-radius: 12px;
+		padding: 3vw;
+		left: 5px;
+		bottom: 7px !important;
+		box-sizing: border-box !important;
+		grid-template-rows: max-content 1fr max-content !important;
+	}
+
+	#home object {
+		top: 0;
+		left: 0;
+		box-sizing: border-box !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		height: 100% !important;
+	}
+
+	.home-bar {
+		padding: 0 !important;
+		width: 100%;
+		min-width: 100%;
+		height: 4vh !important;
+		max-height: 12px;
+	}
+
+	.home-bar li {
+		max-height: 5px;
+		height: 0.6vh !important;
+	}
+
+	.home-nav {
+		height: 95%;
+		opacity: 0;
+	}
+
+	button#dislike,
+	button#maybe,
+	button#like {
+		width: 17vw !important;
+		max-width: 60px !important;
+		height: 17vw !important;
+		max-height: 60px;
+
+		font-size: 100% !important;
+		border-radius: 12vw !important;
+		background-size: 50% !important;
+	}
+
+	button#retry,
+	button#favorite {
+		width: 12vw !important;
+		max-width: 56px !important;
+		height: 12vw !important;
+		max-height: 56px !important;
+
+		border-radius: 12vw !important;
+	}
+
+	.home-footer {
+		margin: auto 0 !important;
+		padding: 0 !important;
+		width: 100% !important;
+		min-width: 100% !important;
+		margin: auto 0 0 !important;
+	}
+
+	.home-footer #person-name {
+		font-size: 6vw !important;
+	}
+
+	.home-footer .talk-now {
+		height: 3.2vh;
+		font-size: 1.6vh;
+		line-height: 3.5vh;
+	}
+
+	.home-footer .talk-now img {
+		height: 4vw;
+		max-height: 18px;
+	}
+
+	.home-footer .talk-now img.img-1 {
+		height: 5.2vw;
+		max-height: 24px;
+	}
+
+	.home-footer #tag-area {
+		display: flex;
+		column-gap: 5px;
+	}
+
+	.home-footer #tag-area li {
+		width: 25vw !important;
+		height: 5.8vw;
+		font-size: 3.1vw !important;
+		line-height: 5.8vw;
+		padding: 0 3px !important;
+	}
+
+	.home-footer #subtitle {
+		line-height: normal;
+		font-size: 9pt !important;
+	}
+
+	#home-progress-content {
+		margin: 10px 0 !important;
+		height: 12px !important;
+	}
+
+	#home-progress-bar {
+		height: 100% !important;
+		font-size: 8pt;
+		display: flex;
+		justify-items: center;
+	}
+
+	#home-progress-bar span {
+		line-height: 150%;
+	}
+
+	/*Modais de home*/
+	dialog {
+		z-index: 10;
+		width: 100% !important;
+		height: 100% !important;
+		overflow: hidden !important;
+		box-sizing: border-box !important;
+		border: none;
+	}
+
+	dialog div {
+		width: 85vw !important;
+		max-width: 360px !important;
+		font-size: 9pt;
+	}
+
+	#pass-this {
+		font-size: 9pt;
+	}
+
+	#modal-home-1 img {
+		width: 25%;
+	}
+
+	#footer-mobile {
+		width: 100%;
+		height: max-content;
+		bottom: 0;
+		position: sticky;
+		overflow: hidden;
+		display: block;
+		box-sizing: border-box;
+
+		background: none;
+
+		border-radius: 0 0;
+	}
+
+	#footer-mobile nav {
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		position: relative;
+	}
+
+	#footer-mobile ul {
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		display: grid;
+		padding: 3px 9%;
+		grid-template-columns: repeat(auto-fit, 20%);
+		background: var(--vermelho-principal);
+	}
+
+	#footer-mobile li {
+		margin: auto;
+		display: flex;
+		width: 32px;
+		height: 32px;
+
+		background-size: 55%;
+		background-position: center center !important;
+		background-repeat: no-repeat;
+	}
+
+	#footer-mobile a {
+		width: 100%;
+		height: 100%;
+	}
+
+	#footer-mobile li:nth-of-type(1) {
+		background-image: url(./../../images/home.svg);
+	}
+
+	#footer-mobile li:nth-of-type(2) {
+		background-image: url(./../../images/search-white.svg);
+	}
+
+	#footer-mobile li:nth-of-type(3) {
+		background-image: url(./../../images/star-ico.svg);
+		background-position: center, 30px !important;
+	}
+
+	#footer-mobile li:nth-of-type(4) {
+		background-image: url(./../../images/message.png);
+	}
+
+	/*Ocultando algumas opções do menu*/
+	#menu-left li:nth-of-type(2),
+	#menu-left li:nth-of-type(6),
+	#menu-left li:nth-of-type(8) {
+		display: none;
+	}
+
+	#mostra-menu-mobile {
+		height: 100%;
+		width: 30px;
+		border: none;
+		background-size: 50% !important;
+		background: url(./../../images/up-menu.png) center no-repeat;
+		background-position: center 12px;
+	}
+
+	#nav-selecionada {
+		background-color: var(--bg-color);
+		border-radius: 50px;
+		object-fit: cover;
+	}
+
+	/*
+  ***************************************
+  ***          carroussel.php        ***
+  ***************************************
+  */
+	body:not(#sobre-usuario) main {
+		width: 100%;
+		padding: 10px;
+		display: grid;
+		overflow: scroll;
+		border-radius: 8px 8px 0 0;
+	}
+
+	main > .title,
+	#pacotes-pagamento .title {
+		font-size: 14pt;
+		height: max-content;
+		margin-bottom: 12px;
+	}
+
+	main#carroussel {
+		grid-template-rows: max-content max-content 1fr;
+		min-height: max-content;
+	}
+
+	#carroussel #informacoes-perfil {
+		min-height: max-content;
+		height: 200px !important;
+		padding: 10px !important;
+		box-sizing: border-box;
+	}
+
+	#carroussel figure img {
+		max-height: 100% !important;
+		object-fit: cover !important;
+		min-width: 110px !important;
+		width: 100% !important;
+		max-width: 150px;
+	}
+
+	#descricao-perfil {
+		margin: 0 7px 0 15px !important;
+		overflow: hidden;
+		box-sizing: border-box;
+		display: grid;
+		grid-template-rows: max-content max-content 1fr max-content !important;
+	}
+
+	#descricao-perfil > *:not(h2) {
+		font-size: 9pt !important;
+	}
+
+	#carroussel h2 {
+		font-size: 12pt;
+	}
+
+	#descricao-perfil p:nth-of-type(2) {
+		max-height: 100% !important;
+		height: auto !important;
+		line-height: normal !important;
+		word-wrap: nowrap !important;
+		overflow: scroll !important;
+	}
+
+	#carroussel p {
+		font-size: 10pt;
+	}
+
+	#descricao-perfil .botoes {
+		height: 100% !important;
+		padding: 3px 0;
+	}
+
+	#descricao-perfil .botoes button {
+		width: 30px;
+		height: 30px;
+	}
+
+	.outras-pessoas {
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+		row-gap: 10px !important;
+		justify-content: space-between;
+		box-sizing: border-box !important;
+	}
+
+	.outro-perfil {
+		overflow: hidden !important;
+		min-width: 150px !important;
+		width: 100%;
+		margin: auto !important;
+		min-height: 250px !important;
+		max-height: 270px;
+		padding: 10px !important;
+		row-gap: 2px;
+	}
+
+	.outro-perfil > img {
+		margin: 0 !important;
+		overflow: hidden !important;
+	}
+
+	.outro-perfil .textual {
+		width: 100% !important;
+	}
+
+	.outro-perfil .textual > p {
+		word-wrap: break-word;
+		width: 100% !important;
+		font-size: 8pt !important;
+	}
+
+	button.conversar {
+		width: 20px !important;
+		background-repeat: no-repeat !important;
+		background-size: 100% !important;
+		height: 20px !important;
+	}
+
+	.padrao {
+		margin: 0;
+		max-height: 100% !important;
+		min-height: 300px !important;
+		box-sizing: border-box !important;
+	}
+
+	.padrao {
+		border-radius: 0 !important;
+	}
+
+	.padrao .list > li {
+		height: 180px !important;
+	}
+
+	/*Curtidas.php*/
+	.list,
+	#curtidas .list {
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+		gap: 20px !important;
+		justify-content: space-between;
+		box-sizing: border-box !important;
+		padding: 0 10px !important;
+	}
+
+	#curtidas {
+		box-sizing: border-box !important;
+	}
+	#curtidas .list {
+		max-width: 100% !important;
+	}
+
+	/*pessoas região*/
+	#pessoas-regiao,
+	#favoritos {
+		grid-template-rows: max-content max-content 1fr !important;
+	}
+
+	.list .botoes button {
+		width: 35px !important;
+		height: 35px !important;
+	}
+
+	#pessoas-regiao span,
+	#online-agora span,
+	.list span {
+		font-size: 11pt;
+	}
+
+	#pessoas-regiao li li,
+	#online-agora li li,
+	.list li li {
+		font-size: 8pt;
+	}
+
+	#pessoas-regiao li section,
+	#online-agora li section,
+	.list li section {
+		position: relative !important;
+		height: 100% !important;
+		display: flex;
+		margin: auto 0 0 !important;
+		bottom: 0 !important;
+		box-sizing: border-box !important;
+	}
+
+	#pessoas-regiao li section article,
+	#online-agora li section article,
+	.list li section article {
+		box-sizing: border-box !important;
+		margin: auto auto 10px !important;
+		max-width: 100%;
+	}
+
+	/*Removendo efeito hover*/
+	#online-agora .list > li:hover .botoes,
+	.list > li:hover .botoes,
+	#curtidas .list > li:hover .botoes {
+		display: none;
+	}
+
+	#online-agora .list li article > div,
+	.list li article > div,
+	#curtidas .list li article > div {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+	}
+
+	#online-agora .list > li:hover .status-div,
+	#online-agora .list > li .status-div,
+	.list > li:hover .status-div,
+	.list > li .status-div,
+	#curtidas .list > li:hover .status-div,
+	#curtidas .list > li .status-div {
+		display: inline-flex;
+		width: 10px;
+		margin: auto 5px;
+		height: 10px;
+	}
+
+	#online-agora .list > li:hover span,
+	.list > li:hover span,
+	#curtidas .list > li:hover span {
+		display: inline-block !important;
+		margin: 0px;
+		max-width: 170px;
+	}
+
+	#online-agora .list > li:hover ul,
+	.list > li:hover ul #curtidas .list > li:hover ul {
+		display: flex;
+	}
+
+	/*Planos*/
+	.card-container {
+		overflow-x: scroll;
+		padding: 5px;
+	}
+
+	.card-bank-data {
+		width: 100% !important;
+		display: grid !important;
+		height: max-content !important;
+		grid-template-columns: 65% 35% !important;
+		max-width: 420px;
+	}
+
+	#planos .left-side,
+	#planos .right-side {
+		box-sizing: border-box;
+		width: 100% !important;
+		padding: 0 0 10px 10px !important;
+	}
+
+	.card-bank-data input:not(.validate input) {
+		width: 100% !important;
+	}
+
+	.card-bank-data input,
+	.card-bank-data label {
+		font-size: 9pt !important;
+		height: max-content !important;
+		box-sizing: border-box !important;
+	}
+	.card-bank-data input {
+		padding: 5px !important;
+		margin: 0 2px !important;
+	}
+
+	.card-bank-data .right-side > div {
+		width: 100% !important;
+	}
+
+	#pacotes-pagamento {
+		width: 100% !important;
+		box-sizing: border-box;
+		height: 100% !important;
+		max-height: 650px;
+	}
+
+	#planos .card-content {
+		max-height: 240px;
+		font-size: 9pt;
+		min-width: 200px;
+	}
+
+	#planos .card-content img {
+		height: 30px;
+	}
+
+	#planos .card-content button {
+		height: 32px;
+		font-size: 8pt;
+	}
+
+	#pacotes-pagamento > a > button {
+		font-size: 9pt;
+		height: max-content;
+		line-height: 32pt;
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 420px;
+	}
+
+	#planos .right-side > div {
+		height: 50px !important;
+	}
+
+	#planos {
+		height: 100%;
+	}
+
+	#metodo-pagamento {
+		height: 100%;
+		box-sizing: border-box;
+		padding: 0px;
+		width: 100% !important;
+		max-width: 480px;
+		margin: 0 auto;
+	}
+
+	#payment-method input {
+		background-size: 50px !important;
+	}
+
+	#metodo-pagamento .title {
+		font-size: 14pt;
+	}
+
+	#metodo-pagamento .left-side,
+	#metodo-pagamento .right-side {
+		box-sizing: border-box !important;
+		margin: 0 !important;
+	}
+
+	#card-bank {
+		min-height: 200px !important;
+		max-width: 360px;
+		margin: auto;
+	}
+	#metodo-pagamento label {
+		height: max-content !important;
+	}
+
+	#metodo-pagamento .method-container {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	#payment-method {
+		gap: 10px !important;
+		max-width: 380px;
+		width: 100% !important;
+		box-sizing: border-box !important;
+		margin: auto;
+	}
+
+	#payment-method input {
+		height: 50px !important;
+	}
+
+	#card-bank #card-number {
+		font-size: 16pt !important;
+	}
+
+	#metodo-pagamento .left-side {
+		box-sizing: border-box;
+		padding: 0 !important;
+		max-width: 400px;
+		margin: auto !important;
+	}
+
+	#metodo-pagamento .left-side > h3 {
+		font-size: 12pt;
+	}
+
+	#metodo-pagamento .left-side label {
+		font-size: 10pt;
+	}
+
+	#metodo-pagamento .left-side input,
+	#metodo-pagamento .left-side div input,
+	#metodo-pagamento .left-side select {
+		font-size: 10pt !important;
+		line-height: normal !important;
+		height: 45px !important;
+		outline: none;
+	}
+
+	#metodo-pagamento #card-number + div > * {
+		font-size: 9pt;
+	}
+
+	#metodo-pagamento .right-side {
+		padding: 0 !important;
+		margin: 0 !important;
+		position: relative !important;
+		row-gap: 0px;
+	}
+
+	#metodo-pagamento .btn-register {
+		height: max-content;
+		font-size: 10pt;
+		line-height: 35pt;
+	}
+
+	/*Configuracoes.php*/
+	#configuracoes .title,
+	#test-select .title {
+		font-size: 16pt;
+		margin-top: 20px;
+	}
+
+	#conf-list,
+	#test-list {
+		margin-top: 75px !important;
+	}
+
+	#conf-list li,
+	#test-list li {
+		font-size: 13pt !important;
+		background-size: 9px !important;
+	}
+
+	#conf-select a,
+	#configuracoes .back {
+		font-size: 12.5pt !important;
+	}
+
+	#conf-account li {
+		grid-template-columns: 17% 1fr 14% !important;
+		max-width: 100% !important;
+	}
+
+	#conf-account li:hover {
+		background: #fff;
+	}
+
+	#conf-account li,
+	#conf-account li > * {
+		font-size: 10pt !important;
+	}
+
+	#conf-list li input {
+		padding: 0 !important;
+		outline: none !important;
+		text-overflow: ellipsis !important;
+		padding: 0 10px !important;
+		margin: 0 !important;
+		max-width: 100% !important;
+		overflow: hidden !important;
+	}
+
+	#delete-account {
+		font-size: 11pt !important;
+	}
+
+	#configuracoes input[name="motivo-delete"] {
+		width: 15px !important;
+		height: 15px !important;
+	}
+
+	#configuracoes input[name="motivo-delete"] + span {
+		font-size: 12pt !important;
+	}
+
+	#conf-select,
+	#form-delete-account,
+	#delete-account-options,
+	#conf-payment,
+	#conf-account,
+	#conf-notifications,
+	#conf-def {
+		max-width: 420px;
+		width: 100%;
+		margin: auto;
+	}
+
+	#form-delete-account button,
+	#delete-account-options button,
+	#conf-payment button {
+		font-size: 9pt !important;
+		height: 45px !important;
+		line-height: normal !important;
+	}
+
+	#conf-payment li {
+		display: grid !important;
+		grid-template-columns: 1fr max-content !important;
+		padding-right: 20px !important;
+	}
+
+	/*servicos.php*/
+	#modal-teste-amor > div {
+		padding: 15px !important;
+		row-gap: 20px;
+		height: max-content !important;
+	}
+	#modal-teste-amor h1 {
+		font-size: 12pt !important;
+		text-align: center;
+	}
+
+	#modal-teste-amor .red-btn {
+		font-size: 9pt !important;
+	}
+
+	#modal-teste-amor > div button:nth-of-type(2) {
+		font-size: 10pt !important;
+	}
+
+	#conf-payment .information-card span:first-of-type {
+		font-size: 10pt !important;
+	}
+
+	#conf-payment .information-card span:last-of-type {
+		font-size: 8pt !important;
+	}
+
+	.on-of-list span {
+		font-size: 12pt !important;
+	}
+
+	.switch-painel {
+		width: 35px !important;
+		height: 20px !important;
+	}
+
+	.btn-switch {
+		width: 20px !important;
+		height: 20px !important;
+	}
+
+	/*teste-de-amor.php*/
+	#teste-de-amor {
+		min-width: 0 !important;
+		width: 100% !important;
+		max-width: 100%;
+	}
+
+	#teste-de-amor h3 {
+		font-size: 11pt !important;
+	}
+
+	#teste-de-amor .categoria {
+		display: grid !important;
+		grid-template-rows: auto 1fr !important;
+	}
+
+	#teste-de-amor .categoria input {
+		min-width: 20px !important;
+		width: 20px !important;
+		height: 20px !important;
+
+		margin: 0 0 auto 0 !important;
+	}
+
+	#teste-de-amor .categoria label {
+		text-align: justify !important;
+		font-size: 9pt !important;
+	}
+
+	/*perfil.php*/
+	#modal-perfil-1 > div,
+	#add-option-modal > div {
+		height: max-content !important;
+		width: calc(100% - 30px) !important;
+		row-gap: 15px;
+	}
+
+	#modal-perfil-1 img {
+		width: 60px;
+	}
+
+	#modal-perfil-1 h1,
+	#add-option-modal h1 {
+		font-size: 11pt !important;
+		text-align: center !important;
+		margin: auto !important;
+	}
+
+	#modal-perfil-1 button:not(button:last-of-type) {
+		font-size: 10pt;
+	}
+
+	#add-option-modal button:nth-of-type(2) {
+		font-size: 10pt;
+	}
+
+	#add-option-modal input {
+		width: 100% !important;
+		font-size: 10pt !important;
+		outline: none;
+		border-radius: 5px;
+	}
+
+	#add-option-modal > div .red-btn {
+		height: 40px;
+		line-height: normal;
+		font-size: 10pt;
+	}
+
+	/*perfil.php*/
+	#perfil-container {
+		margin: 0 !important;
+		display: grid !important;
+		position: relative !important;
+		height: 100% !important;
+		width: 100%;
+		max-height: 100vh !important;
+		overflow: auto !important;
+		grid-template-columns: none !important;
+		grid-template-rows: 1fr auto !important;
+	}
+
+	#perfil-container > section > * {
+		min-height: 100% !important;
+		overflow: visible !important;
+		position: relative !important;
+		z-index: 0 !important;
+		height: 100vh !important;
+	}
+
+	#perfil-container > section {
+		box-sizing: border-box !important;
+		overflow: scroll !important;
+		display: flex !important;
+		flex-direction: column;
+		max-height: 100% !important;
+		margin: 7px;
+		row-gap: 7px;
+	}
+
+	#perfil-container #perfil {
+		width: 100% !important;
+		position: relative !important;
+		height: 100vh !important;
+		margin: 5px 5px 0px;
+		overflow: visible !important;
+	}
+
+	#perfil p {
+		font-size: 15pt !important;
+	}
+
+	#perfil .add-more-photos {
+		column-gap: 9px;
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	#perfil .add-box {
+		height: 35vw;
+		max-height: 160px;
+		max-width: 120px;
+	}
+
+	#perfil .add-box button {
+		max-width: 22px !important;
+		max-height: 22px !important;
+		width: 4vw;
+		height: 4vw;
+	}
+
+	#perfil-information {
+		max-width: 500px !important;
+		margin: auto !important;
+		overflow: auto !important;
+		width: 100%;
+		padding: 25px !important;
+	}
+
+	#perfil-information h2 {
+		font-size: 13pt;
+	}
+
+	#perfil-information h2 + span {
+		font-size: 9pt;
+	}
+
+	#perfil-information textarea {
+		min-height: 100px !important;
+	}
+
+	#perfil-information h3 {
+		font-size: 11pt;
+		margin-top: 10px !important;
+	}
+
+	#perfil-information h3 + div {
+		display: flex !important;
+		column-gap: 5px;
+		justify-content: start !important;
+		flex-wrap: wrap;
+		height: max-content;
+	}
+
+	#perfil-information h3 + div label,
+	#perfil-information h3 + div button {
+		font-size: 8pt;
+		width: max-content;
+		min-width: max-content;
+	}
+
+	/*localizar.php*/
+	.search {
+		grid-template-columns: 1fr auto !important;
+		column-gap: 7px;
+
+		background: #fff !important;
+		z-index: 3 !important;
+		margin: 0 auto 10px !important;
+		padding: 10px 0;
+	}
+
+	.search > *,
+	.search-field,
+	.search-field input {
+		font-size: 9pt !important;
+		height: 30px !important;
+		line-height: normal;
+	}
+
+	.search-field {
+		width: 100% !important;
+	}
+	.search-field input {
+		padding: 0 10px !important;
+		height: 100% !important;
+	}
+
+	.search-field button {
+		height: 100% !important;
+		background-size: 22px !important;
+		width: 30px !important;
+		margin: 0 !important;
+		margin-right: 5px !important;
+	}
+
+	.search > button {
+		background-size: 20px !important;
+		padding: 0 25px 0 5px !important;
+		background-position: center right 5px !important;
+	}
+
+	/***********************
+  ***    favoritos     ***
+  ************************
+  */
+	#favoritos > nav {
+		background: #fff;
+	}
+	#favoritos > nav .title {
+		font-size: 13px !important;
+		height: max-content;
+	}
+
+	/***********************
+  ***    mensagens     ***
+  ************************
+  */
+	#mensagens {
+		box-sizing: border-box !important;
+		display: flex !important;
+		padding: 0 !important;
+		height: 100% !important;
+
+		border-radius: 0 !important;
+	}
+
+	#mensagens .peoples-to-chat {
+		border-radius: 0 !important;
+		width: 100% !important;
+	}
+
+	#mensagens .peoples-to-chat h2 {
+		line-height: 60px !important;
+	}
+
+	#mensagens .chat-mobile {
+		display: none !important;
+	}
+
+	#mensagens .options-container {
+		left: auto !important;
+		right: 10px !important;
+	}
+
+	/*Botão voltar para pessoas para conversar*/
+	#back-to-peoples {
+		height: 18px;
+		width: 18px;
+		display: flex;
+		align-self: baseline;
+
+		margin: 8px 3px 0 2px;
+		border: none;
+		filter: invert(1);
+
+		background: url(./../../images/arrow-right.svg) no-repeat center;
+		background-size: 50% !important;
+		object-fit: scale-down;
+		-ms-transform: matrix(-1, 0, -0, -1, 0, 0);
+		-webkit-transform: matrix(-1, 0, -0, -1, 0, 0);
+		transform: matrix(-1, 0, -0, -1, 0, 0);
+	}
+	#mensagens #privado {
+		overflow: hidden !important;
+		box-sizing: border-box;
+		max-width: 100%;
+	}
+
+	#mensagens #sended {
+		box-sizing: border-box;
+		max-width: 100% !important;
+	}
+
+	#mensagens #create-message {
+		grid-template-columns: max-content 1fr;
+		box-sizing: border-box;
+		padding: 7px 5px;
+		column-gap: 5px !important;
+		margin: 5px auto !important;
+	}
+
+	#message-text-container {
+		width: auto !important;
+		display: grid !important;
+		grid-template-columns: 1fr max-content !important;
+		box-sizing: border-box;
+	}
+
+	#mensagens .writed-message {
+		font-size: 11px !important;
+		line-height: 14px !important;
+	}
+
+	#message-text-container textarea {
+		padding: 2px 0 2px 6px;
+	}
+
+	#mensagens .send-message {
+		width: 20px !important;
+		height: 20px !important;
+		margin-right: 10px !important;
+		margin-bottom: 10px !important;
+	}
+
+	#mensagens .add-media {
+		width: 30px !important;
+		height: 30px !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 20px !important;
+	}
+
+	/*Informações do amigo*/
+	#mensagens #friend-information {
+		height: max-content;
+		padding: 6px 4px;
+	}
+
+	#mensagens #friend-information h2 {
+		font-size: 14px !important;
+		width: max-content !important;
+		max-width: 95% !important;
+		margin: auto 0;
+		padding: 0 5px;
+	}
+
+	#mensagens .botoes-top {
+		padding-right: 10px !important;
+		column-gap: 6px;
+		align-self: baseline !important;
+	}
+
+	#mensagens button.video-call,
+	#mensagens button.options {
+		width: 18px;
+		height: 18px;
+		margin: 0;
+		background-size: contain;
+		align-self: baseline;
+	}
+
+	#mensagens .img-perfil {
+		width: 50px !important;
+		height: 50px !important;
+	}
+
+	#mensagens .chat .img-perfil {
+		width: 45px !important;
+		height: 45px !important;
+	}
+
+	#mensagens .foto-de-perfil {
+		margin: 0 !important;
+	}
+
+	#mensagens .status {
+		width: 12px;
+		height: 12px;
+	}
+
+	#mensagens .friend-status {
+		width: 11px;
+		height: 11px;
+	}
+
+	#mensagens #sended .identifier img {
+		width: 35px;
+		height: 35px;
+		background: rgba(51, 51, 51, 0.3);
+		border-radius: 40px;
+		margin: 8px;
+		object-fit: fill;
+	}
+
+	dialog#modal-teste-amor img {
+		width: 25%;
+	}
+
+	/*
+*******************************
+***     page bloqueados     ***
+*******************************
+*/
+	#bloqueados #blacklist {
+		width: 100% !important;
+	}
+
+	#bloqueados #blacklist .person {
+		height: max-content !important;
+		margin: 5px 0 !important;
+	}
+
+	#bloqueados #blacklist img {
+		width: 50px !important;
+		height: 50px !important;
+	}
+
+	#bloqueados #blacklist .person span {
+		font-size: 11px !important;
+	}
+
+	#bloqueados #blacklist .person button {
+		font-size: 10px !important;
+	}
+
+	/*
+*******************************
+***       video-chamada     ***
+*******************************
+*/
+	#chamada-video {
+		position: relative;
+		margin: 0 !important;
+		overflow: hidden !important;
+		display: flex !important;
+		padding: 0 !important;
+		width: 100%;
+	}
+	#chamada-video video {
+		min-width: 100%;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+
+	#chamada-video .legenda-chamada,
+	#chamada-video .comandos-chamada {
+		position: relative;
+	}
+
+	#chamada-video .legenda-chamada {
+		width: 100%;
+		height: max-content;
+		font-size: 16px !important;
+		position: relative;
+	}
+
+	#chamada-video .legenda-chamada button {
+		position: absolute;
+		width: 35px;
+		height: 100%;
+		top: 0;
+	}
+
+	#chamada-video .legenda-chamada span {
+		line-height: 3em;
+	}
+
+	#chamada-video .comandos-chamada {
+		bottom: 0;
+		top: auto;
+	}
+
+	#chamada-video .comandos-chamada #desligar {
+		max-width: 80px;
+		max-height: 80px;
+		background-size: 60%;
+	}
+
+	#chamada-video .comandos-chamada button:not(#desligar),
+	#chamada-video .comandos-chamada input {
+		max-width: 45px;
+		max-height: 45px;
+		background-size: 40% !important;
+	}
+}
+
+/*Dispositivos médios(landscape tablets, 768px para cima)*/
+@media only screen and (max-width: 768px) {
+}
+
+/*Dispositivos largos(laptops/desktops, 992px para cima)*/
+@media only screen and (max-width: 992px) {
+}
+
+/*Extra dispositivos largos laptops e desktops de 1200px para cima*/
+@media only screen and (max-width: 1200px) {
+}

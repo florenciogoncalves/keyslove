@@ -10,6 +10,7 @@ if (!$_SESSION['username']) {
 ?>
 <!DOCTYPE html>
 
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,6 +20,17 @@ if (!$_SESSION['username']) {
     <link rel="stylesheet" href="./../style/style.css" />
     <link rel="stylesheet" href="./../style/style-responsivo.css" />
   </head>
+=======
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configurações &mid; Keyslov</title>
+  <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="./../style/css/style.css" />
+  <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
+</head>
+>>>>>>> 82eb7063303bb762f6888a9f338020fef3636522
 
   <body>
     <div id="menu-esquerdo">
@@ -134,8 +146,13 @@ if (!$_SESSION['username']) {
 
 
 
+<<<<<<< HEAD
         <?php
         //require __DIR__ . "./../core/connect.php";
+=======
+      <?php
+      require __DIR__ . "./../core/connect.php";
+>>>>>>> 82eb7063303bb762f6888a9f338020fef3636522
 
 
 
@@ -326,8 +343,89 @@ if (!$_SESSION['username']) {
               <input name="motivo-delete" type="radio" />
               <span>Lorem Ipsum exemplo</span>
             </div>
+<<<<<<< HEAD
+=======
+            <a href="./planos.php" class="edit">Editar</a>
+          </li>
+
+          <?php
+
+          ?>
+
+        </ul>
+        <a href="metodos-pagamento.php" class="btn-register">Adicionar novo cartão</a>
+        <a href="./logout.php" class="back">Sair</a>
+      </section>
+
+      <section id="conf-notifications">
+        <h1 class="title">Notificações</h1>
+        <ul class="on-of-list">
+          <li>
+            <span>Activar notificações</span>
+            <input type="checkbox" id="active-notifications" />
+            <label class="switch-painel" for="active-notifications">
+              <div class="btn-switch"></div>
+            </label>
+          </li>
+          <li>
+            <span>Novas mensagens</span>
+            <input type="checkbox" id="message-notifications" />
+            <label class="switch-painel" for="message-notifications">
+              <div class="btn-switch"></div>
+            </label>
+          </li>
+          <li>
+            <span>Notificações de match</span>
+            <input type="checkbox" id="match-notifications" />
+            <label class="switch-painel" for="match-notifications">
+              <div class="btn-switch"></div>
+            </label>
+          </li>
+        </ul>
+
+        <a href="./logout.php" class="back">Sair</a>
+      </section>
+
+      <section id="conf-def">
+        <h1 class="title">Configurações</h1>
+        <ul class="on-of-list">
+          <li>
+            <span>Mostrar quando estou online automaticamente</span>
+            <input type="checkbox" id="showme-online" />
+            <label class="switch-painel" for="showme-online">
+              <div class="btn-switch"></div>
+            </label>
+          </li>
+          <li>
+            <span>Ficar Invisível</span>
+            <input type="checkbox" id="let-invisible" />
+            <label class="switch-painel" for="let-invisible">
+              <div class="btn-switch"></div>
+            </label>
+          </li>
+          <li>
+            <span>Exibir meu perfil</span>
+            <input type="checkbox" id="show-me" />
+            <label class="switch-painel" for="show-me">
+              <div class="btn-switch"></div>
+            </label>
+          </li>
+        </ul>
+
+        <a href="./logout.php" class="back">Sair</a>
+      </section>
+
+      <section id="form-delete-account">
+        <h1 class="title">Formulário de encerramento</h1>
+
+        <div class="delete-list">
+          <div>
+            <input name="motivo-delete" required type="radio" />
+            <span>Lorem Ipsum exemplo</span>
+>>>>>>> 82eb7063303bb762f6888a9f338020fef3636522
           </div>
 
+<<<<<<< HEAD
           <div>
             <button class="btn-register">Prosseguir</button>
             <a href="./logout.php" class="back">Sair</a>
@@ -343,6 +441,24 @@ if (!$_SESSION['username']) {
             <span>Conte o motivo para a nossa equipe</span>
             <textarea></textarea>
           </div>
+=======
+        <div>
+          <button class="btn-register">Prosseguir</button>
+          <a href="./logout.php" class="back">Sair</a>
+        </div>
+      </section>
+
+      <form action="#" id="delete-account-options">
+        <h1 class="title">Opção de conta</h1>
+        <div class="btns">
+          <button class="btn-register">Excluir</button>
+          <button>Desactivar</button>
+        </div>
+        <div id="justification">
+          <span>Conte o motivo para a nossa equipe</span>
+          <textarea></textarea>
+        </div>
+>>>>>>> 82eb7063303bb762f6888a9f338020fef3636522
 
           <div>
             <button class="btn-register">Prosseguir</button>
@@ -363,7 +479,13 @@ if (!$_SESSION['username']) {
       </footer>
     </div>
 
+<<<<<<< HEAD
     <script src="./../script/script.js"></script>
   </body>
+=======
+  <script src="./../script/script.js"></script>
+  <script src="./../script/conf.js"></script>
+</body>
+>>>>>>> 82eb7063303bb762f6888a9f338020fef3636522
 
   </html>

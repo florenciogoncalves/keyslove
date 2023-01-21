@@ -1,0 +1,2552 @@
+@import url(./logon.css);
+@import url(./home.css);
+@import url(./style-responsivo.css);
+
+html {
+	height: 100%;
+}
+@import "font";
+
+body {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	padding-top: 10px;
+	margin: 0;
+	justify-content: space-between;
+
+	overflow-x: hidden;
+	box-sizing: border-box;
+	padding-left: 2%;
+
+	background-image: url(./../../images/hearth-bg-right.svg);
+	background-size: auto !important;
+	background-position: right bottom;
+}
+
+li {
+	list-style: none;
+	cursor: pointer;
+}
+select,
+textarea {
+	outline: none !important;
+}
+
+#menu-esquerdo {
+	height: max-content;
+	max-width: 420px;
+	margin-right: 2%;
+	float: left;
+	position: sticky;
+	top: 0;
+	overflow-y: scroll;
+	width: max-content;
+	grid-template-rows: max-content max-content;
+}
+
+/*Estilo aplicado a todas as scrollbars*/
+*::-webkit-scrollbar {
+	appearance: none;
+	width: 6px;
+	height: 6px;
+}
+*::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(88, 88, 88, 0.61);
+	border-radius: 10px;
+}
+*::-webkit-scrollbar-track {
+	background: none;
+}
+*::-webkit-scrollbar-corner {
+	appearance: none;
+}
+
+/*menu flutuante a direita*/
+#div-left {
+	height: max-content;
+	background: none;
+	display: flex;
+	flex-direction: column;
+	width: 370px;
+}
+
+#menu-esquerdo ~ main,
+#menu-esquerdo ~ div {
+	height: 100%;
+	max-height: 100%;
+	display: flex;
+	float: right;
+	overflow-y: hidden;
+	position: sticky;
+	box-sizing: border-box;
+	margin-left: 20px;
+	top: 0;
+}
+
+/*Barra vermelha com informações do usuário*/
+#user-information,
+#friend-information {
+	width: 100%;
+	max-height: 111px;
+	background: var(--vermelho-principal);
+	display: flex;
+	flex-direction: row;
+	box-sizing: border-box;
+	color: var(--color-white);
+}
+
+#user-information {
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: auto max-content;
+	padding: 0;
+	position: relative;
+}
+
+#user-information figure {
+	display: flex;
+	position: relative;
+	margin: 0;
+}
+
+.foto-de-perfil {
+	display: flex;
+	justify-items: center;
+	position: relative;
+	width: max-content;
+	height: max-content;
+	margin: 8px 15px;
+}
+
+/*Imagens de perfil*/
+#user-information figure #img-perfil,
+#mensagens #friend-information figure .img-perfil,
+#mensagens .list-peoples img,
+#bloqueados #blacklist img {
+	width: 64px;
+	height: 64px;
+	border-radius: 32px;
+	background-color: rgba(51, 51, 51, 0.3);
+	object-fit: cover;
+
+	font-size: 0.5rem;
+}
+
+#user-information figcaption,
+#friend-information figcaption {
+	height: max-content;
+	margin: 2% 3%;
+}
+
+.status,
+#mensagens .friend-status {
+	margin: auto;
+	width: 15px;
+	height: 15px;
+	right: 6%;
+	position: absolute;
+	bottom: 3%;
+	border-radius: 15px;
+
+	transition: all 600ms;
+}
+
+.status {
+	background-color: var(--status-on);
+}
+
+#user-information .status {
+	background-color: var(--status-user);
+}
+
+#mensagens .friend-status {
+	background-color: var(--status-on);
+}
+
+#user-information h2 {
+	font-weight: 600;
+	font-size: 14px;
+	max-width: 200px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-top: 5%;
+}
+
+#user-information #show-status-window {
+	font-weight: 400;
+	font-size: 12px;
+	-webkit-user-select: none;
+	user-select: none;
+	text-decoration-line: underline;
+	cursor: pointer;
+}
+
+#user-information > img {
+	width: 25px;
+	height: 25px;
+	position: relative;
+	cursor: pointer;
+	margin: 12% 0.5em;
+}
+
+#user-information ul {
+	margin: 10px;
+	width: 100%;
+}
+
+#user-information li {
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	text-indent: 16%;
+}
+
+/*Lista de opções branca*/
+#menu-left {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin: 0;
+	padding-left: 0;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+
+	background-color: #fff;
+}
+
+#menu-left li {
+	box-sizing: border-box;
+	height: 100%;
+	line-height: 2.4em;
+	padding: 0;
+	text-indent: 80px;
+
+	background-size: 1.25em;
+	background-repeat: no-repeat;
+	background-position: 2em center;
+	transition: all ease-in 250ms;
+
+	font-weight: 500;
+	font-size: 16px;
+	color: #333;
+}
+
+.pagina-selecionada {
+	background-color: #dddcdc;
+	background-size: 1.25em;
+	background-image: inherit;
+	background-repeat: no-repeat;
+	background-position: 2em center;
+}
+#menu-left li:hover {
+	background-position: 40px center;
+	text-indent: 90px;
+}
+/*Aplicando as imagens de fundo das opcões do menu*/
+#menu-left li:nth-of-type(1) {
+	background-image: url(./../../images/Icon.svg);
+}
+#menu-left li:nth-of-type(2) {
+	background-image: url(./../../images/Vector-1.svg);
+}
+#menu-left li:nth-of-type(3) {
+	background-image: url(./../../images/Icon-4.svg);
+}
+#menu-left li:nth-of-type(4) {
+	background-image: url(./../../images/Vector-2.svg);
+}
+#menu-left li:nth-of-type(5) {
+	background-image: url(./../../images/Icon-2.svg);
+}
+#menu-left li:nth-of-type(6) {
+	background-image: url(./../../images/Icon-1.svg);
+}
+#menu-left li:nth-of-type(7) {
+	background-image: url(./../../images/Icon-3.svg);
+}
+#menu-left li:nth-of-type(8) {
+	background-image: url(./../../images/Vector.svg);
+}
+#menu-left li:nth-of-type(9) {
+	background-image: url(./../../images/Icon-5.svg);
+}
+#menu-left li:nth-of-type(10) {
+	background-image: url(./../../images/Icon-6.svg);
+}
+#menu-left li:nth-of-type(11) {
+	background-image: url(./../../images/Vector\ 15.svg);
+}
+
+#menu-left a {
+	display: flex;
+	min-height: 100%;
+	min-width: 100%;
+}
+
+#online-now {
+	position: relative;
+	display: flex;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: pointer;
+}
+
+/*menu de mais opções*/
+#user-information .hidden-list .pessoas-bloqueadas li {
+	background: url(./../../images/oculto.svg) no-repeat center left 2% !important;
+	background-size: 18px !important;
+	object-fit: scale-down !important;
+}
+
+#user-information .hidden-list .logout li {
+	background: url(./../../images/logout-1.png) no-repeat center left 2% !important;
+	background-size: 18px !important;
+	object-fit: scale-down !important;
+}
+
+#user-information .hidden-list,
+#online-now .changing-status {
+	display: none;
+	position: absolute;
+	padding: 0.9em 0;
+	left: 0;
+	background: #fff;
+	width: 180px;
+	color: #000;
+	height: max-content;
+	border-radius: 10px;
+	box-shadow: 0px -1px 7px rgba(0, 0, 0, 0.25);
+	flex-direction: column;
+	z-index: 3;
+	font-size: 12px;
+}
+
+#user-information .hidden-list {
+	top: 55%;
+	right: 0;
+	left: auto;
+}
+#user-information .hidden-list ul {
+	overflow: hidden;
+	max-width: 100%;
+	margin: 0;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+#user-information .hidden-list li {
+	width: 100% !important;
+	overflow: hidden;
+}
+#online-now .changing-status {
+	top: 5% !important;
+}
+
+#online-now input[type="radio"] {
+	background-color: #333333;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.this-status {
+	height: max-content;
+	display: block;
+}
+
+.this-status label {
+	display: inline-block;
+	height: 2.4em;
+	text-indent: 18px;
+	width: 100%;
+
+	font-size: 12px;
+	line-height: 2em;
+	font-weight: 400;
+	color: black;
+}
+
+/*Menu oculto para o status*/
+.this-status input:checked + label {
+	background-image: url(./../../images/confirm.svg);
+	background-repeat: no-repeat;
+	background-position: center right 10px;
+	background-size: 14px;
+	transition: all 200ms;
+}
+
+.this-status label:hover {
+	background-color: rgba(252, 0, 59, 0.42);
+}
+
+/*Pessoas na região*/
+#menu-esquerdo #div-left > a {
+	margin-top: auto;
+}
+#peoples-left {
+	height: max-content;
+	padding: 0.5rem;
+	box-sizing: border-box;
+	background-color: var(--color-white);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-be;
+	margin-top: 3%;
+}
+
+#peoples-left h4 {
+	font-weight: 400;
+	text-align: justify;
+	font-size: 18px;
+	margin-bottom: 0.5rem;
+	width: 100%;
+	background: url(./../../images/right-arrow.svg) no-repeat center right 15px;
+}
+
+#peoples-left .people-organizer {
+	margin: auto;
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.35rem;
+	justify-content: space-between;
+	justify-items: center;
+	padding-bottom: 0.25rem;
+}
+
+#peoples-left img {
+	height: 5rem;
+	width: 100%;
+	object-fit: cover !important;
+	box-shadow: 0 0 1px black;
+}
+
+/*Layout para o conteúdo da direita*/
+#content-right {
+	width: 100%;
+	max-width: 28rem;
+	height: max-content;
+	background-color: var(--color-white);
+	box-sizing: border-box;
+	padding: 0px 4.8rem 1px;
+	margin-left: 20px;
+}
+
+#content-right .principal-content {
+	margin: 0 auto;
+	display: grid;
+	grid-template-rows: max-content 1fr max-content;
+}
+
+form .iten {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#content-right .principal-content .iten option {
+	color: #000;
+}
+
+#container-elements {
+	display: flex;
+	flex-direction: column;
+	margin-top: 30px;
+}
+
+#content-right .principal-content label {
+	margin: 8px 0 0px;
+	font-size: 16px;
+	display: block;
+}
+
+.chars-count {
+	font-size: 10px;
+	display: flex;
+	width: max-content;
+	margin-left: auto;
+}
+
+#content-right .principal-content #nacionalidade {
+	appearance: none !important;
+	outline: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+	display: none;
+}
+
+#content-right .principal-content input:not([type="range"]),
+#content-right .principal-content select {
+	box-sizing: border-box;
+	min-width: 100%;
+	height: 40px;
+	padding: 0 15px;
+
+	background: rgba(255, 255, 255, 0.1);
+	border: 0.901502px solid #000000;
+	border-radius: 7.21202px;
+
+	font-weight: 400;
+	font-size: 14px;
+	color: rgba(0, 0, 0);
+}
+
+#content-right .principal-content select {
+	appearance: none;
+	background: url(./../../images/arrow-down.svg) no-repeat center right 15px;
+}
+
+.content-header {
+	display: flex;
+	flex-direction: column;
+	width: max-content;
+	padding-top: 1rem;
+	margin: 0 auto;
+}
+
+.content-header > img {
+	width: 35.33px;
+	height: 39.75px;
+	margin: 20px auto;
+}
+
+.content-header > h1 {
+	font-weight: 500;
+	font-size: 26px;
+	letter-spacing: 5px;
+}
+
+.content-right .principal-content #container-elements label {
+	font-size: 1px;
+}
+
+.progress-next {
+	width: 100%;
+	display: grid;
+	height: max-content;
+	grid-template-columns: 1fr auto;
+	gap: 0.3rem;
+	box-sizing: border-box;
+	justify-content: space-between;
+	margin: 20px 0;
+}
+
+.principal-content .progress-bar-content {
+	padding: 0;
+	margin: auto 0;
+	height: 24px;
+	background: rgba(0, 0, 0, 0.48);
+	border-radius: 15px;
+	overflow: auto;
+}
+
+.principal-content .progress-bar {
+	background-color: var(--vermelho-principal);
+	height: 24px;
+	width: 0%;
+	display: flex;
+	border-radius: 15px;
+	overflow: visible;
+}
+
+.principal-content .progress-bar span.progress-val {
+	display: flex;
+	align-items: center;
+	margin: 0 5px 0 auto;
+
+	font-size: 0.6rem;
+	color: var(--color-white);
+}
+
+.principal-content .next-page-about {
+	width: 33px;
+	height: 32px;
+
+	background: rgba(0, 0, 0, 0.11);
+	border: 1px solid #fc003b;
+	border-radius: 10px;
+
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 32px;
+	color: var(--vermelho-principal);
+}
+
+/*Mexendo em 'educacao-e-cultura.php*/
+.principal-content textarea {
+	box-sizing: border-box;
+	width: 100%;
+	height: 160px;
+	padding: 13px 17px;
+	overflow: auto;
+
+	resize: none;
+	font-size: 16px;
+
+	background: rgba(255, 255, 255, 0.1);
+	border: 0.901502px solid #000000;
+	border-radius: 7.21202px;
+}
+
+/*Documento chamada.php*/
+#chamada-video {
+	margin-left: 5%;
+	width: max-content;
+	height: 100%;
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#chamada-video video {
+	width: max-content;
+	width: 21rem;
+	max-width: 800px;
+	height: 100%;
+	position: sticky;
+	top: 0;
+	object-fit: cover;
+	background: rgb(27, 26, 26);
+}
+
+#chamada-video .legenda-chamada {
+	width: 100%;
+	height: 8%;
+	max-height: 57px;
+	display: flex;
+	align-items: center;
+	z-index: 2;
+	position: absolute;
+
+	color: #fff;
+	line-height: 57px;
+	font-size: 0.95rem;
+	font-weight: 400;
+
+	background: rgba(0, 0, 0, 0.5);
+	span {
+		margin: 0 auto;
+		text-indent: -60px;
+	}
+}
+
+#chamada-video .legenda-chamada button {
+	width: 60px;
+	height: 100%;
+	margin: auto;
+	border: none;
+	background: none;
+	color: #fff;
+	font-weight: 400;
+	font-size: 0.97rem;
+}
+
+#chamada-video .comandos-chamada {
+	display: flex;
+	width: 100%;
+	position: absolute;
+	flex-direction: row;
+	justify-content: space-evenly;
+	/* margin-bottom: 34px; */
+	bottom: 0.75rem;
+	background-origin: 0;
+}
+
+#chamada-video .comandos-chamada button,
+#chamada-video .comandos-chamada #microfone {
+	border: none;
+	width: 2.25rem;
+	height: 2.25rem;
+	font-size: 1px;
+	border-radius: 50%;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	margin: auto 0;
+}
+
+#chamada-video #microfone {
+	appearance: none;
+	background: url(./../../images/mic-icon.svg) no-repeat center #fff;
+}
+
+#chamada-video #microfone:checked {
+	background-image: url(./../../images/microfone-off.svg);
+}
+
+#chamada-video #desligar {
+	width: 3.25rem;
+	height: 3.25rem;
+	border-radius: 70px;
+	background: url(./../../images/call-icon.svg) no-repeat center #b42937;
+	background-size: 80%;
+}
+
+#chamada-video #trocar-camera {
+	background: url(./../../images/camera-icon.svg) no-repeat center #fff;
+}
+
+/*Estilizando o arquivo 'mensagens.php'
+*Para a lista de pessoas*/
+main#mensagens {
+	display: grid;
+	grid-template-columns: 34% 1fr;
+	height: calc(100vh - 10px);
+	margin: auto;
+	width: 100%;
+}
+
+main#mensagens .peoples-to-chat,
+#bloqueados #blacklist {
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	background: #fff;
+
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#mensagens .peoples-to-chat h2 {
+	width: 100%;
+
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 80px;
+	text-align: center;
+}
+
+#mensagens .list-peoples,
+#bloqueados #blacklist {
+	overflow: hidden;
+	overflow-y: scroll;
+	display: grid;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+
+#mensagens .gradient {
+	position: sticky;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+}
+
+#mensagens .list-peoples .person {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	column-gap: 5px;
+	height: max-content;
+	align-items: center;
+	box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 100%;
+	overflow: hidden;
+	padding: 6px 9px;
+}
+
+.person .dados {
+	max-width: 100%;
+	overflow: hidden;
+}
+
+#mensagens .list-peoples #person-selected {
+	background-color: rgba(252, 0, 59, 0.12);
+	width: 100%;
+}
+
+#mensagens .list-peoples .person .foto-de-perfil {
+	max-width: 65px;
+	margin-right: 10px;
+}
+
+#mensagens .list-peoples .person .foto-de-perfil,
+#mensagens .list-peoples .person .foto-de-perfil img {
+	margin: 0;
+	position: relative;
+	font-size: 11.5px;
+}
+
+#mensagens .list-peoples .person span,
+#blacklist .person span {
+	font-weight: 400;
+	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+	width: 100%;
+	max-width: 100%;
+}
+
+#mensagens .list-peoples p {
+	font-weight: 400;
+	font-size: 15px;
+	color: rgba(51, 51, 51, 0.4);
+	white-space: nowrap;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/*Para o lado do chat corrente*/
+main#mensagens .chat {
+	width: 100%;
+	overflow: hidden;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 1fr auto;
+
+	background-color: #e2dfdf;
+}
+
+#mensagens #friend-information {
+	width: 100%;
+	height: 77px;
+	align-items: center;
+	display: flex;
+}
+
+#friend-information figure {
+	display: grid;
+	width: 100%;
+	position: relative;
+	grid-template-columns: max-content 1fr max-content;
+}
+
+#mensagens #friend-information h2 {
+	width: 320px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 15px;
+
+	font-family: "Poppins";
+	font-weight: 600;
+	font-size: 24px;
+	white-space: nowrap;
+}
+
+#mensagens .botoes-top {
+	display: flex;
+	flex-direction: row;
+	width: max-content;
+	margin: auto auto auto 0;
+	padding-right: 20px;
+	position: relative;
+}
+
+#mensagens .botoes-top button {
+	width: 28px;
+	height: 28px;
+	border: none;
+	background: none;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80%;
+}
+
+#mensagens .botoes-top .video-call {
+	background-image: url(./../../images/video-icon.svg);
+	margin-right: 5px;
+	object-fit: scale-down;
+}
+#mensagens .botoes-top .options {
+	background-image: url(./../../images/menu-mensagens.png);
+	object-fit: scale-down;
+}
+
+/*Para o menu de tradução oculto*/
+#mensagens .options-container {
+	top: 45px;
+	display: none;
+	left: -200%;
+	position: absolute;
+	width: 260px;
+	min-height: 103px;
+	background: #fff;
+	color: #000;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 20px;
+	z-index: 2;
+}
+
+#mensagens .botoes-top .options-container .translate > span {
+	display: flex;
+	font-size: 16px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#mensagens .botoes-top .options-container label {
+	width: 30px;
+	height: 15px;
+	display: block;
+	background: #c4c4c4;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#mensagens .botoes-top input[type="checkbox"] {
+	display: none;
+}
+
+#mensagens .botoes-top .options-container .translate-on-off {
+	width: 18px;
+	height: 18px;
+	border-radius: 16px;
+	background-color: var(--vermelho-principal);
+	margin-top: -2px;
+	padding: 0;
+	float: left;
+	transition: all 600ms;
+}
+
+#mensagens .botoes-top #active-translator:checked + .translate-on-off {
+	transform: translateX(100%);
+}
+/*Alteração do idioma*/
+#mensagens .talk-now {
+	width: 100%;
+	padding: 0;
+	margin-top: 20px;
+	justify-content: space-between;
+	display: flex;
+}
+
+#mensagens .talk-now img:nth-child(2) {
+	width: 30px;
+}
+
+#mensagens .img-1-container,
+#mensagens .img-2-container {
+	border: 1px solid var(--vermelho-principal);
+	border-radius: 10px;
+	color: #000;
+	align-items: center;
+	display: flex;
+	justify-content: space-evenly;
+	width: 120px;
+}
+
+/*Área reservada para as mensagens já escritas e por fazer*/
+#mensagens #privado {
+	overflow: hidden;
+	display: grid;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/*Mensagens já enviadas*/
+#mensagens #sended {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+}
+
+#mensagens .the-message-container {
+	margin-top: 25px;
+}
+
+#mensagens .identifier {
+	width: 40%;
+	height: max-content;
+	display: flex;
+}
+
+#mensagens #sended .identifier img {
+	width: 42px;
+	height: 42px;
+	background: rgba(51, 51, 51, 0.3);
+	border-radius: 40px;
+	margin: 8px;
+	object-fit: cover;
+}
+
+#mensagens #sended .identifier > span {
+	height: 100%;
+	margin: auto 0 20px;
+	font-size: 10px;
+	font-weight: 500;
+}
+#mensagens #sended .identifier > span > span {
+	line-height: 0px;
+	font-weight: bolder;
+	color: var(--vermelho-principal);
+}
+
+#mensagens .text-container {
+	background: #f4f4f4;
+	max-width: 55% !important;
+	min-height: 20px;
+	height: max-content;
+	margin-left: 25px;
+	padding-bottom: 4px;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#mensagens .text-container .writed-message {
+	padding: 9px;
+	overflow: hidden;
+	max-height: max-content;
+	word-break: break-word;
+	font-size: 13px;
+}
+
+#mensagens .text-container .blur {
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+}
+
+#mensagens .interaction {
+	margin: 10px;
+	background: #fff;
+	border: 5px;
+	padding: 7px 6px;
+}
+
+#mensagens .interaction-info {
+	display: grid;
+	width: 100%;
+	margin: 10px 0;
+	grid-template-columns: max-content auto;
+	font-size: 12px;
+	text-align: justify;
+}
+
+#mensagens .interaction-info img {
+	margin: auto 15px;
+	height: 50%;
+}
+
+#mensagens .text-container .confirm {
+	width: 100%;
+	height: 34px;
+	border: none;
+	background: var(--vermelho-principal);
+	color: #fff;
+	border-radius: 4px;
+
+	font-size: 14px;
+	font-weight: 400;
+}
+#mensagens a {
+	text-decoration: underline;
+	color: var(--vermelho-principal);
+}
+/* Para a mensagem enviada pelo usuário */
+#mensagens #privado .user {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-right: 0px;
+}
+
+#mensagens #privado .user .identifier {
+	width: max-content;
+	margin-bottom: 5px;
+	height: max-content;
+	padding: 0;
+	display: inline;
+}
+
+#mensagens #privado .user .text-container {
+	background: rgba(216, 192, 192, 0.76);
+}
+
+#mensagens #create-message {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	box-sizing: border-box !important;
+	column-gap: 10px;
+	padding: 0 10px;
+	justify-content: space-around;
+	width: 100%;
+	margin: 10px auto 10px;
+}
+
+#mensagens #privado .add-media {
+	width: 47px;
+	height: 47px;
+	border-radius: 50px;
+	border: none;
+	text-align: center;
+	margin: auto 0 0;
+	background-color: var(--vermelho-principal);
+
+	color: #fff;
+	font-size: 32px;
+}
+
+#mensagens .message-text-container {
+	position: relative;
+	width: 100%;
+	height: max-content;
+	background: #fff;
+	border-radius: 15px;
+	display: flex;
+	align-items: flex-end;
+	margin: auto;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#mensagens #message-file {
+	position: sticky;
+	margin: 0 auto;
+	margin-top: 5px;
+	width: calc(100% - 20px);
+	bottom: 0%;
+	background: red;
+	box-sizing: border-box;
+	border-radius: 5px;
+	padding: 5px 55px 5px 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: nowrap;
+	white-space: nowrap;
+	font-size: 12px;
+	color: #fff;
+	display: none;
+}
+
+#mensagens .sended-file {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: nowrap;
+	white-space: nowrap;
+	display: grid;
+}
+
+#mensagens .sended-file .writed-message {
+	padding-right: 30px;
+	box-sizing: border-box;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: nowrap;
+	white-space: nowrap;
+	background: url(./../../images/file.png) no-repeat right 5px center;
+	background-size: 20px;
+	object-fit: scale-down;
+}
+
+/* #mensagens .sended-file .writed-message::after {
+  content: 'file';
+  color: #ffffff00;
+  width: 30px;
+  height: 99%;
+  box-sizing: border-box;
+  padding-right: 5px;
+  padding-left: 30px;
+  margin: auto 0;
+  margin: auto;
+  background: url(./../../images/file.png) no-repeat center center;
+  background-size: fill;
+  object-fit: scale-down;
+} */
+
+#mensagens .clear-file {
+	width: 23px;
+	height: 23px;
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	right: 5px;
+	border: none;
+	border-radius: 25px;
+
+	background: #fff;
+	color: var(--vermelho-principal);
+}
+
+#mensagens #message-text {
+	width: 100%;
+	height: max-content;
+	max-height: 150px;
+	padding: 10px 0 10px 15px;
+	resize: none;
+	border: none;
+	text-align: justify;
+	box-sizing: border-box;
+
+	font-weight: 400;
+	font-size: 14px;
+}
+
+#mensagens #message-text::-webkit-scrollbar {
+	display: none;
+}
+
+#mensagens #message-text:focus {
+	outline: none;
+}
+
+#mensagens .send-message {
+	width: 45px;
+	height: 45px;
+	margin-right: 6px;
+	border: none;
+	position: relative;
+	background: url(./../../images/send-message-icon.svg) no-repeat center;
+}
+
+/* DOCUMENTO curtidas.php & localizar-pessoas.php*/
+
+.padrao {
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	width: 90%;
+	padding: 32px 29px;
+	margin: 0 20px;
+}
+
+.padrao ul.list {
+	width: 100%;
+	margin-top: 20px;
+	display: grid;
+	justify-content: space-between;
+	column-gap: 1vmax;
+	row-gap: 30px;
+	grid-template-columns: repeat(auto-fit, 180px);
+	box-sizing: border-box;
+}
+
+.padrao .list li {
+	display: block;
+	flex-direction: column;
+	width: 100%;
+	height: 211px;
+	border-radius: 10px;
+	object-fit: cover;
+	position: relative;
+	overflow: hidden;
+}
+
+.padrao .list li img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.padrao .list section {
+	position: relative;
+	max-width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.padrao .list article {
+	display: block;
+	flex-direction: column;
+	margin: 72% 15px;
+}
+
+.padrao .list .status-div {
+	width: 13px;
+	height: 13px;
+	border-radius: 15px;
+	background-color: var(--status-on);
+	display: inline-flex;
+	margin-bottom: 5px;
+}
+
+.padrao .list span {
+	display: inline-block;
+	max-width: 120px;
+	font-size: 18px;
+	color: #fff;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.padrao section ul {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+
+	justify-content: space-between;
+}
+
+.padrao .list article li {
+	width: 48.92px;
+	height: 13.94px;
+
+	background: rgba(0, 0, 0, 0.52);
+	border-radius: 6.69421px;
+
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	line-height: 13.94px;
+}
+
+.padrao .list .botoes {
+	position: relative;
+	display: none;
+	margin: auto;
+	width: max-content;
+	justify-content: space-between;
+}
+
+/* Ao passar em algum item da lista */
+.padrao .list li:hover .status-div,
+.padrao li:hover ul {
+	display: none;
+}
+
+.padrao .list li:hover section {
+	display: flex;
+	flex-direction: column;
+}
+
+.padrao .list li:hover article {
+	display: block;
+	justify-content: center;
+	margin: 0;
+	align-items: center;
+}
+
+.padrao .list li:hover span {
+	text-align: center;
+	display: block;
+	margin: 10px auto 0;
+	max-width: 170px;
+	transition: all 400ms;
+}
+
+.padrao .list li:hover .botoes {
+	position: relative;
+	display: flex;
+	bottom: 0;
+	margin: auto auto 15px;
+}
+
+/*localizar-pessoas.php*/
+#pessoas-regiao .search {
+	display: grid;
+	grid-template-columns: 70% 20%;
+	grid-auto-flow: column;
+	justify-content: space-between;
+	margin: 20px 0 40px;
+}
+#pessoas-regiao .search-field {
+	width: 600px;
+
+	height: 51px;
+	box-sizing: border-box;
+	display: flex;
+
+	border: 1px solid #31302e;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#pessoas-regiao .search-field input[type="search"] {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	font-size: 16px;
+	padding: 10px 15px;
+	border: none;
+	outline: none;
+}
+
+#pessoas-regiao .search-field button {
+	height: 35px;
+	margin: auto;
+	display: inline-block;
+	width: 45px;
+	border: none;
+	margin-right: 10px;
+	background: url(./../../images/Search.svg) no-repeat center;
+}
+
+/*para Filtros*/
+#pessoas-regiao .search > button {
+	width: 100%;
+	height: 51px;
+	left: 1153px;
+	top: 133px;
+	border: 1px solid #000000;
+	background: url(./../../images/Filter.svg) no-repeat center right 20px;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding-right: 20px;
+
+	font-size: 20px;
+}
+/*planos.php*/
+#planos,
+#pacotes-pagamento,
+#metodo-pagamento {
+	display: flex;
+	flex-direction: column;
+}
+
+#pacotes-pagamento {
+	display: grid;
+	row-gap: 20px;
+	justify-content: center;
+}
+
+#pacotes-pagamento {
+	height: 100%;
+}
+
+#planos .card-container {
+	display: flex;
+	grid-auto-flow: column dense;
+	column-gap: 1.5vmax;
+	max-height: 300px;
+	max-width: 100%;
+	box-sizing: border-box;
+	justify-content: space-between;
+}
+
+#planos .card-container input[type="radio"] {
+	display: none;
+}
+
+/*Bordas vermelhas para card selecionado*/
+#planos .card-container input[type="radio"]:checked + label {
+	border: 2px solid #fc003b;
+}
+
+#planos .card-content {
+	max-height: 300px;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+
+	background: #fff;
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+#planos .card-content img {
+	margin: auto;
+	/* user-select: none; dando bug*/
+}
+
+#planos .card-content p {
+	width: 100%;
+	margin: 10px auto;
+
+	text-align: justify;
+	height: 100%;
+	overflow: hidden;
+	word-break: break-all;
+	line-clamp: 2;
+	text-overflow: ellipsis;
+}
+
+#planos .card-content button {
+	width: 100%;
+	height: 50px;
+	font-size: 16px;
+	border-radius: 8px;
+	margin: auto auto 0;
+}
+
+#planos .card-bank-data {
+	width: 728.08px;
+	height: 282px;
+
+	display: flex;
+	flex-direction: row;
+
+	margin: auto;
+	box-sizing: border-box;
+	background: linear-gradient(
+		180deg,
+		#fd003b 0%,
+		rgba(253, 0, 59, 0.68) 74.79%,
+		rgba(253, 0, 59, 0.54) 93.02%,
+		rgba(253, 0, 59, 0.5) 100%
+	);
+}
+
+#planos .card-bank-data .left-side {
+	padding: 30px;
+	width: 100%;
+}
+
+#planos .card-bank-data label {
+	color: #fff;
+	font-size: 16px;
+	display: block;
+}
+
+#planos .card-bank-data input {
+	width: 277.6px;
+	height: 32.34px;
+	border: none;
+	margin: 8px 0;
+	box-sizing: border-box;
+	padding: 15px;
+
+	background: #ffffff;
+	border-radius: 6.73784px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	display: none;
+	appearance: none;
+	margin: 0;
+}
+
+#planos .card-bank-data .left-side > span:first-of-type {
+	display: block;
+	margin: 15px 0;
+}
+#planos .card-bank-data .left-side > span:last-of-type {
+	display: inline-block;
+}
+#planos .validate {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+#planos .validate input {
+	width: 64px;
+	text-align: center;
+}
+
+#planos .card-bank-data .right-side {
+	width: 236.74px;
+}
+
+#planos .card-bank-data .right-side > div {
+	background: #000;
+	width: 236.74px;
+	height: 79.18px;
+	margin-top: 25%;
+}
+
+#planos button {
+	display: block;
+	width: 362px;
+	height: 57px;
+	border-radius: 8px;
+
+	font-size: 16px;
+}
+
+/* #metodo-pagamento*/
+#metodo-pagamento {
+	padding: 0 30px;
+	height: max-content;
+}
+
+#metodo-pagamento .method-container {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 48% 48%;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#metodo-pagamento h3 {
+	font-weight: 500;
+	background: url(./../../images/arrow-down-red.svg) no-repeat center right;
+	width: max-content;
+	margin-top: 4%;
+	margin-bottom: 4%;
+	padding-right: 7%;
+	font-size: 23px;
+	color: var(--vermelho-principal);
+	letter-spacing: -1px;
+}
+
+#metodo-pagamento input,
+#metodo-pagamento select {
+	appearance: none;
+	box-sizing: border-box;
+	height: 50px;
+	background: none;
+	padding: 13px 19px;
+	margin: 3% 0;
+
+	font-size: 18px;
+
+	border: 1.11552px solid #333333;
+	border-radius: 9px;
+}
+
+#metodo-pagamento .card-validity {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+#metodo-pagamento .card-validity div {
+	width: 27%;
+}
+
+#metodo-pagamento .card-validity div:nth-of-type(3) {
+	width: 38%;
+}
+
+#metodo-pagamento .left-side > input,
+#metodo-pagamento .left-side button {
+	width: 100%;
+}
+
+#metodo-pagamento .left-side button {
+	margin-top: 5%;
+}
+
+#metodo-pagamento .card-validity select {
+	width: 100%;
+	text-align: center;
+	background: url(./../../images/arrow-down.svg) no-repeat center right 10%;
+}
+
+#metodo-pagamento .left-side > select {
+	width: 100%;
+	background: url(./../../images/arrow-down-red.svg) no-repeat center right 5%;
+	color: var(--vermelho-principal);
+	border: 1px solid var(--vermelho-principal);
+	outline: none;
+}
+
+#metodo-pagamento .card-validity div span {
+	display: block;
+}
+
+#metodo-pagamento .card-validity div input {
+	width: 100%;
+}
+
+/*Lado direito de planos#metodo-pagamento*/
+#metodo-pagamento .right-side {
+	display: flex;
+	flex-direction: column;
+	height: max-content;
+	row-gap: 25%;
+	margin: auto 0 0;
+}
+
+/*Para o container das bandeiras de cartão*/
+#metodo-pagamento #payment-method {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	row-gap: 15px;
+	grid-auto-flow: row;
+	grid-template-columns: repeat(auto-fit, 91.76px);
+	justify-content: space-between;
+	margin-bottom: 5%;
+}
+
+#metodo-pagamento #payment-method input[type="radio"] {
+	appearance: none;
+	height: 62.4px;
+	border: 1.37998px solid #d9d9d9;
+	border-radius: 8.2799px;
+	min-width: 100%;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 75%;
+}
+
+#metodo-pagamento #payment-method input[type="radio"]:checked {
+	border: 2.69078px solid #fb6624;
+	border-radius: 8.2799px;
+	transition: all ease-in-out 200ms;
+}
+
+#metodo-pagamento .right-side #card-bank {
+	width: 100%;
+	height: 248px;
+	background: linear-gradient(
+		180deg,
+		#fd003b 0%,
+		rgba(253, 0, 59, 0.68) 74.79%,
+		rgba(253, 0, 59, 0.54) 93.02%,
+		rgba(253, 0, 59, 0.5) 100%
+	);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+	border-radius: 27px;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+#metodo-pagamento #card-bank .bank-indicative {
+	justify-content: space-between;
+	display: flex;
+	background: #5c0101a2;
+	padding: 0 60px 0 25px;
+}
+
+#metodo-pagamento #card-bank img {
+	height: max-content;
+	margin: 4px 0;
+}
+
+#metodo-pagamento #card-bank .bank-indicative span {
+	font-size: 14px;
+	font-weight: 700;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#metodo-pagamento #card-bank > span {
+	font-size: 24px;
+	text-align: center;
+	font-weight: 400;
+}
+
+#metodo-pagamento #card-bank > div:last-of-type {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 60px;
+}
+
+/*favoritos.php*/
+#favoritos > nav {
+	display: grid;
+	grid-auto-flow: column;
+	margin-bottom: 3%;
+}
+
+#favoritos > nav label {
+	border-bottom: 3px solid #999;
+	width: 100%;
+	font-size: 22px;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+#favoritos > nav input[type="radio"] {
+	display: none;
+}
+
+#favoritos > nav input[type="radio"]:checked + label {
+	border-bottom: 4px solid var(--vermelho-principal);
+	transition: all ease-in-out 300ms;
+}
+
+#favoritos #sep-vizualizou,
+#favoritos #sep-curtiu {
+	display: none;
+}
+
+/*Estilo especial e invertido de #curtiu*/
+#sep-curtiu .status-div,
+.padrao li:hover ul {
+	display: none;
+}
+
+#sep-curtiu section {
+	display: flex;
+	flex-direction: column;
+}
+
+#sep-curtiu .list article {
+	display: block;
+	justify-content: center;
+	margin: 0;
+	align-items: center;
+}
+
+#sep-curtiu .list span {
+	text-align: center;
+	display: block;
+	margin: 10px auto 0;
+	max-width: 170px;
+	transition: all 400ms;
+}
+
+#sep-curtiu .list .botoes {
+	position: relative;
+	display: flex;
+	bottom: 0;
+	margin: auto auto 15px;
+}
+
+/*configuracoes.php*/
+main#configuracoes,
+main#servicos {
+	width: 623px;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	box-sizing: border-box;
+}
+#configuracoes #conf-select,
+#configuracoes #conf-account,
+#servicos #test-select {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	box-sizing: border-box;
+}
+#configuracoes .title,
+#servicos .title {
+	font-size: 1.25rem;
+	margin: 0 auto;
+}
+#configuracoes ul#conf-list,
+#servicos ul#test-list {
+	display: flex;
+	width: 100%;
+	margin-top: 13%;
+	flex-direction: column;
+}
+
+#configuracoes #conf-list li,
+#servicos #test-list li {
+	text-indent: 2%;
+	font-size: 0.75rem;
+	padding: 3% 0;
+	margin: 1% 0;
+	background: url(./../../images/arrow-right.svg) no-repeat right 20px center;
+	background-size: 0.45rem;
+}
+
+/*Excluir a seguir*/
+#configuracoes #conf-account {
+	display: none;
+}
+
+/*Configurações da conta*/
+#configuracoes #conf-list li:hover,
+#configuracoes #conf-account li:hover {
+	transition: all ease-in-out 100ms;
+	background-color: rgba(153, 153, 153, 0.1);
+}
+
+#configuracoes button {
+	font-family: "Raleway";
+}
+
+#configuracoes #conf-select a,
+#configuracoes .back {
+	display: block;
+	margin: auto auto 0;
+	padding-top: 15px;
+	text-decoration: underline;
+	font-size: 0.85rem;
+}
+
+#configuracoes #conf-account li {
+	background: none;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 20% 68% 10%;
+	justify-content: center;
+	cursor: default;
+
+	font-size: 0.7rem;
+}
+
+#configuracoes #conf-account .user-data-show {
+	color: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	border: none;
+	padding: 0 5px;
+	margin-right: 5px;
+
+	font-size: 0.7rem;
+
+	background: none;
+}
+
+#configuracoes #conf-account .user-data-show:focus {
+	background: rgba(207, 207, 207, 0.315);
+}
+
+#configuracoes .edit {
+	margin: 0 0 0 auto;
+	text-decoration: underline;
+	color: #36356d;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+#configuracoes #conf-account #delete-account {
+	font-size: 0.7rem;
+	text-decoration: underline;
+	font-weight: 400;
+	cursor: pointer;
+	margin-top: 15px;
+	text-indent: 10px;
+}
+
+/*Configuracoes/metodo-de-pagamento*/
+#conf-payment {
+	height: 100%;
+	display: none;
+	flex-direction: column;
+}
+#conf-payment ul {
+	margin-top: 6%;
+	margin-bottom: 3%;
+	display: flex;
+	max-height: 760px;
+	flex-direction: column;
+	overflow-y: scroll;
+}
+#configuracoes #conf-payment li {
+	width: 100%;
+	height: 3rem;
+	margin: 2% auto;
+	padding: 10px 1.25rem 10px 2.772rem;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: auto max-content;
+
+	background: url(./../../images/payment-card-bg.svg) no-repeat;
+	background-position: center left 0.75rem;
+	background-size: 1.275rem;
+
+	border: 1px solid #fc003b;
+	border-radius: 10px;
+
+	* {
+		font-size: 0.67rem;
+	}
+}
+
+#conf-payment li > div {
+	display: flex;
+	flex-direction: column;
+	margin: auto 0;
+}
+
+#conf-payment li > div span:first-of-type {
+	font-size: 20px;
+	font-weight: 400;
+}
+
+#conf-payment li > div span:last-of-type {
+	font-size: 18px;
+	color: rgba(0, 0, 0, 0.62);
+}
+
+#conf-payment .edit {
+	color: var(--vermelho-principal);
+	margin: auto 0;
+}
+
+#conf-payment .btn-register,
+#form-delete-account button {
+	width: 90%;
+	margin: 0 auto !important;
+	height: 40px;
+	border-radius: 10px;
+	position: sticky;
+	margin-bottom: 10px;
+	&.btn-register {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.7rem;
+	}
+}
+
+/*confiracoes/notificacoes
+*configuracoes/configuracoes*/
+#conf-notifications,
+#conf-def {
+	display: none;
+	height: 100%;
+	flex-direction: column;
+}
+#conf-notifications ul,
+#conf-def ul {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 15%;
+}
+
+#conf-notifications li,
+#conf-def li {
+	display: grid;
+	height: 55px;
+	grid-template-columns: auto max-content;
+	justify-content: space-between;
+	width: 100%;
+
+	font-size: .67rem;
+}
+
+#conf-notifications input[type="checkbox"],
+#conf-def input[type="checkbox"] {
+	display: none;
+}
+#conf-notifications .switch-painel,
+#conf-def .switch-painel {
+	width: 2rem;
+	height: 1rem;
+	display: flex;
+
+	background: rgb(207, 207, 207);
+	border-radius: 40px;
+}
+
+#conf-notifications .btn-switch,
+#conf-def .btn-switch {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background: var(--vermelho-principal);
+	box-sizing: border-box;
+	border: none;
+	margin: auto 0;
+	margin-left: 1px;
+	transition: all 200ms;
+}
+
+#conf-notifications
+	input[type="checkbox"]:checked
+	+ .switch-painel
+	> .btn-switch,
+#conf-def input[type="checkbox"]:checked + .switch-painel > .btn-switch {
+	margin-left: auto;
+	width: 1rem;
+	height: 1rem;
+	background: #fff;
+	border: solid 1px var(--vermelho-principal);
+	margin-right: 0px;
+}
+
+#conf-notifications input[type="checkbox"]:checked + .switch-painel,
+#conf-def input[type="checkbox"]:checked + .switch-painel {
+	background: var(--vermelho-principal);
+	transition: all ease-in-out 900ms;
+}
+
+/*Formulário de encerramento de conta*/
+#form-delete-account {
+	display: none;
+	flex-direction: column;
+	height: 100%;
+}
+
+#form-delete-account .delete-list {
+	margin-left: 3%;
+	margin-top: 8%;
+	font-size: 20px;
+}
+
+#form-delete-account .delete-list > div {
+	height: max-content;
+	display: flex;
+	margin: 4% 0;
+}
+
+#form-delete-account span {
+	height: max-content;
+	margin-left: 5%;
+}
+
+#form-delete-account input[type="radio"],
+#form-delete-account input[type="radio"]:checked {
+	outline: none;
+	appearance: none;
+	box-sizing: border-box;
+	width: 22px;
+	height: 22px;
+	margin: auto 0;
+
+	background: none;
+	border: 1.26901px solid var(--vermelho-principal);
+	border-radius: 15%;
+}
+
+#form-delete-account input[type="radio"]:checked {
+	background: url(./../../images/Close_round.png) no-repeat;
+	background-size: 130%;
+	background-position: center;
+}
+
+#form-delete-account > div:last-of-type {
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+#form-delete-account button {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+/*Escolha entre desativar e excluir conta*/
+#delete-account {
+	width: max-content;
+}
+
+#delete-account-options {
+	display: none;
+	height: 100%;
+	grid-template-rows: max-content max-content 1fr max-content;
+	row-gap: 15px;
+}
+
+#delete-account-options .btns {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 47% 47%;
+	justify-content: space-around;
+}
+
+#delete-account-options .btns button,
+#delete-account-options button:last-of-type {
+	width: 100%;
+	height: 58px;
+	border-radius: 10px;
+	margin: 0;
+
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+#delete-account-options .btns button:last-of-type {
+	background: none;
+}
+
+#delete-account-options #justification {
+	display: grid;
+	grid-template-rows: max-content 1fr;
+}
+
+#delete-account-options #justification span {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+#delete-account-options #justification textarea {
+	width: 100%;
+	resize: none;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 18px;
+}
+
+#delete-account-options > div:last-of-type {
+	display: flex;
+	flex-direction: column;
+	margin-top: auto;
+	height: max-content;
+}
+
+/*Perfil.php*/
+#perfil-container,
+#perfil-container > section {
+	display: grid;
+	grid-template-columns: 1fr max-content;
+	height: 100%;
+}
+#perfil {
+	max-width: 100%;
+}
+.add-more-photos {
+	display: grid;
+	grid-template-columns: repeat(4, 18%);
+	justify-content: space-evenly;
+	margin-bottom: 5%;
+}
+
+.add-more-photos .add-box {
+	height: 161px;
+	z-index: 2;
+	position: relative;
+	display: flex;
+
+	background: rgba(51, 51, 51, 0.47);
+	background-size: cover;
+	background-position: center;
+	border-radius: 10px;
+}
+
+.add-more-photos .add-box input[type="file"] {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+	z-index: 1;
+}
+
+.add-more-photos .add-box button,
+.btn-remove-def {
+	width: 25px;
+	height: 25px;
+	z-index: 2;
+	margin: 8px 8px 0 auto;
+
+	background: url(./../../images/plus.svg) no-repeat center;
+	border: none;
+}
+
+#perfil > img {
+	display: none;
+}
+
+#perfil > img ~ p {
+	color: #fff;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 30px;
+	font-weight: 700;
+}
+
+#perfil-information {
+	background: #fff;
+	margin-left: 4%;
+	margin-right: 6%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	overflow-y: scroll;
+}
+
+#perfil-information > h2 {
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 1.2em;
+}
+
+#perfil-information > span {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+
+	color: rgba(0, 0, 0, 0.52);
+}
+
+#perfil-information > div:first-of-type h3 {
+	width: max-content;
+	padding-right: 25px;
+	margin-top: 8%;
+	background: url(./../../images/edit.svg) no-repeat right center;
+}
+
+#perfil-information h3 {
+	color: var(--vermelho-principal);
+}
+
+#perfil-information textarea {
+	margin-top: 3%;
+	box-sizing: border-box;
+	padding: 8px 10px;
+	width: 100%;
+	height: calc(100vh - 450px);
+	min-height: 200px;
+	max-height: 300px;
+	resize: none;
+
+	border: 1px solid #fc003b;
+	border-radius: 12px;
+}
+
+#perfil-information > div:not(#perfil-information > div:first-of-type) {
+	display: grid;
+	grid-template-columns: repeat(2, 46%);
+	justify-content: space-between;
+	margin: 4% 0;
+}
+
+#perfil-information input[type="checkbox"],
+#perfil-information input[type="radio"] {
+	display: none;
+}
+
+#perfil-information label,
+#perfil-information button {
+	border: 1px solid var(--vermelho-principal);
+	margin: 5% 0;
+	text-align: center;
+	text-overflow: ellipsis;
+	border-radius: 10px;
+	cursor: pointer;
+	overflow: hidden;
+	box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 8px;
+
+	font-size: 16px;
+	font-family: "Inter";
+	line-height: 2em;
+	text-align: center;
+	letter-spacing: -0.022em;
+
+	transition: all 400ms;
+}
+
+#perfil-information button {
+	background: var(--vermelho-principal);
+	color: #fff;
+}
+
+#perfil-information input[type="checkbox"]:checked + label,
+#perfil-information input[type="radio"]:checked + label {
+	background: linear-gradient(#fc003b57, #fc003bd5);
+	color: rgb(29, 29, 29);
+}
+
+/*Teste do amor*/
+#teste-de-amor {
+	width: max-content;
+	min-width: 700px;
+	max-width: 90%;
+}
+#teste-de-amor > h1 {
+	margin: 0 auto;
+}
+
+#teste-de-amor .categoria {
+	margin: 40px 0;
+}
+
+#formulario-teste .opcao {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#formulario-teste h3 {
+	margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: 400;
+}
+
+#formulario-teste .categoria {
+	display: grid;
+	row-gap: 15px;
+}
+
+#formulario-teste input[type="radio"] {
+	appearance: none;
+	height: 25px;
+	width: 25px;
+	background: rgba(0, 0, 0, 0.24);
+	border-radius: 20px;
+}
+
+#formulario-teste input[type="radio"]:checked {
+	background: var(--vermelho-principal);
+	border: 3px solid rgb(207, 207, 207);
+}
+
+#formulario-teste label {
+	text-indent: 15px;
+}
+
+/*Modaais de perfil*/
+dialog {
+	display: flex;
+	z-index: 2;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.199);
+}
+
+#add-option-modal {
+	display: none;
+}
+
+dialog > div {
+	background: #fff;
+	position: relative;
+	width: 540px;
+	display: grid;
+	height: 549px;
+	margin: auto;
+	border-radius: 10px;
+	align-items: center;
+	justify-items: center;
+	box-sizing: border-box;
+	padding: 60px;
+}
+
+dialog h1 {
+	font-family: "Poppins";
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 22px;
+	/* identical to box height, or 90% */
+
+	letter-spacing: 5px;
+}
+
+dialog button {
+	width: 79%;
+	font-size: 16px;
+	line-height: 4em;
+}
+
+dialog button.red-btn {
+	color: white;
+	background: var(--vermelho-principal);
+	border: none;
+	border-radius: 10px;
+}
+
+.simple-btn {
+	width: max-content;
+	height: max-content;
+	line-height: 1em;
+	text-decoration: underline;
+	border: none;
+	background: none;
+	color: var(--vermelho-principal);
+}
+
+dialog #modal-perfil-1 {
+	background: url(./../../images/modal-bg-perfil.svg) no-repeat #fff;
+	background-size: 40%;
+	background-position: center;
+}
+
+dialog .close-modal {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 18px;
+	font-family: "Raleway";
+	text-decoration: none;
+	color: #000;
+	background-blend-mode: color-burn;
+	padding: 12px;
+	margin-right: 10px;
+}
+
+/*Modal de teste de amor*/
+dialog#modal-teste-amor img {
+	width: 30%;
+}
+
+dialog > div {
+	padding: 30px;
+}
+
+dialog#modal-teste-amor {
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
+}
+
+/*Membros bloqueados*/
+#bloqueados {
+	width: 72%;
+}
+
+#bloqueados #blacklist {
+	width: 90%;
+}
+
+#bloqueados .person {
+	height: 90px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: auto 1fr max-content;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 0 10px;
+	cursor: default;
+}
+
+#bloqueados #blacklist .person span {
+	font-size: 20px;
+	margin-left: 15px;
+	width: 320px;
+}
+
+#bloqueados #blacklist .simple-btn {
+	font-size: 18px;
+}
+
+#modal-home-1 > div,
+#modal-home-2 > div {
+	padding: 20px;
+}
+
+#modal-home-1 > div {
+	height: max-content;
+	display: grid;
+	row-gap: 20px;
+	padding-bottom: 40px;
+}
+
+#modal-home-2 > div {
+	height: 280px;
+	width: 334px;
+}
+
+#modal-home-2 p {
+	width: 100%;
+	text-align: center;
+}
+
+#modal-home-2 .red-btn {
+	line-height: 45px;
+}
+
+#modal-home-2 .simple-btn {
+	color: #000;
+}
+
+/*Modal para adicionar tags em planos.php*/
+#add-option-modal img {
+	width: 14%;
+}
+
+#add-option-modal input {
+	font-size: 16px;
+	padding: 6px;
+	border-radius: 10px;
+	border: 1px solid rgb(97, 97, 97);
+}
+
+/*Para mobile, mas, oculto*/
+#mobile-header {
+	display: none;
+}
+
+#footer-mobile {
+	display: none;
+	ul {
+		margin: 0;
+	}
+}
+
+input,
+select {
+	outline: none !important;
+}
+
+@media only screen and (max-width: 992px) {
+	#online-now {
+		position: absolute !important;
+		right: 55%;
+		top: 35px;
+	}
+}

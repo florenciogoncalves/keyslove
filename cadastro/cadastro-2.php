@@ -18,15 +18,15 @@ if (!isset($_SESSION['step'])) {
 
 
   <link rel="stylesheet" href="./../style/bootstrap.min.css">
-  <link rel="stylesheet" href="./../style/cadastro.css" />
-  <link rel="stylesheet" href="./../style/responsive-login.css" />
+  <link rel="stylesheet" href="./../style/css/cadastro.css" />
+  <link rel="stylesheet" href="./../style/css/responsive-login.css" />
 </head>
 
 <body>
-  <header class="header-content">
-    <img src="./../images/Keyslov.svg" class="header-logo" />
-    <nav class="nav-btn">
-      <a href="../login.php"><button class="white-btn">Entrar</button></a>
+  <header class="header-content p-2 px-3 px-lg-4 row m-0">
+    <a class="col-6 p-0" href="./../index.php"><img src="./../images/Keyslov.svg" class="header-logo img-fluid" alt="Keyslov" /></a>
+    <nav class="header-controllers-container col-3 col-lg-2 row px-0 py-1">
+      <a class="white-btn rounded col-10" href="../login.php">Entrar</a>
     </nav>
   </header>
 
@@ -64,15 +64,15 @@ if (!isset($_SESSION['step'])) {
         <input type="text" placeholder="Nome exemplo" name="nome" required />
         <label for="">Data de nascimento</label>
         <div class="the-date">
-          <select class="continue select-placeholder" id="born-day" required name="dia-nascimento">
+          <select class="rounded text-center d-flex continue select-placeholder" id="born-day" required name="dia-nascimento">
             <option selected hidden disabled value="">01</option>
           </select>
 
-          <select class="continue select-placeholder" id="born-month" required name="mes-nascimento">
+          <select class="rounded text-center d-flex continue select-placeholder" id="born-month" required name="mes-nascimento">
             <option selected hidden disabled value="">01</option>
           </select>
 
-          <select class="continue select-placeholder" id="born-year" required name="ano-nascimento">
+          <select class="rounded text-center d-flex continue select-placeholder" id="born-year" required name="ano-nascimento">
             <option selected hidden disabled value="" id="first-year">
               e
             </option>
@@ -92,11 +92,10 @@ if (!isset($_SESSION['step'])) {
           <label for="other">Outro... </label>
         </div>
 
-        <button class="continue btn-register" name="btn-submit" value="btn">CADASTRAR</button>
+        <button class="continue btn-register rounded" name="btn-submit" value="btn">CADASTRAR</button>
       </form>
 
       <script src="./../script/cadastro.js"></script>
-      <script src="./../script/resize-windown.js"></script>
     </div>
   </div>
 </body>

@@ -1,0 +1,432 @@
+@import url(./style.css);
+
+.title {
+	width: max-content;
+	height: 48px;
+	margin: 0 0 12px;
+
+	font-weight: 400;
+	font-style: normal;
+	font-size: 30px;
+	color: #000000;
+	line-height: 32px;
+}
+
+main#home,
+main#perfil {
+	position: relative;
+	display: grid;
+	height: 100%;
+	width: 22rem;
+	/* min-width: 450px; */
+	box-sizing: border-box;
+	grid-template-rows: max-content 1fr max-content;
+	overflow: hidden;
+	background-color: rgb(83, 82, 82);
+	z-index: 2;
+}
+
+main#perfil {
+	width: 100%;
+}
+
+main #main-image {
+	position: absolute;
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
+main ul,
+main li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+main#home .home-bar,
+main#perfil .home-bar {
+	width: 100%;
+	height: 80px;
+	z-index: 2;
+	padding: 0 140px;
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	gap: 9.76px;
+	flex-direction: row;
+	justify-content: center;
+}
+
+main .home-bar li {
+	height: 8.14px;
+	width: 100%;
+	background: var(--color-white);
+	border-radius: 9.76344px;
+	box-shadow: 1 1 11px 11px rgba(0, 0, 0, 0.7);
+}
+
+/*para elementos vizualizados na barra de home*/
+
+main .home-bar li.visualized {
+	background: #333333;
+}
+
+main .home-nav {
+	width: 100%;
+	position: relative;
+	padding: 0;
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	z-index: 6;
+	margin: auto;
+}
+
+main .home-nav button {
+	font-size: 60px;
+	color: white;
+	background: none;
+	border: none;
+	width: 100px;
+	height: 100%;
+}
+
+main .home-nav button:hover {
+	background: radial-gradient(
+		rgba(0, 0, 0, 0.3),
+		rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0)
+	);
+}
+
+main .home-footer {
+	position: relative;
+	margin: 10px 36px;
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	z-index: 2;
+	overflow: hidden;
+}
+
+.home-footer h3,
+.home-footer a {
+	width: max-content;
+	max-width: 100%;
+	word-wrap: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+main #person-name {
+	font-style: normal;
+	font-weight: 300;
+	font-size: 28px;
+	color: var(--color-white);
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+main .talk-now {
+	display: flex;
+	width: max-content;
+	height: 28px;
+	background-color: var(--color-white);
+	padding: 0 10px;
+	border-radius: 15px;
+	box-sizing: border-box;
+
+	line-height: 28px;
+	color: var(--vermelho-principal);
+	font-weight: 400;
+	font-size: 14px;
+	justify-content: space-around;
+}
+
+main .talk-now img:not(.img-1, .img-2) {
+	align-self: center;
+}
+
+main .talk-now .img-1,
+main .talk-now .img-2 {
+	align-self: center;
+}
+
+main ul#tag-area {
+	position: relative;
+	display: grid;
+
+	gap: 15px;
+	grid-template-columns: repeat(auto-fit, 100px);
+
+	box-sizing: border-box;
+	max-width: 100%;
+	margin-top: 10px;
+}
+
+main #tag-area li {
+	white-space: nowrap;
+	overflow: hidden;
+	width: 100px;
+	height: 28px;
+	background-color: rgba(0, 0, 0, 0.26);
+	border-radius: 15px;
+	box-sizing: border-box;
+	padding: 0 7px;
+
+	line-height: 31px;
+	font-size: 13px;
+	color: rgb(161, 161, 161);
+	text-overflow: ellipsis;
+}
+
+main #subtitle {
+	text-align: justify;
+	margin-top: 5px;
+
+	color: white;
+	font-weight: 400;
+	font-size: 15px;
+	overflow-y: scroll;
+	height: max-content;
+	max-height: 20vh;
+}
+
+/*Para a barra de progresso do home*/
+main #home-progress-content {
+	padding: 0;
+	margin: 30px auto;
+	height: 18px;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.48);
+	border-radius: 15px;
+	overflow: hidden;
+}
+main #home-progress-bar {
+	background-color: var(--vermelho-principal);
+	height: 18px;
+	width: 0%;
+	display: flex;
+	border-radius: 15px;
+	overflow: visible;
+}
+
+main #home-progress-val {
+	display: flex;
+	float: right;
+	line-height: 18px;
+	margin: 0 5px 0 auto;
+	color: var(--color-white);
+}
+
+/*Botões do fundão, like, dislike, fav...*/
+#home-btns {
+	display: flex;
+	justify-content: space-between;
+}
+
+#home-btns button {
+	border: none;
+	background: none;
+	width: 85px;
+	height: 85px;
+	background-repeat: no-repeat;
+	border-radius: 50px;
+}
+
+#home-btns #retry {
+	background: url(./../images/retry-ico.svg) no-repeat center;
+	background-color: #7cd0ff;
+	width: 56px;
+	height: 56px;
+	margin: auto 0 0;
+}
+
+#home-btns #dislike {
+	background: url(./../images/cross-ico.svg) no-repeat center;
+	background-color: #b42937;
+}
+
+#home-btns #maybe {
+	color: white;
+	font-weight: 400;
+	font-size: 30px;
+}
+
+#home-btns #like {
+	background: url(./../images/like-ico.svg) no-repeat center;
+	background-color: #5ccb5f;
+}
+
+#home-btns #favorite {
+	background: url(./../images/star-ico.svg) no-repeat center;
+	background-color: #ffea79;
+	width: 56px;
+	height: 56px;
+	margin: auto 0 0;
+}
+
+/*DOCUMENTO carroussel.php*/
+main#carroussel {
+	margin: 0 auto;
+	max-width: 1000px;
+	width: 94%;
+	min-height: 100%;
+	height: max-content;
+	background: #fff;
+	padding: 32px 29px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: .375rem;
+	box-sizing: border-box;
+}
+
+main#carroussel figure#informacoes-perfil {
+	width: 100%;
+	height: max-content;
+	max-height: 340px;
+	display: flex;
+	padding: 15px 25px;
+	margin: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+
+	background: #fff;
+	box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+}
+
+main#carroussel figure#informacoes-perfil > img {
+	min-width: 272.02px;
+	height: 100%;
+	max-height: 310px;
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+main#carroussel figcaption#descricao-perfil {
+	margin: 2% 3.5% 0;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+main#carroussel figcaption#descricao-perfil h2 {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+main#carroussel figcaption#descricao-perfil p {
+	font-weight: 400;
+	font-size: 15px;
+	max-height: 144px;
+	line-height: 24px;
+	text-align: justify;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+main#carroussel figcaption#descricao-perfil p:first-of-type {
+	display: flex;
+	margin-bottom: 8px;
+}
+
+main#carroussel figcaption#descricao-perfil span:nth-child(1),
+main#carroussel .outras-pessoas span:first-of-type {
+	color: var(--vermelho-principal);
+	font-weight: bolder;
+	display: inline-block;
+	margin: 0 5px;
+	font-size: inherit;
+}
+
+main#carroussel .botoes {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	height: 80px;
+	align-items: center;
+}
+
+#informacoes-perfil button,
+.padrao .botoes button {
+	border: none;
+	background-repeat: no-repeat;
+	border-radius: 46px;
+	width: 46px;
+	height: 46px;
+	background-position: center;
+	background-size: 55%;
+}
+
+#carroussel button.dislike,
+.padrao button.dislike {
+	background-image: url(./../images/cross-ico.svg);
+	background-color: #b42937;
+	margin-right: 20px;
+}
+
+#carroussel button.like,
+.padrao button.like {
+	background-image: url(./../images/like-ico.svg);
+	background-color: #5ccb5f;
+}
+
+/*Estilização da div com as demais pessoas*/
+.outras-pessoas {
+	width: 100%;
+	margin: 25px auto;
+	height: max-content;
+	display: grid;
+	background: none;
+	grid-template-columns: repeat(auto-fit, 260px);
+	padding: 15px 0 0;
+	justify-items: end;
+	box-sizing: border-box;
+	row-gap: 25px;
+	column-gap: 1vmax;
+}
+
+.outras-pessoas .outro-perfil {
+	background-color: #fff;
+	box-sizing: border-box;
+	display: flex;
+	padding: 0 15px;
+	max-width: 270px;
+	min-width: 240px;
+	flex-direction: column;
+	width: 100%;
+	height: 416px;
+
+	background: #ffffff;
+	border: 1px solid #d4d4d4;
+	box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+}
+
+.outras-pessoas .outro-perfil img {
+	width: 100%;
+	height: 252.99px;
+	margin: 21px auto;
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+.outras-pessoas .outro-perfil .textual {
+	width: 223.58px;
+	margin: 0 auto;
+}
+
+.outras-pessoas button.conversar {
+	background: url(./../images/conversar-icon.svg);
+	padding: 0;
+	width: 25px;
+	height: 22.5px;
+	border: none;
+}
+
+.outro-perfil a {
+	margin: auto;
+}

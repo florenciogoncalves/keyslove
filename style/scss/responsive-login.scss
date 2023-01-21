@@ -1,0 +1,308 @@
+@media only screen and (max-width: 575.97px) {
+	#menu-logon {
+		#enter-box {
+			background: transparent !important;
+			color: #fff;
+			.facebook-continue,
+			.google-continue {
+				color: #fff;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 991.97px) {
+	/* ================= index.php ================= */
+	body {
+		display: grid;
+		grid-template-rows: 12vh auto auto;
+		box-sizing: border-box;
+
+		background-attachment: fixed;
+	}
+	body:not(.especify) {
+		grid-template-rows: 4% 1fr !important;
+	}
+
+	.form-cadastro-container {
+		align-items: baseline !important;
+		box-sizing: border-box;
+	}
+	.cadastro-layout {
+		margin: auto !important;
+		max-width: 95vw !important;
+	}
+
+	/* ================ login.php ================ */
+	.body-login.especify {
+		grid-template-rows: repeat(1, 1fr) !important;
+		#enter-box {
+			height: 100%;
+			border-radius: 0 !important;
+			background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg) no-repeat center, rgb(0, 0, 0);
+			background-attachment: fixed;
+			background-size: cover;
+			form.right-side {
+				width: 100%;
+				border-radius: 0 !important;
+
+				background: none;
+				.logo {
+				h1 {
+					color: #fff;
+					font-size: 1.2rem !important;
+					letter-spacing: .1rem;
+				}
+				}
+			}
+			.campos,
+			.others-options {
+				*:not(input) {
+					color: #fff;
+				}
+				input {
+					border: 1px solid #fff;
+					&:not([type="checkbox"]){
+						background: #fff;
+					}
+				}
+			}
+		}
+	}
+	input:not([type="checkbox"]),
+	button,
+	.criar-conta,
+	.continue {
+		height: 40px !important;
+		margin: 0 auto;
+	}
+	/*
+******************************
+***     cadastro-1 > 4     ***
+******************************
+*/
+
+	body:not(.especify) .header-logo {
+		height: 30px;
+	}
+
+	/* body:not(.especify) {
+    overflow: hidden !important;
+  } */
+
+	h1 {
+		font-size: 13.5pt !important;
+		margin-bottom: 0.7em !important;
+	}
+
+	.white-btn {
+		display: none;
+	}
+
+	.cadastro-layout {
+		width: max-content;
+		max-width: 420px;
+		display: flex !important;
+		justify-content: center !important;
+		padding: 25px !important;
+	}
+
+	.cadastro-layout input,
+	.cadastro-layout select {
+		border-radius: 4px !important;
+	}
+
+	.cadastro-layout label {
+		margin: 10px 0 0 !important;
+		font-size: 11pt !important;
+	}
+
+	#cadastro-4 label {
+		line-height: normal !important;
+		overflow-wrap: break-word !important;
+		inline-size: 200px !important;
+		text-indent: 0 !important;
+		padding: 10px !important;
+		width: max-content !important;
+	}
+
+	.checkbox {
+		font-size: 1pt !important;
+	}
+
+	.checkbox input[type="checkbox"] {
+		width: 20px !important;
+		height: 20px !important;
+		background-size: 17px !important;
+	}
+
+	.checkbox label {
+		margin: auto 0 !important;
+		font-size: 8pt !important;
+	}
+
+	.cadastro-layout input:not([type="checkbox"], [type="radio"], .pass-camp) {
+		width: 100% !important;
+		height: 36px !important;
+		font-size: 9pt !important;
+		padding: 0 10px !important;
+	}
+
+	/*
+  ****************************
+  **       Cadastro-2       **
+  ****************************
+  */
+
+	#form-cadastro2 input[type="text"] {
+		height: 40px !important;
+	}
+
+	#form-cadastro2 select {
+		height: 50px;
+		line-height: 50px;
+		font-size: 10pt;
+		background-size: 12px;
+		background-position: right 2vw center;
+	}
+
+	#form-cadastro2 .the-genre label {
+		margin: 2px !important;
+		height: 50px;
+		font-size: 10pt !important;
+	}
+
+	#form-cadastro2 button {
+		margin-top: 13px !important;
+		height: 50px;
+	}
+
+	/*
+****************************
+**       Cadastro-2       **
+****************************
+*/
+
+	#form-cadastro3 {
+		max-width: 340px;
+	}
+
+	#form-cadastro3 button {
+		margin: 20px 0 3px !important;
+		height: 40px;
+	}
+
+	/*
+******************************
+***       cadastro-4       ***
+******************************
+*/
+
+	#form-cadastro4 {
+		max-width: 340px !important;
+	}
+
+	#form-cadastro4 > div {
+		margin: 0;
+	}
+
+	#form-cadastro4 input[type="checkbox"],
+	#form-cadastro4 input[type="checkbox"]:checked {
+		width: 25px;
+		height: 25px;
+		border-radius: 4px;
+		margin: 5px 0;
+		background-size: 90% !important;
+	}
+
+	#form-cadastro4 label {
+		margin: auto 0 !important;
+	}
+
+	#form-cadastro4 button {
+		height: 40px;
+	}
+
+	/*
+******************************
+***       cadastro-5       ***
+******************************
+*/
+	#form-cadastro5 p {
+		text-align: center;
+	}
+
+	#form-cadastro5 img {
+		width: 100px !important;
+	}
+
+	#form-cadastro5 .social-cad-imgs {
+		justify-content: space-evenly;
+		width: 90%;
+		margin: 5px auto;
+	}
+
+	.add-photos-cad {
+		margin: 15px 0 !important;
+		width: 100% !important;
+		display: grid !important;
+		place-items: center center !important;
+		justify-content: center !important;
+	}
+
+	#form-cadastro5 .area-drop {
+		width: 90%;
+		max-width: 180px;
+		height: 140px;
+		text-align: center;
+		font-size: 9pt !important;
+	}
+
+	/*
+******************************
+***      cadastro-6        ***
+******************************
+*/
+
+	#form-cadastro6 {
+		width: 100%;
+		min-height: 360px;
+		box-sizing: border-box !important;
+	}
+
+	#form-cadastro6 > * {
+		max-width: 420px !important;
+	}
+
+	#form-cadastro6 #password-section {
+		margin: auto;
+	}
+	
+	#insert-password {
+		width: 100% !important;
+		box-sizing: border-box !important;
+	}
+
+
+	#form-cadastro6 > div:last-of-type {
+		margin-top: auto;
+		display: grid;
+		row-gap: 15px;
+	}
+
+	.messages h3 {
+		font-size: 2.4em !important;
+	}
+}
+
+/*Dispositivos médios(landscape tablets, 768px para cima)*/
+@media only screen and (min-width: 768px) {
+}
+
+/*Dispositivos largos(laptops/desktops, 992px para cima)*/
+@media only screen and (min-width: 992px) {
+}
+
+/*Extra dispositivos largos laptops e desktops de 1200px para cima*/
+@media only screen and (min-width: 1200px) {
+}

@@ -15,15 +15,15 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 3) {
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
 
   <link rel="stylesheet" href="./../style/bootstrap.min.css">
-  <link rel="stylesheet" href="./../style/cadastro.css" />
-  <link rel="stylesheet" href="./../style/responsive-login.css" />
+  <link rel="stylesheet" href="./../style/css/cadastro.css" />
+  <link rel="stylesheet" href="./../style/css/responsive-login.css" />
 </head>
 
 <body>
-  <header class="header-content">
-    <img src="./../images/Keyslov.svg" class="header-logo" />
-    <nav class="nav-btn">
-      <a href="../login.php"><button class="white-btn">Entrar</button></a>
+  <header class="header-content p-2 px-3 px-lg-4 row m-0">
+    <a class="col-6 p-0" href="./../index.php"><img src="./../images/Keyslov.svg" class="header-logo img-fluid" alt="Keyslov" /></a>
+    <nav class="header-controllers-container col-3 col-lg-2 row px-0 py-1">
+      <a class="white-btn rounded col-10" href="../login.php">Entrar</a>
     </nav>
   </header>
 
@@ -90,7 +90,6 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 3) {
     </div>
   </div>
 
-  <script src="./../script/resize-windown.js"></script>
 </body>
 
 </html>

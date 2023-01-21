@@ -1,0 +1,371 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+  font-family: "Poppins-local";
+  src: url(./../../font/Poppins/Poppins-Regular.ttf);
+}
+html {
+  font-size: calc(16px + 0.390625vw);
+  font-style: normal;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 100%;
+}
+html * {
+  font-family: "Poppins-local";
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: calc(18px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: calc(19px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 1280px) {
+  html {
+    font-size: calc(20px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 1536px) {
+  html {
+    font-size: calc(21px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 1920px) {
+  html {
+    font-size: calc(23px + 0.390625vw);
+  }
+}
+@media only screen and (min-width: 2560px) {
+  html {
+    font-size: calc(25px + 0.390625vw);
+  }
+}
+:root {
+  --vermelho-principal: #fc003b;
+  --bg-color: #292929;
+  --color-white: #fff;
+  --color-black: #000;
+  --status-user: #16c607;
+  --status-on: #16c607;
+}
+
+.btn {
+  box-sizing: border-box;
+  white-space: nowrap;
+  word-wrap: nowrap;
+}
+
+/*Botão criar conta*/
+.border-btn, .border-btn:hover, .border-btn:active {
+  border: 1px solid #fff;
+  color: #fff !important;
+  background: none;
+}
+.border-btn:hover {
+  opacity: 0.91;
+}
+
+/*Botão entrar*/
+.white-btn, .white-btn:hover, .white-btn:active {
+  border: none;
+  color: #000;
+  background-color: #fff;
+}
+.white-btn:hover {
+  opacity: 0.91;
+}
+
+.btn-register {
+  background-color: var(--vermelho-principal);
+  border: none;
+  font-weight: 500;
+  color: #fff !important;
+  letter-spacing: 0.2em;
+}
+
+/*Contâiner do header*/
+.header-content {
+  height: 3rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.6rem 0.75rem 0.8rem 1.5rem;
+  margin: 0;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.header-content .header-logo-content {
+  height: 100%;
+  box-sizing: border-box;
+}
+.header-content .header-logo-content .__header-logo {
+  object-fit: contain;
+  height: 1.45rem;
+}
+.header-content .header-controllers-container {
+  margin: 0;
+}
+.header-content .header-controllers-container > .btn {
+  height: auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 0.35rem;
+  font-size: 0.525rem;
+  font-weight: 500;
+}
+.header-content .header-controllers-container .lang-selector .btn {
+  padding: 0;
+  margin: 0;
+  background: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.header-content .header-controllers-container .lang-selector .__lang-br {
+  background-image: url(./../../images/br-flag.svg);
+}
+.header-content .header-controllers-container .lang-selector .__lang-in {
+  background-image: url(./../../images/eua-flag.png);
+}
+
+@media only screen and (max-width: 768px) {
+  .header-content {
+    padding: 0.5rem;
+  }
+  .header-content .header-controllers-container .lang-selector {
+    align-items: center;
+  }
+  .header-content .header-controllers-container .lang-selector .btn {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 991.97px) {
+  .header-content .header-controllers-container {
+    gap: 0.4rem;
+  }
+  .header-content .header-controllers-container .lang-selector .btn {
+    background-position: center left;
+  }
+}
+body {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg) no-repeat center, var(--bg-color);
+  background-attachment: fixed;
+  background-size: cover !important;
+}
+body > footer + div:last-of-type {
+  display: none !important;
+}
+
+.row {
+  margin: 0;
+}
+
+#menu-logon {
+  height: max-content;
+  width: 100%;
+  margin: auto;
+}
+#menu-logon #enter-box {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  box-sizing: border-box;
+  background: #fff;
+}
+#menu-logon #enter-box ._title {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 0.4em;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+#menu-logon #enter-box ._subtitle {
+  position: relative;
+  font-size: 0.525rem;
+  text-align: center;
+}
+#menu-logon #enter-box button,
+#menu-logon #enter-box a,
+#menu-logon #enter-box .__span-ou {
+  font-size: 0.575rem !important;
+  font-weight: 500;
+}
+#menu-logon #enter-box button.__span-ou,
+#menu-logon #enter-box a.__span-ou,
+#menu-logon #enter-box .__span-ou.__span-ou {
+  margin: 0 auto;
+  font-weight: 400;
+}
+#menu-logon #enter-box button.__a-login,
+#menu-logon #enter-box a.__a-login,
+#menu-logon #enter-box .__span-ou.__a-login {
+  width: max-content;
+  text-decoration: underline;
+  color: var(--vermelho-principal);
+}
+#menu-logon #enter-box button.__a-login:hover,
+#menu-logon #enter-box a.__a-login:hover,
+#menu-logon #enter-box .__span-ou.__a-login:hover {
+  opacity: 0.7;
+}
+#menu-logon #enter-box .methods-continue {
+  position: relative;
+}
+#menu-logon #enter-box .continue {
+  height: 2.25rem;
+  display: block;
+  margin: auto;
+  border-radius: 6px;
+  border: solid 1px var(--vermelho-principal);
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.625em;
+  letter-spacing: 5px;
+}
+#menu-logon #enter-box .continue.google-continue {
+  background: url(./../../images/Logo\ google.png) no-repeat center left 1.15rem;
+}
+#menu-logon #enter-box .continue.facebook-continue {
+  background: url(./../../images/Logo\ facebook.png) no-repeat center left 1.15rem;
+}
+#menu-logon #enter-box .continue.btn-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#menu-logon .messages {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#menu-logon .messages h3 {
+  color: #fff;
+  font-weight: 400;
+  font-family: "Inter";
+  font-weight: 300;
+  font-size: 1.65rem;
+  line-height: 3em;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.footer {
+  height: max-content;
+  width: 100%;
+  background: #fd003b no-repeat;
+  box-sizing: border-box;
+  display: flex;
+}
+.footer .img-links .logo-container {
+  display: flex;
+  width: 100%;
+  height: max-content;
+}
+.footer .img-links .social-links {
+  justify-content: space-between;
+  height: auto;
+}
+.footer .img-links .social-links a {
+  padding: 0;
+  width: max-content;
+}
+.footer .footer-links {
+  margin: auto;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  box-sizing: border-box;
+}
+.footer .footer-links .item-footer {
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+}
+.footer .footer-links .item-footer a {
+  font-size: 0.575rem;
+  text-decoration: none;
+}
+
+ul .item-footer a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer p {
+  display: block;
+  width: 100%;
+  height: 31px;
+  background: #ffffff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 31px;
+  text-align: center;
+  color: var(--color-black);
+}
+
+/*O scrollbar*/
+textarea::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  appearance: none;
+  width: 6px;
+  border-radius: 15px;
+}
+
+textarea::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background-color: none;
+}
+
+textarea::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background: rgba(133, 133, 133, 0.76);
+  border-radius: 15px;
+  border: 0.7px solid rgba(0, 0, 0, 0.336);
+}
+
+/*Para links*/
+a:visited {
+  color: currentColor;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  background: #000;
+}
+footer ._brand-mkti {
+  margin-bottom: 0;
+}
+
+footer > p {
+  height: 31px;
+  background: #fff;
+  bottom: 0;
+}
+
+/*# sourceMappingURL=logon.css.map */
