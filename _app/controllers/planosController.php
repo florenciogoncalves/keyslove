@@ -15,12 +15,12 @@ $alerts = [];
 
 $FILTER = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-// if (in_array("", $FILTER)) {
-//     $alerts[] = "Preencha Todos os campos!";
-//     $_SESSION['error'] = $alerts;
-//     header("Location: ../../home/metodos-pagamento.php");
-//     die;
-// }
+if (in_array("", $FILTER)) {
+    $alerts[] = "Preencha Todos os campos!";
+    $_SESSION['error'] = $alerts;
+    header("Location: ../../home/metodos-pagamento.php");
+    die;
+}
 
 
 
@@ -31,9 +31,10 @@ $ano = filter($_POST['ano']);
 $cvv = filter($_POST['cvv']);
 $parcelas = filter($_POST['parcelas']);
 
-// // echo $_POST['card-flag'];
-print_r($_REQUEST);
 
-// ((new profileModel()))->savePaymentMethod($user, $cardNumber, $cardTitular, $mes, $ano, $cvv, $parcelas);
-$_SESSION['return'] = 'Metodo de Pagamento cadastrado com sucesso!';
-// header("Location: ../../home/metodos-pagamento.php");
+if (((new profileModel()))->savePaymentMethod($user, $cardNumber, $cardTitular, $mes, $ano, $cvv, $parcelas)) {
+    $_SESSION['return'] = 'Metodo de Pagamento cadastrado com sucesso!';
+    header("Location: ../../home/metodos-pagamento.php");
+} else {
+    $_SESSION['fail'] = 'Não foi possível salvar o seu metodo de pagamento! Tente novamente.';
+}

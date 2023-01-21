@@ -145,6 +145,9 @@ if (!$_SESSION['username']) {
         foreach ($getterPhoto as $item2) {
           $_SESSION['nameUser'] = $item2['user'];
           $Modal = $getLiked->User('tb_photos', 'user', $item2['user'], '=');
+
+
+          
         }
 
 

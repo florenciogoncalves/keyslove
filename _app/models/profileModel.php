@@ -106,7 +106,7 @@ class profileModel extends connect
 
 
 
-    public function UserData(string $entity = 'tb_cadastroConta'): iterable|object
+    public function UserData(string $entity = 'tb_cadastroConta'): iterable|object|bool
     {
         if (isset($_SESSION['username_id'])) {
             $id = $_SESSION['username_id'];

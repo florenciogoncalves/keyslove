@@ -34,7 +34,7 @@ if (isset($_POST['btn-submit'])) {
     $senha = filter_var($_POST['password'], FILTER_DEFAULT);
 
 
-    if ((new userModel)->VerifyUser($email, $telefone)) {
+    if ((new userModel)->VerifyUser($email)) {
 
         $alerts[] = "Desculpe! Mas já existe um usuário cadastro com este e-mail :(";
         $_SESSION['error'] = $alerts;
@@ -43,6 +43,7 @@ if (isset($_POST['btn-submit'])) {
     }
 
     ((new userModel()))->cadastro1($email, $telefone, $senha);
+    $_SESSION['userEmail'] = $email;
     $_SESSION['step'] = 1;
     header("Location: ../../cadastro/cadastro-2.php");
 }

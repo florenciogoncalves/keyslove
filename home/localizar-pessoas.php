@@ -193,9 +193,35 @@ if (!$_SESSION['username']) {
       foreach ($allUsers as $Users) {
         $usersPhoto = $model->User('tb_photos', 'user', $Users['nome']);
 
+        if ($Users['nome'] == $_SESSION['username']) {
+          echo "<ul class='list'>";
+          echo "
+          <ul class='list'>
+          <li>
+          <img src='./../_storage/images/{$usersPhoto['photo']}' />
+          <section>
+            <article>
+              <div>
+                <div class='status-div'></div>
+                <span>{$Users['nome']}</span>
+              </div>
+              <ul>
+                <li>Drinks</li>
+                <li>Drinks</li>
+                <li>Drinks</li>
+              </ul>
+            </article>
+          </section>
+        </li>
 
-        echo "<ul class='list'>";
-        echo "
+      </ul>
+
+        ";
+          echo "</ul>";
+        } else {
+
+          echo "<ul class='list'>";
+          echo "
           <ul class='list'>
           <li>
           <img src='./../_storage/images/{$usersPhoto['photo']}' />
@@ -222,8 +248,10 @@ if (!$_SESSION['username']) {
 
         
         ";
-        echo "</ul>";
+          echo "</ul>";
+        }
       }
+
 
 
       ?>
