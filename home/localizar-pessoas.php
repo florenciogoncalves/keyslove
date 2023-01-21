@@ -17,6 +17,7 @@ if (!$_SESSION['username']) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Localizar pessoas &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="./../style/bootstrap.min.css">
   <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
 
@@ -160,7 +161,7 @@ if (!$_SESSION['username']) {
       ?>
       <h1 class="title">Localizar pessoas</h1>
 
-      <section class="search">
+      <section class="search gap-3 gap-sm-4 gap-lg-5">
         <form action="./../_app/controllers/searchPeopleController.php" method="post">
 
           <div class="search-field">
@@ -169,7 +170,7 @@ if (!$_SESSION['username']) {
           </div>
         </form>
 
-        <button>Todos</button>
+        <button class="__filter-btn">Todos</button>
       </section>
 
 
