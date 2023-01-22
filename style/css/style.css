@@ -119,8 +119,9 @@ textarea {
 
 #menu-esquerdo ~ main,
 #menu-esquerdo ~ div {
-  height: 100%;
-  max-height: 100%;
+  height: max-content;
+  min-height: 100%;
+  max-width: 30rem;
   display: flex;
   float: right;
   overflow-y: hidden;
@@ -146,7 +147,7 @@ textarea {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: auto max-content;
-  padding: 0;
+  padding: 0.15rem;
   position: relative;
 }
 
@@ -253,38 +254,34 @@ textarea {
   flex-direction: column;
   height: 100%;
   margin: 0;
-  padding-left: 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  padding: 0.275rem 0;
+  border-bottom-left-radius: 0.45rem;
+  border-bottom-right-radius: 0.45rem;
   background-color: #fff;
 }
 
 #menu-left li {
   box-sizing: border-box;
   height: 100%;
-  line-height: 2.4em;
+  line-height: 1.57rem;
   padding: 0;
-  text-indent: 80px;
-  background-size: 1.25em;
-  background-repeat: no-repeat;
-  background-position: 2em center;
-  transition: all ease-in 250ms;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 0.625rem;
   color: #333;
+  text-indent: 3.2rem;
+  background-size: 0.8rem;
+  background-repeat: no-repeat;
+  background-position: 1.45rem center;
+}
+#menu-left li a {
+  color: currentColor;
 }
 
 .pagina-selecionada {
   background-color: #dddcdc;
-  background-size: 1.25em;
   background-image: inherit;
   background-repeat: no-repeat;
-  background-position: 2em center;
-}
-
-#menu-left li:hover {
-  background-position: 40px center;
-  text-indent: 90px;
+  background-position: inherit;
 }
 
 /*Aplicando as imagens de fundo das opcões do menu*/
@@ -437,25 +434,24 @@ textarea {
 
 /*Pessoas na região*/
 #menu-esquerdo #div-left > a {
-  margin-top: auto;
+  margin-top: 0.775rem;
 }
 
 #peoples-left {
   height: max-content;
-  padding: 0.5rem;
+  padding: 0.775rem 0.6rem 0.5rem;
   box-sizing: border-box;
   background-color: var(--color-white);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-be;
-  margin-top: 3%;
 }
 
 #peoples-left h4 {
   font-weight: 400;
   text-align: justify;
-  font-size: 18px;
+  font-size: 0.75rem;
   margin-bottom: 0.5rem;
   width: 100%;
   background: url(./../../images/right-arrow.svg) no-repeat center right 15px;
@@ -466,14 +462,16 @@ textarea {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.35rem;
+  gap: 0.45rem;
+  padding: 0 0.15rem;
+  margin-top: 0.2rem;
   justify-content: space-between;
   justify-items: center;
   padding-bottom: 0.25rem;
 }
 
 #peoples-left img {
-  height: 5rem;
+  height: 4.775rem;
   width: 100%;
   object-fit: cover !important;
   box-shadow: 0 0 1px black;
@@ -740,8 +738,7 @@ input::-webkit-calendar-picker-indicator {
 main#mensagens {
   display: grid;
   grid-template-columns: 34% 1fr;
-  height: calc(100vh - 10px);
-  margin: auto;
+  margin: 0 auto;
   width: 100%;
 }
 
@@ -1249,7 +1246,7 @@ main#mensagens .chat {
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 90%;
-  padding: 32px 29px;
+  padding: 1.25rem;
   margin: 0 20px;
 }
 
@@ -1375,54 +1372,53 @@ main#mensagens .chat {
 /*localizar-pessoas.php*/
 #pessoas-regiao .search {
   display: grid;
-  grid-template-columns: 70% 20%;
-  grid-auto-flow: column;
+  height: 1.65rem;
+  grid-template-columns: 1fr 4.5rem;
   justify-content: space-between;
   margin: 20px 0 40px;
 }
-
-#pessoas-regiao .search-field {
-  width: 600px;
-  height: 51px;
+#pessoas-regiao .search .search-field {
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
   display: flex;
   border: 1px solid #31302e;
-  border-radius: 10px;
+  border-radius: 0.2rem;
   overflow: hidden;
 }
-
-#pessoas-regiao .search-field input[type=search] {
+#pessoas-regiao .search .search-field input[type=search] {
   height: 100%;
   width: 100%;
   display: inline-block;
-  font-size: 16px;
-  padding: 10px 15px;
+  padding: 0.25rem 0.37rem;
   border: none;
   outline: none;
+  font-size: 0.65rem;
+  font-weight: 400;
 }
-
-#pessoas-regiao .search-field button {
-  height: 35px;
-  margin: auto;
+#pessoas-regiao .search .search-field button {
+  height: auto;
+  margin: 0.25rem;
+  margin-right: 0.37rem;
   display: inline-block;
-  width: 45px;
+  width: 1.25rem;
   border: none;
-  margin-right: 10px;
+  padding-right: 0.75rem;
+  cursor: pointer;
   background: url(./../../images/Search.svg) no-repeat center;
+  background-size: contain;
 }
-
-/*para Filtros*/
-#pessoas-regiao .search > button {
+#pessoas-regiao .search .__filter-btn {
   width: 100%;
-  height: 51px;
-  left: 1153px;
-  top: 133px;
-  border: 1px solid #000000;
-  background: url(./../../images/Filter.svg) no-repeat center right 20px;
-  border-radius: 10px;
+  height: 100%;
   box-sizing: border-box;
-  padding-right: 20px;
-  font-size: 20px;
+  border-radius: 0.2rem;
+  border: 1px solid #000000;
+  font-size: 0.675rem;
+  text-align: start;
+  text-indent: 0.25rem;
+  background: url(./../../images/Filter.svg) no-repeat center right 0.5rem;
+  background-size: 1rem;
 }
 
 /*planos.php*/
@@ -1749,9 +1745,10 @@ input[type=number]::-webkit-inner-spin-button {
 #favoritos > nav label {
   border-bottom: 3px solid #999;
   width: 100%;
-  font-size: 22px;
+  font-size: 0.7rem;
   text-align: center;
-  padding-bottom: 5px;
+  padding-bottom: 0px;
+  cursor: pointer;
 }
 
 #favoritos > nav input[type=radio] {
