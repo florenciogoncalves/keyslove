@@ -1,9 +1,9 @@
 <?php
 
-//validate a number with php
+
 
 require_once __DIR__ . "./../_app/models/profileModel.php";
-// session_start();
+session_start();
 if (!$_SESSION['username']) {
   header("Location: ../");
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";

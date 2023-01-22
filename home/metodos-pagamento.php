@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "./../_app/models/profileModel.php";
-// session_start();
+session_start();
 
 ?>
 <!DOCTYPE html>
