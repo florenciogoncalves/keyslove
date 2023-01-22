@@ -21,15 +21,15 @@ if ($support->count() <= 0) {
   $support->saveInfoVerification($userCode);
   $body = "
 <body>
-<h1 style='text-align: center'>A Equipa do Keyslove</h1>
+<h1 style='text-align: center'>A Equipa do <b style='color: #fc003b'>Keyslove</b></h1>
 <p></p>
 <div style='text-align: center'>
 <p>Olá Sr(a) <b>{$user}</b> O seu código de confirmação é : {$userCode}</p>
 </div>
 </body>
 ";
-  // $mailer = new Email();
-  // $mailer->bootstrap('Ative a sua conta', $body, $emailUser, $user)->send();
+   $mailer = new Email();
+   $mailer->bootstrap('Ative a sua conta', $body, $emailUser, $user)->send();
   // echo $mailer->getMessage();
 } else {
   $support->verifyLimit();
