@@ -85,7 +85,7 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 3) {
           <label for="escolha-6" name="escolha-6" value="Amizade">Amizade</label>
         </div>
 
-        <button class="continue btn-register" type="submit" name="btn" value="btn">CADASTRAR</button>
+        <button class="continue btn-register mt-2" type="submit" name="btn" value="btn">CADASTRAR</button>
       </form>
     </div>
   </div>

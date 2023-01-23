@@ -62,24 +62,24 @@ if (!isset($_SESSION['step'])) {
         <h1>Cadastro de conta</h1>
         <label for="">Nome</label>
         <input type="text" placeholder="Nome exemplo" name="nome" required />
-        <label for="">Data de nascimento</label>
+        <label class="mt-2">Data de nascimento</label>
         <div class="the-date">
-          <select class="rounded text-center d-flex continue select-placeholder" id="born-day" required name="dia-nascimento">
+          <select class="text-center d-flex continue select-placeholder" id="born-day" required name="dia-nascimento">
             <option selected hidden disabled value="">01</option>
           </select>
 
-          <select class="rounded text-center d-flex continue select-placeholder" id="born-month" required name="mes-nascimento">
+          <select class="text-center d-flex continue select-placeholder" id="born-month" required name="mes-nascimento">
             <option selected hidden disabled value="">01</option>
           </select>
 
-          <select class="rounded text-center d-flex continue select-placeholder" id="born-year" required name="ano-nascimento">
+          <select class="text-center d-flex continue select-placeholder" id="born-year" required name="ano-nascimento">
             <option selected hidden disabled value="" id="first-year">
               e
             </option>
           </select>
         </div>
 
-        <label for="" style="margin-top: 20px">Gênero</label>
+        <label class="mt-2">Gênero</label>
 
         <div class="the-genre">
           <input type="radio" name="genre" id="male" value="Masculino" required />
@@ -92,7 +92,7 @@ if (!isset($_SESSION['step'])) {
           <label for="other">Outro... </label>
         </div>
 
-        <button class="continue btn-register rounded" name="btn-submit" value="btn">CADASTRAR</button>
+        <button class="continue btn-register mt-2 mt-md-3" name="btn-submit" value="btn">CADASTRAR</button>
       </form>
 
       <script src="./../script/cadastro.js"></script>

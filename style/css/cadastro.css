@@ -128,7 +128,7 @@ html * {
   background-image: url(./../../images/br-flag.svg);
 }
 .header-content .header-controllers-container .lang-selector .__lang-in {
-  background-image: url(./../../images/eua-flag.png);
+  background-image: url(./../../images/eua-flag.svg);
 }
 
 @media only screen and (max-width: 768px) {
@@ -196,7 +196,7 @@ body > footer + div:last-of-type {
 #menu-logon #enter-box button,
 #menu-logon #enter-box a,
 #menu-logon #enter-box .__span-ou {
-  font-size: 0.575rem !important;
+  font-size: 0.575rem;
   font-weight: 500;
 }
 #menu-logon #enter-box button.__span-ou,
@@ -221,26 +221,33 @@ body > footer + div:last-of-type {
   position: relative;
 }
 #menu-logon #enter-box .continue {
-  height: 2.25rem;
+  height: max-content;
   display: block;
   margin: auto;
   border-radius: 6px;
   border: solid 1px var(--vermelho-principal);
   text-align: center;
   font-weight: 500;
-  font-size: 0.625em;
   letter-spacing: 5px;
 }
-#menu-logon #enter-box .continue.google-continue {
-  background: url(./../../images/Logo\ google.png) no-repeat center left 1.15rem;
+#menu-logon #enter-box .continue:not(.btn-register) {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  align-items: center;
+  padding: 0.35rem 1rem;
+  font-size: 0.45rem;
+  background: none;
 }
-#menu-logon #enter-box .continue.facebook-continue {
-  background: url(./../../images/Logo\ facebook.png) no-repeat center left 1.15rem;
+#menu-logon #enter-box .continue:not(.btn-register) img {
+  width: 1.35rem;
+  height: 1.35rem;
 }
 #menu-logon #enter-box .continue.btn-register {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 0.5rem;
+  line-height: 3;
 }
 #menu-logon .messages {
   margin: auto;
@@ -351,6 +358,7 @@ a {
 footer {
   display: flex;
   flex-direction: column;
+  height: max-content;
   bottom: 0;
   background: #000;
 }
@@ -399,7 +407,7 @@ footer > p {
 }
 
 html {
-  height: 100% !important;
+  height: 100%;
 }
 
 body {
@@ -415,6 +423,7 @@ body {
 
 .header-content {
   justify-content: space-between;
+  height: 2.75rem;
 }
 .header-content .header-controllers-container {
   justify-content: end;
@@ -423,17 +432,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-}
-
-form .btn-register {
-  padding: 0.5rem;
-  border-radius: 0.375rem;
+  width: max-content;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 0.5rem;
 }
 
 input,
 select {
   outline: none !important;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: max-content;
+  font-size: 0.6rem;
+  line-height: 3.1;
 }
 
 .form-cadastro-container {
@@ -442,314 +457,244 @@ select {
   align-items: center;
 }
 
-/*LAYOUT DA CAIXA DE CADASTRO*/
+/* ================= CADASTRO.php ================= */
 .cadastro-layout {
   position: relative;
-  width: max-content;
+  width: 23rem;
+  min-width: 320px;
   height: max-content;
   margin: auto;
-  background: #fff;
   box-shadow: 0px 0px 116px rgba(0, 0, 0, 0.26);
-  border-radius: 8px;
-  padding: 25px 70px;
+  border-radius: 0.3rem;
+  padding: 0.9rem 2.2rem;
   box-sizing: border-box;
+  background: #fff;
 }
-
 .cadastro-layout h1 {
   text-align: center;
   font-weight: 500;
   letter-spacing: 5px;
-  font-size: 1.15rem;
-  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
 }
-
 .cadastro-layout p {
   height: max-content;
 }
-
-/*Para mensagens de erro*/
-.erro-preenchimento {
-  font-size: 11px;
-  text-indent: 10px;
-  display: none;
-  color: var(--vermelho-principal);
-}
-
-.cadastro-layout form,
-#form-cadastro1,
-#form-cadastro5 {
+.cadastro-layout form {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 420px;
-  max-width: 480px;
+  width: 100%;
+  box-sizing: border-box;
   margin: auto;
 }
-
 .cadastro-layout form label:not(.the-genre) {
-  margin: 10px 0 6px;
-  font-size: 16px;
+  margin: 0.3rem 0 0.1rem;
+  font-size: 0.57rem;
 }
-
 .cadastro-layout form input:not([type=checkbox], .pass-camp) {
   box-sizing: border-box;
   margin: auto;
-  min-width: 100%;
-  height: 40px;
-  padding: 0 15px;
+  width: 100%;
+  height: max-content;
+  padding: 0 0.5rem;
   background: rgba(255, 255, 255, 0.1);
   border: 0.901502px solid #000000;
-  border-radius: 7.21202px;
+  border-radius: 0.2rem;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 56px;
+  font-size: 0.57rem;
+  line-height: 2.75;
 }
-
-.not-correct {
+.cadastro-layout .erro-preenchimento {
+  display: none;
+  color: var(--vermelho-principal);
+  margin: 0;
+  font-size: 0.45rem;
+  text-indent: 10px;
+}
+.cadastro-layout .not-correct {
   border: 2px solid var(--vermelho-principal) !important;
 }
-
-/*Botões dentro da caixa de cadastro*/
-.btn-register {
-  min-width: 100%;
+.cadastro-layout .btn-register {
+  height: max-content;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.5rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-/*ESTILIZANDO O ARQUIVO 'cadastro-1.php'*/
+/* ================ CADASTRO-1.php ================ */
 #form-cadastro1 .checkbox {
   display: flex;
   margin: 16px 0;
 }
-
 #form-cadastro1 .checkbox label {
   margin: 0;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
-
-/*Estilização do checkbox personalizado*/
-#form-cadastro1 input[type=checkbox]#accept-terms,
-#form-cadastro1 input[type=checkbox]#accept-terms:checked {
+#form-cadastro1 input[type=checkbox]#accept-terms, #form-cadastro1 input[type=checkbox]#accept-terms:checked {
   position: relative;
   appearance: none;
   cursor: pointer;
-  width: 25px;
+  width: 0.775rem;
   margin-right: 10px;
-  height: 25px;
-  border: 1px solid #000000;
-  border-radius: 7x;
+  height: 0.775rem;
+  border: 1px solid #000;
+  border-radius: 0.2rem;
 }
-
-#form-cadastro1 input[type=checkbox]#accept-terms:checked {
+#form-cadastro1 input[type=checkbox]#accept-terms:checked::after {
+  content: " ";
+  position: absolute;
+  bottom: 0.135rem;
+  left: 0.135rem;
+  height: 0.7rem;
+  width: 0.7rem;
   background: url(./../../images/confirm.svg) no-repeat center;
+  background-size: contain;
 }
 
-/*  Estilizando o form do arquivo cadastro-2.php*/
-#form-cadastro2 input[type=text] {
-  padding: 25px;
-  font-size: 16px;
-}
-
-.the-date {
+/* ================ CADASTRO-2.php ================ */
+#form-cadastro2 .the-date {
   display: grid;
   justify-content: space-between;
-  grid-template-columns: 29% 29% 37%;
+  grid-template-columns: 25% 25% 1fr;
+  gap: 1.25rem;
+  box-sizing: border-box;
   height: max-content;
 }
-
-#form-cadastro2 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  height: max-content;
-  font-size: 16px;
-  line-height: 3.5em;
-}
-
-#born-day,
-#born-month,
-#born-year {
-  background: url(./../../images/arrow-down.svg) no-repeat center right 15px;
+#form-cadastro2 .the-date #born-day,
+#form-cadastro2 .the-date #born-month,
+#form-cadastro2 .the-date #born-year {
+  background: url(./../../images/arrow-down.svg) no-repeat center right 0.57rem;
+  background-size: 0.45rem;
   box-sizing: border-box;
   margin: 0;
   width: 100%;
-  border: 0.901502px solid #000000;
+  height: max-content;
+  border: 0.901502px solid #000;
+  border-radius: 0.2rem;
   font-weight: 400;
-  font-size: 15px;
 }
-
-.disselect {
+#form-cadastro2 .the-date .disselect {
   color: #00f000;
 }
-
-/*Para a div de gênero*/
 #form-cadastro2 .the-genre {
   display: grid;
-  grid-template-columns: 31% 31% 31%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
   margin-bottom: 10px;
   max-height: 56px;
   justify-content: space-between;
   color: rgba(0, 0, 0, 0.65);
 }
-
-#form-cadastro2 .the-genre > div {
-  margin: 0;
-}
-
-.the-genre label {
+#form-cadastro2 .the-genre label {
   display: flex;
   position: relative;
   width: 100%;
-  height: 50px;
-  background: #000;
+  height: max-content;
   align-items: center;
   justify-content: center;
   margin: 0;
   box-sizing: border-box;
-  z-index: 1;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.1);
-  border: 0.901502px solid #000000;
-  border-radius: 7.21202px;
+  border: 0.901502px solid #000;
+  border-radius: 0.2rem;
+  line-height: 3.1;
 }
-
-#form-cadastro2 input[type=radio],
-#form-cadastro2 input[type=radio]:checked {
+#form-cadastro2 .the-genre input[type=radio],
+#form-cadastro2 .the-genre input[type=radio]:checked {
   display: none;
 }
-
-#form-cadastro2 input[type=radio]:checked + label {
-  transition: all 100ms ease-in-out;
+#form-cadastro2 .the-genre input[type=radio]:checked + label,
+#form-cadastro2 .the-genre input[type=radio]:checked:checked + label {
   border: 0.901502px solid var(--vermelho-principal);
 }
 
-#form-cadastro2 .the-genre span {
-  position: absolute;
-  width: 135px;
-  height: 56px;
-  line-height: 56px;
-  z-index: 0;
-}
-
-#form-cadastro2 button {
-  height: 60px;
-}
-
-/*Baixar um pouco o botão 'Cadastrar'*/
-#form-cadastro2 .btn-register {
-  margin-top: 30px;
-}
-
-/*Baixar um pouco o botão 'Cadastrar do arquivo 'cadastro-3.php'*/
-#form-cadastro3 .btn-register {
-  margin-top: 65px;
-}
-
-/*Formatando o arquivo 'cadastro-4.php'*/
+/* ================ CADASTRO-4.php ================ */
 #form-cadastro4 h1 {
   margin-bottom: 30px;
 }
-
 #form-cadastro4 > div {
   display: flex;
   height: max-content;
-  margin: 10px 0;
+  margin: 0;
 }
-
-#form-cadastro4 input[type=checkbox],
-#form-cadastro4 input[type=checkbox]:checked {
+#form-cadastro4 input[type=checkbox], #form-cadastro4 input[type=checkbox]:checked {
   outline: none;
   appearance: none;
   box-sizing: border-box;
-  width: 35px;
-  height: 35px;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: auto 0;
+  margin-left: 0.5rem;
   background: rgba(217, 217, 217, 0.2);
   border: 1.26901px solid var(--vermelho-principal);
-  border-radius: 12.6901px;
+  border-radius: 0.2rem;
 }
-
 #form-cadastro4 input[type=checkbox]:checked {
   background-image: url(./../../images/Close_round.png);
+  background-size: contain;
   background-position: center;
 }
-
 #form-cadastro4 label {
   margin: 0;
-  line-height: 38.07px;
-  text-indent: 20px;
+  line-height: 3.2;
+  text-indent: 0.775rem;
 }
 
-#form-cadastro4 button {
-  margin-top: 25px;
-}
-
-/*Trabalhando no arquivo 'cadastro-5.php' */
+/* ================ CADASTRO-5.php ================ */
 #form-cadastro5 p {
-  font-size: 14px;
+  font-size: 0.57rem;
   margin: auto;
 }
-
 #form-cadastro5 .social-cad-imgs {
   display: flex;
-  justify-content: space-evenly;
-  margin: 20px 0;
+  box-sizing: border-box;
 }
-
-#form-cadastro5 img {
-  width: 130px;
-}
-
 #form-cadastro5 .add-photos-cad {
   display: grid;
-  width: 120%;
+  width: 100%;
   grid-template-columns: 48% 48%;
   align-items: center;
   justify-content: space-between;
-  margin-left: -10%;
-  margin-bottom: 3%;
+  margin: 0 auto;
 }
-
-.area-drop {
-  height: 156px;
+#form-cadastro5 .area-drop {
+  height: 6rem;
   background: rgba(51, 51, 51, 0.17);
-  border: 2px dashed #333333;
-  border-radius: 12px;
+  border: 1.8px dashed #333333;
+  border-radius: 0.6rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.area-drop input[type=file] {
+#form-cadastro5 .area-drop input[type=file] {
   height: 100% !important;
   opacity: 0;
 }
-
-.area-drop span {
+#form-cadastro5 .area-drop span {
   position: absolute;
-}
-
-#form-cadastro5 button {
-  height: 50px;
 }
 
 /*Estilizando o arquivo 'cadastro-6.php'*/
 #form-cadastro6 {
-  width: max-content;
+  width: 100%;
 }
 #form-cadastro6 .__title {
   width: max-content;
   font-weight: 500;
-  font-size: 1.3rem;
   letter-spacing: 0.2rem;
 }
 #form-cadastro6 .__subtitle {
-  font-size: 0.67rem;
+  font-size: 0.57rem;
   text-align: center !important;
   overflow-wrap: break-word;
 }
@@ -758,32 +703,25 @@ select {
   position: relative;
   justify-content: space-between;
 }
-
-.pass-camp {
+#form-cadastro6 .pass-camp {
   box-sizing: border-box;
   border: none;
   background: url(./../../images/pass-camp.svg) no-repeat bottom;
   background-size: contain;
   text-align: center;
   color: rgba(252, 0, 59, 0.52);
-  font-size: 2.75rem;
+  font-size: 2.7rem;
   font-weight: bolder;
   outline: none;
 }
-
-.pass-camp:focus {
+#form-cadastro6 .pass-camp:focus {
   outline: hidden;
-}
-
-#form-cadastro6 button {
-  height: 55px;
 }
 
 /*Para o primeiro btn-register com a mensagem enviar*/
 #form-cadastro6 .btn-register:nth-child(3) {
   display: block;
   position: relative;
-  margin: 30px 0;
 }
 
 /*Para o segundo btn-register com a mensagem reenviar*/

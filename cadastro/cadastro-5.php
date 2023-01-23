@@ -57,14 +57,14 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 4) {
         <h1>Adicione duas Fotos</h1>
         <p>Adicione suas fotos com o limite de 15 fotos por perfil</p>
 
-        <div class="social-cad-imgs">
-          <img src="./../images/facebook-social.svg" />
-          <img src="./../images/instagram-social.svg" />
+        <div class="social-cad-imgs col-9 justify-content-evenly gap-2 mx-auto mt-2">
+          <img class="col-4 img-fluid" src="./../images/facebook-social.svg" />
+          <img class="col-4 img-fluid" src="./../images/instagram-social.svg" />
         </div>
 
 
 
-        <section class="add-photos-cad">
+        <section class="add-photos-cad my-3">
           <label id="photo1" class="area-drop">
             <input type="file" name="img-1" id="photo1" required />
 
@@ -76,7 +76,8 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 4) {
             <span>Arraste sua foto</span>
           </label>
         </section>
-        <button class="continue btn-register" type="submit">
+
+        <button class="continue btn-register col-11 mx-auto" type="submit">
           Adicionar Fotos
         </button>
       </form>

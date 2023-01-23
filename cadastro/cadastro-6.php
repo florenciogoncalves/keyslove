@@ -117,8 +117,8 @@ if ($support->count() <= 0) {
                           } ?><br>
         </p>
 
-        <section id="password-section">
-          <div id="insert-password" class="row gap-1 gap-md-1 gap-lg-2">
+        <section id="password-section" class="col-11 mx-auto mt-2">
+          <div id="insert-password" class="row gap-2 gap-lg-2">
             <!-- Este input recebe o valor completo da password-otp que é inserida por fatias -->
             <input type="password" id="otp-pass" name="otp-pass" style="display: none">
 
@@ -129,7 +129,7 @@ if ($support->count() <= 0) {
           </div>
         </section>
 
-        <div class="row gap-2 col-12 col-md-11 mx-auto">
+        <div class="row gap-2 col-10 mx-auto mt-4">
           <button id="requisicao-otp" class="continue btn-register" type="submit">Enviar</button>
           <button class="continue btn-register" type="button">
             Reenviar
