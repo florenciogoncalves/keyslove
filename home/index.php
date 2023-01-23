@@ -186,53 +186,81 @@ $Model = new Model();
             echo $empty->alert;
           endif; ?>
         </h3>
-        <a href="mensagens.php">
-          <div class="talk-now">
-            Conversar agora &nbsp;
+        <?php
+        if ($getPhoto['user'] != $_SESSION['username']) :
+        ?>
+          <a href="mensagens.php">
+            <div class="talk-now">
+              Conversar agora &nbsp;
 
-            <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />&nbsp; <img src="./../images/Group 8777.svg" />&nbsp;
-            <img src="./../images/usa-icon.svg" alt="Inglês" class="img-1" />
-          </div>
-        </a>
+              <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />&nbsp; <img src="./../images/Group 8777.svg" />&nbsp;
+              <img src="./../images/usa-icon.svg" alt="Inglês" class="img-1" />
+            </div>
+          </a>
+        <?php
+        endif;
+        ?>
+        <?php
+        if ($getPhoto['user'] != $_SESSION['username']) :
+        ?>
+          <ul id="tag-area">
+            <li>#trabalhando</li>
+            <li></li>
+            <li></li>
+          </ul>
 
-        <ul id="tag-area">
-          <li>#trabalhando</li>
-          <li></li>
-          <li></li>
-        </ul>
+        <?php
+        endif;
+        ?>
 
-        <p id="subtitle">
+        <?php
+        if ($getPhoto['user'] != $_SESSION['username']) :
+        ?>
+          <p id="subtitle">
 
-          <?php
-          if (isset($empty->alert)) :
-            echo $empty->alert;
-          else :
-            echo str_limit_words($description['sobre'], 20);
-          endif;
-          ?>
+            <?php
+            if (isset($empty->alert)) :
+              echo $empty->alert;
+            else :
+              echo str_limit_words($description['sobre'], 20);
+            endif;
+            ?>
 
-        </p>
+          </p>
+        <?php
+        endif;
+        ?>
         <?php
 
         if (!isset($empty->alert)) :
 
         ?>
-
-          <div style="display:<?php echo $empty->style ?>" id="home-progress-content">
-            <div id="home-progress-bar">
-              <span id="home-progress-val"></span>
+          <?php
+          if ($getPhoto['user'] != $_SESSION['username']) :
+          ?>
+            <div style="display:<?php echo $empty->style ?>" id="home-progress-content">
+              <div id="home-progress-bar">
+                <span id="home-progress-val"></span>
+              </div>
             </div>
-          </div>
-
-          <form action="./../_app/controllers/curtidasControllerHome.php" method="post">
-            <div style="display:<?php echo $empty->style ?>" id="home-btns">
-              <button id="retry" name="retry" value="<?= $description['user'] ?>"></button>
-              <button id="dislike" name="deslike" value="<?= $description['user'] ?>"></button>
-              <button id="maybe" name="maybe" value="<?= $description['user'] ?>">Talvez</button>
-              <button id="like" name="like" value="<?= $description['user'] ?>"></button>
-              <button id="favorite" name="favorite" value="<?= $description['user'] ?>"></button>
-            </div>
-          </form>
+          <?php
+          endif;
+          ?>
+          <?php
+          if ($getPhoto['user'] != $_SESSION['username']) :
+          ?>
+            <form action="./../_app/controllers/curtidasControllerHome.php" method="post">
+              <div style="display:<?php echo $empty->style ?>" id="home-btns">
+                <button id="retry" name="retry" value="<?= $description['user'] ?>"></button>
+                <button id="dislike" name="deslike" value="<?= $description['user'] ?>"></button>
+                <button id="maybe" name="maybe" value="<?= $description['user'] ?>">Talvez</button>
+                <button id="like" name="like" value="<?= $description['user'] ?>"></button>
+                <button id="favorite" name="favorite" value="<?= $description['user'] ?>"></button>
+              </div>
+            </form>
+          <?php
+          endif;
+          ?>
       </div>
     <?php
 
@@ -313,11 +341,24 @@ $Model = new Model();
 
     next.addEventListener('click', () => {
 
+      for (let total = 0; total < array.length; total++) {
+        window.location.href = './index.php?user=' + array[total] + "&id=" + total
 
-      array.map(function(nomes) {
-        window.location.href = './index.php?user=' + nomes
+      }
+      // array.map(function(nomes) {
+      //   window.location.href = './index.php?user=' + nomes
 
-      })
+      // })
+
+    })
+
+    ant.addEventListener('click', () => {
+
+      for (let total = array.length; total >= 0; total--) {
+        window.location.href = './index.php?user=' + array[total] + "&id=" + total
+
+      }
+
 
     })
   </script>
