@@ -1,8 +1,6 @@
 <?php
 
 require __DIR__ . "./../_app/models/profileModel.php";
-
-session_start();
 if (!$_SESSION['username']) {
   header("Location: ../");
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
@@ -135,7 +133,7 @@ if (!$_SESSION['username']) {
 
 
       <?php
-      require __DIR__ . "/../_app/core/connect.php";
+      // require __DIR__ . "/../_app/core/connect.php";
 
 
 
