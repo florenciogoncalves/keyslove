@@ -67,7 +67,9 @@ if (!$_SESSION['username']) {
             <a href="bloqueados.php" class="pessoas-bloqueadas">
               <li>Membros Bloqueados</li>
             </a>
-            <li>Lorem Ipsum exemplo</li>
+            <a class="logout" href="./../index.php">
+              <li>Sair</li>
+            </a>
           </ul>
         </div>
         <div id="online-now">

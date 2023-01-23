@@ -7,10 +7,6 @@
 @import "default";
 @import "./components/menu";
 
-html {
-	height: 100%;
-}
-
 /*menu flutuante a direita*/
 
 #menu-esquerdo ~ main,
@@ -40,102 +36,6 @@ html {
 	font-size: 0.4rem;
 
 	background-color: rgba(51, 51, 51, 0.3);
-}
-
-/*Lista de opções branca*/
-#menu-left {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	margin: 0;
-	padding: 0.275rem 0;
-	border-bottom-left-radius: 0.45rem;
-	border-bottom-right-radius: 0.45rem;
-
-	background-color: #fff;
-	li {
-		box-sizing: border-box;
-		height: 100%;
-		line-height: 1.5rem;
-		padding: 0;
-
-		font-weight: 500;
-		font-size: 0.5rem;
-		color: #333;
-		text-indent: 2.825rem;
-
-		background-size: 0.75rem;
-		background-repeat: no-repeat;
-		background-position: 1.25rem center;
-		a {
-			color: currentColor;
-		}
-		&.pagina-selecionada {
-			background-color: #dddcdc;
-			background-image: inherit;
-			background-repeat: no-repeat;
-			background-position: inherit;
-		}
-
-		&:nth-of-type(1) {
-			background-image: url(./../../images/Icon.svg);
-		}
-		&:nth-of-type(2) {
-			background-image: url(./../../images/Vector-1.svg);
-		}
-		&:nth-of-type(3) {
-			background-image: url(./../../images/Icon-4.svg);
-		}
-		&:nth-of-type(4) {
-			background-image: url(./../../images/Vector-2.svg);
-		}
-		&:nth-of-type(5) {
-			background-image: url(./../../images/Icon-2.svg);
-		}
-		&:nth-of-type(6) {
-			background-image: url(./../../images/Icon-1.svg);
-		}
-		&:nth-of-type(7) {
-			background-image: url(./../../images/Icon-3.svg);
-		}
-		&:nth-of-type(8) {
-			background-image: url(./../../images/Vector.svg);
-		}
-		&:nth-of-type(9) {
-			background-image: url(./../../images/Icon-5.svg);
-		}
-		&:nth-of-type(10) {
-			background-image: url(./../../images/Icon-6.svg);
-		}
-		&:nth-of-type(11) {
-			background-image: url(./../../images/Vector\ 15.svg);
-		}
-	}a {
-	display: flex;
-	height: 100%;
-	width: 100%;
-}
-}
-
-#online-now {
-	position: relative;
-	display: flex;
-	-webkit-user-select: none;
-	user-select: none;
-	cursor: pointer;
-}
-
-/*menu de mais opções*/
-#user-information .hidden-list .pessoas-bloqueadas li {
-	background: url(./../../images/oculto.svg) no-repeat center left 2% !important;
-	background-size: 18px !important;
-	object-fit: scale-down !important;
-}
-
-#user-information .hidden-list .logout li {
-	background: url(./../../images/logout-1.png) no-repeat center left 2% !important;
-	background-size: 18px !important;
-	object-fit: scale-down !important;
 }
 
 #user-information .hidden-list,

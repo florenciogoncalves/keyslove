@@ -1,18 +1,5 @@
-li {
-	list-style: none;
-	cursor: pointer;
-}
-
-select,
-textarea {
-	outline: none !important;
-}
-
-main ul,
-main li {
-	padding: 0;
-	margin: 0;
-	list-style: none;
+html {
+	height: 100%;
 }
 
 /*Estilo aplicado a todas as scrollbars*/
@@ -25,7 +12,7 @@ body {
 	padding: 0.35rem 0.5rem;
 	margin: 0;
 	justify-content: space-between;
-	overflow-x: hidden;
+	overflow: hidden;
 	box-sizing: border-box;
 
 	background-image: url(./../../images/hearth-bg-right.svg);
@@ -48,4 +35,21 @@ body {
 			appearance: none;
 		}
 	}
+}
+
+li {
+	list-style: none;
+	cursor: pointer;
+}
+
+select,
+textarea {
+	outline: none !important;
+}
+
+main ul,
+main li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
