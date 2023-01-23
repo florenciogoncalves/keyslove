@@ -125,29 +125,42 @@ body *::-webkit-scrollbar-corner {
   flex-direction: row;
   width: 100%;
   height: max-content;
+  padding: 0 0.6rem;
   box-sizing: border-box;
   color: var(--color-white);
   background: var(--vermelho-principal);
   display: grid;
   grid-template-columns: auto max-content;
-  padding: 0.1rem;
-}
-#menu-esquerdo #div-left #user-information figcaption {
-  height: max-content;
 }
 #menu-esquerdo #div-left #user-information figure {
+  width: 100%;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.3rem 0;
+}
+#menu-esquerdo #div-left #user-information figcaption {
+  width: 100%;
+  height: max-content;
   display: flex;
-  position: relative;
-  margin: 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 #menu-esquerdo #div-left #user-information h2 {
-  font-weight: 600;
-  font-size: 14px;
-  max-width: 200px;
+  width: 100%;
   overflow: hidden;
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.57rem;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin-top: 5%;
+}
+#menu-esquerdo #div-left #user-information figure {
+  position: relative;
+  margin: 0;
 }
 #menu-esquerdo #div-left #user-information .status {
   background-color: var(--status-user);
@@ -828,12 +841,36 @@ main#mensagens .chat {
   flex-direction: row;
   width: 100%;
   height: max-content;
+  padding: 0 0.6rem;
   box-sizing: border-box;
   color: var(--color-white);
   background: var(--vermelho-principal);
 }
+#mensagens #friend-information figure {
+  width: 100%;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.3rem 0;
+}
 #mensagens #friend-information figcaption {
+  width: 100%;
   height: max-content;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+#mensagens #friend-information h2 {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.57rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #friend-information figure {
