@@ -61,17 +61,15 @@ if (isset($_SESSION['username'])) {
     endif;
     ?>
 
-    <div id="enter-box" class="rounded my-lg-4 py-3 px-2 p-lg-4 px-sm-3 px-md-4 col-12 col-sm-8 col-md-7 col-lg-5">
+    <div id="enter-box" class="rounded my-lg-4 py-3 px-2 p-lg-3 px-sm-3 px-md-4 col-12 col-sm-8 col-md-6 col-lg-4">
       <h2 class="_title mb-2 mt-0">Seja bem vindo (a)</h2>
       <p class="_subtitle mb-3">
         Lorem ipsum dolor sit amet. Est minima aliquam sit quia ratione aut
         nemo libero et necessitatibus dolorum
       </p>
       <div class="methods-continue row gap-2">
-        <button class="google-continue continue col-11 mt-0">Continuar com google</button>
-        <button class="facebook-continue continue col-11 mt-0">
-          Continuar com Facebook
-        </button>
+        <button class="google-continue continue col-11 mt-0"><img src="./images/google-icon.svg" class="img-fluid"> Continuar com google</button>
+        <button class="facebook-continue continue col-11 mt-0"><img src="./images/facebook-icon.svg" class="img-fluid"> Continuar com Facebook</button>
       </div>
       <p class="__span-ou my-2 my-lg-2">Ou</p>
       <a class="continue btn-register col-11 mx-auto" href="./cadastro/cadastro-1.php">Cadastra - se</a>
@@ -84,7 +82,7 @@ if (isset($_SESSION['username'])) {
     </div>
   </section>
 
-  <footer class="d-none d-lg-flex">
+  <footer class="d-none d-md-flex">
     <div class="footer px-2 p-3 pb-2">
       <div class="img-links col-2 row gap-1">
         <a class="mx-auto logo-container" href="#">

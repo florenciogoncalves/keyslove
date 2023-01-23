@@ -13,7 +13,6 @@
   /* ================= index.php ================= */
   body {
     display: grid;
-    grid-template-rows: 12vh auto auto;
     box-sizing: border-box;
     background-attachment: fixed;
   }
@@ -242,9 +241,6 @@
     margin-top: auto;
     display: grid;
     row-gap: 15px;
-  }
-  .messages h3 {
-    font-size: 2.4em !important;
   }
 }
 /*Dispositivos médios(landscape tablets, 768px para cima)*/
