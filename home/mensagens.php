@@ -175,7 +175,7 @@ if (!$_SESSION['username']) {
   <div id="main-container">
     <main id="mensagens">
       <div class="peoples-to-chat">
-        <h2>Últimas mensagens | Converse agora</h2>
+        <h2>Últimas mensagens</h2>
 
         <?php
 
@@ -190,29 +190,12 @@ if (!$_SESSION['username']) {
 
 
 
-        // foreach ($getAll as $lastMessages) {
-        // $short_message = $model->where('tb_mensagens', '=', 'sender', $lastMessages['reciver']);
-        // $reciver_photo = $model->User('tb_photos', 'user', $lastMessages['reciver'], '=');
-        // $sender_photo = $model->User('tb_photos', 'user', $lastMessages['sender']);
-
-        // foreach ($getAll as $users) {
-        // }
         $_SESSION['reciver'] = $_GET['user'] ?? $getAll['curtido'];
 
 
-        // $reciver_photo = $model->User('tb_photos', 'user', $users['curtido'], '=');
-        // $sender_photo = $model->User('tb_photos', 'user', $users['curtiu']);
-
-        // $reciver_photo = $model->User('tb_photos', 'user', $getAll['curtido'], '=');
-        // $sender_photo = $model->User('tb_photos', 'user', $getAll['curtiu']);
-        // $short_message = $model->where('tb_mensagens', '=', 'sender', $getAll['curtido']);
-
-        // if ($model->existe_chat($_SESSION['username'], $users['curtido'])) :
 
 
 
-        ?>
-        <?php
 
         if (!isset($_GET['user'])) {
           $peopleToChat = $model->User('tb_curtidas', 'curtiu', $_SESSION['username'], '=', 'fetch', 1);
@@ -240,11 +223,6 @@ if (!$_SESSION['username']) {
           $reciver_photo_user = $model->User('tb_photos', 'user', $user, '=');
           $_SESSION['photo'] = $reciver_photo_user;
           $short_message_user = $model->where('tb_mensagens', '=', 'sender', $user);
-          // $short_message_user = $model->User('tb_mensagens', 'sender', $user, '=');
-
-          // $short_message_user = $model->SELECT($user, $_SESSION['username']);
-
-          // print_r($short_message_user);
 
 
 
@@ -276,11 +254,7 @@ if (!$_SESSION['username']) {
           </a>
         <?php
         }
-        // else :
-        //   $empty = new stdClass();
-        //   $empty->empty = '<center><h3>Você ainda não conversou com ninguém!</h3></center>';
-        //   echo $empty->empty;
-        // endif;
+
         ?>
 
 
