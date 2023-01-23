@@ -60,10 +60,13 @@ class Support extends connect
 
     private function saveVerificationInfo(string $user, string $email, int $code)
     {
-        $query = $this->connect->prepare("INSERT INTO tb_code_cadastro (user, email, code, expire_at) VALUES (?, ?, ?, NOW() + 100 * 10)");
+         $expire = date('H:i:s', strtotime("+10 minutes"));
+
+        $query = $this->connect->prepare("INSERT INTO tb_code_cadastro (user, email, code, expire_at) VALUES (?, ?, ?, ?)");
         $query->bindParam(1, $user);
         $query->bindParam(2, $email);
         $query->bindParam(3, $code);
+        $query->bindParam(4, $expire);
 
         if ($query->execute()) {
             return true;

@@ -9,7 +9,7 @@ if (!$_SESSION['username']) {
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
 }
 
-// session_start();
+
 
 
 ?>

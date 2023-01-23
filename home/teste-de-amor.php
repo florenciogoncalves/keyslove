@@ -1,6 +1,6 @@
 <?php
 
-// session_start();
+
 require_once __DIR__ . "./../_app/models/profileModel.php";
 
 if (!$_SESSION['username']) {
