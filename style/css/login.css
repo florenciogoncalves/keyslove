@@ -33,13 +33,13 @@ input {
   flex-direction: column;
 }
 #enter-box .left-side img {
-  width: 20%;
+  width: 2.4rem;
   filter: brightness(10);
   background-blend-mode: hard-light;
 }
 #enter-box .left-side h2 {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.85rem;
   line-height: 1;
   text-align: center;
   color: #fff;
@@ -52,7 +52,7 @@ input {
   flex-direction: column;
   justify-content: space-around;
   text-indent: 1rem;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
 }
 #enter-box .left-side ul li {
   background: url(./../../images/check.svg) no-repeat left 0 center;
@@ -69,6 +69,7 @@ input {
   box-sizing: border-box;
   background: none;
   font-size: 0.575rem;
+  line-height: 1;
 }
 #enter-box .right-side .logo {
   display: flex;
@@ -77,24 +78,28 @@ input {
 #enter-box .right-side h1 {
   margin: 0 auto;
   width: max-content;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
 }
 #enter-box .right-side h1 ._text--red {
   color: var(--vermelho-principal);
 }
 #enter-box .right-side .others-options {
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 #enter-box .right-side .others-options .remember-me-container {
   display: flex;
   align-items: center;
 }
 #enter-box .right-side .others-options * {
-  font-size: 0.57rem;
+  font-size: 0.45rem;
   white-space: nowrap;
+  -webkit-user-select: none;
+  user-select: none;
 }
 #enter-box .right-side .others-options > a {
   margin: 0;
+  margin-left: auto;
   width: max-content;
   color: #000;
   font-weight: 400;
@@ -105,15 +110,15 @@ input {
 #enter-box .right-side input[type=checkbox]:checked {
   appearance: none;
   cursor: pointer;
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 0.6rem;
+  height: 0.6rem;
   background: none;
   border: 0.02rem solid #000;
-  border-radius: 0.25rem;
+  border-radius: 0.175rem;
 }
 #enter-box .right-side input[type=checkbox] {
   background: url(./../../images/confirm.svg) no-repeat center;
-  background-size: 0.775rem;
+  background-size: contain;
 }
 #enter-box .right-side .criar-conta {
   display: flex;
@@ -124,7 +129,7 @@ input {
 }
 #enter-box .right-side .criar-conta, #enter-box .right-side .btn-register {
   text-transform: uppercase;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   font-family: "Raleway";
   letter-spacing: 0.2em;
   font-weight: 700;

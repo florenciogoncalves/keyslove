@@ -34,24 +34,27 @@
 
 	/* ================ login.php ================ */
 	.body-login.especify {
-		grid-template-rows: repeat(1, 1fr) !important;
+		grid-template-rows: max-content 1fr !important;
+		background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg)
+				no-repeat center,
+			rgb(0, 0, 0);
+		background-attachment: fixed;
+		background-size: cover;
 		#enter-box {
 			height: 100%;
 			border-radius: 0 !important;
-			background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg) no-repeat center, rgb(0, 0, 0);
-			background-attachment: fixed;
-			background-size: cover;
+			background: none;
 			form.right-side {
 				width: 100%;
 				border-radius: 0 !important;
 
 				background: none;
 				.logo {
-				h1 {
-					color: #fff;
-					font-size: 1.2rem !important;
-					letter-spacing: .1rem;
-				}
+					h1 {
+						color: #fff;
+						font-size: 1.2rem !important;
+						letter-spacing: 0.1rem;
+					}
 				}
 			}
 			.campos,
@@ -61,7 +64,7 @@
 				}
 				input {
 					border: 1px solid #fff;
-					&:not([type="checkbox"]){
+					&:not([type="checkbox"]) {
 						background: #fff;
 					}
 				}
@@ -276,12 +279,11 @@
 	#form-cadastro6 #password-section {
 		margin: auto;
 	}
-	
+
 	#insert-password {
 		width: 100% !important;
 		box-sizing: border-box !important;
 	}
-
 
 	#form-cadastro6 > div:last-of-type {
 		margin-top: auto;

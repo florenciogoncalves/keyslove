@@ -23,10 +23,10 @@ if (isset($_SESSION['username'])) {
 </head>
 
 <body class="body-login especify">
-  <header class="header-content row d-none d-lg-flex">
-    <nav class="header-controllers-container index row ms-auto col-2 col-sm-1 col-md-1 col-lg-3 col-xl-4 col-xxl-2 p-0">
-      <a class="btn border-btn d-none d-lg-flex col" href="./cadastro/cadastro-1.php">Criar conta</a>
-      <a class="btn white-btn d-none d-lg-flex col" href="./login.php">Entrar</a>
+  <header class="header-content row d-flex">
+    <nav class="header-controllers-container index row ms-auto col-2 col-sm-3 col-lg-3 col-xxl-2 p-0 gap-2">
+      <a class="btn border-btn d-none d-md-flex col" href="./cadastro/cadastro-1.php">Criar conta</a>
+      <a class="btn white-btn d-none d-md-flex col" href="./login.php">Entrar</a>
     </nav>
   </header>
 
@@ -53,10 +53,10 @@ if (isset($_SESSION['username'])) {
   endif;
   ?>
 
-  <div id="enter-box" class="logon-split row col-lg-9 col-xl-8 col-xxl-7 m-auto rounded-3">
+  <div id="enter-box" class="logon-split row col-lg-9 col-xl-7 col-xxl-6 m-lg-auto rounded-3">
     <div class="left-side col d-none d-lg-flex p-3">
       <div class="left-container p-2 rounded-3">
-        <img class="mx-auto my-3 img-fluid" src="./images/bg.png" />
+        <img class="mx-auto my-2 img-fluid" src="./images/bg.png" />
         <h2>Encontre o seu verdadeiro amor!!</h2>
         <ul class="ps-3">
           <li>Lorem ipsum Exemplo</li>
@@ -70,10 +70,11 @@ if (isset($_SESSION['username'])) {
 
     <form action="./_app/controllers/loginController.php" method="POST" class="right-side col-12 col-lg-7 px-4" novalidate>
 
-<div class="right-container my-auto py-4">
+<div class="right-container my-auto py-4 px-sm-5 px-lg-2 mx-auto col-sm-10 col-lg-12">
   <fieldset class="logo col-11 mx-auto row">
-        <img class="img-fluid col-4 col-lg-3 mx-auto" src="./images/favicon.svg" alt="Keyslov" />
-        <h1 class="col-auto mx-auto"><span class="_text--red">K</span>eys<span class="_text--red">l</span>ov</h1>
+        <img class="img-fluid col-4 col-lg-3 mx-auto d-none d-lg-flex" src="./images/favicon.svg" alt="Keyslov" />
+        <h1 class="col-auto mx-auto d-none d-lg-flex"><span class="_text--red">K</span>eys<span class="_text--red">l</span>ov</h1>
+        <h1 class="col-auto mx-auto d-lg-none">Login</h1>
       </fieldset>
 
       <fieldset class="campos gap-2 row col-11 mx-auto mt-2">
@@ -83,8 +84,8 @@ if (isset($_SESSION['username'])) {
 
 
       <fieldset class="others-options col-11 mx-auto my-3 row">
-        <span class="col-6 p-0 remember-me-container gap-1"><input type="checkbox" id="lembrar-me" /><label for="lembrar-me">Lembrar de mim</label></span>
-        <a class="col-6 p-0" href="#">Esqueci minha senha</a>
+        <span class="p-0 remember-me-container gap-1"><input type="checkbox" id="lembrar-me" /><label for="lembrar-me">Lembrar de mim</label></span>
+        <a class="p-0" href="#">Esqueci minha senha</a>
       </fieldset>
 
       <fieldset class="col-11 mx-auto row gap-2">
@@ -96,7 +97,7 @@ if (isset($_SESSION['username'])) {
     </form>
   </div>
 
-  <footer class="d-none d-lg-flex mt-3">
+  <footer class="d-none d-md-flex mt-3">
     <div class="footer px-2 p-3 pb-2">
       <div class="img-links col-2 row gap-1">
         <a class="mx-auto logo-container" href="#">
