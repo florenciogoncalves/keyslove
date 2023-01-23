@@ -1,0 +1,106 @@
+@mixin user-bar {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: max-content;
+	box-sizing: border-box;
+
+	color: var(--color-white);
+
+	background: var(--vermelho-principal);
+	figcaption {
+		height: max-content;
+	}
+}
+
+#menu-esquerdo {
+	height: max-content;
+	width: 13rem;
+	position: sticky;
+	top: 0;
+	overflow-y: scroll;
+	grid-template-rows: max-content max-content;
+	z-index: 999;
+	#div-left {
+		height: max-content;
+		background: none;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		#user-information {
+			@include user-bar();
+			display: grid;
+			grid-template-columns: auto max-content;
+			padding: 0.1rem;
+			figure {
+				display: flex;
+				position: relative;
+				margin: 0;
+			}
+			h2 {
+				font-weight: 600;
+				font-size: 14px;
+				max-width: 200px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				margin-top: 5%;
+			}
+			.status {
+				background-color: var(--status-user);
+			}
+			#show-status-window {
+				font-weight: 400;
+				font-size: 12px;
+				-webkit-user-select: none;
+				user-select: none;
+				text-decoration-line: underline;
+				cursor: pointer;
+			}
+			& > img {
+				width: 25px;
+				height: 25px;
+				position: relative;
+				cursor: pointer;
+				margin: 12% 0.5em;
+			}
+			ul {
+				margin: 10px;
+				width: 100%;
+				li {
+					height: 40px;
+					width: 100%;
+					line-height: 40px;
+					text-indent: 16%;
+				}
+			}
+		}
+	}
+}
+.status,
+#mensagens .friend-status {
+	margin: auto;
+	width: 0.575rem;
+	height: 0.575rem;
+	right: 0.07rem;
+	position: absolute;
+	bottom: 0.07rem;
+	border-radius: 15px;
+
+	transition: all 600ms;
+	& .status {
+		background-color: var(--status-on);
+	}
+	& .friend-status {
+		background-color: var(--status-on);
+	}
+}
+
+.foto-de-perfil {
+	display: flex;
+	justify-items: center;
+	position: relative;
+	width: max-content;
+	height: max-content;
+}
