@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+
 require_once __DIR__ . "./../_app/models/messageModel.php";
 
 if (!$_SESSION['username']) {
@@ -122,17 +122,17 @@ if (!$_SESSION['username']) {
         <div id="online-now">
           <div class="changing-status">
             <div class="this-status">
-              <input type="radio" name="online-agora" value="online" id="online" />
+              <input type="radio" name="online-agora" value="online" id="online" class="s-status" />
               <label for="online">Online</label>
             </div>
 
             <div class="this-status">
-              <input type="radio" name="online-agora" id="ocupado" value="ocupado" />
+              <input type="radio" name="online-agora" id="ocupado" value="ocupado" class="s-status" />
               <label for="ocupado">Ocupado</label>
             </div>
 
             <div class="this-status">
-              <input type="radio" name="online-agora" id="invisivel" value="invisivel" />
+              <input type="radio" name="online-agora" id="invisivel" value="invisivel" class="s-status" />
               <label for="invisivel">Invisível</label>
             </div>
           </div>
@@ -453,6 +453,16 @@ if (!$_SESSION['username']) {
   </div>
 
   <script src="./../script/script.js"></script>
+  <script>
+    const status = localStorage.getItem('status');
+
+    for (c = 0; c < 3; c++) {
+      const btn = document.getElementsByClassName('s-status')[c]
+      btn.addEventListener('click', () => {
+        window.location.href = './app/Controllers/statusController.php?status=' + btn.value
+      })
+    }
+  </script>
 </body>
 
 </html>
