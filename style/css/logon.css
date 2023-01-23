@@ -153,10 +153,12 @@ html * {
 body {
   height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr auto;
   background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg) no-repeat center, var(--bg-color);
   background-attachment: fixed;
   background-size: cover !important;
+}
+body#menu-logon {
+  grid-template-rows: auto 1fr auto;
 }
 body > footer + div:last-of-type {
   display: none !important;

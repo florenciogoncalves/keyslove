@@ -20,14 +20,6 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 6) {
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
-
-  <style>
-    #nav,
-    #peoples-left {
-      display: none;
-    }
-  </style>
-
 </head>
 
 <body id="sobre-usuario">
@@ -128,7 +120,7 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 6) {
       <form action="./../_app/controllers/trabalhoController.php" method="POST" class="principal-content">
         <header class="content-header">
           <img src="./../images/Book_check_fill.svg" />
-          <h1>Trabalho e Profissão</h1>
+          <h1 class="__title">Trabalho e Profissão</h1>
         </header>
 
         <div id="container-elements">
