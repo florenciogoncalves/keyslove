@@ -1,5 +1,19 @@
 @charset "UTF-8";
-/*Extra dispositivos pequenos(phones, 600px para baixo)*/
+@media only screen and (max-width: 575.97px) {
+  .principal-content {
+    max-width: 420px;
+  }
+}
+@media only screen and (min-width: 575.97px) {
+  .principal-content {
+    max-width: 520px;
+  }
+}
+@media only screen and (min-width: 767.97px) {
+  .principal-content {
+    max-width: 520px;
+  }
+}
 @media only screen and (max-width: 992px) {
   body {
     padding: 0 !important;
@@ -8,6 +22,9 @@
     background-size: contain !important;
     background-size: 48% !important;
   }
+  #content-right {
+    height: 100%;
+  }
   *::-webkit-scrollbar {
     display: none !important;
   }
@@ -15,6 +32,8 @@
     box-shadow: 0 0 0 30px #fff inset;
   }
   #main-container {
+    width: 100%;
+    height: 100%;
     margin: auto !important;
     box-sizing: border-box !important;
     position: relative;
@@ -22,7 +41,6 @@
     max-width: 100vw !important;
     display: grid !important;
     grid-template-rows: 1fr max-content !important;
-    height: 100%;
   }
   #sobre-usuario #main-container {
     grid-template-rows: max-content 1fr max-content !important;
@@ -136,10 +154,6 @@
     height: 25px;
     margin: auto 0 4px;
   }
-  #sobre-usuario #main-container,
-  #sobre-usuario #content-right {
-    max-width: 460px !important;
-  }
   #content-right {
     margin: auto !important;
     width: 100vw !important;
@@ -149,7 +163,6 @@
     box-sizing: border-box !important;
   }
   #sobre-usuario #content-right form {
-    max-width: 100vw !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column;
@@ -185,7 +198,7 @@
   #sobre-usuario select,
   #sobre-usuario label,
   #sobre-usuario textarea {
-    font-size: 10pt !important;
+    font-size: 0.6rem !important;
   }
   #sobre-usuario label {
     margin: 9px 0 1px !important;
@@ -199,11 +212,9 @@
     height: max-content !important;
   }
   #sobre-usuario header:not(#mobile-header) img {
-    width: 28px !important;
-    margin: 15px auto 10px;
+    width: 1.2rem !important;
   }
   #sobre-usuario header h1 {
-    font-size: 13pt !important;
     text-align: center;
   }
   #sobre-usuario form.principal-content {
@@ -413,8 +424,8 @@
   #footer-mobile li {
     margin: auto;
     display: flex;
-    width: 32px;
-    height: 32px;
+    width: 1.775rem;
+    height: 1.775rem;
     background-size: 55%;
     background-position: center center !important;
     background-repeat: no-repeat;

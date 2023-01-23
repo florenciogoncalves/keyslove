@@ -20,12 +20,6 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
   <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
-  <style>
-    nav,
-    #peoples-left {
-      display: none;
-    }
-  </style>
 </head>
 
 <body id="sobre-usuario">
@@ -151,7 +145,7 @@ require_once __DIR__ . "./../_app/boot/helpers.php";
       <form action="./../_app/controllers/caracteristicasFisicasController.php" method="POST" class="principal-content">
         <header class="content-header">
           <img src="./../images/Book_check_fill.svg" />
-          <h1>Características Físicas</h1>
+          <h1 class="__title">Características Físicas</h1>
         </header>
 
         <div id="container-elements">
