@@ -67,7 +67,7 @@ if (!isset($_SESSION['step']) || $_SESSION['step'] < 2) {
         <label for="">Cidade</label>
         <input type="text" placeholder="Nome exemplo" required name="cidade" />
 
-        <button class="continue btn-register" type="submit" value="btn" name="btn-submit">CADASTRAR</button>
+        <button class="continue btn-register mt-3" type="submit" value="btn" name="btn-submit">CADASTRAR</button>
       </form>
     </div>
   </div>

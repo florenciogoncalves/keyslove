@@ -61,13 +61,6 @@
   .body-login.especify #enter-box .others-options input:not([type=checkbox]) {
     background: #fff;
   }
-  input:not([type=checkbox]),
-  button,
-  .criar-conta,
-  .continue {
-    height: 40px !important;
-    margin: 0 auto;
-  }
   /*
   ******************************
   ***     cadastro-1 > 4     ***
@@ -97,18 +90,6 @@
   .cadastro-layout select {
     border-radius: 4px !important;
   }
-  .cadastro-layout label {
-    margin: 10px 0 0 !important;
-    font-size: 11pt !important;
-  }
-  #cadastro-4 label {
-    line-height: normal !important;
-    overflow-wrap: break-word !important;
-    inline-size: 200px !important;
-    text-indent: 0 !important;
-    padding: 10px !important;
-    width: max-content !important;
-  }
   .checkbox {
     font-size: 1pt !important;
   }
@@ -121,72 +102,16 @@
     margin: auto 0 !important;
     font-size: 8pt !important;
   }
-  .cadastro-layout input:not([type=checkbox], [type=radio], .pass-camp) {
-    width: 100% !important;
-    height: 36px !important;
-    font-size: 9pt !important;
-    padding: 0 10px !important;
-  }
-  /*
-   ****************************
-   **       Cadastro-2       **
-   ****************************
-   */
-  #form-cadastro2 input[type=text] {
-    height: 40px !important;
-  }
-  #form-cadastro2 select {
-    height: 50px;
-    line-height: 50px;
-    font-size: 10pt;
-    background-size: 12px;
-    background-position: right 2vw center;
-  }
-  #form-cadastro2 .the-genre label {
-    margin: 2px !important;
-    height: 50px;
-    font-size: 10pt !important;
-  }
-  #form-cadastro2 button {
-    margin-top: 13px !important;
-    height: 50px;
-  }
-  /*
-  ****************************
-  **       Cadastro-2       **
-  ****************************
-  */
-  #form-cadastro3 {
-    max-width: 340px;
-  }
-  #form-cadastro3 button {
-    margin: 20px 0 3px !important;
-    height: 40px;
-  }
   /*
   ******************************
   ***       cadastro-4       ***
   ******************************
   */
-  #form-cadastro4 {
-    max-width: 340px !important;
-  }
   #form-cadastro4 > div {
     margin: 0;
   }
-  #form-cadastro4 input[type=checkbox],
-  #form-cadastro4 input[type=checkbox]:checked {
-    width: 25px;
-    height: 25px;
-    border-radius: 4px;
-    margin: 5px 0;
-    background-size: 90% !important;
-  }
   #form-cadastro4 label {
     margin: auto 0 !important;
-  }
-  #form-cadastro4 button {
-    height: 40px;
   }
   /*
   ******************************
@@ -223,11 +148,6 @@
   ***      cadastro-6        ***
   ******************************
   */
-  #form-cadastro6 {
-    width: 100%;
-    min-height: 360px;
-    box-sizing: border-box !important;
-  }
   #form-cadastro6 > * {
     max-width: 420px !important;
   }
