@@ -53,4 +53,13 @@ class Model extends connect
 
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function listUsers(string $activeUser)
+    {
+        $query = $this->connect->prepare("SELECT * FROM tb_cadastroConta2 WHERE nome != ?");
+        $query->bindParam(1, $activeUser);
+        $query->execute();
+
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
