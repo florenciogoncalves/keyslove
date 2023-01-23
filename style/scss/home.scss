@@ -1,5 +1,19 @@
 @import url(./style.css);
 
+
+
+main#home,
+main#perfil {
+	position: relative;
+	display: grid;
+	width: 22rem;
+	box-sizing: border-box;
+	grid-template-rows: max-content 1fr max-content;
+	overflow: hidden;
+	background-color: rgb(83, 82, 82);
+	z-index: 2;
+}
+
 .title {
 	width: max-content;
 	height: 48px;
@@ -12,20 +26,6 @@
 	line-height: 32px;
 }
 
-main#home,
-main#perfil {
-	position: relative;
-	display: grid;
-	height: 100%;
-	width: 22rem;
-	/* min-width: 450px; */
-	box-sizing: border-box;
-	grid-template-rows: max-content 1fr max-content;
-	overflow: hidden;
-	background-color: rgb(83, 82, 82);
-	z-index: 2;
-}
-
 main#perfil {
 	width: 100%;
 }
@@ -35,13 +35,6 @@ main #main-image {
 	object-fit: cover;
 	height: 100%;
 	width: 100%;
-}
-
-main ul,
-main li {
-	padding: 0;
-	margin: 0;
-	list-style: none;
 }
 
 main#home .home-bar,
@@ -238,7 +231,7 @@ main #home-progress-val {
 }
 
 #home-btns #retry {
-	background: url(./../images/retry-ico.svg) no-repeat center;
+	background: url(./../../images/retry-ico.svg) no-repeat center;
 	background-color: #7cd0ff;
 	width: 56px;
 	height: 56px;
@@ -246,7 +239,7 @@ main #home-progress-val {
 }
 
 #home-btns #dislike {
-	background: url(./../images/cross-ico.svg) no-repeat center;
+	background: url(./../../images/cross-ico.svg) no-repeat center;
 	background-color: #b42937;
 }
 
@@ -257,12 +250,12 @@ main #home-progress-val {
 }
 
 #home-btns #like {
-	background: url(./../images/like-ico.svg) no-repeat center;
+	background: url(./../../images/like-ico.svg) no-repeat center;
 	background-color: #5ccb5f;
 }
 
 #home-btns #favorite {
-	background: url(./../images/star-ico.svg) no-repeat center;
+	background: url(./../../images/star-ico.svg) no-repeat center;
 	background-color: #ffea79;
 	width: 56px;
 	height: 56px;
