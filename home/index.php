@@ -3,13 +3,13 @@
 
 require_once __DIR__ . "./../_app/models/profileModel.php";
 require_once __DIR__ . "./../_app/boot/helpers.php";
-
+include_once __DIR__ . "/app/Models/Model.php";
 if (!$_SESSION['username']) {
   header("Location: ../");
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
 }
 
-
+$Model = new Model();
 
 
 ?>
@@ -135,7 +135,12 @@ if (!$_SESSION['username']) {
   <?php
 
   $model = new profileModel();
-  $getUser = $model->User('tb_cadastroConta2', 'nome', $_SESSION['username'], '!=', 'fetchAll');
+
+  $user = (isset($_GET['user'])) ? $_GET['user'] : $_SESSION['username'];
+
+
+  $getUser = $model->User('tb_cadastroConta2', 'nome', $user, '=', 'fetchAll');
+
   foreach ($getUser as $Users) {
     $getPhoto = $model->User('tb_photos', 'user', $Users['nome'], '=');
     $description = $model->User('tb_sobre_mim', 'user', $Users['nome'], '=');
@@ -166,17 +171,7 @@ if (!$_SESSION['username']) {
 
       <div class="home-nav">
 
-        <?php
 
-        echo "
-        
-        <script src='./../script/home.js'>
-        
-        </script>
-
-        ";
-
-        ?>
         <button id="preview-carroussel">&lt;</button>
         <button id="next-carroussel">&gt;</button>
       </div>
@@ -297,6 +292,38 @@ if (!$_SESSION['username']) {
       })
     }
   </script>
+
+  <?php
+  foreach ($Model->listUsers($_SESSION['username']) as $allUsers) {
+    $peoples[] = $allUsers['nome'];
+
+    // var_dump($peoples);
+  }
+  ?>
+
+  <script>
+    const array = [<?php foreach ($peoples as $item) {
+                      echo "'{$item}',";
+                    } ?>]
+
+
+
+    const ant = document.getElementById('preview-carroussel')
+    const next = document.getElementById('next-carroussel')
+
+    next.addEventListener('click', () => {
+
+
+      array.map(function(nomes) {
+        window.location.href = './index.php?user=' + nomes
+
+      })
+
+    })
+  </script>
+  <?php
+  // endforeach;
+  ?>
 </body>
 
 </html>
