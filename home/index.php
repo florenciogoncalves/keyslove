@@ -341,14 +341,12 @@ $Model = new Model();
 
     next.addEventListener('click', () => {
 
+      
       for (let total = 0; total < array.length; total++) {
         window.location.href = './index.php?user=' + array[total] + "&id=" + total
 
       }
-      // array.map(function(nomes) {
-      //   window.location.href = './index.php?user=' + nomes
-
-      // })
+     
 
     })
 
