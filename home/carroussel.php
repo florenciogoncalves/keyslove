@@ -187,7 +187,7 @@ if (!$_SESSION['username']) {
 
 
 
-          <h2>
+          <h2 class="__name">
             <?php
             if (isset($empty->alert)) :
               echo $empty->alertNotUserYet;
@@ -197,7 +197,7 @@ if (!$_SESSION['username']) {
             ?>
           </h2>
 
-          <p>
+          <p class="__data">
             <?php
             if (!isset($empty->alertNotUserYet)) :
               echo $others['cargo'];
@@ -209,7 +209,7 @@ if (!$_SESSION['username']) {
             <?php
             if (!isset($empty->alertNotUserYet)) :
             ?>
-              <span>&middot;</span>
+              <span class="__middot">&middot;</span>
             <?php
             else :
               echo $empty->empty;
@@ -235,7 +235,7 @@ if (!$_SESSION['username']) {
               endif;
           ?>
           </p>
-          <p>
+          <p class="__description">
             <?php
             if (isset($empty->alertNotUserYet)) :
               echo $empty->empty;
@@ -244,7 +244,7 @@ if (!$_SESSION['username']) {
             endif; ?>
           </p>
           <?php
-          if (!isset($empty->alertNotUserYet)) :
+          if (true) :
           ?>
             <div class="botoes">
 
@@ -310,10 +310,13 @@ if (!$_SESSION['username']) {
           <div class='outro-perfil'>
           <img src='./../_storage/images/{$Modal['photo']}'alt='Foto Perfil'>
           <div class='textual'>
+          <span class='__name'>
           {$item['user']}
+          </span>
 
           <p>
-          {$item['cargo']}<span>&middot;</span>
+          <span class='__cargo'>{$item['cargo']}</span>
+          <span class='__middot'>&middot;</span>
           <span class='idade'>
             {$show}
           </span> &nbsp;anos

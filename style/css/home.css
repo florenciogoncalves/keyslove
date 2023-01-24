@@ -62,7 +62,7 @@ main #main-image {
   width: 100%;
   height: 100%;
   position: relative;
-  padding: 0 0.2rem;
+  padding: 25% 0.2rem 0;
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -76,7 +76,6 @@ main #main-image {
   width: 3.7rem;
   height: 100%;
   cursor: pointer;
-  margin-top: 25%;
   font-size: 1.5rem;
   color: white;
   background: none;
@@ -233,69 +232,90 @@ main #main-image {
 
 /*DOCUMENTO carroussel.php*/
 main#carroussel {
-  margin: 0 auto;
   max-width: 1000px;
-  width: 94%;
+  width: 27rem;
   min-height: 100%;
-  height: max-content;
+  height: 100%;
   background: #fff;
-  padding: 32px 29px;
+  padding: 1.2rem 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0.375rem;
+  border-radius: 0.3rem;
   box-sizing: border-box;
+  overflow-y: scroll;
+}
+main#carroussel .title {
+  font-size: 1rem;
+  font-weight: 400;
+}
+main#carroussel::-webkit-scrollbar {
+  display: none !important;
 }
 
 main#carroussel figure#informacoes-perfil {
   width: 100%;
   height: max-content;
   max-height: 340px;
-  display: flex;
-  padding: 15px 25px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 0.57rem 0.67rem;
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
+  gap: 0.5rem;
   background: #fff;
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
 }
 
 main#carroussel figure#informacoes-perfil > img {
-  min-width: 272.02px;
+  width: 7rem;
+  min-height: 8.5rem;
   height: 100%;
-  max-height: 310px;
-  border-radius: 10px;
+  border-radius: 0.3rem;
   object-fit: cover;
+  font-size: 0.57rem;
 }
 
 main#carroussel figcaption#descricao-perfil {
-  margin: 2% 3.5% 0;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto auto 1fr max-content;
   text-overflow: ellipsis;
   max-width: 100%;
 }
 
+main#carroussel figcaption#descricao-perfil {
+  gap: 0.3rem;
+  padding: 0 0.25rem;
+}
+main#carroussel figcaption#descricao-perfil > * {
+  margin: 0;
+}
 main#carroussel figcaption#descricao-perfil h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-
-main#carroussel figcaption#descricao-perfil p {
+main#carroussel figcaption#descricao-perfil .__description,
+main#carroussel figcaption#descricao-perfil .__data {
   font-weight: 400;
-  font-size: 15px;
-  max-height: 144px;
-  line-height: 24px;
+  font-size: 0.52rem;
+  max-height: 100%;
   text-align: justify;
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
   text-overflow: ellipsis;
 }
-
-main#carroussel figcaption#descricao-perfil p:first-of-type {
+main#carroussel figcaption#descricao-perfil .__description.__data,
+main#carroussel figcaption#descricao-perfil .__data.__data {
   display: flex;
-  margin-bottom: 8px;
 }
 
-main#carroussel figcaption#descricao-perfil span:nth-child(1),
-main#carroussel .outras-pessoas span:first-of-type {
+.__middot {
   color: var(--vermelho-principal);
   font-weight: bolder;
   display: inline-block;
@@ -307,88 +327,119 @@ main#carroussel .botoes {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 80px;
   align-items: center;
+}
+main#carroussel .botoes form {
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0.67rem;
+  margin: 0;
 }
 
 #informacoes-perfil button,
 .padrao .botoes button {
+  width: 1.75rem;
+  height: 1.75rem;
   border: none;
-  background-repeat: no-repeat;
-  border-radius: 46px;
-  width: 46px;
-  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
   background-position: center;
-  background-size: 55%;
+  background-repeat: no-repeat;
+  background-size: 0.825rem;
 }
-
-#carroussel button.dislike,
-.padrao button.dislike {
-  background-image: url(./../images/cross-ico.svg);
+#informacoes-perfil button.dislike,
+.padrao .botoes button.dislike {
+  background-image: url(./../../images/cross-ico.svg);
   background-color: #b42937;
-  margin-right: 20px;
 }
-
-#carroussel button.like,
-.padrao button.like {
-  background-image: url(./../images/like-ico.svg);
+#informacoes-perfil button.like,
+.padrao .botoes button.like {
+  background-image: url(./../../images/like-ico.svg);
   background-color: #5ccb5f;
 }
 
 /*Estilização da div com as demais pessoas*/
 .outras-pessoas {
   width: 100%;
-  margin: 25px auto;
+  margin: 0.2rem auto;
   height: max-content;
   display: grid;
   background: none;
-  grid-template-columns: repeat(auto-fit, 260px);
+  grid-template-columns: repeat(3, 1fr);
   padding: 15px 0 0;
   justify-items: end;
   box-sizing: border-box;
-  row-gap: 25px;
-  column-gap: 1vmax;
+  row-gap: 0.775rem;
+  column-gap: 0.6rem;
 }
 
 .outras-pessoas .outro-perfil {
-  background-color: #fff;
   box-sizing: border-box;
-  display: flex;
-  padding: 0 15px;
-  max-width: 270px;
-  min-width: 240px;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  padding: 0.6rem;
+  padding-bottom: 0;
+  width: 100%;
   flex-direction: column;
   width: 100%;
-  height: 416px;
-  background: #ffffff;
+  height: max-content;
+  max-height: 100%;
+  background: #fff;
   border: 1px solid #d4d4d4;
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  border-radius: 0.3rem;
 }
-
 .outras-pessoas .outro-perfil img {
   width: 100%;
-  height: 252.99px;
-  margin: 21px auto;
-  border-radius: 10px;
+  height: 8rem;
+  display: flex;
+  border-radius: 0.3rem;
   object-fit: cover;
+  font-size: 0.57rem;
 }
-
 .outras-pessoas .outro-perfil .textual {
-  width: 223.58px;
+  width: 100%;
+  height: max-content;
   margin: 0 auto;
+  margin: 0;
 }
-
-.outras-pessoas button.conversar {
-  background: url(./../images/conversar-icon.svg);
+.outras-pessoas .outro-perfil .textual .__cargo {
+  max-width: 100%;
+  width: max-content;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.outras-pessoas .outro-perfil .textual .__name {
+  margin: 0 !important;
+  font-size: 0.67rem !important;
+  color: #000 !important;
+}
+.outras-pessoas .outro-perfil .textual p {
+  display: flex;
+  align-items: center;
+  margin: 0;
   padding: 0;
-  width: 25px;
-  height: 22.5px;
-  border: none;
+  height: max-content;
+  font-size: 0.57rem;
 }
-
-.outro-perfil a {
+.outras-pessoas .outro-perfil a {
+  width: max-content;
+  height: max-content;
+  cursor: pointer;
   margin: auto;
+}
+.outras-pessoas .conversar {
+  padding: 0;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  background: url(./../../images/conversar-icon.svg) no-repeat center;
+  background-size: contain;
 }
 
 /*# sourceMappingURL=home.css.map */

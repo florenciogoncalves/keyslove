@@ -8,10 +8,31 @@
   .principal-content {
     max-width: 520px;
   }
+  main#carroussel > * {
+    max-width: 580px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  main#carroussel .title {
+    width: 100%;
+    margin-top: 0.75rem;
+  }
 }
-@media only screen and (min-width: 767.97px) {
+@media only screen and (min-width: 768px) {
   .principal-content {
     max-width: 520px;
+  }
+  main#carroussel {
+    padding: 0 2rem !important;
+  }
+  main#carroussel > * {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  main#carroussel .title {
+    width: 100%;
+    margin-top: 0.75rem;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -465,7 +486,7 @@
     padding: 10px;
     display: grid;
     overflow: scroll;
-    border-radius: 8px 8px 0 0;
+    border-radius: 0;
   }
   main > .title,
   #pacotes-pagamento .title {
@@ -479,7 +500,7 @@
   }
   #carroussel #informacoes-perfil {
     min-height: max-content;
-    height: 200px !important;
+    height: 9.25 !important;
     padding: 10px !important;
     box-sizing: border-box;
   }
@@ -487,24 +508,20 @@
     max-height: 100% !important;
     object-fit: cover !important;
     min-width: 110px !important;
-    width: 100% !important;
     max-width: 150px;
   }
   #descricao-perfil {
-    margin: 0 7px 0 15px !important;
     overflow: hidden;
     box-sizing: border-box;
     display: grid;
     grid-template-rows: max-content max-content 1fr max-content !important;
   }
-  #descricao-perfil > *:not(h2) {
-    font-size: 9pt !important;
-  }
-  #carroussel h2 {
-    font-size: 12pt;
+  #carroussel #descricao-perfil .__name {
+    font-size: 0.8rem;
   }
   #descricao-perfil p:nth-of-type(2) {
     max-height: 100% !important;
+    font-size: 0.52rem;
     height: auto !important;
     line-height: normal !important;
     word-wrap: nowrap !important;
@@ -517,34 +534,32 @@
     height: 100% !important;
     padding: 3px 0;
   }
-  #descricao-perfil .botoes button {
-    width: 30px;
-    height: 30px;
-  }
   .outras-pessoas {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
     row-gap: 10px !important;
     justify-content: space-between;
-    box-sizing: border-box !important;
+    box-sizing: border-box;
   }
-  .outro-perfil {
-    overflow: hidden !important;
-    min-width: 150px !important;
+  .outras-pessoas .outro-perfil {
+    overflow: hidden;
     width: 100%;
-    margin: auto !important;
-    min-height: 250px !important;
-    max-height: 270px;
-    padding: 10px !important;
+    margin: auto;
+    max-height: 14rem;
+    height: 14rem;
+    padding: 10px;
+    padding-bottom: 5px;
     row-gap: 2px;
   }
-  .outro-perfil > img {
+  .outras-pessoas .outro-perfil img {
     margin: 0 !important;
     overflow: hidden !important;
+    height: 100% !important;
+    margin-bottom: 0;
   }
-  .outro-perfil .textual {
+  .outras-pessoas .outro-perfil .textual {
     width: 100% !important;
   }
-  .outro-perfil .textual > p {
+  .outras-pessoas .outro-perfil .textual p {
     word-wrap: break-word;
     width: 100% !important;
     font-size: 8pt !important;
@@ -1304,8 +1319,15 @@
     background-size: 40% !important;
   }
 }
-/*Dispositivos médios(landscape tablets, 768px para cima)*/
 /*Dispositivos largos(laptops/desktops, 992px para cima)*/
+@media only screen and (min-width: 992px) {
+  main#carroussel {
+    padding: 0 0.75rem !important;
+  }
+  main#carroussel::-webkit-scrollbar {
+    display: none;
+  }
+}
 /*Extra dispositivos largos laptops e desktops de 1200px para cima*/
 
 /*# sourceMappingURL=style-responsivo.css.map */
