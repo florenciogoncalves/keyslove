@@ -34,37 +34,35 @@ main #main-image {
   width: 100%;
 }
 
-main#home .home-bar,
-main#perfil .home-bar {
+.home-bar {
   width: 100%;
-  height: 80px;
+  height: 0.2rem;
   z-index: 2;
   padding: 0 140px;
   align-items: center;
   box-sizing: border-box;
   display: flex;
-  gap: 9.76px;
+  gap: 0.3rem;
+  margin-top: 0.97rem;
   flex-direction: row;
   justify-content: center;
 }
-
-main .home-bar li {
-  height: 8.14px;
+.home-bar li {
+  height: 100%;
   width: 100%;
   background: var(--color-white);
   border-radius: 9.76344px;
   box-shadow: 1 1 11px 11px rgba(0, 0, 0, 0.7);
 }
-
-/*para elementos vizualizados na barra de home*/
-main .home-bar li.visualized {
+.home-bar li.visualized {
   background: #333333;
 }
 
-main .home-nav {
+.home-nav {
   width: 100%;
+  height: 100%;
   position: relative;
-  padding: 0;
+  padding: 25% 0.2rem 0;
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -73,31 +71,25 @@ main .home-nav {
   z-index: 6;
   margin: auto;
 }
-
-main .home-nav button {
-  font-size: 60px;
+.home-nav button {
+  border: none;
+  width: 3.7rem;
+  height: 100%;
+  cursor: pointer;
+  font-size: 1.5rem;
   color: white;
   background: none;
-  border: none;
-  width: 100px;
-  height: 100%;
 }
 
-main .home-nav button:hover {
-  background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-}
-
-main .home-footer {
+.home-footer {
   position: relative;
-  margin: 10px 36px;
-  padding: 0;
+  padding: 0.5rem 1.25rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   z-index: 2;
   overflow: hidden;
 }
-
 .home-footer h3,
 .home-footer a {
   width: max-content;
@@ -106,215 +98,224 @@ main .home-footer {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-main #person-name {
+.home-footer #person-name {
+  margin: 0;
+  margin-bottom: 0.47rem;
   font-style: normal;
   font-weight: 300;
-  font-size: 28px;
+  font-size: 0.77rem;
   color: var(--color-white);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
-
-main .talk-now {
+.home-footer .talk-now {
   display: flex;
   width: max-content;
   height: 28px;
   background-color: var(--color-white);
-  padding: 0 10px;
+  padding: 0 0.42rem;
   border-radius: 15px;
   box-sizing: border-box;
-  line-height: 28px;
+  align-items: center;
   color: var(--vermelho-principal);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.47rem;
   justify-content: space-around;
 }
-
-main .talk-now img:not(.img-1, .img-2) {
+.home-footer .talk-now img:not(.img-1, .img-2) {
   align-self: center;
 }
-
-main .talk-now .img-1,
-main .talk-now .img-2 {
+.home-footer .talk-now img:not(.img-1, .img-2) .img-1,
+.home-footer .talk-now img:not(.img-1, .img-2) .img-2 {
   align-self: center;
 }
-
-main ul#tag-area {
+.home-footer #tag-area {
   position: relative;
   display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(auto-fit, 100px);
+  gap: 0.3rem;
+  grid-template-columns: repeat(auto-fit, 3.6rem);
   box-sizing: border-box;
   max-width: 100%;
   margin-top: 10px;
 }
-
-main #tag-area li {
+.home-footer #tag-area li {
   white-space: nowrap;
   overflow: hidden;
-  width: 100px;
-  height: 28px;
-  background-color: rgba(0, 0, 0, 0.26);
-  border-radius: 15px;
+  width: 100%;
+  border-radius: 0.75rem;
   box-sizing: border-box;
-  padding: 0 7px;
-  line-height: 31px;
-  font-size: 13px;
+  padding: 0 0.27rem;
+  line-height: 2.5;
+  font-size: 0.38rem;
   color: rgb(161, 161, 161);
   text-overflow: ellipsis;
+  background-color: rgba(0, 0, 0, 0.26);
 }
-
-main #subtitle {
-  text-align: justify;
+.home-footer #subtitle {
   margin-top: 5px;
+  margin-bottom: 0;
   color: white;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.555rem;
   overflow-y: scroll;
   height: max-content;
   max-height: 20vh;
 }
-
-/*Para a barra de progresso do home*/
-main #home-progress-content {
+.home-footer #home-progress-content {
   padding: 0;
-  margin: 30px auto;
-  height: 18px;
+  margin: 0.67rem auto;
+  height: 0.57rem;
   width: 100%;
   background: rgba(0, 0, 0, 0.48);
-  border-radius: 15px;
+  border-radius: 0.3rem;
   overflow: hidden;
 }
-
-main #home-progress-bar {
+.home-footer #home-progress-content #home-progress-bar {
   background-color: var(--vermelho-principal);
-  height: 18px;
+  height: 100%;
   width: 0%;
   display: flex;
-  border-radius: 15px;
+  border-radius: 0.3rem;
   overflow: visible;
 }
-
-main #home-progress-val {
+.home-footer #home-progress-content #home-progress-bar #home-progress-val {
   display: flex;
   float: right;
-  line-height: 18px;
   margin: 0 5px 0 auto;
+  font-size: 0.5rem;
   color: var(--color-white);
 }
-
-/*Botões do fundão, like, dislike, fav...*/
-#home-btns {
+.home-footer #home-btns {
   display: flex;
   justify-content: space-between;
 }
-
-#home-btns button {
+.home-footer #home-btns button {
   border: none;
   background: none;
-  width: 85px;
-  height: 85px;
-  background-repeat: no-repeat;
+  width: 2.87rem;
+  height: 2.87rem;
   border-radius: 50px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-
-#home-btns #retry {
-  background: url(./../../images/retry-ico.svg) no-repeat center;
+.home-footer #home-btns #retry {
+  background-image: url(./../../images/retry-ico.svg);
   background-color: #7cd0ff;
-  width: 56px;
-  height: 56px;
+  background-size: 0.88rem;
+  width: 1.75rem;
+  height: 1.75rem;
   margin: auto 0 0;
 }
-
-#home-btns #dislike {
-  background: url(./../../images/cross-ico.svg) no-repeat center;
+.home-footer #home-btns #dislike {
+  background-image: url(./../../images/cross-ico.svg);
   background-color: #b42937;
+  background-size: 1.25rem;
 }
-
-#home-btns #maybe {
+.home-footer #home-btns #maybe {
   color: white;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 0.7rem;
 }
-
-#home-btns #like {
-  background: url(./../../images/like-ico.svg) no-repeat center;
+.home-footer #home-btns #like {
+  background-image: url(./../../images/like-ico.svg);
   background-color: #5ccb5f;
+  background-size: 1.25rem;
 }
-
-#home-btns #favorite {
-  background: url(./../../images/star-ico.svg) no-repeat center;
+.home-footer #home-btns #favorite {
+  background-image: url(./../../images/star-ico.svg);
   background-color: #ffea79;
-  width: 56px;
-  height: 56px;
+  background-size: 0.88rem;
+  width: 1.77rem;
+  height: 1.77rem;
   margin: auto 0 0;
 }
 
 /*DOCUMENTO carroussel.php*/
 main#carroussel {
-  margin: 0 auto;
   max-width: 1000px;
-  width: 94%;
+  width: 27rem;
   min-height: 100%;
-  height: max-content;
+  height: 100%;
   background: #fff;
-  padding: 32px 29px;
+  padding: 1.2rem 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0.375rem;
+  border-radius: 0.3rem;
   box-sizing: border-box;
+  overflow-y: scroll;
+}
+main#carroussel .title {
+  font-size: 1rem;
+  font-weight: 400;
+}
+main#carroussel::-webkit-scrollbar {
+  display: none !important;
 }
 
 main#carroussel figure#informacoes-perfil {
   width: 100%;
   height: max-content;
   max-height: 340px;
-  display: flex;
-  padding: 15px 25px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 0.57rem 0.67rem;
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
+  gap: 0.5rem;
   background: #fff;
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
 }
 
 main#carroussel figure#informacoes-perfil > img {
-  min-width: 272.02px;
+  width: 7rem;
+  min-height: 8.5rem;
   height: 100%;
-  max-height: 310px;
-  border-radius: 10px;
+  border-radius: 0.3rem;
   object-fit: cover;
+  font-size: 0.57rem;
 }
 
 main#carroussel figcaption#descricao-perfil {
-  margin: 2% 3.5% 0;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto auto 1fr max-content;
   text-overflow: ellipsis;
   max-width: 100%;
 }
 
+main#carroussel figcaption#descricao-perfil {
+  gap: 0.3rem;
+  padding: 0 0.25rem;
+}
+main#carroussel figcaption#descricao-perfil > * {
+  margin: 0;
+}
 main#carroussel figcaption#descricao-perfil h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-
-main#carroussel figcaption#descricao-perfil p {
+main#carroussel figcaption#descricao-perfil .__description,
+main#carroussel figcaption#descricao-perfil .__data {
   font-weight: 400;
-  font-size: 15px;
-  max-height: 144px;
-  line-height: 24px;
+  font-size: 0.52rem;
+  max-height: 100%;
   text-align: justify;
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
   text-overflow: ellipsis;
 }
-
-main#carroussel figcaption#descricao-perfil p:first-of-type {
+main#carroussel figcaption#descricao-perfil .__description.__data,
+main#carroussel figcaption#descricao-perfil .__data.__data {
   display: flex;
-  margin-bottom: 8px;
 }
 
-main#carroussel figcaption#descricao-perfil span:nth-child(1),
-main#carroussel .outras-pessoas span:first-of-type {
+.__middot {
   color: var(--vermelho-principal);
   font-weight: bolder;
   display: inline-block;
@@ -326,88 +327,119 @@ main#carroussel .botoes {
   position: relative;
   display: flex;
   justify-content: center;
-  height: 80px;
   align-items: center;
+}
+main#carroussel .botoes form {
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0.67rem;
+  margin: 0;
 }
 
 #informacoes-perfil button,
 .padrao .botoes button {
+  width: 1.75rem;
+  height: 1.75rem;
   border: none;
-  background-repeat: no-repeat;
-  border-radius: 46px;
-  width: 46px;
-  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
   background-position: center;
-  background-size: 55%;
+  background-repeat: no-repeat;
+  background-size: 0.825rem;
 }
-
-#carroussel button.dislike,
-.padrao button.dislike {
-  background-image: url(./../images/cross-ico.svg);
+#informacoes-perfil button.dislike,
+.padrao .botoes button.dislike {
+  background-image: url(./../../images/cross-ico.svg);
   background-color: #b42937;
-  margin-right: 20px;
 }
-
-#carroussel button.like,
-.padrao button.like {
-  background-image: url(./../images/like-ico.svg);
+#informacoes-perfil button.like,
+.padrao .botoes button.like {
+  background-image: url(./../../images/like-ico.svg);
   background-color: #5ccb5f;
 }
 
 /*Estilização da div com as demais pessoas*/
 .outras-pessoas {
   width: 100%;
-  margin: 25px auto;
+  margin: 0.2rem auto;
   height: max-content;
   display: grid;
   background: none;
-  grid-template-columns: repeat(auto-fit, 260px);
+  grid-template-columns: repeat(3, 1fr);
   padding: 15px 0 0;
   justify-items: end;
   box-sizing: border-box;
-  row-gap: 25px;
-  column-gap: 1vmax;
+  row-gap: 0.775rem;
+  column-gap: 0.6rem;
 }
 
 .outras-pessoas .outro-perfil {
-  background-color: #fff;
   box-sizing: border-box;
-  display: flex;
-  padding: 0 15px;
-  max-width: 270px;
-  min-width: 240px;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  padding: 0.6rem;
+  padding-bottom: 0;
+  width: 100%;
   flex-direction: column;
   width: 100%;
-  height: 416px;
-  background: #ffffff;
+  height: max-content;
+  max-height: 100%;
+  background: #fff;
   border: 1px solid #d4d4d4;
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  border-radius: 0.3rem;
 }
-
 .outras-pessoas .outro-perfil img {
   width: 100%;
-  height: 252.99px;
-  margin: 21px auto;
-  border-radius: 10px;
+  height: 8rem;
+  display: flex;
+  border-radius: 0.3rem;
   object-fit: cover;
+  font-size: 0.57rem;
 }
-
 .outras-pessoas .outro-perfil .textual {
-  width: 223.58px;
+  width: 100%;
+  height: max-content;
   margin: 0 auto;
+  margin: 0;
 }
-
-.outras-pessoas button.conversar {
-  background: url(./../images/conversar-icon.svg);
+.outras-pessoas .outro-perfil .textual .__cargo {
+  max-width: 100%;
+  width: max-content;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.outras-pessoas .outro-perfil .textual .__name {
+  margin: 0 !important;
+  font-size: 0.67rem !important;
+  color: #000 !important;
+}
+.outras-pessoas .outro-perfil .textual p {
+  display: flex;
+  align-items: center;
+  margin: 0;
   padding: 0;
-  width: 25px;
-  height: 22.5px;
-  border: none;
+  height: max-content;
+  font-size: 0.57rem;
 }
-
-.outro-perfil a {
+.outras-pessoas .outro-perfil a {
+  width: max-content;
+  height: max-content;
+  cursor: pointer;
   margin: auto;
+}
+.outras-pessoas .conversar {
+  padding: 0;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  background: url(./../../images/conversar-icon.svg) no-repeat center;
+  background-size: contain;
 }
 
 /*# sourceMappingURL=home.css.map */

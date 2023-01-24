@@ -25,6 +25,13 @@
 		width: 100%;
 	}
 }
+body:not(#sobre-usuario) {
+	box-sizing: border-box;
+	#main-container {
+		height: 100%;
+		max-height: 30rem;
+	}
+}
 
 body {
 	column-gap: 1rem;
@@ -36,7 +43,6 @@ body {
 #menu-esquerdo ~ main,
 #menu-esquerdo ~ div {
 	height: max-content;
-	min-height: 100%;
 	width: 100%;
 	display: flex;
 	float: right;
@@ -134,7 +140,7 @@ input::-webkit-calendar-picker-indicator {
 #content-right .principal-content select {
 	appearance: none;
 	background: url(./../../images/arrow-down.svg) no-repeat center right 0.57rem;
-	background-size: .475rem;
+	background-size: 0.475rem;
 }
 
 .progress-next {
@@ -198,18 +204,18 @@ input::-webkit-calendar-picker-indicator {
 	box-sizing: border-box;
 	width: 100%;
 	height: 7rem;
-	padding: .5rem .55rem;
+	padding: 0.5rem 0.55rem;
 	overflow: auto;
 
 	resize: none;
-	font-size: .6rem;
+	font-size: 0.6rem;
 
 	background: rgba(255, 255, 255, 0.1);
 	border: 0.901502px solid #000000;
 	border-radius: 7.21202px;
 }
 
-/*Documento chamada.php*/
+/*===================== CHAMADA =====================*/
 #chamada-video {
 	margin-left: 5%;
 	width: max-content;
@@ -219,104 +225,174 @@ input::-webkit-calendar-picker-indicator {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-}
 
-#chamada-video video {
-	width: max-content;
-	width: 21rem;
-	max-width: 800px;
-	height: 100%;
-	position: sticky;
-	top: 0;
-	object-fit: cover;
-	background: rgb(27, 26, 26);
-}
+	video {
+		width: max-content;
+		width: 21rem;
+		max-width: 800px;
+		height: 100%;
+		position: sticky;
+		top: 0;
+		object-fit: cover;
+		background: rgb(27, 26, 26);
+	}
+	.comandos-chamada {
+		display: flex;
+		width: 100%;
+		position: absolute;
+		flex-direction: row;
+		justify-content: space-evenly;
+		/* margin-bottom: 34px; */
+		bottom: 0.75rem;
+		background-origin: 0;
+		button,
+		#microfone {
+			border: none;
+			width: 1.8rem;
+			height: 1.8rem;
+			font-size: 1px;
+			border-radius: 50%;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			margin: auto 0;
+			cursor: pointer;
 
-#chamada-video .legenda-chamada {
-	width: 100%;
-	height: 8%;
-	max-height: 57px;
-	display: flex;
-	align-items: center;
-	z-index: 2;
-	position: absolute;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: #fff;
+			background-size: 0.87rem;
+		}
+		#microfone {
+			appearance: none;
+			background-image: url(./../../images/mic-icon.svg);
+			&:checked {
+				background-image: url(./../../images/microfone-off.svg);
+			}
 
-	color: #fff;
-	line-height: 57px;
-	font-size: 0.95rem;
-	font-weight: 400;
+			background-size: 0.72rem;
+		}
+		#desligar {
+			width: 2.7rem;
+			height: 2.7rem;
+			border-radius: 70px;
+			background-image: url(./../../images/call-icon.svg);
+			background-color: #b42937;
+			background-size: 80%;
+		}
+		#trocar-camera {
+			background-image: url(./../../images/camera-icon.svg);
+		}
+	}
+	.legenda-chamada {
+		width: 100%;
+		height: 8%;
+		max-height: 57px;
+		display: flex;
+		align-items: center;
+		z-index: 2;
+		position: absolute;
 
-	background: rgba(0, 0, 0, 0.5);
-	span {
-		margin: 0 auto;
-		text-indent: -60px;
+		color: #fff;
+		line-height: 57px;
+		font-size: 0.85rem;
+		font-weight: 400;
+
+		background: rgba(0, 0, 0, 0.5);
+		span {
+			width: max-content;
+			overflow: hidden;
+			margin: 0 auto;
+
+			text-overflow: ellipsis;
+			font-weight: 400;
+		}
+		button {
+			position: absolute;
+			top: 0;
+			cursor: pointer;
+			width: 60px;
+			height: 100%;
+			margin: auto;
+			border: none;
+
+			color: #fff;
+			font-weight: 400;
+			font-size: 0.97rem;
+
+			background: none;
+		}
 	}
 }
 
-#chamada-video .legenda-chamada button {
-	width: 60px;
-	height: 100%;
-	margin: auto;
-	border: none;
-	background: none;
-	color: #fff;
-	font-weight: 400;
-	font-size: 0.97rem;
-}
-
-#chamada-video .comandos-chamada {
-	display: flex;
-	width: 100%;
-	position: absolute;
-	flex-direction: row;
-	justify-content: space-evenly;
-	/* margin-bottom: 34px; */
-	bottom: 0.75rem;
-	background-origin: 0;
-}
-
-#chamada-video .comandos-chamada button,
-#chamada-video .comandos-chamada #microfone {
-	border: none;
-	width: 2.25rem;
-	height: 2.25rem;
-	font-size: 1px;
-	border-radius: 50%;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	margin: auto 0;
-}
-
-#chamada-video #microfone {
-	appearance: none;
-	background: url(./../../images/mic-icon.svg) no-repeat center #fff;
-}
-
-#chamada-video #microfone:checked {
-	background-image: url(./../../images/microfone-off.svg);
-}
-
-#chamada-video #desligar {
-	width: 3.25rem;
-	height: 3.25rem;
-	border-radius: 70px;
-	background: url(./../../images/call-icon.svg) no-repeat center #b42937;
-	background-size: 80%;
-}
-
-#chamada-video #trocar-camera {
-	background: url(./../../images/camera-icon.svg) no-repeat center #fff;
-}
-
-/*Estilizando o arquivo 'mensagens.php'
-*Para a lista de pessoas*/
-main#mensagens {
+/*==================== MENSAGENS ====================*/
+#mensagens {
 	display: grid;
-	grid-template-columns: 34% 1fr;
-	margin: 0 auto;
+	grid-template-columns: 40.1% 1fr;
+	margin: 0;
 	width: 100%;
-}
+	max-width: 30rem;
+	.peoples-to-chat {
+		h2 {
+			width: 100%;
 
-main#mensagens .peoples-to-chat,
+			font-weight: 400;
+			font-size: 0.6rem;
+			margin: 1rem 0;
+			text-align: center;
+		}
+	}
+	.gradient {
+		position: sticky;
+		bottom: 0;
+		width: 100%;
+		height: 30px;
+		background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+	}
+}
+.list-peoples {
+	.person {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		column-gap: 5px;
+		height: max-content;
+		align-items: center;
+		box-sizing: border-box;
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 100%;
+		overflow: hidden;
+		padding: 6px 9px;
+		.dados {
+			max-width: 100%;
+			overflow: hidden;
+		}
+		.foto-de-perfil {
+			max-width: 65px;
+			margin-right: 10px;
+			&,
+			img {
+				margin: 0;
+				position: relative;
+				font-size: 0.47rem;
+			}
+		}
+	}
+	#person-selected {
+		background-color: rgba(252, 0, 59, 0.12);
+		width: 100%;
+	}
+	p {
+		white-space: nowrap;
+		max-width: 100%;
+		margin: 0;
+
+		font-weight: 400;
+		font-size: 0.52rem;
+		color: rgba(51, 51, 51, 0.4);
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+#mensagens .peoples-to-chat,
 #bloqueados #blacklist {
 	border-bottom-left-radius: 10px;
 	border-top-left-radius: 10px;
@@ -329,15 +405,6 @@ main#mensagens .peoples-to-chat,
 	overflow: hidden;
 }
 
-#mensagens .peoples-to-chat h2 {
-	width: 100%;
-
-	font-weight: 400;
-	font-size: 0.6rem;
-	margin: 1rem 0;
-	text-align: center;
-}
-
 #mensagens .list-peoples,
 #bloqueados #blacklist {
 	overflow: hidden;
@@ -347,70 +414,16 @@ main#mensagens .peoples-to-chat,
 	box-sizing: border-box;
 }
 
-#mensagens .gradient {
-	position: sticky;
-	bottom: 0;
-	width: 100%;
-	height: 30px;
-	background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
-}
-
-#mensagens .list-peoples .person {
-	display: grid;
-	grid-template-columns: max-content 1fr;
-	column-gap: 5px;
-	height: max-content;
-	align-items: center;
-	box-sizing: border-box;
-	box-sizing: border-box;
-	width: 100%;
-	max-width: 100%;
-	overflow: hidden;
-	padding: 6px 9px;
-}
-
-.person .dados {
-	max-width: 100%;
-	overflow: hidden;
-}
-
-#mensagens .list-peoples #person-selected {
-	background-color: rgba(252, 0, 59, 0.12);
-	width: 100%;
-}
-
-#mensagens .list-peoples .person .foto-de-perfil {
-	max-width: 65px;
-	margin-right: 10px;
-}
-
-#mensagens .list-peoples .person .foto-de-perfil,
-#mensagens .list-peoples .person .foto-de-perfil img {
-	margin: 0;
-	position: relative;
-	font-size: 11.5px;
-}
-
 #mensagens .list-peoples .person span,
 #blacklist .person span {
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 0.57rem;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: block;
 	width: 100%;
 	max-width: 100%;
-}
-
-#mensagens .list-peoples p {
-	font-weight: 400;
-	font-size: 15px;
-	color: rgba(51, 51, 51, 0.4);
-	white-space: nowrap;
-	max-width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 /*Para o lado do chat corrente*/
@@ -1991,18 +2004,22 @@ dialog {
 	display: none;
 }
 
-dialog > div {
-	background: #fff;
-	position: relative;
-	width: 540px;
-	display: grid;
-	height: 549px;
-	margin: auto;
-	border-radius: 10px;
-	align-items: center;
-	justify-items: center;
+dialog {
+	padding: 0;
 	box-sizing: border-box;
-	padding: 60px;
+	& > div {
+		background: #fff;
+		position: relative;
+		width: 20rem;
+		display: grid;
+		height: 549px;
+		margin: auto;
+		border-radius: 10px;
+		align-items: center;
+		justify-items: center;
+		box-sizing: border-box;
+		padding: 60px;
+	}
 }
 
 dialog h1 {
@@ -2035,6 +2052,8 @@ dialog button.red-btn {
 	text-decoration: underline;
 	border: none;
 	background: none;
+
+	font-size: 0.6rem;
 	color: var(--vermelho-principal);
 }
 
@@ -2048,13 +2067,15 @@ dialog .close-modal {
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 18px;
+	padding: 12px;
+	margin-right: 10px;
+
+	font-size: 0.75rem;
 	font-family: "Raleway";
 	text-decoration: none;
 	color: #000;
+
 	background-blend-mode: color-burn;
-	padding: 12px;
-	margin-right: 10px;
 }
 
 /*Modal de teste de amor*/
@@ -2098,33 +2119,57 @@ dialog#modal-teste-amor {
 }
 
 #bloqueados #blacklist .simple-btn {
-	font-size: 18px;
+	font-size: 0.7rem;
 }
 
-#modal-home-1 > div,
-#modal-home-2 > div {
-	padding: 20px;
+.__modal-image {
+	width: 2.5rem;
+}
+
+.__modal-title {
+	margin: 0 auto;
+
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.__modal-description {
+	margin: 0;
+	padding-bottom: 1rem;
+
+	font-size: 0.57rem;
+	font-size: 400;
+	text-align: center;
+}
+
+#modal-home-1,
+#modal-home-2 {
+	width: 100%;
+	& > div {
+		padding: 0.72rem;
+	}
 }
 
 #modal-home-1 > div {
 	height: max-content;
 	display: grid;
-	row-gap: 20px;
-	padding-bottom: 40px;
+	row-gap: 0.7rem;
 }
 
 #modal-home-2 > div {
-	height: 280px;
-	width: 334px;
+	height: 11.2rem;
+	width: 13.36rem;
 }
 
 #modal-home-2 p {
 	width: 100%;
 	text-align: center;
+	font-size: 0.6rem;
 }
 
 #modal-home-2 .red-btn {
-	line-height: 45px;
+	font-size: 0.67rem;
+	line-height: 2.75;
 }
 
 #modal-home-2 .simple-btn {

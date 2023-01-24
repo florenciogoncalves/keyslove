@@ -284,9 +284,9 @@ $Model = new Model();
 
   <dialog open="true" id="modal-home-1">
     <div class="dialog-content">
-      <img src="./../images/information-icon.svg" alt="" />
-      <h2>Entenda como funciona</h2>
-      <p>
+      <img class="__modal-image" src="./../images/information-icon.svg" />
+      <h2 class="__modal-title">Entenda como funciona</h2>
+      <p class="__modal-description">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
@@ -304,7 +304,7 @@ $Model = new Model();
         você também?
       </p>
       <button id="active" class="red-btn">Ativar</button>
-      <button id="pass-this" class="simple-btn">Não tenho interesse</button>
+      <button id="pass-this" class="simple-btn mt-2">Não tenho interesse</button>
       <button class="close-modal simple-btn">X</button>
     </div>
   </dialog>

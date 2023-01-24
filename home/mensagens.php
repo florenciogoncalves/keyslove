@@ -352,23 +352,25 @@ if (!$_SESSION['username']) {
             ?>
 
 
-                <div class='the-message-container'>
+                <div class='the-message-container user'>
                   <div class='identifier'>
-                    <object data='./../_storage/images/<?= $sender_photo['photo'] ?>' class='sender_img'></object>
                     <span><b>Você</b><span> &middot;</span> as <?= $sendHour ?></span>
                   </div>
+
+
                   <div class='text-container'>
                     <p class='writed-message'>
                       <?= $message['message'] ?>
                     </p>
                   </div>
-
+                </div>
                 <?php
               else :
                 ?>
 
-                  <div class='the-message-container user'>
+                  <div class='the-message-container'>
                     <div class='identifier'>
+                    <object data='./../_storage/images/<?= $sender_photo['photo'] ?>' class='sender_img'></object>
                       <span><b><?= $user ?></b><span> &middot; </span> as <?= $sendHour ?></span>
                     </div>
 
@@ -392,7 +394,7 @@ if (!$_SESSION['username']) {
               ?>
 
 
-
+        </div>
 
 
               <form method="POST" action="./../_app/controllers/messageController.php" enctype="multipart/form-data">
@@ -429,6 +431,7 @@ if (!$_SESSION['username']) {
   </div>
 
   <script src="./../script/script.js"></script>
+  <script src="./../script/message.js" defer></script>
   <script>
     const status = localStorage.getItem('status');
 
