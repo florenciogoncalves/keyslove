@@ -290,8 +290,8 @@ input::-webkit-calendar-picker-indicator {
 	button,
 	#microfone {
 		border: none;
-		width: 1.87rem;
-		height: 1.87rem;
+		width: 1.8rem;
+		height: 1.8rem;
 		font-size: 1px;
 		border-radius: 50%;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -310,13 +310,13 @@ input::-webkit-calendar-picker-indicator {
 			background-image: url(./../../images/microfone-off.svg);
 		}
 
-		background-size: 0.8rem;
+		background-size: 0.72rem;
 	}
 }
 
 #chamada-video #desligar {
-	width: 3rem;
-	height: 3rem;
+	width: 2.7rem;
+	height: 2.7rem;
 	border-radius: 70px;
 	background-image: url(./../../images/call-icon.svg);
 	background-color: #b42937;
