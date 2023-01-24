@@ -115,7 +115,6 @@ main li {
   top: 0;
   overflow-y: scroll;
   grid-template-rows: max-content max-content;
-  z-index: 999;
 }
 #menu-esquerdo #div-left {
   height: max-content;
@@ -2428,6 +2427,7 @@ dialog button.red-btn {
   text-decoration: underline;
   border: none;
   background: none;
+  font-size: 0.6rem;
   color: var(--vermelho-principal);
 }
 
@@ -2441,13 +2441,13 @@ dialog .close-modal {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 18px;
+  padding: 12px;
+  margin-right: 10px;
+  font-size: 0.75rem;
   font-family: "Raleway";
   text-decoration: none;
   color: #000;
   background-blend-mode: color-burn;
-  padding: 12px;
-  margin-right: 10px;
 }
 
 /*Modal de teste de amor*/
@@ -2491,33 +2491,56 @@ dialog#modal-teste-amor {
 }
 
 #bloqueados #blacklist .simple-btn {
-  font-size: 18px;
+  font-size: 0.7rem;
 }
 
+.__modal-image {
+  width: 2.5rem;
+}
+
+.__modal-title {
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.__modal-description {
+  margin: 0;
+  padding-bottom: 1rem;
+  font-size: 0.57rem;
+  font-size: 400;
+  text-align: center;
+}
+
+#modal-home-1,
+#modal-home-2 {
+  width: 100%;
+}
 #modal-home-1 > div,
 #modal-home-2 > div {
-  padding: 20px;
+  padding: 0.72rem;
 }
 
 #modal-home-1 > div {
   height: max-content;
   display: grid;
-  row-gap: 20px;
-  padding-bottom: 40px;
+  row-gap: 0.7rem;
 }
 
 #modal-home-2 > div {
-  height: 280px;
-  width: 334px;
+  height: 11.2rem;
+  width: 13.36rem;
 }
 
 #modal-home-2 p {
   width: 100%;
   text-align: center;
+  font-size: 0.6rem;
 }
 
 #modal-home-2 .red-btn {
-  line-height: 45px;
+  font-size: 0.67rem;
+  line-height: 2.75;
 }
 
 #modal-home-2 .simple-btn {

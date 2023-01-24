@@ -374,12 +374,12 @@
     border: none;
   }
   dialog div {
-    width: 85vw !important;
-    max-width: 360px !important;
+    max-width: 90vw !important;
     font-size: 9pt;
   }
   #pass-this {
-    font-size: 9pt;
+    margin-top: 0.5rem;
+    font-size: 0.65rem;
   }
   #modal-home-1 img {
     width: 25%;

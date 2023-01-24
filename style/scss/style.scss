@@ -140,7 +140,7 @@ input::-webkit-calendar-picker-indicator {
 #content-right .principal-content select {
 	appearance: none;
 	background: url(./../../images/arrow-down.svg) no-repeat center right 0.57rem;
-	background-size: .475rem;
+	background-size: 0.475rem;
 }
 
 .progress-next {
@@ -204,11 +204,11 @@ input::-webkit-calendar-picker-indicator {
 	box-sizing: border-box;
 	width: 100%;
 	height: 7rem;
-	padding: .5rem .55rem;
+	padding: 0.5rem 0.55rem;
 	overflow: auto;
 
 	resize: none;
-	font-size: .6rem;
+	font-size: 0.6rem;
 
 	background: rgba(255, 255, 255, 0.1);
 	border: 0.901502px solid #000000;
@@ -2041,6 +2041,8 @@ dialog button.red-btn {
 	text-decoration: underline;
 	border: none;
 	background: none;
+
+	font-size: 0.6rem;
 	color: var(--vermelho-principal);
 }
 
@@ -2054,13 +2056,15 @@ dialog .close-modal {
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 18px;
+	padding: 12px;
+	margin-right: 10px;
+
+	font-size: 0.75rem;
 	font-family: "Raleway";
 	text-decoration: none;
 	color: #000;
+
 	background-blend-mode: color-burn;
-	padding: 12px;
-	margin-right: 10px;
 }
 
 /*Modal de teste de amor*/
@@ -2104,33 +2108,57 @@ dialog#modal-teste-amor {
 }
 
 #bloqueados #blacklist .simple-btn {
-	font-size: 18px;
+	font-size: 0.7rem;
 }
 
-#modal-home-1 > div,
-#modal-home-2 > div {
-	padding: 20px;
+.__modal-image {
+	width: 2.5rem;
+}
+
+.__modal-title {
+	margin: 0 auto;
+
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.__modal-description {
+	margin: 0;
+	padding-bottom: 1rem;
+
+	font-size: 0.57rem;
+	font-size: 400;
+	text-align: center;
+}
+
+#modal-home-1,
+#modal-home-2 {
+width: 100%;
+	& > div {
+		padding: 0.72rem;
+	}
 }
 
 #modal-home-1 > div {
 	height: max-content;
 	display: grid;
-	row-gap: 20px;
-	padding-bottom: 40px;
+	row-gap: 0.7rem;
 }
 
 #modal-home-2 > div {
-	height: 280px;
-	width: 334px;
+	height: 11.2rem;
+	width: 13.36rem;
 }
 
 #modal-home-2 p {
 	width: 100%;
 	text-align: center;
+	font-size: 0.6rem;
 }
 
 #modal-home-2 .red-btn {
-	line-height: 45px;
+	font-size: 0.67rem;
+	line-height: 2.75;
 }
 
 #modal-home-2 .simple-btn {
