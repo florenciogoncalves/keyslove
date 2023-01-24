@@ -641,24 +641,29 @@ input::-webkit-calendar-picker-indicator {
   position: absolute;
   color: #fff;
   line-height: 57px;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 400;
   background: rgba(0, 0, 0, 0.5);
 }
 #chamada-video .legenda-chamada span {
+  width: max-content;
+  overflow: hidden;
   margin: 0 auto;
-  text-indent: -60px;
+  text-overflow: ellipsis;
+  font-weight: 400;
 }
-
 #chamada-video .legenda-chamada button {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
   width: 60px;
   height: 100%;
   margin: auto;
   border: none;
-  background: none;
   color: #fff;
   font-weight: 400;
   font-size: 0.97rem;
+  background: none;
 }
 
 #chamada-video .comandos-chamada {
@@ -671,37 +676,41 @@ input::-webkit-calendar-picker-indicator {
   bottom: 0.75rem;
   background-origin: 0;
 }
-
 #chamada-video .comandos-chamada button,
 #chamada-video .comandos-chamada #microfone {
   border: none;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1.87rem;
+  height: 1.87rem;
   font-size: 1px;
   border-radius: 50%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: auto 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  background-size: 0.87rem;
 }
-
-#chamada-video #microfone {
+#chamada-video .comandos-chamada #microfone {
   appearance: none;
-  background: url(./../../images/mic-icon.svg) no-repeat center #fff;
+  background-image: url(./../../images/mic-icon.svg);
+  background-size: 0.8rem;
 }
-
-#chamada-video #microfone:checked {
+#chamada-video .comandos-chamada #microfone:checked {
   background-image: url(./../../images/microfone-off.svg);
 }
 
 #chamada-video #desligar {
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 70px;
-  background: url(./../../images/call-icon.svg) no-repeat center #b42937;
+  background-image: url(./../../images/call-icon.svg);
+  background-color: #b42937;
   background-size: 80%;
 }
 
 #chamada-video #trocar-camera {
-  background: url(./../../images/camera-icon.svg) no-repeat center #fff;
+  background-image: url(./../../images/camera-icon.svg);
 }
 
 /*Estilizando o arquivo 'mensagens.php'

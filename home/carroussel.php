@@ -244,7 +244,7 @@ if (!$_SESSION['username']) {
             endif; ?>
           </p>
           <?php
-          if (true) :
+          if (!isset($empty->alertNotUserYet)) :
           ?>
             <div class="botoes">
 

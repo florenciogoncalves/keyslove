@@ -249,25 +249,33 @@ input::-webkit-calendar-picker-indicator {
 
 	color: #fff;
 	line-height: 57px;
-	font-size: 0.95rem;
+	font-size: 0.85rem;
 	font-weight: 400;
 
 	background: rgba(0, 0, 0, 0.5);
 	span {
+		width: max-content;
+		overflow: hidden;
 		margin: 0 auto;
-		text-indent: -60px;
-	}
-}
 
-#chamada-video .legenda-chamada button {
-	width: 60px;
-	height: 100%;
-	margin: auto;
-	border: none;
-	background: none;
-	color: #fff;
-	font-weight: 400;
-	font-size: 0.97rem;
+		text-overflow: ellipsis;
+		font-weight: 400;
+	}
+	button {
+		position: absolute;
+		top: 0;
+		cursor: pointer;
+		width: 60px;
+		height: 100%;
+		margin: auto;
+		border: none;
+
+		color: #fff;
+		font-weight: 400;
+		font-size: 0.97rem;
+
+		background: none;
+	}
 }
 
 #chamada-video .comandos-chamada {
@@ -279,38 +287,44 @@ input::-webkit-calendar-picker-indicator {
 	/* margin-bottom: 34px; */
 	bottom: 0.75rem;
 	background-origin: 0;
-}
+	button,
+	#microfone {
+		border: none;
+		width: 1.87rem;
+		height: 1.87rem;
+		font-size: 1px;
+		border-radius: 50%;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		margin: auto 0;
+		cursor: pointer;
 
-#chamada-video .comandos-chamada button,
-#chamada-video .comandos-chamada #microfone {
-	border: none;
-	width: 2.25rem;
-	height: 2.25rem;
-	font-size: 1px;
-	border-radius: 50%;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	margin: auto 0;
-}
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: #fff;
+		background-size: .87rem;
+	}
+	#microfone {
+		appearance: none;
+		background-image: url(./../../images/mic-icon.svg);
+		&:checked {
+			background-image: url(./../../images/microfone-off.svg);
+		}
 
-#chamada-video #microfone {
-	appearance: none;
-	background: url(./../../images/mic-icon.svg) no-repeat center #fff;
-}
-
-#chamada-video #microfone:checked {
-	background-image: url(./../../images/microfone-off.svg);
+		background-size: 0.8rem;
+	}
 }
 
 #chamada-video #desligar {
-	width: 3.25rem;
-	height: 3.25rem;
+	width: 3rem;
+	height: 3rem;
 	border-radius: 70px;
-	background: url(./../../images/call-icon.svg) no-repeat center #b42937;
+	background-image: url(./../../images/call-icon.svg);
+	background-color: #b42937;
 	background-size: 80%;
 }
 
 #chamada-video #trocar-camera {
-	background: url(./../../images/camera-icon.svg) no-repeat center #fff;
+	background-image: url(./../../images/camera-icon.svg);
 }
 
 /*Estilizando o arquivo 'mensagens.php'
@@ -2133,7 +2147,7 @@ dialog#modal-teste-amor {
 
 #modal-home-1,
 #modal-home-2 {
-width: 100%;
+	width: 100%;
 	& > div {
 		padding: 0.72rem;
 	}
