@@ -357,13 +357,13 @@ if (!$_SESSION['username']) {
                     <span><b>Você</b><span> &middot;</span> as <?= $sendHour ?></span>
                   </div>
 
-                  
+
                   <div class='text-container'>
                     <p class='writed-message'>
                       <?= $message['message'] ?>
                     </p>
                   </div>
-
+                </div>
                 <?php
               else :
                 ?>
@@ -394,7 +394,7 @@ if (!$_SESSION['username']) {
               ?>
 
 
-
+        </div>
 
 
               <form method="POST" action="./../_app/controllers/messageController.php" enctype="multipart/form-data">
