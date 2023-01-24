@@ -354,7 +354,7 @@ if (!$_SESSION['username']) {
 
                 <div class='the-message-container user'>
                   <div class='identifier'>
-                    <span><b>Você</b><span> &middot;</span> as <?= $sendHour ?></span>
+                    <span class="__sended-data"><?= $sendHour ?></span>
                   </div>
 
 
@@ -370,8 +370,8 @@ if (!$_SESSION['username']) {
 
                   <div class='the-message-container'>
                     <div class='identifier'>
-                    <object data='./../_storage/images/<?= $sender_photo['photo'] ?>' class='sender_img'></object>
-                      <span><b><?= $user ?></b><span> &middot; </span> as <?= $sendHour ?></span>
+                    <object data='./../_storage/images/<?= $reciver_photo_user['photo'] ?>' class='sender_img'></object>
+                      <span class="__sended-data"><b><?= $user ?></b><span class="__middot">&middot;</span>as <?= $sendHour ?></span>
                     </div>
 
                     <div class='text-container'>

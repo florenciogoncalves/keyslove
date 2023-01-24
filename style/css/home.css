@@ -319,7 +319,7 @@ main#carroussel figcaption#descricao-perfil .__data.__data {
   color: var(--vermelho-principal);
   font-weight: bolder;
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 0.15rem;
   font-size: inherit;
 }
 

@@ -394,8 +394,8 @@ input::-webkit-calendar-picker-indicator {
 }
 #mensagens .peoples-to-chat,
 #bloqueados #blacklist {
-	border-bottom-left-radius: 10px;
-	border-top-left-radius: 10px;
+	border-bottom-left-radius: .37rem;
+	border-top-left-radius: .37rem;
 	background: #fff;
 
 	display: flex;
@@ -456,7 +456,7 @@ main#mensagens .chat {
 
 	font-family: "Poppins";
 	font-weight: 600;
-	font-size: .67rem;
+	font-size: 0.67rem;
 	white-space: nowrap;
 }
 
@@ -464,15 +464,24 @@ main#mensagens .chat {
 	display: flex;
 	flex-direction: row;
 	width: max-content;
+	height: max-content;
+	align-items: center;
 	margin: auto auto auto 0;
-	padding-right: 20px;
+	padding-right: 0.5rem;
 	position: relative;
+	a {
+		display: flex;
+		width: max-content;
+		height: max-content;
+	}
 }
 
 #mensagens .botoes-top button {
-	width: 28px;
-	height: 28px;
+	width: 1rem;
+	height: 1rem;
 	border: none;
+	cursor: pointer;
+
 	background: none;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -578,37 +587,37 @@ main#mensagens .chat {
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;
+	padding-right: .175rem;
 }
 
 #mensagens .the-message-container {
-	margin-top: 25px;
+	margin-top: 0.8rem;
+	.writed-message {
+		margin: 0;
+	}
 }
 
 #mensagens .identifier {
-	width: 40%;
+	width: max-content;
 	height: max-content;
 	display: flex;
-}
+	.__sended-data {
+		height: 100%;
+		margin: auto 0;
+		align-items: center;
 
-#mensagens #sended .identifier img {
-	width: 42px;
-	height: 42px;
-	background: rgba(51, 51, 51, 0.3);
-	border-radius: 40px;
-	margin: 8px;
-	object-fit: cover;
-}
+		font-size: .425rem;
+		font-weight: 500;
+	}
+	.sender_img {
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+		margin: 8px;
+		object-fit: cover;
 
-#mensagens #sended .identifier > span {
-	height: 100%;
-	margin: auto 0 20px;
-	font-size: 10px;
-	font-weight: 500;
-}
-#mensagens #sended .identifier > span > span {
-	line-height: 0px;
-	font-weight: bolder;
-	color: var(--vermelho-principal);
+		background: rgba(51, 51, 51, 0.3);
+	}
 }
 
 #mensagens .text-container {
@@ -623,11 +632,11 @@ main#mensagens .chat {
 }
 
 #mensagens .text-container .writed-message {
-	padding: 9px;
+	padding: .3rem;
 	overflow: hidden;
 	max-height: max-content;
 	word-break: break-word;
-	font-size: 13px;
+	font-size: .47rem;
 }
 
 #mensagens .text-container .blur {
@@ -703,16 +712,20 @@ main#mensagens .chat {
 }
 
 #mensagens #privado .add-media {
-	width: 47px;
-	height: 47px;
-	border-radius: 50px;
+	width: 1.75rem;
+	height: 1.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
 	border: none;
-	text-align: center;
 	margin: auto 0 0;
+	cursor: pointer;
+
 	background-color: var(--vermelho-principal);
 
 	color: #fff;
-	font-size: 32px;
+	font-size: 1rem;
 }
 
 #mensagens .message-text-container {
@@ -768,21 +781,6 @@ main#mensagens .chat {
 	object-fit: scale-down;
 }
 
-/* #mensagens .sended-file .writed-message::after {
-  content: 'file';
-  color: #ffffff00;
-  width: 30px;
-  height: 99%;
-  box-sizing: border-box;
-  padding-right: 5px;
-  padding-left: 30px;
-  margin: auto 0;
-  margin: auto;
-  background: url(./../../images/file.png) no-repeat center center;
-  background-size: fill;
-  object-fit: scale-down;
-} */
-
 #mensagens .clear-file {
 	width: 23px;
 	height: 23px;
@@ -806,9 +804,10 @@ main#mensagens .chat {
 	border: none;
 	text-align: justify;
 	box-sizing: border-box;
+	margin: auto;
 
 	font-weight: 400;
-	font-size: 14px;
+	font-size: .457rem;
 }
 
 #mensagens #message-text::-webkit-scrollbar {
@@ -820,12 +819,15 @@ main#mensagens .chat {
 }
 
 #mensagens .send-message {
-	width: 45px;
-	height: 45px;
+	width: 1.5rem;
+	height: 1.5rem;
 	margin-right: 6px;
 	border: none;
 	position: relative;
+	cursor: pointer;
+
 	background: url(./../../images/send-message-icon.svg) no-repeat center;
+	background-size: .9rem;
 }
 
 /* DOCUMENTO curtidas.php & localizar-pessoas.php*/
