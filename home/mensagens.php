@@ -423,7 +423,7 @@ if (!$_SESSION['username']) {
           <li><a href="./index.php"></a></li>
           <li><a href="./localizar-pessoas.php"></a></li>
           <li><a href="./favoritos.php"></a></li>
-          <li><a href="./mensagens.php"></a></li>
+          <li id="nav-selecionada"><a href="./mensagens.php"></a></li>
           <li><button id="mostra-menu-mobile"></button></li>
         </ul>
       </nav>

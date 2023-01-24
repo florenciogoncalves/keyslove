@@ -465,7 +465,7 @@
   }
   #mostra-menu-mobile {
     height: 100%;
-    width: 30px;
+    width: 1.5rem;
     border: none;
     background-size: 50% !important;
     background: url(./../../images/up-menu.png) center no-repeat;
@@ -473,7 +473,7 @@
   }
   #nav-selecionada {
     background-color: var(--bg-color);
-    border-radius: 50px;
+    border-radius: 50%;
     object-fit: cover;
   }
   /*

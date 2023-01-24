@@ -865,13 +865,12 @@ main#mensagens .chat {
 }
 
 #mensagens #friend-information h2 {
-  width: 320px;
+  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: 15px;
   font-family: "Poppins";
   font-weight: 600;
-  font-size: 24px;
+  font-size: 0.67rem;
   white-space: nowrap;
 }
 
