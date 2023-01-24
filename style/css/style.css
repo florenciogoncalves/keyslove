@@ -428,6 +428,14 @@ main li {
   width: 100%;
 }
 
+body:not(#sobre-usuario) {
+  box-sizing: border-box;
+}
+body:not(#sobre-usuario) #main-container {
+  height: 100%;
+  max-height: 30rem;
+}
+
 body {
   column-gap: 1rem;
 }
@@ -438,7 +446,6 @@ body > div:last-of-type:not(#menu-esquerdo, #main-container) {
 #menu-esquerdo ~ main,
 #menu-esquerdo ~ div {
   height: max-content;
-  min-height: 100%;
   width: 100%;
   display: flex;
   float: right;

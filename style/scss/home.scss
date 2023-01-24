@@ -1,7 +1,5 @@
 @import url(./style.css);
 
-
-
 main#home,
 main#perfil {
 	position: relative;
@@ -17,7 +15,7 @@ main#perfil {
 .title {
 	width: max-content;
 	height: 48px;
-	margin: 0 ;
+	margin: 0;
 
 	font-weight: 400;
 	font-style: normal;
@@ -37,38 +35,35 @@ main #main-image {
 	width: 100%;
 }
 
-main#home .home-bar,
-main#perfil .home-bar {
+.home-bar {
 	width: 100%;
-	height: 80px;
+	height: .2rem;
 	z-index: 2;
 	padding: 0 140px;
 	align-items: center;
 	box-sizing: border-box;
 	display: flex;
-	gap: 9.76px;
+	gap: .3rem;
+	margin-top: .97rem;
 	flex-direction: row;
 	justify-content: center;
+	li {
+		height: 100%;
+		width: 100%;
+		background: var(--color-white);
+		border-radius: 9.76344px;
+		box-shadow: 1 1 11px 11px rgba(0, 0, 0, 0.7);
+		&.visualized {
+			background: #333333;
+		}
+	}
 }
 
-main .home-bar li {
-	height: 8.14px;
+.home-nav {
 	width: 100%;
-	background: var(--color-white);
-	border-radius: 9.76344px;
-	box-shadow: 1 1 11px 11px rgba(0, 0, 0, 0.7);
-}
-
-/*para elementos vizualizados na barra de home*/
-
-main .home-bar li.visualized {
-	background: #333333;
-}
-
-main .home-nav {
-	width: 100%;
+	height: 100%;
 	position: relative;
-	padding: 0;
+	padding: 0 0.2rem;
 	align-items: center;
 	box-sizing: border-box;
 	display: flex;
@@ -76,190 +71,176 @@ main .home-nav {
 	justify-content: space-between;
 	z-index: 6;
 	margin: auto;
+	button {
+		border: none;
+		width: 3.7rem;
+		height: 100%;
+		cursor: pointer;
+		margin-top: 25%;
+
+		font-size: 1.5rem;
+		color: white;
+
+		background: none;
+	}
 }
 
-main .home-nav button {
-	font-size: 60px;
-	color: white;
-	background: none;
-	border: none;
-	width: 100px;
-	height: 100%;
-}
-
-main .home-nav button:hover {
-	background: radial-gradient(
-		rgba(0, 0, 0, 0.3),
-		rgba(0, 0, 0, 0),
-		rgba(0, 0, 0, 0)
-	);
-}
-
-main .home-footer {
+.home-footer {
 	position: relative;
-	margin: 10px 36px;
-	padding: 0;
+	padding: 0.5rem 1.25rem;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	z-index: 2;
 	overflow: hidden;
-}
+	h3,
+	a {
+		width: max-content;
+		max-width: 100%;
+		word-wrap: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	#person-name {
+		margin: 0;
+		margin-bottom: 0.47rem;
 
-.home-footer h3,
-.home-footer a {
-	width: max-content;
-	max-width: 100%;
-	word-wrap: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
+		font-style: normal;
+		font-weight: 300;
+		font-size: 0.77rem;
+		color: var(--color-white);
+		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+	}
 
-main #person-name {
-	font-style: normal;
-	font-weight: 300;
-	font-size: 28px;
-	color: var(--color-white);
-	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
+	.talk-now {
+		display: flex;
+		width: max-content;
+		height: 28px;
+		background-color: var(--color-white);
+		padding: 0 0.42rem;
+		border-radius: 15px;
+		box-sizing: border-box;
+		align-items: center;
 
-main .talk-now {
-	display: flex;
-	width: max-content;
-	height: 28px;
-	background-color: var(--color-white);
-	padding: 0 10px;
-	border-radius: 15px;
-	box-sizing: border-box;
+		color: var(--vermelho-principal);
+		font-weight: 400;
+		font-size: 0.47rem;
+		justify-content: space-around;
+		img:not(.img-1, .img-2) {
+			align-self: center;
+			.img-1,
+			.img-2 {
+				align-self: center;
+			}
+		}
+	}
+	#tag-area {
+		position: relative;
+		display: grid;
 
-	line-height: 28px;
-	color: var(--vermelho-principal);
-	font-weight: 400;
-	font-size: 14px;
-	justify-content: space-around;
-}
+		gap: 0.3rem;
+		grid-template-columns: repeat(auto-fit, 3.6rem);
 
-main .talk-now img:not(.img-1, .img-2) {
-	align-self: center;
-}
+		box-sizing: border-box;
+		max-width: 100%;
+		margin-top: 10px;
+		li {
+			white-space: nowrap;
+			overflow: hidden;
+			width: 100%;
+			border-radius: 0.75rem;
+			box-sizing: border-box;
+			padding: 0 0.27rem;
 
-main .talk-now .img-1,
-main .talk-now .img-2 {
-	align-self: center;
-}
+			line-height: 2.5;
+			font-size: 0.38rem;
+			color: rgb(161, 161, 161);
+			text-overflow: ellipsis;
 
-main ul#tag-area {
-	position: relative;
-	display: grid;
+			background-color: rgba(0, 0, 0, 0.26);
+		}
+	}
+	#subtitle {
+		margin-top: 5px;
 
-	gap: 15px;
-	grid-template-columns: repeat(auto-fit, 100px);
+		color: white;
+		font-weight: 400;
+		font-size: 0.555rem;
+		overflow-y: scroll;
+		height: max-content;
+		max-height: 20vh;
+	}
+	#home-progress-content {
+		padding: 0;
+		margin: 0.67rem auto;
+		height: 0.57rem;
+		width: 100%;
+		background: rgba(0, 0, 0, 0.48);
+		border-radius: 0.3rem;
+		overflow: hidden;
+		#home-progress-bar {
+			background-color: var(--vermelho-principal);
+			height: 100%;
+			width: 0%;
+			display: flex;
+			border-radius: 0.3rem;
+			overflow: visible;
+			#home-progress-val {
+				display: flex;
+				float: right;
+				margin: 0 5px 0 auto;
 
-	box-sizing: border-box;
-	max-width: 100%;
-	margin-top: 10px;
-}
+				font-size: 0.5rem;
+				color: var(--color-white);
+			}
+		}
+	}
+	#home-btns {
+		display: flex;
+		justify-content: space-between;
+		button {
+			border: none;
+			background: none;
+			width: 2.87rem;
+			height: 2.87rem;
+			border-radius: 50px;
+			cursor: pointer;
 
-main #tag-area li {
-	white-space: nowrap;
-	overflow: hidden;
-	width: 100px;
-	height: 28px;
-	background-color: rgba(0, 0, 0, 0.26);
-	border-radius: 15px;
-	box-sizing: border-box;
-	padding: 0 7px;
-
-	line-height: 31px;
-	font-size: 13px;
-	color: rgb(161, 161, 161);
-	text-overflow: ellipsis;
-}
-
-main #subtitle {
-	text-align: justify;
-	margin-top: 5px;
-
-	color: white;
-	font-weight: 400;
-	font-size: 15px;
-	overflow-y: scroll;
-	height: max-content;
-	max-height: 20vh;
-}
-
-/*Para a barra de progresso do home*/
-main #home-progress-content {
-	padding: 0;
-	margin: 30px auto;
-	height: 18px;
-	width: 100%;
-	background: rgba(0, 0, 0, 0.48);
-	border-radius: 15px;
-	overflow: hidden;
-}
-main #home-progress-bar {
-	background-color: var(--vermelho-principal);
-	height: 18px;
-	width: 0%;
-	display: flex;
-	border-radius: 15px;
-	overflow: visible;
-}
-
-main #home-progress-val {
-	display: flex;
-	float: right;
-	line-height: 18px;
-	margin: 0 5px 0 auto;
-	color: var(--color-white);
-}
-
-/*Botões do fundão, like, dislike, fav...*/
-#home-btns {
-	display: flex;
-	justify-content: space-between;
-}
-
-#home-btns button {
-	border: none;
-	background: none;
-	width: 85px;
-	height: 85px;
-	background-repeat: no-repeat;
-	border-radius: 50px;
-}
-
-#home-btns #retry {
-	background: url(./../../images/retry-ico.svg) no-repeat center;
-	background-color: #7cd0ff;
-	width: 56px;
-	height: 56px;
-	margin: auto 0 0;
-}
-
-#home-btns #dislike {
-	background: url(./../../images/cross-ico.svg) no-repeat center;
-	background-color: #b42937;
-}
-
-#home-btns #maybe {
-	color: white;
-	font-weight: 400;
-	font-size: 30px;
-}
-
-#home-btns #like {
-	background: url(./../../images/like-ico.svg) no-repeat center;
-	background-color: #5ccb5f;
-}
-
-#home-btns #favorite {
-	background: url(./../../images/star-ico.svg) no-repeat center;
-	background-color: #ffea79;
-	width: 56px;
-	height: 56px;
-	margin: auto 0 0;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#retry {
+			background-image: url(./../../images/retry-ico.svg);
+			background-color: #7cd0ff;
+			background-size: 0.88rem;
+			width: 1.75rem;
+			height: 1.75rem;
+			margin: auto 0 0;
+		}
+		#dislike {
+			background-image: url(./../../images/cross-ico.svg);
+			background-color: #b42937;
+			background-size: 1.25rem;
+		}
+		#maybe {
+			color: white;
+			font-weight: 400;
+			font-size: 0.7rem;
+		}
+		#like {
+			background-image: url(./../../images/like-ico.svg);
+			background-color: #5ccb5f;
+			background-size: 1.25rem;
+		}
+		#favorite {
+			background-image: url(./../../images/star-ico.svg);
+			background-color: #ffea79;
+			background-size: 0.88rem;
+			width: 1.77rem;
+			height: 1.77rem;
+			margin: auto 0 0;
+		}
+	}
 }
 
 /*DOCUMENTO carroussel.php*/
@@ -272,7 +253,7 @@ main#carroussel {
 	background: #fff;
 	padding: 32px 29px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: .375rem;
+	border-radius: 0.375rem;
 	box-sizing: border-box;
 }
 
