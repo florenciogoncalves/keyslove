@@ -608,7 +608,7 @@ input::-webkit-calendar-picker-indicator {
   border-radius: 7.21202px;
 }
 
-/*Documento chamada.php*/
+/*===================== CHAMADA =====================*/
 #chamada-video {
   margin-left: 5%;
   width: max-content;
@@ -619,7 +619,6 @@ input::-webkit-calendar-picker-indicator {
   flex-direction: column;
   justify-content: space-between;
 }
-
 #chamada-video video {
   width: max-content;
   width: 21rem;
@@ -630,7 +629,50 @@ input::-webkit-calendar-picker-indicator {
   object-fit: cover;
   background: rgb(27, 26, 26);
 }
-
+#chamada-video .comandos-chamada {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* margin-bottom: 34px; */
+  bottom: 0.75rem;
+  background-origin: 0;
+}
+#chamada-video .comandos-chamada button,
+#chamada-video .comandos-chamada #microfone {
+  border: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 1px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: auto 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  background-size: 0.87rem;
+}
+#chamada-video .comandos-chamada #microfone {
+  appearance: none;
+  background-image: url(./../../images/mic-icon.svg);
+  background-size: 0.72rem;
+}
+#chamada-video .comandos-chamada #microfone:checked {
+  background-image: url(./../../images/microfone-off.svg);
+}
+#chamada-video .comandos-chamada #desligar {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 70px;
+  background-image: url(./../../images/call-icon.svg);
+  background-color: #b42937;
+  background-size: 80%;
+}
+#chamada-video .comandos-chamada #trocar-camera {
+  background-image: url(./../../images/camera-icon.svg);
+}
 #chamada-video .legenda-chamada {
   width: 100%;
   height: 8%;
@@ -666,74 +708,14 @@ input::-webkit-calendar-picker-indicator {
   background: none;
 }
 
-#chamada-video .comandos-chamada {
-  display: flex;
-  width: 100%;
-  position: absolute;
-  flex-direction: row;
-  justify-content: space-evenly;
-  /* margin-bottom: 34px; */
-  bottom: 0.75rem;
-  background-origin: 0;
-}
-#chamada-video .comandos-chamada button,
-#chamada-video .comandos-chamada #microfone {
-  border: none;
-  width: 1.8rem;
-  height: 1.8rem;
-  font-size: 1px;
-  border-radius: 50%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: auto 0;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #fff;
-  background-size: 0.87rem;
-}
-#chamada-video .comandos-chamada #microfone {
-  appearance: none;
-  background-image: url(./../../images/mic-icon.svg);
-  background-size: 0.72rem;
-}
-#chamada-video .comandos-chamada #microfone:checked {
-  background-image: url(./../../images/microfone-off.svg);
-}
-
-#chamada-video #desligar {
-  width: 2.7rem;
-  height: 2.7rem;
-  border-radius: 70px;
-  background-image: url(./../../images/call-icon.svg);
-  background-color: #b42937;
-  background-size: 80%;
-}
-
-#chamada-video #trocar-camera {
-  background-image: url(./../../images/camera-icon.svg);
-}
-
-/*Estilizando o arquivo 'mensagens.php'
-*Para a lista de pessoas*/
-main#mensagens {
+/*==================== MENSAGENS ====================*/
+#mensagens {
   display: grid;
-  grid-template-columns: 34% 1fr;
-  margin: 0 auto;
+  grid-template-columns: 40.1% 1fr;
+  margin: 0;
   width: 100%;
+  max-width: 30rem;
 }
-
-main#mensagens .peoples-to-chat,
-#bloqueados #blacklist {
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
 #mensagens .peoples-to-chat h2 {
   width: 100%;
   font-weight: 400;
@@ -741,16 +723,6 @@ main#mensagens .peoples-to-chat,
   margin: 1rem 0;
   text-align: center;
 }
-
-#mensagens .list-peoples,
-#bloqueados #blacklist {
-  overflow: hidden;
-  overflow-y: scroll;
-  display: grid;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
 #mensagens .gradient {
   position: sticky;
   bottom: 0;
@@ -759,7 +731,7 @@ main#mensagens .peoples-to-chat,
   background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
 }
 
-#mensagens .list-peoples .person {
+.list-peoples .person {
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 5px;
@@ -772,49 +744,66 @@ main#mensagens .peoples-to-chat,
   overflow: hidden;
   padding: 6px 9px;
 }
-
-.person .dados {
+.list-peoples .person .dados {
   max-width: 100%;
   overflow: hidden;
 }
-
-#mensagens .list-peoples #person-selected {
-  background-color: rgba(252, 0, 59, 0.12);
-  width: 100%;
-}
-
-#mensagens .list-peoples .person .foto-de-perfil {
+.list-peoples .person .foto-de-perfil {
   max-width: 65px;
   margin-right: 10px;
 }
-
-#mensagens .list-peoples .person .foto-de-perfil,
-#mensagens .list-peoples .person .foto-de-perfil img {
+.list-peoples .person .foto-de-perfil,
+.list-peoples .person .foto-de-perfil img {
   margin: 0;
   position: relative;
-  font-size: 11.5px;
+  font-size: 0.47rem;
+}
+.list-peoples #person-selected {
+  background-color: rgba(252, 0, 59, 0.12);
+  width: 100%;
+}
+.list-peoples p {
+  white-space: nowrap;
+  max-width: 100%;
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.52rem;
+  color: rgba(51, 51, 51, 0.4);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#mensagens .peoples-to-chat,
+#bloqueados #blacklist {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#mensagens .list-peoples,
+#bloqueados #blacklist {
+  overflow: hidden;
+  overflow-y: scroll;
+  display: grid;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 #mensagens .list-peoples .person span,
 #blacklist .person span {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 0.57rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
   width: 100%;
   max-width: 100%;
-}
-
-#mensagens .list-peoples p {
-  font-weight: 400;
-  font-size: 15px;
-  color: rgba(51, 51, 51, 0.4);
-  white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /*Para o lado do chat corrente*/
@@ -2393,10 +2382,14 @@ dialog {
   display: none;
 }
 
+dialog {
+  padding: 0;
+  box-sizing: border-box;
+}
 dialog > div {
   background: #fff;
   position: relative;
-  width: 540px;
+  width: 20rem;
   display: grid;
   height: 549px;
   margin: auto;
