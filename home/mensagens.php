@@ -296,11 +296,11 @@ if (!$_SESSION['username']) {
               <button class="options"></button>
               <div class="options-container">
                 <div class="translate">
-                  <span>
+                  <span class="label">
                     Translate
                     <label for="active-translator">
                       <input type="checkbox" id="active-translator" />
-                      <span class="translate-on-off"></span>
+                      <span class="translate-toggle"></span>
                     </label>
                   </span>
                   <div class="talk-now">
@@ -308,8 +308,7 @@ if (!$_SESSION['username']) {
                       <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />
                       <span>Port</span>
                     </div>
-                    &nbsp;
-                    <img src="./../images/Group 8777.svg" id="invert-language" />&nbsp;
+                    <img src="./../images/Group 8777.svg" id="invert-language" />
                     <div class="img-2-container">
                       <img src="./../images/usa-icon.svg" alt="Inglês" class="img-1" />
                       <span>Inglês</span>
@@ -364,51 +363,51 @@ if (!$_SESSION['username']) {
                     </p>
                   </div>
                 </div>
-                <?php
+              <?php
               else :
-                ?>
+              ?>
 
-                  <div class='the-message-container'>
-                    <div class='identifier'>
+                <div class='the-message-container'>
+                  <div class='identifier'>
                     <object data='./../_storage/images/<?= $reciver_photo_user['photo'] ?>' class='sender_img'></object>
-                      <span class="__sended-data"><b><?= $user ?></b><span class="__middot">&middot;</span>as <?= $sendHour ?></span>
-                    </div>
-
-                    <div class='text-container'>
-                      <p class='writed-message'>
-                        <?= $message['message'] ?>
-                      </p>
-                    </div>
-
+                    <span class="__sended-data"><b><?= $user ?></b><span class="__middot">&middot;</span>as <?= $sendHour ?></span>
                   </div>
 
+                  <div class='text-container'>
+                    <p class='writed-message'>
+                      <?= $message['message'] ?>
+                    </p>
+                  </div>
+
+                </div>
 
 
 
 
-              <?php
+
+            <?php
 
               endif;
             }
 
-              ?>
+            ?>
 
 
-        </div>
+          </div>
 
 
-              <form method="POST" action="./../_app/controllers/messageController.php" enctype="multipart/form-data">
+          <form method="POST" action="./../_app/controllers/messageController.php" enctype="multipart/form-data">
 
-                <div id="create-message">
-                  <input type="file" id="select-file" style="display: none" name="fileUser" />
-                  <label class="add-media" for="select-file">+</label>
-                  <div class="message-text-container">
-                    <textarea rows="1" id="message-text" placeholder="Escreva a mensagem..." name="message"></textarea>
-                    <button class="send-message" onclick="enviar()" type="submit" name="submitBtn"></button>
-                  </div>
-                </div>
+            <div id="create-message">
+              <input type="file" id="select-file" style="display: none" name="fileUser" />
+              <label class="add-media" for="select-file">+</label>
+              <div class="message-text-container">
+                <textarea rows="1" id="message-text" placeholder="Escreva a mensagem..." name="message"></textarea>
+                <button class="send-message" onclick="enviar()" type="submit" name="submitBtn"></button>
+              </div>
+            </div>
 
-              </form>
+          </form>
 
 
         </section>

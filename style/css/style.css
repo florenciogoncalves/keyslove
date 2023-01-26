@@ -445,6 +445,7 @@ body > div:last-of-type:not(#menu-esquerdo, #main-container) {
 #menu-esquerdo ~ main,
 #menu-esquerdo ~ div {
   height: max-content;
+  max-height: 30rem;
   width: 100%;
   display: flex;
   float: right;
@@ -913,78 +914,76 @@ main#mensagens .chat {
 }
 
 /*Para o menu de tradução oculto*/
-#mensagens .options-container {
-  top: 45px;
+#mensagens .botoes-top .options-container {
+  top: 1.25rem;
   display: none;
-  left: -200%;
+  right: 0;
   position: absolute;
-  width: 260px;
-  min-height: 103px;
-  background: #fff;
-  color: #000;
+  width: max-content;
+  height: max-content;
   border-radius: 10px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 0.65rem;
   z-index: 2;
+  color: #000;
+  background: #fff;
 }
-
-#mensagens .botoes-top .options-container .translate > span {
+#mensagens .botoes-top .options-container .translate {
   display: flex;
-  font-size: 16px;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+#mensagens .botoes-top .options-container .translate .label {
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 0.57rem;
 }
-
-#mensagens .botoes-top .options-container label {
-  width: 30px;
-  height: 15px;
-  display: block;
-  background: #c4c4c4;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-#mensagens .botoes-top input[type=checkbox] {
+#mensagens .botoes-top .options-container input[type=checkbox] {
   display: none;
 }
-
-#mensagens .botoes-top .options-container .translate-on-off {
-  width: 18px;
-  height: 18px;
-  border-radius: 16px;
-  background-color: var(--vermelho-principal);
-  margin-top: -2px;
+#mensagens .botoes-top .options-container label {
+  width: 1.15rem;
+  height: 0.6rem;
+  display: block;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  background: #c4c4c4;
+}
+#mensagens .botoes-top .options-container .translate-toggle {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
   padding: 0;
   float: left;
-  transition: all 600ms;
+  background-color: var(--vermelho-principal);
 }
-
-#mensagens .botoes-top #active-translator:checked + .translate-on-off {
-  transform: translateX(100%);
+#mensagens .botoes-top .options-container #active-translator:checked + .translate-toggle {
+  float: right;
 }
 
 /*Alteração do idioma*/
 #mensagens .talk-now {
   width: 100%;
   padding: 0;
-  margin-top: 20px;
   justify-content: space-between;
   display: flex;
+  gap: 0.15rem;
 }
-
-#mensagens .talk-now img:nth-child(2) {
-  width: 30px;
+#mensagens .talk-now #invert-language {
+  width: 0.87rem;
 }
 
 #mensagens .img-1-container,
 #mensagens .img-2-container {
   border: 1px solid var(--vermelho-principal);
-  border-radius: 10px;
-  color: #000;
+  border-radius: 0.2rem;
   align-items: center;
   display: flex;
   justify-content: space-evenly;
-  width: 120px;
+  width: 3.87rem;
+  font-size: 0.5rem;
+  color: #000;
 }
 
 /*Área reservada para as mensagens já escritas e por fazer*/
@@ -2162,12 +2161,16 @@ main#servicos {
   height: max-content;
 }
 
-/*Perfil.php*/
-#perfil-container,
-#perfil-container > section {
+/* ===================== Perfil.php ===================== */
+#perfil-container .perfil-spliter {
   display: grid;
-  grid-template-columns: 1fr max-content;
-  height: 100%;
+  width: 100%;
+  height: 30rem;
+  max-width: 100%;
+  gap: 0.5rem;
+  grid-template-columns: 21rem 10rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 #perfil {
@@ -2176,13 +2179,14 @@ main#servicos {
 
 .add-more-photos {
   display: grid;
-  grid-template-columns: repeat(4, 18%);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.57rem;
+  padding: 0.3rem 0.6rem;
   justify-content: space-evenly;
-  margin-bottom: 5%;
 }
 
 .add-more-photos .add-box {
-  height: 161px;
+  height: 7.6666666667rem;
   z-index: 2;
   position: relative;
   display: flex;
@@ -2214,7 +2218,7 @@ main#servicos {
   display: none;
 }
 
-#perfil > img ~ p {
+#perfil .__background-text {
   color: #fff;
   position: absolute;
   width: 100%;
@@ -2222,18 +2226,18 @@ main#servicos {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  margin: 0;
+  font-size: 0.97rem;
   font-weight: 700;
 }
 
 #perfil-information {
   background: #fff;
-  margin-left: 4%;
-  margin-right: 6%;
   height: 100%;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 0.35rem;
   overflow-y: scroll;
+  width: 100%;
 }
 
 #perfil-information > h2 {

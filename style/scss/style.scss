@@ -43,6 +43,7 @@ body {
 #menu-esquerdo ~ main,
 #menu-esquerdo ~ div {
 	height: max-content;
+	max-height: 30rem;
 	width: 100%;
 	display: flex;
 	float: right;
@@ -394,8 +395,8 @@ input::-webkit-calendar-picker-indicator {
 }
 #mensagens .peoples-to-chat,
 #bloqueados #blacklist {
-	border-bottom-left-radius: .37rem;
-	border-top-left-radius: .37rem;
+	border-bottom-left-radius: 0.37rem;
+	border-top-left-radius: 0.37rem;
 	background: #fff;
 
 	display: flex;
@@ -499,77 +500,83 @@ main#mensagens .chat {
 }
 
 /*Para o menu de tradução oculto*/
-#mensagens .options-container {
-	top: 45px;
+#mensagens .botoes-top .options-container {
+	top: 1.25rem;
 	display: none;
-	left: -200%;
+	right: 0;
 	position: absolute;
-	width: 260px;
-	min-height: 103px;
-	background: #fff;
-	color: #000;
+	width: max-content;
+	height: max-content;
 	border-radius: 10px;
 	box-sizing: border-box;
-	padding: 20px;
+	padding: 0.65rem;
 	z-index: 2;
+
+	color: #000;
+
+	background: #fff;
+	.translate {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		.label {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			font-size: 0.57rem;
+		}
+	}
+
+	input[type="checkbox"] {
+		display: none;
+	}
+	label {
+		width: 1.15rem;
+		height: 0.6rem;
+		display: block;
+		border-radius: 0.3rem;
+		cursor: pointer;
+
+		background: #c4c4c4;
+	}
+	.translate-toggle {
+		width: 0.6rem;
+		height: 0.6rem;
+		border-radius: 50%;
+		padding: 0;
+		float: left;
+
+		background-color: var(--vermelho-principal);
+	}
+	#active-translator:checked + .translate-toggle {
+		float: right;
+	}
 }
 
-#mensagens .botoes-top .options-container .translate > span {
-	display: flex;
-	font-size: 16px;
-	align-items: center;
-	justify-content: space-between;
-}
-
-#mensagens .botoes-top .options-container label {
-	width: 30px;
-	height: 15px;
-	display: block;
-	background: #c4c4c4;
-	border-radius: 10px;
-	cursor: pointer;
-}
-
-#mensagens .botoes-top input[type="checkbox"] {
-	display: none;
-}
-
-#mensagens .botoes-top .options-container .translate-on-off {
-	width: 18px;
-	height: 18px;
-	border-radius: 16px;
-	background-color: var(--vermelho-principal);
-	margin-top: -2px;
-	padding: 0;
-	float: left;
-	transition: all 600ms;
-}
-
-#mensagens .botoes-top #active-translator:checked + .translate-on-off {
-	transform: translateX(100%);
-}
 /*Alteração do idioma*/
 #mensagens .talk-now {
 	width: 100%;
 	padding: 0;
-	margin-top: 20px;
 	justify-content: space-between;
 	display: flex;
-}
-
-#mensagens .talk-now img:nth-child(2) {
-	width: 30px;
+	gap: 0.15rem;
+	#invert-language {
+		width: 0.87rem;
+	}
 }
 
 #mensagens .img-1-container,
 #mensagens .img-2-container {
 	border: 1px solid var(--vermelho-principal);
-	border-radius: 10px;
-	color: #000;
+	border-radius: 0.2rem;
 	align-items: center;
 	display: flex;
 	justify-content: space-evenly;
-	width: 120px;
+	width: 3.87rem;
+
+	font-size: 0.5rem;
+	color: #000;
 }
 
 /*Área reservada para as mensagens já escritas e por fazer*/
@@ -587,7 +594,7 @@ main#mensagens .chat {
 	display: flex;
 	flex-direction: column;
 	overflow-y: scroll;
-	padding-right: .175rem;
+	padding-right: 0.175rem;
 }
 
 #mensagens .the-message-container {
@@ -606,7 +613,7 @@ main#mensagens .chat {
 		margin: auto 0;
 		align-items: center;
 
-		font-size: .425rem;
+		font-size: 0.425rem;
 		font-weight: 500;
 	}
 	.sender_img {
@@ -632,11 +639,11 @@ main#mensagens .chat {
 }
 
 #mensagens .text-container .writed-message {
-	padding: .3rem;
+	padding: 0.3rem;
 	overflow: hidden;
 	max-height: max-content;
 	word-break: break-word;
-	font-size: .47rem;
+	font-size: 0.47rem;
 }
 
 #mensagens .text-container .blur {
@@ -807,7 +814,7 @@ main#mensagens .chat {
 	margin: auto;
 
 	font-weight: 400;
-	font-size: .457rem;
+	font-size: 0.457rem;
 }
 
 #mensagens #message-text::-webkit-scrollbar {
@@ -827,7 +834,7 @@ main#mensagens .chat {
 	cursor: pointer;
 
 	background: url(./../../images/send-message-icon.svg) no-repeat center;
-	background-size: .9rem;
+	background-size: 0.9rem;
 }
 
 /* DOCUMENTO curtidas.php & localizar-pessoas.php*/
@@ -1785,25 +1792,30 @@ main#servicos {
 	height: max-content;
 }
 
-/*Perfil.php*/
-#perfil-container,
-#perfil-container > section {
+/* ===================== Perfil.php ===================== */
+#perfil-container .perfil-spliter{
 	display: grid;
-	grid-template-columns: 1fr max-content;
-	height: 100%;
+	width: 100%;
+	height: 30rem;
+	max-width: 100%;
+	gap: .5rem;
+	grid-template-columns: 21rem  10rem;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 #perfil {
 	max-width: 100%;
 }
 .add-more-photos {
 	display: grid;
-	grid-template-columns: repeat(4, 18%);
+	grid-template-columns: repeat(4, 1fr);
+	gap: .57rem;
+	padding: .3rem .6rem;
 	justify-content: space-evenly;
-	margin-bottom: 5%;
 }
 
 .add-more-photos .add-box {
-	height: 161px;
+	height: 7.666666666666667rem;
 	z-index: 2;
 	position: relative;
 	display: flex;
@@ -1837,7 +1849,7 @@ main#servicos {
 	display: none;
 }
 
-#perfil > img ~ p {
+#perfil .__background-text {
 	color: #fff;
 	position: absolute;
 	width: 100%;
@@ -1845,19 +1857,19 @@ main#servicos {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 0;
 
-	font-size: 30px;
+	font-size: .97rem;
 	font-weight: 700;
 }
 
 #perfil-information {
 	background: #fff;
-	margin-left: 4%;
-	margin-right: 6%;
 	height: 100%;
 	box-sizing: border-box;
-	padding: 10px;
+	padding: .35rem;
 	overflow-y: scroll;
+	width: 100%;
 }
 
 #perfil-information > h2 {

@@ -279,7 +279,7 @@ if (!$_SESSION['username']) {
 
     for (c = 0; c < 3; c++) {
       const btn = document.getElementsByClassName('s-status')[c]
-      btn.addEventListener('click', () => {
+      btn.addEventListener('translate-toggle', () => {
         window.location.href = './app/Controllers/statusController.php?status=' + btn.value
       })
     }

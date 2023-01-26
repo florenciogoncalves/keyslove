@@ -381,7 +381,7 @@ main#carroussel .botoes {
 	display: grid;
 	background: none;
 	grid-template-columns: repeat(3, 1fr);
-	padding: 15px 0 0;
+	padding: .6rem 0;
 	justify-items: end;
 	box-sizing: border-box;
 	row-gap: 0.775rem;

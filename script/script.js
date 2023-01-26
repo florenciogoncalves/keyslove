@@ -493,7 +493,7 @@ pegarTodos(".add-option-before").forEach((current) => {
 
 /*Ao clicar em outro perfil, ir para index.php*/
 pegarTodos(".outro-perfil").forEach((current) => {
-  current.addEventListener("dblclick", () => {
+  current.addEventListener("click", () => {
     window.location.replace("./../home/index.php");
   });
 });

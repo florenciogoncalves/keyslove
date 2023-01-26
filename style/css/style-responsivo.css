@@ -97,22 +97,26 @@
     max-height: 95vh;
   }
   #user-information {
-    height: 90px;
     top: 0;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  #user-information .status {
+    width: 0.85rem !important;
+    height: 0.85rem !important;
+    bottom: 0.15rem !important;
+    right: 0.2rem !important;
   }
   #user-information .foto-de-perfil {
     margin-right: 5px;
   }
   #user-information .foto-de-perfil img {
-    width: 75px !important;
-    height: 75px !important;
+    width: 3.5rem !important;
+    height: 3.5rem !important;
     border-radius: 40px !important;
   }
   #user-information figure {
-    position: absolute;
-    top: 55%;
     color: #000;
-    width: 95%;
   }
   #user-information figcaption {
     margin: auto 0 -5px;
@@ -1119,9 +1123,6 @@
     border-radius: 0 !important;
     width: 100% !important;
   }
-  #mensagens .peoples-to-chat h2 {
-    line-height: 60px !important;
-  }
   #mensagens .chat-mobile {
     display: none !important;
   }
@@ -1213,13 +1214,10 @@
     background-size: contain;
     align-self: baseline;
   }
+  #mensagens .chat .img-perfil,
   #mensagens .img-perfil {
-    width: 50px !important;
-    height: 50px !important;
-  }
-  #mensagens .chat .img-perfil {
-    width: 45px !important;
-    height: 45px !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
   }
   #mensagens .foto-de-perfil {
     margin: 0 !important;
