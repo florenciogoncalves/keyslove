@@ -27,14 +27,6 @@ $token = generateRandomString(50);
   <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
 
-  <style>
-    .sender_img {
-      width: 42px;
-      height: 42px;
-      border-radius: 50px;
-    }
-  </style>
-
 </head>
 
 <body>
