@@ -334,7 +334,7 @@ main#carroussel figcaption#descricao-perfil {
 	color: var(--vermelho-principal);
 	font-weight: bolder;
 	display: inline-block;
-	margin: 0 5px;
+	margin: 0 .15rem;
 	font-size: inherit;
 }
 
@@ -381,7 +381,7 @@ main#carroussel .botoes {
 	display: grid;
 	background: none;
 	grid-template-columns: repeat(3, 1fr);
-	padding: 15px 0 0;
+	padding: .6rem 0;
 	justify-items: end;
 	box-sizing: border-box;
 	row-gap: 0.775rem;

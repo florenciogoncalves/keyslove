@@ -491,7 +491,16 @@ pegarTodos(".add-option-before").forEach((current) => {
   }
 });
 
+<<<<<<< HEAD
 
+=======
+/*Ao clicar em outro perfil, ir para index.php*/
+pegarTodos(".outro-perfil").forEach((current) => {
+  current.addEventListener("click", () => {
+    window.location.replace("./../home/index.php");
+  });
+});
+>>>>>>> 2765f76b40f6e7738dd4ec6827e089230faaae9d
 
 /*Enviar mensagem */
 try {

@@ -264,7 +264,7 @@ if (!$_SESSION['username']) {
       <nav>
         <ul>
           <li><a href="./index.php"></a></li>
-          <li><a href="./localizar-pessoas.php"></a></li>
+          <li id="nav-selecionada"><a href="./localizar-pessoas.php"></a></li>
           <li><a href="./favoritos.php"></a></li>
           <li><a href="./mensagens.php"></a></li>
           <li><button id="mostra-menu-mobile"></button></li>
@@ -279,7 +279,7 @@ if (!$_SESSION['username']) {
 
     for (c = 0; c < 3; c++) {
       const btn = document.getElementsByClassName('s-status')[c]
-      btn.addEventListener('click', () => {
+      btn.addEventListener('translate-toggle', () => {
         window.location.href = './app/Controllers/statusController.php?status=' + btn.value
       })
     }

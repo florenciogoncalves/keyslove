@@ -116,7 +116,7 @@ if (!$_SESSION['username']) {
   </div>
 
   <div id="perfil-container">
-    <section>
+    <section class="perfil-spliter">
       <main id="perfil">
         <ul class="home-bar">
           <li class="visualized"></li>
@@ -143,7 +143,7 @@ if (!$_SESSION['username']) {
 
         </div>
         <img src="" id="main-image" />
-        <p>Escolha antes uma Foto</p>
+        <p class="__background-text">Escolha antes uma Foto</p>
       </main>
 
       <section id="perfil-information">

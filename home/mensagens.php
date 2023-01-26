@@ -241,11 +241,11 @@ $token = generateRandomString(50);
               <button class="options"></button>
               <div class="options-container">
                 <div class="translate">
-                  <span>
+                  <span class="label">
                     Translate
                     <label for="active-translator">
                       <input type="checkbox" id="active-translator" />
-                      <span class="translate-on-off"></span>
+                      <span class="translate-toggle"></span>
                     </label>
                   </span>
                   <div class="talk-now">
@@ -253,8 +253,7 @@ $token = generateRandomString(50);
                       <img src="./../images/br-icon.svg" alt="Brasil" class="img-2" />
                       <span>Port</span>
                     </div>
-                    &nbsp;
-                    <img src="./../images/Group 8777.svg" id="invert-language" />&nbsp;
+                    <img src="./../images/Group 8777.svg" id="invert-language" />
                     <div class="img-2-container">
                       <img src="./../images/usa-icon.svg" alt="Inglês" class="img-1" />
                       <span>Inglês</span>
@@ -299,7 +298,7 @@ $token = generateRandomString(50);
 
                 <div class='the-message-container user'>
                   <div class='identifier'>
-                    <span><b>Você</b><span> &middot;</span> as <?= $sendHour ?></span>
+                    <span class="__sended-data"><?= $sendHour ?></span>
                   </div>
 
 
@@ -315,8 +314,13 @@ $token = generateRandomString(50);
 
                 <div class='the-message-container'>
                   <div class='identifier'>
+<<<<<<< HEAD
                     <object data='./../_storage/images/<?= $sender_photo['photo'] ?>' class='sender_img'></object>
                     <span><b><?= $user ?></b><span> &middot; </span> as <?= $sendHour ?></span>
+=======
+                    <object data='./../_storage/images/<?= $reciver_photo_user['photo'] ?>' class='sender_img'></object>
+                    <span class="__sended-data"><b><?= $user ?></b><span class="__middot">&middot;</span>as <?= $sendHour ?></span>
+>>>>>>> 2765f76b40f6e7738dd4ec6827e089230faaae9d
                   </div>
 
                   <div class='text-container'>
@@ -368,7 +372,7 @@ $token = generateRandomString(50);
           <li><a href="./index.php"></a></li>
           <li><a href="./localizar-pessoas.php"></a></li>
           <li><a href="./favoritos.php"></a></li>
-          <li><a href="./mensagens.php"></a></li>
+          <li id="nav-selecionada"><a href="./mensagens.php"></a></li>
           <li><button id="mostra-menu-mobile"></button></li>
         </ul>
       </nav>
