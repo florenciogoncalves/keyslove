@@ -2,57 +2,15 @@
 
 
 require_once __DIR__ . "./../_app/models/messageModel.php";
-
+include_once __DIR__ . "/../_app/boot/helpers.php";
+include_once __DIR__ . "/app/Models/Model.php";
 if (!$_SESSION['username']) {
   header("Location: ../");
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
 }
 
-// if (isset($_GET['user'])) {
-//   $reciver = $_GET['user'];
-// }
-
-// $reciver = $_GET['user'] ?? 'Edson Silva';
-
-// if (!isset($_GET['user']) || !$reciver) {
-//   header("Location: ./carroussel.php");
-// }
-// $_SESSION['reciver'] = $_GET['user'] ?? $reciver;
-
-
-// else {
-//   $_SESSION['message'] = 'Nenhum usuário foi indicado para iniciar o chat';
-//   header("Location: ./carroussel.php");
-// }
-
-// $verify = new messageModel;
-// if ($verify->existe_chat($_SESSION['username'], $reciver)) {
-//   $bool = true;
-// } else {
-//   $_SESSION['message'] = 'Nenhum usuário foi indicado para iniciar o chat';
-//   header("Location: ./carroussel.php");
-//   $bool = false;
-// }
-
-
-// $model = new messageModel();
-// $messages = $model->existe_chat($_SESSION['username']);
-
-// if ($messages) {
-//   $data = $model->User('tb_mensagens', 'sender', $_SESSION['username']);
-
-//   $reciver = $data['reciver'];
-//   // $_SESSION['reciver'] = $_GET['user'] ?? $reciver;
-
-
-//   // foreach ($data as $users) {
-//   //   $reciver = $users;
-//   // }
-
-// }
-// else {
-//   header("Location: ./carroussel.php");
-// }
+$Model = new Model();
+$token = generateRandomString(50);
 
 
 ?>
@@ -180,22 +138,8 @@ if (!$_SESSION['username']) {
         <?php
 
         $model = new messageModel();
-
-
-        // $short_message = $model->User('tb_mensagens', 'reciver', $reciver);
-
-
-
         $getAll = $model->User('tb_curtidas', 'curtiu', $_SESSION['username'], '=', 'fetch');
-
-
-
         $_SESSION['reciver'] = $_GET['user'] ?? $getAll['curtido'];
-
-
-
-
-
 
         if (!isset($_GET['user'])) {
           $peopleToChat = $model->User('tb_curtidas', 'curtiu', $_SESSION['username'], '=', 'fetch', 1);
@@ -219,7 +163,6 @@ if (!$_SESSION['username']) {
 
 
 
-
           $reciver_photo_user = $model->User('tb_photos', 'user', $user, '=');
           $_SESSION['photo'] = $reciver_photo_user;
           $short_message_user = $model->where('tb_mensagens', '=', 'sender', $user);
@@ -227,7 +170,7 @@ if (!$_SESSION['username']) {
 
 
         ?>
-          <a href="?user=<?= $users['curtido'] ?? null; ?>" style="text-decoration:none;color:black">
+          <a href="?user=<?= $users['curtido'] . "&token={$token}&display=flexbox" ?? null; ?>" style="text-decoration:none;color:black">
             <ul class="list-peoples">
               <li class="person" id="person-selected">
                 <div class="foto-de-perfil">
@@ -261,21 +204,23 @@ if (!$_SESSION['username']) {
       </div>
 
 
+      <?php
+      if (isset($_GET['display'])) {
+        $display = $_GET['display'];
+      }
+      ?>
+
+      <section class="chat" style="display: <?= $display ?? "none"; ?>;">
 
 
-      <section class="chat">
-
-        <?php
-
-
-
-
-        ?>
 
         <div id="friend-information">
           <figure>
             <div class="foto-de-perfil">
-              <img src="./../_storage/images/<?= $reciver_photo_user['photo']; ?>" alt="Foto de perfil" class="img-perfil" />
+              <?php
+              foreach ($Model->userPhoto($_GET['user']) as $profilePhoto);
+              ?>
+              <img src="./../_storage/images/<?= $profilePhoto['photo'] ?>" alt="Foto de perfil" class="img-perfil" />
               <div class="friend-status"></div>
             </div>
             <figcaption>
@@ -364,51 +309,51 @@ if (!$_SESSION['username']) {
                     </p>
                   </div>
                 </div>
-                <?php
+              <?php
               else :
-                ?>
+              ?>
 
-                  <div class='the-message-container'>
-                    <div class='identifier'>
+                <div class='the-message-container'>
+                  <div class='identifier'>
                     <object data='./../_storage/images/<?= $sender_photo['photo'] ?>' class='sender_img'></object>
-                      <span><b><?= $user ?></b><span> &middot; </span> as <?= $sendHour ?></span>
-                    </div>
-
-                    <div class='text-container'>
-                      <p class='writed-message'>
-                        <?= $message['message'] ?>
-                      </p>
-                    </div>
-
+                    <span><b><?= $user ?></b><span> &middot; </span> as <?= $sendHour ?></span>
                   </div>
 
+                  <div class='text-container'>
+                    <p class='writed-message'>
+                      <?= $message['message'] ?>
+                    </p>
+                  </div>
+
+                </div>
 
 
 
 
-              <?php
+
+            <?php
 
               endif;
             }
 
-              ?>
+            ?>
 
 
-        </div>
+          </div>
 
 
-              <form method="POST" action="./../_app/controllers/messageController.php" enctype="multipart/form-data">
+          <form method="POST" action="./../_app/controllers/messageController.php" enctype="multipart/form-data">
 
-                <div id="create-message">
-                  <input type="file" id="select-file" style="display: none" name="fileUser" />
-                  <label class="add-media" for="select-file">+</label>
-                  <div class="message-text-container">
-                    <textarea rows="1" id="message-text" placeholder="Escreva a mensagem..." name="message"></textarea>
-                    <button class="send-message" onclick="enviar()" type="submit" name="submitBtn"></button>
-                  </div>
-                </div>
+            <div id="create-message">
+              <input type="file" id="select-file" style="display: none" name="fileUser" />
+              <label class="add-media" for="select-file">+</label>
+              <div class="message-text-container">
+                <textarea rows="1" id="message-text" placeholder="Escreva a mensagem..." name="message"></textarea>
+                <button class="send-message" onclick="enviar()" type="submit" name="submitBtn"></button>
+              </div>
+            </div>
 
-              </form>
+          </form>
 
 
         </section>

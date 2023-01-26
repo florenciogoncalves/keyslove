@@ -277,4 +277,11 @@ class profileModel extends connect
 
         return $query->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function count(): int
+    {
+        $query = $this->connect->prepare("SELECT * FROM tb_cadastroConta");
+        $query->execute();
+        return $query->rowCount();
+    }
 }

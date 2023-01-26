@@ -62,4 +62,22 @@ class Model extends connect
 
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function aroundPeople(string $user = '')
+    {
+
+        $query = $this->connect->prepare("SELECT * FROM tb_localizacao");
+        // $query->bindParam(1, filter_var($user, FILTER_SANITIZE_SPECIAL_CHARS));
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function userPhoto(string $user)
+    {
+        $query = $this->connect->prepare("SELECT photo FROM tb_photos WHERE user = ? LIMIT 1");
+        $query->bindParam(1, $user);
+        $query->execute();
+
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

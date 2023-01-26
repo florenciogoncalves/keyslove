@@ -324,15 +324,17 @@ $Model = new Model();
   <?php
   foreach ($Model->listUsers($_SESSION['username']) as $allUsers) {
     $peoples[] = $allUsers['nome'];
-
-    // var_dump($peoples);
   }
   ?>
 
   <script>
-    const array = [<?php foreach ($peoples as $item) {
-                      echo "'{$item}',";
-                    } ?>]
+    const array = [<?php
+                    if (isset($peoples)) :
+                      foreach ($peoples as $item) {
+                        echo "'{$item}',";
+                      }
+                    endif;
+                    ?>]
 
 
 
@@ -341,12 +343,12 @@ $Model = new Model();
 
     next.addEventListener('click', () => {
 
-      
+
       for (let total = 0; total < array.length; total++) {
         window.location.href = './index.php?user=' + array[total] + "&id=" + total
 
       }
-     
+
 
     })
 

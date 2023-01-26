@@ -174,8 +174,12 @@ class userModel extends connect
         return $getName['nome'];
     }
 
-
-    private function login(string $email, string $senha): object|bool
+    /**
+     * @param string $email
+     * @param string $senha
+     * @return object|boolean
+     */
+    private function login(string $email, string $senha)
     {
         $queryUser = $this->connect->prepare("SELECT * FROM tb_cadastroConta WHERE email = ? AND senha = ?");
         $queryUser->bindParam(1, $email);

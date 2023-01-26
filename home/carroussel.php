@@ -6,6 +6,7 @@ if (!$_SESSION['username']) {
   $_SESSION['messageAuth'] = "Precisa Fazer Login Primeiro!";
 }
 
+$token = generateRandomString(50);
 
 ?>
 <!DOCTYPE html>
@@ -323,7 +324,7 @@ if (!$_SESSION['username']) {
           </p>
           </div>
 
-          <a href='mensagens.php?user={$item['user']}'>
+          <a href='mensagens.php?user={$item['user']}&token={$token}&display=flexbox'>
           <button class='conversar'></button>
         </a>
 
@@ -339,10 +340,10 @@ if (!$_SESSION['username']) {
     <footer id="footer-mobile">
       <nav>
         <ul>
-          <li><a href="./index.html"></a></li>
-          <li><a href="./localizar-pessoas.html"></a></li>
-          <li><a href="./favoritos.html"></a></li>
-          <li><a href="./mensagens.html"></a></li>
+          <li><a href="./index.php"></a></li>
+          <li><a href="./localizar-pessoas.php"></a></li>
+          <li><a href="./favoritos.php"></a></li>
+          <li><a href="./mensagens.php"></a></li>
           <li><button id="mostra-menu-mobile"></button></li>
         </ul>
       </nav>
@@ -350,8 +351,24 @@ if (!$_SESSION['username']) {
   </div>
 
   <script src="./../script/script.js"></script>
+
+
+
+  <script>
+    /*Ao clicar em outro perfil, ir para index.php*/
+    pegarTodos(".outro-perfil").forEach((current) => {
+      current.addEventListener("click", () => {
+        window.location.replace("./../home/index.php?user=<?= $item['user']; ?>");
+      });
+    });
+  </script>
+
+
+
   <script>
     const status = localStorage.getItem('status');
+
+
 
     for (c = 0; c < 3; c++) {
       const btn = document.getElementsByClassName('s-status')[c]
