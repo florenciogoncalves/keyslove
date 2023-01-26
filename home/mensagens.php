@@ -315,7 +315,7 @@ $token = generateRandomString(50);
                 <div class='the-message-container'>
                   <div class='identifier'>
                     <object data='./../_storage/images/<?= $sender_photo['photo'] ?>' class='sender_img'></object>
-                    <span><b><?= $user ?></b><span> &middot; </span> as <?= $sendHour ?></span>
+                    <span class="__sended-data"><b><?= $user ?></b><span> &middot; </span> as <?= $sendHour ?></span>
                   </div>
 
                   <div class='text-container'>
