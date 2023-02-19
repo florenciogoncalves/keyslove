@@ -15,6 +15,7 @@ if (!$_SESSION['username']) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perfil &mid; Keyslov</title>
   <link rel="shortcut icon" href="./../images/favicon.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="./../style/bootstrap.min.css">
   <link rel="stylesheet" href="./../style/css/style.css" />
   <link rel="stylesheet" href="./../style/css/style-responsivo.css" />
 </head>
@@ -170,12 +171,12 @@ if (!$_SESSION['username']) {
           <!--   -->
 
 
-          <div>
+          <div class="m-0 p-0 w-100">
 
             <h3>Descrição</h3>
             <textarea placeholder="Lorem Ipsum dolor sit amet" name="description"></textarea>
           </div>
-          <h3>Tags</h3>
+          <h3 class="mt-3">Tags</h3>
           <div>
             <input type="checkbox" id="tag-cachorros" />
             <label for="tag-cachorros" name="tag-cachorros">Cachorros</label><input type="checkbox" id="tag-design" name="tag-cachorros" />
@@ -184,7 +185,7 @@ if (!$_SESSION['username']) {
             <label for="tag-geografia" name="tag-geografia">Geografia</label>
             <button class="add-option-before">+ Adicionar</button>
           </div>
-          <h3>Signo</h3>
+          <h3 class="mt-3">Signo</h3>
 
           <div>
             <input type="radio" id="signo-virgem" />
