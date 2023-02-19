@@ -1,14 +1,4 @@
 @charset "UTF-8";
-@media only screen and (max-width: 575.97px) {
-  #menu-logon #enter-box {
-    background: transparent !important;
-    color: #fff;
-  }
-  #menu-logon #enter-box .facebook-continue,
-  #menu-logon #enter-box .google-continue {
-    color: #fff;
-  }
-}
 @media only screen and (max-width: 991.97px) {
   /* ================= index.php ================= */
   body {
@@ -16,7 +6,7 @@
     box-sizing: border-box;
     background-attachment: fixed;
   }
-  body:not(.especify) {
+  body {
     grid-template-rows: 4% 1fr !important;
   }
   .form-cadastro-container {
@@ -37,7 +27,6 @@
   .body-login.especify #enter-box {
     height: 100%;
     border-radius: 0 !important;
-    background: none;
   }
   .body-login.especify #enter-box form.right-side {
     width: 100%;
@@ -45,17 +34,12 @@
     background: none;
   }
   .body-login.especify #enter-box form.right-side .logo h1 {
-    color: #fff;
     font-size: 1.2rem !important;
     letter-spacing: 0.1rem;
   }
-  .body-login.especify #enter-box .campos *:not(input),
-  .body-login.especify #enter-box .others-options *:not(input) {
-    color: #fff;
-  }
   .body-login.especify #enter-box .campos input,
   .body-login.especify #enter-box .others-options input {
-    border: 1px solid #fff;
+    border: 1px solid #000;
   }
   .body-login.especify #enter-box .campos input:not([type=checkbox]),
   .body-login.especify #enter-box .others-options input:not([type=checkbox]) {
@@ -162,6 +146,45 @@
     margin-top: auto;
     display: grid;
     row-gap: 15px;
+  }
+}
+@media only screen and (max-width: 575.97px) {
+  #menu-logon #enter-box {
+    background: #fff !important;
+  }
+  #menu-logon #enter-box .facebook-continue,
+  #menu-logon #enter-box .google-continue {
+    height: 2.5rem;
+  }
+  #menu-logon #enter-box ._subtitle {
+    font-size: 0.575rem;
+  }
+  #menu-logon #enter-box .continue {
+    font-size: 0.55rem !important;
+  }
+  #menu-logon #enter-box .__span-ou, #menu-logon #enter-box .__a-login {
+    margin: 1rem auto !important;
+    font-size: 0.59rem;
+  }
+  .body-login.especify {
+    display: flex !important;
+  }
+  .body-login.especify #enter-box {
+    margin: auto 0;
+    height: max-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .body-login.especify .btn-register, .body-login.especify .criar-conta {
+    height: 2.25rem;
+    font-size: 0.55rem !important;
+  }
+  .body-login.especify .others-options * {
+    font-size: 0.5rem !important;
+  }
+  .body-login.especify input[type=checkbox], .body-login.especify input[type=checkbox]:checked {
+    width: 0.75rem !important;
+    height: 0.75rem !important;
   }
 }
 /*Dispositivos médios(landscape tablets, 768px para cima)*/

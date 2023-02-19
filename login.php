@@ -23,7 +23,7 @@ if (isset($_SESSION['username'])) {
 </head>
 
 <body class="body-login especify">
-  <header class="header-content row d-flex">
+  <header class="header-content row d-none d-sm-flex">
     <nav class="header-controllers-container index row ms-auto col-2 col-sm-3 col-lg-3 col-xxl-2 p-0 gap-2">
       <a class="btn border-btn d-none d-md-flex col" href="./cadastro/cadastro-1.php">Criar conta</a>
       <a class="btn white-btn d-none d-md-flex col" href="./login.php">Entrar</a>

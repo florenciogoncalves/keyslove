@@ -36,7 +36,6 @@ if (isset($_SESSION['username'])) {
 
   <section id="menu-logon" class="mx-auto">
 
-
     <?php
     if (isset($_SESSION['messageAuth'])) :
     ?>
@@ -61,9 +60,9 @@ if (isset($_SESSION['username'])) {
     endif;
     ?>
 
-    <div id="enter-box" class="rounded my-lg-4 py-3 px-2 p-lg-3 px-sm-3 px-md-4 col-12 col-sm-8 col-md-6 col-lg-4">
+    <div id="enter-box" class="rounded my-lg-4 py-3 px-2 p-lg-4 px-sm-3 px-md-4 col-12 col-sm-8 col-md-6 col-lg-4">
       <h2 class="_title mb-2 mt-0">Seja bem vindo (a)</h2>
-      <p class="_subtitle mb-3">
+      <p class="_subtitle mb-3 px-2 px-sm-0">
         Lorem ipsum dolor sit amet. Est minima aliquam sit quia ratione aut
         nemo libero et necessitatibus dolorum
       </p>
@@ -72,7 +71,7 @@ if (isset($_SESSION['username'])) {
         <button class="facebook-continue continue col-11 mt-0"><img src="./images/facebook-icon.svg" class="img-fluid"> Continuar com Facebook</button>
       </div>
       <p class="__span-ou my-2 my-lg-2">Ou</p>
-      <a class="continue btn-register col-11 mx-auto" href="./cadastro/cadastro-1.php">Cadastra - se</a>
+      <a class="continue btn-register col-11 mx-auto py-2" href="./cadastro/cadastro-1.php">Cadastra - se</a>
       <a class="__a-login mt-3 mt-lg-2 mx-auto" href="./login.php">Efectuar login</a>
     </div>
 
