@@ -492,10 +492,10 @@ pegarTodos(".add-option-before").forEach((current) => {
 });
 
 
-/*Ao clicar em outro perfil, ir para index.php*/
+/*Ao clicar em outro perfil, ir para index.html*/
 pegarTodos(".outro-perfil").forEach((current) => {
   current.addEventListener("click", () => {
-    window.location.replace("./../home/index.php");
+    window.location.replace("./../home/index.html");
   });
 });
 

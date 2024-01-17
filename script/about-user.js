@@ -28,8 +28,8 @@ function setProgressVal(val) {
   progressVal.textContent = val + "%";
 }
 
-//Esta chamada serve simplesmente para demonstração. Apagar de seguida
-setProgressVal(20);
+// Valor de progresso em localstorage
+setProgressVal(localStorage.finishedPercent);
 
 
 

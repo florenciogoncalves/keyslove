@@ -9,2229 +9,2228 @@
 
 /*menu flutuante a direita*/
 #sobre-usuario {
-	#nav,
-	#peoples-left,
-	.vizualizar-menu,
-	#show-status-window {
-		display: none !important;
-	}
+  #nav,
+  #peoples-left,
+  .vizualizar-menu,
+  #show-status-window {
+    display: none !important;
+  }
 
-	display: grid;
-	grid-template-columns: auto 1fr;
+  display: grid;
+  grid-template-columns: auto 1fr;
 
-	#main-container {
-		overflow-y: scroll;
-		height: 100%;
-		width: 100%;
-	}
+  #main-container {
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+  }
 }
 body:not(#sobre-usuario) {
-	box-sizing: border-box;
-	#main-container {
-		height: 100%;
-		max-height: 30rem;
-	}
+  box-sizing: border-box;
+  #main-container {
+    height: 100%;
+    max-height: 30rem;
+  }
 }
 
 body {
-	column-gap: 1rem;
-	& > div:last-of-type:not(#menu-esquerdo, #main-container) {
-		display: none !important;
-	}
+  column-gap: 1rem;
+  & > div:last-of-type:not(#menu-esquerdo, #main-container) {
+    display: none !important;
+  }
 }
 
 #menu-esquerdo ~ main,
 #menu-esquerdo ~ div {
-	height: max-content;
-	max-height: 30rem;
-	width: 100%;
-	display: flex;
-	float: right;
-	overflow-y: hidden;
-	position: sticky;
-	box-sizing: border-box;
-	top: 0;
+  height: max-content;
+  max-height: 30rem;
+  width: 100%;
+  display: flex;
+  float: right;
+  overflow-y: hidden;
+  position: sticky;
+  box-sizing: border-box;
+  top: 0;
 }
 
 /*Layout para o conteúdo da direita*/
 #content-right {
-	width: 24rem;
-	height: max-content;
-	box-sizing: border-box;
-	padding: 0 3rem;
+  width: 24rem;
+  height: max-content;
+  box-sizing: border-box;
+  padding: 0 3rem;
 
-	background-color: var(--color-white);
-	.content-header {
-		display: flex;
-		flex-direction: column;
-		width: max-content;
-		margin: 0 auto;
-		margin-top: 0.7rem;
-		img {
-			width: 1.25rem;
-			height: 1.25rem;
-			margin: 0.5rem auto 0;
-		}
-		.__title {
-			margin: 0.4rem;
+  background-color: var(--color-white);
+  .content-header {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin: 0 auto;
+    margin-top: 0.7rem;
+    img {
+      width: 1.25rem;
+      height: 1.25rem;
+      margin: 0.5rem auto 0;
+    }
+    .__title {
+      margin: 0.4rem;
 
-			font-weight: 500;
-			font-size: 0.77rem;
-			letter-spacing: 5px;
-		}
-	}
-	.principal-content {
-		margin: 0 auto;
-		display: grid;
-		grid-template-rows: max-content 1fr max-content;
-		label {
-			width: max-content;
-			margin: 0.35rem 0 0;
-			font-size: 0.52rem;
-			display: block;
-		}
-		#nacionalidade {
-			appearance: none !important;
-			outline: none;
-		}
-	}
-	.iten {
-		width: 100%;
-		height: max-content;
-		box-sizing: border-box;
-		display: flex;
-		flex-direction: column;
-		gap: 0.01rem;
-		option {
-			color: #000;
-		}
-	}
-	#container-elements {
-		display: flex;
-		flex-direction: column;
-	}
-	.chars-count {
-		font-size: 0.5rem;
-		display: flex;
-		width: max-content;
-		margin-left: auto;
-	}
+      font-weight: 500;
+      font-size: 0.77rem;
+      letter-spacing: 5px;
+    }
+  }
+  .principal-content {
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    label {
+      width: max-content;
+      margin: 0.35rem 0 0;
+      font-size: 0.52rem;
+      display: block;
+    }
+    #nacionalidade {
+      appearance: none !important;
+      outline: none;
+    }
+  }
+  .iten {
+    width: 100%;
+    height: max-content;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.01rem;
+    option {
+      color: #000;
+    }
+  }
+  #container-elements {
+    display: flex;
+    flex-direction: column;
+  }
+  .chars-count {
+    font-size: 0.5rem;
+    display: flex;
+    width: max-content;
+    margin-left: auto;
+  }
 }
 
 input::-webkit-calendar-picker-indicator {
-	display: none;
+  display: none;
 }
 
 #content-right .principal-content input:not([type="range"]),
 #content-right .principal-content select {
-	box-sizing: border-box;
-	min-width: 100%;
-	padding: 0 0.6rem;
+  box-sizing: border-box;
+  min-width: 100%;
+  padding: 0 0.6rem;
 
-	background: rgba(255, 255, 255, 0.1);
-	border: 0.901502px solid #000;
-	border-radius: 0.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.901502px solid #000;
+  border-radius: 0.2rem;
 
-	font-weight: 400;
-	font-size: 0.55rem;
-	line-height: 2.5;
-	color: rgba(0, 0, 0);
+  font-weight: 400;
+  font-size: 0.55rem;
+  line-height: 2.5;
+  color: rgba(0, 0, 0);
 }
 
 #content-right .principal-content select {
-	appearance: none;
-	background: url(./../../images/arrow-down.svg) no-repeat center right 0.57rem;
-	background-size: 0.475rem;
+  appearance: none;
+  background: url(./../../images/arrow-down.svg) no-repeat center right 0.57rem;
+  background-size: 0.475rem;
 }
 
 .progress-next {
-	width: 100%;
-	display: grid;
-	height: max-content;
-	grid-template-columns: 1fr auto;
-	gap: 0.3rem;
-	box-sizing: border-box;
-	justify-content: space-between;
-	margin: 0.7rem 0 1rem;
+  width: 100%;
+  display: grid;
+  height: max-content;
+  grid-template-columns: 1fr auto;
+  gap: 0.3rem;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin: 0.7rem 0 1rem;
 }
 
 .principal-content .progress-bar-content {
-	padding: 0;
-	height: 0.7rem;
-	background: rgba(0, 0, 0, 0.48);
-	border-radius: 0.7rem;
-	overflow: auto;
-	margin: auto 0;
+  padding: 0;
+  height: 0.7rem;
+  background: rgba(0, 0, 0, 0.48);
+  border-radius: 0.7rem;
+  overflow: auto;
+  margin: auto 0;
 }
 
 .principal-content .progress-bar {
-	background-color: var(--vermelho-principal);
-	height: 100%;
-	width: 0%;
-	display: flex;
-	border-radius: 0.7rem;
-	overflow: visible;
+  background-color: var(--vermelho-principal);
+  height: 100%;
+  width: 0%;
+  display: flex;
+  border-radius: 0.7rem;
+  overflow: visible;
 }
 
 .principal-content .progress-bar span.progress-val {
-	display: flex;
-	align-items: center;
-	margin: 0 5px 0 auto;
+  display: flex;
+  align-items: center;
+  margin: 0 5px 0 auto;
 
-	font-size: 0.5rem;
-	color: var(--color-white);
+  font-size: 0.5rem;
+  color: var(--color-white);
 }
 
 .principal-content .next-page-about {
-	width: 1.1rem;
-	height: 1rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
+  width: 1.1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 
-	background: rgba(0, 0, 0, 0.11);
-	border: 1px solid #fc003b;
-	border-radius: 10px;
+  background: rgba(0, 0, 0, 0.11);
+  border: 1px solid #fc003b;
+  border-radius: 10px;
 
-	font-weight: 400;
-	font-size: 1rem;
-	text-align: center;
-	color: var(--vermelho-principal);
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--vermelho-principal);
 }
 
-/*Mexendo em 'educacao-e-cultura.php*/
+/*Mexendo em 'educacao-e-cultura.html*/
 .principal-content textarea {
-	box-sizing: border-box;
-	width: 100%;
-	height: 7rem;
-	padding: 0.5rem 0.55rem;
-	overflow: auto;
+  box-sizing: border-box;
+  width: 100%;
+  height: 7rem;
+  padding: 0.5rem 0.55rem;
+  overflow: auto;
 
-	resize: none;
-	font-size: 0.6rem;
+  resize: none;
+  font-size: 0.6rem;
 
-	background: rgba(255, 255, 255, 0.1);
-	border: 0.901502px solid #000000;
-	border-radius: 7.21202px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 0.901502px solid #000000;
+  border-radius: 7.21202px;
 }
 
 /*===================== CHAMADA =====================*/
 #chamada-video {
-	margin-left: 5%;
-	width: max-content;
-	height: 100%;
-	position: relative;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  margin-left: 5%;
+  width: max-content;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-	video {
-		width: max-content;
-		width: 21rem;
-		max-width: 800px;
-		height: 100%;
-		position: sticky;
-		top: 0;
-		object-fit: cover;
-		background: rgb(27, 26, 26);
-	}
-	.comandos-chamada {
-		display: flex;
-		width: 100%;
-		position: absolute;
-		flex-direction: row;
-		justify-content: space-evenly;
-		/* margin-bottom: 34px; */
-		bottom: 0.75rem;
-		background-origin: 0;
-		button,
-		#microfone {
-			border: none;
-			width: 1.8rem;
-			height: 1.8rem;
-			font-size: 1px;
-			border-radius: 50%;
-			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-			margin: auto 0;
-			cursor: pointer;
+  video {
+    width: max-content;
+    width: 21rem;
+    max-width: 800px;
+    height: 100%;
+    position: sticky;
+    top: 0;
+    object-fit: cover;
+    background: rgb(27, 26, 26);
+  }
+  .comandos-chamada {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* margin-bottom: 34px; */
+    bottom: 0.75rem;
+    background-origin: 0;
+    button,
+    #microfone {
+      border: none;
+      width: 1.8rem;
+      height: 1.8rem;
+      font-size: 1px;
+      border-radius: 50%;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin: auto 0;
+      cursor: pointer;
 
-			background-repeat: no-repeat;
-			background-position: center;
-			background-color: #fff;
-			background-size: 0.87rem;
-		}
-		#microfone {
-			appearance: none;
-			background-image: url(./../../images/mic-icon.svg);
-			&:checked {
-				background-image: url(./../../images/microfone-off.svg);
-			}
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #fff;
+      background-size: 0.87rem;
+    }
+    #microfone {
+      appearance: none;
+      background-image: url(./../../images/mic-icon.svg);
+      &:checked {
+        background-image: url(./../../images/microfone-off.svg);
+      }
 
-			background-size: 0.72rem;
-		}
-		#desligar {
-			width: 2.7rem;
-			height: 2.7rem;
-			border-radius: 70px;
-			background-image: url(./../../images/call-icon.svg);
-			background-color: #b42937;
-			background-size: 80%;
-		}
-		#trocar-camera {
-			background-image: url(./../../images/camera-icon.svg);
-		}
-	}
-	.legenda-chamada {
-		width: 100%;
-		height: 8%;
-		max-height: 57px;
-		display: flex;
-		align-items: center;
-		z-index: 2;
-		position: absolute;
+      background-size: 0.72rem;
+    }
+    #desligar {
+      width: 2.7rem;
+      height: 2.7rem;
+      border-radius: 70px;
+      background-image: url(./../../images/call-icon.svg);
+      background-color: #b42937;
+      background-size: 80%;
+    }
+    #trocar-camera {
+      background-image: url(./../../images/camera-icon.svg);
+    }
+  }
+  .legenda-chamada {
+    width: 100%;
+    height: 8%;
+    max-height: 57px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
 
-		color: #fff;
-		line-height: 57px;
-		font-size: 0.85rem;
-		font-weight: 400;
+    color: #fff;
+    line-height: 57px;
+    font-size: 0.85rem;
+    font-weight: 400;
 
-		background: rgba(0, 0, 0, 0.5);
-		span {
-			width: max-content;
-			overflow: hidden;
-			margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    span {
+      width: max-content;
+      overflow: hidden;
+      margin: 0 auto;
 
-			text-overflow: ellipsis;
-			font-weight: 400;
-		}
-		button {
-			position: absolute;
-			top: 0;
-			cursor: pointer;
-			width: 60px;
-			height: 100%;
-			margin: auto;
-			border: none;
+      text-overflow: ellipsis;
+      font-weight: 400;
+    }
+    button {
+      position: absolute;
+      top: 0;
+      cursor: pointer;
+      width: 60px;
+      height: 100%;
+      margin: auto;
+      border: none;
 
-			color: #fff;
-			font-weight: 400;
-			font-size: 0.97rem;
+      color: #fff;
+      font-weight: 400;
+      font-size: 0.97rem;
 
-			background: none;
-		}
-	}
+      background: none;
+    }
+  }
 }
 
 /*==================== MENSAGENS ====================*/
 #mensagens {
-	display: grid;
-	grid-template-columns: 40.1% 1fr;
-	margin: 0;
-	width: 100%;
-	max-width: 30rem;
-	.peoples-to-chat {
-		h2 {
-			width: 100%;
+  display: grid;
+  grid-template-columns: 40.1% 1fr;
+  margin: 0;
+  width: 100%;
+  max-width: 30rem;
+  .peoples-to-chat {
+    h2 {
+      width: 100%;
 
-			font-weight: 400;
-			font-size: 0.6rem;
-			margin: 1rem 0;
-			text-align: center;
-		}
-	}
-	.gradient {
-		position: sticky;
-		bottom: 0;
-		width: 100%;
-		height: 30px;
-		background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
-	}
+      font-weight: 400;
+      font-size: 0.6rem;
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+  .gradient {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  }
 }
 .list-peoples {
-	.person {
-		display: grid;
-		grid-template-columns: max-content 1fr;
-		column-gap: 5px;
-		height: max-content;
-		align-items: center;
-		box-sizing: border-box;
-		box-sizing: border-box;
-		width: 100%;
-		max-width: 100%;
-		overflow: hidden;
-		padding: 6px 9px;
-		.dados {
-			max-width: 100%;
-			overflow: hidden;
-		}
-		.foto-de-perfil {
-			max-width: 65px;
-			margin-right: 10px;
-			&,
-			img {
-				margin: 0;
-				position: relative;
-				font-size: 0.47rem;
-			}
-		}
-	}
-	#person-selected {
-		background-color: rgba(252, 0, 59, 0.12);
-		width: 100%;
-	}
-	p {
-		white-space: nowrap;
-		max-width: 100%;
-		margin: 0;
+  .person {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 5px;
+    height: max-content;
+    align-items: center;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 6px 9px;
+    .dados {
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .foto-de-perfil {
+      max-width: 65px;
+      margin-right: 10px;
+      &,
+      img {
+        margin: 0;
+        position: relative;
+        font-size: 0.47rem;
+      }
+    }
+  }
+  #person-selected {
+    background-color: rgba(252, 0, 59, 0.12);
+    width: 100%;
+  }
+  p {
+    white-space: nowrap;
+    max-width: 100%;
+    margin: 0;
 
-		font-weight: 400;
-		font-size: 0.52rem;
-		color: rgba(51, 51, 51, 0.4);
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
+    font-weight: 400;
+    font-size: 0.52rem;
+    color: rgba(51, 51, 51, 0.4);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 #mensagens .peoples-to-chat,
 #bloqueados #blacklist {
-	border-bottom-left-radius: 0.37rem;
-	border-top-left-radius: 0.37rem;
-	background: #fff;
+  border-bottom-left-radius: 0.37rem;
+  border-top-left-radius: 0.37rem;
+  background: #fff;
 
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	box-sizing: border-box;
-	overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 #mensagens .list-peoples,
 #bloqueados #blacklist {
-	overflow: hidden;
-	overflow-y: scroll;
-	display: grid;
-	flex-direction: column;
-	box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: scroll;
+  display: grid;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 #mensagens .list-peoples .person span,
 #blacklist .person span {
-	font-weight: 400;
-	font-size: 0.57rem;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: block;
-	width: 100%;
-	max-width: 100%;
+  font-weight: 400;
+  font-size: 0.57rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 
 /*Para o lado do chat corrente*/
 main#mensagens .chat {
-	width: 100%;
-	overflow: hidden;
-	height: 100%;
-	display: grid;
-	grid-template-rows: 1fr auto;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
 
-	background-color: #e2dfdf;
+  background-color: #e2dfdf;
 }
 
 #mensagens #friend-information {
-	@include user-bar();
+  @include user-bar();
 }
 
 #friend-information figure {
-	display: grid;
-	width: 100%;
-	position: relative;
-	margin: 0;
-	grid-template-columns: max-content 1fr max-content;
+  display: grid;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  grid-template-columns: max-content 1fr max-content;
 }
 
 #mensagens #friend-information h2 {
-	width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-	font-family: "Poppins";
-	font-weight: 600;
-	font-size: 0.67rem;
-	white-space: nowrap;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 0.67rem;
+  white-space: nowrap;
 }
 
 #mensagens .botoes-top {
-	display: flex;
-	flex-direction: row;
-	width: max-content;
-	height: max-content;
-	align-items: center;
-	margin: auto auto auto 0;
-	padding-right: 0.5rem;
-	position: relative;
-	a {
-		display: flex;
-		width: max-content;
-		height: max-content;
-	}
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  height: max-content;
+  align-items: center;
+  margin: auto auto auto 0;
+  padding-right: 0.5rem;
+  position: relative;
+  a {
+    display: flex;
+    width: max-content;
+    height: max-content;
+  }
 }
 
 #mensagens .botoes-top button {
-	width: 1rem;
-	height: 1rem;
-	border: none;
-	cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  cursor: pointer;
 
-	background: none;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 80%;
+  background: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
 }
 
 #mensagens .botoes-top .video-call {
-	background-image: url(./../../images/video-icon.svg);
-	margin-right: 5px;
-	object-fit: scale-down;
+  background-image: url(./../../images/video-icon.svg);
+  margin-right: 5px;
+  object-fit: scale-down;
 }
 #mensagens .botoes-top .options {
-	background-image: url(./../../images/menu-mensagens.png);
-	object-fit: scale-down;
+  background-image: url(./../../images/menu-mensagens.png);
+  object-fit: scale-down;
 }
 
 /*Para o menu de tradução oculto*/
 #mensagens .botoes-top .options-container {
-	top: 1.25rem;
-	display: none;
-	right: 0;
-	position: absolute;
-	width: max-content;
-	height: max-content;
-	border-radius: 10px;
-	box-sizing: border-box;
-	padding: 0.65rem;
-	z-index: 2;
+  top: 1.25rem;
+  display: none;
+  right: 0;
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 0.65rem;
+  z-index: 2;
 
-	color: #000;
+  color: #000;
 
-	background: #fff;
-	.translate {
-		display: flex;
-		flex-direction: column;
-		gap: 0.35rem;
-		.label {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
+  background: #fff;
+  .translate {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    .label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-			font-size: 0.57rem;
-		}
-	}
+      font-size: 0.57rem;
+    }
+  }
 
-	input[type="checkbox"] {
-		display: none;
-	}
-	label {
-		width: 1.15rem;
-		height: 0.6rem;
-		display: block;
-		border-radius: 0.3rem;
-		cursor: pointer;
+  input[type="checkbox"] {
+    display: none;
+  }
+  label {
+    width: 1.15rem;
+    height: 0.6rem;
+    display: block;
+    border-radius: 0.3rem;
+    cursor: pointer;
 
-		background: #c4c4c4;
-	}
-	.translate-toggle {
-		width: 0.6rem;
-		height: 0.6rem;
-		border-radius: 50%;
-		padding: 0;
-		float: left;
+    background: #c4c4c4;
+  }
+  .translate-toggle {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    padding: 0;
+    float: left;
 
-		background-color: var(--vermelho-principal);
-	}
-	#active-translator:checked + .translate-toggle {
-		float: right;
-	}
+    background-color: var(--vermelho-principal);
+  }
+  #active-translator:checked + .translate-toggle {
+    float: right;
+  }
 }
 
 /*Alteração do idioma*/
 #mensagens .talk-now {
-	width: 100%;
-	padding: 0;
-	justify-content: space-between;
-	display: flex;
-	gap: 0.15rem;
-	#invert-language {
-		width: 0.87rem;
-	}
+  width: 100%;
+  padding: 0;
+  justify-content: space-between;
+  display: flex;
+  gap: 0.15rem;
+  #invert-language {
+    width: 0.87rem;
+  }
 }
 
 #mensagens .img-1-container,
 #mensagens .img-2-container {
-	border: 1px solid var(--vermelho-principal);
-	border-radius: 0.2rem;
-	align-items: center;
-	display: flex;
-	justify-content: space-evenly;
-	width: 3.87rem;
+  border: 1px solid var(--vermelho-principal);
+  border-radius: 0.2rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  width: 3.87rem;
 
-	font-size: 0.5rem;
-	color: #000;
+  font-size: 0.5rem;
+  color: #000;
 }
 
 /*Área reservada para as mensagens já escritas e por fazer*/
 #mensagens #privado {
-	overflow: hidden;
-	display: grid;
-	position: relative;
-	width: 100%;
-	height: 100%;
+  overflow: hidden;
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 /*Mensagens já enviadas*/
 #mensagens #sended {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	overflow-y: scroll;
-	padding-right: 0.175rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding-right: 0.175rem;
 }
 
 #mensagens .the-message-container {
-	margin-top: 0.8rem;
-	.writed-message {
-		margin: 0;
-	}
+  margin-top: 0.8rem;
+  .writed-message {
+    margin: 0;
+  }
 }
 
 #mensagens .identifier {
-	width: max-content;
-	height: max-content;
-	display: flex;
-	.__sended-data {
-		height: 100%;
-		margin: auto 0;
-		align-items: center;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  .__sended-data {
+    height: 100%;
+    margin: auto 0;
+    align-items: center;
 
-		font-size: 0.425rem;
-		font-weight: 500;
-	}
-	.sender_img {
-		width: 1.5rem;
-		height: 1.5rem;
-		border-radius: 50%;
-		margin: 8px;
-		object-fit: cover;
+    font-size: 0.425rem;
+    font-weight: 500;
+  }
+  .sender_img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    margin: 8px;
+    object-fit: cover;
 
-		background: rgba(51, 51, 51, 0.3);
-	}
+    background: rgba(51, 51, 51, 0.3);
+  }
 }
 
 #mensagens .text-container {
-	background: #f4f4f4;
-	max-width: 55% !important;
-	min-height: 20px;
-	height: max-content;
-	margin-left: 25px;
-	padding-bottom: 4px;
-	border-radius: 4px;
-	box-sizing: border-box;
+  background: #f4f4f4;
+  max-width: 55% !important;
+  min-height: 20px;
+  height: max-content;
+  margin-left: 25px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 #mensagens .text-container .writed-message {
-	padding: 0.3rem;
-	overflow: hidden;
-	max-height: max-content;
-	word-break: break-word;
-	font-size: 0.47rem;
+  padding: 0.3rem;
+  overflow: hidden;
+  max-height: max-content;
+  word-break: break-word;
+  font-size: 0.47rem;
 }
 
 #mensagens .text-container .blur {
-	-webkit-filter: blur(2px);
-	filter: blur(2px);
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
 }
 
 #mensagens .interaction {
-	margin: 10px;
-	background: #fff;
-	border: 5px;
-	padding: 7px 6px;
+  margin: 10px;
+  background: #fff;
+  border: 5px;
+  padding: 7px 6px;
 }
 
 #mensagens .interaction-info {
-	display: grid;
-	width: 100%;
-	margin: 10px 0;
-	grid-template-columns: max-content auto;
-	font-size: 12px;
-	text-align: justify;
+  display: grid;
+  width: 100%;
+  margin: 10px 0;
+  grid-template-columns: max-content auto;
+  font-size: 12px;
+  text-align: justify;
 }
 
 #mensagens .interaction-info img {
-	margin: auto 15px;
-	height: 50%;
+  margin: auto 15px;
+  height: 50%;
 }
 
 #mensagens .text-container .confirm {
-	width: 100%;
-	height: 34px;
-	border: none;
-	background: var(--vermelho-principal);
-	color: #fff;
-	border-radius: 4px;
+  width: 100%;
+  height: 34px;
+  border: none;
+  background: var(--vermelho-principal);
+  color: #fff;
+  border-radius: 4px;
 
-	font-size: 14px;
-	font-weight: 400;
+  font-size: 14px;
+  font-weight: 400;
 }
 #mensagens a {
-	text-decoration: underline;
-	color: var(--vermelho-principal);
+  text-decoration: underline;
+  color: var(--vermelho-principal);
 }
 /* Para a mensagem enviada pelo usuário */
 #mensagens #privado .user {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	margin-right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 0px;
 }
 
 #mensagens #privado .user .identifier {
-	width: max-content;
-	margin-bottom: 5px;
-	height: max-content;
-	padding: 0;
-	display: inline;
+  width: max-content;
+  margin-bottom: 5px;
+  height: max-content;
+  padding: 0;
+  display: inline;
 }
 
 #mensagens #privado .user .text-container {
-	background: rgba(216, 192, 192, 0.76);
+  background: rgba(216, 192, 192, 0.76);
 }
 
 #mensagens #create-message {
-	display: grid;
-	grid-template-columns: max-content 1fr;
-	box-sizing: border-box !important;
-	column-gap: 10px;
-	padding: 0 10px;
-	justify-content: space-around;
-	width: 100%;
-	margin: 10px auto 10px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  box-sizing: border-box !important;
+  column-gap: 10px;
+  padding: 0 10px;
+  justify-content: space-around;
+  width: 100%;
+  margin: 10px auto 10px;
 }
 
 #mensagens #privado .add-media {
-	width: 1.75rem;
-	height: 1.75rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	border: none;
-	margin: auto 0 0;
-	cursor: pointer;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  margin: auto 0 0;
+  cursor: pointer;
 
-	background-color: var(--vermelho-principal);
+  background-color: var(--vermelho-principal);
 
-	color: #fff;
-	font-size: 1rem;
+  color: #fff;
+  font-size: 1rem;
 }
 
 #mensagens .message-text-container {
-	position: relative;
-	width: 100%;
-	height: max-content;
-	background: #fff;
-	border-radius: 15px;
-	display: flex;
-	align-items: flex-end;
-	margin: auto;
-	overflow: hidden;
-	cursor: pointer;
+  position: relative;
+  width: 100%;
+  height: max-content;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-end;
+  margin: auto;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 #mensagens #message-file {
-	position: sticky;
-	margin: 0 auto;
-	margin-top: 5px;
-	width: calc(100% - 20px);
-	bottom: 0%;
-	background: red;
-	box-sizing: border-box;
-	border-radius: 5px;
-	padding: 5px 55px 5px 15px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	word-wrap: nowrap;
-	white-space: nowrap;
-	font-size: 12px;
-	color: #fff;
-	display: none;
+  position: sticky;
+  margin: 0 auto;
+  margin-top: 5px;
+  width: calc(100% - 20px);
+  bottom: 0%;
+  background: red;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 5px 55px 5px 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: nowrap;
+  white-space: nowrap;
+  font-size: 12px;
+  color: #fff;
+  display: none;
 }
 
 #mensagens .sended-file {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	word-wrap: nowrap;
-	white-space: nowrap;
-	display: grid;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: nowrap;
+  white-space: nowrap;
+  display: grid;
 }
 
 #mensagens .sended-file .writed-message {
-	padding-right: 30px;
-	box-sizing: border-box;
-	max-width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	word-wrap: nowrap;
-	white-space: nowrap;
-	background: url(./../../images/file.png) no-repeat right 5px center;
-	background-size: 20px;
-	object-fit: scale-down;
+  padding-right: 30px;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: nowrap;
+  white-space: nowrap;
+  background: url(./../../images/file.png) no-repeat right 5px center;
+  background-size: 20px;
+  object-fit: scale-down;
 }
 
 #mensagens .clear-file {
-	width: 23px;
-	height: 23px;
-	top: 50%;
-	transform: translateY(-50%);
-	position: absolute;
-	right: 5px;
-	border: none;
-	border-radius: 25px;
+  width: 23px;
+  height: 23px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  right: 5px;
+  border: none;
+  border-radius: 25px;
 
-	background: #fff;
-	color: var(--vermelho-principal);
+  background: #fff;
+  color: var(--vermelho-principal);
 }
 
 #mensagens #message-text {
-	width: 100%;
-	height: max-content;
-	max-height: 150px;
-	padding: 10px 0 10px 15px;
-	resize: none;
-	border: none;
-	text-align: justify;
-	box-sizing: border-box;
-	margin: auto;
+  width: 100%;
+  height: max-content;
+  max-height: 150px;
+  padding: 10px 0 10px 15px;
+  resize: none;
+  border: none;
+  text-align: justify;
+  box-sizing: border-box;
+  margin: auto;
 
-	font-weight: 400;
-	font-size: 0.457rem;
+  font-weight: 400;
+  font-size: 0.457rem;
 }
 
 #mensagens #message-text::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 #mensagens #message-text:focus {
-	outline: none;
+  outline: none;
 }
 
 #mensagens .send-message {
-	width: 1.5rem;
-	height: 1.5rem;
-	margin-right: 6px;
-	border: none;
-	position: relative;
-	cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 6px;
+  border: none;
+  position: relative;
+  cursor: pointer;
 
-	background: url(./../../images/send-message-icon.svg) no-repeat center;
-	background-size: 0.9rem;
+  background: url(./../../images/send-message-icon.svg) no-repeat center;
+  background-size: 0.9rem;
 }
 
-/* DOCUMENTO curtidas.php & localizar-pessoas.php*/
+/* DOCUMENTO curtidas.html & localizar-pessoas.html*/
 
 .padrao {
-	background: #fff;
-	border-radius: 10px;
-	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-	width: 90%;
-	padding: 1.25rem;
-	margin: 0 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  padding: 1.25rem;
+  margin: 0 20px;
 }
 
 .padrao ul.list {
-	width: 100%;
-	margin-top: 20px;
-	display: grid;
-	justify-content: space-between;
-	column-gap: 1vmax;
-	row-gap: 30px;
-	grid-template-columns: repeat(auto-fit, 180px);
-	box-sizing: border-box;
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  justify-content: space-between;
+  column-gap: 1vmax;
+  row-gap: 30px;
+  grid-template-columns: repeat(auto-fit, 180px);
+  box-sizing: border-box;
 }
 
 .padrao .list li {
-	display: block;
-	flex-direction: column;
-	width: 100%;
-	height: 211px;
-	border-radius: 10px;
-	object-fit: cover;
-	position: relative;
-	overflow: hidden;
+  display: block;
+  flex-direction: column;
+  width: 100%;
+  height: 211px;
+  border-radius: 10px;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
 }
 
 .padrao .list li img {
-	width: 100%;
-	height: 100%;
-	position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 .padrao .list section {
-	position: relative;
-	max-width: 100%;
-	height: 100%;
-	display: flex;
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .padrao .list article {
-	display: block;
-	flex-direction: column;
-	margin: 72% 15px;
+  display: block;
+  flex-direction: column;
+  margin: 72% 15px;
 }
 
 .padrao .list .status-div {
-	width: 13px;
-	height: 13px;
-	border-radius: 15px;
-	background-color: var(--status-on);
-	display: inline-flex;
-	margin-bottom: 5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 15px;
+  background-color: var(--status-on);
+  display: inline-flex;
+  margin-bottom: 5px;
 }
 
 .padrao .list span {
-	display: inline-block;
-	max-width: 120px;
-	font-size: 18px;
-	color: #fff;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 120px;
+  font-size: 18px;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .padrao section ul {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 
-	justify-content: space-between;
+  justify-content: space-between;
 }
 
 .padrao .list article li {
-	width: 48.92px;
-	height: 13.94px;
+  width: 48.92px;
+  height: 13.94px;
 
-	background: rgba(0, 0, 0, 0.52);
-	border-radius: 6.69421px;
+  background: rgba(0, 0, 0, 0.52);
+  border-radius: 6.69421px;
 
-	font-size: 12px;
-	color: #fff;
-	text-align: center;
-	line-height: 13.94px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 13.94px;
 }
 
 .padrao .list .botoes {
-	position: relative;
-	display: none;
-	margin: auto;
-	width: max-content;
-	justify-content: space-between;
+  position: relative;
+  display: none;
+  margin: auto;
+  width: max-content;
+  justify-content: space-between;
 }
 
 /* Ao passar em algum item da lista */
 .padrao .list li:hover .status-div,
 .padrao li:hover ul {
-	display: none;
+  display: none;
 }
 
 .padrao .list li:hover section {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .padrao .list li:hover article {
-	display: block;
-	justify-content: center;
-	margin: 0;
-	align-items: center;
+  display: block;
+  justify-content: center;
+  margin: 0;
+  align-items: center;
 }
 
 .padrao .list li:hover span {
-	text-align: center;
-	display: block;
-	margin: 10px auto 0;
-	max-width: 170px;
-	transition: all 400ms;
+  text-align: center;
+  display: block;
+  margin: 10px auto 0;
+  max-width: 170px;
+  transition: all 400ms;
 }
 
 .padrao .list li:hover .botoes {
-	position: relative;
-	display: flex;
-	bottom: 0;
-	margin: auto auto 15px;
+  position: relative;
+  display: flex;
+  bottom: 0;
+  margin: auto auto 15px;
 }
 
-/*localizar-pessoas.php*/
+/*localizar-pessoas.html*/
 #pessoas-regiao .search {
-	display: grid;
-	height: 1.65rem;
-	grid-template-columns: 1fr 4.5rem;
-	justify-content: space-between;
-	margin: 20px 0 40px;
-	.search-field {
-		width: 100%;
-		height: 100%;
-		box-sizing: border-box;
-		display: flex;
-		border: 1px solid #31302e;
-		border-radius: 0.2rem;
-		overflow: hidden;
-		input[type="search"] {
-			height: 100%;
-			width: 100%;
-			display: inline-block;
-			padding: 0.25rem 0.37rem;
-			border: none;
-			outline: none;
+  display: grid;
+  height: 1.65rem;
+  grid-template-columns: 1fr 4.5rem;
+  justify-content: space-between;
+  margin: 20px 0 40px;
+  .search-field {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    border: 1px solid #31302e;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    input[type="search"] {
+      height: 100%;
+      width: 100%;
+      display: inline-block;
+      padding: 0.25rem 0.37rem;
+      border: none;
+      outline: none;
 
-			font-size: 0.65rem;
-			font-weight: 400;
-		}
-		button {
-			height: auto;
-			margin: 0.25rem;
-			margin-right: 0.37rem;
-			display: inline-block;
-			width: 1.25rem;
-			border: none;
-			padding-right: 0.75rem;
-			cursor: pointer;
+      font-size: 0.65rem;
+      font-weight: 400;
+    }
+    button {
+      height: auto;
+      margin: 0.25rem;
+      margin-right: 0.37rem;
+      display: inline-block;
+      width: 1.25rem;
+      border: none;
+      padding-right: 0.75rem;
+      cursor: pointer;
 
-			background: url(./../../images/Search.svg) no-repeat center;
-			background-size: contain;
-		}
-	}
-	.__filter-btn {
-		width: 100%;
-		height: 100%;
-		box-sizing: border-box;
-		border-radius: 0.2rem;
-		border: 1px solid #000000;
+      background: url(./../../images/Search.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+  .__filter-btn {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 0.2rem;
+    border: 1px solid #000000;
 
-		font-size: 0.675rem;
-		text-align: start;
-		text-indent: 0.25rem;
+    font-size: 0.675rem;
+    text-align: start;
+    text-indent: 0.25rem;
 
-		background: url(./../../images/Filter.svg) no-repeat center right 0.5rem;
-		background-size: 1rem;
-	}
+    background: url(./../../images/Filter.svg) no-repeat center right 0.5rem;
+    background-size: 1rem;
+  }
 }
 
-/*planos.php*/
+/*planos.html*/
 #planos,
 #pacotes-pagamento,
 #metodo-pagamento {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #pacotes-pagamento {
-	display: grid;
-	row-gap: 20px;
-	justify-content: center;
+  display: grid;
+  row-gap: 20px;
+  justify-content: center;
 }
 
 #pacotes-pagamento {
-	height: 100%;
+  height: 100%;
 }
 
 #planos .card-container {
-	display: flex;
-	grid-auto-flow: column dense;
-	column-gap: 1.5vmax;
-	max-height: 300px;
-	max-width: 100%;
-	box-sizing: border-box;
-	justify-content: space-between;
+  display: flex;
+  grid-auto-flow: column dense;
+  column-gap: 1.5vmax;
+  max-height: 300px;
+  max-width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
 }
 
 #planos .card-container input[type="radio"] {
-	display: none;
+  display: none;
 }
 
 /*Bordas vermelhas para card selecionado*/
 #planos .card-container input[type="radio"]:checked + label {
-	border: 2px solid #fc003b;
+  border: 2px solid #fc003b;
 }
 
 #planos .card-content {
-	max-height: 300px;
-	padding: 20px;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
+  max-height: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 
-	background: #fff;
-	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
-	border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 
 #planos .card-content img {
-	margin: auto;
-	/* user-select: none; dando bug*/
+  margin: auto;
+  /* user-select: none; dando bug*/
 }
 
 #planos .card-content p {
-	width: 100%;
-	margin: 10px auto;
+  width: 100%;
+  margin: 10px auto;
 
-	text-align: justify;
-	height: 100%;
-	overflow: hidden;
-	word-break: break-all;
-	line-clamp: 2;
-	text-overflow: ellipsis;
+  text-align: justify;
+  height: 100%;
+  overflow: hidden;
+  word-break: break-all;
+  line-clamp: 2;
+  text-overflow: ellipsis;
 }
 
 #planos .card-content button {
-	width: 100%;
-	height: 50px;
-	font-size: 16px;
-	border-radius: 8px;
-	margin: auto auto 0;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: auto auto 0;
 }
 
 #planos .card-bank-data {
-	width: 728.08px;
-	height: 282px;
+  width: 728.08px;
+  height: 282px;
 
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-	margin: auto;
-	box-sizing: border-box;
-	background: linear-gradient(
-		180deg,
-		#fd003b 0%,
-		rgba(253, 0, 59, 0.68) 74.79%,
-		rgba(253, 0, 59, 0.54) 93.02%,
-		rgba(253, 0, 59, 0.5) 100%
-	);
+  margin: auto;
+  box-sizing: border-box;
+  background: linear-gradient(
+    180deg,
+    #fd003b 0%,
+    rgba(253, 0, 59, 0.68) 74.79%,
+    rgba(253, 0, 59, 0.54) 93.02%,
+    rgba(253, 0, 59, 0.5) 100%
+  );
 }
 
 #planos .card-bank-data .left-side {
-	padding: 30px;
-	width: 100%;
+  padding: 30px;
+  width: 100%;
 }
 
 #planos .card-bank-data label {
-	color: #fff;
-	font-size: 16px;
-	display: block;
+  color: #fff;
+  font-size: 16px;
+  display: block;
 }
 
 #planos .card-bank-data input {
-	width: 277.6px;
-	height: 32.34px;
-	border: none;
-	margin: 8px 0;
-	box-sizing: border-box;
-	padding: 15px;
+  width: 277.6px;
+  height: 32.34px;
+  border: none;
+  margin: 8px 0;
+  box-sizing: border-box;
+  padding: 15px;
 
-	background: #ffffff;
-	border-radius: 6.73784px;
+  background: #ffffff;
+  border-radius: 6.73784px;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-	display: none;
-	appearance: none;
-	margin: 0;
+  display: none;
+  appearance: none;
+  margin: 0;
 }
 
 #planos .card-bank-data .left-side > span:first-of-type {
-	display: block;
-	margin: 15px 0;
+  display: block;
+  margin: 15px 0;
 }
 #planos .card-bank-data .left-side > span:last-of-type {
-	display: inline-block;
+  display: inline-block;
 }
 #planos .validate {
-	display: inline-block;
-	margin-left: 10px;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 #planos .validate input {
-	width: 64px;
-	text-align: center;
+  width: 64px;
+  text-align: center;
 }
 
 #planos .card-bank-data .right-side {
-	width: 236.74px;
+  width: 236.74px;
 }
 
 #planos .card-bank-data .right-side > div {
-	background: #000;
-	width: 236.74px;
-	height: 79.18px;
-	margin-top: 25%;
+  background: #000;
+  width: 236.74px;
+  height: 79.18px;
+  margin-top: 25%;
 }
 
 #planos button {
-	display: block;
-	width: 362px;
-	height: 57px;
-	border-radius: 8px;
+  display: block;
+  width: 362px;
+  height: 57px;
+  border-radius: 8px;
 
-	font-size: 16px;
+  font-size: 16px;
 }
 
 /* #metodo-pagamento*/
 #metodo-pagamento {
-	padding: 0 30px;
-	height: max-content;
+  padding: 0 30px;
+  height: max-content;
 }
 
 #metodo-pagamento .method-container {
-	display: grid;
-	grid-auto-flow: column;
-	grid-template-columns: 48% 48%;
-	flex-direction: row;
-	justify-content: space-between;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 48% 48%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #metodo-pagamento h3 {
-	font-weight: 500;
-	background: url(./../../images/arrow-down-red.svg) no-repeat center right;
-	width: max-content;
-	margin-top: 4%;
-	margin-bottom: 4%;
-	padding-right: 7%;
-	font-size: 23px;
-	color: var(--vermelho-principal);
-	letter-spacing: -1px;
+  font-weight: 500;
+  background: url(./../../images/arrow-down-red.svg) no-repeat center right;
+  width: max-content;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  padding-right: 7%;
+  font-size: 23px;
+  color: var(--vermelho-principal);
+  letter-spacing: -1px;
 }
 
 #metodo-pagamento input,
 #metodo-pagamento select {
-	appearance: none;
-	box-sizing: border-box;
-	height: 50px;
-	background: none;
-	padding: 13px 19px;
-	margin: 3% 0;
+  appearance: none;
+  box-sizing: border-box;
+  height: 50px;
+  background: none;
+  padding: 13px 19px;
+  margin: 3% 0;
 
-	font-size: 18px;
+  font-size: 18px;
 
-	border: 1.11552px solid #333333;
-	border-radius: 9px;
+  border: 1.11552px solid #333333;
+  border-radius: 9px;
 }
 
 #metodo-pagamento .card-validity {
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 #metodo-pagamento .card-validity div {
-	width: 27%;
+  width: 27%;
 }
 
 #metodo-pagamento .card-validity div:nth-of-type(3) {
-	width: 38%;
+  width: 38%;
 }
 
 #metodo-pagamento .left-side > input,
 #metodo-pagamento .left-side button {
-	width: 100%;
+  width: 100%;
 }
 
 #metodo-pagamento .left-side button {
-	margin-top: 5%;
+  margin-top: 5%;
 }
 
 #metodo-pagamento .card-validity select {
-	width: 100%;
-	text-align: center;
-	background: url(./../../images/arrow-down.svg) no-repeat center right 10%;
+  width: 100%;
+  text-align: center;
+  background: url(./../../images/arrow-down.svg) no-repeat center right 10%;
 }
 
 #metodo-pagamento .left-side > select {
-	width: 100%;
-	background: url(./../../images/arrow-down-red.svg) no-repeat center right 5%;
-	color: var(--vermelho-principal);
-	border: 1px solid var(--vermelho-principal);
-	outline: none;
+  width: 100%;
+  background: url(./../../images/arrow-down-red.svg) no-repeat center right 5%;
+  color: var(--vermelho-principal);
+  border: 1px solid var(--vermelho-principal);
+  outline: none;
 }
 
 #metodo-pagamento .card-validity div span {
-	display: block;
+  display: block;
 }
 
 #metodo-pagamento .card-validity div input {
-	width: 100%;
+  width: 100%;
 }
 
 /*Lado direito de planos#metodo-pagamento*/
 #metodo-pagamento .right-side {
-	display: flex;
-	flex-direction: column;
-	height: max-content;
-	row-gap: 25%;
-	margin: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  row-gap: 25%;
+  margin: auto 0 0;
 }
 
 /*Para o container das bandeiras de cartão*/
 #metodo-pagamento #payment-method {
-	width: 100%;
-	height: 100%;
-	display: grid;
-	row-gap: 15px;
-	grid-auto-flow: row;
-	grid-template-columns: repeat(auto-fit, 91.76px);
-	justify-content: space-between;
-	margin-bottom: 5%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  row-gap: 15px;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, 91.76px);
+  justify-content: space-between;
+  margin-bottom: 5%;
 }
 
 #metodo-pagamento #payment-method input[type="radio"] {
-	appearance: none;
-	height: 62.4px;
-	border: 1.37998px solid #d9d9d9;
-	border-radius: 8.2799px;
-	min-width: 100%;
+  appearance: none;
+  height: 62.4px;
+  border: 1.37998px solid #d9d9d9;
+  border-radius: 8.2799px;
+  min-width: 100%;
 
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
 }
 
 #metodo-pagamento #payment-method input[type="radio"]:checked {
-	border: 2.69078px solid #fb6624;
-	border-radius: 8.2799px;
-	transition: all ease-in-out 200ms;
+  border: 2.69078px solid #fb6624;
+  border-radius: 8.2799px;
+  transition: all ease-in-out 200ms;
 }
 
 #metodo-pagamento .right-side #card-bank {
-	width: 100%;
-	height: 248px;
-	background: linear-gradient(
-		180deg,
-		#fd003b 0%,
-		rgba(253, 0, 59, 0.68) 74.79%,
-		rgba(253, 0, 59, 0.54) 93.02%,
-		rgba(253, 0, 59, 0.5) 100%
-	);
-	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-	border-radius: 27px;
-	color: #fff;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
+  width: 100%;
+  height: 248px;
+  background: linear-gradient(
+    180deg,
+    #fd003b 0%,
+    rgba(253, 0, 59, 0.68) 74.79%,
+    rgba(253, 0, 59, 0.54) 93.02%,
+    rgba(253, 0, 59, 0.5) 100%
+  );
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 27px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 #metodo-pagamento #card-bank .bank-indicative {
-	justify-content: space-between;
-	display: flex;
-	background: #5c0101a2;
-	padding: 0 60px 0 25px;
+  justify-content: space-between;
+  display: flex;
+  background: #5c0101a2;
+  padding: 0 60px 0 25px;
 }
 
 #metodo-pagamento #card-bank img {
-	height: max-content;
-	margin: 4px 0;
+  height: max-content;
+  margin: 4px 0;
 }
 
 #metodo-pagamento #card-bank .bank-indicative span {
-	font-size: 14px;
-	font-weight: 700;
-	margin-top: auto;
-	margin-bottom: auto;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #metodo-pagamento #card-bank > span {
-	font-size: 24px;
-	text-align: center;
-	font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 400;
 }
 
 #metodo-pagamento #card-bank > div:last-of-type {
-	display: flex;
-	justify-content: space-between;
-	margin: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 60px;
 }
 
-/*favoritos.php*/
+/*favoritos.html*/
 #favoritos > nav {
-	display: grid;
-	grid-auto-flow: column;
-	margin-bottom: 3%;
+  display: grid;
+  grid-auto-flow: column;
+  margin-bottom: 3%;
 }
 
 #favoritos > nav label {
-	border-bottom: 3px solid #999;
-	width: 100%;
-	font-size: 0.7rem;
-	text-align: center;
-	padding-bottom: 0px;
+  border-bottom: 3px solid #999;
+  width: 100%;
+  font-size: 0.7rem;
+  text-align: center;
+  padding-bottom: 0px;
 
-	cursor: pointer;
+  cursor: pointer;
 }
 
 #favoritos > nav input[type="radio"] {
-	display: none;
+  display: none;
 }
 
 #favoritos > nav input[type="radio"]:checked + label {
-	border-bottom: 4px solid var(--vermelho-principal);
-	transition: all ease-in-out 300ms;
+  border-bottom: 4px solid var(--vermelho-principal);
+  transition: all ease-in-out 300ms;
 }
 
 #favoritos #sep-vizualizou,
 #favoritos #sep-curtiu {
-	display: none;
+  display: none;
 }
 
 /*Estilo especial e invertido de #curtiu*/
 #sep-curtiu .status-div,
 .padrao li:hover ul {
-	display: none;
+  display: none;
 }
 
 #sep-curtiu section {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #sep-curtiu .list article {
-	display: block;
-	justify-content: center;
-	margin: 0;
-	align-items: center;
+  display: block;
+  justify-content: center;
+  margin: 0;
+  align-items: center;
 }
 
 #sep-curtiu .list span {
-	text-align: center;
-	display: block;
-	margin: 10px auto 0;
-	max-width: 170px;
-	transition: all 400ms;
+  text-align: center;
+  display: block;
+  margin: 10px auto 0;
+  max-width: 170px;
+  transition: all 400ms;
 }
 
 #sep-curtiu .list .botoes {
-	position: relative;
-	display: flex;
-	bottom: 0;
-	margin: auto auto 15px;
+  position: relative;
+  display: flex;
+  bottom: 0;
+  margin: auto auto 15px;
 }
 
-/*configuracoes.php*/
+/*configuracoes.html*/
 main#configuracoes,
 main#servicos {
-	width: 623px;
-	display: flex;
-	height: 100%;
-	flex-direction: column;
-	box-sizing: border-box;
+  width: 623px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 #configuracoes #conf-select,
 #configuracoes #conf-account,
 #servicos #test-select {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
 #configuracoes .title,
 #servicos .title {
-	font-size: 1.25rem;
-	margin: 0 auto;
+  font-size: 1.25rem;
+  margin: 0 auto;
 }
 #configuracoes ul#conf-list,
 #servicos ul#test-list {
-	display: flex;
-	width: 100%;
-	margin-top: 13%;
-	flex-direction: column;
+  display: flex;
+  width: 100%;
+  margin-top: 13%;
+  flex-direction: column;
 }
 
 #configuracoes #conf-list li,
 #servicos #test-list li {
-	text-indent: 2%;
-	font-size: 0.75rem;
-	padding: 3% 0;
-	margin: 1% 0;
-	background: url(./../../images/arrow-right.svg) no-repeat right 20px center;
-	background-size: 0.45rem;
+  text-indent: 2%;
+  font-size: 0.75rem;
+  padding: 3% 0;
+  margin: 1% 0;
+  background: url(./../../images/arrow-right.svg) no-repeat right 20px center;
+  background-size: 0.45rem;
 }
 
 /*Excluir a seguir*/
 #configuracoes #conf-account {
-	display: none;
+  display: none;
 }
 
 /*Configurações da conta*/
 #configuracoes #conf-list li:hover,
 #configuracoes #conf-account li:hover {
-	transition: all ease-in-out 100ms;
-	background-color: rgba(153, 153, 153, 0.1);
+  transition: all ease-in-out 100ms;
+  background-color: rgba(153, 153, 153, 0.1);
 }
 
 #configuracoes button {
-	font-family: "Raleway";
+  font-family: "Raleway";
 }
 
 #configuracoes #conf-select a,
 #configuracoes .back {
-	display: block;
-	margin: auto auto 0;
-	padding-top: 15px;
-	text-decoration: underline;
-	font-size: 0.85rem;
+  display: block;
+  margin: auto auto 0;
+  padding-top: 15px;
+  text-decoration: underline;
+  font-size: 0.85rem;
 }
 
 #configuracoes #conf-account li {
-	background: none;
-	width: 100%;
-	display: grid;
-	grid-template-columns: 20% 68% 10%;
-	justify-content: center;
-	cursor: default;
+  background: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 68% 10%;
+  justify-content: center;
+  cursor: default;
 
-	font-size: 0.7rem;
+  font-size: 0.7rem;
 }
 
 #configuracoes #conf-account .user-data-show {
-	color: rgba(0, 0, 0, 0.5);
-	height: 100%;
-	border: none;
-	padding: 0 5px;
-	margin-right: 5px;
+  color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  border: none;
+  padding: 0 5px;
+  margin-right: 5px;
 
-	font-size: 0.7rem;
+  font-size: 0.7rem;
 
-	background: none;
+  background: none;
 }
 
 #configuracoes #conf-account .user-data-show:focus {
-	background: rgba(207, 207, 207, 0.315);
+  background: rgba(207, 207, 207, 0.315);
 }
 
 #configuracoes .edit {
-	margin: 0 0 0 auto;
-	text-decoration: underline;
-	color: #36356d;
-	margin-right: 5px;
-	cursor: pointer;
+  margin: 0 0 0 auto;
+  text-decoration: underline;
+  color: #36356d;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 #configuracoes #conf-account #delete-account {
-	font-size: 0.7rem;
-	text-decoration: underline;
-	font-weight: 400;
-	cursor: pointer;
-	margin-top: 15px;
-	text-indent: 10px;
+  font-size: 0.7rem;
+  text-decoration: underline;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 15px;
+  text-indent: 10px;
 }
 
 /*Configuracoes/metodo-de-pagamento*/
 #conf-payment {
-	height: 100%;
-	display: none;
-	flex-direction: column;
+  height: 100%;
+  display: none;
+  flex-direction: column;
 }
 #conf-payment ul {
-	margin-top: 6%;
-	margin-bottom: 3%;
-	display: flex;
-	max-height: 760px;
-	flex-direction: column;
-	overflow-y: scroll;
+  margin-top: 6%;
+  margin-bottom: 3%;
+  display: flex;
+  max-height: 760px;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 #configuracoes #conf-payment li {
-	width: 100%;
-	height: 3rem;
-	margin: 2% auto;
-	padding: 10px 1.25rem 10px 2.772rem;
-	box-sizing: border-box;
-	display: grid;
-	grid-template-columns: auto max-content;
+  width: 100%;
+  height: 3rem;
+  margin: 2% auto;
+  padding: 10px 1.25rem 10px 2.772rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto max-content;
 
-	background: url(./../../images/payment-card-bg.svg) no-repeat;
-	background-position: center left 0.75rem;
-	background-size: 1.275rem;
+  background: url(./../../images/payment-card-bg.svg) no-repeat;
+  background-position: center left 0.75rem;
+  background-size: 1.275rem;
 
-	border: 1px solid #fc003b;
-	border-radius: 10px;
+  border: 1px solid #fc003b;
+  border-radius: 10px;
 
-	* {
-		font-size: 0.67rem;
-	}
+  * {
+    font-size: 0.67rem;
+  }
 }
 
 #conf-payment li > div {
-	display: flex;
-	flex-direction: column;
-	margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
 }
 
 #conf-payment li > div span:first-of-type {
-	font-size: 20px;
-	font-weight: 400;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 #conf-payment li > div span:last-of-type {
-	font-size: 18px;
-	color: rgba(0, 0, 0, 0.62);
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.62);
 }
 
 #conf-payment .edit {
-	color: var(--vermelho-principal);
-	margin: auto 0;
+  color: var(--vermelho-principal);
+  margin: auto 0;
 }
 
 #conf-payment .btn-register,
 #form-delete-account button {
-	width: 90%;
-	margin: 0 auto !important;
-	height: 40px;
-	border-radius: 10px;
-	position: sticky;
-	margin-bottom: 10px;
-	&.btn-register {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 0.7rem;
-	}
+  width: 90%;
+  margin: 0 auto !important;
+  height: 40px;
+  border-radius: 10px;
+  position: sticky;
+  margin-bottom: 10px;
+  &.btn-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+  }
 }
 
 /*confiracoes/notificacoes
 *configuracoes/configuracoes*/
 #conf-notifications,
 #conf-def {
-	display: none;
-	height: 100%;
-	flex-direction: column;
+  display: none;
+  height: 100%;
+  flex-direction: column;
 }
 #conf-notifications ul,
 #conf-def ul {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 15%;
 }
 
 #conf-notifications li,
 #conf-def li {
-	display: grid;
-	height: 55px;
-	grid-template-columns: auto max-content;
-	justify-content: space-between;
-	width: 100%;
+  display: grid;
+  height: 55px;
+  grid-template-columns: auto max-content;
+  justify-content: space-between;
+  width: 100%;
 
-	font-size: 0.67rem;
+  font-size: 0.67rem;
 }
 
 #conf-notifications input[type="checkbox"],
 #conf-def input[type="checkbox"] {
-	display: none;
+  display: none;
 }
 #conf-notifications .switch-painel,
 #conf-def .switch-painel {
-	width: 2rem;
-	height: 1rem;
-	display: flex;
+  width: 2rem;
+  height: 1rem;
+  display: flex;
 
-	background: rgb(207, 207, 207);
-	border-radius: 40px;
+  background: rgb(207, 207, 207);
+  border-radius: 40px;
 }
 
 #conf-notifications .btn-switch,
 #conf-def .btn-switch {
-	width: 1rem;
-	height: 1rem;
-	border-radius: 50%;
-	background: var(--vermelho-principal);
-	box-sizing: border-box;
-	border: none;
-	margin: auto 0;
-	margin-left: 1px;
-	transition: all 200ms;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--vermelho-principal);
+  box-sizing: border-box;
+  border: none;
+  margin: auto 0;
+  margin-left: 1px;
+  transition: all 200ms;
 }
 
 #conf-notifications
-	input[type="checkbox"]:checked
-	+ .switch-painel
-	> .btn-switch,
+  input[type="checkbox"]:checked
+  + .switch-painel
+  > .btn-switch,
 #conf-def input[type="checkbox"]:checked + .switch-painel > .btn-switch {
-	margin-left: auto;
-	width: 1rem;
-	height: 1rem;
-	background: #fff;
-	border: solid 1px var(--vermelho-principal);
-	margin-right: 0px;
+  margin-left: auto;
+  width: 1rem;
+  height: 1rem;
+  background: #fff;
+  border: solid 1px var(--vermelho-principal);
+  margin-right: 0px;
 }
 
 #conf-notifications input[type="checkbox"]:checked + .switch-painel,
 #conf-def input[type="checkbox"]:checked + .switch-painel {
-	background: var(--vermelho-principal);
-	transition: all ease-in-out 900ms;
+  background: var(--vermelho-principal);
+  transition: all ease-in-out 900ms;
 }
 
 /*Formulário de encerramento de conta*/
 #form-delete-account {
-	display: none;
-	flex-direction: column;
-	height: 100%;
+  display: none;
+  flex-direction: column;
+  height: 100%;
 }
 
 #form-delete-account .delete-list {
-	margin-left: 3%;
-	margin-top: 8%;
-	font-size: 20px;
+  margin-left: 3%;
+  margin-top: 8%;
+  font-size: 20px;
 }
 
 #form-delete-account .delete-list > div {
-	height: max-content;
-	display: flex;
-	margin: 4% 0;
+  height: max-content;
+  display: flex;
+  margin: 4% 0;
 }
 
 #form-delete-account span {
-	height: max-content;
-	margin-left: 5%;
+  height: max-content;
+  margin-left: 5%;
 }
 
 #form-delete-account input[type="radio"],
 #form-delete-account input[type="radio"]:checked {
-	outline: none;
-	appearance: none;
-	box-sizing: border-box;
-	width: 22px;
-	height: 22px;
-	margin: auto 0;
+  outline: none;
+  appearance: none;
+  box-sizing: border-box;
+  width: 22px;
+  height: 22px;
+  margin: auto 0;
 
-	background: none;
-	border: 1.26901px solid var(--vermelho-principal);
-	border-radius: 15%;
+  background: none;
+  border: 1.26901px solid var(--vermelho-principal);
+  border-radius: 15%;
 }
 
 #form-delete-account input[type="radio"]:checked {
-	background: url(./../../images/Close_round.png) no-repeat;
-	background-size: 130%;
-	background-position: center;
+  background: url(./../../images/Close_round.png) no-repeat;
+  background-size: 130%;
+  background-position: center;
 }
 
 #form-delete-account > div:last-of-type {
-	margin-top: auto;
-	display: flex;
-	flex-direction: column;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 #form-delete-account button {
-	text-transform: uppercase;
-	letter-spacing: 3px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 /*Escolha entre desativar e excluir conta*/
 #delete-account {
-	width: max-content;
+  width: max-content;
 }
 
 #delete-account-options {
-	display: none;
-	height: 100%;
-	grid-template-rows: max-content max-content 1fr max-content;
-	row-gap: 15px;
+  display: none;
+  height: 100%;
+  grid-template-rows: max-content max-content 1fr max-content;
+  row-gap: 15px;
 }
 
 #delete-account-options .btns {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 47% 47%;
-	justify-content: space-around;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 47% 47%;
+  justify-content: space-around;
 }
 
 #delete-account-options .btns button,
 #delete-account-options button:last-of-type {
-	width: 100%;
-	height: 58px;
-	border-radius: 10px;
-	margin: 0;
+  width: 100%;
+  height: 58px;
+  border-radius: 10px;
+  margin: 0;
 
-	font-size: 14px;
-	font-weight: 700;
-	letter-spacing: 0.2em;
-	text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 #delete-account-options .btns button:last-of-type {
-	background: none;
+  background: none;
 }
 
 #delete-account-options #justification {
-	display: grid;
-	grid-template-rows: max-content 1fr;
+  display: grid;
+  grid-template-rows: max-content 1fr;
 }
 
 #delete-account-options #justification span {
-	font-size: 18px;
-	font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 #delete-account-options #justification textarea {
-	width: 100%;
-	resize: none;
-	box-sizing: border-box;
-	padding: 10px;
-	font-size: 18px;
+  width: 100%;
+  resize: none;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 18px;
 }
 
 #delete-account-options > div:last-of-type {
-	display: flex;
-	flex-direction: column;
-	margin-top: auto;
-	height: max-content;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  height: max-content;
 }
 
-/* ===================== Perfil.php ===================== */
-#perfil-container .perfil-spliter{
-	display: grid;
-	width: 100%;
-	height: 30rem;
-	max-width: 100%;
-	gap: .5rem;
-	grid-template-columns: 21rem  10rem;
-	box-sizing: border-box;
-	overflow: hidden;
+/* ===================== Perfil.html ===================== */
+#perfil-container .perfil-spliter {
+  display: grid;
+  width: 100%;
+  height: 30rem;
+  max-width: 100%;
+  gap: 0.5rem;
+  grid-template-columns: 21rem 10rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 #perfil {
-	max-width: 100%;
+  max-width: 100%;
 }
 .add-more-photos {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: .57rem;
-	padding: .3rem .6rem;
-	justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.57rem;
+  padding: 0.3rem 0.6rem;
+  justify-content: space-evenly;
 }
 
 .add-more-photos .add-box {
-	height: 7.666666666666667rem;
-	z-index: 2;
-	position: relative;
-	display: flex;
+  height: 7.666666666666667rem;
+  z-index: 2;
+  position: relative;
+  display: flex;
 
-	background: rgba(51, 51, 51, 0.47);
-	background-size: cover;
-	background-position: center;
-	border-radius: 10px;
+  background: rgba(51, 51, 51, 0.47);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
 }
 
 .add-more-photos .add-box input[type="file"] {
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	position: absolute;
-	z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
 }
 
 .add-more-photos .add-box button,
 .btn-remove-def {
-	width: 25px;
-	height: 25px;
-	z-index: 2;
-	margin: 8px 8px 0 auto;
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  margin: 8px 8px 0 auto;
 
-	background: url(./../../images/plus.svg) no-repeat center;
-	border: none;
+  background: url(./../../images/plus.svg) no-repeat center;
+  border: none;
 }
 
 #perfil > img {
-	display: none;
+  display: none;
 }
 
 #perfil .__background-text {
-	color: #fff;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 
-	font-size: .97rem;
-	font-weight: 700;
+  font-size: 0.97rem;
+  font-weight: 700;
 }
 
 #perfil-information {
-	background: #fff;
-	height: 100%;
-	width: 100%;
-	box-sizing: border-box;
-	padding: .35rem;
-	overflow-y: scroll;
-	width: 100%;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.35rem;
+  overflow-y: scroll;
+  width: 100%;
 }
 
 #perfil-information > h2 {
-	width: 100%;
-	margin: 0;
+  width: 100%;
+  margin: 0;
 
-	font-weight: 400;
-	font-size: .67rem;
+  font-weight: 400;
+  font-size: 0.67rem;
 }
 
 #perfil-information > span {
-	font-weight: 500;
-	font-size: .52rem;
-	line-height: 24px;
+  font-weight: 500;
+  font-size: 0.52rem;
+  line-height: 24px;
 
-	color: rgba(0, 0, 0, 0.52);
+  color: rgba(0, 0, 0, 0.52);
 }
 
 #perfil-information > div:first-of-type h3 {
-	padding-right: .75rem;
+  padding-right: 0.75rem;
 
-
-	background: url(./../../images/edit.svg) no-repeat;
-	background-position: center left calc(100% + .1rem);
-	background-size: .65rem;
+  background: url(./../../images/edit.svg) no-repeat;
+  background-position: center left calc(100% + 0.1rem);
+  background-size: 0.65rem;
 }
 
 #perfil-information h3 {
-	width: max-content;
-	max-width: 100%;
-	margin: .5rem 0 0;
+  width: max-content;
+  max-width: 100%;
+  margin: 0.5rem 0 0;
 
-	font-size: .67rem;
-	color: var(--vermelho-principal);
+  font-size: 0.67rem;
+  color: var(--vermelho-principal);
 }
 
 #perfil-information textarea {
-	margin-top: .12rem;
-	box-sizing: border-box;
-	padding: .25rem;
-	width: 100%;
-	height: 7rem;
-	resize: none;
+  margin-top: 0.12rem;
+  box-sizing: border-box;
+  padding: 0.25rem;
+  width: 100%;
+  height: 7rem;
+  resize: none;
 
-	font-size: .5rem;
-	font-weight: 400;
+  font-size: 0.5rem;
+  font-weight: 400;
 
-	border: 1px solid #fc003b;
-	border-radius: .2rem;
+  border: 1px solid #fc003b;
+  border-radius: 0.2rem;
 }
 
 #perfil-information > div:not(#perfil-information > div:first-of-type) {
-	display: grid;
-	grid-template-columns: repeat(2, 46%);
-	justify-content: space-between;
-	margin: 4% 0;
+  display: grid;
+  grid-template-columns: repeat(2, 46%);
+  justify-content: space-between;
+  margin: 4% 0;
 }
 
 #perfil-information input[type="checkbox"],
 #perfil-information input[type="radio"] {
-	display: none;
+  display: none;
 }
 
 #perfil-information label,
 #perfil-information button {
-	border: 1px solid var(--vermelho-principal);
-	margin: 5% 0;
-	text-align: center;
-	text-overflow: ellipsis;
-	border-radius: 10px;
-	cursor: pointer;
-	overflow: hidden;
-	box-sizing: border-box;
-	box-sizing: border-box;
-	padding: 0 8px;
+  border: 1px solid var(--vermelho-principal);
+  margin: 5% 0;
+  text-align: center;
+  text-overflow: ellipsis;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 8px;
 
-	font-size: 16px;
-	font-family: "Inter";
-	line-height: 2em;
-	text-align: center;
-	letter-spacing: -0.022em;
+  font-size: 16px;
+  font-family: "Inter";
+  line-height: 2em;
+  text-align: center;
+  letter-spacing: -0.022em;
 
-	transition: all 400ms;
+  transition: all 400ms;
 }
 
 #perfil-information button {
-	background: var(--vermelho-principal);
-	color: #fff;
+  background: var(--vermelho-principal);
+  color: #fff;
 }
 
 #perfil-information input[type="checkbox"]:checked + label,
 #perfil-information input[type="radio"]:checked + label {
-	background: linear-gradient(#fc003b57, #fc003bd5);
-	color: rgb(29, 29, 29);
+  background: linear-gradient(#fc003b57, #fc003bd5);
+  color: rgb(29, 29, 29);
 }
 
 /*Teste do amor*/
 #teste-de-amor {
-	width: max-content;
+  width: max-content;
 }
 #teste-de-amor > h1 {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 #teste-de-amor .categoria {
-	margin: 40px 0;
+  margin: 40px 0;
 }
 
 #formulario-teste .opcao {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #formulario-teste h3 {
-	margin-bottom: 10px;
-	font-size: .72rem;
-	font-weight: 400;
+  margin-bottom: 10px;
+  font-size: 0.72rem;
+  font-weight: 400;
 }
 
 #formulario-teste .categoria {
-	display: grid;
-	row-gap: 15px;
+  display: grid;
+  row-gap: 15px;
 }
 
 #formulario-teste input[type="radio"] {
-	appearance: none;
-	height: .87rem;
-	width: .87rem;
-	margin: 0;
-	background: rgba(0, 0, 0, 0.24);
-	border-radius: 20px;
+  appearance: none;
+  height: 0.87rem;
+  width: 0.87rem;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.24);
+  border-radius: 20px;
 }
 
 #formulario-teste input[type="radio"]:checked {
-	background: var(--vermelho-principal);
-	border: 3px solid rgb(207, 207, 207);
+  background: var(--vermelho-principal);
+  border: 3px solid rgb(207, 207, 207);
 }
 
 #formulario-teste label {
-	text-indent: 15px;
+  text-indent: 15px;
 }
 
 /*Modaais de perfil*/
 dialog {
-	display: flex;
-	z-index: 2;
-	width: 100vw;
-	height: 100vh;
-	background: rgba(0, 0, 0, 0.199);
+  display: flex;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.199);
 }
 
 #add-option-modal {
-	display: none;
+  display: none;
 }
 
 dialog {
-	padding: 0;
-	box-sizing: border-box;
-	& > div {
-		background: #fff;
-		position: relative;
-		width: 20rem;
-		display: grid;
-		height: 549px;
-		margin: auto;
-		border-radius: 10px;
-		align-items: center;
-		justify-items: center;
-		box-sizing: border-box;
-		padding: 60px;
-	}
+  padding: 0;
+  box-sizing: border-box;
+  & > div {
+    background: #fff;
+    position: relative;
+    width: 20rem;
+    display: grid;
+    height: 549px;
+    margin: auto;
+    border-radius: 10px;
+    align-items: center;
+    justify-items: center;
+    box-sizing: border-box;
+    padding: 60px;
+  }
 }
 
 dialog h1 {
-	font-family: "Poppins";
-	font-weight: 500;
-	font-size: 24px;
-	line-height: 22px;
-	/* identical to box height, or 90% */
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 22px;
+  /* identical to box height, or 90% */
 
-	letter-spacing: 5px;
+  letter-spacing: 5px;
 }
 
 dialog button {
-	width: 79%;
-	font-size: 16px;
-	line-height: 4em;
+  width: 79%;
+  font-size: 16px;
+  line-height: 4em;
 }
 
 dialog button.red-btn {
-	color: white;
-	background: var(--vermelho-principal);
-	border: none;
-	border-radius: 10px;
+  color: white;
+  background: var(--vermelho-principal);
+  border: none;
+  border-radius: 10px;
 }
 
 .simple-btn {
-	width: max-content;
-	height: max-content;
-	line-height: 1em;
-	text-decoration: underline;
-	border: none;
-	background: none;
+  width: max-content;
+  height: max-content;
+  line-height: 1em;
+  text-decoration: underline;
+  border: none;
+  background: none;
 
-	font-size: 0.6rem;
-	color: var(--vermelho-principal);
+  font-size: 0.6rem;
+  color: var(--vermelho-principal);
 }
 
 dialog #modal-perfil-1 {
-	background: url(./../../images/modal-bg-perfil.svg) no-repeat #fff;
-	background-size: 40%;
-	background-position: center;
+  background: url(./../../images/modal-bg-perfil.svg) no-repeat #fff;
+  background-size: 40%;
+  background-position: center;
 }
 
 dialog .close-modal {
-	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 12px;
-	margin-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  margin-right: 10px;
 
-	font-size: 0.75rem;
-	font-family: "Raleway";
-	text-decoration: none;
-	color: #000;
+  font-size: 0.75rem;
+  font-family: "Raleway";
+  text-decoration: none;
+  color: #000;
 
-	background-blend-mode: color-burn;
+  background-blend-mode: color-burn;
 }
 
 /*Modal de teste de amor*/
 dialog#modal-teste-amor img {
-	width: 30%;
+  width: 30%;
 }
 
 dialog > div {
-	padding: 30px;
+  padding: 30px;
 }
 
 dialog#modal-teste-amor {
-	-webkit-backdrop-filter: blur(2px);
-	backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 
 /*Membros bloqueados*/
 #bloqueados {
-	width: 72%;
+  width: 72%;
 }
 
 #bloqueados #blacklist {
-	width: 90%;
+  width: 90%;
 }
 
 #bloqueados .person {
-	height: 90px;
-	width: 100%;
-	display: grid;
-	grid-template-columns: auto 1fr max-content;
-	align-items: center;
-	box-sizing: border-box;
-	padding: 0 10px;
-	cursor: default;
+  height: 90px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr max-content;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 10px;
+  cursor: default;
 }
 
 #bloqueados #blacklist .person span {
-	font-size: 20px;
-	margin-left: 15px;
-	width: 320px;
+  font-size: 20px;
+  margin-left: 15px;
+  width: 320px;
 }
 
 #bloqueados #blacklist .simple-btn {
-	font-size: 0.7rem;
+  font-size: 0.7rem;
 }
 
 .__modal-image {
-	width: 2.5rem;
+  width: 2.5rem;
 }
 
 .__modal-title {
-	margin: 0 auto;
+  margin: 0 auto;
 
-	font-size: 1rem;
-	font-weight: 400;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .__modal-description {
-	margin: 0;
-	padding-bottom: 1rem;
+  margin: 0;
+  padding-bottom: 1rem;
 
-	font-size: 0.57rem;
-	font-size: 400;
-	text-align: center;
+  font-size: 0.57rem;
+  font-size: 400;
+  text-align: center;
 }
 
 #modal-home-1,
 #modal-home-2 {
-	width: 100%;
-	& > div {
-		padding: 0.72rem;
-	}
+  width: 100%;
+  & > div {
+    padding: 0.72rem;
+  }
 }
 
 #modal-home-1 > div {
-	height: max-content;
-	display: grid;
-	row-gap: 0.7rem;
+  height: max-content;
+  display: grid;
+  row-gap: 0.7rem;
 }
 
 #modal-home-2 > div {
-	height: 11.2rem;
-	width: 13.36rem;
+  height: 11.2rem;
+  width: 13.36rem;
 }
 
 #modal-home-2 p {
-	width: 100%;
-	text-align: center;
-	font-size: 0.6rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.6rem;
 }
 
 #modal-home-2 .red-btn {
-	font-size: 0.67rem;
-	line-height: 2.75;
+  font-size: 0.67rem;
+  line-height: 2.75;
 }
 
 #modal-home-2 .simple-btn {
-	color: #000;
+  color: #000;
 }
 
-/*Modal para adicionar tags em planos.php*/
+/*Modal para adicionar tags em planos.html*/
 #add-option-modal img {
-	width: 14%;
+  width: 14%;
 }
 
 #add-option-modal input {
-	font-size: 16px;
-	padding: 6px;
-	border-radius: 10px;
-	border: 1px solid rgb(97, 97, 97);
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid rgb(97, 97, 97);
 }
 
 /*Para mobile, mas, oculto*/
 #mobile-header {
-	display: none;
+  display: none;
 }
 
 #footer-mobile {
-	display: none;
-	ul {
-		margin: 0;
-	}
+  display: none;
+  ul {
+    margin: 0;
+  }
 }
 
 input,
 select {
-	outline: none !important;
+  outline: none !important;
 }
 
 @media only screen and (max-width: 992px) {
-	#online-now {
-		position: absolute !important;
-		right: 55%;
-		top: 35px;
-	}
+  #online-now {
+    position: absolute !important;
+    right: 55%;
+    top: 35px;
+  }
 }

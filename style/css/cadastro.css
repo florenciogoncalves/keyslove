@@ -58,7 +58,9 @@ html * {
 }
 
 /*Botão criar conta*/
-.border-btn, .border-btn:hover, .border-btn:active {
+.border-btn,
+.border-btn:hover,
+.border-btn:active {
   border: 1px solid #fff;
   color: #fff !important;
   background: none;
@@ -68,7 +70,9 @@ html * {
 }
 
 /*Botão entrar*/
-.white-btn, .white-btn:hover, .white-btn:active {
+.white-btn,
+.white-btn:hover,
+.white-btn:active {
   border: none;
   color: #000;
   background-color: #fff;
@@ -154,7 +158,9 @@ body {
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg) no-repeat center, var(--bg-color);
+  background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg)
+      no-repeat center,
+    var(--bg-color);
   background-attachment: fixed;
   background-size: cover !important;
 }
@@ -379,7 +385,9 @@ footer > p {
 }
 
 /*Botão criar conta*/
-.border-btn, .border-btn:hover, .border-btn:active {
+.border-btn,
+.border-btn:hover,
+.border-btn:active {
   border: 1px solid #fff;
   color: #fff !important;
   background: none;
@@ -389,7 +397,9 @@ footer > p {
 }
 
 /*Botão entrar*/
-.white-btn, .white-btn:hover, .white-btn:active {
+.white-btn,
+.white-btn:hover,
+.white-btn:active {
   border: none;
   color: #000;
   background-color: #fff;
@@ -414,7 +424,8 @@ body {
   display: grid;
   grid-template-rows: max-content 1fr;
   height: 100%;
-  background-image: url(./../../images/heath-bg-left.svg), url(./../../images/hearth-bg-right.svg);
+  background-image: url(./../../images/heath-bg-left.svg),
+    url(./../../images/hearth-bg-right.svg);
   background-repeat: no-repeat;
   background-size: 31vw !important;
   background-position: left bottom, right center;
@@ -457,7 +468,7 @@ select {
   align-items: center;
 }
 
-/* ================= CADASTRO.php ================= */
+/* ================= CADASTRO.html ================= */
 .cadastro-layout {
   position: relative;
   width: 23rem;
@@ -492,7 +503,7 @@ select {
   margin: 0.3rem 0 0.1rem;
   font-size: 0.57rem;
 }
-.cadastro-layout form input:not([type=checkbox], .pass-camp) {
+.cadastro-layout form input:not([type="checkbox"], .pass-camp) {
   box-sizing: border-box;
   margin: auto;
   width: 100%;
@@ -527,7 +538,7 @@ select {
   text-transform: uppercase;
 }
 
-/* ================ CADASTRO-1.php ================ */
+/* ================ CADASTRO-1.html ================ */
 #form-cadastro1 .checkbox {
   display: flex;
   margin: 16px 0;
@@ -538,7 +549,8 @@ select {
   -webkit-user-select: none;
   user-select: none;
 }
-#form-cadastro1 input[type=checkbox]#accept-terms, #form-cadastro1 input[type=checkbox]#accept-terms:checked {
+#form-cadastro1 input[type="checkbox"]#accept-terms,
+#form-cadastro1 input[type="checkbox"]#accept-terms:checked {
   position: relative;
   appearance: none;
   cursor: pointer;
@@ -548,7 +560,7 @@ select {
   border: 1px solid #000;
   border-radius: 0.2rem;
 }
-#form-cadastro1 input[type=checkbox]#accept-terms:checked::after {
+#form-cadastro1 input[type="checkbox"]#accept-terms:checked::after {
   content: " ";
   position: absolute;
   bottom: 0.135rem;
@@ -559,7 +571,7 @@ select {
   background-size: contain;
 }
 
-/* ================ CADASTRO-2.php ================ */
+/* ================ CADASTRO-2.html ================ */
 #form-cadastro2 .the-date {
   display: grid;
   justify-content: space-between;
@@ -608,16 +620,16 @@ select {
   border-radius: 0.2rem;
   line-height: 3.1;
 }
-#form-cadastro2 .the-genre input[type=radio],
-#form-cadastro2 .the-genre input[type=radio]:checked {
+#form-cadastro2 .the-genre input[type="radio"],
+#form-cadastro2 .the-genre input[type="radio"]:checked {
   display: none;
 }
-#form-cadastro2 .the-genre input[type=radio]:checked + label,
-#form-cadastro2 .the-genre input[type=radio]:checked:checked + label {
+#form-cadastro2 .the-genre input[type="radio"]:checked + label,
+#form-cadastro2 .the-genre input[type="radio"]:checked:checked + label {
   border: 0.901502px solid var(--vermelho-principal);
 }
 
-/* ================ CADASTRO-4.php ================ */
+/* ================ CADASTRO-4.html ================ */
 #form-cadastro4 h1 {
   margin-bottom: 30px;
 }
@@ -626,7 +638,8 @@ select {
   height: max-content;
   margin: 0;
 }
-#form-cadastro4 input[type=checkbox], #form-cadastro4 input[type=checkbox]:checked {
+#form-cadastro4 input[type="checkbox"],
+#form-cadastro4 input[type="checkbox"]:checked {
   outline: none;
   appearance: none;
   box-sizing: border-box;
@@ -638,7 +651,7 @@ select {
   border: 1.26901px solid var(--vermelho-principal);
   border-radius: 0.2rem;
 }
-#form-cadastro4 input[type=checkbox]:checked {
+#form-cadastro4 input[type="checkbox"]:checked {
   background-image: url(./../../images/Close_round.png);
   background-size: contain;
   background-position: center;
@@ -649,7 +662,7 @@ select {
   text-indent: 0.775rem;
 }
 
-/* ================ CADASTRO-5.php ================ */
+/* ================ CADASTRO-5.html ================ */
 #form-cadastro5 p {
   font-size: 0.57rem;
   margin: auto;
@@ -676,7 +689,7 @@ select {
   align-items: center;
   justify-content: center;
 }
-#form-cadastro5 .area-drop input[type=file] {
+#form-cadastro5 .area-drop input[type="file"] {
   height: 100% !important;
   opacity: 0;
 }
@@ -684,7 +697,7 @@ select {
   position: absolute;
 }
 
-/*Estilizando o arquivo 'cadastro-6.php'*/
+/*Estilizando o arquivo 'cadastro-6.html'*/
 #form-cadastro6 {
   width: 100%;
 }

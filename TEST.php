@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/home/app/Models/Model.php";
+require __DIR__ . "/home/app/Models/Model.html";
 $Model = new Model();
 
 echo "<pre>";

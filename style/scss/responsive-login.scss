@@ -1,233 +1,247 @@
 @media only screen and (max-width: 991.97px) {
-	/* ================= index.php ================= */
-	body {
-		display: grid;
-		box-sizing: border-box;
+  /* ================= index.html ================= */
+  body {
+    display: grid;
+    box-sizing: border-box;
 
-		background-attachment: fixed;
-	}
-	body {
-		grid-template-rows: 4% 1fr !important;
-	}
+    background-attachment: fixed;
+  }
+  body {
+    grid-template-rows: 4% 1fr !important;
+  }
 
-	.form-cadastro-container {
-		align-items: baseline !important;
-		box-sizing: border-box;
-	}
-	.cadastro-layout {
-		margin: auto !important;
-		max-width: 95vw !important;
-	}
+  .form-cadastro-container {
+    align-items: baseline !important;
+    box-sizing: border-box;
+  }
+  .cadastro-layout {
+    margin: auto !important;
+    max-width: 95vw !important;
+  }
 
-	/* ================ login.php ================ */
-	.body-login.especify {
-		grid-template-rows: max-content 1fr !important;
-		background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg)
-				no-repeat center,
-			rgb(0, 0, 0);
-		background-attachment: fixed;
-		background-size: cover;
-		#enter-box {
-			height: 100%;
-			border-radius: 0 !important;
-			form.right-side {
-				width: 100%;
-				border-radius: 0 !important;
+  /* ================ login.html ================ */
+  .body-login.especify {
+    grid-template-rows: max-content 1fr !important;
+    background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg)
+        no-repeat center,
+      rgb(0, 0, 0);
+    background-attachment: fixed;
+    background-size: cover;
+    #enter-box {
+      height: 100%;
+      border-radius: 0 !important;
+      form.right-side {
+        width: 100%;
+        border-radius: 0 !important;
 
-				background: none;
-				.logo {
-					h1 {
-						font-size: 1.2rem !important;
-						letter-spacing: 0.1rem;
-					}
-				}
-			}
-			.campos,
-			.others-options {
-				input {
-					border: 1px solid #000;
-					&:not([type="checkbox"]) {
-						background: #fff;
-					}
-				}
-			}
-		}
-	}
-	/*
+        background: none;
+        .logo {
+          h1 {
+            font-size: 1.2rem !important;
+            letter-spacing: 0.1rem;
+          }
+        }
+      }
+      .campos,
+      .others-options {
+        input {
+          border: 1px solid #000;
+          &:not([type="checkbox"]) {
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
+  /*
 ******************************
 ***     cadastro-1 > 4     ***
 ******************************
 */
 
-	body:not(.especify) .header-logo {
-		height: 30px;
-	}
+  body:not(.especify) .header-logo {
+    height: 30px;
+  }
 
-	/* body:not(.especify) {
+  /* body:not(.especify) {
     overflow: hidden !important;
   } */
 
-	h1 {
-		font-size: 13.5pt !important;
-		margin-bottom: 0.7em !important;
-	}
+  h1 {
+    font-size: 13.5pt !important;
+    margin-bottom: 0.7em !important;
+  }
 
-	.white-btn {
-		display: none;
-	}
+  .white-btn {
+    display: none;
+  }
 
-	.cadastro-layout {
-		width: max-content;
-		max-width: 420px;
-		display: flex !important;
-		justify-content: center !important;
-		padding: 25px !important;
-	}
+  .cadastro-layout {
+    width: max-content;
+    max-width: 420px;
+    display: flex !important;
+    justify-content: center !important;
+    padding: 25px !important;
+  }
 
-	.cadastro-layout input,
-	.cadastro-layout select {
-		border-radius: 4px !important;
-	}
+  .cadastro-layout input,
+  .cadastro-layout select {
+    border-radius: 4px !important;
+  }
 
-	.checkbox {
-		font-size: 1pt !important;
-	}
+  .checkbox {
+    font-size: 1pt !important;
+  }
 
-	.checkbox input[type="checkbox"] {
-		width: 20px !important;
-		height: 20px !important;
-		background-size: 17px !important;
-	}
+  .checkbox input[type="checkbox"] {
+    width: 20px !important;
+    height: 20px !important;
+    background-size: 17px !important;
+  }
 
-	.checkbox label {
-		margin: auto 0 !important;
-		font-size: 8pt !important;
-	}
+  .checkbox label {
+    margin: auto 0 !important;
+    font-size: 8pt !important;
+  }
 
-	/*
+  /*
 ******************************
 ***       cadastro-4       ***
 ******************************
 */
-	#form-cadastro4 > div {
-		margin: 0;
-	}
+  #form-cadastro4 > div {
+    margin: 0;
+  }
 
-	#form-cadastro4 label {
-		margin: auto 0 !important;
-	}
+  #form-cadastro4 label {
+    margin: auto 0 !important;
+  }
 
-	/*
+  /*
 ******************************
 ***       cadastro-5       ***
 ******************************
 */
-	#form-cadastro5 p {
-		text-align: center;
-	}
+  #form-cadastro5 p {
+    text-align: center;
+  }
 
-	#form-cadastro5 img {
-		width: 100px !important;
-	}
+  #form-cadastro5 img {
+    width: 100px !important;
+  }
 
-	#form-cadastro5 .social-cad-imgs {
-		justify-content: space-evenly;
-		width: 90%;
-		margin: 5px auto;
-	}
+  #form-cadastro5 .social-cad-imgs {
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 5px auto;
+  }
 
-	.add-photos-cad {
-		margin: 15px 0 !important;
-		width: 100% !important;
-		display: grid !important;
-		place-items: center center !important;
-		justify-content: center !important;
-	}
+  .add-photos-cad {
+    margin: 15px 0 !important;
+    width: 100% !important;
+    display: grid !important;
+    place-items: center center !important;
+    justify-content: center !important;
+  }
 
-	#form-cadastro5 .area-drop {
-		width: 90%;
-		max-width: 180px;
-		height: 140px;
-		text-align: center;
-		font-size: 9pt !important;
-	}
+  #form-cadastro5 .area-drop {
+    width: 90%;
+    max-width: 180px;
+    height: 140px;
+    text-align: center;
+    font-size: 9pt !important;
+  }
 
-	/*
+  /*
 ******************************
 ***      cadastro-6        ***
 ******************************
 */
-	#form-cadastro6 > * {
-		max-width: 420px !important;
-	}
+  #form-cadastro6 > * {
+    max-width: 420px !important;
+  }
 
-	#form-cadastro6 #password-section {
-		margin: auto;
-	}
+  #form-cadastro6 #password-section {
+    margin: auto;
+  }
 
-	#insert-password {
-		width: 100% !important;
-		box-sizing: border-box !important;
-	}
+  #insert-password {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 
-	#form-cadastro6 > div:last-of-type {
-		margin-top: auto;
-		display: grid;
-		row-gap: 15px;
-	}
+  #form-cadastro6 > div:last-of-type {
+    margin-top: auto;
+    display: grid;
+    row-gap: 15px;
+  }
 }
 
 @media only screen and (max-width: 575.97px) {
-	#menu-logon {
-		#enter-box {
-			background: #fff !important;
-			.facebook-continue,
-			.google-continue {
-				height: 2.5rem;
-			}
-			._subtitle {
-				font-size: 0.575rem;
-			}
+  #menu-logon {
+    #enter-box {
+      background: #fff !important;
+      .facebook-continue,
+      .google-continue {
+        height: 2.5rem;
+      }
+      ._subtitle {
+        font-size: 0.575rem;
+      }
 
-			.continue {
-				font-size: .55rem !important;
-			}
-			.__span-ou, .__a-login {
-				margin: 1rem auto !important;
-			
-				font-size: .59rem;
-			}
-		}
-	}
+      .continue {
+        font-size: 0.55rem !important;
+      }
+      .__span-ou,
+      .__a-login {
+        margin: 1rem auto !important;
 
-	.body-login.especify {
-		display: flex !important;
-		#enter-box {
-			margin: auto 0;
-			height: max-content;
-			padding-top: 1rem;
-			padding-bottom: 1rem;
-		}
+        font-size: 0.59rem;
+      }
+    }
+  }
 
-		.btn-register, .criar-conta {
-			height: 2.25rem;
-		
-			font-size: .55rem !important;
-		}
+  .body-login.especify {
+    display: flex !important;
+    #enter-box {
+      margin: auto 0;
+      height: max-content;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
 
-		.others-options {
-			* {
-				font-size: .5rem !important;
-			}
-		}
+    .btn-register,
+    .criar-conta {
+      height: 2.25rem;
 
-		input[type="checkbox"] {
-			&, &:checked {
-				width: .75rem !important;
-				height: .75rem !important;
-			}
-		}
-	}
+      font-size: 0.55rem !important;
+    }
+
+    .others-options {
+      * {
+        font-size: 0.5rem !important;
+      }
+    }
+
+    input[type="checkbox"] {
+      &,
+      &:checked {
+        width: 0.75rem !important;
+        height: 0.75rem !important;
+      }
+    }
+  }
+
+  // Cadastro
+  .cadastro-layout form {
+    label:not(.the-genre) {
+      font-size: 0.625rem;
+    }
+    input:not([type="checkbox"], .pass-camp) {
+      font-size: 0.625rem;
+      padding: 0.12rem 0.57rem;
+    }
+  }
 }
 /*Dispositivos médios(landscape tablets, 768px para cima)*/
 @media only screen and (min-width: 768px) {

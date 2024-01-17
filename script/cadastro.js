@@ -150,7 +150,7 @@ try {
 
 /*
 *********************************************************
- ***       Formatando o arquivo cadastro-2.php        ***
+ ***       Formatando o arquivo cadastro-2.html        ***
  ***       Inserir datas possíveis nos selects        ***
  ***    Proibe o usuário de selecionar uma data que   ***
  ***  não seja de exatamente 18 anos do dia anterior  ***
@@ -353,7 +353,7 @@ try {
 
 
 /*************************************************
- ***    Formatando o arquivo cadastro-6.php    ***
+ ***    Formatando o arquivo cadastro-6.html    ***
  ***      Interatividade da área de senha      ***
  **************************************************/const passCamp = document.querySelectorAll(".pass-camp");
 try {

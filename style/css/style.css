@@ -242,7 +242,11 @@ main li {
   background-image: url(./../../images/logout-1.png);
   background-position: 0.075rem;
 }
-#menu-esquerdo #div-left #user-information .changing-status input[type=radio] {
+#menu-esquerdo
+  #div-left
+  #user-information
+  .changing-status
+  input[type="radio"] {
   background-color: #333333;
   width: 100%;
   height: 100%;
@@ -522,7 +526,7 @@ input::-webkit-calendar-picker-indicator {
   display: none;
 }
 
-#content-right .principal-content input:not([type=range]),
+#content-right .principal-content input:not([type="range"]),
 #content-right .principal-content select {
   box-sizing: border-box;
   min-width: 100%;
@@ -595,7 +599,7 @@ input::-webkit-calendar-picker-indicator {
   color: var(--vermelho-principal);
 }
 
-/*Mexendo em 'educacao-e-cultura.php*/
+/*Mexendo em 'educacao-e-cultura.html*/
 .principal-content textarea {
   box-sizing: border-box;
   width: 100%;
@@ -939,7 +943,7 @@ main#mensagens .chat {
   justify-content: space-between;
   font-size: 0.57rem;
 }
-#mensagens .botoes-top .options-container input[type=checkbox] {
+#mensagens .botoes-top .options-container input[type="checkbox"] {
   display: none;
 }
 #mensagens .botoes-top .options-container label {
@@ -958,7 +962,11 @@ main#mensagens .chat {
   float: left;
   background-color: var(--vermelho-principal);
 }
-#mensagens .botoes-top .options-container #active-translator:checked + .translate-toggle {
+#mensagens
+  .botoes-top
+  .options-container
+  #active-translator:checked
+  + .translate-toggle {
   float: right;
 }
 
@@ -1238,7 +1246,7 @@ main#mensagens .chat {
   background-size: 0.9rem;
 }
 
-/* DOCUMENTO curtidas.php & localizar-pessoas.php*/
+/* DOCUMENTO curtidas.html & localizar-pessoas.html*/
 .padrao {
   background: #fff;
   border-radius: 10px;
@@ -1367,7 +1375,7 @@ main#mensagens .chat {
   margin: auto auto 15px;
 }
 
-/*localizar-pessoas.php*/
+/*localizar-pessoas.html*/
 #pessoas-regiao .search {
   display: grid;
   height: 1.65rem;
@@ -1384,7 +1392,7 @@ main#mensagens .chat {
   border-radius: 0.2rem;
   overflow: hidden;
 }
-#pessoas-regiao .search .search-field input[type=search] {
+#pessoas-regiao .search .search-field input[type="search"] {
   height: 100%;
   width: 100%;
   display: inline-block;
@@ -1419,7 +1427,7 @@ main#mensagens .chat {
   background-size: 1rem;
 }
 
-/*planos.php*/
+/*planos.html*/
 #planos,
 #pacotes-pagamento,
 #metodo-pagamento {
@@ -1447,12 +1455,12 @@ main#mensagens .chat {
   justify-content: space-between;
 }
 
-#planos .card-container input[type=radio] {
+#planos .card-container input[type="radio"] {
   display: none;
 }
 
 /*Bordas vermelhas para card selecionado*/
-#planos .card-container input[type=radio]:checked + label {
+#planos .card-container input[type="radio"]:checked + label {
   border: 2px solid #fc003b;
 }
 
@@ -1498,7 +1506,13 @@ main#mensagens .chat {
   flex-direction: row;
   margin: auto;
   box-sizing: border-box;
-  background: linear-gradient(180deg, #fd003b 0%, rgba(253, 0, 59, 0.68) 74.79%, rgba(253, 0, 59, 0.54) 93.02%, rgba(253, 0, 59, 0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    #fd003b 0%,
+    rgba(253, 0, 59, 0.68) 74.79%,
+    rgba(253, 0, 59, 0.54) 93.02%,
+    rgba(253, 0, 59, 0.5) 100%
+  );
 }
 
 #planos .card-bank-data .left-side {
@@ -1523,8 +1537,8 @@ main#mensagens .chat {
   border-radius: 6.73784px;
 }
 
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   display: none;
   appearance: none;
   margin: 0;
@@ -1673,7 +1687,7 @@ input[type=number]::-webkit-inner-spin-button {
   margin-bottom: 5%;
 }
 
-#metodo-pagamento #payment-method input[type=radio] {
+#metodo-pagamento #payment-method input[type="radio"] {
   appearance: none;
   height: 62.4px;
   border: 1.37998px solid #d9d9d9;
@@ -1684,7 +1698,7 @@ input[type=number]::-webkit-inner-spin-button {
   background-size: 75%;
 }
 
-#metodo-pagamento #payment-method input[type=radio]:checked {
+#metodo-pagamento #payment-method input[type="radio"]:checked {
   border: 2.69078px solid #fb6624;
   border-radius: 8.2799px;
   transition: all ease-in-out 200ms;
@@ -1693,7 +1707,13 @@ input[type=number]::-webkit-inner-spin-button {
 #metodo-pagamento .right-side #card-bank {
   width: 100%;
   height: 248px;
-  background: linear-gradient(180deg, #fd003b 0%, rgba(253, 0, 59, 0.68) 74.79%, rgba(253, 0, 59, 0.54) 93.02%, rgba(253, 0, 59, 0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    #fd003b 0%,
+    rgba(253, 0, 59, 0.68) 74.79%,
+    rgba(253, 0, 59, 0.54) 93.02%,
+    rgba(253, 0, 59, 0.5) 100%
+  );
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   border-radius: 27px;
   color: #fff;
@@ -1733,7 +1753,7 @@ input[type=number]::-webkit-inner-spin-button {
   margin: 0 60px;
 }
 
-/*favoritos.php*/
+/*favoritos.html*/
 #favoritos > nav {
   display: grid;
   grid-auto-flow: column;
@@ -1749,11 +1769,11 @@ input[type=number]::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-#favoritos > nav input[type=radio] {
+#favoritos > nav input[type="radio"] {
   display: none;
 }
 
-#favoritos > nav input[type=radio]:checked + label {
+#favoritos > nav input[type="radio"]:checked + label {
   border-bottom: 4px solid var(--vermelho-principal);
   transition: all ease-in-out 300ms;
 }
@@ -1796,7 +1816,7 @@ input[type=number]::-webkit-inner-spin-button {
   margin: auto auto 15px;
 }
 
-/*configuracoes.php*/
+/*configuracoes.html*/
 main#configuracoes,
 main#servicos {
   width: 623px;
@@ -2004,8 +2024,8 @@ main#servicos {
   font-size: 0.67rem;
 }
 
-#conf-notifications input[type=checkbox],
-#conf-def input[type=checkbox] {
+#conf-notifications input[type="checkbox"],
+#conf-def input[type="checkbox"] {
   display: none;
 }
 
@@ -2031,8 +2051,11 @@ main#servicos {
   transition: all 200ms;
 }
 
-#conf-notifications input[type=checkbox]:checked + .switch-painel > .btn-switch,
-#conf-def input[type=checkbox]:checked + .switch-painel > .btn-switch {
+#conf-notifications
+  input[type="checkbox"]:checked
+  + .switch-painel
+  > .btn-switch,
+#conf-def input[type="checkbox"]:checked + .switch-painel > .btn-switch {
   margin-left: auto;
   width: 1rem;
   height: 1rem;
@@ -2041,8 +2064,8 @@ main#servicos {
   margin-right: 0px;
 }
 
-#conf-notifications input[type=checkbox]:checked + .switch-painel,
-#conf-def input[type=checkbox]:checked + .switch-painel {
+#conf-notifications input[type="checkbox"]:checked + .switch-painel,
+#conf-def input[type="checkbox"]:checked + .switch-painel {
   background: var(--vermelho-principal);
   transition: all ease-in-out 900ms;
 }
@@ -2071,8 +2094,8 @@ main#servicos {
   margin-left: 5%;
 }
 
-#form-delete-account input[type=radio],
-#form-delete-account input[type=radio]:checked {
+#form-delete-account input[type="radio"],
+#form-delete-account input[type="radio"]:checked {
   outline: none;
   appearance: none;
   box-sizing: border-box;
@@ -2084,7 +2107,7 @@ main#servicos {
   border-radius: 15%;
 }
 
-#form-delete-account input[type=radio]:checked {
+#form-delete-account input[type="radio"]:checked {
   background: url(./../../images/Close_round.png) no-repeat;
   background-size: 130%;
   background-position: center;
@@ -2161,7 +2184,7 @@ main#servicos {
   height: max-content;
 }
 
-/* ===================== Perfil.php ===================== */
+/* ===================== Perfil.html ===================== */
 #perfil-container .perfil-spliter {
   display: grid;
   width: 100%;
@@ -2196,7 +2219,7 @@ main#servicos {
   border-radius: 10px;
 }
 
-.add-more-photos .add-box input[type=file] {
+.add-more-photos .add-box input[type="file"] {
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -2290,8 +2313,8 @@ main#servicos {
   margin: 4% 0;
 }
 
-#perfil-information input[type=checkbox],
-#perfil-information input[type=radio] {
+#perfil-information input[type="checkbox"],
+#perfil-information input[type="radio"] {
   display: none;
 }
 
@@ -2320,9 +2343,12 @@ main#servicos {
   color: #fff;
 }
 
-#perfil-information input[type=checkbox]:checked + label,
-#perfil-information input[type=radio]:checked + label {
-  background: linear-gradient(rgba(252, 0, 59, 0.3411764706), rgba(252, 0, 59, 0.8352941176));
+#perfil-information input[type="checkbox"]:checked + label,
+#perfil-information input[type="radio"]:checked + label {
+  background: linear-gradient(
+    rgba(252, 0, 59, 0.3411764706),
+    rgba(252, 0, 59, 0.8352941176)
+  );
   color: rgb(29, 29, 29);
 }
 
@@ -2356,7 +2382,7 @@ main#servicos {
   row-gap: 15px;
 }
 
-#formulario-teste input[type=radio] {
+#formulario-teste input[type="radio"] {
   appearance: none;
   height: 0.87rem;
   width: 0.87rem;
@@ -2365,7 +2391,7 @@ main#servicos {
   border-radius: 20px;
 }
 
-#formulario-teste input[type=radio]:checked {
+#formulario-teste input[type="radio"]:checked {
   background: var(--vermelho-principal);
   border: 3px solid rgb(207, 207, 207);
 }
@@ -2554,7 +2580,7 @@ dialog#modal-teste-amor {
   color: #000;
 }
 
-/*Modal para adicionar tags em planos.php*/
+/*Modal para adicionar tags em planos.html*/
 #add-option-modal img {
   width: 14%;
 }

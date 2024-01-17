@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @media only screen and (max-width: 991.97px) {
-  /* ================= index.php ================= */
+  /* ================= index.html ================= */
   body {
     display: grid;
     box-sizing: border-box;
@@ -17,10 +17,12 @@
     margin: auto !important;
     max-width: 95vw !important;
   }
-  /* ================ login.php ================ */
+  /* ================ login.html ================ */
   .body-login.especify {
     grid-template-rows: max-content 1fr !important;
-    background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg) no-repeat center, rgb(0, 0, 0);
+    background: url(./../../images/conceito-de-aplicativo-de-namoro-na-internet-coracao-de-simbolo-de-relacionamento-3d-baixo-poli-paisagem-urbana-encontro-de-amor-em-redes-sociais-para-encontrar-servico-de-casal-ilustracao-em-vetor-site-men\ 1.svg)
+        no-repeat center,
+      rgb(0, 0, 0);
     background-attachment: fixed;
     background-size: cover;
   }
@@ -41,8 +43,8 @@
   .body-login.especify #enter-box .others-options input {
     border: 1px solid #000;
   }
-  .body-login.especify #enter-box .campos input:not([type=checkbox]),
-  .body-login.especify #enter-box .others-options input:not([type=checkbox]) {
+  .body-login.especify #enter-box .campos input:not([type="checkbox"]),
+  .body-login.especify #enter-box .others-options input:not([type="checkbox"]) {
     background: #fff;
   }
   /*
@@ -77,7 +79,7 @@
   .checkbox {
     font-size: 1pt !important;
   }
-  .checkbox input[type=checkbox] {
+  .checkbox input[type="checkbox"] {
     width: 20px !important;
     height: 20px !important;
     background-size: 17px !important;
@@ -162,7 +164,8 @@
   #menu-logon #enter-box .continue {
     font-size: 0.55rem !important;
   }
-  #menu-logon #enter-box .__span-ou, #menu-logon #enter-box .__a-login {
+  #menu-logon #enter-box .__span-ou,
+  #menu-logon #enter-box .__a-login {
     margin: 1rem auto !important;
     font-size: 0.59rem;
   }
@@ -175,16 +178,25 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
-  .body-login.especify .btn-register, .body-login.especify .criar-conta {
+  .body-login.especify .btn-register,
+  .body-login.especify .criar-conta {
     height: 2.25rem;
     font-size: 0.55rem !important;
   }
   .body-login.especify .others-options * {
     font-size: 0.5rem !important;
   }
-  .body-login.especify input[type=checkbox], .body-login.especify input[type=checkbox]:checked {
+  .body-login.especify input[type="checkbox"],
+  .body-login.especify input[type="checkbox"]:checked {
     width: 0.75rem !important;
     height: 0.75rem !important;
+  }
+  .cadastro-layout form label:not(.the-genre) {
+    font-size: 0.625rem;
+  }
+  .cadastro-layout form input:not([type="checkbox"], .pass-camp) {
+    font-size: 0.625rem;
+    padding: 0.12rem 0.57rem;
   }
 }
 /*Dispositivos médios(landscape tablets, 768px para cima)*/
